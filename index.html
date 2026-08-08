@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lewydo™ — Love What You Do · Indie Game Studio</title>
+<meta name="description" content="Lewydo is a two-person indie game studio from Ukraine. Vlad codes (Kotlin · LibGDX), Lilya designs. Orbit Dash, Idle Merge Cubes and more on Google Play.">
+
+<meta property="og:title" content="Lewydo™ — Love What You Do">
+<meta property="og:description" content="Two-person indie game studio from Ukraine. He codes, she designs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roshevasternin.github.io/">
+<meta property="og:image" content="https://roshevasternin.github.io/banner.png">
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:     #04120a;
+    --bg2:    #071c10;
+    --line:   rgba(61, 220, 132, 0.07);
+    --green:  #3ddc84;
+    --green2: #34d17c;
+    --mint:   #9df5c2;
+    --text:   #f2fff7;
+    --dim:    rgba(242, 255, 247, 0.60);
+    --faint:  rgba(242, 255, 247, 0.34);
+    --card:   rgba(61, 220, 132, 0.05);
+    --border: rgba(61, 220, 132, 0.16);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px),
+      radial-gradient(circle at 50% 0%, var(--bg2) 0%, var(--bg) 60%);
+    background-size: 56px 56px, 56px 56px, 100% 100%;
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  .sparks { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .sparks span {
+    position: absolute; border-radius: 50%; background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: breathe var(--d, 4s) ease-in-out infinite;
+  }
+  @keyframes breathe { 0%,100% { opacity: .12; } 50% { opacity: .65; } }
+
+  main { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  .mono { font-family: "Space Mono", monospace; letter-spacing: 3px; font-size: 12px; text-transform: uppercase; }
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  .hero { min-height: 88vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 84px 0 56px; }
+
+  .hero .heart { width: 190px; height: 190px; margin-bottom: 34px; animation: float 5s ease-in-out infinite; filter: drop-shadow(0 0 46px rgba(61,220,132,0.55)); }
+  .hero .heart img { width: 100%; height: 100%; object-fit: contain; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  .wordmark { font-family: "Fraunces", serif; font-weight: 900; font-size: clamp(56px, 10vw, 104px); letter-spacing: 0.04em; line-height: 1; text-shadow: 0 0 44px rgba(61,220,132,0.5); }
+  .wordmark sup { font-size: 0.22em; vertical-align: super; color: var(--mint); }
+
+  .motto { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); display: inline-block; color: var(--green); font-family: "Space Mono", monospace; letter-spacing: 7px; font-size: clamp(12px, 2.2vw, 16px); text-transform: uppercase; }
+
+  .hero p.sub { margin-top: 26px; max-width: 520px; color: var(--dim); font-size: clamp(15px, 2.2vw, 18px); line-height: 1.6; }
+  .hero p.sub b { color: var(--text); }
+
+  .hero .cta-row { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+    padding: 15px 26px; border-radius: 16px; font-weight: 700; font-size: 15px;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-solid { background: var(--green); color: #052012; box-shadow: 0 0 30px rgba(61,220,132,0.35); }
+  .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 0 44px rgba(61,220,132,0.55); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); background: var(--card); }
+  .btn-ghost:hover { border-color: var(--green); transform: translateY(-2px); }
+
+  /* ── SECTIONS ─────────────────────────────────────────── */
+  section { padding: 64px 0; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  .sec-head h2 { font-family: "Fraunces", serif; font-weight: 900; font-size: clamp(28px, 4.6vw, 40px); }
+  .sec-head .mono { color: var(--faint); }
+
+  /* ── GAMES ────────────────────────────────────────────── */
+  .games { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+  .game {
+    background: var(--card); border: 1px solid var(--border); border-radius: 24px;
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .game:hover { transform: translateY(-4px); border-color: var(--acc, var(--green)); box-shadow: 0 12px 44px rgba(0,0,0,0.4), 0 0 30px color-mix(in srgb, var(--acc, var(--green)) 18%, transparent); }
+
+  .shot { aspect-ratio: 16 / 9; background: #0a0d18; position: relative; overflow: hidden; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .game .body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .game .row { display: flex; align-items: center; gap: 14px; }
+  .game .icon { width: 54px; height: 54px; border-radius: 14px; flex-shrink: 0; box-shadow: 0 4px 18px rgba(0,0,0,0.5); }
+  .game h3 { font-size: 18px; font-weight: 700; line-height: 1.25; }
+  .game .chip { font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: 2px; color: var(--acc, var(--green)); border: 1px solid color-mix(in srgb, var(--acc, var(--green)) 45%, transparent); border-radius: 99px; padding: 3px 10px; width: max-content; margin-top: 5px; }
+  .game p { color: var(--dim); font-size: 14px; line-height: 1.55; flex: 1; }
+  .game .links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .game .links a { font-size: 13.5px; font-weight: 700; text-decoration: none; padding: 11px 18px; border-radius: 12px; }
+  .game .links .play { background: var(--acc, var(--green)); color: #041208; }
+  .game .links .site { border: 1px solid var(--border); color: var(--text); }
+  .game .links a:hover { filter: brightness(1.12); }
+
+  /* Orbit Dash — featured, з живою емблемою замість скріна */
+  .game.featured { grid-column: 1 / -1; --acc: #00e5ff; flex-direction: row; }
+  .game.featured .stage {
+    flex: 0 0 44%; min-height: 250px; position: relative; overflow: hidden;
+    background: radial-gradient(circle at 50% 45%, #1c2044 0%, #0e1024 70%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .orbit { position: relative; width: 150px; height: 150px; filter: drop-shadow(0 0 22px rgba(0,229,255,0.5)); }
+  .orbit .r { position: absolute; border: 3.5px solid #2b3060; border-radius: 50%; }
+  .orbit .r1 { inset: 0; } .orbit .r2 { inset: 32px; }
+  .orbit .o1 { position: absolute; inset: 0; animation: spin 7s linear infinite; }
+  .orbit .o2 { position: absolute; inset: 32px; animation: spin 10s linear infinite reverse; }
+  .orbit .pl { position: absolute; width: 20px; height: 20px; border-radius: 50%; background: #00e5ff; top: -10px; left: 50%; margin-left: -10px; box-shadow: 0 0 16px #00e5ff; }
+  .orbit .gm { position: absolute; width: 13px; height: 13px; border-radius: 3px; background: #ffd54a; transform: rotate(45deg); top: -7px; left: 50%; margin-left: -7px; box-shadow: 0 0 12px #ffd54a; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── ABOUT / TEAM ─────────────────────────────────────── */
+  .team { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .person { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 26px; }
+  .person .role { color: var(--green); }
+  .person h3 { font-family: "Fraunces", serif; font-weight: 900; font-size: 26px; margin: 8px 0 4px; }
+  .person .who { color: var(--faint); font-size: 13.5px; margin-bottom: 14px; }
+  .person p { color: var(--dim); font-size: 14.5px; line-height: 1.65; }
+  .person p em { color: var(--mint); font-style: italic; }
+  .contacts { margin-top: 18px; display: flex; flex-direction: column; gap: 9px; }
+  .contacts a {
+    display: flex; align-items: center; gap: 11px; text-decoration: none;
+    color: var(--dim); font-size: 14px; padding: 10px 13px; border-radius: 12px;
+    border: 1px solid transparent; transition: all .15s ease;
+  }
+  .contacts a:hover { color: var(--text); border-color: var(--border); background: rgba(61,220,132,0.06); }
+  .contacts svg { width: 18px; height: 18px; fill: var(--green); flex-shrink: 0; }
+  .contacts b { color: var(--text); font-weight: 500; }
+
+  /* ── STORY ────────────────────────────────────────────── */
+  .story { position: relative; padding-left: 26px; }
+  .story::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--border), var(--green), var(--border)); border-radius: 2px; }
+  .node { position: relative; padding: 0 0 26px 18px; }
+  .node:last-child { padding-bottom: 0; }
+  .node::before { content: ""; position: absolute; left: -26px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--green); box-shadow: 0 0 12px rgba(61,220,132,0.6); }
+  .node.love::before { border-color: #ff6b9d; box-shadow: 0 0 12px rgba(255,107,157,0.6); }
+  .node .when { color: var(--green); }
+  .node.love .when { color: #ff6b9d; }
+  .node h4 { font-size: 17px; font-weight: 700; margin: 5px 0 4px; }
+  .node p { color: var(--dim); font-size: 14px; line-height: 1.6; max-width: 560px; }
+
+  /* ── FOOTER ───────────────────────────────────────────── */
+  footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 36px 24px 46px; text-align: center; position: relative; z-index: 1; }
+  footer .heartline { color: var(--dim); font-size: 15px; margin-bottom: 12px; }
+  footer .heartline b { color: var(--green); }
+  footer .mono { color: var(--faint); }
+
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sparks span, .hero .heart, .orbit .o1, .orbit .o2 { animation: none; }
+  }
+  @media (max-width: 760px) {
+    .games, .team { grid-template-columns: 1fr; }
+    .game.featured { flex-direction: column; }
+    .game.featured .stage { min-height: 210px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sparks" id="sparks" aria-hidden="true"></div>
+
+<main>
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="heart"><img src="logo.png" alt="Lewydo green heart logo"></div>
+    <h1 class="wordmark">LEWYDO<sup>™</sup></h1>
+    <div class="motto">Love What You Do</div>
+    <p class="sub">A two-person indie game studio from Ukraine 🇺🇦<br>
+      <b>He codes. She designs.</b> Together we ship the games we'd want to play.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="#games">Our games</a>
+      <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=5953840215091948966">All on Google Play</a>
+    </div>
+  </section>
+
+  <!-- ═══ GAMES ═══ -->
+  <section id="games">
+    <div class="sec-head"><h2>Games</h2><span class="mono">made with 💚</span></div>
+    <div class="games">
+
+      <!-- Orbit Dash — featured -->
+      <article class="game featured">
+        <div class="stage" aria-hidden="true">
+          <div class="orbit">
+            <div class="r r1"></div><div class="r r2"></div>
+            <div class="o1"><div class="pl"></div></div>
+            <div class="o2"><div class="gm"></div></div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="row">
+            <div>
+              <h3>Orbit Dash</h3>
+              <div class="chip">COMING SOON · ARCADE</div>
+            </div>
+          </div>
+          <p>Our newest neon arcade. One tap to switch orbits — graze the spikes for combo,
+             bank the gems, unlock Orbit III and chase the global ranks. Launching on Google Play soon.</p>
+          <div class="links">
+            <a class="site" href="Game-Orbit-Dash/">Visit game page →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- IMC -->
+      <article class="game" style="--acc:#ffb03a">
+        <div class="shot"><img src="https://play-lh.googleusercontent.com/pEFpVaCRVv2W1TnOS90lKs9aLXcdO6JPO0oN-8nMVAM3BMW8fRSjlPr5Vx5s6eM42HV_Jmz42TxW4psOA0SO=w526-h296" alt="IMC: Idle Merge Cubes gameplay" loading="lazy"></div>
+        <div class="body">
+          <div class="row">
+            <img class="icon" src="https://play-lh.googleusercontent.com/eTy-7_t-DJ4erTgQyeC-n02xDPJPVtsCenN0jRDJ9EEeqi7gP0xVM8sqNPzC_D1Fu80kZPSkgFEjl04CU670fw=w120" alt="" loading="lazy">
+            <div>
+              <h3>IMC: Idle Merge Cubes 2026</h3>
+              <div class="chip">PUZZLE · IDLE</div>
+            </div>
+          </div>
+          <p>Drag. Merge. Evolve. A relaxing idle merge puzzle with goals, daily rewards and endless cube progression.</p>
+          <div class="links">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.lewydo.idlemergecubes">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Joints Tutorials -->
+      <article class="game" style="--acc:#4dd9ff">
+        <div class="shot"><img src="https://play-lh.googleusercontent.com/24RS2ZkeGHkZfb4krtXM-quXPvJ2Kk1CcSQQPhNwu-3SOfpQDM7m6tFr4-qtQakO9f8FsFymmyE-4X1r96aZag=w526-h296" alt="Joints Tutorials app" loading="lazy"></div>
+        <div class="body">
+          <div class="row">
+            <img class="icon" src="https://play-lh.googleusercontent.com/_PX6i6RE35kYelsFtWO4LYPz7xrsY7WjbQPn_AFoXQG4RXd7-5pdPfk7uJM5EkvyhzRexK-yhNV1uh2TzQny=w120" alt="" loading="lazy">
+            <div>
+              <h3>Joints Tutorials</h3>
+              <div class="chip">EDUCATIONAL · FOR DEVS</div>
+            </div>
+          </div>
+          <p>An interactive guide to Box2D joints in LibGDX — live examples, GIFs and curated links. Built by a LibGDX dev for LibGDX devs.</p>
+          <div class="links">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.rostislav.joints.tutorials.tutorials">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Physical Light -->
+      <article class="game" style="--acc:#ffd54a">
+        <div class="shot"><img src="https://play-lh.googleusercontent.com/whNc3CY18tbpZtzwc6x6V_Ga2tFiJSLvwGuDM9NJb7IoywvRSaNebMYgIorUQ4_deRMNX5Ng7abanHVECpQz0w=w526-h296" alt="Physical Light gameplay" loading="lazy"></div>
+        <div class="body">
+          <div class="row">
+            <img class="icon" src="https://play-lh.googleusercontent.com/Zj40m3uRTaGCT-kbPixCRWO750qPO6FlRppedZM5u7XYld0bFF-6NohMZ4oee_Vdiwmfmm2F0KOuEGfIRU94CQ=w120" alt="" loading="lazy">
+            <div>
+              <h3>Physical Light</h3>
+              <div class="chip">EDUCATIONAL · PHYSICS</div>
+            </div>
+          </div>
+          <p>Play with four types of 2D light — point, cone, chain, directional. Move sources, cast shadows, tweak every property.</p>
+          <div class="links">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.rostislav.physical.light">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══ TEAM ═══ -->
+  <section id="team">
+    <div class="sec-head"><h2>Who we are</h2><span class="mono">two people, one studio</span></div>
+    <div class="team">
+
+      <article class="person">
+        <div class="mono role">Code · Kotlin · LibGDX</div>
+        <h3>VELDAN</h3>
+        <div class="who">Vlad, 26 — Android & LibGDX developer, Poltava region, Ukraine</div>
+        <p>Writing code since 2017 (Java first, Kotlin a year later). Full-time game developer
+           since 2021 — from trainee all the way to Team Lead at a game-dev company.
+           Every Lewydo game is built on Kotlin + LibGDX, Android first.</p>
+        <p style="margin-top:10px">Have an interesting partnership or need a high-quality game built? Reach out 🎮✨</p>
+        <div class="contacts">
+          <a href="https://instagram.com/___vel__dan___"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.8.3-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.1.3-.3.7-.3 1.8-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.8.2.5.4.8.7 1.1.3.3.6.5 1.1.7.3.1.7.3 1.8.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.8-.3.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.1-.3.3-.7.3-1.8.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.8-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.3-.1-.7-.3-1.8-.3-1.3-.1-1.7-.1-4.8-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2.9a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg><span>Instagram <b>___vel__dan___</b></span></a>
+          <a href="https://t.me/vel_dan"><svg viewBox="0 0 24 24"><path d="M21.9 4.6c.3-1.2-.7-1.8-1.6-1.4L2.8 10.1c-1.1.4-1.1 1.1-.2 1.4l4.5 1.4 10.4-6.6c.5-.3.9-.1.6.2l-8.4 7.6-.3 4.6c.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3-14.1z"/></svg><span>Telegram <b>vel_dan</b></span></a>
+          <a href="mailto:veldan1202@gmail.com"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><span><b>veldan1202@gmail.com</b></span></a>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="mono role">Design · Web · UX/UI</div>
+        <h3>LILYA</h3>
+        <div class="who">Liliia Overchenko — Web / UX-UI designer</div>
+        <p>Websites, presentation design and social visuals are her main field.
+           Thanks to Vlad she stepped into game design too — every Lewydo game
+           carries her hand. <em>Between us: websites are still her first love 😉</em></p>
+        <div class="contacts">
+          <a href="https://instagram.com/lilya.design"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.8.3-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.1.3-.3.7-.3 1.8-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.8.2.5.4.8.7 1.1.3.3.6.5 1.1.7.3.1.7.3 1.8.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.8-.3.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.1-.3.3-.7.3-1.8.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.8-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.3-.1-.7-.3-1.8-.3-1.3-.1-1.7-.1-4.8-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2.9a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg><span>Instagram <b>lilya.design</b></span></a>
+          <a href="https://t.me/Over_lilya"><svg viewBox="0 0 24 24"><path d="M21.9 4.6c.3-1.2-.7-1.8-1.6-1.4L2.8 10.1c-1.1.4-1.1 1.1-.2 1.4l4.5 1.4 10.4-6.6c.5-.3.9-.1.6.2l-8.4 7.6-.3 4.6c.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3-14.1z"/></svg><span>Telegram <b>Over_lilya</b></span></a>
+          <a href="mailto:Lilyadesign05@gmail.com"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><span><b>Lilyadesign05@gmail.com</b></span></a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══ STORY ═══ -->
+  <section id="story">
+    <div class="sec-head"><h2>Our story</h2><span class="mono">so far</span></div>
+    <div class="story">
+      <div class="node">
+        <div class="mono when">2017</div>
+        <h4>First line of Java</h4>
+        <p>Vlad writes his first code. A year later — Kotlin, and it sticks for good.</p>
+      </div>
+      <div class="node">
+        <div class="mono when">Spring 2021</div>
+        <h4>All-in on game dev</h4>
+        <p>Leaving the Military Institute of Telecommunications behind, Vlad goes full-time:
+           trainee → junior → … → Team Lead. Kotlin · Android · LibGDX ever since.</p>
+      </div>
+      <div class="node love">
+        <div class="mono when">14 · 10 · 2022</div>
+        <h4>Vlad ❤ Lilya</h4>
+        <p>A developer meets a designer. The studio just doesn't know it exists yet.</p>
+      </div>
+      <div class="node love">
+        <div class="mono when">14 · 07 · 2026</div>
+        <h4>Married 💍</h4>
+        <p>Same date, different month, forever team.</p>
+      </div>
+      <div class="node">
+        <div class="mono when">Now</div>
+        <h4>Lewydo™ — Love What You Do</h4>
+        <p>Making our own games together from the Poltava region, Ukraine.
+           Next up: <a href="Game-Orbit-Dash/" style="color:var(--green)">Orbit Dash</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="heartline">Made with <b>💚</b> in Poltava region, Ukraine 🇺🇦</div>
+  <div class="mono">© 2026 Lewydo™ · <a href="https://play.google.com/store/apps/dev?id=5953840215091948966" style="color:var(--faint)">Google Play</a></div>
+</footer>
+
+<script>
+  (function () {
+    const holder = document.getElementById('sparks');
+    let html = '';
+    for (let i = 0; i < 36; i++) {
+      const s = 2 + Math.random() * 3.5;
+      html += '<span style="left:' + (Math.random() * 100).toFixed(1) + '%;top:' +
+        (Math.random() * 100).toFixed(1) + '%;width:' + s.toFixed(1) + 'px;height:' + s.toFixed(1) +
+        'px;--d:' + (3 + Math.random() * 4).toFixed(1) + 's"></span>';
+    }
+    holder.innerHTML = html;
+  })();
+</script>
+
+</body>
+</html>
