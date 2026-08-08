@@ -103,7 +103,7 @@
   }
   .game:hover { transform: translateY(-4px); border-color: var(--acc, var(--green)); box-shadow: 0 12px 44px rgba(0,0,0,0.4), 0 0 30px color-mix(in srgb, var(--acc, var(--green)) 18%, transparent); }
 
-  .shot { aspect-ratio: 16 / 9; background: #0a0d18; position: relative; overflow: hidden; }
+  .shot { aspect-ratio: 16 / 9; background: var(--shotbg, #0a0d18); position: relative; overflow: hidden; }
   .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .game .body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
@@ -232,7 +232,7 @@
 
       <!-- IMC -->
       <article class="game" style="--acc:#ffb03a">
-        <div class="shot"><img src="https://play-lh.googleusercontent.com/pEFpVaCRVv2W1TnOS90lKs9aLXcdO6JPO0oN-8nMVAM3BMW8fRSjlPr5Vx5s6eM42HV_Jmz42TxW4psOA0SO=w526-h296" alt="IMC: Idle Merge Cubes gameplay" loading="lazy"></div>
+        <div class="shot"><img src="imc-banner.png" alt="IMC: Idle Merge Cubes banner" loading="lazy"></div>
         <div class="body">
           <div class="row">
             <img class="icon" src="https://play-lh.googleusercontent.com/eTy-7_t-DJ4erTgQyeC-n02xDPJPVtsCenN0jRDJ9EEeqi7gP0xVM8sqNPzC_D1Fu80kZPSkgFEjl04CU670fw=w120" alt="" loading="lazy">
@@ -249,8 +249,8 @@
       </article>
 
       <!-- Joints Tutorials -->
-      <article class="game" style="--acc:#4dd9ff">
-        <div class="shot"><img src="https://play-lh.googleusercontent.com/24RS2ZkeGHkZfb4krtXM-quXPvJ2Kk1CcSQQPhNwu-3SOfpQDM7m6tFr4-qtQakO9f8FsFymmyE-4X1r96aZag=w526-h296" alt="Joints Tutorials app" loading="lazy"></div>
+      <article class="game" style="--acc:#4dd9ff; --shotbg:#20242b">
+        <div class="shot"><img src="joints-banner.png" alt="Joints Tutorials banner" loading="lazy" style="object-fit:contain"></div>
         <div class="body">
           <div class="row">
             <img class="icon" src="https://play-lh.googleusercontent.com/_PX6i6RE35kYelsFtWO4LYPz7xrsY7WjbQPn_AFoXQG4RXd7-5pdPfk7uJM5EkvyhzRexK-yhNV1uh2TzQny=w120" alt="" loading="lazy">
@@ -268,7 +268,7 @@
 
       <!-- Physical Light -->
       <article class="game" style="--acc:#ffd54a">
-        <div class="shot"><img src="https://play-lh.googleusercontent.com/whNc3CY18tbpZtzwc6x6V_Ga2tFiJSLvwGuDM9NJb7IoywvRSaNebMYgIorUQ4_deRMNX5Ng7abanHVECpQz0w=w526-h296" alt="Physical Light gameplay" loading="lazy"></div>
+        <div class="shot"><img src="physical-light-banner.png" alt="Physical Light gameplay" loading="lazy"></div>
         <div class="body">
           <div class="row">
             <img class="icon" src="https://play-lh.googleusercontent.com/Zj40m3uRTaGCT-kbPixCRWO750qPO6FlRppedZM5u7XYld0bFF-6NohMZ4oee_Vdiwmfmm2F0KOuEGfIRU94CQ=w120" alt="" loading="lazy">
@@ -280,6 +280,24 @@
           <p>Play with four types of 2D light — point, cone, chain, directional. Move sources, cast shadows, tweak every property.</p>
           <div class="links">
             <a class="play" href="https://play.google.com/store/apps/details?id=com.rostislav.physical.light">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Autumn Clicker -->
+      <article class="game" style="--acc:#ff8c42">
+        <div class="shot"><img src="autumn-banner.png" alt="Autumn Clicker: Relax and Tap banner" loading="lazy"></div>
+        <div class="body">
+          <div class="row">
+            <img class="icon" src="https://play-lh.googleusercontent.com/1Y9E2AfKJL-Rd0D5tiA1J0JoGvC7Lzq35yf7DIqCgfAKz2M2ycfYM_hV7srHQ7A0bQMJUE6-YTYA4f7ErNnVdt0=w120" alt="" loading="lazy">
+            <div>
+              <h3>Autumn Clicker: Relax &amp; Tap</h3>
+              <div class="chip">CASUAL &middot; RELAX</div>
+            </div>
+          </div>
+          <p>A cozy autumn clicker &mdash; falling leaves, warm colors, unlockable nature sounds and leaderboards. No timers, no pressure. Tap and unwind &#127810;</p>
+          <div class="links">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.uxo.monax">Google Play</a>
           </div>
         </div>
       </article>
