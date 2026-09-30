@@ -554,7 +554,8 @@
    "fact": "Fakta seru",
    "how": "Kubusmu menunjukkan sebuah nomor. Ketuk kotak-kotak dengan nomor yang sama, atau geser jarimu melewatinya dalam satu rantai panjang: rantai kasih poin lebih banyak.",
    "demo": "Lukisan dari museum, terungkap lapis demi lapis",
-   "gp": "Temukan di"
+   "gp": "Temukan di",
+   "aboutTitle": "Tentang kami"
   },
   "de": {
    "tagline": "DECK DAS BILD MIT WÜRFELN AUF",
@@ -584,7 +585,8 @@
    "fact": "Schon gewusst?",
    "how": "Dein Würfel zeigt eine Zahl. Tippe auf die Felder mit derselben Zahl oder zieh in einer langen Kette darüber: Ketten bringen mehr Punkte.",
    "demo": "Ein Gemälde aus dem Museum, Ebene für Ebene enthüllt",
-   "gp": "Jetzt bei"
+   "gp": "Jetzt bei",
+   "aboutTitle": "Über uns"
   },
   "en": {
    "tagline": "REVEAL THE PICTURE CUBE BY CUBE",
@@ -614,7 +616,8 @@
    "fact": "Fun fact",
    "how": "Your cube shows a number. Tap the cells with the same number, or swipe across them in one long chain: chains score more.",
    "demo": "A painting from the museum, revealed layer by layer",
-   "gp": "Get it on"
+   "gp": "Get it on",
+   "aboutTitle": "About us"
   },
   "es": {
    "tagline": "DESCUBRE LA IMAGEN CUBO A CUBO",
@@ -644,7 +647,8 @@
    "fact": "Dato curioso",
    "how": "Tu cubo muestra un número. Toca las casillas con ese mismo número o desliza el dedo sobre ellas en una cadena larga: las cadenas dan más puntos.",
    "demo": "Un cuadro del museo, revelado capa a capa",
-   "gp": "Disponible en"
+   "gp": "Disponible en",
+   "aboutTitle": "Sobre nosotros"
   },
   "fr": {
    "tagline": "RÉVÈLE L'IMAGE CUBE PAR CUBE",
@@ -674,7 +678,8 @@
    "fact": "Le savais-tu ?",
    "how": "Ton cube affiche un numéro. Touche les cases qui portent le même numéro, ou glisse le doigt dessus en une longue chaîne : les chaînes rapportent plus de points.",
    "demo": "Un tableau du musée, dévoilé couche par couche",
-   "gp": "Disponible sur"
+   "gp": "Disponible sur",
+   "aboutTitle": "À propos"
   },
   "it": {
    "tagline": "SCOPRI IL QUADRO CUBO PER CUBO",
@@ -704,7 +709,8 @@
    "fact": "Curiosità",
    "how": "Il tuo cubo mostra un numero. Tocca le caselle con lo stesso numero o passaci sopra col dito in una lunga catena: le catene danno più punti.",
    "demo": "Un quadro del museo, svelato strato dopo strato",
-   "gp": "Disponibile su"
+   "gp": "Disponibile su",
+   "aboutTitle": "Chi siamo"
   },
   "nl": {
    "tagline": "ONTHUL HET PLAATJE MET BLOKJES",
@@ -734,7 +740,8 @@
    "fact": "Leuk weetje",
    "how": "Je blokje toont een nummer. Tik op de vakjes met hetzelfde nummer, of veeg eroverheen in één lange ketting: kettingen leveren meer punten op.",
    "demo": "Een schilderij uit het museum, laag voor laag onthuld",
-   "gp": "Ontdek het op"
+   "gp": "Ontdek het op",
+   "aboutTitle": "Over ons"
   },
   "pl": {
    "tagline": "ODKRYJ OBRAZ KOSTKA PO KOSTCE",
@@ -770,7 +777,8 @@
    "fact": "Ciekawostka",
    "how": "Twoja kostka pokazuje numer. Dotykaj pól z tym samym numerem albo przesuwaj po nich palcem, tworząc jeden długi łańcuch: łańcuchy dają więcej punktów.",
    "demo": "Obraz z muzeum odkrywany warstwa po warstwie",
-   "gp": "Pobierz z"
+   "gp": "Pobierz z",
+   "aboutTitle": "O nas"
   },
   "pt": {
    "tagline": "REVELE A IMAGEM CUBO A CUBO",
@@ -800,7 +808,8 @@
    "fact": "Curiosidade",
    "how": "Seu cubo mostra um número. Toque nas casas com o mesmo número ou deslize o dedo por elas numa corrente longa: correntes dão mais pontos.",
    "demo": "Uma pintura do museu, revelada camada por camada",
-   "gp": "Disponível no"
+   "gp": "Disponível no",
+   "aboutTitle": "Sobre nós"
   },
   "vi": {
    "tagline": "HÉ LỘ BỨC TRANH TỪNG KHỐI MỘT",
@@ -827,7 +836,8 @@
    "fact": "Bạn có biết?",
    "how": "Khối của bạn hiện một con số. Chạm vào các ô có cùng số, hoặc lướt ngón tay qua chúng thành một chuỗi dài: chuỗi cho nhiều điểm hơn.",
    "demo": "Một bức tranh trong bảo tàng, hé lộ từng lớp",
-   "gp": "Tải trên"
+   "gp": "Tải trên",
+   "aboutTitle": "Về chúng tôi"
   },
   "tr": {
    "tagline": "RESMİ KÜP KÜP ORTAYA ÇIKAR",
@@ -857,7 +867,8 @@
    "fact": "İlginç bilgi",
    "how": "Küpünde bir numara var. Aynı numaralı hücrelere dokun ya da parmağınla tek uzun bir zincir hâlinde üzerlerinden kaydır: zincirler daha çok puan getirir.",
    "demo": "Müzeden bir tablo, katman katman ortaya çıkıyor",
-   "gp": "Hemen indir:"
+   "gp": "Hemen indir:",
+   "aboutTitle": "Hakkımızda"
   },
   "uk": {
    "tagline": "РОЗКРИЙ КАРТИНУ КУБИКАМИ",
@@ -893,7 +904,8 @@
    "fact": "Цікавий факт",
    "how": "На твоєму кубі — номер. Тисни на клітинки з тим самим номером або веди по них пальцем одним довгим ланцюжком: ланцюжки дають більше очок.",
    "demo": "Картина з музею розкривається шар за шаром",
-   "gp": "Доступно в"
+   "gp": "Доступно в",
+   "aboutTitle": "Про нас"
   },
   "ko": {
    "tagline": "큐브 하나씩 그림을 드러내요",
@@ -920,7 +932,8 @@
    "fact": "재미있는 사실",
    "how": "내 큐브에는 번호가 있어요. 같은 번호의 칸을 탭하거나, 손가락을 떼지 않고 길게 이어서 드래그하세요. 체인을 만들면 점수를 더 받아요.",
    "demo": "박물관의 명화가 레이어마다 드러나는 모습",
-   "gp": "다운로드하기"
+   "gp": "다운로드하기",
+   "aboutTitle": "소개"
   },
   "ja": {
    "tagline": "キューブで絵を描き出そう",
@@ -947,7 +960,8 @@
    "fact": "豆知識",
    "how": "キューブには番号が書いてあります。同じ番号のマスをタップするか、指を離さずに一気になぞりましょう。チェーンにすると得点アップ！",
    "demo": "美術館の名画がレイヤーごとに姿を現します",
-   "gp": "今すぐ入手"
+   "gp": "今すぐ入手",
+   "aboutTitle": "私たちについて"
   },
   "zh-TW": {
    "tagline": "用方塊一塊塊揭開畫作",
@@ -974,7 +988,8 @@
    "fact": "冷知識",
    "how": "你的方塊上有一個數字。點擊數字相同的格子，或手指不離開螢幕一路滑過去連成長長的連鎖：連鎖能拿到更多分數。",
    "demo": "博物館裡的一幅名畫，正一層層揭曉",
-   "gp": "立即下載"
+   "gp": "立即下載",
+   "aboutTitle": "關於我們"
   }
  },
  "logo": "<div class=\"plogo\" role=\"img\" aria-label=\"CubePix\"><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.00s\"><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.05s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.10s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.15s\"></i><b></b><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.16s\"><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.32s\"><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.48s\"><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.26s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.36s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i></div></div><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.64s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.43s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.48s\"></i><b></b><b></b><b></b></div><div class=\"pl-l\" style=\"--cols:3;--dl:0.80s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.40s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.45s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.50s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i></div><div class=\"pl-l\" style=\"--cols:5;--dl:0.96s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.52s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i></div></div></div>"

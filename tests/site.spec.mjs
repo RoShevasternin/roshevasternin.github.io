@@ -1,4 +1,5 @@
-// npm test — the built site (npm run build first; npm test does it): languages, the heart, both mini-games, links, no third party.
+// npm test — the built site (npm run build first; npm test does it): languages, the heart, both mini-games, links, no third party,
+// and the brand page (/brand/): its splash, About us in 15 languages, every download, brand.json and the kit zip.
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
@@ -43,7 +44,7 @@ test('the pixels become the Lewydo heart; tap it and they fly again', async ({ p
   const w = watch(page);
   await page.goto('./?lang=en');
   await expect(page.locator('#top')).toHaveClass(/\blit\b/, { timeout: 6000 });                      // the heart landed
-  await expect(page.locator('#top .lw-lockup .lw-beat')).toHaveClass(/lw-beating/);                   // and beat once
+  await expect(page.locator('#top .lw-lockup .lw-logo')).toHaveClass(/lw-beating/);                   // and beat once
   await page.locator('#heartBtn').click();
   await expect(page.locator('#top')).not.toHaveClass(/\blit\b/);
   await expect(page.locator('#top')).toHaveClass(/\blit\b/, { timeout: 4000 });
@@ -81,6 +82,35 @@ test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async (
   expect(await (await request.get('./app-ads.txt')).text()).toContain('pub-4052300465234748');        // AdMob reads it: never lose it
   expect(await (await request.get('./robots.txt')).text()).toContain('sitemap.xml');
   expect(await (await request.get('./sitemap.xml')).text()).toContain('Game-CubePix/');
+  expect(await (await request.get('./sitemap.xml')).text()).toContain('/brand/');
   for (const f of ['assets/og.png', 'assets/favicon.png', 'assets/icon-180.png', 'logo.png', 'banner.png', 'brand.png'])
     expect((await request.get('./' + f)).status(), f).toBe(200);
+});
+
+test('the brand page: the splash, About us in every language, every download, brand.json and the kit zip', async ({ page, request }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  const w = watch(page);
+  await page.goto('./?lang=en');
+  await expect(page.locator('.foot-links a[href="/brand/"]')).toHaveText('Brand');                   // the site links to it
+  await page.goto('./brand/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');                                  // English, always
+  await expect(page.locator('#heroLock')).toHaveClass(/lw-splash/);                                  // the splash plays at once
+  await page.locator('#abLang').selectOption('uk');                                                  // About us, the games' own words
+  await expect(page.locator('#abTitle')).toHaveText('Про нас');
+  await expect(page.locator('#abText')).toContainText('Влад');
+  await page.locator('.tabs button', { hasText: 'BrandScreen.kt' }).click();                         // the code, file by file
+  await expect(page.locator('pre.src:visible')).toContainText('class BrandScreen');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
+  const links = await page.evaluate(() => [...new Set([...document.querySelectorAll('a[download], .tabs button')].map((a) => a.getAttribute('href') || a.dataset.file))].filter((h) => h && h !== '#'));
+  expect(links.length).toBeGreaterThan(20);
+  for (const h of links) expect((await request.get('.' + h)).status(), h).toBe(200);
+  const B = await (await request.get('./brand/brand.json')).json();
+  expect(B.slogan).toBe('Love What You Do');
+  expect(Object.keys(B.about.texts)).toHaveLength(15);
+  for (const u of [...Object.values(B.images).flatMap((i) => [i.png, i.webp]), B.atlas.atlas, B.atlas.png, ...Object.values(B.code).map((c) => c.url)])
+    expect((await request.get(u.replace('https://roshevasternin.github.io/', './'))).status(), u).toBe(200);
+  const zip = await (await request.get('./brand/lewydo-brand-kit.zip')).body();
+  expect(zip.subarray(0, 2).toString()).toBe('PK');
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
 });

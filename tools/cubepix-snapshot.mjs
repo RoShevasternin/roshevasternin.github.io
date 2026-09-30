@@ -18,7 +18,7 @@ const logo = html.slice(at, end);
 const KEYS = { tagline: 'g:menu.tagline', lead: 'hero.lead', play: 'cta.play', soon: 'cta.gpSoon', demoNote: 'cta.demoNote',
   pics: 'chip.pics', floors: 'chip.floors', langs: 'chip.langs', free: 'chip.free', layer: 'g:game.layer', revealed: 'g:game.revealed',
   about: 'g:set.aboutText', langTitle: 'g:lang.title', site: 'g:set.site', games: 'g:set.games', fact: 'g:fact.tag', how: 'how.1.d',
-  demo: 'hero.demo', gp: 'cta.gp' };
+  demo: 'hero.demo', gp: 'cta.gp', aboutTitle: 'g:set.about' };
 const S = Object.fromEntries(Object.keys(D.S).map((L) => [L, Object.fromEntries(Object.entries(KEYS).map(([k, g]) => [k, D.S[L][g]]))]));
 const hero = D.hero, puzzle = D.how;                                   // the showcase paintings; the small picture to play
 const out = {
