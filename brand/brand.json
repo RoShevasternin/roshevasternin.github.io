@@ -357,8 +357,10 @@
     "at": [
      80,
      53
-    ]
+    ],
+    "font": "Nunito ExtraBold 16, uppercase, white 70%"
    },
+   "backRadius": 12,
    "glow": {
     "at": [
      30,
