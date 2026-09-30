@@ -36,6 +36,8 @@
 :lang(ja){--f:"Nunito","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;}
 :lang(ko){--f:"Nunito","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;}
 :lang(zh-TW){--f:"Nunito","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;}
+/* lines break between phrases, not inside words: Japanese by phrase (where the browser can), Korean between words */
+:lang(ja){word-break:auto-phrase;line-break:strict;} :lang(ko){word-break:keep-all;} :lang(zh-TW){line-break:strict;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
 body{min-height:100vh;color:var(--ink);font:500 17px/1.62 var(--f);overflow-x:hidden;overflow-x:clip;--acc:#3DDC84;transition:--acc .9s ease;
@@ -650,7 +652,10 @@ let lang = (IDS.includes(urlLang) && urlLang) || saved || (navigator.languages |
 const PR = {}; const plural = (n) => (PR[lang] ??= new Intl.PluralRules(lang)).select(n);
 const T = (k, n) => { let v = D.S[lang][k] ?? D.S.en[k] ?? ''; if (typeof v === 'object') v = v[plural(n ?? 0)] ?? v.other; return String(v).replace(/\{n\}/g, n ?? ''); };
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+// names stay English even in CAPS: Turkish casing would give «KOTLİN»
+const NAMES = /\b(Kotlin|LibGDX|Java|Box2D|Android|Lewydo|CubePix|Orbit Dash|Orbit III|Google Play|Telegram|UX\/UI|Team Lead|Idle)\b/g;
+const rich = (s) => { let h = esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+  return lang === 'tr' ? h.replace(NAMES, '<span lang="en">$1</span>') : h; };
 const pic = (key, f) => { const p = D.cp.pics[key]; return (p[lang] || p.en)[f] || ''; };
 const onLang = [];
 function applyLang() {

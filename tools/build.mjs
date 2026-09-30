@@ -32,6 +32,9 @@ for (const L of IDS) {
 // French typography: a no-break space before : ; ! ? » and after « (the game's own French does the same)
 const nb = (s) => s.replace(/ ([:;!?»])/g, ' $1').replace(/« /g, '« ');
 for (const [k, v] of Object.entries(S.fr)) if (!k.startsWith('cp:')) S.fr[k] = typeof v === 'string' ? nb(v) : Object.fromEntries(Object.entries(v).map(([f, s]) => [f, nb(s)]));
+// a dash never starts a line: it holds on to the word before it (every language)
+const dash = (s) => s.replace(/ ([—–]) /g, '\u00a0$1 ');
+for (const L of IDS) for (const [k, v] of Object.entries(S[L])) if (!k.startsWith('cp:')) S[L][k] = typeof v === 'string' ? dash(v) : Object.fromEntries(Object.entries(v).map(([f, x]) => [f, dash(x)]));
 if (problems.length) { console.warn('⚠ ' + problems.join('\n⚠ ')); if (process.argv.includes('--strict')) process.exit(1); }
 
 // ── the pieces ──
