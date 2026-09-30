@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+playwright-report/
+# npm run look → shots/ (pictures of the page to look at, not part of the site)
+/shots/
+.DS_Store
+__pycache__/
+# scratch checks while working (not part of the site tests)
+tests/_*.spec.mjs

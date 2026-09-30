@@ -1,0 +1,981 @@
+{
+ "_about": "Made by tools/cubepix-snapshot.mjs from the CubePix site (github.com/RoShevasternin/Game-CubePix). Do not edit by hand.",
+ "counts": {
+  "pics": 74,
+  "floors": 8,
+  "langs": 15
+ },
+ "hero": [
+  "great_wave",
+  "starry_night",
+  "irises",
+  "water_lilies"
+ ],
+ "puzzle": "strawberry",
+ "art": {
+  "great_wave": {
+   "w": 48,
+   "h": 33,
+   "rows": "444444444444444444444444444444444444444444444444/444444444444444444444444444444444444444444444444/444444444444444444444444444444444444444444444444/4444444444444433333hhh44444444444444455554444444/444444444444333333hhhhhh444444444445555555544444/4444444444333366hhhhhhhh664444445555555555555554/444444443338hh3hh13hhhhh444444444444444444444444/444444433877h22h22133hhhh44444444444444444444444/444444388777222aa2aa36hhhhh444444444444555555554/44444388877722aa22aa166h66hh44444555555555555555/44443888887722a22aa2166h6hhhh4444555555555555555/111366666663119119111hhh44h66h444444444444444444/6666666666h3199119111hh44h664h334445555555555511/66666666hhh119911911hh44hh6444344555555555555511/66hhhh66hh1399119911h114hh3444455555555555555111/6662221111191119911155555555555555555555555511hh/66611211339911991111555555555555555555555511hhhh/66fff21119921191111155555555555555555555ee11hhh1/11fffff22992111hh111bhhbddddddhhddddbbbeee111hh1/1311fffff92211hhh111bhbbbbdbbhhhbbbbbbeeee111h11/131111fffff2hhhhhh111bbbhhbbhhhhhcccbeeehh111111/11111111ffffhhhhhhh1111bcccchhhhhhcceeehh1111111/222111111133hhhhhhhh3311111hhhhhhhfehhhh33399221/222211111333hhh66hhhh33311fegeegggfehhh333691111/666666hh6666hh66hhh3g333311222222221hhh11111hhhh/66666hhh666hhh6hhh11gg331113311333331hhh331hhhhh/66666hhhh66hhh6hhh111gg3fhhhhhhhh33333hhhhh13122/33133111hhh3hhhh3612111ggfhhh23313hhhhh222966hhh/111212211h333hh316622211eeeff2211hhhhh2222699hhh/22299111933333h21166222111eegeeghhh2222hhhh11112/22922122299333312116622211111gggggeehh332222hhhh/2992222229931112122166222211111eeggghhh22223hhhh/9222222222991111112226611111111333333hhhhhh33333",
+   "pal": [
+    "#1d3a6b",
+    "#001453",
+    "#6f7091",
+    "#d9bd8c",
+    "#efe3c4",
+    "#a9c7d4",
+    "#76a5c0",
+    "#d1e2e1",
+    "#4677aa",
+    "#003c81",
+    "#8c8a84",
+    "#5e6369",
+    "#b4ab9b",
+    "#dd946f",
+    "#9f665f",
+    "#ffc585",
+    "#fdfcf6"
+   ]
+  },
+  "starry_night": {
+   "w": 60,
+   "h": 42,
+   "rows": "2222gggg222c1312222gg3122gg1111222gghhh444221277677ggg888776/2222gggg222c1312222ggg133ggg212222ggghhh4441227776gggi888866/222ggjjgg22ce14222ggjg13ggjgg2222gggjjgh44422767gggiijjji888/222ggjjgg22cee44222ggg444ggg22222ggjjjjgh444267gggiiiijjji88/2222gggg222cee44g2244444444222222ggjjjjgh242266ggiiiiiijjj88/22222gg2222cee4gggg44444444444444gggjjhh222227gggiiiiiijjjj8/54442222222ceeggjggg44445555554433gghhh221227hgggiiiiiijjjj8/54444422222ceegjjjgg1144555555563331hh2211166ghgiiiiiiijjjj8/5554444422cceeggjgg111333111666666631221gggg66hgiiiiiijjjjj8/335544444ccceegggg3333331116655555666221gjjgg66jggiiijjjjji8/333355444cccee33g3333331216665555554666hgjjjg66jjggjjjjjiii8/313333333eefccc111111111166116663815467ggjjgg66gjjjjjjjiii88/551133333eefccc11111g1116636613368834471gggg11666jjjjjj68883/55551113eeefccc1111ggg16663631333888447111111116666jjj666633/55555555eeefccc111ggjg665563366bb388447111111111666666666311/333355531eefccc1111gg666556116bbb336446111111113331133444444/113333331ccffccc11166666553116bbb666463633333311333333444444/11311133ecccffccc6666666853861777761661666788331444488888888/1333g133ecccffccc555566685556611111166661111866166888iiiiiii/13gggggeecccffccc5555666665556333316166333333861688iiiiiiiii/11gjjjggecccffccc1166ggggg755576776611633668366188iiiiiii888/11gjjjggcccffdeee116gggjggg761111122116333336318888888bbbaaa/15ggjggccccfcdeee166ggjjjgg67111111111681111638888888bbbaaaa/555ggg66cccfdceee666gjjjjjg6614444444338888838888bbbb9aaaaaa/66666666cccfdccee666ggjjggg888866888888888888899bbbbba9aaaaa/66666666cccffdcee666gggjgg8888888886688888889999b999aa999999/66666666ccccffcce6ee6gggg88444444664442222999999aaaa9bbbbbbb/1111111cccccffcdcceee666661111111672222229999999999bbbbbbbbb/111111ccccccffcdecdee666112111111772222249999999bbbbbbbbbbbb/999999ccfcccdffdedffce11222221444774444444444444444455555444/999999ccfcccddfdddffcc11224444444774447777744444444455767767/999999ccfcccddfdddffccc1444444444774447777794444444445766676/999999ccffcdddffdddffccc33333999977944744339b347644bb5456444/999999cccffccddffdddfccc3339999977779bb33433333999b9b5544554/999999cccffcccdffdccffcca3aaa99777779aba33334333999449444445/fffff9cccffdccdffcdcdffdaaa33337777799aaa7jj7443333449666669/ffffffeccffdcdddffdddffdcaa777777jj7aaaaa7777997jj699966j669/ffffffeccffddcdddfddcffdcca777777j77aaaa37779997j6699963j699/44ffffccccffcddddffdcddfccaa77777777333333399997666335333399/444fffeccccfcdddddffddddcccaa333aa99997jj79333339a9996jj6a33/4444ffeecccffcddddffddddcccc333399aaa97j77bb43333aa996j66a93/4444ffeeeecdffcdddffdccdccccc33339aa9a77779943333aaaa6666994",
+   "pal": [
+    "#1f47a8",
+    "#002895",
+    "#5564b5",
+    "#4a7fd6",
+    "#76a5f8",
+    "#a6cdea",
+    "#7b9fc3",
+    "#d5fafe",
+    "#1b2a66",
+    "#001247",
+    "#3d4c91",
+    "#22382a",
+    "#0b2010",
+    "#45605a",
+    "#4d6d3c",
+    "#f1efb8",
+    "#c0babd",
+    "#fdfc85",
+    "#f7c325"
+   ]
+  },
+  "irises": {
+   "w": 48,
+   "h": 36,
+   "rows": "hhhhh444455555hhh5566546444444cccccc44444iddeeee/hhhhh444444444hhh544455444444ccccccc4444dddddeee/hhhh4444hhh4455hh455hh5544444ccccccc444ddddddeee/hhh54665hhhh555544544hh544444ccchccf444fddhhccee/hh445555hhhh455456646h4444444fffhff44444ffhecdde/554hhh564hh45hhhh66666454cccc4ffff4444444fffehhe/55hhhh5644hhh555446644664cchhc44a4444ddd441fffff/hhhhhh56664hhd5554666666ccchhc44a444dddddd111fff/hhfccf6iii45cdd444661666ffff1114a11ccchddc111iii/hhffffiiiii5cdhc665c111cccc11111a11ffffdc111iiie/hhffffiiii44dfhc15ccc11ccccc1111a11ffff11111iiie/hhcccfiiih44ff1111ff111chhccc1iccc11fff11dcc1iif/iicccc11aacicc2333aa111ffff1cccccc1111accchhe33e/iccccc11aacccc2313aa211fff121ccccc2212accchhe3ec/ffccc111acccccc231aa211aaa122fccff2212affff23ece/ffff1111afcccff21ccc213aaa2222ffff2222a22a223fff/fff11111afffff22ccccc33aaa22222ff21122a22a1133ff/11a11111a11fff1cccccc13aa3212122a12112a22a133311/1aa11a111111aa121ffff11333cc1112a11211a22a331311/aaa11aa11111aa1211ff313132cc1221a11111a11a331331/aa1111aa1111aa2133aa313312fhh111a11111a11a331331/1aa111aa1111aa213aa1331312177133a21111a113231331/11aa11aa1111aa113a1133112117777aa21211a133233331/111aa111a111aa13aaicccc12ff77777312221a33eeee131/g113aa311aa3aa3aa2ccchhcff77777132c21333cccccc11/fgg33aa31a13a33a33ccchhc77777771ccccc33ccccccc22/99ggf3aa31333313332fff2277777711ccchcc22fchhcf22/8999gf991313231333222222cc777333ffff2222ffffff12/88899f773333211333212222cccc33333ff2221122fff231/88888899g333fff113212ffffchc22133aa2222222bcccc3/78888888833gf7ff3133ff7ffff222213aa22c2222cccccc/788888888gg97777f33377777ff222221aaccccc22cccccc/777778888gg977777f3377777772cccc11achhccc2cchcff/779798888797777777ff7777cc7ccchhc12ffff222fffff1/777978787979777777f77777c77ccchhc222ff22222ff211/788877799779777777777777ff7fffff2222bb222222b221",
+   "pal": [
+    "#62b394",
+    "#499793",
+    "#78ce98",
+    "#9fae44",
+    "#859548",
+    "#bac745",
+    "#c4643c",
+    "#ad4a31",
+    "#d6814f",
+    "#2e6b55",
+    "#155351",
+    "#4e64d6",
+    "#004bd7",
+    "#7b80d3",
+    "#2b2d8a",
+    "#594a8c",
+    "#f2a92e",
+    "#f4f2e8"
+   ]
+  },
+  "water_lilies": {
+   "w": 48,
+   "h": 36,
+   "rows": "aa4115115111122111144774222212477774133336441112/aa4115114411221211147774222214477774533336551112/aa5115115511224211447774222224777777513335555212/aa5554115551224213447774221224777774511311555222/aa5546144551224213447774221224477744521112252222/aa7566644551224211447774222222447444222111222222/a77447665451122111ffffffddddddd44433222212222222/77746766544433333fffddfddddddddd4333333311122122/77766766666ddddeeefd4441222221ddbbbbcc1111111546/7777666ddddd222222fdfddddddddddd111222cccccb5466/777776ddddd1222233ffffffdddddddd333332bbcccbb666/777766dd1111ffdeeeff3333311122ddbbbbbb3333cbbbbb/977744ddddddd1111ddd1111111111dd11111bbbbbbb4446/997444dddddd111111ddd11111111ddd111111bbbbbb4666/997444dd333311111ddddddddddddddd1111111666bbbbbb/997444dd33331ddddddaaaaaaaaaaaadddddd11555bb6666/77494dddd33ddddddaaaaaaaaaaaaaaaaddddd155bbb5555/77498dddddddaaaaaa11111111111111aaaaaabbbbbb5555/974aaaaaaaaaa111111111111111111111111aaaaaabbbbb/994aaaaaaaa311111111111111111111111115aaaaaaabbb/94497a88333344444777444411111444777455577677aaaa/499aa7844447777444444hh477777444h444647774777557/449aa74444a7777bb4444h444777a444h4444a7744776555/447aa744aaaaaabbbbaaa44444aaaaaa444aaaaaa6776775/447aa7444gg7777444ggh44466aaa445777777hgg4477774/447aa7444g17777444g1h44441aa155a777771hg14477747/447aa11111111aaaa1111111111111aaaaa1111111117447/111444441111111444444411111115555551111114444411/111444444111111444444471111466446544111444444111/77777744gh4477777744477777744ahh6777774447777777/aaaaaaa44444aaaaaabbbbbaaaaaaa5664aaaaaaaabbbaaa/aaaaaaaa44444aaaaaabbbbaaaaaa55664aaaaaaaabbbaaa/44444777hggh444aaaaa4447777445444aaaa44444hhghha/aa4444444444444hhgh444bbaaa555hhhhh544aaaaaaaaaa/aaaa4444444444444g444bbbaa4555hhhha64aaaaaaaaaaa/aaaaaaa4444444444444aaa454555444aaaaaabbbbaa4444",
+   "pal": [
+    "#1f4b2d",
+    "#002f1e",
+    "#436a3e",
+    "#3f7d3b",
+    "#1a6029",
+    "#629b4b",
+    "#9cc450",
+    "#82a94a",
+    "#b7de51",
+    "#4d69b2",
+    "#93aae4",
+    "#6a8ccd",
+    "#c4e6b8",
+    "#93bb9d",
+    "#e4ffc5",
+    "#fff6e8",
+    "#f597bd"
+   ]
+  },
+  "strawberry": {
+   "w": 11,
+   "h": 12,
+   "rows": "00000040000/00000400000/00220402200/02222222240/22212221244/12111211143/11651115133/06111111330/01511511530/00111113300/00031513000/00003330000",
+   "pal": [
+    "#f0284a",
+    "#4cb84a",
+    "#b0143c",
+    "#2a7a34",
+    "#ffe14a",
+    "#ffe0e6"
+   ]
+  }
+ },
+ "pics": {
+  "great_wave": {
+   "id": {
+    "n": "Ombak Besar Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "sekitar 1831"
+   },
+   "de": {
+    "n": "Die große Welle",
+    "a": "Katsushika Hokusai",
+    "y": "um 1831"
+   },
+   "en": {
+    "n": "Great Wave off Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "c. 1831"
+   },
+   "es": {
+    "n": "La gran ola de Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "c. 1831"
+   },
+   "fr": {
+    "n": "La Grande Vague",
+    "a": "Katsushika Hokusai",
+    "y": "vers 1831"
+   },
+   "it": {
+    "n": "La grande onda",
+    "a": "Katsushika Hokusai",
+    "y": "1831 circa"
+   },
+   "nl": {
+    "n": "De grote golf",
+    "a": "Katsushika Hokusai",
+    "y": "ca. 1831"
+   },
+   "pl": {
+    "n": "Wielka fala w Kanagawie",
+    "a": "Katsushika Hokusai",
+    "y": "ok. 1831"
+   },
+   "pt": {
+    "n": "A Grande Onda",
+    "a": "Katsushika Hokusai",
+    "y": "c. 1831"
+   },
+   "vi": {
+    "n": "Sóng lừng Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "khoảng 1831"
+   },
+   "tr": {
+    "n": "Büyük Dalga",
+    "a": "Katsushika Hokusai",
+    "y": "yak. 1831"
+   },
+   "uk": {
+    "n": "Велика хвиля в Канаґаві",
+    "a": "Кацусіка Хокусай",
+    "y": "бл. 1831"
+   },
+   "ko": {
+    "n": "가나가와 해변의 높은 파도",
+    "a": "가쓰시카 호쿠사이",
+    "y": "1831년경"
+   },
+   "ja": {
+    "n": "神奈川沖浪裏",
+    "a": "葛飾北斎",
+    "y": "1831年頃"
+   },
+   "zh-TW": {
+    "n": "神奈川沖浪裏",
+    "a": "葛飾北齋",
+    "y": "約1831"
+   }
+  },
+  "starry_night": {
+   "id": {
+    "n": "Malam Berbintang",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "de": {
+    "n": "Die Sternennacht",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "en": {
+    "n": "The Starry Night",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "es": {
+    "n": "La noche estrellada",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "fr": {
+    "n": "La Nuit étoilée",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "it": {
+    "n": "Notte stellata",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "nl": {
+    "n": "De sterrennacht",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "pl": {
+    "n": "Gwiaździsta noc",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "pt": {
+    "n": "A Noite Estrelada",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "vi": {
+    "n": "Đêm đầy sao",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "tr": {
+    "n": "Yıldızlı Gece",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "uk": {
+    "n": "Зоряна ніч",
+    "a": "Вінсент ван Гог",
+    "y": "1889"
+   },
+   "ko": {
+    "n": "별이 빛나는 밤",
+    "a": "빈센트 반 고흐",
+    "y": "1889"
+   },
+   "ja": {
+    "n": "星月夜",
+    "a": "フィンセント・ファン・ゴッホ",
+    "y": "1889"
+   },
+   "zh-TW": {
+    "n": "星夜",
+    "a": "文森·梵谷",
+    "y": "1889"
+   }
+  },
+  "irises": {
+   "id": {
+    "n": "Bunga Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "de": {
+    "n": "Schwertlilien",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "en": {
+    "n": "Irises",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "es": {
+    "n": "Lirios",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "fr": {
+    "n": "Les Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "it": {
+    "n": "Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "nl": {
+    "n": "Irissen",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "pl": {
+    "n": "Irysy",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "pt": {
+    "n": "Os Lírios",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "vi": {
+    "n": "Hoa diên vĩ",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "tr": {
+    "n": "Süsenler",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "uk": {
+    "n": "Іриси",
+    "a": "Вінсент ван Гог",
+    "y": "1889"
+   },
+   "ko": {
+    "n": "붓꽃",
+    "a": "빈센트 반 고흐",
+    "y": "1889"
+   },
+   "ja": {
+    "n": "アイリス",
+    "a": "フィンセント・ファン・ゴッホ",
+    "y": "1889"
+   },
+   "zh-TW": {
+    "n": "鳶尾花",
+    "a": "文森·梵谷",
+    "y": "1889"
+   }
+  },
+  "water_lilies": {
+   "id": {
+    "n": "Kolam Teratai",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "de": {
+    "n": "Der Seerosenteich",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "en": {
+    "n": "The Water Lily Pond",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "es": {
+    "n": "El estanque de nenúfares",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "fr": {
+    "n": "Le Bassin aux nymphéas",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "it": {
+    "n": "Lo stagno delle ninfee",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "nl": {
+    "n": "De waterlelievijver",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "pl": {
+    "n": "Staw z nenufarami",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "pt": {
+    "n": "O Lago das Ninfeias",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "vi": {
+    "n": "Ao hoa súng",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "tr": {
+    "n": "Nilüfer Havuzu",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "uk": {
+    "n": "Ставок із лататтям",
+    "a": "Клод Моне",
+    "y": "1899"
+   },
+   "ko": {
+    "n": "수련 연못",
+    "a": "클로드 모네",
+    "y": "1899"
+   },
+   "ja": {
+    "n": "睡蓮の池",
+    "a": "クロード・モネ",
+    "y": "1899"
+   },
+   "zh-TW": {
+    "n": "睡蓮池",
+    "a": "克勞德·莫內",
+    "y": "1899"
+   }
+  },
+  "strawberry": {
+   "id": {
+    "n": "Stroberi",
+    "a": "",
+    "y": "",
+    "f": "Stroberi bukan buah beri sejati: tiap “biji” kecil di permukaannya adalah buah tersendiri yang berisi biji."
+   },
+   "de": {
+    "n": "Erdbeere",
+    "a": "",
+    "y": "",
+    "f": "Die Erdbeere ist keine echte Beere: Jedes winzige „Samenkorn“ auf ihr ist eine eigene Frucht mit einem Samen darin."
+   },
+   "en": {
+    "n": "Strawberry",
+    "a": "",
+    "y": "",
+    "f": "A strawberry isn’t a true berry: each tiny “seed” on it is a separate fruit with a seed inside."
+   },
+   "es": {
+    "n": "Fresa",
+    "a": "",
+    "y": "",
+    "f": "La fresa no es una baya verdadera: cada «semillita» de su superficie es un fruto aparte con una semilla dentro."
+   },
+   "fr": {
+    "n": "Fraise",
+    "a": "",
+    "y": "",
+    "f": "La fraise n’est pas une vraie baie : chaque petite « graine » à sa surface est un fruit à part entière, avec une graine à l’intérieur."
+   },
+   "it": {
+    "n": "Fragola",
+    "a": "",
+    "y": "",
+    "f": "La fragola non è una vera bacca: ogni piccolo «seme» sulla sua superficie è un frutto a sé, con dentro un seme."
+   },
+   "nl": {
+    "n": "Aardbei",
+    "a": "",
+    "y": "",
+    "f": "Een aardbei is geen echte bes: elk “zaadje” erop is een apart vruchtje met een zaadje erin."
+   },
+   "pl": {
+    "n": "Truskawka",
+    "a": "",
+    "y": "",
+    "f": "Truskawka nie jest prawdziwą jagodą: każde maleńkie „ziarenko” na niej to osobny owoc z nasionkiem w środku."
+   },
+   "pt": {
+    "n": "Morango",
+    "a": "",
+    "y": "",
+    "f": "O morango não é uma baga de verdade: cada “sementinha” nele é um fruto à parte, com uma semente dentro."
+   },
+   "vi": {
+    "n": "Dâu tây",
+    "a": "",
+    "y": "",
+    "f": "Dâu tây không phải quả mọng thật sự: mỗi “hạt” li ti trên nó là một quả riêng, bên trong có một hạt."
+   },
+   "tr": {
+    "n": "Çilek",
+    "a": "",
+    "y": "",
+    "f": "Çilek aslında gerçek bir üzümsü meyve değil: üstündeki her minik “tohum”, içinde tohum taşıyan ayrı bir meyvedir."
+   },
+   "uk": {
+    "n": "Полуниця",
+    "a": "",
+    "y": "",
+    "f": "Полуниця — не справжня ягода: кожне «зернятко» на ній — це окремий плід із насінинкою всередині."
+   },
+   "ko": {
+    "n": "딸기",
+    "a": "",
+    "y": "",
+    "f": "딸기는 진짜 베리가 아니에요. 겉에 박힌 작은 ‘씨’ 하나하나가 씨를 품은 별개의 열매예요."
+   },
+   "ja": {
+    "n": "いちご",
+    "a": "",
+    "y": "",
+    "f": "いちごは本当のベリーではありません。表面の小さな「種」は一つひとつが果実で、その中に種が入っています。"
+   },
+   "zh-TW": {
+    "n": "草莓",
+    "a": "",
+    "y": "",
+    "f": "草莓不算真正的漿果：表面每顆小小的「種子」其實都是一個獨立的果實，裡面各包著一粒種子。"
+   }
+  }
+ },
+ "S": {
+  "id": {
+   "tagline": "UNGKAP GAMBAR KUBUS DEMI KUBUS",
+   "lead": "Puzzle santai untuk pencinta seni. Isi kubus lapis demi lapis, dan lukisan terkenal, keajaiban dunia, serta harta karun pixel kecil pun hidup. Setiap gambar diakhiri label museum dan kisah nyata.",
+   "play": "Main di browser",
+   "soon": "Segera hadir di",
+   "demoNote": "Demo gratis di browser: lantai-lantai pertama museum.",
+   "pics": {
+    "other": "{n} gambar"
+   },
+   "floors": {
+    "other": "{n} lantai"
+   },
+   "langs": {
+    "other": "{n} bahasa"
+   },
+   "free": "Gratis",
+   "layer": "LAPIS {a} / {b}",
+   "revealed": "GAMBAR TERUNGKAP",
+   "about": "Lewydo adalah studio game indie dua orang dari Ukraina. Vlad menulis kode, Lilya mendesain. Bersama, kami membuat game yang kami sendiri suka mainkan. Terima kasih sudah bermain!",
+   "langTitle": "BAHASA",
+   "site": "Situs kami",
+   "games": "Game kami di Google Play",
+   "fact": "Fakta seru",
+   "how": "Kubusmu menunjukkan sebuah nomor. Ketuk kotak-kotak dengan nomor yang sama, atau geser jarimu melewatinya dalam satu rantai panjang: rantai kasih poin lebih banyak.",
+   "demo": "Lukisan dari museum, terungkap lapis demi lapis",
+   "gp": "Temukan di"
+  },
+  "de": {
+   "tagline": "DECK DAS BILD MIT WÜRFELN AUF",
+   "lead": "Ein entspanntes Puzzle für alle, die Kunst lieben. Füll die Würfel Ebene für Ebene — und berühmte Gemälde, Weltwunder und kleine Pixelschätze erwachen zum Leben. Jedes Bild endet mit einem Museumsschild und einer wahren Geschichte.",
+   "play": "Im Browser spielen",
+   "soon": "Bald bei",
+   "demoNote": "Kostenlose Demo im Browser: die ersten Etagen des Museums.",
+   "pics": {
+    "one": "{n} Bild",
+    "other": "{n} Bilder"
+   },
+   "floors": {
+    "one": "{n} Etage",
+    "other": "{n} Etagen"
+   },
+   "langs": {
+    "one": "{n} Sprache",
+    "other": "{n} Sprachen"
+   },
+   "free": "Kostenlos",
+   "layer": "EBENE {a} / {b}",
+   "revealed": "BILD ENTHÜLLT",
+   "about": "Lewydo ist ein Indie-Studio aus der Ukraine – wir sind zu zweit. Vlad programmiert, Lilya gestaltet. Zusammen machen wir die Spiele, die wir selbst gern spielen. Danke fürs Spielen!",
+   "langTitle": "SPRACHE",
+   "site": "Unsere Website",
+   "games": "Unsere Spiele bei Google Play",
+   "fact": "Schon gewusst?",
+   "how": "Dein Würfel zeigt eine Zahl. Tippe auf die Felder mit derselben Zahl oder zieh in einer langen Kette darüber: Ketten bringen mehr Punkte.",
+   "demo": "Ein Gemälde aus dem Museum, Ebene für Ebene enthüllt",
+   "gp": "Jetzt bei"
+  },
+  "en": {
+   "tagline": "REVEAL THE PICTURE CUBE BY CUBE",
+   "lead": "A calm puzzle for art lovers. Fill the cubes layer by layer, and famous paintings, wonders of the world and little pixel treasures come to life. Every picture ends with a museum label and a true story.",
+   "play": "Play in the browser",
+   "soon": "Coming soon to",
+   "demoNote": "Free demo in your browser: the first floors of the museum.",
+   "pics": {
+    "one": "{n} picture",
+    "other": "{n} pictures"
+   },
+   "floors": {
+    "one": "{n} floor",
+    "other": "{n} floors"
+   },
+   "langs": {
+    "one": "{n} language",
+    "other": "{n} languages"
+   },
+   "free": "Free",
+   "layer": "LAYER {a} / {b}",
+   "revealed": "PICTURE REVEALED",
+   "about": "Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play. Thank you for playing!",
+   "langTitle": "LANGUAGE",
+   "site": "Our website",
+   "games": "Our games on Google Play",
+   "fact": "Fun fact",
+   "how": "Your cube shows a number. Tap the cells with the same number, or swipe across them in one long chain: chains score more.",
+   "demo": "A painting from the museum, revealed layer by layer",
+   "gp": "Get it on"
+  },
+  "es": {
+   "tagline": "DESCUBRE LA IMAGEN CUBO A CUBO",
+   "lead": "Un rompecabezas tranquilo para quienes aman el arte. Rellena los cubos capa a capa y verás cobrar vida cuadros famosos, maravillas del mundo y pequeños tesoros en píxeles. Cada imagen termina con una cartela de museo y una historia real.",
+   "play": "Jugar en el navegador",
+   "soon": "Próximamente en",
+   "demoNote": "Demo gratis en el navegador: los primeros pisos del museo.",
+   "pics": {
+    "one": "{n} imagen",
+    "other": "{n} imágenes"
+   },
+   "floors": {
+    "one": "{n} piso",
+    "other": "{n} pisos"
+   },
+   "langs": {
+    "one": "{n} idioma",
+    "other": "{n} idiomas"
+   },
+   "free": "Gratis",
+   "layer": "CAPA {a} / {b}",
+   "revealed": "IMAGEN REVELADA",
+   "about": "Lewydo es un estudio indie de dos personas de Ucrania. Vlad programa, Lilya diseña. Juntos hacemos los juegos a los que nos encanta jugar. ¡Gracias por jugar!",
+   "langTitle": "IDIOMA",
+   "site": "Nuestra web",
+   "games": "Nuestros juegos en Google Play",
+   "fact": "Dato curioso",
+   "how": "Tu cubo muestra un número. Toca las casillas con ese mismo número o desliza el dedo sobre ellas en una cadena larga: las cadenas dan más puntos.",
+   "demo": "Un cuadro del museo, revelado capa a capa",
+   "gp": "Disponible en"
+  },
+  "fr": {
+   "tagline": "RÉVÈLE L'IMAGE CUBE PAR CUBE",
+   "lead": "Un casse-tête tout en douceur pour les amoureux de l’art. Remplis les cubes couche par couche, et des tableaux célèbres, des merveilles du monde et de petits trésors en pixels prennent vie. Chaque image se termine par un cartel de musée et une histoire vraie.",
+   "play": "Jouer dans le navigateur",
+   "soon": "Bientôt sur",
+   "demoNote": "Démo gratuite dans le navigateur : les premiers étages du musée.",
+   "pics": {
+    "one": "{n} image",
+    "other": "{n} images"
+   },
+   "floors": {
+    "one": "{n} étage",
+    "other": "{n} étages"
+   },
+   "langs": {
+    "one": "{n} langue",
+    "other": "{n} langues"
+   },
+   "free": "Gratuit",
+   "layer": "COUCHE {a}/{b}",
+   "revealed": "IMAGE RÉVÉLÉE",
+   "about": "Lewydo est un studio de jeux indépendant de deux personnes, en Ukraine. Vlad code, Lilya fait le design. Ensemble, nous créons les jeux auxquels nous adorons jouer. Merci de jouer !",
+   "langTitle": "LANGUE",
+   "site": "Notre site",
+   "games": "Nos jeux sur Google Play",
+   "fact": "Le savais-tu ?",
+   "how": "Ton cube affiche un numéro. Touche les cases qui portent le même numéro, ou glisse le doigt dessus en une longue chaîne : les chaînes rapportent plus de points.",
+   "demo": "Un tableau du musée, dévoilé couche par couche",
+   "gp": "Disponible sur"
+  },
+  "it": {
+   "tagline": "SCOPRI IL QUADRO CUBO PER CUBO",
+   "lead": "Un rompicapo rilassante per chi ama l’arte. Riempi i cubi strato dopo strato e prendono vita quadri famosi, meraviglie del mondo e piccoli tesori in pixel. Ogni quadro si chiude con una didascalia da museo e una storia vera.",
+   "play": "Gioca nel browser",
+   "soon": "Presto su",
+   "demoNote": "Demo gratuita nel browser: i primi piani del museo.",
+   "pics": {
+    "one": "{n} quadro",
+    "other": "{n} quadri"
+   },
+   "floors": {
+    "one": "{n} piano",
+    "other": "{n} piani"
+   },
+   "langs": {
+    "one": "{n} lingua",
+    "other": "{n} lingue"
+   },
+   "free": "Gratis",
+   "layer": "STRATO {a}/{b}",
+   "revealed": "QUADRO SVELATO",
+   "about": "Lewydo è uno studio indie di due persone dall’Ucraina. Vlad programma, Lilya disegna. Insieme creiamo i giochi a cui amiamo giocare. Grazie di giocare!",
+   "langTitle": "LINGUA",
+   "site": "Il nostro sito",
+   "games": "I nostri giochi su Google Play",
+   "fact": "Curiosità",
+   "how": "Il tuo cubo mostra un numero. Tocca le caselle con lo stesso numero o passaci sopra col dito in una lunga catena: le catene danno più punti.",
+   "demo": "Un quadro del museo, svelato strato dopo strato",
+   "gp": "Disponibile su"
+  },
+  "nl": {
+   "tagline": "ONTHUL HET PLAATJE MET BLOKJES",
+   "lead": "Een rustige puzzel voor wie van kunst houdt. Vul de blokjes laag voor laag, en beroemde schilderijen, wereldwonderen en kleine pixelschatten komen tot leven. Elk plaatje eindigt met een museumbordje en een waar verhaal.",
+   "play": "Speel in de browser",
+   "soon": "Binnenkort op",
+   "demoNote": "Gratis demo in de browser: de eerste verdiepingen van het museum.",
+   "pics": {
+    "one": "{n} plaatje",
+    "other": "{n} plaatjes"
+   },
+   "floors": {
+    "one": "{n} verdieping",
+    "other": "{n} verdiepingen"
+   },
+   "langs": {
+    "one": "{n} taal",
+    "other": "{n} talen"
+   },
+   "free": "Gratis",
+   "layer": "LAAG {a} / {b}",
+   "revealed": "PLAATJE ONTHULD",
+   "about": "Lewydo is een indiegamestudio van twee mensen uit Oekraïne. Vlad programmeert, Lilya ontwerpt. Samen maken we de games die we zelf graag spelen. Bedankt voor het spelen!",
+   "langTitle": "TAAL",
+   "site": "Onze website",
+   "games": "Onze games op Google Play",
+   "fact": "Leuk weetje",
+   "how": "Je blokje toont een nummer. Tik op de vakjes met hetzelfde nummer, of veeg eroverheen in één lange ketting: kettingen leveren meer punten op.",
+   "demo": "Een schilderij uit het museum, laag voor laag onthuld",
+   "gp": "Ontdek het op"
+  },
+  "pl": {
+   "tagline": "ODKRYJ OBRAZ KOSTKA PO KOSTCE",
+   "lead": "Spokojna łamigłówka dla miłośników sztuki. Wypełniaj kostki warstwa po warstwie, a ożyją słynne obrazy, cuda świata i małe pikselowe skarby. Każdy obraz kończy się muzealną tabliczką i prawdziwą historią.",
+   "play": "Graj w przeglądarce",
+   "soon": "Wkrótce w",
+   "demoNote": "Darmowe demo w przeglądarce: pierwsze piętra muzeum.",
+   "pics": {
+    "one": "{n} obraz",
+    "few": "{n} obrazy",
+    "many": "{n} obrazów",
+    "other": "{n} obrazu"
+   },
+   "floors": {
+    "one": "{n} piętro",
+    "few": "{n} piętra",
+    "many": "{n} pięter",
+    "other": "{n} piętra"
+   },
+   "langs": {
+    "one": "{n} język",
+    "few": "{n} języki",
+    "many": "{n} języków",
+    "other": "{n} języka"
+   },
+   "free": "Za darmo",
+   "layer": "WARSTWA {a} / {b}",
+   "revealed": "OBRAZ ODKRYTY",
+   "about": "Lewydo to dwuosobowe niezależne studio gier z Ukrainy. Vlad programuje, Lilya projektuje. Razem robimy gry, w które sami uwielbiamy grać. Dziękujemy, że grasz!",
+   "langTitle": "JĘZYK",
+   "site": "Nasza strona",
+   "games": "Nasze gry w Google Play",
+   "fact": "Ciekawostka",
+   "how": "Twoja kostka pokazuje numer. Dotykaj pól z tym samym numerem albo przesuwaj po nich palcem, tworząc jeden długi łańcuch: łańcuchy dają więcej punktów.",
+   "demo": "Obraz z muzeum odkrywany warstwa po warstwie",
+   "gp": "Pobierz z"
+  },
+  "pt": {
+   "tagline": "REVELE A IMAGEM CUBO A CUBO",
+   "lead": "Um quebra-cabeça tranquilo para quem ama arte. Preencha os cubos camada por camada e veja ganhar vida pinturas famosas, maravilhas do mundo e pequenos tesouros em pixel. Cada imagem termina com uma etiqueta de museu e uma história real.",
+   "play": "Jogar no navegador",
+   "soon": "Em breve no",
+   "demoNote": "Demo grátis no navegador: os primeiros andares do museu.",
+   "pics": {
+    "one": "{n} imagem",
+    "other": "{n} imagens"
+   },
+   "floors": {
+    "one": "{n} andar",
+    "other": "{n} andares"
+   },
+   "langs": {
+    "one": "{n} idioma",
+    "other": "{n} idiomas"
+   },
+   "free": "Grátis",
+   "layer": "CAMADA {a}/{b}",
+   "revealed": "IMAGEM REVELADA",
+   "about": "Lewydo é um estúdio indie de duas pessoas da Ucrânia. Vlad programa, Lilya faz o design. Juntos fazemos os jogos que adoramos jogar. Obrigado por jogar!",
+   "langTitle": "IDIOMA",
+   "site": "Nosso site",
+   "games": "Nossos jogos no Google Play",
+   "fact": "Curiosidade",
+   "how": "Seu cubo mostra um número. Toque nas casas com o mesmo número ou deslize o dedo por elas numa corrente longa: correntes dão mais pontos.",
+   "demo": "Uma pintura do museu, revelada camada por camada",
+   "gp": "Disponível no"
+  },
+  "vi": {
+   "tagline": "HÉ LỘ BỨC TRANH TỪNG KHỐI MỘT",
+   "lead": "Trò chơi giải đố thư thái cho người yêu nghệ thuật. Tô đầy các khối theo từng lớp, và những bức tranh nổi tiếng, kỳ quan thế giới cùng các báu vật pixel nhỏ xinh sẽ sống dậy. Mỗi bức tranh khép lại bằng một tấm nhãn bảo tàng và một câu chuyện có thật.",
+   "play": "Chơi trên trình duyệt",
+   "soon": "Sắp có trên",
+   "demoNote": "Bản demo miễn phí trên trình duyệt: những tầng đầu tiên của bảo tàng.",
+   "pics": {
+    "other": "{n} bức tranh"
+   },
+   "floors": {
+    "other": "{n} tầng"
+   },
+   "langs": {
+    "other": "{n} ngôn ngữ"
+   },
+   "free": "Miễn phí",
+   "layer": "LỚP {a} / {b}",
+   "revealed": "BỨC TRANH ĐÃ LỘ DIỆN",
+   "about": "Lewydo là studio game indie hai người đến từ Ukraina. Vlad viết code, Lilya thiết kế. Cùng nhau, chúng tôi làm những trò chơi mà chính mình yêu thích. Cảm ơn bạn đã chơi!",
+   "langTitle": "NGÔN NGỮ",
+   "site": "Trang web của chúng tôi",
+   "games": "Game của chúng tôi trên Google Play",
+   "fact": "Bạn có biết?",
+   "how": "Khối của bạn hiện một con số. Chạm vào các ô có cùng số, hoặc lướt ngón tay qua chúng thành một chuỗi dài: chuỗi cho nhiều điểm hơn.",
+   "demo": "Một bức tranh trong bảo tàng, hé lộ từng lớp",
+   "gp": "Tải trên"
+  },
+  "tr": {
+   "tagline": "RESMİ KÜP KÜP ORTAYA ÇIKAR",
+   "lead": "Sanatı sevenler için sakin bir bulmaca. Küpleri katman katman doldur; ünlü tablolar, dünya harikaları ve küçük piksel hazineleri canlansın. Her resim bir müze etiketi ve gerçek bir hikâyeyle biter.",
+   "play": "Tarayıcıda oyna",
+   "soon": "Çok yakında",
+   "demoNote": "Tarayıcıda ücretsiz demo: müzenin ilk katları.",
+   "pics": {
+    "one": "{n} resim",
+    "other": "{n} resim"
+   },
+   "floors": {
+    "one": "{n} kat",
+    "other": "{n} kat"
+   },
+   "langs": {
+    "one": "{n} dil",
+    "other": "{n} dil"
+   },
+   "free": "Ücretsiz",
+   "layer": "KATMAN {a}/{b}",
+   "revealed": "RESİM AÇILDI",
+   "about": "Lewydo, Ukrayna’dan iki kişilik bağımsız bir oyun stüdyosu. Vlad kodluyor, Lilya tasarlıyor. Birlikte oynamayı sevdiğimiz oyunları yapıyoruz. Oynadığın için teşekkürler!",
+   "langTitle": "DİL",
+   "site": "Web sitemiz",
+   "games": "Google Play’deki oyunlarımız",
+   "fact": "İlginç bilgi",
+   "how": "Küpünde bir numara var. Aynı numaralı hücrelere dokun ya da parmağınla tek uzun bir zincir hâlinde üzerlerinden kaydır: zincirler daha çok puan getirir.",
+   "demo": "Müzeden bir tablo, katman katman ortaya çıkıyor",
+   "gp": "Hemen indir:"
+  },
+  "uk": {
+   "tagline": "РОЗКРИЙ КАРТИНУ КУБИКАМИ",
+   "lead": "Спокійна головоломка для тих, хто любить мистецтво. Заповнюй кубики шар за шаром — і оживають знамениті картини, чудеса світу й маленькі піксельні скарби. Кожна картина закінчується музейною етикеткою з правдивою історією.",
+   "play": "Грати в браузері",
+   "soon": "Скоро в",
+   "demoNote": "Безкоштовне демо в браузері — перші поверхи музею.",
+   "pics": {
+    "one": "{n} картина",
+    "few": "{n} картини",
+    "many": "{n} картин",
+    "other": "{n} картини"
+   },
+   "floors": {
+    "one": "{n} поверх",
+    "few": "{n} поверхи",
+    "many": "{n} поверхів",
+    "other": "{n} поверху"
+   },
+   "langs": {
+    "one": "{n} мова",
+    "few": "{n} мови",
+    "many": "{n} мов",
+    "other": "{n} мови"
+   },
+   "free": "Безкоштовно",
+   "layer": "ШАР {a} / {b}",
+   "revealed": "КАРТИНУ РОЗКРИТО",
+   "about": "Lewydo — інді-студія з двох людей з України. Влад пише код, Ліля робить дизайн. Разом ми робимо ігри, у які самі любимо грати. Дякуємо, що граєте!",
+   "langTitle": "МОВА",
+   "site": "Наш сайт",
+   "games": "Наші ігри в Google Play",
+   "fact": "Цікавий факт",
+   "how": "На твоєму кубі — номер. Тисни на клітинки з тим самим номером або веди по них пальцем одним довгим ланцюжком: ланцюжки дають більше очок.",
+   "demo": "Картина з музею розкривається шар за шаром",
+   "gp": "Доступно в"
+  },
+  "ko": {
+   "tagline": "큐브 하나씩 그림을 드러내요",
+   "lead": "예술을 사랑하는 분을 위한 편안한 퍼즐. 한 레이어씩 큐브를 채우면 명화와 세계의 불가사의, 작은 픽셀 보물이 살아나요. 그림을 완성할 때마다 박물관 설명판과 실제 이야기가 기다려요.",
+   "play": "브라우저에서 플레이",
+   "soon": "곧 출시",
+   "demoNote": "브라우저에서 무료 데모: 박물관의 처음 몇 층을 즐겨 보세요.",
+   "pics": {
+    "other": "그림 {n}점"
+   },
+   "floors": {
+    "other": "{n}개 층"
+   },
+   "langs": {
+    "other": "{n}개 언어"
+   },
+   "free": "무료",
+   "layer": "레이어 {a} / {b}",
+   "revealed": "그림 완성",
+   "about": "Lewydo는 우크라이나의 2인 인디 게임 스튜디오예요. Vlad는 코드를, Lilya는 디자인을 맡아요. 우리가 즐겨 하는 게임을 함께 만들어요. 플레이해 주셔서 고마워요!",
+   "langTitle": "언어",
+   "site": "웹사이트",
+   "games": "Google Play의 우리 게임",
+   "fact": "재미있는 사실",
+   "how": "내 큐브에는 번호가 있어요. 같은 번호의 칸을 탭하거나, 손가락을 떼지 않고 길게 이어서 드래그하세요. 체인을 만들면 점수를 더 받아요.",
+   "demo": "박물관의 명화가 레이어마다 드러나는 모습",
+   "gp": "다운로드하기"
+  },
+  "ja": {
+   "tagline": "キューブで絵を描き出そう",
+   "lead": "アートが好きな人のための、のんびりパズル。レイヤーごとにキューブを埋めていくと、名画や世界の不思議、小さなピクセルの宝物がよみがえります。絵が完成するたびに、美術館の解説パネルと本当にあった物語が待っています。",
+   "play": "ブラウザでプレイ",
+   "soon": "近日配信",
+   "demoNote": "ブラウザで無料デモ：美術館の最初のフロアを遊べます。",
+   "pics": {
+    "other": "{n}枚の絵"
+   },
+   "floors": {
+    "other": "{n}フロア"
+   },
+   "langs": {
+    "other": "{n}言語"
+   },
+   "free": "無料",
+   "layer": "レイヤー {a} / {b}",
+   "revealed": "絵が完成！",
+   "about": "Lewydo はウクライナの2人組インディーゲームスタジオです。Vlad がコードを書き、Lilya がデザインを担当。自分たちが大好きなゲームを一緒に作っています。遊んでくれてありがとう！",
+   "langTitle": "言語",
+   "site": "ウェブサイト",
+   "games": "Google Play の私たちのゲーム",
+   "fact": "豆知識",
+   "how": "キューブには番号が書いてあります。同じ番号のマスをタップするか、指を離さずに一気になぞりましょう。チェーンにすると得点アップ！",
+   "demo": "美術館の名画がレイヤーごとに姿を現します",
+   "gp": "今すぐ入手"
+  },
+  "zh-TW": {
+   "tagline": "用方塊一塊塊揭開畫作",
+   "lead": "一款獻給藝術愛好者的療癒解謎遊戲。一層一層填滿方塊，世界名畫、世界奇觀和小小的像素寶物就會活起來。每完成一幅畫，都有一張博物館說明牌和一個真實的故事。",
+   "play": "在瀏覽器中遊玩",
+   "soon": "即將登上",
+   "demoNote": "瀏覽器免費試玩：博物館的前幾層樓。",
+   "pics": {
+    "other": "{n} 幅畫"
+   },
+   "floors": {
+    "other": "{n} 層樓"
+   },
+   "langs": {
+    "other": "{n} 種語言"
+   },
+   "free": "免費",
+   "layer": "第 {a} / {b} 層",
+   "revealed": "畫作揭曉",
+   "about": "Lewydo 是來自烏克蘭的兩人獨立遊戲工作室。Vlad 寫程式，Lilya 負責設計。我們一起做自己愛玩的遊戲。謝謝你的遊玩！",
+   "langTitle": "語言",
+   "site": "我們的網站",
+   "games": "我們在 Google Play 的遊戲",
+   "fact": "冷知識",
+   "how": "你的方塊上有一個數字。點擊數字相同的格子，或手指不離開螢幕一路滑過去連成長長的連鎖：連鎖能拿到更多分數。",
+   "demo": "博物館裡的一幅名畫，正一層層揭曉",
+   "gp": "立即下載"
+  }
+ },
+ "logo": "<div class=\"plogo\" role=\"img\" aria-label=\"CubePix\"><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.00s\"><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.05s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.10s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.15s\"></i><b></b><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.16s\"><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.32s\"><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.48s\"><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.26s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.36s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i></div></div><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.64s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.43s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.48s\"></i><b></b><b></b><b></b></div><div class=\"pl-l\" style=\"--cols:3;--dl:0.80s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.40s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.45s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.50s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i></div><div class=\"pl-l\" style=\"--cols:5;--dl:0.96s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.52s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i></div></div></div>"
+}
