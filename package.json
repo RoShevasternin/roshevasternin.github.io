@@ -1,0 +1,16 @@
+{
+  "name": "lewydo-site",
+  "private": true,
+  "description": "Lewydo™ — the studio site (https://roshevasternin.github.io/). See CLAUDE.md.",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "serve": "node tests/serve.mjs 5190",
+    "test": "node tools/build.mjs --strict && playwright test --config tests/playwright.config.mjs site.spec",
+    "look": "playwright test --config tests/playwright.config.mjs look.spec",
+    "kit": "playwright test --config tests/playwright.config.mjs kit.spec",
+    "cubepix": "node tools/cubepix-snapshot.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0"
+  }
+}

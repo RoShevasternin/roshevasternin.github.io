@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-t="meta.title"></title>
+<meta name="description" data-ta="content:meta.desc">
+<meta name="theme-color" content="#0E1024">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="{{url}}">
+{{hreflang}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lewydo">
+<meta property="og:url" content="{{url}}">
+<meta property="og:title" data-ta="content:meta.title">
+<meta property="og:description" data-ta="content:meta.desc">
+<meta property="og:image" content="{{url}}assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/lewydo-heart.webp" as="image">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<script type="application/ld+json">{{ldjson}}</script>
+<script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('safe')},5000);if(/[?&]og\b/.test(location.search))document.documentElement.classList.add('og');if(/[?&]kit\b/.test(location.search))document.documentElement.classList.add('kit');</script>
+<style>
+/* Lewydo™ — the studio site. The brand is the standard of docs/brand (Figma «00 Brand», «Lewydo / Lockup», «Lewydo / Signature»):
+   the same numbers as every Lewydo game. Every game below lives in its own «world»: the page changes as you scroll into it. */
+@property --acc{syntax:'<color>';inherits:true;initial-value:#3DDC84;}
+:root{--bg:#0E1024;--ink:#fff;--ink2:rgba(242,255,247,.84);--ink3:rgba(242,255,247,.62);--green:#3DDC84;--glow:#6DF593;--mint:#9DF5C2;
+  --line:rgba(157,245,194,.16);--panel:rgba(20,24,54,.66);--wrap:1180px;--gut:20px;
+  --f:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;color-scheme:dark;}
+:lang(ja){--f:"Nunito","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;}
+:lang(ko){--f:"Nunito","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;}
+:lang(zh-TW){--f:"Nunito","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
+body{min-height:100vh;color:var(--ink);font:500 17px/1.62 var(--f);overflow-x:hidden;overflow-x:clip;--acc:#3DDC84;transition:--acc .9s ease;
+  background:var(--bg);-webkit-font-smoothing:antialiased;}
+body[data-world="cubepix"]{--acc:#FF3CAC;} body[data-world="orbit"]{--acc:#00E5FF;} body[data-world="more"]{--acc:#FFB03A;}
+img,svg,canvas{display:block;}
+a{color:inherit;}
+[hidden]{display:none !important;}
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--gut) * 2);margin:0 auto;padding:0 var(--gut);}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+.skip{position:absolute;left:-9999px;top:10px;z-index:100;background:var(--green);color:#04120A;padding:10px 16px;border-radius:12px;font-weight:900;}
+.skip:focus{left:12px;}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px;}
+
+/* ── the worlds behind the page: Lewydo · CubePix · Orbit Dash · more games ── */
+.world{position:fixed;inset:0;z-index:-2;pointer-events:none;background:#0E1024;}
+.world>i{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;}
+.w-lewydo{background:radial-gradient(60% 46% at 50% -4%,rgba(61,220,132,.2),transparent 72%),radial-gradient(46% 40% at 100% 100%,rgba(109,245,147,.08),transparent 72%),#0E1024;}
+.w-lewydo::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(157,245,194,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(157,245,194,.05) 1px,transparent 1px);
+  background-size:56px 56px;-webkit-mask:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);mask:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);}
+.w-cubepix{background:radial-gradient(55% 50% at 18% 12%,rgba(176,124,255,.26),transparent 72%),radial-gradient(50% 46% at 92% 88%,rgba(255,60,172,.2),transparent 72%),#0b0a1e;}
+.w-orbit{background:radial-gradient(75% 65% at 50% 42%,#1c2044 0%,#0e1024 58%,#060816 100%);}
+.w-more{background:radial-gradient(55% 50% at 85% 0%,rgba(255,176,58,.15),transparent 72%),radial-gradient(55% 50% at 0% 100%,rgba(77,217,255,.13),transparent 72%),#0f1129;}
+body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[data-world="orbit"] .w-orbit,body[data-world="more"] .w-more{opacity:1;}
+#sky{position:fixed;left:0;top:0;z-index:-1;pointer-events:none;}
+
+/* ── the Lewydo mark: Lockup 208×322 and Signature, the standard's own numbers (never redraw or recolour) ── */
+.lw-lockup,.lw-sig{font-family:"Nunito",sans-serif;line-height:normal;color:#fff;}
+.lw-lockup{display:flex;flex-direction:column;align-items:center;width:208px;height:322px;}
+.lw-mark{position:relative;display:block;width:208px;height:208px;flex:none;}
+.lw-beat{position:absolute;inset:0;display:block;}
+.lw-glow{position:absolute;left:23.1px;top:26.9px;width:163.3px;height:150.7px;filter:blur(12.2px);}
+.lw-glow>i{position:absolute;inset:0;background:#6DF593;-webkit-mask:url(/assets/lewydo-heart.webp) 0 0/100% 100% no-repeat;mask:url(/assets/lewydo-heart.webp) 0 0/100% 100% no-repeat;}
+.lw-heart{position:absolute;left:38.65px;top:41.25px;width:132.2px;height:122px;}
+.lw-word{display:block;font-weight:900;text-shadow:0 4.17px 2.08px rgba(0,0,0,.25);white-space:nowrap;}
+.lw-lockup .lw-word{font-size:54.17px;line-height:74px;height:74px;}
+.lw-slogan{display:block;font-size:13.54px;font-weight:400;line-height:18.75px;height:19px;padding-top:1px;white-space:nowrap;} .lw-slogan b{font-weight:900;}
+.lw-line{display:block;width:146px;height:2px;margin-top:20px;background:#fff;border-radius:50%;}
+.lw-sig{display:inline-flex;align-items:center;gap:1px;}
+.lw-sig-mark{position:relative;width:24px;height:24px;flex:none;}
+.lw-sig-mark .lw-mark{position:absolute;left:0;top:0;transform:scale(.11538);transform-origin:0 0;}
+.lw-sig .lw-word{font-size:12px;line-height:16px;text-shadow:0 1px .6px rgba(0,0,0,.25);}
+.lw-heart,.lw-glow{transform-origin:50% 50%;}
+/* one heartbeat when the brand appears — never in a loop (docs/brand/lewydo-heartbeat.css) */
+.lw-beating .lw-heart{animation:lwHeart 440ms linear var(--d,0s) 1;}
+.lw-beating .lw-glow{animation:lwGlow 450ms linear var(--d,0s) 1 forwards;}
+@keyframes lwHeart{0%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}22.727%{transform:scale(1.13);animation-timing-function:cubic-bezier(.12,0,.39,0)}
+  50%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}72.727%{transform:scale(1.07);animation-timing-function:cubic-bezier(.12,0,.39,0)}100%{transform:scale(1)}}
+@keyframes lwGlow{0%,11.111%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}37.778%{transform:scale(1.15);animation-timing-function:cubic-bezier(.12,0,.39,0)}100%{transform:scale(1.05)}}
+/* the Signature pill (bottom of every game's menu): capsule 28, border #3DDC84 24 %, fill 4 %, › in mint 65 % */
+.lw-pill{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 10px 0 3px;border-radius:999px;border:1px solid rgba(61,220,132,.24);background:rgba(61,220,132,.04);
+  text-decoration:none;transition:transform .12s ease;}
+.lw-pill:active{transform:scale(.96);}
+.lw-pill .arr{width:5px;height:8px;opacity:.65;}
+
+/* ── buttons: the standard's 52 px, radius 16 — green, or outlined ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:16px;border:0;cursor:pointer;
+  font:900 16px/1.1 var(--f);letter-spacing:.01em;text-decoration:none;text-align:center;transition:transform .15s ease,box-shadow .2s ease,filter .2s ease,background-color .2s ease;}
+.btn:active{transform:scale(.97);}
+.btn-green{background:#3DDC84;color:#04120A;box-shadow:0 0 30px rgba(61,220,132,.36);}
+.btn-line{background:rgba(61,220,132,.06);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(157,245,194,.45);}
+@media (hover:hover){.btn-green:hover{box-shadow:0 0 46px rgba(61,220,132,.58);transform:translateY(-2px);} .btn-line:hover{background:rgba(61,220,132,.14);transform:translateY(-2px);}}
+.btn-sm{min-height:44px;padding:0 16px;border-radius:14px;font-size:15px;}
+.btn .gp,.btn svg{width:20px;height:20px;flex:none;}
+.btn-green svg{fill:#04120A;} .btn-line svg{fill:#9DF5C2;}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+.eyebrow{font-weight:900;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);}
+.h2{font-weight:900;font-size:clamp(34px,5.2vw,60px);line-height:1.04;letter-spacing:-.01em;margin-top:10px;text-wrap:balance;}
+.sub{color:var(--ink2);font-size:clamp(17px,1.8vw,20px);line-height:1.6;max-width:640px;margin-top:16px;}
+.center{text-align:center;} .center .sub{margin-left:auto;margin-right:auto;}
+
+/* ── header ── */
+.top{position:sticky;top:0;z-index:40;background:rgba(14,16,36,.62);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);
+  border-bottom:1px solid rgba(157,245,194,.1);}
+.top-in{display:flex;align-items:center;gap:10px;height:64px;}
+.top::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform:scaleX(var(--sp,0));transform-origin:0 50%;background:var(--acc);
+  box-shadow:0 0 12px var(--acc);pointer-events:none;}
+.home{display:inline-flex;align-items:center;height:48px;text-decoration:none;border-radius:12px;opacity:0;transform:translateY(-4px);transition:opacity .35s ease,transform .35s ease;}
+.home .lw-sig{transform:scale(1.5);transform-origin:0 50%;}
+.home{width:calc(73px * 1.5);}
+.scrolled .home,.no-hero .home{opacity:1;transform:none;}
+.nav{display:none;margin-left:auto;gap:2px;}
+.nav a{padding:9px 14px;border-radius:12px;color:var(--ink2);font-weight:800;font-size:15px;text-decoration:none;transition:color .2s,background-color .2s;}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.nav a[aria-current="true"]{color:var(--acc);}
+.langsel{position:relative;margin-left:auto;}
+@media (min-width:880px){.nav{display:flex;} .langsel{margin-left:6px;}}
+.lang-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border-radius:12px;border:0;background:rgba(255,255,255,.06);color:#fff;
+  font:900 14px var(--f);letter-spacing:.06em;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(157,245,194,.18);}
+.lang-btn:hover{background:rgba(255,255,255,.1);}
+.flag{display:inline-flex;flex:none;}
+.flag svg{width:24px;height:16px;border-radius:2px;}
+.lang-menu{position:absolute;right:0;top:calc(100% + 10px);width:min(290px,calc(100vw - 32px));max-height:min(70vh,560px);overflow:auto;padding:8px;border-radius:18px;
+  background:rgba(18,21,48,.96);box-shadow:0 0 0 1px rgba(157,245,194,.18),0 20px 50px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
+.lang-menu button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:8px 12px;border:0;border-radius:12px;background:none;color:var(--ink2);
+  font:700 16px var(--f);text-align:left;cursor:pointer;}
+.lang-menu button:hover,.lang-menu button:focus-visible{background:rgba(61,220,132,.12);color:#fff;outline:none;}
+.lang-menu button[aria-selected="true"]{color:var(--mint);}
+.lang-menu button[aria-selected="true"]::after{content:"✓";margin-left:auto;font-weight:900;}
+
+/* ── the hero: pixels of every Lewydo game fly together into the heart ── */
+.hero{position:relative;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:26px var(--gut) 84px;isolation:isolate;}
+#px{position:absolute;left:0;top:0;z-index:-1;pointer-events:none;}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:var(--lamp,0);transition:opacity .6s ease;
+  background:radial-gradient(520px circle at var(--mx,50%) var(--my,40%),rgba(109,245,147,.09),transparent 62%);}
+.hero-in{display:flex;flex-direction:column;align-items:center;max-width:780px;}
+.lock{--k:1.08;position:relative;width:calc(208px * var(--k));height:calc(322px * var(--k));margin:12px 0 4px;}
+@media (min-width:600px) and (min-height:760px){.lock{--k:1.3;}}
+@media (min-width:1000px) and (min-height:860px){.lock{--k:1.5;}}
+.lock .lw-lockup{position:absolute;left:0;top:0;transform:scale(var(--k));transform-origin:0 0;}
+.heart-btn{position:absolute;left:12%;top:8%;width:76%;height:calc(208px * var(--k) * .76);border:0;border-radius:40%;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.hero-lead{font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:var(--ink2);max-width:620px;margin-top:4px;text-wrap:balance;}
+.hero-lead b{color:#fff;}
+.hero .ctas{justify-content:center;}
+.hint{margin-top:18px;font-weight:800;font-size:14px;letter-spacing:.04em;color:var(--mint);opacity:.8;min-height:22px;}
+.cue{position:absolute;left:50%;bottom:22px;width:26px;height:42px;margin-left:-13px;border-radius:14px;box-shadow:inset 0 0 0 2px rgba(157,245,194,.35);}
+.cue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:9px;margin-left:-2px;border-radius:2px;background:var(--mint);animation:cue 1.9s ease-in-out infinite;}
+@keyframes cue{0%{transform:translateY(0);opacity:1}70%{transform:translateY(12px);opacity:0}100%{transform:translateY(0);opacity:0}}
+/* the entrance, run by the script: pixels → the heart (lit) → one beat → «Lewydo», the slogan, the line (s2) → the words (s3) */
+.js .hero .lw-mark{opacity:0;transition:opacity .3s ease;} .js .hero.lit .lw-mark{opacity:1;}
+.js .hero .lw-word,.js .hero .lw-slogan,.js .hero .lw-line{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1);}
+.js .hero.s2 .lw-word,.js .hero.s2 .lw-slogan,.js .hero.s2 .lw-line{opacity:1;transform:none;}
+.js .hero.s2 .lw-slogan{transition-delay:.12s;} .js .hero.s2 .lw-line{transition-delay:.24s;}
+.js .hero .eyebrow,.js .hero .hero-lead,.js .hero .ctas,.js .hero .hint,.js .hero .cue{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.js .hero.s3 .eyebrow,.js .hero.s3 .hero-lead,.js .hero.s3 .ctas,.js .hero.s3 .cue{opacity:1;transform:none;}
+.js .hero.s3 .hint{opacity:.8;transform:none;}
+.js .hero.s3 .hero-lead{transition-delay:.1s;} .js .hero.s3 .ctas{transition-delay:.2s;} .js .hero.s3 .hint{transition-delay:.9s;} .js .hero.s3 .cue{transition-delay:1.2s;}
+.js .hero.tapped .hint{opacity:0;}
+.safe .hero:not(.s3) :is(.lw-mark,.lw-word,.lw-slogan,.lw-line,.eyebrow,.hero-lead,.ctas){opacity:1;transform:none;}   /* if the script never ran */
+
+/* ── worlds: the chapters ── */
+.intro{padding:clamp(70px,9vw,120px) 0 0;}
+.jump{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px;list-style:none;}
+.jump a{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);
+  text-decoration:none;font-weight:900;font-size:15px;transition:background-color .2s,transform .2s;}
+.jump a:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
+.jump img,.jump .cube-ico{width:30px;height:30px;border-radius:9px;}
+.jump small{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);}
+.chap{position:relative;padding:clamp(80px,11vw,150px) 0;}
+.chap-in{display:grid;gap:48px;align-items:center;}
+.od .chap-txt{order:-1;}
+@media (min-width:980px){.chap-in{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:70px;} .chap.od .chap-in{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);} .od .chap-txt{order:0;}}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;font-weight:900;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;}
+.chap-lead{font-size:clamp(17px,1.7vw,19px);color:var(--ink2);max-width:560px;margin-top:16px;}
+
+/* CubePix — its own pixel world: the game's logo, pixel chips and buttons, the museum's gold frame */
+.cp .badge{background:#FFD60A;color:#1a1300;box-shadow:0 0 24px rgba(255,214,10,.4);}
+.plogo{--cell:10px;position:relative;display:inline-flex;flex-direction:column;gap:calc(var(--cell) + 4px);margin:22px 0 4px;}
+.plogo::before{content:"";position:absolute;inset:-30px -40px;background:radial-gradient(closest-side,rgba(255,60,172,.28),transparent);pointer-events:none;}
+.pl-row{display:flex;gap:var(--cell);}
+.pl-l{display:grid;grid-template-columns:repeat(var(--cols),var(--cell));grid-auto-rows:var(--cell);gap:2px;animation:bob 2.8s ease-in-out var(--dl) infinite;}
+.pl-l i{display:block;background:var(--c);box-shadow:inset 2px 2px 0 rgba(255,255,255,.55),inset -2px -2px 0 rgba(0,0,0,.28),3px 3px 0 var(--ex);animation:drop .6s cubic-bezier(.34,1.56,.64,1) var(--pd) both;}
+.js .cp:not(.seen) .pl-l,.js .cp:not(.seen) .pl-l i{animation-play-state:paused;}
+@keyframes drop{0%{transform:translateY(-70px) scale(.4);opacity:0}100%{transform:none;opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media (min-width:420px){.plogo{--cell:12px;}} @media (min-width:1100px){.plogo{--cell:14px;}}
+.cp-tagline{font-weight:900;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#c9c5f0;margin-top:18px;text-shadow:2px 2px 0 #05040f;}
+.px-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;list-style:none;}
+.px-chips li{padding:7px 12px;margin:3px;background:#15123a;color:#ffe27a;font-weight:900;font-size:14.5px;letter-spacing:.03em;
+  box-shadow:0 -3px 0 0 #050414,0 3px 0 0 #050414,-3px 0 0 0 #050414,3px 0 0 0 #050414,inset 0 3px 0 rgba(255,255,255,.07);}
+.px-btn{border-radius:0;min-height:50px;margin:4px;text-transform:uppercase;letter-spacing:.06em;font-size:15.5px;
+  box-shadow:0 -4px 0 0 #07061a,0 4px 0 0 #07061a,-4px 0 0 0 #07061a,4px 0 0 0 #07061a,inset 0 -4px 0 rgba(0,0,0,.25),inset 0 4px 0 rgba(255,255,255,.28);}
+.px-pink{background:#FF3CAC;color:#fff;text-shadow:2px 2px 0 rgba(90,10,55,.55);}
+.px-dark{background:#2b2668;color:#e4e1ff;}
+.px-yellow{background:#FFD60A;color:#1a1300;}
+@media (hover:hover){.px-btn:hover{filter:brightness(1.12);transform:translateY(-2px);}}
+.cp .ctas{gap:10px;}
+.soon{margin-top:16px;color:var(--ink3);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px;}
+.soon .gp{width:18px;height:18px;opacity:.7;}
+.stage{position:relative;width:100%;max-width:580px;justify-self:center;}
+.spot{position:absolute;left:50%;top:-44px;width:80%;height:130px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 0,rgba(255,236,170,.26),transparent 70%);pointer-events:none;}
+.gframe{position:relative;padding:12px;background:linear-gradient(135deg,#9a6f12,#ffe066 30%,#b8860b 60%,#ffd95a);
+  box-shadow:0 0 34px rgba(255,214,0,.35),0 14px 30px rgba(0,0,0,.6),inset 0 0 0 2px #5a3f08;}
+.gframe::before{content:"";position:absolute;inset:5px;box-shadow:inset 0 0 0 2px rgba(90,63,8,.55);pointer-events:none;}
+.mat{display:flex;align-items:center;justify-content:center;aspect-ratio:60/42;background:#0b0a18;padding:10px;box-shadow:inset 0 0 14px rgba(0,0,0,.95);}
+#cpCv{image-rendering:pixelated;}
+.playing #cpCv{cursor:pointer;touch-action:none;}
+.stage-bar{display:flex;align-items:center;gap:12px;margin-top:18px;min-height:64px;}
+.cube{flex:none;width:52px;height:52px;}
+.stage-txt{flex:1;min-width:0;text-align:left;}
+.layer-t{font-weight:900;font-size:14.5px;letter-spacing:.1em;text-transform:uppercase;color:#FFD60A;min-height:20px;}
+.plq{margin-top:6px;display:inline-block;padding:6px 10px;background:linear-gradient(180deg,#e9d69a,#b99440);color:#2c1d02;font-weight:900;font-size:15px;line-height:1.25;
+  box-shadow:0 2px 0 #5a3f08,inset 0 1px 0 rgba(255,255,255,.6);max-width:100%;}
+.plq span{display:block;font-weight:700;font-size:13px;opacity:.85;}
+.stage-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:6px;}
+.dots{display:flex;gap:8px;}
+.dots button{position:relative;width:14px;height:14px;border:0;background:#2e2966;cursor:pointer;box-shadow:inset 0 2px 0 rgba(255,255,255,.12);}
+.dots button::before{content:"";position:absolute;inset:-15px;}
+.dots button[aria-current="true"]{background:#FFD60A;}
+.playing .dots{visibility:hidden;}
+.pz-hint{margin-top:12px;color:var(--ink2);font-size:15.5px;}
+.pz-done{margin-top:14px;padding:16px 18px;background:#f7efd9;color:#2a2015;box-shadow:0 3px 0 #b99440;}
+.pz-done .tag{display:block;font-weight:900;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#a0620d;}
+.pz-done p{margin-top:4px;font-size:15.5px;line-height:1.5;}
+.pz-done .next{margin-top:10px;font-weight:800;}
+.pz-done .btn{margin-top:12px;}
+
+/* Orbit Dash — a neon space world, and the game itself to try: one tap switches orbits */
+.od .badge{background:rgba(0,229,255,.1);color:#9ff6ff;box-shadow:inset 0 0 0 1px rgba(0,229,255,.5);}
+.od .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#00E5FF;box-shadow:0 0 10px #00E5FF;animation:live 1.6s ease-in-out infinite;}
+@keyframes live{50%{opacity:.35}}
+.od-title{font-family:"Unbounded",var(--f);font-weight:900;line-height:.94;font-size:clamp(48px,7.4vw,90px);letter-spacing:.05em;margin-top:22px;}
+.od-title span{display:block;}
+.od-title .o{color:#00E5FF;text-shadow:0 0 34px rgba(0,229,255,.75),0 0 8px rgba(0,229,255,.5);}
+.od-title .d{color:#FFD54A;text-shadow:0 0 34px rgba(255,213,74,.65),0 0 8px rgba(255,213,74,.45);}
+.od-tagline{font-weight:900;font-size:clamp(20px,2.2vw,24px);margin-top:22px;}
+.od-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;list-style:none;}
+.od-chips li{padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-weight:800;font-size:14px;color:#d8fbff;}
+.btn-cyan{background:#00E5FF;color:#051226;box-shadow:0 0 34px rgba(0,229,255,.45);}
+@media (hover:hover){.btn-cyan:hover{box-shadow:0 0 50px rgba(0,229,255,.68);transform:translateY(-2px);}}
+.od-line{background:rgba(0,229,255,.06);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.45);}
+.od-box{position:relative;width:min(100%,470px);margin:0 auto;}
+#odCv{width:100%;aspect-ratio:1;border-radius:50%;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;outline:none;}
+#odCv:focus-visible{box-shadow:0 0 0 3px rgba(0,229,255,.55);}
+.od-hint{margin-top:14px;text-align:center;font-weight:900;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#bff6ff;min-height:22px;}
+.od-keys{display:block;margin-top:2px;font-weight:700;letter-spacing:.04em;text-transform:none;color:var(--ink3);font-size:13px;}
+
+/* more games: cards that lean towards the pointer */
+.shelf{display:grid;gap:22px;margin-top:44px;}
+@media (min-width:680px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (min-width:1160px){.shelf{grid-template-columns:repeat(4,minmax(0,1fr));}}
+.gcard{--c:#3DDC84;position:relative;display:flex;flex-direction:column;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 14px 40px rgba(0,0,0,.35);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .3s ease,box-shadow .3s ease;will-change:transform;}
+.gcard:hover{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 60%,transparent),0 20px 60px rgba(0,0,0,.5),0 0 44px color-mix(in srgb,var(--c) 26%,transparent);}
+.gcard .ban{aspect-ratio:800/391;background:#0d0f22;overflow:hidden;}
+.gcard .ban img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.gcard:hover .ban img{transform:scale(1.04);}
+.gcard .ico{position:relative;width:64px;height:64px;border-radius:17px;margin:-34px 0 0 18px;box-shadow:0 10px 24px rgba(0,0,0,.5),0 0 0 3px #10132c;}
+.gcard .body{display:flex;flex-direction:column;gap:8px;flex:1;padding:12px 18px 20px;}
+.gcard .genre{font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c);}
+.gcard h3{font-weight:900;font-size:19px;line-height:1.25;}
+.gcard p{flex:1;color:var(--ink3);font-size:15px;line-height:1.55;}
+.gcard .btn{align-self:flex-start;margin-top:8px;background:color-mix(in srgb,var(--c) 16%,transparent);color:#fff;box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--c) 70%,transparent);}
+.gcard .btn:hover{background:color-mix(in srgb,var(--c) 30%,transparent);}
+.shine{position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.13),transparent 42%);opacity:0;transition:opacity .3s;}
+.gcard:hover .shine{opacity:1;}
+
+/* ── the studio: two people, one heart ── */
+.studio{padding:clamp(90px,11vw,150px) 0 40px;}
+.studio-in{display:grid;gap:52px;align-items:center;}
+@media (min-width:980px){.studio-in{grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:70px;}}
+.stats{display:flex;flex-wrap:wrap;gap:30px;margin-top:30px;list-style:none;}
+.stats li{font-weight:800;font-size:15px;color:var(--ink3);letter-spacing:.02em;}
+.stats b{display:block;font-weight:900;font-size:52px;line-height:1.05;color:#fff;text-shadow:0 0 30px rgba(109,245,147,.4);}
+/* code ↔ design: the heart typed as Vlad's Kotlin, and drawn as Lilya's design; the slider shows how one becomes the other */
+.cd-wrap h3{font-weight:900;font-size:26px;text-align:center;}
+.cd-wrap p{color:var(--ink3);text-align:center;margin:6px auto 18px;max-width:440px;font-size:15.5px;}
+.cd{--p:50%;position:relative;width:min(100%,480px);aspect-ratio:1;margin:0 auto;border-radius:32px;overflow:hidden;user-select:none;-webkit-user-select:none;
+  background:radial-gradient(circle at 50% 44%,#18214a 0%,#0b0d22 72%);box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 0 0 1px rgba(157,245,194,.16);}
+.cd-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(157,245,194,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(157,245,194,.06) 1px,transparent 1px);background-size:24px 24px;
+  clip-path:inset(0 calc(100% - var(--p)) 0 0);}
+.cd-heart{position:absolute;left:50%;top:45%;width:62%;aspect-ratio:132.2/122;transform:translate(-50%,-50%);container-type:inline-size;}
+.cd-code{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0);}
+.cd-code .cd-heart{-webkit-mask:url(/assets/lewydo-heart.webp) 0 0/100% 100% no-repeat;mask:url(/assets/lewydo-heart.webp) 0 0/100% 100% no-repeat;overflow:hidden;}
+.cd-code .cd-heart::before{content:"";position:absolute;inset:0;background:rgba(109,245,147,.09);}
+.cd-code pre{position:absolute;left:3%;top:-1%;width:100%;font:700 3.35cqw/1.42 var(--mono);color:#6DF593;white-space:pre;}
+.cd-code pre .k{color:#9DF5C2;} .cd-code pre .n{color:#FFD54A;} .cd-code pre .s{color:#FF8FC7;} .cd-code pre .c{color:rgba(157,245,194,.5);} .cd-code pre .f{color:#7fd8ff;}
+.cd-design{position:absolute;inset:0;clip-path:inset(0 0 0 var(--p));}
+.cd-design .lw-glow{left:-11.76%;top:-11.76%;width:123.53%;height:123.53%;filter:blur(9.228cqw);}
+.cd-design .lw-heart{left:0;top:0;width:100%;height:100%;}
+.cd-bar{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:linear-gradient(rgba(157,245,194,0),#9DF5C2 22%,#9DF5C2 78%,rgba(157,245,194,0));pointer-events:none;}
+.cd-knob{position:absolute;top:50%;left:var(--p);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#3DDC84;color:#04120A;display:grid;place-items:center;
+  box-shadow:0 0 0 7px rgba(61,220,132,.18),0 10px 26px rgba(0,0,0,.45);pointer-events:none;}
+.cd-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y;}
+.cd-range:focus-visible~.cd-knob{box-shadow:0 0 0 7px rgba(157,245,194,.55),0 10px 26px rgba(0,0,0,.45);}
+.cd-l,.cd-r{position:absolute;bottom:16px;padding:6px 11px;border-radius:10px;background:rgba(10,12,30,.72);font-weight:900;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;pointer-events:none;}
+.cd-l{left:16px;color:#6DF593;} .cd-r{right:16px;color:#fff;}
+.people{display:grid;gap:22px;margin-top:64px;}
+@media (min-width:860px){.people{grid-template-columns:1fr 1fr;}}
+.person{padding:30px 28px;border-radius:26px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+.person .role{font-weight:900;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);}
+.person h3{font-weight:900;font-size:36px;letter-spacing:.03em;line-height:1.1;margin:8px 0 4px;}
+.person .who{color:var(--ink3);font-size:15px;margin-bottom:14px;}
+.person p{color:var(--ink2);font-size:16.5px;}
+.person em{color:var(--mint);}
+.contacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.contacts a{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 14px;border-radius:12px;color:var(--ink2);font-weight:700;font-size:14.5px;text-decoration:none;
+  box-shadow:inset 0 0 0 1px var(--line);transition:background-color .2s,color .2s;}
+.contacts a:hover{background:rgba(61,220,132,.1);color:#fff;}
+.contacts svg{width:18px;height:18px;fill:var(--green);flex:none;}
+
+/* ── the story: a line that fills as you read ── */
+.story{padding:clamp(90px,11vw,140px) 0;}
+.tl{position:relative;list-style:none;margin-top:48px;padding-left:40px;--prog:0;}
+.tl::before,.tl::after{content:"";position:absolute;left:10px;top:8px;width:3px;border-radius:3px;}
+.tl::before{bottom:8px;background:rgba(157,245,194,.14);}
+.tl::after{height:calc((100% - 16px) * var(--prog));background:linear-gradient(#3DDC84,#6DF593);box-shadow:0 0 14px rgba(109,245,147,.6);}
+.tl-i{position:relative;padding-bottom:38px;}
+.tl-i:last-child{padding-bottom:0;}
+.tl-i::before{content:"";position:absolute;left:-40px;top:3px;width:23px;height:23px;border-radius:50%;background:#0E1024;box-shadow:inset 0 0 0 3px rgba(157,245,194,.28);transition:box-shadow .4s ease,background-color .4s ease;}
+.tl-i.on::before{box-shadow:inset 0 0 0 3px #3DDC84,0 0 18px rgba(61,220,132,.75);}
+.tl-i.love.on::before{box-shadow:inset 0 0 0 3px #ff6b9d,0 0 18px rgba(255,107,157,.75);}
+.tl-when{font-weight:900;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);}
+.love .tl-when{color:#ff9ec0;}
+.tl-i h3{font-weight:900;font-size:clamp(21px,2.4vw,26px);line-height:1.25;margin:4px 0 6px;}
+.tl-i p{color:var(--ink3);max-width:540px;}
+@media (min-width:900px){
+  .tl{padding-left:0;} .tl::before,.tl::after{left:50%;margin-left:-1.5px;}
+  .tl-i{width:50%;padding-right:56px;text-align:right;} .tl-i p{margin-left:auto;}
+  .tl-i:nth-child(even){margin-left:50%;padding-right:0;padding-left:56px;text-align:left;} .tl-i:nth-child(even) p{margin-left:0;}
+  .tl-i::before{left:auto;right:-11.5px;} .tl-i:nth-child(even)::before{left:-11.5px;right:auto;}
+}
+
+/* ── contact ── */
+.contact{padding:20px 0 clamp(80px,10vw,130px);}
+.contact-card{position:relative;text-align:center;padding:clamp(36px,6vw,70px) clamp(20px,5vw,60px);border-radius:34px;overflow:hidden;
+  background:radial-gradient(80% 90% at 50% 0%,rgba(61,220,132,.18),transparent 70%),var(--panel);box-shadow:inset 0 0 0 1px rgba(157,245,194,.24),0 30px 80px rgba(0,0,0,.35);}
+.contact-mark{position:relative;width:calc(208px * .6);height:calc(208px * .6);margin:-6px auto 0;}
+.contact-mark .lw-mark{position:absolute;left:0;top:0;transform:scale(.6);transform-origin:0 0;}
+.contact-card .ctas{justify-content:center;}
+
+/* ── footer ── */
+.foot{padding:46px 0 60px;border-top:1px solid rgba(157,245,194,.12);text-align:center;background:rgba(8,10,26,.5);}
+.foot .lw-pill{transform:scale(1.25);}
+.foot-made{margin-top:22px;color:var(--ink2);font-weight:700;}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-top:14px;}
+.foot-links a{color:var(--ink3);font-weight:700;font-size:15px;text-decoration:none;}
+.foot-links a:hover{color:#fff;}
+.foot-c{margin-top:18px;color:var(--ink3);font-size:14px;}
+
+/* reveal as it comes into view */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);}
+.js .rv.in{opacity:1;transform:none;}
+
+/* ?og — the 1200×630 card a link shows in chats (npm run kit saves it as assets/og.png) */
+#og{display:none;}
+html.og body>*:not(#og){display:none !important;}
+html.og body{background:#0E1024;overflow:hidden;}
+html.og #og{display:grid;grid-template-columns:420px 1fr;align-items:center;width:1200px;height:630px;padding:0 70px 0 60px;
+  background:radial-gradient(60% 70% at 22% 45%,rgba(61,220,132,.2),transparent 70%),radial-gradient(40% 50% at 100% 100%,rgba(0,229,255,.12),transparent 70%),#0E1024;}
+#og .lock{--k:1.62;margin:0 auto;}
+#og .og-t .eyebrow{font-size:16px;}
+#og .og-t h1{font-weight:900;font-size:58px;line-height:1.05;margin-top:12px;}
+#og .og-t p{margin-top:16px;color:var(--ink2);font-size:24px;line-height:1.45;}
+#og .og-games{display:flex;gap:14px;margin-top:34px;}
+#og .og-games img{width:74px;height:74px;border-radius:20px;box-shadow:0 10px 26px rgba(0,0,0,.5);}
+
+/* ?kit — the brand pictures npm run kit makes from this very CSS (favicon, app icons, the old logo/banner/brand addresses) */
+#kit{display:none;}
+html.kit body>*:not(#kit){display:none !important;}
+html.kit body{background:transparent;}
+html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
+.kit{position:relative;overflow:hidden;flex:none;}
+.kit-mark{position:absolute;left:50%;top:50%;width:208px;height:208px;margin:-104px 0 0 -104px;transform:scale(var(--s));}
+.kit-mark .lw-mark{position:absolute;left:0;top:0;}
+.kit-navy{background:radial-gradient(60% 60% at 50% 46%,rgba(61,220,132,.17),transparent 72%),#0E1024;}
+#kitIcon{width:512px;height:512px;} #kitIcon .kit-mark{--s:2.3;}
+#kitTouch{width:180px;height:180px;} #kitTouch .kit-mark{--s:.81;}
+#kitFav{width:64px;height:64px;} #kitFav .kit-mark{--s:.33;}
+#kitLockup{width:calc(208px * 4 + 120px);height:calc(322px * 4 + 120px);} #kitLockup .lock{--k:4;position:absolute;left:60px;top:60px;margin:0;}
+#kitBanner{width:1920px;height:1080px;display:flex;align-items:center;justify-content:center;} #kitBanner .lock{--k:2.25;margin:0;}
+#kitBanner::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(157,245,194,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(157,245,194,.05) 1px,transparent 1px);
+  background-size:64px 64px;-webkit-mask:radial-gradient(ellipse 60% 70% at 50% 50%,#000 10%,transparent 75%);mask:radial-gradient(ellipse 60% 70% at 50% 50%,#000 10%,transparent 75%);}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .lw-beating .lw-heart,.lw-beating .lw-glow,.pl-l,.pl-l i,.cue::after,.od .badge::before{animation:none !important;}
+  .js .rv{transform:none;transition:opacity .3s ease;}
+  .gcard{transform:none !important;}
+}
+</style>
+</head>
+<body data-world="lewydo">
+<a class="skip" href="#main" data-t="skip"></a>
+<div class="world" aria-hidden="true"><i class="w-lewydo"></i><i class="w-cubepix"></i><i class="w-orbit"></i><i class="w-more"></i></div>
+<canvas id="sky" aria-hidden="true" width="1" height="1"></canvas>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="home" href="#top" aria-label="Lewydo">{{sig}}</a>
+    <nav class="nav" data-ta="aria-label:nav.label">
+      <a href="#worlds" data-sec="games" data-t="nav.games"></a>
+      <a href="#studio" data-sec="studio" data-t="nav.studio"></a>
+      <a href="#story" data-sec="story" data-t="nav.story"></a>
+      <a href="#contact" data-sec="contact" data-t="nav.contact"></a>
+    </nav>
+    <div class="langsel">
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
+      <div class="lang-menu" id="langMenu" role="listbox" hidden></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" data-world="lewydo" data-sec="top">
+    <canvas id="px" aria-hidden="true" width="1" height="1"></canvas>
+    <div class="hero-in">
+      <h1 class="sr-only" data-t="hero.h1"></h1>
+      <p class="eyebrow" data-t="hero.eyebrow"></p>
+      <div class="lock" id="lock">{{lockup}}<button class="heart-btn" id="heartBtn" type="button" data-ta="aria-label:hero.replay"></button></div>
+      <p class="hero-lead" data-t="hero.lead"></p>
+      <div class="ctas">
+        <a class="btn btn-green" href="#worlds" data-t="hero.cta"></a>
+        <a class="btn btn-line" href="{{cp.demo}}" data-t="hero.cta2"></a>
+      </div>
+      <p class="hint" data-t="hero.hint"></p>
+    </div>
+    <a class="cue" href="#worlds" data-ta="aria-label:hero.cta"></a>
+  </section>
+
+  <section class="intro center" id="worlds" data-world="lewydo" data-sec="games">
+    <div class="wrap">
+      <p class="eyebrow rv" data-t="worlds.eyebrow"></p>
+      <h2 class="h2 rv" data-t="worlds.title"></h2>
+      <p class="sub rv" data-t="worlds.lead"></p>
+      <ul class="jump rv">
+        <li><a href="#cubepix"><svg class="cube-ico" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 92,28 50,50 8,28" fill="#ff8fd2"/><polygon points="8,28 50,50 50,96 8,74" fill="#FF3CAC"/><polygon points="92,28 50,50 50,96 92,74" fill="#99245f"/></svg>CubePix <small data-t="badge.new"></small></a></li>
+        <li><a href="#orbitdash"><img src="{{od.icon}}" alt="" width="30" height="30">Orbit Dash <small data-t="badge.live"></small></a></li>
+        <li><a href="#more"><img src="/assets/games/imc-icon.webp" alt="" width="30" height="30" loading="lazy"><span data-t="more.eyebrow"></span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chap cp" id="cubepix" data-world="cubepix" data-sec="games" aria-labelledby="cpTitle">
+    <div class="wrap chap-in">
+      <div class="chap-txt rv">
+        <span class="badge" data-t="badge.new"></span>
+        <h2 class="sr-only" id="cpTitle">CubePix</h2>
+        <div>{{cp.logo}}</div>
+        <p class="cp-tagline" data-t="cp:tagline"></p>
+        <p class="chap-lead" data-t="cp:lead"></p>
+        <ul class="px-chips">
+          <li data-t="cp:pics" data-n="pics"></li><li data-t="cp:floors" data-n="floors"></li><li data-t="cp:langs" data-n="cpLangs"></li><li data-t="cp:free"></li>
+        </ul>
+        <div class="ctas">
+          <a class="btn px-btn px-pink" href="{{cp.demo}}">▶ <span data-t="cp:play"></span></a>
+          <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link data-t="game.site"></a>
+        </div>
+        <p class="soon">{{gpIcon}}<span><span data-t="cp:soon"></span> Google Play</span></p>
+      </div>
+      <div class="stage rv" id="cpStage">
+        <div class="spot"></div>
+        <div class="gframe"><div class="mat"><canvas id="cpCv" width="1" height="1" role="img" tabindex="-1" data-ta="aria-label:cp:demo"></canvas></div></div>
+        <div class="stage-bar">
+          <svg class="cube" id="cpCube" viewBox="0 0 100 100" aria-hidden="true"></svg>
+          <div class="stage-txt"><div class="layer-t" id="cpLayer" aria-live="off"></div><div class="plq" id="cpPlq" hidden><b id="cpName"></b><span id="cpBy"></span></div></div>
+        </div>
+        <div class="stage-tools">
+          <div class="dots" id="cpDots"></div>
+          <button class="btn px-btn px-yellow btn-sm" id="cpTry" type="button" data-t="cp.try"></button>
+          <button class="btn px-btn px-dark btn-sm" id="cpBack" type="button" hidden data-t="cp.back"></button>
+        </div>
+        <p class="pz-hint" id="pzHint" hidden data-t="cp:how"></p>
+        <div class="pz-done" id="pzDone" hidden>
+          <span class="tag" data-t="cp:fact"></span><p id="pzFact"></p>
+          <p class="next" data-t="cp.next"></p>
+          <a class="btn px-btn px-pink" href="{{cp.demo}}">▶ <span data-t="cp:play"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap od" id="orbitdash" data-world="orbit" data-sec="games" aria-labelledby="odTitle">
+    <div class="wrap chap-in">
+      <div class="od-box rv">
+        <canvas id="odCv" width="1" height="1" tabindex="0" role="button" data-ta="aria-label:od.aria"></canvas>
+        <p class="od-hint" id="odHint" aria-live="polite"></p>
+      </div>
+      <div class="chap-txt rv">
+        <span class="badge" data-t="badge.live"></span>
+        <h2 class="od-title" id="odTitle"><span class="o">ORBIT</span><span class="d">DASH</span></h2>
+        <p class="od-tagline" data-t="od.tag"></p>
+        <p class="chap-lead" data-t="od.lead"></p>
+        <ul class="od-chips"><li data-t="od.free"></li><li data-t="od.offline"></li><li data-t="od.ranks"></li></ul>
+        <div class="ctas">
+          <a class="btn btn-cyan" href="{{od.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
+          <a class="btn od-line" href="{{od.site}}" data-t="game.site"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap more" id="more" data-world="more" data-sec="games">
+    <div class="wrap">
+      <p class="eyebrow rv" data-t="more.eyebrow"></p>
+      <h2 class="h2 rv" data-t="more.title"></h2>
+      <p class="sub rv" data-t="more.lead"></p>
+      <div class="shelf">{{games}}</div>
+    </div>
+  </section>
+
+  <section class="studio" id="studio" data-world="lewydo" data-sec="studio">
+    <div class="wrap studio-in">
+      <div class="rv">
+        <p class="eyebrow" data-t="studio.eyebrow"></p>
+        <h2 class="h2" data-t="studio.title"></h2>
+        <p class="sub" data-t="cp:about"></p>
+        <ul class="stats"><li data-t="stat.people" data-n="people"></li><li data-t="stat.games" data-n="games"></li><li data-t="stat.langs" data-n="langs"></li></ul>
+      </div>
+      <div class="cd-wrap rv">
+        <h3 data-t="cd.title"></h3>
+        <p data-t="cd.text"></p>
+        <div class="cd" id="cd">
+          <div class="cd-grid"></div>
+          <div class="cd-code" aria-hidden="true"><div class="cd-heart"><pre>{{code}}</pre></div></div>
+          <div class="cd-design" aria-hidden="true"><div class="cd-heart"><span class="lw-beat" id="cdBeat"><i class="lw-glow"><i></i></i><img class="lw-heart" src="/assets/lewydo-heart.webp" alt="" width="132" height="122"></span></div></div>
+          <div class="cd-bar"></div>
+          <input class="cd-range" id="cdRange" type="range" min="0" max="100" value="50" step="1" data-ta="aria-label:cd.aria">
+          <span class="cd-knob" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 6 3 12l6 6M15 6l6 6-6 6" fill="none" stroke="#04120A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="cd-l" data-t="cd.code"></span><span class="cd-r" data-t="cd.design"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap people">
+      <article class="person rv">
+        <p class="role" data-t="p.vlad.role"></p>
+        <h3>VELDAN</h3>
+        <p class="who" data-t="p.vlad.who"></p>
+        <p data-t="p.vlad.bio"></p>
+        <div class="contacts">
+          <a href="https://instagram.com/___vel__dan___" rel="noopener">{{ico:insta}}<span>___vel__dan___</span></a>
+          <a href="https://t.me/vel_dan" rel="noopener">{{ico:tg}}<span>vel_dan</span></a>
+          <a href="mailto:veldan1202@gmail.com">{{ico:mail}}<span>veldan1202@gmail.com</span></a>
+        </div>
+      </article>
+      <article class="person rv">
+        <p class="role" data-t="p.lilya.role"></p>
+        <h3>LILYA</h3>
+        <p class="who" data-t="p.lilya.who"></p>
+        <p data-t="p.lilya.bio"></p>
+        <div class="contacts">
+          <a href="https://instagram.com/lilya.design" rel="noopener">{{ico:insta}}<span>lilya.design</span></a>
+          <a href="https://t.me/Over_lilya" rel="noopener">{{ico:tg}}<span>Over_lilya</span></a>
+          <a href="mailto:Lilyadesign05@gmail.com">{{ico:mail}}<span>Lilyadesign05@gmail.com</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="story" id="story" data-world="lewydo" data-sec="story">
+    <div class="wrap">
+      <div class="center"><p class="eyebrow rv" data-t="story.eyebrow"></p><h2 class="h2 rv" data-t="story.title"></h2></div>
+      <ol class="tl" id="tl">
+        <li class="tl-i rv"><p class="tl-when" data-t="story.1.when"></p><h3 data-t="story.1.t"></h3><p data-t="story.1.d"></p></li>
+        <li class="tl-i rv"><p class="tl-when" data-t="story.2.when"></p><h3 data-t="story.2.t"></h3><p data-t="story.2.d"></p></li>
+        <li class="tl-i love rv"><p class="tl-when" data-t="story.3.when"></p><h3 data-t="story.3.t"></h3><p data-t="story.3.d"></p></li>
+        <li class="tl-i love rv"><p class="tl-when" data-t="story.4.when"></p><h3 data-t="story.4.t"></h3><p data-t="story.4.d"></p></li>
+        <li class="tl-i rv"><p class="tl-when" data-t="story.5.when"></p><h3 data-t="story.5.t"></h3><p data-t="story.5.d"></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" data-world="lewydo" data-sec="contact">
+    <div class="wrap">
+      <div class="contact-card rv">
+        <div class="contact-mark" aria-hidden="true"><span class="lw-mark"><span class="lw-beat" id="contactBeat"><i class="lw-glow"><i></i></i><img class="lw-heart" src="/assets/lewydo-heart.webp" alt="" width="132" height="122"></span></span></div>
+        <p class="eyebrow" data-t="contact.eyebrow"></p>
+        <h2 class="h2" data-t="contact.title"></h2>
+        <p class="sub" data-t="contact.text"></p>
+        <div class="ctas">
+          <a class="btn btn-green" href="mailto:veldan1202@gmail.com">{{ico:mail}}<span data-t="contact.mail"></span></a>
+          <a class="btn btn-line" href="https://t.me/vel_dan" rel="noopener">{{ico:tg}}<span>Telegram</span></a>
+          <a class="btn btn-line" href="{{devPage}}" rel="noopener">{{gpIcon}}<span data-t="cp:games"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" data-world="lewydo">
+  <div class="wrap">
+    <a class="lw-pill" href="#top" aria-label="Lewydo">{{sig}}<svg class="arr" viewBox="0 0 5 8" aria-hidden="true"><path d="M1 1l3 3-3 3" fill="none" stroke="#9DF5C2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="foot-made" data-t="foot.made"></p>
+    <nav class="foot-links" aria-label="Lewydo">
+      <a href="{{cp.site}}" data-lang-link>CubePix</a><a href="{{od.site}}">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a>
+      <a href="{{cp.privacy}}"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}"><span data-t="foot.privacy"></span> · Orbit Dash</a>
+    </nav>
+    <p class="foot-c">© {{year}} Lewydo™ · Love What You Do · <span data-t="foot.rights"></span></p>
+  </div>
+</footer>
+
+<div id="og" aria-hidden="true">
+  <div class="lock">{{lockup}}</div>
+  <div class="og-t"><p class="eyebrow" data-t="hero.eyebrow"></p><h1 data-t="studio.title"></h1><p data-t="cd.title"></p>
+    <div class="og-games">{{ogGames}}</div></div>
+</div>
+
+<div id="kit" aria-hidden="true">
+  <div class="kit kit-navy" id="kitIcon"><div class="kit-mark">{{mark}}</div></div>
+  <div class="kit kit-navy" id="kitTouch"><div class="kit-mark">{{mark}}</div></div>
+  <div class="kit" id="kitFav"><div class="kit-mark">{{mark}}</div></div>
+  <div class="kit" id="kitLockup"><div class="lock">{{lockup}}</div></div>
+  <div class="kit kit-navy" id="kitBanner"><div class="lock">{{lockup}}</div></div>
+</div>
+
+<script id="data" type="application/json">{{DATA}}</script>
+<script>
+(() => {
+'use strict';
+const D = JSON.parse(document.getElementById('data').textContent);
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches, OG = document.documentElement.classList.contains('og');
+const DPR = Math.min(2, window.devicePixelRatio || 1);
+const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v)), lerp = (a, b, t) => a + (b - a) * t;
+const easeIO = (t) => (t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2), easeO = (t) => 1 - Math.pow(1 - t, 3);
+// is it on screen? (animations sleep when it isn't)
+const seen = (el, margin = '0px') => { let on = false; new IntersectionObserver((es) => es.forEach((e) => { on = e.isIntersecting; }), { rootMargin: margin }).observe(el); return () => on && !document.hidden; };
+const beat = (el) => { if (!el) return; el.classList.remove('lw-beating'); void el.offsetWidth; el.classList.add('lw-beating'); };
+
+// ── language: ?lang= → the visitor's choice → the device → English (the same 15 languages and rules as our games) ──
+const IDS = D.langs.map((L) => L.id);
+const pick = (tag) => { if (!tag) return null; const t = String(tag).toLowerCase();
+  if (t.startsWith('zh')) return /^zh-(tw|hk|mo)|hant/.test(t) ? 'zh-TW' : null;
+  if (t === 'in' || t.startsWith('in-')) return 'id';
+  const b = t.split('-')[0]; return IDS.includes(b) ? b : null; };
+const urlLang = new URLSearchParams(location.search).get('lang');
+const saved = [store.get('lewydo:lang'), store.get('cubepix-site:lang')].find((l) => IDS.includes(l));
+let lang = (IDS.includes(urlLang) && urlLang) || saved || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
+const PR = {}; const plural = (n) => (PR[lang] ??= new Intl.PluralRules(lang)).select(n);
+const T = (k, n) => { let v = D.S[lang][k] ?? D.S.en[k] ?? ''; if (typeof v === 'object') v = v[plural(n ?? 0)] ?? v.other; return String(v).replace(/\{n\}/g, n ?? ''); };
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+const pic = (key, f) => { const p = D.cp.pics[key]; return (p[lang] || p.en)[f] || ''; };
+const onLang = [];
+function applyLang() {
+  document.documentElement.lang = lang;
+  $$('[data-t]').forEach((el) => { const n = el.dataset.n ? D.counts[el.dataset.n] : undefined, v = T(el.dataset.t, n);
+    if (el.tagName === 'TITLE') document.title = v; else el.innerHTML = rich(v); });
+  $$('[data-ta]').forEach((el) => { const [a, k] = el.dataset.ta.split(/:(.+)/); el.setAttribute(a, T(k)); });
+  $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); a.setAttribute('href', a.dataset.base + (lang === 'en' ? '' : '?lang=' + lang)); });
+  $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag; $('#langCode').textContent = lang === 'zh-TW' ? '繁中' : lang.toUpperCase();
+  $$('#langMenu button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
+  onLang.forEach((f) => f());
+}
+function setLang(id) { if (!IDS.includes(id) || id === lang) return; lang = id; store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);
+  try { const u = new URL(location.href); u.searchParams.set('lang', id); history.replaceState(null, '', u); } catch (e) {}
+  applyLang(); }
+const menu = $('#langMenu'), langBtn = $('#langBtn');
+menu.innerHTML = D.langs.map((L) => `<button type="button" role="option" data-lang="${L.id}" lang="${L.id}"><span class="flag">${L.flag}</span>${esc(L.name)}</button>`).join('');
+const openMenu = (on) => { menu.hidden = !on; langBtn.setAttribute('aria-expanded', String(on)); if (on) (menu.querySelector('[aria-selected="true"]') || menu.firstChild).focus(); };
+langBtn.addEventListener('click', () => openMenu(menu.hidden));
+menu.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; setLang(b.dataset.lang); openMenu(false); langBtn.focus(); });
+menu.addEventListener('keydown', (e) => { const bs = $$('button', menu), i = bs.indexOf(document.activeElement);
+  if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
+  else if (e.key === 'Escape') { openMenu(false); langBtn.focus(); } });
+document.addEventListener('click', (e) => { if (!menu.hidden && !e.target.closest('.langsel')) openMenu(false); });
+
+// ── the worlds: whichever section crosses the middle of the screen sets the world (background, sky, accent) ──
+let world = 'lewydo';
+const sky = (() => {
+  const cv = $('#sky'), x = cv.getContext('2d'); let W = 0, H = 0, P = [], raf = 0, last = 0;
+  const KINDS = { lewydo: ['spark', 46, ['#6DF593', '#3DDC84', '#9DF5C2']], cubepix: ['pixel', 34, ['#FF3CAC', '#00F5D4', '#FFD60A', '#B07CFF', '#7fd8ff']],
+    orbit: ['star', 110, ['#ffffff', '#d7fbff', '#9ff6ff']], more: ['dot', 36, ['#FFB03A', '#4DD9FF', '#FFD54A', '#FF8C42', '#6DF593']] };
+  const sprites = {};
+  const glowOf = (c) => sprites[c] ??= (() => { const s = document.createElement('canvas'); s.width = s.height = 32; const g = s.getContext('2d'), r = g.createRadialGradient(16, 16, 0, 16, 16, 16);
+    r.addColorStop(0, c); r.addColorStop(.25, c + 'cc'); r.addColorStop(1, c + '00'); g.fillStyle = r; g.fillRect(0, 0, 32, 32); return s; })();
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  let made = 0;
+  function size() { const same = made && innerWidth === W && innerHeight <= made * 1.25;   // a phone's address bar hiding: keep the stars where they are
+    W = innerWidth; H = innerHeight; cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR); cv.style.width = W + 'px'; cv.style.height = H + 'px'; x.setTransform(DPR, 0, 0, DPR, 0, 0);
+    if (same) return; made = H;
+    const k = Math.min(1, (W * H) / (1280 * 800)) * .75 + .25; P = [];
+    for (const [w, [kind, n, cols]] of Object.entries(KINDS)) for (let i = 0; i < Math.round(n * k); i++)
+      P.push({ w, kind, x: Math.random() * W, y: Math.random() * H, s: kind === 'pixel' ? [3, 4, 5, 6, 8][(Math.random() * 5) | 0] : kind === 'star' ? rnd(.5, 1.7) : rnd(1.2, 3), c: cols[(Math.random() * cols.length) | 0],
+        ph: Math.random() * 6.28, tw: rnd(.6, 1.8), sp: rnd(.3, 1), a: w === world ? 1 : 0 }); }
+  function draw(now, dt) {
+    x.clearRect(0, 0, W, H); const t = now / 1000;
+    for (const p of P) { const on = p.w === world ? 1 : 0; p.a = RM ? on : p.a + (on - p.a) * Math.min(1, dt * 2.2); if (p.a < .01) continue;
+      if (!RM) { if (p.kind === 'spark') { p.y -= p.sp * 14 * dt; p.x += Math.sin(t * .7 + p.ph) * .12; } else if (p.kind === 'pixel') p.y += p.sp * 16 * dt; else if (p.kind === 'dot') { p.x += Math.cos(t * .2 + p.ph) * .15; p.y -= p.sp * 5 * dt; }
+        if (p.y < -12) p.y = H + 12; if (p.y > H + 12) p.y = -12; }
+      const tw = RM ? .8 : .5 + .5 * Math.sin(t * p.tw + p.ph);
+      if (p.kind === 'pixel') { x.globalAlpha = p.a * (.25 + .5 * tw); x.fillStyle = p.c; x.fillRect(p.x, p.y, p.s, p.s); }
+      else if (p.kind === 'star') { x.globalAlpha = p.a * (.25 + .7 * tw); x.fillStyle = p.c; x.beginPath(); x.arc(p.x, p.y, p.s, 0, 6.283); x.fill(); }
+      else { const r = p.s * (p.kind === 'spark' ? 4.2 : 5); x.globalAlpha = p.a * (.18 + .5 * tw); x.drawImage(glowOf(p.c), p.x - r, p.y - r, r * 2, r * 2); } }
+    x.globalAlpha = 1; }
+  const frame = (now) => { raf = requestAnimationFrame(frame); if (document.hidden) { last = 0; return; } if (last && now - last < 30) return;
+    const dt = last ? Math.min(.1, (now - last) / 1000) : 0; last = now; draw(now, dt); };
+  return { start() { size(); if (RM) draw(0, 0); else raf = requestAnimationFrame(frame); addEventListener('resize', () => { size(); if (RM) draw(0, 0); }); },
+    redraw() { if (RM) draw(0, 0); } };
+})();
+const setWorld = (w) => { if (!w || w === world) return; world = w; document.body.dataset.world = w; sky.redraw(); };
+const secIO = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; setWorld(e.target.dataset.world);
+  $$('.nav a').forEach((a) => a.setAttribute('aria-current', String(a.dataset.sec === e.target.dataset.sec))); }), { rootMargin: '-50% 0px -50% 0px' });
+$$('main [data-world], footer[data-world]').forEach((s) => secIO.observe(s));
+
+// ── the hero: the pixels of our games fly in and become the Lewydo heart; it beats once. Tap it and it happens again ──
+const hero = (() => {
+  const sec = $('#top'), cv = $('#px'), x = cv.getContext('2d'), lock = $('#lock'), heart = $('.lw-heart', lock), beatEl = $('.lw-beat', lock);
+  const GAMES = [['#FF3CAC', '#FFD60A', '#00F5D4', '#B07CFF'], ['#00E5FF', '#FFD54A', '#FF3D68'], ['#FFB03A', '#B45CFF', '#FFE14D'], ['#FF8C42', '#FFB347', '#E0552B'], ['#FFD54A', '#FFF3B0'], ['#4DD9FF', '#8FB8FF']];
+  const hex = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+  let W = 0, H = 0, P = [], cell = 6, busy = false, first = true, img = null;
+  const size = () => { W = sec.clientWidth; H = sec.clientHeight; cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR); cv.style.width = W + 'px'; cv.style.height = H + 'px'; x.setTransform(DPR, 0, 0, DPR, 0, 0); };
+  function targets() {                                     // the heart, sampled into cells where it is drawn on screen
+    const hr = heart.getBoundingClientRect(), cr = cv.getBoundingClientRect(), cols = Math.round(clamp(hr.width / 5, 26, 44));
+    cell = hr.width / cols; const rows = Math.max(1, Math.round(hr.height / cell)), o = document.createElement('canvas'); o.width = cols; o.height = rows;
+    const g = o.getContext('2d'); g.drawImage(img, 0, 0, cols, rows); const d = g.getImageData(0, 0, cols, rows).data, out = [];
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const i = (r * cols + c) * 4; if (d[i + 3] > 150) out.push({ tx: hr.left - cr.left + (c + .5) * cell, ty: hr.top - cr.top + (r + .5) * cell, c1: [d[i], d[i + 1], d[i + 2]] }); }
+    return { out, cx: hr.left - cr.left + hr.width / 2, cy: hr.top - cr.top + hr.height / 2 };
+  }
+  function land() {                                        // the pixels are home: the real heart appears over them and beats once
+    busy = false; sec.classList.add('lit'); beat(beatEl);
+    cv.style.transition = 'opacity .45s ease'; cv.style.opacity = '0'; setTimeout(() => { if (!busy) x.clearRect(0, 0, W, H); }, 480);
+    first = false;
+  }
+  function fly(burst) {
+    if (busy || !img) return; busy = true; size(); const T0 = targets(); if (!T0.out.length) return land();
+    const R = Math.hypot(W, H) * .6;
+    P = T0.out.map((p, i) => { const g = i % GAMES.length, pal = GAMES[g], c0 = hex(pal[(Math.random() * pal.length) | 0]); let sx, sy;
+      if (!burst) { const a = (g / GAMES.length) * 6.283 - 1.2 + (Math.random() - .5) * 1.05, rr = R * (.22 + Math.random() * .62); sx = T0.cx + Math.cos(a) * rr * 1.15; sy = T0.cy + Math.sin(a) * rr * .8; }
+      else { const a = Math.atan2(p.ty - T0.cy, p.tx - T0.cx) + (Math.random() - .5) * .9, rr = 70 + Math.random() * 240; sx = p.tx + Math.cos(a) * rr; sy = p.ty + Math.sin(a) * rr; }
+      return { ...p, sx, sy, c0, d: burst ? 380 + Math.random() * 260 : 260 + g * 55 + Math.random() * 460, dur: burst ? 760 + Math.random() * 420 : 1000 + Math.random() * 560, sw: (Math.random() - .5) * 190 }; });
+    if (burst) sec.classList.remove('lit');
+    else { setTimeout(() => sec.classList.add('s2'), 850); setTimeout(() => sec.classList.add('s3'), 1350); }
+    cv.style.transition = 'none'; cv.style.opacity = '1';
+    let t0 = 0, home = 0;
+    const frame = (now) => { if (!t0) t0 = now; const t = now - t0; let left = 0; x.clearRect(0, 0, W, H);
+      for (const p of P) { let px, py, col, s = cell * .86, a = 1;
+        if (burst && t < 380) { const k = easeO(t / 380); px = lerp(p.tx, p.sx, k); py = lerp(p.ty, p.sy, k); col = p.c1.map((v, j) => lerp(v, p.c0[j], k)); left++; }
+        else { const k = clamp((t - p.d) / p.dur), e = easeIO(k), dx = p.tx - p.sx, dy = p.ty - p.sy, L = Math.hypot(dx, dy) || 1, sw = Math.sin(Math.PI * e) * p.sw;
+          px = lerp(p.sx, p.tx, e) - dy / L * sw; py = lerp(p.sy, p.ty, e) + dx / L * sw;
+          const m = clamp((k - .5) / .5); col = p.c0.map((v, j) => lerp(v, p.c1[j], m * m)); if (!burst) a = clamp(t / 300); s = cell * (.74 + .12 * e); if (k < 1) left++; }
+        x.globalAlpha = a; x.fillStyle = `rgb(${col[0] | 0},${col[1] | 0},${col[2] | 0})`; x.fillRect(px - s / 2, py - s / 2, s, s); }
+      x.globalAlpha = 1;
+      if (left) { requestAnimationFrame(frame); return; }
+      if (!home) home = now; if (now - home < (burst ? 120 : 260)) requestAnimationFrame(frame); else land(); };   // a moment as a pixel heart
+    requestAnimationFrame(frame);
+  }
+  function show() { busy = false; first = false; sec.classList.add('lit', 's2', 's3'); }
+  return {
+    start() {
+      const r = sec.getBoundingClientRect(), onScreen = r.top < innerHeight * .5 && r.bottom > innerHeight * .3;
+      if (RM || OG || !onScreen) { show(); if (!RM && onScreen) beat(beatEl); return; }
+      img = new Image(); img.decoding = 'async'; const go = () => (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => fly(false));
+      img.onload = go; img.onerror = show; img.src = heart.currentSrc || heart.src; setTimeout(() => { if (first && !busy) show(); }, 4000);
+      $('#heartBtn').addEventListener('click', () => { sec.classList.add('tapped'); if (RM) { beat(beatEl); return; } fly(true); });
+    },
+  };
+})();
+
+// ── CubePix: a painting of the museum revealed layer by layer, the game's way — or play the small one yourself ──
+const grids = {};
+const gridOf = (k) => grids[k] ??= D.cp.art[k].rows.split('/').map((r) => Array.from(r, (c) => parseInt(c, 36)));
+const shade = (hx, t) => { const n = parseInt(hx.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255, f = t < 0 ? 0 : 255, a = Math.abs(t);
+  return `rgb(${Math.round(r + (f - r) * a)},${Math.round(g + (f - g) * a)},${Math.round(b + (f - b) * a)})`; };
+function cubeSvg(el, color, n) {                          // the player's cube, with the layer's number on its face (the game's IsoCube)
+  const top = shade(color, .38), right = shade(color, -.4), edge = shade(color, .75), ink = shade(color, -.66);
+  el.innerHTML = `<polygon points="50,6 92,28 50,50 8,28" fill="${top}"/><polygon points="8,28 50,50 50,96 8,74" fill="${color}"/><polygon points="92,28 50,50 50,96 92,74" fill="${right}"/>` +
+    `<polygon points="40,17 52,11 62,16 50,22" fill="rgba(255,255,255,.55)"/><polyline points="8,28 50,6 92,28" fill="none" stroke="${edge}" stroke-width="3"/>` +
+    `<polyline points="8,28 50,50 92,28" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>` +
+    (n != null ? `<text x="0" y="0" transform="translate(29 63) skewY(27.6)" text-anchor="middle" dominant-baseline="central" font-size="${n > 9 ? 34 : 44}" font-weight="900" font-family="Nunito,sans-serif" fill="${ink}">${n}</text>` : '');
+}
+class Board {                                              // the same board as the CubePix site: dark numbered cells, cubes popping in, layers merging
+  constructor(cv, key, w, h) { this.cv = cv; this.key = key; this.A = D.cp.art[key]; this.g = gridOf(key); this.fit(w, h); }
+  fit(w, h) { const A = this.A, cell = Math.max(2, Math.floor(Math.min(w / A.w, (h || w) / A.h) * DPR));
+    this.cell = cell; this.cv.width = A.w * cell; this.cv.height = A.h * cell; this.cv.style.width = (A.w * cell / DPR) + 'px'; this.cv.style.height = (A.h * cell / DPR) + 'px';
+    this.x = this.cv.getContext('2d'); this.x.textAlign = 'center'; this.x.textBaseline = 'middle'; this.x.font = `900 ${Math.round(cell * .5)}px Nunito, sans-serif`; }
+  cellsOf(v) { const out = [], A = this.A; for (let r = 0; r < A.h; r++) { const row = []; for (let c = 0; c < A.w; c++) if (this.g[r][c] === v) row.push([r, c]); if (r % 2) row.reverse(); out.push(...row); } return out; }
+  cube(X, Y, cell, col, k) { const x = this.x, f = k < .6 ? .5 + k / .6 * .72 : 1.22 - (k - .6) / .4 * .22, s = cell * Math.min(1.22, f), o = (cell - s) / 2;
+    x.fillStyle = col; x.fillRect(X + o, Y + o, s, s);
+    if (k >= 1 && cell >= 6) { const b = Math.max(1, Math.round(cell * .12)); x.fillStyle = 'rgba(255,255,255,.25)'; x.fillRect(X, Y, cell, b); x.fillRect(X, Y, b, cell);
+      x.fillStyle = 'rgba(0,0,0,.25)'; x.fillRect(X, Y + cell - b, cell, b); x.fillRect(X + cell - b, Y, b, cell); }
+    if (k < 1) { x.fillStyle = `rgba(255,255,255,${(1 - k) * .8})`; x.fillRect(X + o, Y + o, s, s); } }
+  draw(p) { const { x, cell, A, g } = this, L = p.layer, now = p.now, big = cell >= 14 * DPR;
+    x.clearRect(0, 0, this.cv.width, this.cv.height);
+    for (let r = 0; r < A.h; r++) for (let c = 0; c < A.w; c++) {
+      const v = g[r][c]; if (!v) continue; const X = c * cell, Y = r * cell, col = A.pal[v - 1];
+      const k = v < L ? 1 : v === L && p.filled && p.filled.has(r * 999 + c) ? (RM ? 1 : clamp((now - p.filled.get(r * 999 + c)) / 230)) : 0;
+      if (!k) { x.fillStyle = v === L ? '#221d52' : '#141132'; x.fillRect(X + .5, Y + .5, cell - 1, cell - 1);
+        if (v === L) { if (big) { x.fillStyle = shade(col, .35); x.fillText(String(v), X + cell / 2, Y + cell / 2 + 1); }
+          else { const d = Math.max(1, Math.round(cell * .34)); x.globalAlpha = .6; x.fillStyle = col; x.fillRect(X + (cell - d) / 2, Y + (cell - d) / 2, d, d); x.globalAlpha = 1; } }
+        continue; }
+      this.cube(X, Y, cell, col, k);
+      if (p.flash && v === L - 1) { x.fillStyle = `rgba(255,255,255,${p.flash})`; x.fillRect(X, Y, cell, cell); } }
+    if (p.dim) { x.fillStyle = `rgba(11,10,24,${p.dim})`; x.fillRect(0, 0, this.cv.width, this.cv.height); } }
+  wave(t) { const { x, cell, A, g } = this, cy = (A.h - 1) / 2, cx = (A.w - 1) / 2, far = Math.hypot(cx, cy) || 1; x.clearRect(0, 0, this.cv.width, this.cv.height);
+    for (let r = 0; r < A.h; r++) for (let c = 0; c < A.w; c++) { const v = g[r][c]; if (!v) continue;
+      const k = clamp((t - Math.hypot(c - cx, r - cy) / far * 900 - ((r * 7 + c * 13) % 5) * 18) / 300);
+      if (!k) { x.fillStyle = '#141132'; x.fillRect(c * cell + .5, r * cell + .5, cell - 1, cell - 1); } else this.cube(c * cell, r * cell, cell, A.pal[v - 1], k); } }
+}
+function play(board, o) {                                  // a board through its layers: the chain fills, the layer merges, the next number; hold, fade, next
+  const Lmax = board.A.pal.length, vis = o.vis || (() => true);
+  let layer = 1, filled = new Map(), cells = board.cellsOf(layer), i = 0, t0 = 0, phase = 'fill', pt = 0, raf = 0, alive = true;
+  const per = () => Math.max(8, Math.min(60, 1100 / Math.max(1, cells.length)));
+  o.onLayer && o.onLayer(layer);
+  const frame = (now) => { if (!alive) return; raf = requestAnimationFrame(frame); if (!vis()) { if (t0) t0 += 16; return; }
+    if (!t0) t0 = now;
+    if (phase === 'fill') { while (i < cells.length && now - t0 >= i * per()) { const [r, c] = cells[i]; filled.set(r * 999 + c, t0 + i * per()); i++; }
+      if (i >= cells.length && now - t0 >= cells.length * per() + 260) { phase = 'merge'; pt = now; } }
+    if (phase === 'merge') { const k = (now - pt) / 320;
+      if (k < 1) { board.draw({ layer: layer + 1, now, flash: .55 * (1 - k) }); return; }
+      if (layer >= Lmax) { phase = 'hold'; pt = now; layer = Lmax + 1; filled = new Map(); o.onDone && o.onDone(); }
+      else { layer++; filled = new Map(); cells = board.cellsOf(layer); i = 0; t0 = now + 120; phase = 'fill'; o.onLayer && o.onLayer(layer); } }
+    let dim = 0;
+    if (phase === 'hold' && now - pt > (o.hold ?? 2600)) { phase = 'fade'; pt = now; }
+    if (phase === 'fade') { dim = Math.min(1, (now - pt) / 600); if (dim >= 1) { alive = false; cancelAnimationFrame(raf); ctl.next && ctl.next(); return; } }
+    board.draw({ layer, filled, now, dim }); };
+  const ctl = { stop() { alive = false; cancelAnimationFrame(raf); }, next: null };
+  raf = requestAnimationFrame(frame);
+  return ctl;
+}
+const cubepix = (() => {
+  const C = D.cp, cv = $('#cpCv'), stage = $('#cpStage'), mat = cv.parentElement, vis = seen(cv), dots = $('#cpDots');
+  let mode = 'show', idx = 0, key = C.hero[0], ctl = null, curL = 1, board = null, pz = null;
+  dots.innerHTML = C.hero.map((k, i) => `<button type="button" data-i="${i}"></button>`).join('');
+  const fit = () => new Board(cv, key, mat.clientWidth - 20, mat.clientHeight - 20);
+  function label() { const A = C.art[key], Lm = A.pal.length, done = curL > Lm;
+    $('#cpLayer').textContent = done ? T('cp:revealed') : T('cp:layer').replace('{a}', curL).replace('{b}', Lm);
+    $('#cpPlq').hidden = !done; $('#cpName').textContent = pic(key, 'n'); $('#cpBy').textContent = [pic(key, 'a'), pic(key, 'y')].filter(Boolean).join(', ');
+    $('#cpBy').hidden = !$('#cpBy').textContent;
+    cubeSvg($('#cpCube'), done ? '#FFD60A' : A.pal[curL - 1], done ? null : curL);
+    $$('button', dots).forEach((b, i) => { b.setAttribute('aria-current', String(i === idx)); b.setAttribute('aria-label', pic(C.hero[i], 'n')); });
+    $('#pzFact').textContent = pic(C.puzzle, 'f'); }
+  function stop() { ctl && ctl.stop(); ctl = null; if (pz) cancelAnimationFrame(pz.raf); }
+  function show(i) { stop(); mode = 'show'; stage.classList.remove('playing'); cv.setAttribute('role', 'img'); cv.tabIndex = -1; cv.setAttribute('aria-label', T('cp:demo'));
+    $('#cpTry').hidden = false; $('#cpBack').hidden = true; $('#pzHint').hidden = true; $('#pzDone').hidden = true;
+    idx = (i + C.hero.length) % C.hero.length; key = C.hero[idx]; board = fit(); curL = 1;
+    if (RM) { curL = C.art[key].pal.length + 1; board.draw({ layer: curL, now: 0 }); label(); return; }
+    ctl = play(board, { vis, hold: 3200, onLayer: (L) => { curL = L; label(); }, onDone: () => { curL = C.art[key].pal.length + 1; label(); } }); ctl.next = () => show(idx + 1); label(); }
+  // the mini-puzzle: tap the cells that carry your cube's number, or drag across them; a full layer merges and the cube takes the next number
+  function puzzle() { stop(); mode = 'play'; stage.classList.add('playing'); cv.setAttribute('role', 'application'); cv.tabIndex = 0; cv.setAttribute('aria-label', T('cp.aria'));
+    $('#cpTry').hidden = true; $('#cpBack').hidden = false; $('#pzHint').hidden = false; $('#pzDone').hidden = true;
+    key = C.puzzle; board = fit(); curL = 1; pz = { filled: new Map(), left: board.cellsOf(1).length, flash: 0, wave: 0, raf: 0, drag: false }; label(); paint(); cv.focus({ preventScroll: true }); }
+  function paint() { cancelAnimationFrame(pz.raf); const tick = (now) => { const fl = pz.flash ? Math.max(0, .55 * (1 - (now - pz.flash) / 320)) : 0;
+      if (pz.wave) { board.wave(now - pz.wave); if (now - pz.wave < 1700) pz.raf = requestAnimationFrame(tick); return; }
+      board.draw({ layer: curL, filled: pz.filled, now, flash: fl });
+      if (fl > 0 || [...pz.filled.values()].some((s) => now - s < 240)) pz.raf = requestAnimationFrame(tick); };
+    pz.raf = requestAnimationFrame(tick); }
+  function fill(r, c) { if (mode !== 'play' || !pz || pz.wave || curL > C.art[key].pal.length) return; const g = gridOf(key);
+    if (g[r]?.[c] !== curL || pz.filled.has(r * 999 + c)) return;
+    pz.filled.set(r * 999 + c, performance.now()); if (--pz.left <= 0) setTimeout(next, 260); paint(); }
+  function next() { const Lm = C.art[key].pal.length; curL++; pz.filled = new Map();
+    if (curL > Lm) { pz.wave = RM ? 0 : performance.now(); if (RM) board.draw({ layer: curL, now: 0 }); $('#pzHint').hidden = true; $('#pzDone').hidden = false; }
+    else { pz.left = board.cellsOf(curL).length; pz.flash = performance.now(); }
+    label(); paint(); }
+  const at = (e) => { const r = cv.getBoundingClientRect(), A = C.art[key]; return [Math.floor((e.clientY - r.top) / r.height * A.h), Math.floor((e.clientX - r.left) / r.width * A.w)]; };
+  cv.addEventListener('pointerdown', (e) => { if (mode !== 'play') return; e.preventDefault(); pz.drag = true; try { cv.setPointerCapture(e.pointerId); } catch (_) {} fill(...at(e)); });
+  cv.addEventListener('pointermove', (e) => { if (mode === 'play' && pz.drag) fill(...at(e)); });
+  ['pointerup', 'pointercancel'].forEach((t) => cv.addEventListener(t, () => { if (pz) pz.drag = false; }));
+  cv.addEventListener('keydown', (e) => { if (mode !== 'play' || (e.key !== 'Enter' && e.key !== ' ')) return; e.preventDefault();   // keyboard: the next cell of the layer
+    const c = board.cellsOf(curL).find(([r, cc]) => !pz.filled.has(r * 999 + cc)); if (c) fill(...c); });
+  dots.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) show(+b.dataset.i); });
+  $('#cpTry').addEventListener('click', puzzle); $('#cpBack').addEventListener('click', () => show(idx));
+  let lastW = innerWidth; addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(cubepix.rz); cubepix.rz = setTimeout(() => (mode === 'play' ? puzzle() : show(idx)), 250); });
+  onLang.push(() => { label(); cv.setAttribute('aria-label', mode === 'play' ? T('cp.aria') : T('cp:demo')); });
+  return { start: () => show(0), rz: 0 };
+})();
+
+// ── Orbit Dash: two orbits, one tap. Until you tap, it plays itself ──
+const orbit = (() => {
+  const cv = $('#odCv'), x = cv.getContext('2d'), vis = seen(cv), hint = $('#odHint');
+  const C = { ring: '#2b3060', ringOn: '#3c4596', player: '#00E5FF', gem: '#FFD54A', spike: '#FF3D68' };
+  let S = 400, cx = 200, cy = 200, R = [160, 108], last = 0;
+  const st = { mode: 'demo', th: -Math.PI / 2, lane: 0, r: 0, objs: [], score: 0, best: +(store.get('lewydo:od-best') || 0), boom: 0, overAt: 0, trail: [] };
+  const norm = (a) => { a = (a + Math.PI) % 6.2832; if (a < 0) a += 6.2832; return a - Math.PI; };
+  function size() { const w = cv.getBoundingClientRect().width || 360; S = w; cv.width = Math.round(S * DPR); cv.height = Math.round(S * DPR); x.setTransform(DPR, 0, 0, DPR, 0, 0);
+    cx = cy = S / 2; R = [S * .41, S * .27]; st.r = R[st.lane]; st.trail = []; }
+  function say() { hint.innerHTML = RM ? '' : esc(T(st.mode === 'demo' ? 'od.demo' : st.mode === 'over' ? 'od.over' : 'od.play')) + (st.mode === 'demo' ? '<span class="od-keys">Space · Enter</span>' : ''); }
+  function reset(mode) { Object.assign(st, { mode, score: 0, objs: [], boom: 0 }); say(); }
+  function spawn() { const a = st.th + 1.1 + Math.random() * 2.6; if (st.objs.some((o) => Math.abs(norm(o.a - a)) < .44)) return false;
+    st.objs.push({ a, lane: Math.random() < .5 ? 0 : 1, gem: Math.random() < .6, hit: 0 }); return true; }
+  function tap() { if (RM) return; if (st.mode !== 'play') reset('play'); st.lane ^= 1; }
+  function crash(now) { st.boom = 1; st.mode = 'over'; st.overAt = now; if (st.score > st.best) { st.best = st.score; store.set('lewydo:od-best', String(st.best)); } say(); }
+  function step(dt, now) {
+    if (st.mode === 'over') { st.boom = Math.max(0, st.boom - dt * 1.4); if (now - st.overAt > 8000) reset('demo'); return; }
+    const w = Math.min(3.3, 1.9 + st.score * .045); st.th += w * dt; st.r += (R[st.lane] - st.r) * Math.min(1, dt * 18);
+    if (st.mode === 'demo') { const ahead = st.objs.filter((o) => !o.hit && norm(o.a - st.th) > 0 && norm(o.a - st.th) < .62).sort((a, b) => norm(a.a - st.th) - norm(b.a - st.th))[0];
+      if (ahead && ((!ahead.gem && ahead.lane === st.lane) || (ahead.gem && ahead.lane !== st.lane && norm(ahead.a - st.th) < .3))) st.lane ^= 1; }
+    for (const o of st.objs) { if (o.hit) { o.hit += dt * 3; continue; }
+      if (Math.abs(norm(o.a - st.th)) < .075 && Math.abs(st.r - R[o.lane]) < S * .05) { if (o.gem) { o.hit = .01; st.score++; } else if (st.mode === 'play') { o.hit = .01; crash(now); return; } } }
+    st.objs = st.objs.filter((o) => norm(o.a - st.th) > -1 && o.hit < 1);
+    for (let n = 0; n < 4 && st.objs.filter((o) => !o.hit).length < 6; n++) spawn();
+    st.trail.push([cx + Math.cos(st.th) * st.r, cy + Math.sin(st.th) * st.r]); if (st.trail.length > 16) st.trail.shift(); }
+  function draw() {
+    x.clearRect(0, 0, S, S);
+    const g = x.createRadialGradient(cx, cy, 0, cx, cy, S * .5); g.addColorStop(0, 'rgba(0,229,255,.12)'); g.addColorStop(.7, 'rgba(0,229,255,.03)'); g.addColorStop(1, 'rgba(0,229,255,0)');
+    x.fillStyle = g; x.fillRect(0, 0, S, S);
+    R.forEach((r, i) => { x.beginPath(); x.arc(cx, cy, r, 0, 6.2832); x.lineWidth = S * .017; x.strokeStyle = i === st.lane ? C.ringOn : C.ring; x.stroke(); });
+    for (const o of st.objs) { const r = R[o.lane], px = cx + Math.cos(o.a) * r, py = cy + Math.sin(o.a) * r, k = 1 + o.hit * 1.6;
+      x.save(); x.globalAlpha = Math.max(0, 1 - o.hit); x.translate(px, py); x.shadowBlur = 14;
+      if (o.gem) { x.rotate(o.a + Math.PI / 4); const s = S * .034 * k; x.shadowColor = C.gem; x.fillStyle = C.gem; x.fillRect(-s / 2, -s / 2, s, s); }
+      else { x.rotate(o.a + (o.lane ? Math.PI : 0)); const s = S * .04 * k; x.shadowColor = C.spike; x.fillStyle = C.spike; x.beginPath(); x.moveTo(s * .9, 0); x.lineTo(-s * .45, -s * .62); x.lineTo(-s * .45, s * .62); x.closePath(); x.fill(); }
+      x.restore(); }
+    st.trail.forEach(([tx, ty], i) => { const k = i / st.trail.length; x.globalAlpha = k * .35; x.fillStyle = C.player; x.beginPath(); x.arc(tx, ty, S * .02 * k, 0, 6.2832); x.fill(); });
+    x.globalAlpha = 1;
+    x.save(); x.shadowColor = C.player; x.shadowBlur = 24; x.fillStyle = C.player; x.beginPath(); x.arc(cx + Math.cos(st.th) * st.r, cy + Math.sin(st.th) * st.r, S * .032, 0, 6.2832); x.fill(); x.restore();
+    x.textAlign = 'center'; x.textBaseline = 'middle';
+    if (st.mode !== 'demo') { x.fillStyle = '#fff'; x.font = `900 ${Math.round(S * .13)}px Nunito, sans-serif`; x.fillText(String(st.score), cx, cy - S * .02);
+      x.fillStyle = 'rgba(191,246,255,.75)'; x.font = `800 ${Math.round(S * .036)}px Nunito, sans-serif`; x.fillText(`${T('od.best')} ${st.best}`, cx, cy + S * .075); }
+    else { const s = S * .05, p = .75 + .25 * Math.sin(performance.now() / 300); x.save(); x.translate(cx, cy); x.rotate(Math.PI / 4); x.globalAlpha = p; x.shadowColor = C.gem; x.shadowBlur = 20; x.fillStyle = C.gem; x.fillRect(-s / 2, -s / 2, s, s); x.restore(); }
+    if (st.boom) { x.fillStyle = `rgba(255,61,104,${st.boom * .3})`; x.beginPath(); x.arc(cx, cy, S * .5, 0, 6.2832); x.fill(); } }
+  const frame = (now) => { requestAnimationFrame(frame); if (!vis()) { last = 0; return; } const dt = last ? Math.min(.05, (now - last) / 1000) : 0; last = now; step(dt, now); draw(); };
+  cv.addEventListener('pointerdown', (e) => { e.preventDefault(); tap(); });
+  cv.addEventListener('keydown', (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tap(); } });
+  new ResizeObserver(() => { size(); if (RM) draw(); }).observe(cv);
+  onLang.push(say);
+  return { start() { size(); say(); for (let n = 0; n < 6; n++) spawn(); if (RM) draw(); else requestAnimationFrame(frame); } };
+})();
+
+// ── code ↔ design ──
+const codeDesign = () => {
+  const cd = $('#cd'), range = $('#cdRange'); let touched = false;
+  const set = (v) => cd.style.setProperty('--p', v + '%');
+  range.addEventListener('input', () => { touched = true; set(range.value); });
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; io.disconnect(); beat($('#cdBeat'));
+    if (RM || touched) return; let t0 = 0; const path = [[0, 50], [700, 22], [1500, 78], [2200, 50]];          // a little swing to show it moves
+    const f = (now) => { if (touched) return; if (!t0) t0 = now; const t = now - t0; let i = 0; while (i < path.length - 2 && t > path[i + 1][0]) i++;
+      const [a, va] = path[i], [b, vb] = path[i + 1], v = lerp(va, vb, easeIO(clamp((t - a) / (b - a)))); set(v.toFixed(1)); range.value = Math.round(v); if (t < 2200) requestAnimationFrame(f); };
+    setTimeout(() => requestAnimationFrame(f), 500); }), { threshold: .6 });
+  io.observe(cd);
+};
+
+// ── the story line fills as you read ──
+const story = () => {
+  const tl = $('#tl'), items = $$('.tl-i', tl); let q = 0;
+  const upd = () => { q = 0; const r = tl.getBoundingClientRect(), p = clamp((innerHeight * .62 - r.top) / r.height);
+    tl.style.setProperty('--prog', p.toFixed(4)); items.forEach((it) => it.classList.toggle('on', (it.offsetTop + 12) / tl.offsetHeight <= p + .001)); };
+  addEventListener('scroll', () => { if (!q) q = requestAnimationFrame(upd); }, { passive: true }); upd();
+};
+
+// ── the other games lean towards the pointer ──
+if (!RM && matchMedia('(hover: hover)').matches) $$('.gcard').forEach((c) => {
+  c.addEventListener('pointermove', (e) => { const r = c.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+    c.style.setProperty('--ry', ((px - .5) * 8).toFixed(2) + 'deg'); c.style.setProperty('--rx', ((.5 - py) * 8).toFixed(2) + 'deg');
+    c.style.setProperty('--mx', (px * 100).toFixed(1) + '%'); c.style.setProperty('--my', (py * 100).toFixed(1) + '%'); });
+  c.addEventListener('pointerleave', () => { c.style.setProperty('--rx', '0deg'); c.style.setProperty('--ry', '0deg'); });
+});
+
+// things appear as they come into view; the CubePix logo drops in; the contact heart beats once
+const rio = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; e.target.classList.add('in'); rio.unobserve(e.target); }), { rootMargin: '0px 0px -8% 0px' });
+$$('.rv').forEach((el) => rio.observe(el));
+new IntersectionObserver((es, o) => es.forEach((e) => { if (e.isIntersecting) { $('#cubepix').classList.add('seen'); o.disconnect(); } }), { threshold: .25 }).observe($('#cubepix'));
+new IntersectionObserver((es, o) => es.forEach((e) => { if (e.isIntersecting) { beat($('#contactBeat')); o.disconnect(); } }), { threshold: .6 }).observe($('.contact-mark'));
+// the header: the Lewydo signature once the big one has scrolled away, and a thin line in the world's colour showing how far you've read
+const lockEl = $('#lock'), top = $('.top'); let sq = 0;
+addEventListener('scroll', () => { if (sq) return; sq = requestAnimationFrame(() => { sq = 0; document.body.classList.toggle('scrolled', lockEl.getBoundingClientRect().bottom < 40);
+  const d = document.documentElement; top.style.setProperty('--sp', (d.scrollTop / Math.max(1, d.scrollHeight - innerHeight)).toFixed(4)); }); }, { passive: true });
+// a soft light that follows the pointer over the first screen (desktop)
+if (!RM && matchMedia('(hover: hover)').matches) { const h = $('#top');
+  h.addEventListener('pointermove', (e) => { const r = h.getBoundingClientRect(); h.style.setProperty('--mx', (e.clientX - r.left) + 'px'); h.style.setProperty('--my', (e.clientY - r.top) + 'px'); h.style.setProperty('--lamp', '1'); });
+  h.addEventListener('pointerleave', () => h.style.setProperty('--lamp', '0')); }
+
+applyLang();
+if (OG || document.documentElement.classList.contains('kit')) { hero.start(); return; }
+sky.start(); hero.start(); cubepix.start(); orbit.start(); codeDesign(); story();
+})();
+</script>
+</body>
+</html>
