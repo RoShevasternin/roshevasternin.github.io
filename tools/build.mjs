@@ -1,9 +1,10 @@
-// npm run build — src/ → index.html, 404.html, robots.txt, sitemap.xml: the pages GitHub Pages serves at https://roshevasternin.github.io/
+// npm run build — src/ → index.html, brand/ (the brand page, brand.json, the kit zip), 404.html, robots.txt, sitemap.xml: the pages GitHub Pages serves at https://roshevasternin.github.io/
 // English is written into the pages themselves (search engines, no JavaScript); all 15 languages ride along inside the page and
 // its script swaps in the visitor's. The build is deterministic (no dates, no randomness): the same sources → the same files.
 //   npm run build            warns about missing translations (English is shown there)
 //   npm run build -- --strict   fails on them instead (what npm test runs)
 import { readFileSync, writeFileSync } from 'node:fs';
+import { brandJson, zip, kitFiles, beatGraph, codeParts, dlCards } from './brand.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const read = (p) => readFileSync(new URL(p, ROOT), 'utf8'), json = (p) => JSON.parse(read(p));
@@ -38,11 +39,21 @@ for (const L of IDS) for (const [k, v] of Object.entries(S[L])) if (!k.startsWit
 if (problems.length) { console.warn('⚠ ' + problems.join('\n⚠ ')); if (process.argv.includes('--strict')) process.exit(1); }
 
 // ── the pieces ──
-const HEART = '/assets/lewydo-heart.webp';
-const mark = `<span class="lw-mark"><span class="lw-beat"><i class="lw-glow"><i></i></i><img class="lw-heart" src="${HEART}" alt="" width="132" height="122"></span></span>`;
-const lockup = `<span class="lw-lockup" role="img" aria-label="Lewydo — Love What You Do">${mark}<span class="lw-word">Lewydo</span>` +
-  `<span class="lw-slogan"><b>L</b>ov<b>e</b> <b>W</b>hat <b>Y</b>ou <b>Do</b></span><i class="lw-line"></i></span>`;
-const sig = `<span class="lw-sig"><span class="lw-sig-mark">${mark}</span><span class="lw-word">Lewydo</span></span>`;
+// the Lewydo mark: the games' own pictures (brand/kit, WebP copies for the web) in the brand kit's composition — never redrawn
+// (W — the WebP copies the pages show; P — the @3x PNG originals, for the kit pictures npm run kit makes)
+const art = (fmt) => {
+  const K = `/brand/kit/${fmt}/`, x = '.' + fmt;
+  const logo = (id) => `<span class="lw-logo"${id ? ` id="${id}"` : ''}><img class="lw-back" src="${K}brand_back${x}" alt="" width="208" height="208">` +
+    `<img class="lw-front" src="${K}brand_front${x}" alt="" width="140" height="140"></span>`;
+  const name = `<img class="lw-name" src="${K}lewydo${x}" alt="" width="208" height="74">`;
+  const lockup = (id, cls) => `<span class="lw-lockup${cls ? ' ' + cls : ''}"${id ? ` id="${id}"` : ''} role="img" aria-label="Lewydo — Love What You Do">${logo()}${name}` +
+    `<img class="lw-slogan" src="${K}slogan${x}" alt="" width="208" height="19"><img class="lw-line" src="${K}brand_line${x}" alt="" width="146" height="1"></span>`;
+  return { logo, lockup, sig: (id) => `<span class="lw-sig">${logo(id)}${name}</span>` };
+};
+const W = art('webp'), P = art('png');
+const logo = W.logo, mark = W.logo(), lockup = W.lockup(), sig = W.sig();
+const go = '<svg class="lw-go" viewBox="0 0 5 8" aria-hidden="true"><path d="M1 1l3 3-3 3" fill="none" stroke="#9DF5C2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const brandCss = read('brand/kit/code/web/lewydo-brand.css');
 const gpIcon = '<svg class="gp" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.6 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/>' +
   '<path fill="#FFCE00" d="m17 8.6 3.3 1.9c.9.5.9 1.8 0 2.4L17 15.4 13.6 12z"/><path fill="#FF3A44" d="M17 15.4 5 22.3c-.5.3-1 .2-1.4 0L13.6 12z"/><path fill="#00F076" d="M3.6 1.8c.4-.2.9-.3 1.4 0l12 6.8L13.6 12z"/></svg>';
 const ICONS = {
@@ -73,7 +84,10 @@ const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'L
 
 const fill = (html) => {
   html = html
-    .replace(/\{\{lockup\}\}/g, lockup).replace(/\{\{mark\}\}/g, mark).replace(/\{\{sig\}\}/g, sig).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
+    .replace(/\{\{brandCss\}\}/g, () => brandCss).replace(/\{\{lockup\}\}/g, lockup).replace(/\{\{mark\}\}/g, mark).replace(/\{\{mark:(\w+)\}\}/g, (m, id) => logo(id))
+    .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
+    .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
+    .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo)
     .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|od\.site|od\.play|od\.privacy|od\.icon)\}\}/g, (m, k) => ({
       url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy,
@@ -94,9 +108,18 @@ const out = (p, s) => writeFileSync(new URL(p, ROOT), s);
 out('index.html', fill(read('src/index.html')));
 const NF = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(['nf.title', 'nf.text', 'nf.home'].map((k) => [k, S[L][k]]))]));
 out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).replace('{{DATA404}}', JSON.stringify(NF).replace(/</g, '\\u003c'))));
+// the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
+const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, CP, IDS }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
+out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
+const BDATA = { about: Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, site: T.site, games: T.games }]; })) };
+out('brand/index.html', fill(read('src/brand.html')
+  .replace('{{langOptions}}', () => LANGS.map((L) => `<option value="${L.id}"${L.id === 'en' ? ' selected' : ''}>${esc(L.name)}</option>`).join(''))
+  .replace('{{beatGraph}}', () => beatGraph()).replace('{{codeTabs}}', () => bcode.tabs).replace('{{codePanes}}', () => bcode.panes)
+  .replace('{{dlCards}}', () => dlCards({ W })).replace(/\{\{zipMb\}\}/g, () => (ZIP.length / 1048576).toFixed(1))
+  .replace('{{DATA}}', () => JSON.stringify(BDATA).replace(/</g, '\\u003c'))));
 out('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
-const pages = ['', 'Game-CubePix/', 'Game-CubePix/play/', 'Game-CubePix/privacy.html', 'Game-Orbit-Dash/', 'Game-Orbit-Dash/privacy.html'];
+const pages = ['', 'brand/', 'Game-CubePix/', 'Game-CubePix/play/', 'Game-CubePix/privacy.html', 'Game-Orbit-Dash/', 'Game-Orbit-Dash/privacy.html'];
 out('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   pages.map((p) => `  <url><loc>${SITE}${p}</loc></url>`).join('\n') + '\n</urlset>\n');
 const kb = (p) => Math.round(read(p).length / 1024);
-console.log(`✓ index.html ${kb('index.html')} KB · 404.html · robots.txt · sitemap.xml — ${IDS.length} languages${problems.length ? `, ${problems.length} translation problems (see above)` : ''}`);
+console.log(`✓ index.html ${kb('index.html')} KB · brand/ (index.html ${kb('brand/index.html')} KB, brand.json, lewydo-brand-kit.zip ${Math.round(ZIP.length / 1024)} KB) · 404.html · robots.txt · sitemap.xml — ${IDS.length} languages${problems.length ? `, ${problems.length} translation problems (see above)` : ''}`);

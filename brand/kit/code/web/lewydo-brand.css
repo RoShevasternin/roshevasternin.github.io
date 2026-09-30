@@ -1,0 +1,51 @@
+/* Lewydo™ brand kit for the web — https://roshevasternin.github.io/brand/
+   The mark is built from the same pictures as in the games (../../png/*.png, @3x), in the same composition as the LibGDX code
+   (ABrandGroup / ABrandLogo): nothing is redrawn, no font is needed.
+     Lockup 208×322:  .lw-logo 208×208 (brand_back fills it, brand_front 140×140 in the middle)
+                      .lw-name 208×74 · .lw-slogan 208×19 · .lw-line 146×1, 20 below the slogan
+     Signature: the logo 24×24 + 1 + the name 46×16.4; the menu pill puts it in a 28 px capsule with a › .
+   Pictures: ../../png/*.png are the originals for apps (and the LibGDX atlas); ../../webp/*.webp — the same, lighter, for websites.
+   Scale the whole Lockup with --lw-s (1 = 208×322 CSS px). Colours: #0E1024 #6DF593 #3DDC84 #9DF5C2 #FFFFFF. */
+
+.lw-lockup{display:flex;flex-direction:column;align-items:center;width:calc(208px * var(--lw-s, 1));height:calc(322px * var(--lw-s, 1));}
+.lw-logo{position:relative;display:block;flex:none;width:calc(208px * var(--lw-s, 1));height:calc(208px * var(--lw-s, 1));}
+.lw-back,.lw-front{position:absolute;display:block;transform-origin:50% 50%;}
+.lw-back{left:0;top:0;width:100%;height:100%;}
+.lw-front{left:16.346%;top:16.346%;width:67.308%;height:67.308%;}                 /* 140 of 208, in the middle */
+.lw-name{display:block;flex:none;width:calc(208px * var(--lw-s, 1));height:calc(74px * var(--lw-s, 1));}
+.lw-slogan{display:block;flex:none;width:calc(208px * var(--lw-s, 1));height:calc(19px * var(--lw-s, 1));}
+.lw-line{display:block;flex:none;width:calc(146px * var(--lw-s, 1));height:calc(1px * var(--lw-s, 1));min-height:1px;margin-top:calc(20px * var(--lw-s, 1));}
+
+/* the Signature: the logo 24×24 + 1 + the name 46×16.4 (the Lockup's heart ×0.115, «Lewydo» at 12 px) */
+.lw-sig{display:inline-flex;align-items:center;gap:1px;}
+.lw-sig .lw-logo{width:24px;height:24px;}
+.lw-sig .lw-name{width:46.1px;height:16.4px;}
+/* the Signature pill — at the bottom of every game menu, 34 px from the bottom; tap → About us */
+.lw-pill{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 10px 0 3px;border-radius:999px;border:1px solid rgba(61,220,132,.24);
+  background:rgba(61,220,132,.04);cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .12s ease;}
+.lw-pill:active{transform:scale(.96);}
+.lw-pill .lw-go{width:5px;height:8px;opacity:.65;}
+
+/* the heartbeat — once, when the brand appears (never loop it): add .lw-beating to the .lw-logo */
+.lw-beating .lw-front{animation:lwHeart 440ms linear var(--d,0s) 1;}
+.lw-beating .lw-back{animation:lwGlow 450ms linear var(--d,0s) 1 forwards;}
+@keyframes lwHeart{0%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}22.727%{transform:scale(1.13);animation-timing-function:cubic-bezier(.12,0,.39,0)}
+  50%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}72.727%{transform:scale(1.07);animation-timing-function:cubic-bezier(.12,0,.39,0)}100%{transform:scale(1)}}
+@keyframes lwGlow{0%,11.111%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}37.778%{transform:scale(1.15);animation-timing-function:cubic-bezier(.12,0,.39,0)}100%{transform:scale(1.05)}}
+
+/* the splash (BrandScreen) — the same timeline as ABrandGroup.playIntroAnimation: add .lw-splash to the .lw-lockup;
+   after 3 s (the line is open + 0.6 s to take it in) move on to the game */
+.lw-splash .lw-logo{opacity:0;animation:lwFadeIn .8s cubic-bezier(.5,0,.5,1) .3s forwards;}
+.lw-splash .lw-front{animation:lwHeart 440ms linear 1.1s 1;}
+.lw-splash .lw-back{animation:lwGlow 450ms linear 1.1s 1 forwards;}
+.lw-splash .lw-name{opacity:0;transform:scale(1.06);animation:lwFocus .6s cubic-bezier(.5,0,.5,1) .9s forwards;}
+.lw-splash .lw-slogan{opacity:0;transform:scale(1.06);animation:lwFocus .6s cubic-bezier(.5,0,.5,1) 1.3s forwards;}
+.lw-splash .lw-line{opacity:0;transform:scaleX(0);animation:lwFadeIn .3s linear 1.7s forwards,lwOpen .7s cubic-bezier(.16,1,.3,1) 1.7s forwards;}
+@keyframes lwFadeIn{to{opacity:1}}
+@keyframes lwFocus{to{opacity:1;transform:scale(1)}}
+@keyframes lwOpen{to{transform:scaleX(1)}}
+
+@media (prefers-reduced-motion:reduce){
+  .lw-beating .lw-front,.lw-beating .lw-back,.lw-splash .lw-front,.lw-splash .lw-back{animation:none;}
+  .lw-splash .lw-logo,.lw-splash .lw-name,.lw-splash .lw-slogan,.lw-splash .lw-line{animation:none;opacity:1;transform:none;}
+}

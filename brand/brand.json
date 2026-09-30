@@ -1,0 +1,568 @@
+{
+ "_about": "The Lewydo™ brand standard in numbers — for game code and for Claude. The same as the page https://roshevasternin.github.io/brand/ (rules, live previews). Take the pictures and the code as they are; never redraw the mark. Sizes are dp (the design size, 360×800 screens); the PNGs are @3x of them.",
+ "name": "Lewydo",
+ "trademark": "Lewydo™",
+ "slogan": "Love What You Do",
+ "sloganNote": "Always in English — a trademark. Its bold letters (L, e, W, Y, Do) spell the name: Lewydo.",
+ "page": "https://roshevasternin.github.io/brand/",
+ "json": "https://roshevasternin.github.io/brand/brand.json",
+ "zip": "https://roshevasternin.github.io/brand/lewydo-brand-kit.zip",
+ "repo": {
+  "url": "https://github.com/RoShevasternin/roshevasternin.github.io",
+  "folder": "brand/",
+  "clone": "git clone --depth 1 https://github.com/RoShevasternin/roshevasternin.github.io",
+  "note": "If the web is blocked in a sandbox, clone the repo: the kit is in brand/kit/, this file is brand/brand.json."
+ },
+ "colors": {
+  "background": "#0E1024",
+  "glow": "#6DF593",
+  "action": "#3DDC84",
+  "actionText": "#04120A",
+  "mint": "#9DF5C2",
+  "name": "#FFFFFF"
+ },
+ "font": {
+  "family": "Nunito",
+  "license": "SIL Open Font License 1.1",
+  "url": "https://fonts.google.com/specimen/Nunito",
+  "name": "Nunito Black 54.17 / 74, white, shadow 0 4.17 2.08 rgba(0,0,0,.25)",
+  "slogan": "Nunito 13.54 / 19: L, e, W, Y, Do — Black, the rest Regular",
+  "body": "Nunito Medium 15 / 23",
+  "note": "In apps the name and the slogan are pictures (lewydo.png, slogan.png): no font needed for the mark."
+ },
+ "images": {
+  "brand_back": {
+   "what": "The glow — fills the 208×208 logo box, under the heart",
+   "dp": [
+    208,
+    208
+   ],
+   "png": "https://roshevasternin.github.io/brand/kit/png/brand_back.png",
+   "px": [
+    624,
+    624
+   ],
+   "webp": "https://roshevasternin.github.io/brand/kit/webp/brand_back.webp"
+  },
+  "brand_front": {
+   "what": "The heart — 140×140 in the middle of the logo box",
+   "dp": [
+    140,
+    140
+   ],
+   "png": "https://roshevasternin.github.io/brand/kit/png/brand_front.png",
+   "px": [
+    420,
+    420
+   ],
+   "webp": "https://roshevasternin.github.io/brand/kit/webp/brand_front.webp"
+  },
+  "lewydo": {
+   "what": "The name «Lewydo» (Nunito Black, white, soft shadow)",
+   "dp": [
+    208,
+    74
+   ],
+   "png": "https://roshevasternin.github.io/brand/kit/png/lewydo.png",
+   "px": [
+    624,
+    222
+   ],
+   "webp": "https://roshevasternin.github.io/brand/kit/webp/lewydo.webp"
+  },
+  "slogan": {
+   "what": "The slogan «Love What You Do» — never translated",
+   "dp": [
+    208,
+    19
+   ],
+   "png": "https://roshevasternin.github.io/brand/kit/png/slogan.png",
+   "px": [
+    624,
+    57
+   ],
+   "webp": "https://roshevasternin.github.io/brand/kit/webp/slogan.webp"
+  },
+  "brand_line": {
+   "what": "The line under the slogan, 20 below it",
+   "dp": [
+    146,
+    1
+   ],
+   "png": "https://roshevasternin.github.io/brand/kit/png/brand_line.png",
+   "px": [
+    438,
+    3
+   ],
+   "webp": "https://roshevasternin.github.io/brand/kit/webp/brand_line.webp"
+  }
+ },
+ "renders": {
+  "lockup": {
+   "what": "The whole Lockup in one picture — for places without code (stores, videos, slides)",
+   "dp": [
+    208,
+    322
+   ],
+   "png": "https://roshevasternin.github.io/brand/kit/png/lockup.png",
+   "px": [
+    624,
+    966
+   ]
+  },
+  "signature": {
+   "what": "The Signature: the logo 24 + the name",
+   "dp": [
+    71.1,
+    24
+   ],
+   "png": "https://roshevasternin.github.io/brand/kit/png/signature.png",
+   "px": [
+    214,
+    72
+   ]
+  },
+  "pill": {
+   "what": "The Signature pill of a menu, with its capsule and ›",
+   "dp": null,
+   "png": "https://roshevasternin.github.io/brand/kit/png/pill.png",
+   "px": [
+    289,
+    84
+   ]
+  }
+ },
+ "atlas": {
+  "atlas": "https://roshevasternin.github.io/brand/kit/atlas/brand.atlas",
+  "png": "https://roshevasternin.github.io/brand/kit/atlas/brand.png",
+  "px": [
+   628,
+   1338
+  ],
+  "regions": [
+   "brand_back",
+   "brand_front",
+   "lewydo",
+   "slogan",
+   "brand_line"
+  ],
+  "note": "LibGDX TextureAtlas of the five pictures (@3x). assets/atlas/brand.atlas + brand.png → your assetsBrand (EnumAtlas.BRAND)."
+ },
+ "lockup": {
+  "size": [
+   208,
+   322
+  ],
+  "stack": "vertical, centred: logo, name, slogan; the line 20 below the slogan",
+  "logo": {
+   "size": [
+    208,
+    208
+   ],
+   "back": "brand_back fills the box",
+   "front": "brand_front 140×140, centred"
+  },
+  "name": {
+   "size": [
+    208,
+    74
+   ]
+  },
+  "slogan": {
+   "size": [
+    208,
+    19
+   ]
+  },
+  "line": {
+   "size": [
+    146,
+    1
+   ],
+   "gapAbove": 20
+  }
+ },
+ "signature": {
+  "logo": [
+   24,
+   24
+  ],
+  "gap": 1,
+  "name": [
+   46.1,
+   16.4
+  ],
+  "note": "The Lockup's logo and name, small: nothing else."
+ },
+ "pill": {
+  "height": 28,
+  "radius": 999,
+  "padding": {
+   "left": 3,
+   "right": 10
+  },
+  "gap": 5,
+  "border": "1px #3DDC84 at 24%",
+  "fill": "#3DDC84 at 4%",
+  "arrow": {
+   "size": [
+    5,
+    8
+   ],
+   "color": "#9DF5C2",
+   "opacity": 0.65
+  },
+  "pressedScale": 0.96,
+  "tapArea": 48,
+  "place": "the bottom of every game menu, centred, 34 from the bottom",
+  "tap": "opens About us",
+  "beat": "once, when the menu appears"
+ },
+ "splash": {
+  "screen": "BrandScreen",
+  "first": "The first screen of every Lewydo game",
+  "size": [
+   360,
+   800
+  ],
+  "lockupAt": [
+   76,
+   239
+  ],
+  "seconds": 3,
+  "timeline": [
+   {
+    "part": "logo",
+    "from": 0.3,
+    "to": 1.1,
+    "fadeIn": true,
+    "interpolation": "fade"
+   },
+   {
+    "part": "heartbeat",
+    "at": 1.1
+   },
+   {
+    "part": "name",
+    "from": 0.9,
+    "to": 1.5,
+    "fadeIn": true,
+    "scale": [
+     1.06,
+     1
+    ],
+    "interpolation": "fade"
+   },
+   {
+    "part": "slogan",
+    "from": 1.3,
+    "to": 1.9,
+    "fadeIn": true,
+    "scale": [
+     1.06,
+     1
+    ],
+    "interpolation": "fade"
+   },
+   {
+    "part": "line",
+    "from": 1.7,
+    "to": 2.4,
+    "fadeIn": 0.3,
+    "scaleX": [
+     0,
+     1
+    ],
+    "interpolation": "exp5Out",
+    "origin": "center"
+   },
+   {
+    "part": "hold",
+    "seconds": 0.6
+   }
+  ],
+  "then": "the game's LoaderScreen",
+  "theme": "The background and the ambient light may follow the game. The Lockup, its numbers and its timeline never change."
+ },
+ "heartbeat": {
+  "once": true,
+  "when": [
+   "the splash shows",
+   "About us opens (every time)",
+   "the menu pill appears"
+  ],
+  "never": "in a loop (no Actions.forever, no infinite)",
+  "front": [
+   {
+    "scale": 1.13,
+    "seconds": 0.1,
+    "ease": "sineOut"
+   },
+   {
+    "scale": 1,
+    "seconds": 0.12,
+    "ease": "sineIn"
+   },
+   {
+    "scale": 1.07,
+    "seconds": 0.1,
+    "ease": "sineOut"
+   },
+   {
+    "scale": 1,
+    "seconds": 0.12,
+    "ease": "sineIn"
+   }
+  ],
+  "back": {
+   "delay": 0.05,
+   "steps": [
+    {
+     "scale": 1.15,
+     "seconds": 0.12,
+     "ease": "sineOut"
+    },
+    {
+     "scale": 1.05,
+     "seconds": 0.28,
+     "ease": "sineIn"
+    }
+   ],
+   "stays": 1.05
+  },
+  "css": {
+   "sineOut": "cubic-bezier(.61,1,.88,1)",
+   "sineIn": "cubic-bezier(.12,0,.39,0)"
+  },
+  "reducedMotion": "no beat"
+ },
+ "about": {
+  "size": [
+   360,
+   800
+  ],
+  "beat": "every time it opens",
+  "layout": {
+   "back": {
+    "at": [
+     16,
+     44
+    ],
+    "size": [
+     40,
+     40
+    ]
+   },
+   "title": {
+    "at": [
+     80,
+     53
+    ]
+   },
+   "glow": {
+    "at": [
+     30,
+     62
+    ],
+    "size": [
+     300,
+     300
+    ],
+    "color": "#6DF593",
+    "opacity": 0.08
+   },
+   "lockup": {
+    "at": [
+     76,
+     108
+    ]
+   },
+   "text": {
+    "at": [
+     24,
+     456
+    ],
+    "size": [
+     312,
+     92
+    ],
+    "font": "Nunito Medium 15 / 23, centred"
+   },
+   "siteButton": {
+    "at": [
+     32,
+     584
+    ],
+    "size": [
+     296,
+     52
+    ],
+    "radius": 16,
+    "style": "green #3DDC84, text #04120A"
+   },
+   "address": {
+    "at": [
+     32,
+     648
+    ],
+    "text": "roshevasternin.github.io"
+   },
+   "gamesButton": {
+    "at": [
+     32,
+     682
+    ],
+    "size": [
+     296,
+     52
+    ],
+    "radius": 16,
+    "style": "outlined"
+   },
+   "copyright": {
+    "at": [
+     32,
+     764
+    ],
+    "text": "© 2026 Lewydo™"
+   }
+  },
+  "links": {
+   "site": "https://roshevasternin.github.io/",
+   "games": "https://play.google.com/store/apps/dev?id=5953840215091948966"
+  },
+  "texts": {
+   "id": {
+    "title": "Tentang kami",
+    "text": "Lewydo adalah studio game indie dua orang dari Ukraina. Vlad menulis kode, Lilya mendesain. Bersama, kami membuat game yang kami sendiri suka mainkan. Terima kasih sudah bermain!",
+    "site": "Situs kami",
+    "games": "Game kami di Google Play"
+   },
+   "de": {
+    "title": "Über uns",
+    "text": "Lewydo ist ein Indie-Studio aus der Ukraine – wir sind zu zweit. Vlad programmiert, Lilya gestaltet. Zusammen machen wir die Spiele, die wir selbst gern spielen. Danke fürs Spielen!",
+    "site": "Unsere Website",
+    "games": "Unsere Spiele bei Google Play"
+   },
+   "en": {
+    "title": "About us",
+    "text": "Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play. Thank you for playing!",
+    "site": "Our website",
+    "games": "Our games on Google Play"
+   },
+   "es": {
+    "title": "Sobre nosotros",
+    "text": "Lewydo es un estudio indie de dos personas de Ucrania. Vlad programa, Lilya diseña. Juntos hacemos los juegos a los que nos encanta jugar. ¡Gracias por jugar!",
+    "site": "Nuestra web",
+    "games": "Nuestros juegos en Google Play"
+   },
+   "fr": {
+    "title": "À propos",
+    "text": "Lewydo est un studio de jeux indépendant de deux personnes, en Ukraine. Vlad code, Lilya fait le design. Ensemble, nous créons les jeux auxquels nous adorons jouer. Merci de jouer !",
+    "site": "Notre site",
+    "games": "Nos jeux sur Google Play"
+   },
+   "it": {
+    "title": "Chi siamo",
+    "text": "Lewydo è uno studio indie di due persone dall’Ucraina. Vlad programma, Lilya disegna. Insieme creiamo i giochi a cui amiamo giocare. Grazie di giocare!",
+    "site": "Il nostro sito",
+    "games": "I nostri giochi su Google Play"
+   },
+   "nl": {
+    "title": "Over ons",
+    "text": "Lewydo is een indiegamestudio van twee mensen uit Oekraïne. Vlad programmeert, Lilya ontwerpt. Samen maken we de games die we zelf graag spelen. Bedankt voor het spelen!",
+    "site": "Onze website",
+    "games": "Onze games op Google Play"
+   },
+   "pl": {
+    "title": "O nas",
+    "text": "Lewydo to dwuosobowe niezależne studio gier z Ukrainy. Vlad programuje, Lilya projektuje. Razem robimy gry, w które sami uwielbiamy grać. Dziękujemy, że grasz!",
+    "site": "Nasza strona",
+    "games": "Nasze gry w Google Play"
+   },
+   "pt": {
+    "title": "Sobre nós",
+    "text": "Lewydo é um estúdio indie de duas pessoas da Ucrânia. Vlad programa, Lilya faz o design. Juntos fazemos os jogos que adoramos jogar. Obrigado por jogar!",
+    "site": "Nosso site",
+    "games": "Nossos jogos no Google Play"
+   },
+   "vi": {
+    "title": "Về chúng tôi",
+    "text": "Lewydo là studio game indie hai người đến từ Ukraina. Vlad viết code, Lilya thiết kế. Cùng nhau, chúng tôi làm những trò chơi mà chính mình yêu thích. Cảm ơn bạn đã chơi!",
+    "site": "Trang web của chúng tôi",
+    "games": "Game của chúng tôi trên Google Play"
+   },
+   "tr": {
+    "title": "Hakkımızda",
+    "text": "Lewydo, Ukrayna’dan iki kişilik bağımsız bir oyun stüdyosu. Vlad kodluyor, Lilya tasarlıyor. Birlikte oynamayı sevdiğimiz oyunları yapıyoruz. Oynadığın için teşekkürler!",
+    "site": "Web sitemiz",
+    "games": "Google Play’deki oyunlarımız"
+   },
+   "uk": {
+    "title": "Про нас",
+    "text": "Lewydo — інді-студія з двох людей з України. Влад пише код, Ліля робить дизайн. Разом ми робимо ігри, у які самі любимо грати. Дякуємо, що граєте!",
+    "site": "Наш сайт",
+    "games": "Наші ігри в Google Play"
+   },
+   "ko": {
+    "title": "소개",
+    "text": "Lewydo는 우크라이나의 2인 인디 게임 스튜디오예요. Vlad는 코드를, Lilya는 디자인을 맡아요. 우리가 즐겨 하는 게임을 함께 만들어요. 플레이해 주셔서 고마워요!",
+    "site": "웹사이트",
+    "games": "Google Play의 우리 게임"
+   },
+   "ja": {
+    "title": "私たちについて",
+    "text": "Lewydo はウクライナの2人組インディーゲームスタジオです。Vlad がコードを書き、Lilya がデザインを担当。自分たちが大好きなゲームを一緒に作っています。遊んでくれてありがとう！",
+    "site": "ウェブサイト",
+    "games": "Google Play の私たちのゲーム"
+   },
+   "zh-TW": {
+    "title": "關於我們",
+    "text": "Lewydo 是來自烏克蘭的兩人獨立遊戲工作室。Vlad 寫程式，Lilya 負責設計。我們一起做自己愛玩的遊戲。謝謝你的遊玩！",
+    "site": "我們的網站",
+    "games": "我們在 Google Play 的遊戲"
+   }
+  }
+ },
+ "rules": {
+  "do": [
+   "Use the pictures and the code of the kit as they are.",
+   "Keep the colours, the font and the proportions.",
+   "Let the heart beat once when the brand appears.",
+   "Theme the background and the ambient light to your game.",
+   "Keep the mark on a dark background."
+  ],
+  "dont": [
+   "Redraw, recolour, stretch, squash, rotate or add effects to the mark.",
+   "Translate the slogan or set the name in another font.",
+   "Loop the heartbeat.",
+   "Put the mark on a light or busy background."
+  ]
+ },
+ "code": {
+  "LewydoHeartbeat.kt": {
+   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/LewydoHeartbeat.kt",
+   "what": "The one heartbeat (package com.lewydo.brand) — the same in every game"
+  },
+  "ABrandLogo.kt": {
+   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/ABrandLogo.kt",
+   "what": "The heart in its glow (208×208) + beat()"
+  },
+  "ABrandGroup.kt": {
+   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/ABrandGroup.kt",
+   "what": "The Lockup 208×322 + the splash animation"
+  },
+  "BrandScreen.kt": {
+   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/BrandScreen.kt",
+   "what": "The first screen of every game → LoaderScreen"
+  },
+  "lewydo-brand.css": {
+   "url": "https://roshevasternin.github.io/brand/kit/code/web/lewydo-brand.css",
+   "what": "The mark, the pill, the heartbeat and the splash for the web"
+  },
+  "example.html": {
+   "url": "https://roshevasternin.github.io/brand/kit/code/web/example.html",
+   "what": "A working web example"
+  }
+ }
+}
