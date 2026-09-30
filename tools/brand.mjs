@@ -74,7 +74,7 @@ export function brandJson({ SITE, YEAR, G, CP, IDS }) {
       front: HEART.map(([scale, seconds, ease]) => ({ scale, seconds, ease })), back: { delay: GLOW.delay, steps: GLOW.steps.map(([scale, seconds, ease]) => ({ scale, seconds, ease })), stays: 1.05 },
       css: { sineOut: 'cubic-bezier(.61,1,.88,1)', sineIn: 'cubic-bezier(.12,0,.39,0)' }, reducedMotion: 'no beat' },
     about: { size: [360, 800], beat: 'every time it opens',
-      layout: { back: { at: [16, 44], size: [40, 40] }, title: { at: [80, 53] }, glow: { at: [30, 62], size: [300, 300], color: '#6DF593', opacity: 0.08 },
+      layout: { back: { at: [16, 44], size: [40, 40] }, title: { at: [80, 53], font: 'Nunito ExtraBold 16, uppercase, white 70%' }, backRadius: 12, glow: { at: [30, 62], size: [300, 300], color: '#6DF593', opacity: 0.08 },
         lockup: { at: [76, 108] }, text: { at: [24, 456], size: [312, 92], font: 'Nunito Medium 15 / 23, centred' },
         siteButton: { at: [32, 584], size: [296, 52], radius: 16, style: 'green #3DDC84, text #04120A' }, address: { at: [32, 648], text: 'roshevasternin.github.io' },
         gamesButton: { at: [32, 682], size: [296, 52], radius: 16, style: 'outlined' }, copyright: { at: [32, 764], text: `© ${YEAR} Lewydo™` } },
