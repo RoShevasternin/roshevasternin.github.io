@@ -99,7 +99,7 @@
  },
  "renders": {
   "lockup": {
-   "what": "The whole Lockup in one picture — for places without code (stores, videos, slides)",
+   "what": "The whole Lockup in one picture (Figma «Lewydo / Lockup») — for places without code (stores, videos, slides)",
    "dp": [
     208,
     322
@@ -110,25 +110,16 @@
     966
    ]
   },
-  "signature": {
-   "what": "The Signature: the logo 24 + the name",
-   "dp": [
-    71.1,
-    24
-   ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/signature.png",
-   "px": [
-    214,
-    72
-   ]
-  },
   "pill": {
-   "what": "The Signature pill of a menu, with its capsule and ›",
-   "dp": null,
+   "what": "The menu Signature pill in one picture (Figma «Lewydo / Signature»), with its capsule and ›",
+   "dp": [
+    118,
+    36
+   ],
    "png": "https://roshevasternin.github.io/brand/kit/png/pill.png",
    "px": [
-    289,
-    84
+    354,
+    108
    ]
   }
  },

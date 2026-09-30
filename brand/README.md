@@ -3,7 +3,7 @@
 The one source of the Lewydo brand for every Lewydo project: the pictures, the LibGDX atlas, the code of the splash screen
 and the heartbeat, the menu signature and About us.
 
-- **The page** (rules, live previews, the splash, About us in 15 languages): https://roshevasternin.github.io/brand/
+- **The page** (15 languages; rules, live previews, the splash, About us): https://roshevasternin.github.io/brand/
 - **The numbers** (every size, colour, timing, text and file address — for code and for Claude): https://roshevasternin.github.io/brand/brand.json
 - **Everything in one file:** https://roshevasternin.github.io/brand/lewydo-brand-kit.zip
 - **If the web is blocked** (a sandbox): `git clone --depth 1 https://github.com/RoShevasternin/roshevasternin.github.io` → the `brand/` folder.
@@ -12,7 +12,7 @@ and the heartbeat, the menu signature and About us.
 
 | | |
 |---|---|
-| `kit/png/` | The originals, **@3x** of the design sizes: `brand_back` 624×624 (the glow), `brand_front` 420×420 (the heart), `lewydo` 624×222 (the name), `slogan` 624×57, `brand_line` 438×3. Plus pictures made from them: `lockup.png` (the whole Lockup), `signature.png`, `pill.png` (the menu signature). |
+| `kit/png/` | The originals, **@3x** of the design sizes: `brand_back` 624×624 (the glow), `brand_front` 420×420 (the heart), `lewydo` 624×222 (the name), `slogan` 624×57, `brand_line` 438×3. Plus `lockup.png` (the whole Lockup, 624×966) and `pill.png` (the menu Signature pill, 354×108) — all exported from Figma, the same files the games use. |
 | `kit/webp/` | The same five pictures, lighter, for websites. |
 | `kit/atlas/` | `brand.atlas` + `brand.png` — the LibGDX atlas of the five pictures (`assets/atlas/`, `EnumAtlas.BRAND`). |
 | `kit/code/libgdx/` | `LewydoHeartbeat.kt` (package `com.lewydo.brand`), `ABrandLogo.kt`, `ABrandGroup.kt`, `BrandScreen.kt` — replace `yourgame` with your game's package. They use the Lewydo LibGDX base (AdvancedScreen, AConstraintLayout, AAutoLayout). |

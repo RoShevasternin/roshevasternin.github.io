@@ -9,7 +9,7 @@ import { brandJson, zip, kitFiles, beatGraph, codeParts, dlCards } from './brand
 const ROOT = new URL('../', import.meta.url);
 const read = (p) => readFileSync(new URL(p, ROOT), 'utf8'), json = (p) => JSON.parse(read(p));
 const SITE = 'https://roshevasternin.github.io/', YEAR = 2026;
-const SS = json('src/strings.json'), G = json('src/games.json'), CP = json('src/cubepix.json'), LANGS = json('src/langs.json');
+const SS = json('src/strings.json'), BS = json('src/brand-strings.json'), G = json('src/games.json'), CP = json('src/cubepix.json'), LANGS = json('src/langs.json');
 const IDS = LANGS.map((L) => L.id);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -29,6 +29,15 @@ for (const L of IDS) {
   }
   for (const k of Object.keys(SS[L] || {})) if (!(k in SS.en)) problems.push(`${L}: «${k}» is not an English key`);
   for (const [k, v] of Object.entries(CP.S[L] || CP.S.en)) S[L]['cp:' + k] = v;
+  // the brand page's own words (src/brand-strings.json) → b.…
+  for (const [k, en] of Object.entries(BS.en)) {
+    const v = BS[L]?.[k];
+    if (v == null || !String(v).trim()) { problems.push(`${L}: brand «${k}» is missing (English is shown)`); S[L]['b.' + k] = en; continue; }
+    const marks = (x) => [(x.match(/`/g) || []).length, (x.match(/\]\(/g) || []).length, (x.match(/\*\*/g) || []).length].join();
+    if (marks(v) !== marks(en)) problems.push(`${L}: brand «${k}» lost some code marks, [link](…) or **bold**`);
+    S[L]['b.' + k] = v;
+  }
+  for (const k of Object.keys(BS[L] || {})) if (!(k in BS.en)) problems.push(`${L}: brand «${k}» is not an English key`);
 }
 // French typography: a no-break space before : ; ! ? » and after « (the game's own French does the same)
 const nb = (s) => s.replace(/ ([:;!?»])/g, ' $1').replace(/« /g, '« ');
@@ -97,7 +106,8 @@ const fill = (html) => {
     .replace('{{DATA}}', () => JSON.stringify(DATA).replace(/</g, '\\u003c'));
   const PR = new Intl.PluralRules('en');
   const tx = (k, n) => { let v = S.en[k]; if (v && typeof v === 'object') v = v[PR.select(n ?? 0)] ?? v.other; if (v == null) throw new Error('no string ' + k); return v; };
-  const fmt = (v, n) => esc(String(v).replace(/\{n\}/g, n ?? '')).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+  const fmt = (v, n) => esc(String(v).replace(/\{n\}/g, n ?? '')).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' rel="noopener"' : ''}>${t}</a>`);
   html = html.replace(/(<(\w+)[^>]*\sdata-t="([^"]+)"[^>]*>)(<\/\2>)/g, (m, open, tag, k, close) => {
     const nv = (open.match(/\sdata-n="(\w+)"/) || [])[1]; return open + fmt(tx(k, nv ? counts[nv] : undefined), nv ? counts[nv] : undefined) + close; });
   html = html.replace(/\sdata-ta="([\w-]+):([^"]+)"/g, (m, attr, k) => ` ${attr}="${fmt(tx(k))}"${m}`);
@@ -111,12 +121,14 @@ out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).repla
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
 const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, CP, IDS }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
 out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
-const BDATA = { about: Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, site: T.site, games: T.games }]; })) };
+const BKEYS = ['skip', 'lang.title', ...Object.keys(BS.en).map((k) => 'b.' + k)];
+const BDATA = { langs: LANGS, S: Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]))])), about: Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, site: T.site, games: T.games }]; })) };
 out('brand/index.html', fill(read('src/brand.html')
   .replace('{{langOptions}}', () => LANGS.map((L) => `<option value="${L.id}"${L.id === 'en' ? ' selected' : ''}>${esc(L.name)}</option>`).join(''))
   .replace('{{beatGraph}}', () => beatGraph()).replace('{{codeTabs}}', () => bcode.tabs).replace('{{codePanes}}', () => bcode.panes)
   .replace('{{dlCards}}', () => dlCards({ W })).replace(/\{\{zipMb\}\}/g, () => (ZIP.length / 1048576).toFixed(1))
-  .replace('{{DATA}}', () => JSON.stringify(BDATA).replace(/</g, '\\u003c'))));
+  .replace('{{DATA}}', () => JSON.stringify(BDATA).replace(/</g, '\\u003c'))
+  .replace('{{hreflangBrand}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}brand/?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}brand/">`].join('\n'))));
 out('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
 const pages = ['', 'brand/', 'Game-CubePix/', 'Game-CubePix/play/', 'Game-CubePix/privacy.html', 'Game-Orbit-Dash/', 'Game-Orbit-Dash/privacy.html'];
 out('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
