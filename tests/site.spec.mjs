@@ -93,7 +93,7 @@ test('the brand page: the splash, About us in every language, every download, br
   await page.goto('./?lang=en');
   await expect(page.locator('.foot-links a[href="/brand/"]')).toHaveText('Brand');                   // the site links to it
   await page.goto('./brand/');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'en');                                  // English, always
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');                                  // the visitor's language (here English)
   await expect(page.locator('#heroLock')).toHaveClass(/lw-splash/);                                  // the splash plays at once
   await page.locator('#abLang').selectOption('uk');                                                  // About us, the games' own words
   await expect(page.locator('#abTitle')).toHaveText('Про нас');
@@ -113,4 +113,23 @@ test('the brand page: the splash, About us in every language, every download, br
   expect(zip.subarray(0, 2).toString()).toBe('PK');
   expect(w.errs).toEqual([]);
   expect([...w.ext]).toEqual([]);
+});
+
+test('the brand page speaks all 15 languages, fills every text and never scrolls sideways', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  const w = watch(page);
+  for (const L of LANGS) {
+    await page.goto(`./brand/?lang=${L}`);
+    await expect(page.locator('html')).toHaveAttribute('lang', L);
+    const bad = await page.evaluate(() => [...document.querySelectorAll('[data-t]')].filter((e) => !e.textContent.trim()).map((e) => e.dataset.t));
+    expect(bad, L).toEqual([]);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), L).toBeLessThanOrEqual(320);
+  }
+  await page.goto('./brand/?lang=uk');
+  await expect(page.locator('#abTitle')).toHaveText('Про нас');                                      // About us follows the page's language
+  await page.locator('#langBtn').click(); await page.locator('#langMenu button[data-lang="de"]').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+  await page.goto('./?lang=');                                                                        // the site remembers it too
+  await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+  expect(w.errs).toEqual([]);
 });

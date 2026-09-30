@@ -8,10 +8,10 @@
 ## Бренд — лише стандарт (рішення власника: «щоб це був стандарт всюди»)
 **Джерело бренду для всіх проєктів Lewydo — сторінка https://roshevasternin.github.io/brand/ і тека `brand/` цього репозиторію.**
 Власник дає новим проєктам лінк на неї замість Figma: звідти беруть лого, назву, слоган, пігулку для меню, BrandScreen, About us і серцебиття.
-Сторінка англійською (рішення власника), інформація публічна.
+Сторінка 15 мовами, як увесь сайт (за замовчуванням — мова відвідувача, інакше англійська); тексти — `src/brand-strings.json`. Інформація публічна.
 
 - **`brand/kit/png/`** — оригінали з ігор (Figma, **@3x**): `brand_back` 624 (сяйво), `brand_front` 420 (серце), `lewydo` 624×222,
-  `slogan` 624×57, `brand_line` 438×3. Плюс `lockup.png`, `signature.png`, `pill.png` — їх робить `npm run kit` з цих самих PNG.
+  `slogan` 624×57, `brand_line` 438×3. Плюс `lockup.png` (увесь Lockup) і `pill.png` (пігулка меню, 118×36) — теж **експорти власника з Figma**.
 - **`brand/kit/webp/`** — ті самі картинки для вебу (сайт показує знак саме ними). **`brand/kit/atlas/`** — атлас LibGDX (з Orbit Dash).
 - **`brand/kit/code/libgdx/`** — `BrandScreen.kt`, `ABrandGroup.kt`, `ABrandLogo.kt` (код власника; додано лише один удар серця
   `beat(delay = 1.1f)` після появи), `LewydoHeartbeat.kt`. **`brand/kit/code/web/lewydo-brand.css`** — знак, пігулка, серцебиття й
@@ -30,9 +30,11 @@
 - **Кольори:** #0E1024 фон, #6DF593 сяйво, #3DDC84 кнопка (текст #04120A), #9DF5C2 м'ятний, #FFFFFF. Шрифт Nunito.
 - **Серце б'ється один раз**, коли знак з'являється, ніколи в циклі. «Менше руху» в системі — без анімацій.
 
-**Картинки знака:** фавікон, іконки, `assets/og.png`, `logo.png`, `banner.png`, `brand.png` і `brand/kit/png/{lockup,signature,pill}.png`
-малює `npm run kit` (з картинок кіта й CSS). Руками їх не малювати. Нові картинки знака від власника → `brand/kit/png/` (+ атлас),
-WebP-копії: `python3 tools/webp.py`, далі `npm run build && npm run kit && npm run build`.
+**Картинки кіта (`brand/kit/png/`) — лише те, що власник експортував з Figma** (@3x; останній зіп «FIGMA BRAND»: brand_back, brand_front,
+lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → pill.png). Нові експорти → туди ж, потім перезібрати атлас
+(`brand/kit/atlas/brand.png`: ті самі xy з `brand.atlas`, лише вставити нові картинки) і WebP-копії в **повному** розмірі
+(brand_back q90, brand_front q94, решта lossless), далі `npm run build`. Фавікон, іконки, `assets/og.png`, `logo.png`, `banner.png`,
+`brand.png` малює `npm run kit` з картинок кіта й CSS. Руками їх не малювати.
 
 ## Як влаштовано
 | Файл | Що це |
@@ -44,7 +46,7 @@ WebP-копії: `python3 tools/webp.py`, далі `npm run build && npm run kit
 | `src/langs.json` | 15 мов з піксельними прапорцями (ті самі, що в іграх) |
 | `src/heart.kt` | код, з якого «складається» серце в картці «Він кодить. Вона малює» |
 | `src/404.html` | сторінка «кімнати немає» для **всього** домену (тому всі шляхи абсолютні) |
-| `src/brand.html` | шаблон сторінки бренду `/brand/` (англійською); `tools/brand.mjs` — її частини, `brand.json` і zip |
+| `src/brand.html` | шаблон сторінки бренду `/brand/`; тексти — `src/brand-strings.json` (15 мов, ключі `b.…`); `tools/brand.mjs` — її частини, `brand.json` і zip |
 | `brand/` | **бренд-кіт** (див. вище): `kit/` і `README.md` — джерело, решта генерується |
 | `tools/build.mjs` | збірка → `index.html`, `brand/…`, `404.html`, `robots.txt`, `sitemap.xml` |
 | `tools/webp.py`, `tools/fetch-fonts.py`, `tools/cubepix-snapshot.mjs` | картинки → WebP; шрифти (Nunito, літери ORBIT DASH з Unbounded); дані CubePix |
@@ -76,14 +78,15 @@ npm install            # один раз (лише Playwright для тесті�
 npm run build          # src/ → сторінки в корені
 npm test               # збірка --strict (жодного пропущеного перекладу) + тести: мови, 320 px, серце, обидві гри, 404, app-ads.txt, сторінка бренду й усі її файли
 npm run look           # сторінка картинками (телефон і ПК) → shots/ — ПОДИВИСЬ і покажи власнику (LANGS=uk,en; PAGE=brand — сторінка бренду)
-npm run kit            # картинки бренду (іконки, OG, brand/kit/png/lockup|signature|pill); після нього ще раз npm run build (zip)
+npm run kit            # картинки сайту з кіта (іконки, OG, logo/banner/brand.png)
 npm run serve          # http://localhost:5190/
 npm run cubepix -- <клон RoShevasternin/Game-CubePix>/index.html   # оновити дані CubePix з його сайту
 ```
 
 ## Правила
 - **Жодних сторонніх запитів:** шрифти, картинки, скрипти — лише з цього сайту (це перевіряє `npm test`). Посилання — можна.
-- **Сторінка бренду — англійською**, решта сайту — 15 мовами. Тексти About us на ній беруться з гри (`src/cubepix.json`).
+- **Сторінка бренду — теж 15 мовами** (`src/brand-strings.json`; `npm test` не пропустить незаповнений переклад). Тексти About us на ній беруться з гри (`src/cubepix.json`). Не перекладаються: Lewydo, «Love What You Do», назви ігор і файлів, код у `…`.
+- **Вирівнювання:** блок із `max-width` у центрованій секції — з `margin-left/right:auto`; групи кнопок на телефоні — однакової ширини. Перевір `npm run look` кількома мовами.
 - **Кожен текст — 15 мовами.** Англійська — еталон, тон теплий і живий. Не перекладаються: назви ігор, «Lewydo», «Love What You Do»,
   «Google Play». Слова про CubePix беруться з самої гри (`cp:…`), а не пишуться заново.
 - **Нова гра:**

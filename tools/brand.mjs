@@ -18,10 +18,10 @@ export const PARTS = [
   { id: 'slogan', what: 'The slogan «Love What You Do» — never translated', dp: [208, 19] },
   { id: 'brand_line', what: 'The line under the slogan, 20 below it', dp: [146, 1] },
 ];
+// whole pictures exported from Figma (the owner's own exports, like the parts above)
 export const RENDERS = [
-  { id: 'lockup', what: 'The whole Lockup in one picture — for places without code (stores, videos, slides)', dp: [208, 322] },
-  { id: 'signature', what: 'The Signature: the logo 24 + the name', dp: [71.1, 24] },
-  { id: 'pill', what: 'The Signature pill of a menu, with its capsule and ›', dp: null },
+  { id: 'lockup', what: 'The whole Lockup in one picture (Figma «Lewydo / Lockup») — for places without code (stores, videos, slides)', dp: [208, 322] },
+  { id: 'pill', what: 'The menu Signature pill in one picture (Figma «Lewydo / Signature»), with its capsule and ›', dp: [118, 36] },
 ];
 export const CODE = [
   ['libgdx/LewydoHeartbeat.kt', 'kt', 'The one heartbeat (package com.lewydo.brand) — the same in every game'],
@@ -149,30 +149,24 @@ export function codeParts() {
   return { tabs, panes };
 }
 
-// the download cards: every picture at its real size, straight from the kit
+// the download cards: every picture at its real size, straight from the kit (texts: b.c.* in src/brand-strings.json)
 export function dlCards({ W }) {
   const a = (href, label) => `<a href="${href}" download>${label}</a>`;
   const png = (id) => { const p = `brand/kit/png/${id}.png`, [w, h] = pngSize(p); return a('/' + p, `${id}.png · ${w}×${h} · ${kb(p)}`); };
   const webp = (id) => a(`/brand/kit/webp/${id}.webp`, `${id}.webp`);
-  const card = (title, note, pv, links) => `<div class="dl panel"><div class="pv">${pv}</div><h3>${title}</h3><small>${note}</small><div class="links">${links.join('')}</div></div>`;
+  const card = (key, pv, links) => `<div class="dl panel"><div class="pv">${pv}</div><h3 data-t="b.c.${key}"></h3><small data-t="b.c.${key}.d"></small><div class="links">${links.join('')}</div></div>`;
   const img = (src, w, h, extra = '') => `<img src="${src}" alt="" width="${w}" height="${h}" loading="lazy" decoding="async"${extra}>`;
-  const cards = [
-    card('The heart and its glow', 'brand_front (the heart) over brand_back (the glow) — two pictures, so they can beat separately. Logo box 208, heart 140.',
-      `<span style="--lw-s:.62;display:block">${W.logo()}</span>`, [png('brand_front'), webp('brand_front'), png('brand_back'), webp('brand_back')]),
-    card('The name', '«Lewydo» — 208×74. White: for dark backgrounds.', img('/brand/kit/webp/lewydo.webp', 208, 74), [png('lewydo'), webp('lewydo')]),
-    card('The slogan', '«Love What You Do» — 208×19. Never translated.', img('/brand/kit/webp/slogan.webp', 208, 19, ' style="width:208px"'), [png('slogan'), webp('slogan')]),
-    card('The line', '146×1, 20 below the slogan; it opens from the middle on the splash.', img('/brand/kit/webp/brand_line.webp', 146, 1, ' style="width:146px;height:2px"'), [png('brand_line'), webp('brand_line')]),
-  ];
-  if (has('brand/kit/png/lockup.png')) cards.push(card('The whole Lockup', 'One transparent picture @3x — for stores, videos and slides. In a game, build it from the parts (the splash animates them).',
-    img('/brand/kit/png/lockup.png', 624, 966, ' style="height:130px;width:auto"'), [png('lockup')]));
-  if (has('brand/kit/png/pill.png')) cards.push(card('The Signature and the pill', 'The menu signature @3x, transparent; the pill: 28 high, › and all. In code, build it from the parts (the heart beats).',
-    img('/brand/kit/png/pill.png', ...pngSize('brand/kit/png/pill.png'), ' style="width:auto;height:56px"'), [png('pill'), ...(has('brand/kit/png/signature.png') ? [png('signature')] : [])]));
-  const [aw, ah] = pngSize('brand/kit/atlas/brand.png');
-  cards.push(card('The LibGDX atlas', `All five pictures in one texture (${aw}×${ah}) — assets/atlas/, EnumAtlas.BRAND.`, img('/brand/kit/webp/brand_front.webp', 420, 420, ' style="width:90px"'),
-    [a('/brand/kit/atlas/brand.atlas', 'brand.atlas'), a('/brand/kit/atlas/brand.png', `brand.png · ${kb('brand/kit/atlas/brand.png')}`)]));
-  cards.push(card('The code', 'LibGDX (Kotlin) for the games, CSS for the web — the splash, the heartbeat, the pill.', '<span class="pv-code">&lt;/&gt;</span>',
-    CODE.map(([f]) => a('/brand/kit/code/' + f, f.split('/').pop()))));
-  cards.push(card('App icon', 'The heart on night blue: 512, 180 (Apple), 64 (favicon).', img('/assets/icon-512.png', 512, 512, ' style="width:110px;border-radius:24px"'),
-    [a('/assets/icon-512.png', 'icon 512×512'), a('/assets/icon-180.png', 'icon 180×180'), a('/assets/favicon.png', 'favicon 64×64')]));
-  return cards.join('\n');
+  return [
+    card('heart', `<span style="--lw-s:.62;display:block">${W.logo()}</span>`, [png('brand_front'), webp('brand_front'), png('brand_back'), webp('brand_back')]),
+    card('name', img('/brand/kit/webp/lewydo.webp', 208, 74), [png('lewydo'), webp('lewydo')]),
+    card('slogan', img('/brand/kit/webp/slogan.webp', 208, 19, ' style="width:208px"'), [png('slogan'), webp('slogan')]),
+    card('line', img('/brand/kit/webp/brand_line.webp', 146, 1, ' style="width:146px;height:2px"'), [png('brand_line'), webp('brand_line')]),
+    card('lockup', img('/brand/kit/png/lockup.png', 624, 966, ' style="height:130px;width:auto"'), [png('lockup')]),
+    card('pill', img('/brand/kit/png/pill.png', ...pngSize('brand/kit/png/pill.png'), ' style="width:auto;height:54px"'), [png('pill')]),
+    card('atlas', img('/brand/kit/webp/brand_front.webp', 420, 420, ' style="width:90px"'),
+      [a('/brand/kit/atlas/brand.atlas', 'brand.atlas'), a('/brand/kit/atlas/brand.png', `brand.png · ${pngSize('brand/kit/atlas/brand.png').join('×')} · ${kb('brand/kit/atlas/brand.png')}`)]),
+    card('code', '<span class="pv-code">&lt;/&gt;</span>', CODE.map(([f]) => a('/brand/kit/code/' + f, f.split('/').pop()))),
+    card('icon', img('/assets/icon-512.png', 512, 512, ' style="width:110px;border-radius:24px"'),
+      [a('/assets/icon-512.png', 'icon 512×512'), a('/assets/icon-180.png', 'icon 180×180'), a('/assets/favicon.png', 'favicon 64×64')]),
+  ].join('\n');
 }
