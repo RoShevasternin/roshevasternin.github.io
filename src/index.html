@@ -321,6 +321,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 @media (prefers-reduced-motion:reduce){.tl-i.next.on::before{animation:none;}}
 .tl-i h3{font-weight:900;font-size:clamp(21px,2.4vw,26px);line-height:1.25;margin:4px 0 6px;}
 .tl-i p{color:var(--ink3);max-width:540px;}
+.tl-i p a{color:var(--mint);font-weight:800;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;}
 @media (min-width:900px){
   .tl{padding-left:0;} .tl::before,.tl::after{left:50%;margin-left:-1.5px;}
   .tl-i{width:50%;padding-right:56px;text-align:right;} .tl-i p{margin-left:auto;}
@@ -648,7 +649,8 @@ const T = (k, n) => { let v = D.S[lang][k] ?? D.S.en[k] ?? ''; if (typeof v === 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // names stay English even in CAPS: Turkish casing would give «KOTLİN»
 const NAMES = /\b(Kotlin|LibGDX|Java|Box2D|Android|Lewydo|CubePix|Orbit Dash|Orbit III|Google Play|Telegram|UX\/UI|Team Lead|Idle)\b/g;
-const rich = (s) => { let h = esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+const rich = (s) => { let h = esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>')
+  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' rel="noopener"' : ''}>${t}</a>`);
   return lang === 'tr' ? h.replace(NAMES, '<span lang="en">$1</span>') : h; };
 const pic = (key, f) => { const p = D.cp.pics[key]; return (p[lang] || p.en)[f] || ''; };
 const onLang = [];
