@@ -43,7 +43,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 | `src/strings.json` | усі тексти сайту 15 мовами (англійська — еталон) |
 | `src/games.json` | ігри: адреси, Google Play, кольори, іконки, `released` |
 | `src/cubepix.json` | CubePix: картини, назви, слова гри (зокрема текст «Про нас» — однаковий у всіх іграх), лого. **Генерує** `npm run cubepix` |
-| `src/langs.json` | 15 мов з піксельними прапорцями (ті самі, що в іграх) |
+| `src/langs.json` | 15 мов; прапорці — векторні картинки `assets/flags/<мова>.svg` (flag-icons, MIT; `zh-TW` — нейтральна плитка «繁», як в іграх) |
 | `src/heart.kt` | код, з якого «складається» серце в картці «Він кодить. Вона малює» |
 | `src/404.html` | сторінка «кімнати немає» для **всього** домену (тому всі шляхи абсолютні) |
 | `src/brand.html` | шаблон сторінки бренду `/brand/`; тексти — `src/brand-strings.json` (15 мов, ключі `b.…`); `tools/brand.mjs` — її частини, `brand.json` і zip |

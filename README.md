@@ -12,4 +12,4 @@ the studio, our story and how to reach us, in 15 languages.
   the pictures, the LibGDX atlas, the splash screen, the menu signature, About us and the heartbeat ([`brand/`](brand/), [brand.json](https://roshevasternin.github.io/brand/brand.json))
 
 The pages are built from `src/` (`npm run build`); see `CLAUDE.md` for how the site works.
-© 2026 Lewydo™. The Lewydo mark and the games are ours; fonts: Nunito and Unbounded (SIL OFL, `assets/fonts/OFL.txt`).
+© 2026 Lewydo™. The Lewydo mark and the games are ours; fonts: Nunito and Unbounded (SIL OFL, `assets/fonts/OFL.txt`); flags: flag-icons (MIT, `assets/flags/LICENSE`).
