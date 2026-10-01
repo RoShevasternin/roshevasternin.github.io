@@ -32,3 +32,19 @@ quieter than D there, peaks 5–8 dB lower). No knock at all; the sound swells o
   swell into the heart, a fifth up on the dub), L «Та-да» (two soft electric-piano chords, open → full) — .wav + .mp3 + timing4.json.
   **Their first heartbeat sits 0.40 s into the file** (a swell starts before it): start the file at 2.12 − 0.40 = 1.72 s of the splash.
 - `preview4.py <folder> <out.html>` fills `preview4.template.html`. Shown: https://claude.ai/artifact/D5PUn1MkP1b56tJaf6RBCU
+
+## Round 5 (01.10.2026) — preview, awaiting the owner's pick
+The owner: «треба новий звук — м'який пам-пам»; «візьми щось приємне, що подобається людям, і зроби пам-пам круто»; «це ж
+серцебиття, не забувай». So two soft pitched «пам» on the two heartbeats, each played by a sound people already love, shaped like a
+real heart: the «lub» lower, stronger and short (it lets go 140 ms in — a breath of quiet), the «dub» higher and softer, then it rings
+home (E → A, a fourth up — a real heart's second sound is higher too; also the step of the games' «coin» sound). Under the notes a
+soft warm low pulse on each beat (a pure sine, no click, no falling pitch — felt in headphones). Soft onsets (10–90 ms), almost
+nothing above 3 kHz, levelled like round 4 (phone band −30 dB), peaks 7–12 dB under D.
+- `make_sound5.py` (run from an empty folder with `PYTHONPATH=tools/sonic`; reuses round 4's helpers) → P «Фетр» (recommended:
+  a felt piano, E4 → A4 with the octave below), Q «Маримба» (soft mallets, bar modes tuned 1 : 4 : 10; A3+E4 → C#4+A4 and a low A2),
+  R «Лоу-фай» (a soft Rhodes, Dmaj9 → Aadd9, a little tape wobble, top rolled off), S «Та-дам» («та» on the lub, «дам» on the dub,
+  then a warm A-major bloom like the light leaving the heart) — .wav + .mp3 + timing5.json. **First heartbeat at 0.40 s**, as round 4.
+- Lessons: one hammer strikes all three strings of a piano note in phase (random phases made the note's loudness random); a wet
+  room swells a pure tone after the hit and blurs two beats into one — keep it small (mix ≈ 0.2) for a heartbeat; pitch wobble
+  sweeps the notes through the room's resonances and makes the fade pump — keep it to a few cents.
+- `preview5.py <folder> <out.html>` fills `preview5.template.html`. Shown: https://claude.ai/artifact/MbVarxdby2eySozjZAnPww
