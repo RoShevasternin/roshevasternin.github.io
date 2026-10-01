@@ -262,6 +262,11 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 /* code ↔ design: the heart typed as Vlad's Kotlin, and drawn as Lilya's design; the slider shows how one becomes the other */
 .cd-wrap h3{font-weight:900;font-size:26px;text-align:center;}
 .cd-wrap p{color:var(--ink3);text-align:center;margin:6px auto 18px;max-width:440px;font-size:15.5px;}
+.say{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:16px;}
+.say-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:0;border-radius:12px;cursor:pointer;font:800 15px var(--f);
+  color:var(--mint);background:rgba(61,220,132,.1);box-shadow:inset 0 0 0 1px rgba(157,245,194,.3);transition:background-color .2s;}
+.say-btn:hover{background:rgba(61,220,132,.18);} .say-btn svg{flex:none;}
+.say-spell{font-weight:900;font-size:19px;color:#fff;letter-spacing:.03em;} .say-ipa{font:600 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink3);}
 .cd-more{display:flex;align-items:center;justify-content:center;gap:8px;width:fit-content;max-width:100%;margin:18px auto 0;padding:10px 16px;border-radius:14px;text-align:center;
   color:var(--mint);font-weight:800;font-size:15.5px;line-height:1.3;text-decoration:none;background:rgba(61,220,132,.08);box-shadow:inset 0 0 0 1px rgba(157,245,194,.25);transition:background-color .2s;}
 .cd-more:hover{background:rgba(61,220,132,.16);} .cd-more svg{flex:none;}
@@ -516,6 +521,8 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="eyebrow" data-t="studio.eyebrow"></p>
         <h2 class="h2" data-t="studio.title"></h2>
         <p class="sub" data-t="cp:about"></p>
+        <p class="say"><button class="say-btn" type="button" data-say data-ta="aria-label:say.aria"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.6 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-t="say.btn"></span></button>
+          <b class="say-spell" data-t="say.spell"></b><span class="say-ipa">/lɛv.waɪ.doʊ/</span></p>
         <ul class="stats"><li data-t="stat.people" data-n="people"></li><li data-t="stat.games" data-n="games"></li><li data-t="stat.langs" data-n="langs"></li></ul>
       </div>
       <div class="cd-wrap rv">
@@ -676,6 +683,12 @@ menu.addEventListener('keydown', (e) => { const bs = $$('button', menu), i = bs.
   if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
   else if (e.key === 'Escape') { openMenu(false); langBtn.focus(); } });
 document.addEventListener('click', (e) => { if (!menu.hidden && !e.target.closest('.langsel')) openMenu(false); });
+
+// how to say «Lewydo»: Lev-why-do (/lɛv.waɪ.doʊ/) — the device's own voice says it
+$$('[data-say]').forEach((b) => b.addEventListener('click', () => { const S = window.speechSynthesis; if (!S) return;
+  S.cancel(); const u = new SpeechSynthesisUtterance('Lev, why, doe'); u.lang = 'en-US'; u.rate = 0.82;
+  const v = S.getVoices().filter((x) => /^en[-_]/i.test(x.lang)); u.voice = v.find((x) => /Google US|Samantha|Aria|Jenny|Daniel/i.test(x.name)) || v[0] || null;
+  S.speak(u); }));
 
 // ── the worlds: whichever section crosses the middle of the screen sets the world (background, sky, accent) ──
 let world = 'lewydo';

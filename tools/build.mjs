@@ -52,10 +52,11 @@ if (problems.length) { console.warn('⚠ ' + problems.join('\n⚠ ')); if (proce
 // (W — the WebP copies the pages show; P — the @3x PNG originals, for the kit pictures npm run kit makes)
 const art = (fmt) => {
   const K = `/brand/kit/${fmt}/`, x = '.' + fmt;
-  const logo = (id) => `<span class="lw-logo"${id ? ` id="${id}"` : ''}><img class="lw-back" src="${K}brand_back${x}" alt="" width="208" height="208">` +
+  const aura = `<img class="lw-aura" src="${K}brand_back${x}" alt="" width="208" height="208">`;      // the splash's two waves of light
+  const logo = (id, waves) => `<span class="lw-logo"${id ? ` id="${id}"` : ''}>${waves ? aura + aura : ''}<img class="lw-back" src="${K}brand_back${x}" alt="" width="208" height="208">` +
     `<img class="lw-front" src="${K}brand_front${x}" alt="" width="140" height="140"></span>`;
   const name = `<img class="lw-name" src="${K}lewydo${x}" alt="" width="208" height="74">`;
-  const lockup = (id, cls) => `<span class="lw-lockup${cls ? ' ' + cls : ''}"${id ? ` id="${id}"` : ''} role="img" aria-label="Lewydo — Love What You Do">${logo()}${name}` +
+  const lockup = (id, cls) => `<span class="lw-lockup${cls ? ' ' + cls : ''}"${id ? ` id="${id}"` : ''} role="img" aria-label="Lewydo — Love What You Do">${logo('', /lw-splash/.test(cls || ''))}${name}` +
     `<img class="lw-slogan" src="${K}slogan${x}" alt="" width="208" height="19"><img class="lw-line" src="${K}brand_line${x}" alt="" width="146" height="1"></span>`;
   return { logo, lockup, sig: (id) => `<span class="lw-sig">${logo(id)}${name}</span>` };
 };
@@ -86,7 +87,8 @@ const cubeIcon = '<svg viewBox="0 0 100 100" width="74" height="74" style="backg
 const ogGames = cubeIcon + [G.orbitdash.icon, ...G.more.map((g) => g.icon)].map((s) => `<img src="${s}" alt="" width="74" height="74">`).join('');
 
 const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: CP.counts.pics, floors: CP.counts.floors, cpLangs: CP.counts.langs };
-const DATA = { langs: LANGS, S, counts, cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: CP.pics } };
+const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
+const DATA = { langs: LANGS, S: SMAIN, counts, cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: CP.pics } };
 const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Lewydo', slogan: 'Love What You Do', url: SITE, logo: SITE + 'assets/icon-512.png',
   founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia Overchenko' }], foundingLocation: 'Poltava region, Ukraine',
   sameAs: [G.devPage, 'https://instagram.com/___vel__dan___', 'https://instagram.com/lilya.design'] };
@@ -121,7 +123,7 @@ out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).repla
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
 const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, CP, IDS }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
 out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
-const BKEYS = ['skip', 'lang.title', ...Object.keys(BS.en).map((k) => 'b.' + k)];
+const BKEYS = ['skip', 'lang.title', 'say.btn', 'say.spell', 'say.aria', ...Object.keys(BS.en).map((k) => 'b.' + k)];
 const BDATA = { langs: LANGS, S: Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]))])), about: Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, site: T.site, games: T.games }]; })) };
 out('brand/index.html', fill(read('src/brand.html')
   .replace('{{langOptions}}', () => LANGS.map((L) => `<option value="${L.id}"${L.id === 'en' ? ' selected' : ''}>${esc(L.name)}</option>`).join(''))

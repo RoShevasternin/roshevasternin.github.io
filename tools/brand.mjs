@@ -61,15 +61,26 @@ export function brandJson({ SITE, YEAR, G, CP, IDS }) {
     pill: { height: 28, radius: 999, padding: { left: 3, right: 10 }, gap: 5, border: '1px #3DDC84 at 24%', fill: '#3DDC84 at 4%',
       arrow: { size: [5, 8], color: '#9DF5C2', opacity: 0.65 }, pressedScale: 0.96, tapArea: 48,
       place: 'the bottom of every game menu, centred, 34 from the bottom', tap: 'opens About us', beat: 'once, when the menu appears' },
-    splash: { screen: 'BrandScreen', first: 'The first screen of every Lewydo game', size: [360, 800], lockupAt: [76, 239], seconds: 3.0,
+    splash: { screen: 'BrandScreen', first: 'The first screen of every Lewydo game', size: [360, 800], lockupAt: [76, 239], seconds: 3.8,
+      idea: 'Everything arrives first, top to bottom; then the heart beats as the finale, with the Lewydo sound.',
       timeline: [
-        { part: 'logo', from: 0.3, to: 1.1, fadeIn: true, interpolation: 'fade' },
-        { part: 'heartbeat', at: 1.1 },
-        { part: 'name', from: 0.9, to: 1.5, fadeIn: true, scale: [1.06, 1], interpolation: 'fade' },
-        { part: 'slogan', from: 1.3, to: 1.9, fadeIn: true, scale: [1.06, 1], interpolation: 'fade' },
-        { part: 'line', from: 1.7, to: 2.4, fadeIn: 0.3, scaleX: [0, 1], interpolation: 'exp5Out', origin: 'center' },
-        { part: 'hold', seconds: 0.6 }],
-      then: 'the game\'s LoaderScreen', theme: 'The background and the ambient light may follow the game. The Lockup, its numbers and its timeline never change.' },
+        { part: 'logo', from: 0.15, to: 0.85, fadeIn: true, scale: [0.94, 1], interpolation: 'pow3Out' },
+        { part: 'name', from: 0.55, to: 1.1, fadeIn: true, scale: [1.06, 1], interpolation: 'fade' },
+        { part: 'slogan', from: 0.85, to: 1.4, fadeIn: true, scale: [1.06, 1], interpolation: 'fade' },
+        { part: 'line', from: 1.15, to: 1.85, fadeIn: 0.3, scaleX: [0, 1], interpolation: 'exp5Out', origin: 'center' },
+        { part: 'heartbeat finale', from: 2.0, lub: 2.17, dub: 2.45, to: 2.9, code: 'LewydoHeartbeat.finale' },
+        { part: 'waves of light', at: [2.12, 2.4], what: 'two copies of brand_back: alpha 0.55 → 0, scale 1 → 1.9; alpha 0.32 → 0, scale 1 → 1.55' },
+        { part: 'sound', at: 2.09, file: 'kit/sound/lewydo-heartbeat.*', note: 'its first beat is 0.03 s in — on the lub' },
+        { part: 'the words catch the light', at: { name: 2.7, slogan: 2.82, line: 2.96 }, what: 'a mint flash on each of the three notes «Lev-why-do»' },
+        { part: 'onComplete', at: 3.8 }],
+      then: 'the game\'s LoaderScreen', theme: 'The background and the ambient light may follow the game. The Lockup, its numbers, its timeline and its sound never change.' },
+    sound: { name: 'The Lewydo sound', what: 'Two soft tuned heartbeats (A2 → E2, a felt mallet) and three kalimba notes C#5 → E5 → A5 in the rhythm of the name «Lev-why-do», ending home on A.',
+      files: { ogg: K + 'sound/lewydo-heartbeat.ogg', mp3: K + 'sound/lewydo-heartbeat.mp3', wav: K + 'sound/lewydo-heartbeat.wav' },
+      seconds: 2.6, firstBeat: 0.03, beats: [0.03, 0.31], notes: [0.61, 0.73, 0.87], level: 'RMS −23 dBFS, peaks ≈ −11 dBFS',
+      startInSplash: 2.09, rules: ['Once per launch, with the splash — never in a loop.', 'At the game\'s sound volume; sounds off = silence.',
+        'Never change, cut, speed up or layer it under music.', 'Browsers allow sound only after a tap: a web splash that opens by itself stays silent.'],
+      generator: 'tools/sonic/make_sound.py + make_sound2.py (variant D)' },
+    pronunciation: { ipa: '/lɛv.waɪ.doʊ/', say: 'Lev-why-do', uk: 'Лев-вай-до', from: 'Love What You Do — said quickly' },
     heartbeat: { once: true, when: ['the splash shows', 'About us opens (every time)', 'the menu pill appears'], never: 'in a loop (no Actions.forever, no infinite)',
       front: HEART.map(([scale, seconds, ease]) => ({ scale, seconds, ease })), back: { delay: GLOW.delay, steps: GLOW.steps.map(([scale, seconds, ease]) => ({ scale, seconds, ease })), stays: 1.05 },
       css: { sineOut: 'cubic-bezier(.61,1,.88,1)', sineIn: 'cubic-bezier(.12,0,.39,0)' }, reducedMotion: 'no beat' },
@@ -110,7 +121,7 @@ export function zip(files) {                                  // files: [[name, 
 }
 export function kitFiles(jsonText) {
   const F = [['README.md', buf('brand/README.md')], ['brand.json', Buffer.from(jsonText)]];
-  for (const d of ['png', 'webp', 'atlas', 'code/libgdx', 'code/web']) for (const f of list(`brand/kit/${d}`)) F.push([`${d}/${f}`, buf(`brand/kit/${d}/${f}`)]);
+  for (const d of ['png', 'webp', 'atlas', 'sound', 'code/libgdx', 'code/web']) for (const f of list(`brand/kit/${d}`)) F.push([`${d}/${f}`, buf(`brand/kit/${d}/${f}`)]);
   F.push(['icon/icon-512.png', buf('assets/icon-512.png')], ['icon/icon-180.png', buf('assets/icon-180.png')], ['icon/favicon-64.png', buf('assets/favicon.png')]);
   return F.map(([n, b]) => ['lewydo-brand-kit/' + n, b]);
 }
@@ -165,6 +176,7 @@ export function dlCards({ W }) {
     card('pill', img('/brand/kit/png/pill.png', ...pngSize('brand/kit/png/pill.png'), ' style="width:auto;height:54px"'), [png('pill')]),
     card('atlas', img('/brand/kit/webp/brand_front.webp', 420, 420, ' style="width:90px"'),
       [a('/brand/kit/atlas/brand.atlas', 'brand.atlas'), a('/brand/kit/atlas/brand.png', `brand.png · ${pngSize('brand/kit/atlas/brand.png').join('×')} · ${kb('brand/kit/atlas/brand.png')}`)]),
+    card('sound', '<span class="pv-code">♥ ♪</span>', ['ogg', 'mp3', 'wav'].map((x) => a(`/brand/kit/sound/lewydo-heartbeat.${x}`, `lewydo-heartbeat.${x} · ${kb(`brand/kit/sound/lewydo-heartbeat.${x}`)}`))),
     card('code', '<span class="pv-code">&lt;/&gt;</span>', CODE.map(([f]) => a('/brand/kit/code/' + f, f.split('/').pop()))),
     card('icon', img('/assets/icon-512.png', 512, 512, ' style="width:110px;border-radius:24px"'),
       [a('/assets/icon-512.png', 'icon 512×512'), a('/assets/icon-180.png', 'icon 180×180'), a('/assets/favicon.png', 'favicon 64×64')]),

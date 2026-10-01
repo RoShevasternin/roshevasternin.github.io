@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Lewydo™ brand kit for the web — a working example: the splash, the menu pill, one heartbeat. https://roshevasternin.github.io/brand/ -->
+<!-- Lewydo™ brand kit for the web — a working example: the splash with its sound, the menu pill, one heartbeat. https://roshevasternin.github.io/brand/ -->
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,14 +11,14 @@
 </style>
 </head>
 <body>
-  <!-- the Lockup; .lw-splash plays the BrandScreen intro -->
-  <span class="lw-lockup lw-splash" id="splash" role="img" aria-label="Lewydo — Love What You Do">
-    <span class="lw-logo"><img class="lw-back" src="../../webp/brand_back.webp" alt=""><img class="lw-front" src="../../webp/brand_front.webp" alt=""></span>
+  <!-- the Lockup; .lw-splash plays the BrandScreen intro (the two .lw-aura are the waves of light of the final heartbeat) -->
+  <span class="lw-lockup" id="splash" role="img" aria-label="Lewydo — Love What You Do">
+    <span class="lw-logo"><img class="lw-aura" src="../../webp/brand_back.webp" alt=""><img class="lw-aura" src="../../webp/brand_back.webp" alt=""><img class="lw-back" src="../../webp/brand_back.webp" alt=""><img class="lw-front" src="../../webp/brand_front.webp" alt=""></span>
     <img class="lw-name" src="../../webp/lewydo.webp" alt="">
     <img class="lw-slogan" src="../../webp/slogan.webp" alt="">
     <img class="lw-line" src="../../webp/brand_line.webp" alt="">
   </span>
-  <button type="button" id="again">Play the splash again</button>
+  <button type="button" id="again">▶ Play the splash with its sound</button>
   <!-- the Signature pill (bottom of a menu) — it beats once when it appears; tap → your About us -->
   <a class="lw-pill" href="#about" aria-label="About us">
     <span class="lw-sig"><span class="lw-logo" id="pillLogo"><img class="lw-back" src="../../webp/brand_back.webp" alt=""><img class="lw-front" src="../../webp/brand_front.webp" alt=""></span><img class="lw-name" src="../../webp/lewydo.webp" alt=""></span>
@@ -27,7 +27,16 @@
   <script>
     // replay: remove the class, force a reflow, add it back (the same way you replay one heartbeat: .lw-beating)
     const replay = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
-    document.getElementById('again').onclick = () => replay(document.getElementById('splash'), 'lw-splash');
+    // the Lewydo sound starts 2.09 s into the splash (its first beat lands on the heart's «lub» at 2.12 s). Browsers allow sound
+    // only after a tap, so a web splash that opens by itself stays silent; respect your game's sound setting (off = silence).
+    const sound = new Audio('../../sound/lewydo-heartbeat.mp3'); sound.preload = 'auto'; sound.volume = 1;
+    let t = 0;
+    document.getElementById('again').onclick = () => {
+      replay(document.getElementById('splash'), 'lw-splash');
+      clearTimeout(t); sound.pause(); sound.currentTime = 0;
+      t = setTimeout(() => sound.play().catch(() => {}), 2090);
+    };
+    replay(document.getElementById('splash'), 'lw-splash');                              // on load it plays silently
     setTimeout(() => replay(document.getElementById('pillLogo'), 'lw-beating'), 800);   // the pill appeared → one beat
   </script>
 </body>

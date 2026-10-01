@@ -1,5 +1,5 @@
 // npm test — the built site (npm run build first; npm test does it): languages, the heart, both mini-games, links, no third party,
-// and the brand page (/brand/): its splash, About us in 15 languages, every download, brand.json and the kit zip.
+// and the brand page (/brand/): its splash, About us in 15 languages, every download, brand.json, the kit zip, the sound and «How to say it».
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
@@ -109,10 +109,33 @@ test('the brand page: the splash, About us in every language, every download, br
   expect(Object.keys(B.about.texts)).toHaveLength(15);
   for (const u of [...Object.values(B.images).flatMap((i) => [i.png, i.webp]), B.atlas.atlas, B.atlas.png, ...Object.values(B.code).map((c) => c.url)])
     expect((await request.get(u.replace('https://roshevasternin.github.io/', './'))).status(), u).toBe(200);
+  expect(B.pronunciation.ipa).toBe('/lɛv.waɪ.doʊ/');                                                 // how to say it
+  for (const u of Object.values(B.sound.files)) {                                                     // the Lewydo sound, every format
+    const r = await request.get(u.replace('https://roshevasternin.github.io/', './'));
+    expect(r.status(), u).toBe(200); expect((await r.body()).length, u).toBeGreaterThan(20000);
+  }
   const zip = await (await request.get('./brand/lewydo-brand-kit.zip')).body();
   expect(zip.subarray(0, 2).toString()).toBe('PK');
   expect(w.errs).toEqual([]);
   expect([...w.ext]).toEqual([]);
+});
+
+test('«How to say it»: both pages say Lev-why-do in the device’s voice, and the brand page plays the Lewydo sound', async ({ page }) => {
+  await page.addInitScript(() => { window.__said = [];                                                // a stand-in voice that remembers what it said
+    Object.defineProperty(window, 'speechSynthesis', { value: { cancel() {}, getVoices: () => [], speak: (u) => window.__said.push(u.text) } }); });
+  const w = watch(page);
+  await page.goto('./?lang=uk');
+  await expect(page.locator('#studio [data-say]')).toContainText('Як вимовляти');
+  await expect(page.locator('#studio .say-spell')).toHaveText('Лев-вай-до');
+  await page.locator('#studio [data-say]').click();
+  expect(await page.evaluate(() => window.__said)).toEqual(['Lev, why, doe']);
+  await page.goto('./brand/?lang=en');
+  await page.locator('.spell [data-say]').click();
+  expect(await page.evaluate(() => window.__said)).toEqual(['Lev, why, doe']);
+  await expect(page.locator('#sound .notes i')).toHaveCount(3);                                       // Lev · why · do
+  await page.locator('#sndGo').click();
+  await expect(page.locator('#sound .notes i.on').first()).toBeAttached({ timeout: 3000 });           // the notes light up with the sound
+  expect(w.errs).toEqual([]);
 });
 
 test('the brand page speaks all 15 languages, fills every text and never scrolls sideways', async ({ page }) => {

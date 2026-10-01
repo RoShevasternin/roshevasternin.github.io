@@ -109,6 +109,8 @@ code,kbd{font-family:var(--mono);font-size:.9em;color:var(--mint);overflow-wrap:
 .spell .name{font-size:clamp(34px,6vw,58px);font-weight:900;letter-spacing:.14em;}
 .spell .name b{color:var(--glow);text-shadow:0 0 22px rgba(109,245,147,.45);}
 .spell p{color:var(--ink3);margin-top:8px;}
+.say{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 16px;margin-top:18px;}
+.say-spell{font-weight:900;font-size:22px;color:#fff;letter-spacing:.04em;} .say-ipa{font:600 16px var(--mono);color:var(--mint);} .say-note b,.sound-txt b{white-space:nowrap;}  /* «Lev-why-do» never breaks at its hyphens */
 .where{display:grid;gap:16px;margin-top:22px;} @media (min-width:760px){.where{grid-template-columns:repeat(4,1fr);}}
 .where div{padding:18px;border-radius:18px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);}
 .where b{display:block;font-weight:900;} .where span{color:var(--ink3);font-size:15px;}
@@ -175,6 +177,7 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 .tl-track{position:relative;height:16px;border-radius:8px;background:rgba(255,255,255,.05);}
 .tl-bar{position:absolute;top:0;bottom:0;border-radius:8px;background:linear-gradient(90deg,#3DDC84,#9DF5C2);}
 .tl-bar.beat{background:#ff8fb8;} .tl-bar.hold{background:rgba(255,255,255,.18);}
+.tl-bar.mk{width:3px;margin-left:-1.5px;border-radius:2px;background:#fff;box-shadow:0 0 8px #fff;} .tl-bar.lit{background:linear-gradient(90deg,#9DF5C2,rgba(157,245,194,.15));}
 .tl-ax{display:grid;grid-template-columns:110px 1fr;gap:10px;font:700 12px var(--mono);color:var(--ink3);}
 .tl-ax div{display:flex;justify-content:space-between;}
 .langpick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:10px;justify-content:center;}
@@ -193,6 +196,15 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 .graph .lg{display:flex;gap:18px;margin-top:10px;font-size:14px;color:var(--ink2);}
 .graph .lg i{display:inline-block;width:14px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px;}
 .code{margin-top:22px;overflow:hidden;}
+.hb-finale{margin-top:22px;}
+.sound{display:grid;gap:20px;align-items:center;margin-top:22px;padding:24px;
+  background:radial-gradient(70% 120% at 100% 0%,rgba(109,245,147,.14),transparent 70%),var(--panel);}
+@media (min-width:860px){.sound{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);}}
+.sound h3{font-weight:900;font-size:clamp(24px,3vw,32px);margin-top:6px;} .sound-txt>p:not(.eyebrow){color:var(--ink2);margin-top:8px;max-width:620px;}
+.sound-play{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.notes{display:flex;gap:10px;font-weight:900;font-size:20px;color:rgba(157,245,194,.35);}
+.notes i{font-style:normal;transition:color .2s,text-shadow .2s,transform .2s;}
+.notes i.on{color:#fff;text-shadow:0 0 14px rgba(109,245,147,.9);transform:translateY(-3px);}
 .code-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px;padding:10px 10px 0;border-bottom:1px solid rgba(255,255,255,.08);}
 .tabs{display:flex;flex-wrap:wrap;gap:4px;}
 .tabs button{border:0;background:none;color:var(--ink3);font:800 14px var(--mono);padding:10px 12px;border-radius:10px 10px 0 0;cursor:pointer;}
@@ -305,6 +317,9 @@ footer p{margin-top:8px;}
         <p class="arrow">↓</p>
         <p class="name"><b>L</b><b>e</b><b>W</b><b>Y</b><b>Do</b></p>
         <p class="spell-note" data-t="b.spell"></p>
+        <div class="say"><button class="btn btn-green btn-sm" type="button" data-say data-ta="aria-label:say.aria"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.6 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-t="say.btn"></span></button>
+          <span class="say-spell" data-t="say.spell"></span><span class="say-ipa">/lɛv.waɪ.doʊ/</span></div>
+        <p class="say-note" data-t="b.say.note"></p>
       </div>
       <div class="where">
         <div><b data-t="b.where.1.t"></b><span data-t="b.where.1.d"></span></div>
@@ -324,7 +339,7 @@ footer p{margin-top:8px;}
           <li data-t="b.do.1"></li><li data-t="b.do.2"></li><li data-t="b.do.3"></li><li data-t="b.do.4"></li><li data-t="b.do.5"></li>
         </ul></div>
         <div class="panel no"><h3 data-t="b.rules.dont"></h3><ul class="spec">
-          <li data-t="b.dont.1"></li><li data-t="b.dont.2"></li><li data-t="b.dont.3"></li><li data-t="b.dont.4"></li>
+          <li data-t="b.dont.1"></li><li data-t="b.dont.2"></li><li data-t="b.dont.3"></li><li data-t="b.dont.4"></li><li data-t="b.dont.5"></li>
         </ul>
         <div class="donts" data-ta="aria-label:b.wrong">
           <div class="dont d1">{{mark}}<small data-t="b.wrong.1"></small></div><div class="dont d2">{{mark}}<small data-t="b.wrong.2"></small></div>
@@ -394,13 +409,15 @@ footer p{margin-top:8px;}
       <div class="grid2" style="margin-top:28px">
         <div class="tl panel">
           <p class="eyebrow" data-t="b.tl"></p>
-          <div class="tl-row"><span data-t="b.tl.1"></span><div class="tl-track"><i class="tl-bar" style="left:10%;width:26.67%"></i></div></div>
-          <div class="tl-row"><span data-t="b.tl.2"></span><div class="tl-track"><i class="tl-bar beat" style="left:36.67%;width:15%"></i></div></div>
-          <div class="tl-row"><span data-t="b.tl.3"></span><div class="tl-track"><i class="tl-bar" style="left:30%;width:20%"></i></div></div>
-          <div class="tl-row"><span data-t="b.tl.4"></span><div class="tl-track"><i class="tl-bar" style="left:43.33%;width:20%"></i></div></div>
-          <div class="tl-row"><span data-t="b.tl.5"></span><div class="tl-track"><i class="tl-bar" style="left:56.67%;width:23.33%"></i></div></div>
-          <div class="tl-row"><span data-t="b.tl.6"></span><div class="tl-track"><i class="tl-bar hold" style="left:80%;width:20%"></i></div></div>
-          <div class="tl-ax"><span></span><div><span>0</span><span>0.5</span><span>1</span><span>1.5</span><span>2</span><span>2.5</span><span>3&nbsp;<span data-t="b.tl.s"></span></span></div></div>
+          <div class="tl-row"><span data-t="b.tl.1"></span><div class="tl-track"><i class="tl-bar" style="left:3.75%;width:17.5%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.3"></span><div class="tl-track"><i class="tl-bar" style="left:13.75%;width:13.75%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.4"></span><div class="tl-track"><i class="tl-bar" style="left:21.25%;width:13.75%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.5"></span><div class="tl-track"><i class="tl-bar" style="left:28.75%;width:17.5%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.2"></span><div class="tl-track"><i class="tl-bar beat" style="left:50%;width:22.5%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.7"></span><div class="tl-track"><i class="tl-bar mk" style="left:53%"></i><i class="tl-bar mk" style="left:60%"></i><i class="tl-bar mk" style="left:67.5%"></i><i class="tl-bar mk" style="left:70.5%"></i><i class="tl-bar mk" style="left:74%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.8"></span><div class="tl-track"><i class="tl-bar lit" style="left:67.5%;width:12.5%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.6"></span><div class="tl-track"><i class="tl-bar hold" style="left:74%;width:21%"></i></div></div>
+          <div class="tl-ax"><span></span><div><span>0</span><span>1</span><span>2</span><span>3</span><span>4&nbsp;<span data-t="b.tl.s"></span></span></div></div>
         </div>
         <div class="panel" style="padding:22px">
           <p class="eyebrow" data-t="b.num"></p>
@@ -423,6 +440,13 @@ footer p{margin-top:8px;}
           <div class="lg"><span><i style="background:#3DDC84"></i><span data-t="b.hb.heart"></span></span></div>
           <div class="lg"><span><i style="background:#9DF5C2"></i><span data-t="b.hb.glow"></span></span></div>
         </div>
+      </div>
+      <p class="sub hb-finale" data-t="b.hb.finale"></p>
+      <div class="sound panel" id="sound">
+        <div class="sound-txt"><p class="eyebrow" data-t="b.snd.eyebrow"></p><h3 data-t="b.snd.title"></h3><p data-t="b.snd.sub"></p>
+          <ul class="spec"><li data-t="b.snd.r1"></li><li data-t="b.snd.r2"></li><li data-t="b.snd.r3"></li><li data-t="b.snd.r4"></li></ul></div>
+        <div class="sound-play"><button class="btn btn-green" type="button" id="sndGo">♥ ♪ <span data-t="b.snd.play"></span></button>
+          <span class="notes" aria-hidden="true"><i>Lev</i><i>why</i><i>do</i></span></div>
       </div>
       <div class="code panel" id="code">
         <div class="code-top"><div class="tabs" role="tablist" data-ta="aria-label:b.code">{{codeTabs}}</div>
@@ -535,7 +559,22 @@ const copy = (text) => { const done = () => toast('✓ ' + T('b.copied'));
 // the splash: the hero one plays at once; the one in the phone waits (paused) until it is seen; ▶ plays it again
 const splashIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.remove('lw-wait'); splashIO.unobserve(e.target); } }), { threshold: .5 });
 const inPhone = $('#splashLock'); inPhone.classList.add('lw-wait'); splashIO.observe(inPhone);
-$$('[data-replay]').forEach((b) => b.addEventListener('click', () => { const el = document.getElementById(b.dataset.replay); el.classList.remove('lw-wait'); again(el, 'lw-splash'); }));
+// the Lewydo sound: with a tap (browsers allow sound only after one) the splash plays with it — the sound starts at 2.09 s,
+// its first beat lands on the heart's lub (2.12 s); «Listen» plays it alone and lights the three notes «Lev · why · do»
+const brandSound = new Audio('/brand/kit/sound/lewydo-heartbeat.mp3'); brandSound.preload = 'auto';
+let sndT = [];
+const playSound = (after = 0) => { sndT.forEach(clearTimeout); sndT = []; brandSound.pause(); brandSound.currentTime = 0;
+  sndT.push(setTimeout(() => brandSound.play().catch(() => {}), after * 1000)); return after; };
+$$('[data-replay]').forEach((b) => b.addEventListener('click', () => { const el = document.getElementById(b.dataset.replay); el.classList.remove('lw-wait'); again(el, 'lw-splash'); playSound(2.09); }));
+$('#sndGo').addEventListener('click', () => { playSound(0); const notes = $$('.notes i');
+  [0.61, 0.73, 0.87].forEach((t, k) => { sndT.push(setTimeout(() => notes[k].classList.add('on'), t * 1000)); sndT.push(setTimeout(() => notes[k].classList.remove('on'), t * 1000 + 700)); }); });
+
+// how to say «Lewydo»: Lev-why-do (/lɛv.waɪ.doʊ/) — the device's own voice says it (until the founders record it themselves)
+const say = () => { const S = window.speechSynthesis; if (!S) { toast('/lɛv.waɪ.doʊ/'); return; }
+  S.cancel(); const u = new SpeechSynthesisUtterance('Lev, why, doe'); u.lang = 'en-US'; u.rate = 0.82; u.pitch = 1;
+  const v = S.getVoices().filter((x) => /^en[-_]/i.test(x.lang)); u.voice = v.find((x) => /Google US|Samantha|Aria|Jenny|Daniel/i.test(x.name)) || v[0] || null;
+  S.speak(u); };
+$$('[data-say]').forEach((b) => b.addEventListener('click', say));
 
 // one beat when it appears: About us, the menu pill, the demo heart
 const beatIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { again($('.lw-logo', e.target) || e.target, 'lw-beating'); beatIO.unobserve(e.target); } }), { threshold: .6 });
