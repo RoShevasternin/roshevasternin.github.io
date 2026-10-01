@@ -53,20 +53,21 @@ def finish(L, R, name, peak=-1.0):
     with wave.open(name, 'wb') as f: f.setnchannels(2); f.setsampwidth(2); f.setframerate(SR); f.writeframes(data.tobytes())
     print(name, f'{len(L) / SR:.2f} s')
 
-D = 2.4
-# A — «Тук-тук»: the pure heartbeat, deep and warm
-L = np.zeros(int(D * SR)); place(L, thump(), PRE); place(L, thump(f0=114, f1=54, tau=0.058, click=0.15) * 0.74, PRE + GAP)
-L = reverb(L, mix=0.14); finish(L, L.copy(), 'A_heartbeat.wav')
-# B — «Серце й сяйво»: the heartbeat, then the mint glow blooms out of the dub (D major add9, high and airy)
-L = np.zeros(int(D * SR)); place(L, thump(), PRE); place(L, thump(f0=114, f1=54, tau=0.058, click=0.15) * 0.74, PRE + GAP)
-L = reverb(L, mix=0.14); R = L.copy()
-sl, sr = shimmer([587.33, 739.99, 880.0, 1318.51], amp=0.11)
-place(L, sl, PRE + GAP + 0.02); place(R, sr, PRE + GAP + 0.02)
-L, R = reverb(L, 1.8, 0.22, 4), reverb(R, 1.8, 0.22, 5); finish(L, R, 'B_heart_glow.wav')
-# C — «Бум-бум»: a musical heart — two soft tuned thumps (a falling fourth, A2 → E2) on a felt mallet, a whisper of glow
-L = np.zeros(int(D * SR)); place(L, thump(f0=90, f1=44, click=0.08) * 0.75, PRE); place(L, mallet(110.0, 0.5) * 0.55, PRE)
-place(L, thump(f0=104, f1=50, tau=0.06, click=0.06) * 0.51, PRE + GAP); place(L, mallet(82.41, 0.5) * 0.38, PRE + GAP)
-R = L.copy(); sl, sr = shimmer([440.0, 659.26, 830.61], dur=2.0, amp=0.07, tau=0.6)
-place(L, sl, PRE + GAP + 0.03); place(R, sr, PRE + GAP + 0.03)
-L, R = reverb(L, 1.6, 0.2, 6), reverb(R, 1.6, 0.2, 7); finish(L, R, 'C_bum_bum.wav')
-json.dump({'pre': PRE, 'gap': GAP}, open('timing.json', 'w'))
+if __name__ == "__main__":
+    D = 2.4
+    # A — «Тук-тук»: the pure heartbeat, deep and warm
+    L = np.zeros(int(D * SR)); place(L, thump(), PRE); place(L, thump(f0=114, f1=54, tau=0.058, click=0.15) * 0.74, PRE + GAP)
+    L = reverb(L, mix=0.14); finish(L, L.copy(), 'A_heartbeat.wav')
+    # B — «Серце й сяйво»: the heartbeat, then the mint glow blooms out of the dub (D major add9, high and airy)
+    L = np.zeros(int(D * SR)); place(L, thump(), PRE); place(L, thump(f0=114, f1=54, tau=0.058, click=0.15) * 0.74, PRE + GAP)
+    L = reverb(L, mix=0.14); R = L.copy()
+    sl, sr = shimmer([587.33, 739.99, 880.0, 1318.51], amp=0.11)
+    place(L, sl, PRE + GAP + 0.02); place(R, sr, PRE + GAP + 0.02)
+    L, R = reverb(L, 1.8, 0.22, 4), reverb(R, 1.8, 0.22, 5); finish(L, R, 'B_heart_glow.wav')
+    # C — «Бум-бум»: a musical heart — two soft tuned thumps (a falling fourth, A2 → E2) on a felt mallet, a whisper of glow
+    L = np.zeros(int(D * SR)); place(L, thump(f0=90, f1=44, click=0.08) * 0.75, PRE); place(L, mallet(110.0, 0.5) * 0.55, PRE)
+    place(L, thump(f0=104, f1=50, tau=0.06, click=0.06) * 0.51, PRE + GAP); place(L, mallet(82.41, 0.5) * 0.38, PRE + GAP)
+    R = L.copy(); sl, sr = shimmer([440.0, 659.26, 830.61], dur=2.0, amp=0.07, tau=0.6)
+    place(L, sl, PRE + GAP + 0.03); place(R, sr, PRE + GAP + 0.03)
+    L, R = reverb(L, 1.6, 0.2, 6), reverb(R, 1.6, 0.2, 7); finish(L, R, 'C_bum_bum.wav')
+    json.dump({'pre': PRE, 'gap': GAP}, open('timing.json', 'w'))
