@@ -11,3 +11,13 @@
 - Shown to the owner: https://claude.ai/artifact/QcPNM3UapHSBAN1ps62Bmv
 - Done: D is in the kit (brand/kit/sound/: .ogg for LibGDX + a light web copy), the new timeline into
   lewydo-brand.css (.lw-splash), ABrandGroup/LewydoHeartbeat (Kotlin), brand.json, the brand page, CubePix (tools/brand/kit + build_brand.py).
+
+## Round 3 (01.10.2026) — preview, awaiting the owner's pick
+The owner: D's three kalimba notes («тілілінь») «вдаряють у мозок»; wants something soft and not tiring, clear but pleasant like
+a Mac start-up sound, and maybe only the heartbeat; the name, slogan and line should no longer light up — «просто тук-тук».
+- `make_sound3.py` (run from an empty folder with `PYTHONPATH=tools/sonic`) → G «Бум-бум» (C's tuned heart, no notes),
+  H «Тук-тук» (a natural lub-dub), I «Тук-тук і тепло» (the heart + a low warm A-major chord blooming under the second beat),
+  J «Тепла нота» (closest to a Mac chime: one round A-major chord on the second beat) — .wav + .mp3. No high tines: nothing
+  above ~2 kHz; RMS −24 dBFS, peaks ≤ −8; a soft wooden «tok» on A4/E4 in every heart so it is heard on a phone speaker.
+- `preview3.py <folder> <out.html>` fills `preview3.template.html` (animations: «Серце й хвилі світла» / «Лише серце» / the current one
+  with the words lighting up; the current D for comparison). Shown to the owner: https://claude.ai/artifact/GFU3uPSCt9fLNE1WUSpSF4
