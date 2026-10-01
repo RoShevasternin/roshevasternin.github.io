@@ -311,6 +311,14 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .tl-i.love.on::before{box-shadow:inset 0 0 0 3px #ff6b9d,0 0 18px rgba(255,107,157,.75);}
 .tl-when{font-weight:900;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);}
 .love .tl-when{color:#ff9ec0;}
+.tl-i.brand::before{width:31px;height:31px;top:-1px;margin-left:-4px;background:url(/brand/kit/webp/brand_front.webp) 50% 50%/100% no-repeat,transparent;box-shadow:none;}
+.tl-i.brand.on::before{box-shadow:none;filter:drop-shadow(0 0 9px rgba(109,245,147,.9));}
+.brand .tl-when{color:#6DF593;}
+.tl-i.next::before{box-shadow:inset 0 0 0 3px rgba(157,245,194,.5);background:transparent;outline:2px dashed rgba(157,245,194,.45);outline-offset:3px;}
+.tl-i.next.on::before{box-shadow:inset 0 0 0 3px #3DDC84;animation:tlNext 1.6s ease-in-out infinite;}
+@keyframes tlNext{50%{box-shadow:inset 0 0 0 3px #3DDC84,0 0 18px rgba(61,220,132,.75);}}
+.next .tl-when{color:var(--mint);font-style:italic;}
+@media (prefers-reduced-motion:reduce){.tl-i.next.on::before{animation:none;}}
 .tl-i h3{font-weight:900;font-size:clamp(21px,2.4vw,26px);line-height:1.25;margin:4px 0 6px;}
 .tl-i p{color:var(--ink3);max-width:540px;}
 @media (min-width:900px){
@@ -318,6 +326,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
   .tl-i{width:50%;padding-right:56px;text-align:right;} .tl-i p{margin-left:auto;}
   .tl-i:nth-child(even){margin-left:50%;padding-right:0;padding-left:56px;text-align:left;} .tl-i:nth-child(even) p{margin-left:0;}
   .tl-i::before{left:auto;right:-11.5px;} .tl-i:nth-child(even)::before{left:-11.5px;right:auto;}
+  .tl-i.brand::before{margin:0;right:-15.5px;} .tl-i.brand:nth-child(even)::before{left:-15.5px;}
 }
 
 /* ── contact ── */
@@ -556,8 +565,13 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <li class="tl-i rv"><p class="tl-when" data-t="story.1.when"></p><h3 data-t="story.1.t"></h3><p data-t="story.1.d"></p></li>
         <li class="tl-i rv"><p class="tl-when" data-t="story.2.when"></p><h3 data-t="story.2.t"></h3><p data-t="story.2.d"></p></li>
         <li class="tl-i love rv"><p class="tl-when" data-t="story.3.when"></p><h3 data-t="story.3.t"></h3><p data-t="story.3.d"></p></li>
+        <li class="tl-i brand rv"><p class="tl-when" data-t="story.brand.when"></p><h3 data-t="story.brand.t"></h3><p data-t="story.brand.d"></p></li>
+        <li class="tl-i rv"><p class="tl-when" data-t="story.imc.when"></p><h3 data-t="story.imc.t"></h3><p data-t="story.imc.d"></p></li>
+        <li class="tl-i rv"><p class="tl-when" data-t="story.idea.when"></p><h3 data-t="story.idea.t"></h3><p data-t="story.idea.d"></p></li>
         <li class="tl-i love rv"><p class="tl-when" data-t="story.4.when"></p><h3 data-t="story.4.t"></h3><p data-t="story.4.d"></p></li>
-        <li class="tl-i rv"><p class="tl-when" data-t="story.5.when"></p><h3 data-t="story.5.t"></h3><p data-t="story.5.d"></p></li>
+        <li class="tl-i rv"><p class="tl-when" data-t="story.od.when"></p><h3 data-t="story.od.t"></h3><p data-t="story.od.d"></p></li>
+        <li class="tl-i rv"><p class="tl-when" data-t="story.proto.when"></p><h3 data-t="story.proto.t"></h3><p data-t="story.proto.d"></p></li>
+        <li class="tl-i next rv"><p class="tl-when" data-t="story.next.when"></p><h3 data-t="story.next.t"></h3><p data-t="story.next.d"></p></li>
       </ol>
     </div>
   </section>
