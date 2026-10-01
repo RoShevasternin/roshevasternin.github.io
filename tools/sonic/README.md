@@ -21,3 +21,14 @@ a Mac start-up sound, and maybe only the heartbeat; the name, slogan and line sh
   above ~2 kHz; RMS −24 dBFS, peaks ≤ −8; a soft wooden «tok» on A4/E4 in every heart so it is heard on a phone speaker.
 - `preview3.py <folder> <out.html>` fills `preview3.template.html` (animations: «Серце й хвилі світла» / «Лише серце» / the current one
   with the words lighting up; the current D for comparison). Shown to the owner: https://claude.ai/artifact/GFU3uPSCt9fLNE1WUSpSF4
+
+## Round 4 (01.10.2026) — preview, awaiting the owner's pick
+The owner on round 3: «це ніби тук-тук помилки», and above all «не різко, а м'яко, щоб не злити юзера». A short dull thump that
+falls (A2 → E2) is how phones say «error»; so round 4 is the opposite: soft major chords whose top voice rises, soft attacks
+(15–400 ms), long calm fades, only harmonic tones (no metal), levelled by loudness in the phone band (300 Hz – 3 kHz, −30 dB;
+quieter than D there, peaks 5–8 dB lower). No knock at all; the sound swells or strikes with the heart on the screen.
+- `make_sound4.py` (run from an empty folder with `PYTHONPATH=tools/sonic`) → N «Серце в акорді» (recommended: a warm chord that
+  itself beats twice with the heart and glows brighter on each beat), K «Світанок» (closest to a Mac chime), M «Струни» (strings
+  swell into the heart, a fifth up on the dub), L «Та-да» (two soft electric-piano chords, open → full) — .wav + .mp3 + timing4.json.
+  **Their first heartbeat sits 0.40 s into the file** (a swell starts before it): start the file at 2.12 − 0.40 = 1.72 s of the splash.
+- `preview4.py <folder> <out.html>` fills `preview4.template.html`. Shown: https://claude.ai/artifact/D5PUn1MkP1b56tJaf6RBCU
