@@ -1,9 +1,14 @@
 // Lewydo™ brand kit — https://roshevasternin.github.io/brand/
-// The Lockup (208×322): the heart in its glow, «Lewydo», «Love What You Do», the line — and its intro animation:
-//   0.3 → 1.1 s  the heart fades in, then beats once (LewydoHeartbeat)
-//   0.9 → 1.5 s  «Lewydo» comes into focus (fade in, scale 1.06 → 1)
-//   1.3 → 1.9 s  the slogan comes into focus
-//   1.7 → 2.4 s  the line opens from the middle; 0.6 s to take it in → onComplete
+// The Lockup (208×322): the heart in its glow, «Lewydo», «Love What You Do», the line — and its intro (the splash).
+// Everything arrives first, top to bottom; then the heart beats as the finale, with the Lewydo sound:
+//   0.15 → 0.85 s  the heart and its glow arrive (fade in, scale 0.94 → 1)
+//   0.55 → 1.10 s  «Lewydo» comes into focus (fade in, scale 1.06 → 1)
+//   0.85 → 1.40 s  the slogan comes into focus
+//   1.15 → 1.85 s  the line opens from the middle
+//   2.00 s         the finale (LewydoHeartbeat.finale): a breath in, LUB at 2.17, DUB at 2.45, two waves of light
+//   2.09 s         onSound() — play kit/sound/lewydo-heartbeat.ogg (its first beat is 0.03 s in, on the heart's lub)
+//   2.70 · 2.82 · 2.96 s  the three notes «Lev-why-do»: «Lewydo», the slogan and the line catch the light, one per note
+//   3.80 s         onComplete
 package com.lewydo.yourgame.game.actors.brand
 
 import com.badlogic.gdx.math.Interpolation
@@ -11,6 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.utils.Align
+import com.lewydo.brand.LewydoHeartbeat
 import com.lewydo.yourgame.game.actors.layout.autoLayout.AAutoLayout
 import com.lewydo.yourgame.game.actors.layout.constraintLayout.AConstraintLayout
 import com.lewydo.yourgame.game.screens.BrandScreen
@@ -84,48 +90,56 @@ class ABrandGroup(override val screen: BrandScreen): AConstraintLayout(screen) {
     // ------------------------------------------------------------------------
     // Animations
     // ------------------------------------------------------------------------
-    fun playIntroAnimation(onComplete: () -> Unit) {
-        // 1. The heart — fade in (0.3 → 1.1), then one heartbeat (the brand has appeared)
+    /** [onSound] plays the Lewydo sound through the game's own sounds (respect its volume; sounds off = silence). */
+    fun playIntroAnimation(onSound: () -> Unit = {}, onComplete: () -> Unit) {
+        aBrandLogo.setOrigin(Align.center)
+        aBrandLogo.setScale(0.94f)
+
+        // 1. The heart and its glow arrive (0.15 → 0.85)
         aBrandLogo.addAction(
             Actions.sequence(
-                Actions.delay(0.3f),
-                Actions.fadeIn(0.8f, Interpolation.fade)
-            )
-        )
-        aBrandLogo.beat(delay = 1.1f)
-
-        // 2. «Lewydo» — out of focus → in focus (0.9 → 1.5)
-        aLewydoImg.addAction(
-            Actions.sequence(
-                Actions.delay(0.9f),
+                Actions.delay(0.15f),
                 Actions.parallel(
-                    Actions.fadeIn(0.6f, Interpolation.fade),
-                    Actions.scaleTo(1f, 1f, 0.6f, Interpolation.fade)
+                    Actions.fadeIn(0.7f, Interpolation.pow3Out),
+                    Actions.scaleTo(1f, 1f, 0.7f, Interpolation.pow3Out)
                 )
             )
         )
 
-        // 3. The slogan — out of focus → in focus (1.3 → 1.9)
-        aSloganImg.addAction(
-            Actions.sequence(
-                Actions.delay(1.3f),
-                Actions.parallel(
-                    Actions.fadeIn(0.6f, Interpolation.fade),
-                    Actions.scaleTo(1f, 1f, 0.6f, Interpolation.fade)
-                )
-            )
-        )
+        // 2. «Lewydo» (0.55 → 1.10) and 3. the slogan (0.85 → 1.40) — out of focus → in focus
+        focusIn(aLewydoImg, 0.55f)
+        focusIn(aSloganImg, 0.85f)
 
-        // 4. The line — opens from the middle (1.7 → 2.4), then a pause to take in the whole mark → onComplete
+        // 4. The line — opens from the middle (1.15 → 1.85)
         aBrandLine.addAction(
             Actions.sequence(
-                Actions.delay(1.7f),
+                Actions.delay(1.15f),
                 Actions.parallel(
                     Actions.fadeIn(0.3f),
                     Actions.scaleTo(1f, 1f, 0.7f, Interpolation.exp5Out)
-                ),
-                Actions.delay(0.6f),
-                Actions.run { onComplete() }
+                )
+            )
+        )
+
+        // 5. The finale: the heartbeat (from 2.0) with the sound (2.09), the words catch the light on the three notes
+        aBrandLogo.finale(delay = 2.0f)
+        addAction(Actions.sequence(Actions.delay(2.09f), Actions.run { onSound() }))
+        LewydoHeartbeat.light(aLewydoImg, 2.70f)
+        LewydoHeartbeat.light(aSloganImg, 2.82f)
+        LewydoHeartbeat.light(aBrandLine, 2.96f)
+
+        // 6. A moment to take it in → onComplete (3.8)
+        addAction(Actions.sequence(Actions.delay(3.8f), Actions.run { onComplete() }))
+    }
+
+    private fun focusIn(actor: Actor, delay: Float) {
+        actor.addAction(
+            Actions.sequence(
+                Actions.delay(delay),
+                Actions.parallel(
+                    Actions.fadeIn(0.55f, Interpolation.fade),
+                    Actions.scaleTo(1f, 1f, 0.55f, Interpolation.fade)
+                )
             )
         )
     }
