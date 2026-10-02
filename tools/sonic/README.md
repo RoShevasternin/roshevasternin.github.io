@@ -48,3 +48,16 @@ nothing above 3 kHz, levelled like round 4 (phone band −30 dB), peaks 7–12 d
   room swells a pure tone after the hit and blurs two beats into one — keep it small (mix ≈ 0.2) for a heartbeat; pitch wobble
   sweeps the notes through the room's resonances and makes the fade pump — keep it to a few cents.
 - `preview5.py <folder> <out.html>` fills `preview5.template.html`. Shown: https://claude.ai/artifact/MbVarxdby2eySozjZAnPww
+
+## Round 6 (02.10.2026) — preview, awaiting the owner's pick
+The owner: «мені подобається, як звучить наш бум-бум, але треба варіанти такі ж, як наш бум-бум, без дзвінкого «Лев-вай-до»:
+залишимо просто анімацію бум-бум серця і під неї відповідний звук». So every sound is D's own heart (two tuned thumps on a felt
+mallet, A2 → E2), with D's timing (the lub 30 ms in → the splash keeps starting the sound at 2.09 s), no kalimba notes:
+- `make_sound6.py [<kit D .wav>]` (run from an empty folder with `PYTHONPATH=tools/sonic`) → D0 «Бум-бум» (D without the notes —
+  checked sample for sample against the kit's file before the first note, at D's level), D1 «Бум-бум і сяйво» (+ C's faint airy
+  glow), **D2 «Бум-бум · чути на телефоні»** (recommended: the heart's own overtones brought up and its peaks softly saturated —
+  on a phone speaker as loud as D was with its notes, ≈ 5 dB over D0; same peak, ≈ 1.5 dB louder in headphones), D3 «глибше»,
+  D4 «м'якше» — .wav + .mp3 + timing6.json.
+- Why D2: the heart is low (110 / 82 Hz) and a phone speaker plays almost nothing under 300 Hz — on a phone, D's notes were the
+  audible part; without them D0 is ≈ 6 dB quieter there.
+- `preview6.py <folder> <out.html>` fills `preview6.template.html` (heart-only animations). Shown: https://claude.ai/artifact/2yJ6fXcAw4KDrX187fHJwi
