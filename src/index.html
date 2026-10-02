@@ -150,7 +150,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .jump a{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);
   text-decoration:none;font-weight:900;font-size:15px;transition:background-color .2s,transform .2s;}
 .jump a:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
-.jump img,.jump .cube-ico{width:30px;height:30px;border-radius:9px;}
+.jump img{width:30px;height:30px;border-radius:9px;}
 .jump small{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);}
 .chap{position:relative;padding:clamp(80px,11vw,150px) 0;}
 .chap-in{display:grid;gap:48px;align-items:center;}
@@ -183,6 +183,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .cp .ctas{gap:10px;}
 .soon{margin-top:16px;color:var(--ink3);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px;}
 .soon .gp{width:18px;height:18px;opacity:.7;}
+.soon .app-ic{width:44px;height:44px;border-radius:11px;margin-right:4px;box-shadow:0 4px 16px rgba(255,60,172,.35),0 0 0 1px rgba(255,255,255,.08);}   /* «Кубик-художник» — іконка гри */
 .stage{position:relative;width:100%;max-width:580px;justify-self:center;}
 .spot{position:absolute;left:50%;top:-44px;width:80%;height:130px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 0,rgba(255,236,170,.26),transparent 70%);pointer-events:none;}
 .gframe{position:relative;padding:12px;background:linear-gradient(135deg,#9a6f12,#ffe066 30%,#b8860b 60%,#ffd95a);
@@ -440,7 +441,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <h2 class="h2 rv" data-t="worlds.title"></h2>
       <p class="sub rv" data-t="worlds.lead"></p>
       <ul class="jump rv">
-        <li><a href="#cubepix"><svg class="cube-ico" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 92,28 50,50 8,28" fill="#ff8fd2"/><polygon points="8,28 50,50 50,96 8,74" fill="#FF3CAC"/><polygon points="92,28 50,50 50,96 92,74" fill="#99245f"/></svg>CubePix <small data-t="badge.new"></small></a></li>
+        <li><a href="#cubepix"><img src="{{cp.icon}}" alt="" width="30" height="30">CubePix <small data-t="badge.new"></small></a></li>
         <li><a href="#orbitdash"><img src="{{od.icon}}" alt="" width="30" height="30">Orbit Dash <small data-t="badge.live"></small></a></li>
         <li><a href="#more"><img src="/assets/games/imc-icon.webp" alt="" width="30" height="30" loading="lazy"><span data-t="more.eyebrow"></span></a></li>
       </ul>
@@ -462,7 +463,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <a class="btn px-btn px-pink" href="{{cp.demo}}">▶ <span data-t="cp:play"></span></a>
           <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link data-t="game.site"></a>
         </div>
-        <p class="soon">{{gpIcon}}<span><span data-t="cp:soon"></span> Google Play</span></p>
+        <p class="soon"><img class="app-ic" src="{{cp.icon}}" alt="" width="44" height="44">{{gpIcon}}<span><span data-t="cp:soon"></span> Google Play</span></p>
       </div>
       <div class="stage rv" id="cpStage">
         <div class="spot"></div>

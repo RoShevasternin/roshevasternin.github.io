@@ -2,7 +2,7 @@
  "_about": "The studio's games. CubePix and Orbit Dash have their own worlds on the page (src/index.html); «more» are the cards under «More from Lewydo», in this order. Texts: game.<id>.genre and game.<id>.d in src/strings.json. A new game: its icon (192 px) and banner (800 px wide) → python3 tools/webp.py … assets/games/, an entry here, its two strings in every language, npm run build.",
  "devPage": "https://play.google.com/store/apps/dev?id=5953840215091948966",
  "cubepix": { "site": "/Game-CubePix/", "demo": "/Game-CubePix/play/", "privacy": "/Game-CubePix/privacy.html", "released": false,
-   "play": "https://play.google.com/store/apps/details?id=com.lewydo.cubepix" },
+   "play": "https://play.google.com/store/apps/details?id=com.lewydo.cubepix", "icon": "/assets/games/cubepix-icon.webp" },
  "orbitdash": { "site": "/Game-Orbit-Dash/", "privacy": "/Game-Orbit-Dash/privacy.html", "released": true,
    "play": "https://play.google.com/store/apps/details?id=com.lewydo.orbitdash", "icon": "/assets/games/orbitdash-icon.webp" },
  "more": [
