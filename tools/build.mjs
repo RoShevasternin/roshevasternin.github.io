@@ -83,8 +83,7 @@ const card = (g) => `<article class="gcard rv" style="--c:${g.color}">` +
   `<img class="ico" src="${g.icon}" alt="" width="64" height="64" loading="lazy" decoding="async">` +
   `<div class="body"><span class="genre" data-t="game.${g.id}.genre"></span><h3>${esc(g.name)}</h3><p data-t="game.${g.id}.d"></p>` +
   `<a class="btn btn-sm" href="${g.play}" rel="noopener">${gpIcon}<span>Google Play</span></a></div><i class="shine"></i></article>`;
-const cubeIcon = '<svg viewBox="0 0 100 100" width="74" height="74" style="background:#1a1540;border-radius:20px"><polygon points="50,14 84,32 50,50 16,32" fill="#ff8fd2"/><polygon points="16,32 50,50 50,88 16,70" fill="#FF3CAC"/><polygon points="84,32 50,50 50,88 84,70" fill="#99245f"/></svg>';
-const ogGames = cubeIcon + [G.orbitdash.icon, ...G.more.map((g) => g.icon)].map((s) => `<img src="${s}" alt="" width="74" height="74">`).join('');
+const ogGames = [G.cubepix.icon, G.orbitdash.icon, ...G.more.map((g) => g.icon)].map((s) => `<img src="${s}" alt="" width="74" height="74">`).join('');
 
 const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: CP.counts.pics, floors: CP.counts.floors, cpLangs: CP.counts.langs };
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
@@ -100,8 +99,8 @@ const fill = (html) => {
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo)
-    .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|od\.site|od\.play|od\.privacy|od\.icon)\}\}/g, (m, k) => ({
-      url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy,
+    .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|od\.site|od\.play|od\.privacy|od\.icon)\}\}/g, (m, k) => ({
+      url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon,
       'od.site': G.orbitdash.site, 'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon }[k]))
     .replace('{{hreflang}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}">`].join('\n'))
     .replace('{{ldjson}}', () => JSON.stringify(ld).replace(/</g, '\\u003c'))

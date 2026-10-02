@@ -244,7 +244,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .jump a{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);
   text-decoration:none;font-weight:900;font-size:15px;transition:background-color .2s,transform .2s;}
 .jump a:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
-.jump img,.jump .cube-ico{width:30px;height:30px;border-radius:9px;}
+.jump img{width:30px;height:30px;border-radius:9px;}
 .jump small{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);}
 .chap{position:relative;padding:clamp(80px,11vw,150px) 0;}
 .chap-in{display:grid;gap:48px;align-items:center;}
@@ -277,6 +277,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .cp .ctas{gap:10px;}
 .soon{margin-top:16px;color:var(--ink3);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px;}
 .soon .gp{width:18px;height:18px;opacity:.7;}
+.soon .app-ic{width:44px;height:44px;border-radius:11px;margin-right:4px;box-shadow:0 4px 16px rgba(255,60,172,.35),0 0 0 1px rgba(255,255,255,.08);}   /* «Кубик-художник» — іконка гри */
 .stage{position:relative;width:100%;max-width:580px;justify-self:center;}
 .spot{position:absolute;left:50%;top:-44px;width:80%;height:130px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 0,rgba(255,236,170,.26),transparent 70%);pointer-events:none;}
 .gframe{position:relative;padding:12px;background:linear-gradient(135deg,#9a6f12,#ffe066 30%,#b8860b 60%,#ffd95a);
@@ -534,7 +535,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <h2 class="h2 rv" data-t="worlds.title">Every game is its own world</h2>
       <p class="sub rv" data-t="worlds.lead">Step inside and play right here: the page changes with every world.</p>
       <ul class="jump rv">
-        <li><a href="#cubepix"><svg class="cube-ico" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 92,28 50,50 8,28" fill="#ff8fd2"/><polygon points="8,28 50,50 50,96 8,74" fill="#FF3CAC"/><polygon points="92,28 50,50 50,96 92,74" fill="#99245f"/></svg>CubePix <small data-t="badge.new">New</small></a></li>
+        <li><a href="#cubepix"><img src="/assets/games/cubepix-icon.webp" alt="" width="30" height="30">CubePix <small data-t="badge.new">New</small></a></li>
         <li><a href="#orbitdash"><img src="/assets/games/orbitdash-icon.webp" alt="" width="30" height="30">Orbit Dash <small data-t="badge.live">Out now</small></a></li>
         <li><a href="#more"><img src="/assets/games/imc-icon.webp" alt="" width="30" height="30" loading="lazy"><span data-t="more.eyebrow">More games</span></a></li>
       </ul>
@@ -556,7 +557,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <a class="btn px-btn px-pink" href="/Game-CubePix/play/">▶ <span data-t="cp:play">Play in the browser</span></a>
           <a class="btn px-btn px-dark" href="/Game-CubePix/" data-lang-link data-t="game.site">Game website</a>
         </div>
-        <p class="soon"><svg class="gp" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.6 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFCE00" d="m17 8.6 3.3 1.9c.9.5.9 1.8 0 2.4L17 15.4 13.6 12z"/><path fill="#FF3A44" d="M17 15.4 5 22.3c-.5.3-1 .2-1.4 0L13.6 12z"/><path fill="#00F076" d="M3.6 1.8c.4-.2.9-.3 1.4 0l12 6.8L13.6 12z"/></svg><span><span data-t="cp:soon">Coming soon to</span> Google Play</span></p>
+        <p class="soon"><img class="app-ic" src="/assets/games/cubepix-icon.webp" alt="" width="44" height="44"><svg class="gp" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.6 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFCE00" d="m17 8.6 3.3 1.9c.9.5.9 1.8 0 2.4L17 15.4 13.6 12z"/><path fill="#FF3A44" d="M17 15.4 5 22.3c-.5.3-1 .2-1.4 0L13.6 12z"/><path fill="#00F076" d="M3.6 1.8c.4-.2.9-.3 1.4 0l12 6.8L13.6 12z"/></svg><span><span data-t="cp:soon">Coming soon to</span> Google Play</span></p>
       </div>
       <div class="stage rv" id="cpStage">
         <div class="spot"></div>
@@ -765,7 +766,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
 <div id="og" aria-hidden="true">
   <div class="lock"><span class="lw-lockup" role="img" aria-label="Lewydo — Love What You Do"><span class="lw-logo"><img class="lw-back" src="/brand/kit/webp/brand_back.webp" alt="" width="208" height="208"><img class="lw-front" src="/brand/kit/webp/brand_front.webp" alt="" width="140" height="140"></span><img class="lw-name" src="/brand/kit/webp/lewydo.webp" alt="" width="208" height="74"><img class="lw-slogan" src="/brand/kit/webp/slogan.webp" alt="" width="208" height="19"><img class="lw-line" src="/brand/kit/webp/brand_line.webp" alt="" width="146" height="1"></span></div>
   <div class="og-t"><p class="eyebrow" data-t="hero.eyebrow">Indie game studio · Ukraine</p><h1 data-t="studio.title">Two people, one heart</h1><p data-t="cd.title">He codes. She designs.</p>
-    <div class="og-games"><svg viewBox="0 0 100 100" width="74" height="74" style="background:#1a1540;border-radius:20px"><polygon points="50,14 84,32 50,50 16,32" fill="#ff8fd2"/><polygon points="16,32 50,50 50,88 16,70" fill="#FF3CAC"/><polygon points="84,32 50,50 50,88 84,70" fill="#99245f"/></svg><img src="/assets/games/orbitdash-icon.webp" alt="" width="74" height="74"><img src="/assets/games/imc-icon.webp" alt="" width="74" height="74"><img src="/assets/games/autumn-icon.webp" alt="" width="74" height="74"><img src="/assets/games/light-icon.webp" alt="" width="74" height="74"><img src="/assets/games/joints-icon.webp" alt="" width="74" height="74"></div></div>
+    <div class="og-games"><img src="/assets/games/cubepix-icon.webp" alt="" width="74" height="74"><img src="/assets/games/orbitdash-icon.webp" alt="" width="74" height="74"><img src="/assets/games/imc-icon.webp" alt="" width="74" height="74"><img src="/assets/games/autumn-icon.webp" alt="" width="74" height="74"><img src="/assets/games/light-icon.webp" alt="" width="74" height="74"><img src="/assets/games/joints-icon.webp" alt="" width="74" height="74"></div></div>
 </div>
 
 <div id="kit" aria-hidden="true">
