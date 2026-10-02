@@ -6,8 +6,7 @@
 //   0.85 → 1.40 s  the slogan comes into focus
 //   1.15 → 1.85 s  the line opens from the middle
 //   2.00 s         the finale (LewydoHeartbeat.finale): a breath in, LUB at 2.17, DUB at 2.45, two waves of light
-//   2.09 s         onSound() — play kit/sound/lewydo-heartbeat.ogg (its first beat is 0.03 s in, on the heart's lub)
-//   2.70 · 2.82 · 2.96 s  the three notes «Lev-why-do»: «Lewydo», the slogan and the line catch the light, one per note
+//   2.09 s         onSound() — play kit/sound/lewydo-heartbeat.ogg (the heart only; its first beat is 0.03 s in, on the lub)
 //   3.80 s         onComplete
 package com.lewydo.yourgame.game.actors.brand
 
@@ -121,12 +120,9 @@ class ABrandGroup(override val screen: BrandScreen): AConstraintLayout(screen) {
             )
         )
 
-        // 5. The finale: the heartbeat (from 2.0) with the sound (2.09), the words catch the light on the three notes
+        // 5. The finale: the heartbeat (from 2.0) with its sound (2.09) — only the heart beats, the words stay still
         aBrandLogo.finale(delay = 2.0f)
         addAction(Actions.sequence(Actions.delay(2.09f), Actions.run { onSound() }))
-        LewydoHeartbeat.light(aLewydoImg, 2.70f)
-        LewydoHeartbeat.light(aSloganImg, 2.82f)
-        LewydoHeartbeat.light(aBrandLine, 2.96f)
 
         // 6. A moment to take it in → onComplete (3.8)
         addAction(Actions.sequence(Actions.delay(3.8f), Actions.run { onComplete() }))

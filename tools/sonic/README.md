@@ -1,4 +1,4 @@
-# Lewydo sonic logo — how it was made (the owner chose **D «Бум-бум · Le-wy-do»**; it is in brand/kit/sound/)
+# Lewydo sonic logo — how it was made (the owner chose **D4 «Бум-бум · м'якше»** on 02.10.2026 — D's heart without the notes; it is in brand/kit/sound/)
 
 - `make_sound.py` — synthesises the heartbeat sound in three directions: A «Тук-тук», B «Серце й сяйво» (recommended), C «Бум-бум»
   (`python3 tools/sonic/make_sound.py` → A_heartbeat.wav, B_heart_glow.wav, C_bum_bum.wav, timing.json; 48 kHz stereo; the «lub» hits 30 ms in).
@@ -49,7 +49,7 @@ nothing above 3 kHz, levelled like round 4 (phone band −30 dB), peaks 7–12 d
   sweeps the notes through the room's resonances and makes the fade pump — keep it to a few cents.
 - `preview5.py <folder> <out.html>` fills `preview5.template.html`. Shown: https://claude.ai/artifact/MbVarxdby2eySozjZAnPww
 
-## Round 6 (02.10.2026) — preview, awaiting the owner's pick
+## Round 6 (02.10.2026) — the owner chose **D4 «Бум-бум · м'якше»** (now in brand/kit/sound/)
 The owner: «мені подобається, як звучить наш бум-бум, але треба варіанти такі ж, як наш бум-бум, без дзвінкого «Лев-вай-до»:
 залишимо просто анімацію бум-бум серця і під неї відповідний звук». So every sound is D's own heart (two tuned thumps on a felt
 mallet, A2 → E2), with D's timing (the lub 30 ms in → the splash keeps starting the sound at 2.09 s), no kalimba notes:

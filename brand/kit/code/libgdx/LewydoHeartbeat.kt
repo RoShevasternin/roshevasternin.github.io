@@ -1,6 +1,5 @@
 package com.lewydo.brand
 
-import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.math.Interpolation
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
@@ -100,24 +99,4 @@ object LewydoHeartbeat {
             )
         )
     }
-
-    /** One word of the mark catches the light (the splash: on each of the three notes «Lev-why-do»): a mint flash, a tiny lift. */
-    fun light(actor: Actor, delay: Float) {
-        actor.setOrigin(Align.center)
-        actor.addAction(
-            Actions.sequence(
-                Actions.delay(delay),
-                Actions.parallel(
-                    Actions.color(MINT_LIGHT, 0.16f, Interpolation.pow2Out),
-                    Actions.scaleTo(1.03f, 1.03f, 0.16f, Interpolation.pow2Out),
-                ),
-                Actions.parallel(
-                    Actions.color(Color.WHITE, 0.74f, Interpolation.sine),
-                    Actions.scaleTo(1f, 1f, 0.74f, Interpolation.sine),
-                ),
-            )
-        )
-    }
-
-    private val MINT_LIGHT = Color(0.80f, 1f, 0.88f, 1f)
 }
