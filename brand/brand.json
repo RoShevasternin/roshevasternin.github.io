@@ -288,16 +288,7 @@
     "part": "sound",
     "at": 2.09,
     "file": "kit/sound/lewydo-heartbeat.*",
-    "note": "its first beat is 0.03 s in — on the lub"
-   },
-   {
-    "part": "the words catch the light",
-    "at": {
-     "name": 2.7,
-     "slogan": 2.82,
-     "line": 2.96
-    },
-    "what": "a mint flash on each of the three notes «Lev-why-do»"
+    "note": "the heart only; its first beat is 0.03 s in — on the lub"
    },
    {
     "part": "onComplete",
@@ -309,24 +300,19 @@
  },
  "sound": {
   "name": "The Lewydo sound",
-  "what": "Two soft tuned heartbeats (A2 → E2, a felt mallet) and three kalimba notes C#5 → E5 → A5 in the rhythm of the name «Lev-why-do», ending home on A.",
+  "what": "The heart only: two soft, round tuned heartbeats (A2 → E2, a felt mallet), lub and dub, on the heart's two beats.",
   "files": {
    "ogg": "https://roshevasternin.github.io/brand/kit/sound/lewydo-heartbeat.ogg",
    "mp3": "https://roshevasternin.github.io/brand/kit/sound/lewydo-heartbeat.mp3",
    "wav": "https://roshevasternin.github.io/brand/kit/sound/lewydo-heartbeat.wav"
   },
-  "seconds": 2.6,
+  "seconds": 2.2,
   "firstBeat": 0.03,
   "beats": [
    0.03,
    0.31
   ],
-  "notes": [
-   0.61,
-   0.73,
-   0.87
-  ],
-  "level": "RMS −23 dBFS, peaks ≈ −11 dBFS",
+  "level": "RMS ≈ −23 dBFS, peaks ≈ −11 dBFS",
   "startInSplash": 2.09,
   "rules": [
    "Once per launch, with the splash — never in a loop.",
@@ -334,7 +320,7 @@
    "Never change, cut, speed up or layer it under music.",
    "Browsers allow sound only after a tap: a web splash that opens by itself stays silent."
   ],
-  "generator": "tools/sonic/make_sound.py + make_sound2.py (variant D)"
+  "generator": "tools/sonic/make_sound6.py (variant D4 «Бум-бум · м'якше»: D's heart without its notes, rounder)"
  },
  "pronunciation": {
   "ipa": "/lɛv.waɪ.doʊ/",

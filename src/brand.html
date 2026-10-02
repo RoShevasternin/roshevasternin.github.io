@@ -177,7 +177,7 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 .tl-track{position:relative;height:16px;border-radius:8px;background:rgba(255,255,255,.05);}
 .tl-bar{position:absolute;top:0;bottom:0;border-radius:8px;background:linear-gradient(90deg,#3DDC84,#9DF5C2);}
 .tl-bar.beat{background:#ff8fb8;} .tl-bar.hold{background:rgba(255,255,255,.18);}
-.tl-bar.mk{width:3px;margin-left:-1.5px;border-radius:2px;background:#fff;box-shadow:0 0 8px #fff;} .tl-bar.lit{background:linear-gradient(90deg,#9DF5C2,rgba(157,245,194,.15));}
+.tl-bar.mk{width:3px;margin-left:-1.5px;border-radius:2px;background:#fff;box-shadow:0 0 8px #fff;}
 .tl-ax{display:grid;grid-template-columns:110px 1fr;gap:10px;font:700 12px var(--mono);color:var(--ink3);}
 .tl-ax div{display:flex;justify-content:space-between;}
 .langpick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:10px;justify-content:center;}
@@ -202,7 +202,7 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 @media (min-width:860px){.sound{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);}}
 .sound h3{font-weight:900;font-size:clamp(24px,3vw,32px);margin-top:6px;} .sound-txt>p:not(.eyebrow){color:var(--ink2);margin-top:8px;max-width:620px;}
 .sound-play{display:flex;flex-direction:column;align-items:center;gap:16px;}
-.notes{display:flex;gap:10px;font-weight:900;font-size:20px;color:rgba(157,245,194,.35);}
+.notes{display:flex;gap:14px;font-weight:900;font-size:26px;color:rgba(157,245,194,.35);}
 .notes i{font-style:normal;transition:color .2s,text-shadow .2s,transform .2s;}
 .notes i.on{color:#fff;text-shadow:0 0 14px rgba(109,245,147,.9);transform:translateY(-3px);}
 .code-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px;padding:10px 10px 0;border-bottom:1px solid rgba(255,255,255,.08);}
@@ -414,8 +414,7 @@ footer p{margin-top:8px;}
           <div class="tl-row"><span data-t="b.tl.4"></span><div class="tl-track"><i class="tl-bar" style="left:21.25%;width:13.75%"></i></div></div>
           <div class="tl-row"><span data-t="b.tl.5"></span><div class="tl-track"><i class="tl-bar" style="left:28.75%;width:17.5%"></i></div></div>
           <div class="tl-row"><span data-t="b.tl.2"></span><div class="tl-track"><i class="tl-bar beat" style="left:50%;width:22.5%"></i></div></div>
-          <div class="tl-row"><span data-t="b.tl.7"></span><div class="tl-track"><i class="tl-bar mk" style="left:53%"></i><i class="tl-bar mk" style="left:60%"></i><i class="tl-bar mk" style="left:67.5%"></i><i class="tl-bar mk" style="left:70.5%"></i><i class="tl-bar mk" style="left:74%"></i></div></div>
-          <div class="tl-row"><span data-t="b.tl.8"></span><div class="tl-track"><i class="tl-bar lit" style="left:67.5%;width:12.5%"></i></div></div>
+          <div class="tl-row"><span data-t="b.tl.7"></span><div class="tl-track"><i class="tl-bar mk" style="left:53%"></i><i class="tl-bar mk" style="left:60%"></i></div></div>
           <div class="tl-row"><span data-t="b.tl.6"></span><div class="tl-track"><i class="tl-bar hold" style="left:74%;width:21%"></i></div></div>
           <div class="tl-ax"><span></span><div><span>0</span><span>1</span><span>2</span><span>3</span><span>4&nbsp;<span data-t="b.tl.s"></span></span></div></div>
         </div>
@@ -446,7 +445,7 @@ footer p{margin-top:8px;}
         <div class="sound-txt"><p class="eyebrow" data-t="b.snd.eyebrow"></p><h3 data-t="b.snd.title"></h3><p data-t="b.snd.sub"></p>
           <ul class="spec"><li data-t="b.snd.r1"></li><li data-t="b.snd.r2"></li><li data-t="b.snd.r3"></li><li data-t="b.snd.r4"></li></ul></div>
         <div class="sound-play"><button class="btn btn-green" type="button" id="sndGo">♥ ♪ <span data-t="b.snd.play"></span></button>
-          <span class="notes" aria-hidden="true"><i>Lev</i><i>why</i><i>do</i></span></div>
+          <span class="notes" aria-hidden="true"><i>♥</i><i>♥</i></span></div>
       </div>
       <div class="code panel" id="code">
         <div class="code-top"><div class="tabs" role="tablist" data-ta="aria-label:b.code">{{codeTabs}}</div>
@@ -560,14 +559,14 @@ const copy = (text) => { const done = () => toast('✓ ' + T('b.copied'));
 const splashIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.remove('lw-wait'); splashIO.unobserve(e.target); } }), { threshold: .5 });
 const inPhone = $('#splashLock'); inPhone.classList.add('lw-wait'); splashIO.observe(inPhone);
 // the Lewydo sound: with a tap (browsers allow sound only after one) the splash plays with it — the sound starts at 2.09 s,
-// its first beat lands on the heart's lub (2.12 s); «Listen» plays it alone and lights the three notes «Lev · why · do»
+// its first beat lands on the heart's lub (2.12 s); «Listen» plays it alone and lights the two hearts on its two beats
 const brandSound = new Audio('/brand/kit/sound/lewydo-heartbeat.mp3'); brandSound.preload = 'auto';
 let sndT = [];
 const playSound = (after = 0) => { sndT.forEach(clearTimeout); sndT = []; brandSound.pause(); brandSound.currentTime = 0;
   sndT.push(setTimeout(() => brandSound.play().catch(() => {}), after * 1000)); return after; };
 $$('[data-replay]').forEach((b) => b.addEventListener('click', () => { const el = document.getElementById(b.dataset.replay); el.classList.remove('lw-wait'); again(el, 'lw-splash'); playSound(2.09); }));
 $('#sndGo').addEventListener('click', () => { playSound(0); const notes = $$('.notes i');
-  [0.61, 0.73, 0.87].forEach((t, k) => { sndT.push(setTimeout(() => notes[k].classList.add('on'), t * 1000)); sndT.push(setTimeout(() => notes[k].classList.remove('on'), t * 1000 + 700)); }); });
+  [0.03, 0.31].forEach((t, k) => { sndT.push(setTimeout(() => notes[k].classList.add('on'), t * 1000)); sndT.push(setTimeout(() => notes[k].classList.remove('on'), t * 1000 + 700)); }); });
 
 // how to say «Lewydo»: Lev-why-do (/lɛv.waɪ.doʊ/) — the device's own voice says it (until the founders record it themselves)
 const say = () => { const S = window.speechSynthesis; if (!S) { toast('/lɛv.waɪ.doʊ/'); return; }

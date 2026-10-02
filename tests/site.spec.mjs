@@ -132,9 +132,9 @@ test('«How to say it»: both pages say Lev-why-do in the device’s voice, and 
   await page.goto('./brand/?lang=en');
   await page.locator('.spell [data-say]').click();
   expect(await page.evaluate(() => window.__said)).toEqual(['Lev, why, doe']);
-  await expect(page.locator('#sound .notes i')).toHaveCount(3);                                       // Lev · why · do
+  await expect(page.locator('#sound .notes i')).toHaveCount(2);                                       // lub · dub — the heart only
   await page.locator('#sndGo').click();
-  await expect(page.locator('#sound .notes i.on').first()).toBeAttached({ timeout: 3000 });           // the notes light up with the sound
+  await expect(page.locator('#sound .notes i.on').first()).toBeAttached({ timeout: 3000 });           // the hearts light up on the beats
   expect(w.errs).toEqual([]);
 });
 
