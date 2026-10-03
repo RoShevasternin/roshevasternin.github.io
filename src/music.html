@@ -2,7 +2,8 @@
      and off; credit the author and link the video»). The song isn't ours, so it is never a file here: it plays through YouTube's
      official player (the owner chose «only the song, through YouTube»). Nothing is asked of YouTube until the record is tapped (the
      site's no-third-party rule holds on load), and while the song plays its player stays in sight in the card — YouTube's rules:
-     no sound-only or hidden player, at least 200 × 200. Closing the card stops the song. -->
+     no sound-only or hidden player, at least 200 × 200. So the card is the smallest YouTube allows (owner: «the window is too big —
+     very small, or hide it with the music going on»: hiding while it plays isn't allowed). Closing the card stops the song. -->
 <style>
 .mu{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:45;display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none;}
 .mu>*{pointer-events:auto;}
@@ -28,21 +29,20 @@
   box-shadow:0 8px 22px rgba(0,0,0,.45);animation:muIn .35s ease-out both;}
 .mu-hint::after{content:"";position:absolute;right:20px;top:100%;border:7px solid transparent;border-top-color:#3DDC84;border-bottom:0;}
 .mu-hint[hidden],.mu-card[hidden]{display:none;}
-.mu-card{width:min(356px,calc(100vw - 32px));padding:12px;border-radius:18px;background:#121433;color:#fff;
-  box-shadow:0 0 0 1px rgba(157,245,194,.28),0 18px 50px rgba(0,0,0,.62);animation:muIn .3s ease-out both;}
+.mu-card{width:212px;padding:5px 6px 6px;border-radius:16px;background:#121433;color:#fff;
+  box-shadow:0 0 0 1px rgba(157,245,194,.28),0 14px 40px rgba(0,0,0,.6);animation:muIn .3s ease-out both;}
 @keyframes muIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.mu-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.mu-head .vinyl{flex:none;width:34px;height:34px;}
-.mu-tt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px;}
-.mu-tt b{font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9DF5C2;}
-.mu-tt span{font-weight:900;font-size:16px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.mu-x{flex:none;width:40px;height:40px;margin:-4px -4px -4px 0;padding:0;border:0;border-radius:12px;cursor:pointer;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.08);}
+.mu-head{display:flex;align-items:center;gap:6px;margin:0 0 5px 2px;}
+.mu-tt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.2;}
+.mu-tt b{font-weight:900;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:#9DF5C2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mu-song{display:inline-flex;align-items:center;gap:4px;max-width:100%;font-weight:900;font-size:13px;color:#fff;text-decoration:none;white-space:nowrap;overflow:hidden;}
+.mu-song svg{flex:none;color:#9DF5C2;}
+@media (hover:hover){.mu-song:hover{text-decoration:underline;}}
+.mu-x{flex:none;width:32px;height:32px;padding:0;border:0;border-radius:10px;cursor:pointer;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.08);}
 @media (hover:hover){.mu-x:hover{background:rgba(255,255,255,.16);}}
-.mu-x:focus-visible{outline:3px solid #fff;outline-offset:2px;}
-.mu-player{width:100%;aspect-ratio:16/9;min-height:200px;border-radius:12px;overflow:hidden;background:#000;}
+.mu-x:focus-visible,.mu-song:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+.mu-player{width:200px;height:200px;border-radius:10px;overflow:hidden;background:#000;}   /* YouTube's smallest player */
 .mu-player iframe{display:block;width:100%;height:100%;border:0;}
-.mu-thanks{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;min-height:28px;font-weight:800;font-size:14px;color:#9DF5C2;text-decoration:none;text-align:center;}
-@media (hover:hover){.mu-thanks:hover{text-decoration:underline;}}
 body::after{content:"";display:block;height:84px;}   /* the page's end scrolls clear of the record */
 .foot-music{margin-top:10px;font-size:13.5px;color:var(--ink3,rgba(255,255,255,.55));}
 .foot-music a{color:#9DF5C2;}
@@ -52,10 +52,10 @@ html.og .mu,html.kit .mu{display:none !important;}
 </style>
 <div class="mu" id="mu">
   <section class="mu-card" id="muCard" hidden data-ta="aria-label:music.fav">
-    <div class="mu-head">{{vinyl}}<div class="mu-tt"><b data-t="music.fav"></b><span lang="en">sombr — 12 to 12</span></div>
-      <button class="mu-x" id="muX" type="button" data-ta="aria-label:music.close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button></div>
+    <div class="mu-head"><div class="mu-tt"><b data-t="music.fav"></b>
+        <a class="mu-song" href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener" data-ta="title:music.thanks"><span lang="en">sombr — 12 to 12</span><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <button class="mu-x" id="muX" type="button" data-ta="aria-label:music.close"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button></div>
     <div class="mu-player" id="muPlayer"></div>
-    <a class="mu-thanks" href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener"><span data-t="music.thanks"></span><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </section>
   <p class="mu-hint" id="muHint" hidden><span data-t="music.hint"></span></p>
   <button class="mu-fab" id="muFab" type="button" aria-pressed="false" aria-controls="muCard" data-ta="aria-label:music.label">{{vinyl}}<i class="mu-eq" aria-hidden="true"><b></b><b></b><b></b></i></button>

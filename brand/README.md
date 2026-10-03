@@ -36,6 +36,15 @@ and the heartbeat, the menu signature and About us.
 - **The heartbeat** — the heart 1.13 → 1 → 1.07 → 1 (0.10 / 0.12 / 0.10 / 0.12 s, sineOut / sineIn); the glow waits 0.05, then
   1.15 → 1.05 (0.12 / 0.28 s) and stays at 1.05. **Once**, when the brand appears — never in a loop. No beat with «reduce motion».
 
+## How we work: prototype first, then the game
+
+- **New things start in the prototype.** A screen, a mechanic, a text or a number is made and tried in the game's web prototype
+  first — it's quick to test in a browser.
+- **The game is ported from it.** The game (LibGDX: Android, later iOS) takes everything from the prototype, numbers and words one
+  to one: the prototype is the reference.
+- **Never the other way round.** Something new made only in the game is unknown to the prototype, and the two drift apart. Even a
+  fix: first in the prototype, then in the game. (`brand.json` → `workflow`.)
+
 ## Rules
 
 - Use the pictures and the code **as they are**. Never redraw, recolour, stretch, rotate or add effects to the mark.
