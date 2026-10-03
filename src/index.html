@@ -375,6 +375,17 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .contact-mark{--lw-s:.6;width:calc(208px * .6);margin:-6px auto 0;}
 .contact-card .ctas{justify-content:center;}
 .contact-card .sub{margin-left:auto;margin-right:auto;}
+/* Lewydo's own pages: TikTok, Instagram, YouTube, Facebook (in the contacts and, as icons, in the footer) */
+.social-h{margin-top:30px;font-weight:900;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px;}
+.soc{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 16px;border-radius:12px;color:#fff;font-weight:800;font-size:15px;text-decoration:none;
+  background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(157,245,194,.25);transition:background .15s ease;}
+.soc svg{width:18px;height:18px;fill:#9DF5C2;flex:none;}
+@media (hover:hover){.soc:hover{background:rgba(61,220,132,.14);}}
+.foot-social{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+.fs{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(157,245,194,.2);}
+.fs svg{width:19px;height:19px;fill:var(--ink2);} .fs span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+@media (hover:hover){.fs:hover svg{fill:#9DF5C2;}}
 @media (max-width:600px){.contact-card .ctas{flex-direction:column;align-items:center;} .contact-card .ctas .btn{width:100%;max-width:340px;}}
 
 /* ── footer ── */
@@ -587,7 +598,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p data-t="p.vlad.bio"></p>
         <div class="contacts">
           <a href="https://instagram.com/___vel__dan___" rel="noopener">{{ico:insta}}<span>___vel__dan___</span></a>
-          <a href="https://t.me/vel_dan" rel="noopener">{{ico:tg}}<span>vel_dan</span></a>
+          <a href="https://t.me/vlad_libgdx" rel="noopener">{{ico:tg}}<span>vlad_libgdx</span></a>
           <a href="mailto:veldan1202@gmail.com">{{ico:mail}}<span>veldan1202@gmail.com</span></a>
         </div>
       </article>
@@ -598,7 +609,6 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p data-t="p.lilya.bio"></p>
         <div class="contacts">
           <a href="https://instagram.com/lilya.design" rel="noopener">{{ico:insta}}<span>lilya.design</span></a>
-          <a href="https://t.me/Over_lilya" rel="noopener">{{ico:tg}}<span>Over_lilya</span></a>
           <a href="mailto:Lilyadesign05@gmail.com">{{ico:mail}}<span>Lilyadesign05@gmail.com</span></a>
         </div>
       </article>
@@ -633,9 +643,11 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="sub" data-t="contact.text"></p>
         <div class="ctas">
           <a class="btn btn-green" href="mailto:veldan1202@gmail.com">{{ico:mail}}<span data-t="contact.mail"></span></a>
-          <a class="btn btn-line" href="https://t.me/vel_dan" rel="noopener">{{ico:tg}}<span>Telegram</span></a>
+          <a class="btn btn-line" href="https://t.me/vlad_libgdx" rel="noopener">{{ico:tg}}<span>Telegram</span></a>
           <a class="btn btn-line" href="{{devPage}}" rel="noopener">{{gpIcon}}<span data-t="cp:games"></span></a>
         </div>
+        <p class="social-h" data-t="contact.social"></p>
+        <div class="social">{{social:soc}}</div>
       </div>
     </div>
   </section>
@@ -645,6 +657,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
   <div class="wrap">
     <a class="lw-pill" href="#top" aria-label="Lewydo">{{sig}}{{go}}</a>
     <p class="foot-made" data-t="foot.made"></p>
+    <nav class="foot-social" aria-label="Lewydo">{{social:fs}}</nav>
     <nav class="foot-links" aria-label="Lewydo">
       <a href="{{cp.site}}" data-lang-link>CubePix</a><a href="{{od.site}}">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a>
       <a href="{{cp.privacy}}"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}"><span data-t="foot.privacy"></span> · Orbit Dash</a>

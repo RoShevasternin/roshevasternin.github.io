@@ -212,7 +212,9 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
   expect(b.width).toBeGreaterThanOrEqual(200); expect(b.height).toBeGreaterThanOrEqual(200);          // YouTube's rule: the player in sight, at least 200 × 200
   await expect(card).toContainText('Улюблена пісня Влада');
   await expect(card).toContainText(/sombr\s—\s12 to 12/);
-  await expect(page.locator('.mu-thanks')).toHaveAttribute('href', 'https://www.youtube.com/watch?v=cZgUiR31m-Y');   // thanks to the author: his video
+  await expect(page.locator('.mu-song')).toHaveAttribute('href', 'https://www.youtube.com/watch?v=cZgUiR31m-Y');     // thanks to the author: his video
+  await expect(page.locator('.mu-song')).toHaveAttribute('title', 'Дякуємо, sombr! Кліп на YouTube');
+  expect(b.width).toBeLessThanOrEqual(201); expect(b.height).toBeLessThanOrEqual(201);              // …and no bigger: the smallest YouTube allows
   await expect(page.locator('.foot-music a')).toHaveAttribute('href', 'https://www.youtube.com/watch?v=cZgUiR31m-Y'); // the credit stays in the footer
   await fab.click();                                                                                  // off
   await expect(card).toBeHidden(); await expect(fab).toHaveAttribute('aria-pressed', 'false');
@@ -229,4 +231,29 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
   await expect(page.locator('#muFab')).toHaveAttribute('aria-label', /^Vlad’s favourite song: sombr\s—\s12 to 12$/);
   await expect(page.locator('#muHint')).toBeHidden();                                                 // the word by the record — once
   expect(w.errs.filter((e) => !/Failed to load resource|ERR_FAILED/.test(e))).toEqual([]);
+});
+
+// the contacts (owner 03.10.2026): the work Telegram, Lewydo's own pages; and the brand page says how every Lewydo game is made
+test('contacts: the work Telegram and Lewydo\'s own pages; the brand page and brand.json say «prototype first»', async ({ page, request }) => {
+  const w = watch(page);
+  await page.goto('./?lang=uk');
+  const hrefs = await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')));
+  expect(hrefs.filter((h) => h.startsWith('https://t.me/'))).toEqual(['https://t.me/vlad_libgdx', 'https://t.me/vlad_libgdx']);   // Vlad's card and the contacts
+  for (const u of ['https://www.tiktok.com/@lewydo_game', 'https://www.instagram.com/lewydo_game/', 'https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw',
+    'https://www.facebook.com/profile.php?id=61594804110096']) {
+    await expect(page.locator(`.social a[href="${u}"]`)).toHaveCount(1);
+    await expect(page.locator(`.foot-social a[href="${u}"]`)).toHaveCount(1);
+  }
+  await expect(page.locator('.social-h')).toHaveText('Lewydo в соцмережах');
+  const ld = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  expect(ld.sameAs).toContain('https://www.tiktok.com/@lewydo_game');
+  await page.goto('./brand/?lang=uk');
+  await expect(page.locator('#work h2')).toHaveText('Спершу прототип, потім гра');
+  await expect(page.locator('#work .flow li')).toHaveCount(3);
+  await expect(page.locator('#promptText')).toContainText('prototype first');
+  const B = await (await request.get('./brand/brand.json')).json();
+  expect(B.workflow.rule).toBe('Prototype first, then the game');
+  expect(B.socials.telegram).toBe('https://t.me/vlad_libgdx');
+  expect(B.font.name).toMatch(/^Nunito Black 54 \/ 74/); expect(B.font.slogan).toMatch(/^Nunito 14 \/ 19/);   // round numbers
+  expect(w.errs).toEqual([]);
 });

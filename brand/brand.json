@@ -25,8 +25,8 @@
   "family": "Nunito",
   "license": "SIL Open Font License 1.1",
   "url": "https://fonts.google.com/specimen/Nunito",
-  "name": "Nunito Black 54.17 / 74, white, shadow 0 4.17 2.08 rgba(0,0,0,.25)",
-  "slogan": "Nunito 13.54 / 19: L, e, W, Y, Do — Black, the rest Regular",
+  "name": "Nunito Black 54 / 74, white, shadow 0 4 2 rgba(0,0,0,.25)",
+  "slogan": "Nunito 14 / 19: L, e, W, Y, Do — Black, the rest Regular",
   "body": "Nunito Medium 15 / 23",
   "note": "In apps the name and the slogan are pictures (lewydo.png, slogan.png): no font needed for the mark."
  },
@@ -584,6 +584,23 @@
     "games": "我們在 Google Play 的遊戲"
    }
   }
+ },
+ "workflow": {
+  "rule": "Prototype first, then the game",
+  "why": "The prototype is quick to test in a browser, and the game never drifts from it.",
+  "steps": [
+   "New things start in the prototype: a screen, a mechanic, a text or a number is made and tried in the game's web prototype first.",
+   "The game (LibGDX: Android, later iOS) is ported from it — numbers and words one to one: the prototype is the reference.",
+   "Never the other way round: something new made only in the game is unknown to the prototype. Even a fix: first the prototype, then the game."
+  ]
+ },
+ "socials": {
+  "tiktok": "https://www.tiktok.com/@lewydo_game",
+  "instagram": "https://www.instagram.com/lewydo_game/",
+  "youtube": "https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw",
+  "facebook": "https://www.facebook.com/profile.php?id=61594804110096",
+  "telegram": "https://t.me/vlad_libgdx",
+  "email": "veldan1202@gmail.com"
  },
  "rules": {
   "do": [
