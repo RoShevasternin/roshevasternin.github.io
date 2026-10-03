@@ -20,7 +20,10 @@ test('speaks the visitor’s language, switches to any of 15, remembers it, and 
   await expect(page.locator('html')).toHaveAttribute('lang', 'uk');
   expect(page.url()).toContain('lang=uk');
   await expect(page.locator('.stats li').first()).toHaveText(/^2\s*людини$/);                         // a plural form, never «{n}»
-  await expect(page.locator('.chap.cp a[data-lang-link]')).toHaveAttribute('href', '/Game-CubePix/?lang=uk');   // CubePix opens in the same language
+  await expect(page.locator('.chap.cp .ctas a[data-lang-link]')).toHaveAttribute('href', '/Game-CubePix/?lang=uk');   // CubePix opens in the same language
+  await expect(page.locator('.pix-meet')).toHaveAttribute('href', '/Game-CubePix/?lang=uk#pix');                // …and «Meet Pix» at his section
+  await expect(page.locator('.pix-meet .pix-hi')).toHaveText('Привіт! Я Pix.');                                 // the mascot says hi in the visitor's language
+  await expect(page.locator('.tl-i.pix h3')).toHaveText('Народився Pix');                                       // the day he was invented, in the story
   await page.goto('./');                                                                              // remembered
   await expect(page.locator('html')).toHaveAttribute('lang', 'uk');
   expect(w.errs).toEqual([]);

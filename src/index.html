@@ -184,6 +184,19 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .soon{margin-top:16px;color:var(--ink3);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px;}
 .soon .gp{width:18px;height:18px;opacity:.7;}
 .soon .app-ic{width:44px;height:44px;border-radius:11px;margin-right:4px;box-shadow:0 4px 16px rgba(255,60,172,.35),0 0 0 1px rgba(255,255,255,.08);}   /* «Кубик-художник» — іконка гри */
+/* Pix, the CubePix mascot: a card under the game's buttons; he says hi in the visitor's language (the game site's own words) */
+.pix-meet{display:flex;gap:16px;align-items:center;max-width:560px;margin-top:22px;padding:14px 16px 14px 12px;text-decoration:none;color:inherit;
+  background:linear-gradient(170deg,#1f1a4c,#141139);box-shadow:0 -3px 0 0 #2e2966,0 3px 0 0 #2e2966,-3px 0 0 0 #2e2966,3px 0 0 0 #2e2966,0 8px 0 0 rgba(3,2,12,.55);transition:transform .15s,box-shadow .15s;}
+@media (hover:hover){.pix-meet:hover{transform:translateY(-3px);box-shadow:0 -3px 0 0 #ff3cac,0 3px 0 0 #ff3cac,-3px 0 0 0 #ff3cac,3px 0 0 0 #ff3cac,0 8px 0 0 rgba(3,2,12,.55),0 0 26px rgba(255,60,172,.35);}}
+.pix-pic{flex:none;width:104px;display:flex;flex-direction:column;align-items:center;}
+.pix-pic img{width:84px;height:84px;margin-top:4px;}
+.pix-hi{position:relative;max-width:104px;padding:3px 7px 4px;text-align:center;background:#fff8e7;color:#1d1648;font-weight:900;font-size:12px;line-height:1.25;
+  box-shadow:0 -2px 0 0 #1d1648,0 2px 0 0 #1d1648,-2px 0 0 0 #1d1648,2px 0 0 0 #1d1648;}
+.pix-hi::after{content:"";position:absolute;left:calc(50% - 4px);top:100%;border:5px solid transparent;border-top-color:#1d1648;border-bottom:0;}
+.pix-tx{display:flex;flex-direction:column;gap:4px;min-width:0;}
+.pix-tx b{font-weight:900;font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:#fff;}
+.pix-tx span{color:var(--ink2);font-size:15px;line-height:1.45;}
+.pix-tx em{font-style:normal;font-weight:900;font-size:14px;color:#ff8fc7;}
 .stage{position:relative;width:100%;max-width:580px;justify-self:center;}
 .spot{position:absolute;left:50%;top:-44px;width:80%;height:130px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 0,rgba(255,236,170,.26),transparent 70%);pointer-events:none;}
 .gframe{position:relative;padding:12px;background:linear-gradient(135deg,#9a6f12,#ffe066 30%,#b8860b 60%,#ffd95a);
@@ -320,6 +333,9 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .tl-i.brand::before{width:31px;height:31px;top:-1px;margin-left:-4px;background:url(/brand/kit/webp/brand_front.webp) 50% 50%/100% no-repeat,transparent;box-shadow:none;}
 .tl-i.brand.on::before{box-shadow:none;filter:drop-shadow(0 0 9px rgba(109,245,147,.9));}
 .brand .tl-when{color:#6DF593;}
+.tl-i.pix::before{width:46px;height:46px;top:-11px;margin-left:-11.5px;border-radius:0;background:url(/assets/games/cubepix-pix.webp) 50% 50%/100% no-repeat,transparent;box-shadow:none;}
+.tl-i.pix.on::before{box-shadow:none;filter:drop-shadow(0 0 9px rgba(255,60,172,.85));}
+.pix .tl-when{color:#ff8fc7;}
 .tl-i.next::before{box-shadow:inset 0 0 0 3px rgba(157,245,194,.5);background:transparent;outline:2px dashed rgba(157,245,194,.45);outline-offset:3px;}
 .tl-i.next.on::before{box-shadow:inset 0 0 0 3px #3DDC84;animation:tlNext 1.6s ease-in-out infinite;}
 @keyframes tlNext{50%{box-shadow:inset 0 0 0 3px #3DDC84,0 0 18px rgba(61,220,132,.75);}}
@@ -334,6 +350,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
   .tl-i:nth-child(even){margin-left:50%;padding-right:0;padding-left:56px;text-align:left;} .tl-i:nth-child(even) p{margin-left:0;}
   .tl-i::before{left:auto;right:-11.5px;} .tl-i:nth-child(even)::before{left:-11.5px;right:auto;}
   .tl-i.brand::before{margin:0;right:-15.5px;} .tl-i.brand:nth-child(even)::before{left:-15.5px;}
+  .tl-i.pix::before{margin:0;right:-23px;} .tl-i.pix:nth-child(even)::before{left:-23px;right:auto;}
 }
 
 /* ── contact ── */
@@ -464,6 +481,10 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link data-t="game.site"></a>
         </div>
         <p class="soon"><img class="app-ic" src="{{cp.icon}}" alt="" width="44" height="44">{{gpIcon}}<span><span data-t="cp:soon"></span> Google Play</span></p>
+        <a class="pix-meet" href="{{cp.site}}#pix" data-lang-link>
+          <span class="pix-pic"><span class="pix-hi" data-t="cp:pixHi"></span><img src="/assets/games/cubepix-pix.webp" alt="" width="88" height="88"></span>
+          <span class="pix-tx"><b data-t="cp:pixTitle"></b><span data-t="cp:pixName"></span><em><span data-t="cp.pix.more"></span> →</em></span>
+        </a>
       </div>
       <div class="stage rv" id="cpStage">
         <div class="spot"></div>
@@ -580,6 +601,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <li class="tl-i love rv"><p class="tl-when" data-t="story.4.when"></p><h3 data-t="story.4.t"></h3><p data-t="story.4.d"></p></li>
         <li class="tl-i rv"><p class="tl-when" data-t="story.od.when"></p><h3 data-t="story.od.t"></h3><p data-t="story.od.d"></p></li>
         <li class="tl-i rv"><p class="tl-when" data-t="story.proto.when"></p><h3 data-t="story.proto.t"></h3><p data-t="story.proto.d"></p></li>
+        <li class="tl-i pix rv"><p class="tl-when" data-t="story.pix.when"></p><h3 data-t="story.pix.t"></h3><p data-t="story.pix.d"></p></li>
         <li class="tl-i next rv"><p class="tl-when" data-t="story.next.when"></p><h3 data-t="story.next.t"></h3><p data-t="story.next.d"></p></li>
       </ol>
     </div>
@@ -667,7 +689,8 @@ function applyLang() {
   $$('[data-t]').forEach((el) => { const n = el.dataset.n ? D.counts[el.dataset.n] : undefined, v = T(el.dataset.t, n);
     if (el.tagName === 'TITLE') document.title = v; else el.innerHTML = rich(v); });
   $$('[data-ta]').forEach((el) => { const [a, k] = el.dataset.ta.split(/:(.+)/); el.setAttribute(a, T(k)); });
-  $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); a.setAttribute('href', a.dataset.base + (lang === 'en' ? '' : '?lang=' + lang)); });
+  $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); const [b, h] = a.dataset.base.split('#');
+    a.setAttribute('href', b + (lang === 'en' ? '' : '?lang=' + lang) + (h ? '#' + h : '')); });
   $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag; $('#langCode').textContent = lang === 'zh-TW' ? '繁中' : lang.toUpperCase();
   $$('#langMenu button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
   onLang.forEach((f) => f());
