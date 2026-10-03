@@ -29,8 +29,10 @@ and the heartbeat, the menu signature and About us.
   0.6 s to take it in → the game's LoaderScreen. The Lockup is in the middle of the screen (76, 239 on 360×800).
 - **The menu signature** — a 28-high pill at the bottom of every menu, centred, 34 from the bottom: the logo 24 + the name, and a ›.
   Tap → About us. It beats once when the menu appears.
-- **About us** — the Lockup at top 108, the studio text (15 languages in `brand.json`), «Our website» → https://roshevasternin.github.io/,
-  «Our games on Google Play» → our developer page, «© 2026 Lewydo™». The heart beats every time it opens.
+- **About us** — the Lockup at top 108, the studio text (15 languages in `brand.json`), then **«Thank you for playing!» as its own
+  last line**: centred, one line in every language (a long one gets smaller, it never wraps; never the end of the paragraph —
+  `brand.json` → `about.texts.<lang>.thanks`). «Our website» → https://roshevasternin.github.io/, «Our games on Google Play» → our
+  developer page, «© 2026 Lewydo™». The heart beats every time it opens.
 - **The heartbeat** — the heart 1.13 → 1 → 1.07 → 1 (0.10 / 0.12 / 0.10 / 0.12 s, sineOut / sineIn); the glow waits 0.05, then
   1.15 → 1.05 (0.12 / 0.28 s) and stays at 1.05. **Once**, when the brand appears — never in a loop. No beat with «reduce motion».
 

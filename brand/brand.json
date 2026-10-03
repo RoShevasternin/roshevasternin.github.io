@@ -423,22 +423,25 @@
      108
     ]
    },
+   "column": "from the text down, one centred column: each part follows the one above (the text's length differs by language)",
    "text": {
     "at": [
      24,
-     456
+     452
     ],
-    "size": [
-     312,
-     92
-    ],
+    "width": 312,
     "font": "Nunito Medium 15 / 23, centred"
    },
+   "thanks": {
+    "below": "text",
+    "gap": 8,
+    "width": 312,
+    "font": "Nunito ExtraBold 15 / 23, white, centred",
+    "rule": "«Thank you for playing!» is the text's own last line: centred, one line in every language — a long one gets smaller, it never wraps; never the end of the paragraph"
+   },
    "siteButton": {
-    "at": [
-     32,
-     584
-    ],
+    "below": "thanks",
+    "gap": 14,
     "size": [
      296,
      52
@@ -447,17 +450,13 @@
     "style": "green #3DDC84, text #04120A"
    },
    "address": {
-    "at": [
-     32,
-     648
-    ],
+    "below": "siteButton",
+    "gap": 12,
     "text": "roshevasternin.github.io"
    },
    "gamesButton": {
-    "at": [
-     32,
-     682
-    ],
+    "below": "address",
+    "gap": 16,
     "size": [
      296,
      52
@@ -470,7 +469,8 @@
      32,
      764
     ],
-    "text": "© 2026 Lewydo™"
+    "text": "© 2026 Lewydo™",
+    "note": "at least 18 below the games button"
    }
   },
   "links": {
@@ -480,91 +480,106 @@
   "texts": {
    "id": {
     "title": "Tentang kami",
-    "text": "Lewydo adalah studio game indie dua orang dari Ukraina. Vlad menulis kode, Lilya mendesain. Bersama, kami membuat game yang kami sendiri suka mainkan. Terima kasih sudah bermain!",
+    "text": "Lewydo adalah studio game indie dua orang dari Ukraina. Vlad menulis kode, Lilya mendesain. Bersama, kami membuat game yang kami sendiri suka mainkan.",
+    "thanks": "Terima kasih sudah bermain!",
     "site": "Situs kami",
     "games": "Game kami di Google Play"
    },
    "de": {
     "title": "Über uns",
-    "text": "Lewydo ist ein Indie-Studio aus der Ukraine – wir sind zu zweit. Vlad programmiert, Lilya gestaltet. Zusammen machen wir die Spiele, die wir selbst gern spielen. Danke fürs Spielen!",
+    "text": "Lewydo ist ein Indie-Studio aus der Ukraine – wir sind zu zweit. Vlad programmiert, Lilya gestaltet. Zusammen machen wir die Spiele, die wir selbst gern spielen.",
+    "thanks": "Danke fürs Spielen!",
     "site": "Unsere Website",
     "games": "Unsere Spiele bei Google Play"
    },
    "en": {
     "title": "About us",
-    "text": "Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play. Thank you for playing!",
+    "text": "Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play.",
+    "thanks": "Thank you for playing!",
     "site": "Our website",
     "games": "Our games on Google Play"
    },
    "es": {
     "title": "Sobre nosotros",
-    "text": "Lewydo es un estudio indie de dos personas de Ucrania. Vlad programa, Lilya diseña. Juntos hacemos los juegos a los que nos encanta jugar. ¡Gracias por jugar!",
+    "text": "Lewydo es un estudio indie de dos personas de Ucrania. Vlad programa, Lilya diseña. Juntos hacemos los juegos a los que nos encanta jugar.",
+    "thanks": "Gracias por jugar!",
     "site": "Nuestra web",
     "games": "Nuestros juegos en Google Play"
    },
    "fr": {
     "title": "À propos",
-    "text": "Lewydo est un studio de jeux indépendant de deux personnes, en Ukraine. Vlad code, Lilya fait le design. Ensemble, nous créons les jeux auxquels nous adorons jouer. Merci de jouer !",
+    "text": "Lewydo est un studio de jeux indépendant de deux personnes, en Ukraine. Vlad code, Lilya fait le design. Ensemble, nous créons les jeux auxquels nous adorons jouer.",
+    "thanks": "Merci de jouer !",
     "site": "Notre site",
     "games": "Nos jeux sur Google Play"
    },
    "it": {
     "title": "Chi siamo",
-    "text": "Lewydo è uno studio indie di due persone dall’Ucraina. Vlad programma, Lilya disegna. Insieme creiamo i giochi a cui amiamo giocare. Grazie di giocare!",
+    "text": "Lewydo è uno studio indie di due persone dall’Ucraina. Vlad programma, Lilya disegna. Insieme creiamo i giochi a cui amiamo giocare.",
+    "thanks": "Grazie di giocare!",
     "site": "Il nostro sito",
     "games": "I nostri giochi su Google Play"
    },
    "nl": {
     "title": "Over ons",
-    "text": "Lewydo is een indiegamestudio van twee mensen uit Oekraïne. Vlad programmeert, Lilya ontwerpt. Samen maken we de games die we zelf graag spelen. Bedankt voor het spelen!",
+    "text": "Lewydo is een indiegamestudio van twee mensen uit Oekraïne. Vlad programmeert, Lilya ontwerpt. Samen maken we de games die we zelf graag spelen.",
+    "thanks": "Bedankt voor het spelen!",
     "site": "Onze website",
     "games": "Onze games op Google Play"
    },
    "pl": {
     "title": "O nas",
-    "text": "Lewydo to dwuosobowe niezależne studio gier z Ukrainy. Vlad programuje, Lilya projektuje. Razem robimy gry, w które sami uwielbiamy grać. Dziękujemy, że grasz!",
+    "text": "Lewydo to dwuosobowe niezależne studio gier z Ukrainy. Vlad programuje, Lilya projektuje. Razem robimy gry, w które sami uwielbiamy grać.",
+    "thanks": "Dziękujemy, że grasz!",
     "site": "Nasza strona",
     "games": "Nasze gry w Google Play"
    },
    "pt": {
     "title": "Sobre nós",
-    "text": "Lewydo é um estúdio indie de duas pessoas da Ucrânia. Vlad programa, Lilya faz o design. Juntos fazemos os jogos que adoramos jogar. Obrigado por jogar!",
+    "text": "Lewydo é um estúdio indie de duas pessoas da Ucrânia. Vlad programa, Lilya faz o design. Juntos fazemos os jogos que adoramos jogar.",
+    "thanks": "Obrigado por jogar!",
     "site": "Nosso site",
     "games": "Nossos jogos no Google Play"
    },
    "vi": {
     "title": "Về chúng tôi",
-    "text": "Lewydo là studio game indie hai người đến từ Ukraina. Vlad viết code, Lilya thiết kế. Cùng nhau, chúng tôi làm những trò chơi mà chính mình yêu thích. Cảm ơn bạn đã chơi!",
+    "text": "Lewydo là studio game indie hai người đến từ Ukraina. Vlad viết code, Lilya thiết kế. Cùng nhau, chúng tôi làm những trò chơi mà chính mình yêu thích.",
+    "thanks": "Cảm ơn bạn đã chơi!",
     "site": "Trang web của chúng tôi",
     "games": "Game của chúng tôi trên Google Play"
    },
    "tr": {
     "title": "Hakkımızda",
-    "text": "Lewydo, Ukrayna’dan iki kişilik bağımsız bir oyun stüdyosu. Vlad kodluyor, Lilya tasarlıyor. Birlikte oynamayı sevdiğimiz oyunları yapıyoruz. Oynadığın için teşekkürler!",
+    "text": "Lewydo, Ukrayna’dan iki kişilik bağımsız bir oyun stüdyosu. Vlad kodluyor, Lilya tasarlıyor. Birlikte oynamayı sevdiğimiz oyunları yapıyoruz.",
+    "thanks": "Oynadığın için teşekkürler!",
     "site": "Web sitemiz",
     "games": "Google Play’deki oyunlarımız"
    },
    "uk": {
     "title": "Про нас",
-    "text": "Lewydo — інді-студія з двох людей з України. Влад пише код, Ліля робить дизайн. Разом ми робимо ігри, у які самі любимо грати. Дякуємо, що граєте!",
+    "text": "Lewydo — інді-студія з двох людей з України. Влад пише код, Ліля робить дизайн. Разом ми робимо ігри, у які самі любимо грати.",
+    "thanks": "Дякуємо, що граєте!",
     "site": "Наш сайт",
     "games": "Наші ігри в Google Play"
    },
    "ko": {
     "title": "소개",
-    "text": "Lewydo는 우크라이나의 2인 인디 게임 스튜디오예요. Vlad는 코드를, Lilya는 디자인을 맡아요. 우리가 즐겨 하는 게임을 함께 만들어요. 플레이해 주셔서 고마워요!",
+    "text": "Lewydo는 우크라이나의 2인 인디 게임 스튜디오예요. Vlad는 코드를, Lilya는 디자인을 맡아요. 우리가 즐겨 하는 게임을 함께 만들어요.",
+    "thanks": "플레이해 주셔서 고마워요!",
     "site": "웹사이트",
     "games": "Google Play의 우리 게임"
    },
    "ja": {
     "title": "私たちについて",
-    "text": "Lewydo はウクライナの2人組インディーゲームスタジオです。Vlad がコードを書き、Lilya がデザインを担当。自分たちが大好きなゲームを一緒に作っています。遊んでくれてありがとう！",
+    "text": "Lewydo はウクライナの2人組インディーゲームスタジオです。Vlad がコードを書き、Lilya がデザインを担当。自分たちが大好きなゲームを一緒に作っています。",
+    "thanks": "遊んでくれてありがとう！",
     "site": "ウェブサイト",
     "games": "Google Play の私たちのゲーム"
    },
    "zh-TW": {
     "title": "關於我們",
-    "text": "Lewydo 是來自烏克蘭的兩人獨立遊戲工作室。Vlad 寫程式，Lilya 負責設計。我們一起做自己愛玩的遊戲。謝謝你的遊玩！",
+    "text": "Lewydo 是來自烏克蘭的兩人獨立遊戲工作室。Vlad 寫程式，Lilya 負責設計。我們一起做自己愛玩的遊戲。",
+    "thanks": "謝謝你的遊玩！",
     "site": "我們的網站",
     "games": "我們在 Google Play 的遊戲"
    }

@@ -1,0 +1,102 @@
+<!-- Vlad's favourite song on the site (owner 03.10.2026: «sombr — 12 to 12 … a vinyl like in our games, so a visitor can turn it on
+     and off; credit the author and link the video»). The song isn't ours, so it is never a file here: it plays through YouTube's
+     official player (the owner chose «only the song, through YouTube»). Nothing is asked of YouTube until the record is tapped (the
+     site's no-third-party rule holds on load), and while the song plays its player stays in sight in the card — YouTube's rules:
+     no sound-only or hidden player, at least 200 × 200. Closing the card stops the song. -->
+<style>
+.mu{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:45;display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none;}
+.mu>*{pointer-events:auto;}
+.mu-fab{position:relative;width:56px;height:56px;padding:0;border:0;border-radius:50%;cursor:pointer;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 32%,#20244e,#0a0c21);box-shadow:0 0 0 2px rgba(157,245,194,.42),0 8px 22px rgba(0,0,0,.55);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:transform .15s ease,box-shadow .2s ease;}
+.mu-fab .vinyl{width:40px;height:40px;}
+@media (hover:hover){.mu-fab:hover{transform:scale(1.06);}}
+.mu-fab:active{transform:scale(.94);}
+.mu-fab:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+.mu-fab[aria-pressed="true"]{box-shadow:0 0 0 2px #3DDC84,0 0 24px rgba(61,220,132,.5),0 8px 22px rgba(0,0,0,.55);}
+.mu-fab::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(61,220,132,.65);opacity:0;pointer-events:none;}
+.mu.ask .mu-fab::after{animation:muRing 1.8s ease-out 3;}
+@keyframes muRing{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.mu-eq{position:absolute;right:-3px;top:-3px;display:none;align-items:flex-end;gap:2px;height:18px;padding:3px 4px;border-radius:9px;background:#3DDC84;box-shadow:0 0 0 2px #0a0c21;}
+.mu-eq b{width:3px;height:100%;border-radius:2px;background:#04120A;transform-origin:bottom;animation:muEq .9s ease-in-out infinite;}
+.mu-eq b:nth-child(2){animation-delay:-.3s;} .mu-eq b:nth-child(3){animation-delay:-.6s;}
+@keyframes muEq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.mu.playing .mu-eq{display:flex;}
+.mu.playing .vinyl{animation:muSpin 2.2s linear infinite;}
+@keyframes muSpin{to{transform:rotate(360deg)}}
+.mu-hint{position:relative;max-width:min(260px,calc(100vw - 32px));margin-right:4px;padding:9px 13px;border-radius:14px;background:#3DDC84;color:#04120A;font-weight:900;font-size:14px;line-height:1.3;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);animation:muIn .35s ease-out both;}
+.mu-hint::after{content:"";position:absolute;right:20px;top:100%;border:7px solid transparent;border-top-color:#3DDC84;border-bottom:0;}
+.mu-hint[hidden],.mu-card[hidden]{display:none;}
+.mu-card{width:min(356px,calc(100vw - 32px));padding:12px;border-radius:18px;background:#121433;color:#fff;
+  box-shadow:0 0 0 1px rgba(157,245,194,.28),0 18px 50px rgba(0,0,0,.62);animation:muIn .3s ease-out both;}
+@keyframes muIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.mu-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.mu-head .vinyl{flex:none;width:34px;height:34px;}
+.mu-tt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px;}
+.mu-tt b{font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9DF5C2;}
+.mu-tt span{font-weight:900;font-size:16px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mu-x{flex:none;width:40px;height:40px;margin:-4px -4px -4px 0;padding:0;border:0;border-radius:12px;cursor:pointer;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.08);}
+@media (hover:hover){.mu-x:hover{background:rgba(255,255,255,.16);}}
+.mu-x:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+.mu-player{width:100%;aspect-ratio:16/9;min-height:200px;border-radius:12px;overflow:hidden;background:#000;}
+.mu-player iframe{display:block;width:100%;height:100%;border:0;}
+.mu-thanks{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;min-height:28px;font-weight:800;font-size:14px;color:#9DF5C2;text-decoration:none;text-align:center;}
+@media (hover:hover){.mu-thanks:hover{text-decoration:underline;}}
+body::after{content:"";display:block;height:84px;}   /* the page's end scrolls clear of the record */
+.foot-music{margin-top:10px;font-size:13.5px;color:var(--ink3,rgba(255,255,255,.55));}
+.foot-music a{color:#9DF5C2;}
+@media (prefers-reduced-motion: reduce){.mu .vinyl,.mu-eq b,.mu.ask .mu-fab::after,.mu-card,.mu-hint{animation:none !important;}}
+html.og .mu,html.kit .mu{display:none !important;}
+@media print{.mu{display:none;}}
+</style>
+<div class="mu" id="mu">
+  <section class="mu-card" id="muCard" hidden data-ta="aria-label:music.fav">
+    <div class="mu-head">{{vinyl}}<div class="mu-tt"><b data-t="music.fav"></b><span lang="en">sombr — 12 to 12</span></div>
+      <button class="mu-x" id="muX" type="button" data-ta="aria-label:music.close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button></div>
+    <div class="mu-player" id="muPlayer"></div>
+    <a class="mu-thanks" href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener"><span data-t="music.thanks"></span><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5h11v11M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </section>
+  <p class="mu-hint" id="muHint" hidden><span data-t="music.hint"></span></p>
+  <button class="mu-fab" id="muFab" type="button" aria-pressed="false" aria-controls="muCard" data-ta="aria-label:music.label">{{vinyl}}<i class="mu-eq" aria-hidden="true"><b></b><b></b><b></b></i></button>
+</div>
+<script>
+(() => {
+  const ID = 'cZgUiR31m-Y', YT = 'https://www.youtube-nocookie.com', $m = (id) => document.getElementById(id);
+  const box = $m('mu'), fab = $m('muFab'), card = $m('muCard'), slot = $m('muPlayer'), hint = $m('muHint');
+  const mem = { get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+  let frame = null, open = false, heard = false, knock = 0;
+  const send = (func) => { if (frame && frame.contentWindow) frame.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: [] }), YT); };
+  const playing = (on) => box.classList.toggle('playing', on);
+  const unhint = () => { hint.hidden = true; box.classList.remove('ask'); };
+  function show() {                                       // the tap itself starts it (browsers let a page play sound only after a touch)
+    open = true; card.hidden = false; fab.setAttribute('aria-pressed', 'true'); unhint(); mem.set('lewydo:music', '1');
+    if (frame) { send('playVideo'); return; }
+    frame = document.createElement('iframe');
+    frame.src = `${YT}/embed/${ID}?autoplay=1&playsinline=1&rel=0&loop=1&playlist=${ID}&enablejsapi=1&origin=${encodeURIComponent(location.origin)}&hl=${document.documentElement.lang || 'en'}`;
+    frame.title = 'sombr — 12 to 12 (YouTube)'; frame.allow = 'autoplay; encrypted-media; picture-in-picture; web-share'; frame.allowFullscreen = true;
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';          // YouTube's player needs to know the site it plays on
+    // ask the player to tell us its state (as YouTube's own API does: knock until it answers)
+    frame.addEventListener('load', () => { let n = 0; clearInterval(knock); knock = setInterval(() => {
+      if (heard || ++n > 40) return clearInterval(knock); frame.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 'mu', channel: 'widget' }), YT); }, 250); });
+    slot.append(frame);
+  }
+  function hide() { open = false; send('pauseVideo'); card.hidden = true; fab.setAttribute('aria-pressed', 'false'); playing(false); }
+  fab.addEventListener('click', () => (open ? hide() : show()));
+  $m('muX').addEventListener('click', () => { hide(); fab.focus({ preventScroll: true }); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && open) hide(); });
+  // the record spins while the song plays (the player tells its state)
+  addEventListener('message', (e) => {
+    if (e.origin !== YT || !frame || e.source !== frame.contentWindow) return;
+    let d; try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (_) { return; }
+    heard = true;
+    const s = d && (d.event === 'onStateChange' ? d.info : d.event === 'infoDelivery' && d.info && 'playerState' in d.info ? d.info.playerState : null);
+    if (s != null) playing(open && (s === 1 || s === 3));
+  });
+  // the first visit: a word by the record — whose song it is (once; any tap hides it)
+  if (!mem.get('lewydo:music') && !matchMedia('print').matches) setTimeout(() => {
+    if (open) return; hint.hidden = false; box.classList.add('ask'); mem.set('lewydo:music', '0');
+    setTimeout(unhint, 8000); addEventListener('pointerdown', (e) => { if (!fab.contains(e.target)) unhint(); }, { once: true });
+  }, 2600);
+})();
+</script>
