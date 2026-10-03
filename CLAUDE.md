@@ -110,6 +110,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    Instagram https://www.instagram.com/lewydo_game/, YouTube https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw (канал Влада
    @veldan1202, де він пише про ігри Lewydo), Facebook https://www.facebook.com/profile.php?id=61594804110096 — `SOCIAL` у
    `tools/build.mjs` (і `sameAs` у JSON-LD, `brand.json` → `socials`).
+   **Пошта Lewydo — roshevasternin@gmail.com** (власник 03.10.2026; veldan1202@… — особиста, на сайті й у кіті не показувати).
 8. **`/brand/` — вкладка «Бренд»** (у меню й підвалі; посилання й під карткою «код ↔ дизайн»): як упізнати Lewydo, правила,
    кольори, три телефони (BrandScreen з перемикачем фонів ігор, About us 15 мовами, меню з пігулкою), серцебиття з графіком і кодом,
    завантаження, **«Як ми працюємо»** (спершу прототип, потім гра — `#work`, `brand.json` → `workflow`), інструкція для розробників

@@ -98,7 +98,7 @@ export function brandJson({ SITE, YEAR, G, CP, IDS }) {
         'The game (LibGDX: Android, later iOS) is ported from it — numbers and words one to one: the prototype is the reference.',
         'Never the other way round: something new made only in the game is unknown to the prototype. Even a fix: first the prototype, then the game.'] },
     socials: { tiktok: 'https://www.tiktok.com/@lewydo_game', instagram: 'https://www.instagram.com/lewydo_game/', youtube: 'https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw',
-      facebook: 'https://www.facebook.com/profile.php?id=61594804110096', telegram: 'https://t.me/vlad_libgdx', email: 'veldan1202@gmail.com' },
+      facebook: 'https://www.facebook.com/profile.php?id=61594804110096', telegram: 'https://t.me/vlad_libgdx', email: 'roshevasternin@gmail.com' },
     rules: {
       do: ['Use the pictures and the code of the kit as they are.', 'Keep the colours, the font and the proportions.',
         'Let the heart beat once when the brand appears.', 'Theme the background and the ambient light to your game.', 'Keep the mark on a dark background.'],
