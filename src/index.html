@@ -213,11 +213,24 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
   box-shadow:0 2px 0 #5a3f08,inset 0 1px 0 rgba(255,255,255,.6);max-width:100%;}
 .plq span{display:block;font-weight:700;font-size:13px;opacity:.85;}
 .stage-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:6px;}
-.dots{display:flex;gap:8px;}
-.dots button{position:relative;width:14px;height:14px;border:0;background:#2e2966;cursor:pointer;box-shadow:inset 0 2px 0 rgba(255,255,255,.12);}
-.dots button::before{content:"";position:absolute;inset:-15px;}
-.dots button[aria-current="true"]{background:#FFD60A;}
-.playing .dots{visibility:hidden;}
+/* the paintings: big arrows on the frame, a swipe on the picture, and the pictures themselves underneath (owner: «the little squares are inconvenient») */
+.pic-nav{position:absolute;top:50%;z-index:2;width:46px;height:46px;margin-top:-23px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;cursor:pointer;color:#FFD60A;
+  background:radial-gradient(circle at 50% 35%,#2b2663,#0d0b22);box-shadow:0 0 0 3px #c99a1c,0 0 0 5px #5a3f08,0 6px 14px rgba(0,0,0,.55);-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:transform .15s ease;}
+.pic-nav svg{width:22px;height:22px;}
+.pic-nav.prev{left:-8px;} .pic-nav.next{right:-8px;}
+@media (min-width:400px){.pic-nav.prev{left:-16px;} .pic-nav.next{right:-16px;}}
+@media (min-width:640px){.pic-nav.prev{left:-24px;} .pic-nav.next{right:-24px;}}
+@media (hover:hover){.pic-nav:hover{transform:scale(1.08);}}
+.pic-nav:active{transform:scale(.93);}
+.pic-nav:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+.thumbs{display:flex;flex-wrap:wrap;gap:8px;}
+.thumb{width:60px;height:44px;padding:4px;border:0;cursor:pointer;background:#0b0a18;box-shadow:inset 0 0 0 2px #2e2966;transition:transform .15s ease,box-shadow .15s ease;-webkit-tap-highlight-color:transparent;}
+.thumb canvas{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;opacity:.7;transition:opacity .15s;}
+.thumb[aria-current="true"]{box-shadow:inset 0 0 0 2px #FFD60A,0 0 14px rgba(255,214,0,.45);transform:translateY(-2px);}
+.thumb[aria-current="true"] canvas,.thumb:hover canvas{opacity:1;}
+.thumb:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+.stage:not(.playing) .mat{touch-action:pan-y;}
+.playing .thumbs,.playing .pic-nav{visibility:hidden;}
 .pz-hint{margin-top:12px;color:var(--ink2);font-size:15.5px;}
 .pz-done{margin-top:14px;padding:16px 18px;background:#f7efd9;color:#2a2015;box-shadow:0 3px 0 #b99440;}
 .pz-done .tag{display:block;font-weight:900;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#a0620d;}
@@ -269,6 +282,8 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 /* ── the studio: two people, one heart ── */
 .studio{padding:clamp(90px,11vw,150px) 0 40px;}
 .studio-in{display:grid;gap:52px;align-items:center;}
+/* the brand standard: «Thank you for playing!» is the text's own last line — one line in every language (smaller, never wrapped) */
+.sub.thanks{margin-top:10px;font-weight:800;color:#fff;white-space:nowrap;overflow:hidden;}
 @media (min-width:980px){.studio-in{grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:70px;}}
 .stats{display:flex;flex-wrap:wrap;gap:30px;margin-top:30px;list-style:none;}
 .stats li{font-weight:800;font-size:15px;color:var(--ink3);letter-spacing:.02em;}
@@ -488,13 +503,14 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       </div>
       <div class="stage rv" id="cpStage">
         <div class="spot"></div>
-        <div class="gframe"><div class="mat"><canvas id="cpCv" width="1" height="1" role="img" tabindex="-1" data-ta="aria-label:cp:demo"></canvas></div></div>
+        <div class="gframe"><div class="mat"><canvas id="cpCv" width="1" height="1" role="img" tabindex="-1" data-ta="aria-label:cp:demo"></canvas></div>
+          <button class="pic-nav prev" id="cpPrev" type="button" data-ta="aria-label:cp.picPrev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pic-nav next" id="cpNext" type="button" data-ta="aria-label:cp.picNext"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
         <div class="stage-bar">
           <svg class="cube" id="cpCube" viewBox="0 0 100 100" aria-hidden="true"></svg>
           <div class="stage-txt"><div class="layer-t" id="cpLayer" aria-live="off"></div><div class="plq" id="cpPlq" hidden><b id="cpName"></b><span id="cpBy"></span></div></div>
         </div>
         <div class="stage-tools">
-          <div class="dots" id="cpDots"></div>
+          <div class="thumbs" id="cpThumbs"></div>
           <button class="btn px-btn px-yellow btn-sm" id="cpTry" type="button" data-t="cp.try"></button>
           <button class="btn px-btn px-dark btn-sm" id="cpBack" type="button" hidden data-t="cp.back"></button>
         </div>
@@ -543,6 +559,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="eyebrow" data-t="studio.eyebrow"></p>
         <h2 class="h2" data-t="studio.title"></h2>
         <p class="sub" data-t="cp:about"></p>
+        <p class="sub thanks" data-t="cp:thanks" data-fit></p>
         <p class="say"><button class="say-btn" type="button" data-say data-ta="aria-label:say.aria"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.6 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-t="say.btn"></span></button>
           <b class="say-spell" data-t="say.spell"></b><span class="say-ipa">/lɛv.waɪ.doʊ/</span></p>
         <ul class="stats"><li data-t="stat.people" data-n="people"></li><li data-t="stat.games" data-n="games"></li><li data-t="stat.langs" data-n="langs"></li></ul>
@@ -633,8 +650,10 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <a href="{{cp.privacy}}"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}"><span data-t="foot.privacy"></span> · Orbit Dash</a>
     </nav>
     <p class="foot-c">© {{year}} Lewydo™ · Love What You Do · <span data-t="foot.rights"></span></p>
+    <p class="foot-music">♪ <a href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener" data-t="music.label"></a></p>
   </div>
 </footer>
+{{music}}
 
 <div id="og" aria-hidden="true">
   <div class="lock">{{lockup}}</div>
@@ -693,8 +712,12 @@ function applyLang() {
     a.setAttribute('href', b + (lang === 'en' ? '' : '?lang=' + lang) + (h ? '#' + h : '')); });
   $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag; $('#langCode').textContent = lang === 'zh-TW' ? '繁中' : lang.toUpperCase();
   $$('#langMenu button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
-  onLang.forEach((f) => f());
+  onLang.forEach((f) => f()); fitLines();
 }
+// one line in every language: a long one gets smaller instead of wrapping (the brand's «Thank you for playing!»)
+function fitLines() { $$('[data-fit]').forEach((el) => { el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);
+  while (fs > 11 && el.scrollWidth > el.clientWidth + .5) { fs -= .5; el.style.fontSize = fs + 'px'; } }); }
+addEventListener('resize', fitLines); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLines);
 function setLang(id) { if (!IDS.includes(id) || id === lang) return; lang = id; store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);
   try { const u = new URL(location.href); u.searchParams.set('lang', id); history.replaceState(null, '', u); } catch (e) {}
   applyLang(); }
@@ -868,16 +891,19 @@ function play(board, o) {                                  // a board through it
   return ctl;
 }
 const cubepix = (() => {
-  const C = D.cp, cv = $('#cpCv'), stage = $('#cpStage'), mat = cv.parentElement, vis = seen(cv), dots = $('#cpDots');
+  const C = D.cp, cv = $('#cpCv'), stage = $('#cpStage'), mat = cv.parentElement, vis = seen(cv), dots = $('#cpThumbs');
   let mode = 'show', idx = 0, key = C.hero[0], ctl = null, curL = 1, board = null, pz = null;
-  dots.innerHTML = C.hero.map((k, i) => `<button type="button" data-i="${i}"></button>`).join('');
+  // under the frame — the paintings themselves, tiny (a cube a pixel): tap one to see it
+  C.hero.forEach((k, i) => { const A = C.art[k], g = gridOf(k), b = document.createElement('button'), c = document.createElement('canvas'), x = c.getContext('2d');
+    c.width = A.w; c.height = A.h; for (let r = 0; r < A.h; r++) for (let q = 0; q < A.w; q++) { const v = g[r][q]; if (v) { x.fillStyle = A.pal[v - 1]; x.fillRect(q, r, 1, 1); } }
+    b.type = 'button'; b.className = 'thumb'; b.dataset.i = i; b.append(c); dots.append(b); });
   const fit = () => new Board(cv, key, mat.clientWidth - 20, mat.clientHeight - 20);
   function label() { const A = C.art[key], Lm = A.pal.length, done = curL > Lm;
     $('#cpLayer').textContent = done ? T('cp:revealed') : T('cp:layer').replace('{a}', curL).replace('{b}', Lm);
     $('#cpPlq').hidden = !done; $('#cpName').textContent = pic(key, 'n'); $('#cpBy').textContent = [pic(key, 'a'), pic(key, 'y')].filter(Boolean).join(', ');
     $('#cpBy').hidden = !$('#cpBy').textContent;
     cubeSvg($('#cpCube'), done ? '#FFD60A' : A.pal[curL - 1], done ? null : curL);
-    $$('button', dots).forEach((b, i) => { b.setAttribute('aria-current', String(i === idx)); b.setAttribute('aria-label', pic(C.hero[i], 'n')); });
+    $$('button', dots).forEach((b, i) => { b.setAttribute('aria-current', String(i === idx)); b.setAttribute('aria-label', pic(C.hero[i], 'n')); b.title = pic(C.hero[i], 'n'); });
     $('#pzFact').textContent = pic(C.puzzle, 'f'); }
   function stop() { ctl && ctl.stop(); ctl = null; if (pz) cancelAnimationFrame(pz.raf); }
   function show(i) { stop(); mode = 'show'; stage.classList.remove('playing'); cv.setAttribute('role', 'img'); cv.tabIndex = -1; cv.setAttribute('aria-label', T('cp:demo'));
@@ -908,6 +934,12 @@ const cubepix = (() => {
   cv.addEventListener('keydown', (e) => { if (mode !== 'play' || (e.key !== 'Enter' && e.key !== ' ')) return; e.preventDefault();   // keyboard: the next cell of the layer
     const c = board.cellsOf(curL).find(([r, cc]) => !pz.filled.has(r * 999 + cc)); if (c) fill(...c); });
   dots.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) show(+b.dataset.i); });
+  $('#cpPrev').addEventListener('click', () => show(idx - 1)); $('#cpNext').addEventListener('click', () => show(idx + 1));
+  let sw = null;                                             // a swipe across the picture: the next one (left) or the one before (right)
+  mat.addEventListener('pointerdown', (e) => { sw = mode === 'show' ? [e.clientX, e.clientY] : null; });
+  mat.addEventListener('pointerup', (e) => { if (!sw || mode !== 'show') return; const dx = e.clientX - sw[0], dy = e.clientY - sw[1]; sw = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.3) show(idx + (dx < 0 ? 1 : -1)); });
+  mat.addEventListener('pointercancel', () => { sw = null; });
   $('#cpTry').addEventListener('click', puzzle); $('#cpBack').addEventListener('click', () => show(idx));
   let lastW = innerWidth; addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(cubepix.rz); cubepix.rz = setTimeout(() => (mode === 'play' ? puzzle() : show(idx)), 250); });
   onLang.push(() => { label(); cv.setAttribute('aria-label', mode === 'play' ? T('cp.aria') : T('cp:demo')); });

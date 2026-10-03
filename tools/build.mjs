@@ -92,8 +92,15 @@ const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'L
   founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia Overchenko' }], foundingLocation: 'Poltava region, Ukraine',
   sameAs: [G.devPage, 'https://instagram.com/___vel__dan___', 'https://instagram.com/lilya.design'] };
 
+// the record from our games (CubePix's pixel vinyl, with the Lewydo green on its label) — the site's music button (src/music.html)
+const VINYL = (() => { const pal = { d: '#151833', g: '#2b3061', s: '#525a9c', l: '#3DDC84', h: '#070816' }; let r = '';
+  for (let y = 0; y < 16; y++) { let row = ''; for (let x = 0; x < 16; x++) { const d = Math.hypot(x - 7.5, y - 7.5);
+      row += d > 7.7 ? '.' : d < 1.2 ? 'h' : d < 3.4 ? 'l' : (Math.abs(d - 5.1) < .42 || Math.abs(d - 6.7) < .36) ? 'g' : (x < y + 1 && x + y < 12 && d > 4.2) ? 's' : 'd'; }
+    for (let x = 0; x < 16;) { const c = row[x]; let x2 = x + 1; while (x2 < 16 && row[x2] === c) x2++; if (c !== '.') r += `<rect x="${x}" y="${y}" width="${x2 - x}" height="1" fill="${pal[c]}"/>`; x = x2; } }
+  return `<svg class="vinyl" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`; })();
 const fill = (html) => {
   html = html
+    .replace('{{music}}', () => read('src/music.html')).replace(/\{\{vinyl\}\}/g, () => VINYL)
     .replace(/\{\{brandCss\}\}/g, () => brandCss).replace(/\{\{lockup\}\}/g, lockup).replace(/\{\{mark\}\}/g, mark).replace(/\{\{mark:(\w+)\}\}/g, (m, id) => logo(id))
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
@@ -122,8 +129,8 @@ out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).repla
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
 const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, CP, IDS }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
 out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
-const BKEYS = ['skip', 'lang.title', 'say.btn', 'say.spell', 'say.aria', ...Object.keys(BS.en).map((k) => 'b.' + k)];
-const BDATA = { langs: LANGS, S: Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]))])), about: Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, site: T.site, games: T.games }]; })) };
+const BKEYS = ['skip', 'lang.title', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', ...Object.keys(BS.en).map((k) => 'b.' + k)];
+const BDATA = { langs: LANGS, S: Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]))])), about: Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, thanks: T.thanks, site: T.site, games: T.games }]; })) };
 out('brand/index.html', fill(read('src/brand.html')
   .replace('{{langOptions}}', () => LANGS.map((L) => `<option value="${L.id}"${L.id === 'en' ? ' selected' : ''}>${esc(L.name)}</option>`).join(''))
   .replace('{{beatGraph}}', () => beatGraph()).replace('{{codeTabs}}', () => bcode.tabs).replace('{{codePanes}}', () => bcode.panes)

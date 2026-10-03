@@ -30,6 +30,8 @@
   "cp.next": "Liked it? A whole museum of pictures is waiting in the free demo.",
   "cp.pix.more": "More about Pix",
   "cp.aria": "CubePix mini-puzzle: fill the cells that show your cube's number",
+  "cp.picPrev": "Previous painting",
+  "cp.picNext": "Next painting",
   "od.tag": "Two orbits. One tap.",
   "od.lead": "Switch lanes with a single tap, graze the spikes for combos and bank the gems before they get you. Unlock Orbit III and climb the global leaderboard.",
   "od.free": "Free",
@@ -124,7 +126,12 @@
   "foot.rights": "All rights reserved.",
   "nf.title": "This page got lost",
   "nf.text": "Maybe it moved, or there's a typo in the link. Everything we make is on the home page.",
-  "nf.home": "Back to Lewydo"
+  "nf.home": "Back to Lewydo",
+  "music.fav": "Vlad’s favourite song",
+  "music.label": "Vlad’s favourite song: sombr — 12 to 12",
+  "music.close": "Turn the song off",
+  "music.hint": "Play Vlad’s favourite song",
+  "music.thanks": "Thank you, sombr! The video on YouTube"
  },
  "id": {
   "meta.title": "Lewydo™ — Love What You Do · studio game indie dari Ukraina",
@@ -156,6 +163,8 @@
   "cp.next": "Suka? Satu museum penuh gambar sudah menunggumu di demo gratis.",
   "cp.pix.more": "Selengkapnya tentang Pix",
   "cp.aria": "Puzzle mini CubePix: isi kotak yang bernomor sama dengan kubusmu",
+  "cp.picPrev": "Lukisan sebelumnya",
+  "cp.picNext": "Lukisan berikutnya",
   "od.tag": "Dua orbit. Satu ketukan.",
   "od.lead": "Pindah jalur dengan sekali ketuk, serempet duri demi kombo, dan amankan permata sebelum duri menghantammu. Buka Orbit III dan terus naik di papan peringkat global.",
   "od.free": "Gratis",
@@ -247,7 +256,12 @@
   "foot.rights": "Hak cipta dilindungi undang-undang.",
   "nf.title": "Halaman ini tersesat",
   "nf.text": "Mungkin halamannya sudah pindah, atau ada salah ketik di tautannya. Semua karya kami ada di halaman utama.",
-  "nf.home": "Kembali ke Lewydo"
+  "nf.home": "Kembali ke Lewydo",
+  "music.fav": "Lagu favorit Vlad",
+  "music.label": "Lagu favorit Vlad: sombr — 12 to 12",
+  "music.close": "Matikan lagu",
+  "music.hint": "Putar lagu favorit Vlad",
+  "music.thanks": "Terima kasih, sombr! Videonya di YouTube"
  },
  "de": {
   "meta.title": "Lewydo™ — Love What You Do · Indie-Spielestudio aus der Ukraine",
@@ -279,6 +293,8 @@
   "cp.next": "Hat’s dir gefallen? In der kostenlosen Demo wartet ein ganzes Museum voller Bilder.",
   "cp.pix.more": "Mehr über Pix",
   "cp.aria": "CubePix-Minipuzzle: Füll die Felder mit der Zahl deines Würfels",
+  "cp.picPrev": "Vorheriges Gemälde",
+  "cp.picNext": "Nächstes Gemälde",
   "od.tag": "Zwei Orbits. Ein Fingertipp.",
   "od.lead": "Wechsle mit einem Fingertipp die Bahn, zisch für Combos haarscharf an den Stacheln vorbei und schnapp dir die Edelsteine, bevor es dich erwischt. Schalte Orbit III frei und steig in der weltweiten Bestenliste auf.",
   "od.free": "Kostenlos",
@@ -373,7 +389,12 @@
   "foot.rights": "Alle Rechte vorbehalten.",
   "nf.title": "Diese Seite hat sich verlaufen",
   "nf.text": "Vielleicht ist sie umgezogen, oder im Link steckt ein Tippfehler. Alles, was wir machen, findest du auf der Startseite.",
-  "nf.home": "Zurück zu Lewydo"
+  "nf.home": "Zurück zu Lewydo",
+  "music.fav": "Vlads Lieblingssong",
+  "music.label": "Vlads Lieblingssong: sombr — 12 to 12",
+  "music.close": "Song ausschalten",
+  "music.hint": "Hör dir Vlads Lieblingssong an",
+  "music.thanks": "Danke, sombr! Das Video auf YouTube"
  },
  "es": {
   "meta.title": "Lewydo™ — Love What You Do · estudio indie de videojuegos de Ucrania",
@@ -405,6 +426,8 @@
   "cp.next": "¿Te gustó? Todo un museo de imágenes te espera en la demo gratis.",
   "cp.pix.more": "Más sobre Pix",
   "cp.aria": "Pequeño rompecabezas de CubePix: rellena las casillas con el número de tu cubo",
+  "cp.picPrev": "Cuadro anterior",
+  "cp.picNext": "Cuadro siguiente",
   "od.tag": "Dos órbitas. Un toque.",
   "od.lead": "Cambia de carril con un solo toque, pasa rozando los pinchos para sumar combos y atrapa las gemas antes de chocar. Desbloquea Orbit III y escala posiciones en el ranking mundial.",
   "od.free": "Gratis",
@@ -502,7 +525,12 @@
   "foot.rights": "Todos los derechos reservados.",
   "nf.title": "Esta página se perdió",
   "nf.text": "Quizá se mudó o hay un error en el enlace. Todo lo que hacemos está en la página de inicio.",
-  "nf.home": "Volver a Lewydo"
+  "nf.home": "Volver a Lewydo",
+  "music.fav": "La canción favorita de Vlad",
+  "music.label": "La canción favorita de Vlad: sombr — 12 to 12",
+  "music.close": "Apagar la canción",
+  "music.hint": "Escucha la canción favorita de Vlad",
+  "music.thanks": "¡Gracias, sombr! El videoclip en YouTube"
  },
  "fr": {
   "meta.title": "Lewydo™ — Love What You Do · studio de jeux indépendant ukrainien",
@@ -534,6 +562,8 @@
   "cp.next": "Ça t’a plu ? Tout un musée d’images t’attend dans la démo gratuite.",
   "cp.pix.more": "En savoir plus sur Pix",
   "cp.aria": "Petit casse-tête CubePix : remplis les cases qui portent le numéro de ton cube",
+  "cp.picPrev": "Tableau précédent",
+  "cp.picNext": "Tableau suivant",
   "od.tag": "Deux orbites. Une seule touche.",
   "od.lead": "Change de voie d’une seule touche, frôle les pics pour enchaîner les combos et empoche les gemmes avant de te faire avoir. Débloque Orbit III et grimpe dans le classement mondial.",
   "od.free": "Gratuit",
@@ -631,7 +661,12 @@
   "foot.rights": "Tous droits réservés.",
   "nf.title": "Cette page s’est perdue",
   "nf.text": "Elle a peut-être déménagé, ou il y a une faute de frappe dans le lien. Tout ce que nous créons se trouve sur la page d’accueil.",
-  "nf.home": "Retour à Lewydo"
+  "nf.home": "Retour à Lewydo",
+  "music.fav": "La chanson préférée de Vlad",
+  "music.label": "La chanson préférée de Vlad: sombr — 12 to 12",
+  "music.close": "Couper la chanson",
+  "music.hint": "Écoute la chanson préférée de Vlad",
+  "music.thanks": "Merci, sombr ! Le clip sur YouTube"
  },
  "it": {
   "meta.title": "Lewydo™ — Love What You Do · studio indie di videogiochi dall’Ucraina",
@@ -663,6 +698,8 @@
   "cp.next": "Ti è piaciuto? Un intero museo di quadri ti aspetta nella demo gratuita.",
   "cp.pix.more": "Scopri di più su Pix",
   "cp.aria": "Piccolo rompicapo di CubePix: riempi le caselle con il numero del tuo cubo",
+  "cp.picPrev": "Dipinto precedente",
+  "cp.picNext": "Dipinto successivo",
   "od.tag": "Due orbite. Un tocco.",
   "od.lead": "Cambia corsia con un solo tocco, sfiora gli spuntoni per fare combo e incassa le gemme prima di schiantarti. Sblocca Orbit III e scala la classifica mondiale.",
   "od.free": "Gratis",
@@ -760,7 +797,12 @@
   "foot.rights": "Tutti i diritti riservati.",
   "nf.title": "Questa pagina si è persa",
   "nf.text": "Forse si è spostata, o c’è un errore di battitura nel link. Tutto ciò che facciamo lo trovi nella pagina principale.",
-  "nf.home": "Torna a Lewydo"
+  "nf.home": "Torna a Lewydo",
+  "music.fav": "La canzone preferita di Vlad",
+  "music.label": "La canzone preferita di Vlad: sombr — 12 to 12",
+  "music.close": "Spegni la canzone",
+  "music.hint": "Ascolta la canzone preferita di Vlad",
+  "music.thanks": "Grazie, sombr! Il video su YouTube"
  },
  "nl": {
   "meta.title": "Lewydo™ — Love What You Do · indiegamestudio uit Oekraïne",
@@ -792,6 +834,8 @@
   "cp.next": "Vond je het leuk? In de gratis demo wacht een heel museum vol plaatjes.",
   "cp.pix.more": "Meer over Pix",
   "cp.aria": "CubePix-minipuzzel: vul de vakjes met het nummer van je blokje",
+  "cp.picPrev": "Vorig schilderij",
+  "cp.picNext": "Volgend schilderij",
   "od.tag": "Twee banen. Eén tik.",
   "od.lead": "Wissel met één tik van baan, scheer rakelings langs de stekels voor combo’s en pak de edelstenen voordat het misgaat. Speel Orbit III vrij en stijg in de wereldwijde ranglijst.",
   "od.free": "Gratis",
@@ -886,7 +930,12 @@
   "foot.rights": "Alle rechten voorbehouden.",
   "nf.title": "Deze pagina is verdwaald",
   "nf.text": "Misschien is ze verhuisd, of zit er een typfout in de link. Alles wat we maken, vind je op de homepage.",
-  "nf.home": "Terug naar Lewydo"
+  "nf.home": "Terug naar Lewydo",
+  "music.fav": "Vlads lievelingsnummer",
+  "music.label": "Vlads lievelingsnummer: sombr — 12 to 12",
+  "music.close": "Nummer uitzetten",
+  "music.hint": "Luister naar Vlads lievelingsnummer",
+  "music.thanks": "Dank je, sombr! De clip op YouTube"
  },
  "pl": {
   "meta.title": "Lewydo™ — Love What You Do · niezależne studio gier z Ukrainy",
@@ -918,6 +967,8 @@
   "cp.next": "Podobało się? W darmowym demo czeka na ciebie całe muzeum obrazów.",
   "cp.pix.more": "Więcej o Pixie",
   "cp.aria": "Mała łamigłówka CubePix: wypełniaj pola z numerem twojej kostki",
+  "cp.picPrev": "Poprzedni obraz",
+  "cp.picNext": "Następny obraz",
   "od.tag": "Dwie orbity. Jeden dotyk.",
   "od.lead": "Zmieniaj orbitę jednym dotknięciem, muskaj kolce, by nabijać combo, i zgarniaj klejnoty, zanim będzie za późno. Odblokuj Orbit III i pnij się w górę światowego rankingu.",
   "od.free": "Za darmo",
@@ -1018,7 +1069,12 @@
   "foot.rights": "Wszelkie prawa zastrzeżone.",
   "nf.title": "Ta strona się zgubiła",
   "nf.text": "Może się przeprowadziła, a może w linku jest literówka. Wszystko, co tworzymy, znajdziesz na stronie głównej.",
-  "nf.home": "Wróć do Lewydo"
+  "nf.home": "Wróć do Lewydo",
+  "music.fav": "Ulubiona piosenka Vlada",
+  "music.label": "Ulubiona piosenka Vlada: sombr — 12 to 12",
+  "music.close": "Wyłącz piosenkę",
+  "music.hint": "Posłuchaj ulubionej piosenki Vlada",
+  "music.thanks": "Dziękujemy, sombr! Teledysk na YouTube"
  },
  "pt": {
   "meta.title": "Lewydo™ — Love What You Do · estúdio indie de jogos da Ucrânia",
@@ -1050,6 +1106,8 @@
   "cp.next": "Gostou? Um museu inteiro de imagens espera por você na demo grátis.",
   "cp.pix.more": "Mais sobre o Pix",
   "cp.aria": "Pequeno quebra-cabeça do CubePix: preencha as casas com o número do seu cubo",
+  "cp.picPrev": "Pintura anterior",
+  "cp.picNext": "Próxima pintura",
   "od.tag": "Duas órbitas. Um toque.",
   "od.lead": "Mude de faixa com um só toque, passe raspando pelos espinhos para fazer combos e pegue as gemas antes que eles peguem você. Desbloqueie Orbit III e suba no ranking global.",
   "od.free": "Grátis",
@@ -1147,7 +1205,12 @@
   "foot.rights": "Todos os direitos reservados.",
   "nf.title": "Esta página se perdeu",
   "nf.text": "Talvez ela tenha mudado de endereço, ou o link esteja com um erro de digitação. Tudo o que fazemos está na página inicial.",
-  "nf.home": "Voltar para a Lewydo"
+  "nf.home": "Voltar para a Lewydo",
+  "music.fav": "A música favorita do Vlad",
+  "music.label": "A música favorita do Vlad: sombr — 12 to 12",
+  "music.close": "Desligar a música",
+  "music.hint": "Ouça a música favorita do Vlad",
+  "music.thanks": "Obrigado, sombr! O clipe no YouTube"
  },
  "vi": {
   "meta.title": "Lewydo™ — Love What You Do · studio game indie đến từ Ukraina",
@@ -1179,6 +1242,8 @@
   "cp.next": "Bạn thích chứ? Cả một bảo tàng tranh đang chờ bạn trong bản demo miễn phí.",
   "cp.pix.more": "Thêm về Pix",
   "cp.aria": "Câu đố mini CubePix: tô các ô có cùng số với khối của bạn",
+  "cp.picPrev": "Bức tranh trước",
+  "cp.picNext": "Bức tranh tiếp theo",
   "od.tag": "Hai quỹ đạo. Một lần chạm.",
   "od.lead": "Đổi làn chỉ với một lần chạm, lướt sát gai để ghi combo và kịp giữ lấy đá quý trước khi gai hạ gục bạn. Mở khóa Orbit III và leo lên bảng xếp hạng toàn cầu.",
   "od.free": "Miễn phí",
@@ -1270,7 +1335,12 @@
   "foot.rights": "Bảo lưu mọi quyền.",
   "nf.title": "Trang này đi lạc rồi",
   "nf.text": "Có thể trang đã được chuyển đi, hoặc đường dẫn bị gõ nhầm. Mọi thứ chúng tôi làm đều có ở trang chủ.",
-  "nf.home": "Quay lại Lewydo"
+  "nf.home": "Quay lại Lewydo",
+  "music.fav": "Bài hát yêu thích của Vlad",
+  "music.label": "Bài hát yêu thích của Vlad: sombr — 12 to 12",
+  "music.close": "Tắt bài hát",
+  "music.hint": "Nghe bài hát yêu thích của Vlad",
+  "music.thanks": "Cảm ơn sombr! Xem MV trên YouTube"
  },
  "tr": {
   "meta.title": "Lewydo™ — Love What You Do · Ukraynalı bağımsız oyun stüdyosu",
@@ -1302,6 +1372,8 @@
   "cp.next": "Beğendin mi? Ücretsiz demoda koca bir resim müzesi seni bekliyor.",
   "cp.pix.more": "Pix hakkında daha fazlası",
   "cp.aria": "CubePix mini bulmacası: küpünle aynı numaralı hücreleri doldur",
+  "cp.picPrev": "Önceki tablo",
+  "cp.picNext": "Sonraki tablo",
   "od.tag": "İki yörünge. Tek dokunuş.",
   "od.lead": "Tek dokunuşla şerit değiştir, kombo için dikenleri sıyırıp geç ve onlara yakalanmadan mücevherleri cebine at. Orbit III’ün kilidini aç, küresel liderlik tablosunda yüksel.",
   "od.free": "Ücretsiz",
@@ -1396,7 +1468,12 @@
   "foot.rights": "Tüm hakları saklıdır.",
   "nf.title": "Bu sayfa yolunu kaybetti",
   "nf.text": "Belki taşındı ya da bağlantıda bir yazım hatası var. Yaptığımız her şey ana sayfada.",
-  "nf.home": "Lewydo’ya dön"
+  "nf.home": "Lewydo’ya dön",
+  "music.fav": "Vlad’ın en sevdiği şarkı",
+  "music.label": "Vlad’ın en sevdiği şarkı: sombr — 12 to 12",
+  "music.close": "Şarkıyı kapat",
+  "music.hint": "Vlad’ın en sevdiği şarkıyı dinle",
+  "music.thanks": "Teşekkürler, sombr! Klip YouTube’da"
  },
  "uk": {
   "meta.title": "Lewydo™ — Love What You Do · ігрова інді-студія з України",
@@ -1428,6 +1505,8 @@
   "cp.next": "Сподобалося? У безкоштовному демо на тебе чекає цілий музей картин.",
   "cp.pix.more": "Більше про Pix",
   "cp.aria": "Міні-головоломка CubePix: заповнюй клітинки з номером твого куба",
+  "cp.picPrev": "Попередня картина",
+  "cp.picNext": "Наступна картина",
   "od.tag": "Дві орбіти. Один дотик.",
   "od.lead": "Одним дотиком перемикайся між орбітами, пролітай на волосок від шипів заради комбо й збирай кристали, поки щастить. Відкрий Orbit III та піднімайся у світовому рейтингу.",
   "od.free": "Безкоштовно",
@@ -1528,7 +1607,12 @@
   "foot.rights": "Усі права захищено.",
   "nf.title": "Ця сторінка загубилася",
   "nf.text": "Можливо, вона переїхала або в посилання закралася помилка. Усе, що ми робимо, — на головній сторінці.",
-  "nf.home": "Назад до Lewydo"
+  "nf.home": "Назад до Lewydo",
+  "music.fav": "Улюблена пісня Влада",
+  "music.label": "Улюблена пісня Влада: sombr — 12 to 12",
+  "music.close": "Вимкнути пісню",
+  "music.hint": "Увімкни улюблену пісню Влада",
+  "music.thanks": "Дякуємо, sombr! Кліп на YouTube"
  },
  "ko": {
   "meta.title": "Lewydo™ — Love What You Do · 우크라이나 인디 게임 스튜디오",
@@ -1560,6 +1644,8 @@
   "cp.next": "마음에 드셨나요? 무료 데모에서 박물관 한가득 그림이 기다리고 있어요.",
   "cp.pix.more": "Pix 더 알아보기",
   "cp.aria": "CubePix 미니 퍼즐: 내 큐브와 같은 번호의 칸을 채우세요",
+  "cp.picPrev": "이전 그림",
+  "cp.picNext": "다음 그림",
   "od.tag": "두 개의 궤도. 한 번의 탭.",
   "od.lead": "탭 한 번으로 레인을 바꾸고, 가시를 아슬아슬하게 스치며 콤보를 쌓고, 당하기 전에 보석을 챙기세요. Orbit III를 해금하고 글로벌 리더보드 순위를 올려 보세요.",
   "od.free": "무료",
@@ -1651,7 +1737,12 @@
   "foot.rights": "모든 권리 보유.",
   "nf.title": "이 페이지가 길을 잃었어요",
   "nf.text": "페이지가 옮겨졌거나 링크에 오타가 있을지도 몰라요. 우리가 만든 모든 것은 홈페이지에 있어요.",
-  "nf.home": "Lewydo로 돌아가기"
+  "nf.home": "Lewydo로 돌아가기",
+  "music.fav": "Vlad가 가장 좋아하는 노래",
+  "music.label": "Vlad가 가장 좋아하는 노래: sombr — 12 to 12",
+  "music.close": "노래 끄기",
+  "music.hint": "Vlad가 가장 좋아하는 노래 듣기",
+  "music.thanks": "고마워요, sombr! 뮤직비디오는 YouTube에서"
  },
  "ja": {
   "meta.title": "Lewydo™ — Love What You Do · ウクライナのインディーゲームスタジオ",
@@ -1683,6 +1774,8 @@
   "cp.next": "気に入りましたか？美術館いっぱいの絵が、無料デモで待っています。",
   "cp.pix.more": "Pix についてもっと見る",
   "cp.aria": "CubePix のミニパズル：キューブと同じ番号のマスを埋めよう",
+  "cp.picPrev": "前の絵",
+  "cp.picNext": "次の絵",
   "od.tag": "軌道はふたつ。タップはひとつ。",
   "od.lead": "タップひとつでレーンを切り替え、トゲをギリギリでかすめてコンボをつなぎ、やられる前にジェムを確保しよう。Orbit III を解放して、世界ランキングを駆け上がろう。",
   "od.free": "無料",
@@ -1774,7 +1867,12 @@
   "foot.rights": "All rights reserved.",
   "nf.title": "このページは迷子になりました",
   "nf.text": "移動したか、リンクに入力ミスがあるのかもしれません。私たちが作ったものは、すべてトップページにあります。",
-  "nf.home": "Lewydo に戻る"
+  "nf.home": "Lewydo に戻る",
+  "music.fav": "Vladのお気に入りの曲",
+  "music.label": "Vladのお気に入りの曲：sombr — 12 to 12",
+  "music.close": "曲を止める",
+  "music.hint": "Vladのお気に入りの曲を聴く",
+  "music.thanks": "ありがとう、sombr！ MVはYouTubeで"
  },
  "zh-TW": {
   "meta.title": "Lewydo™ — Love What You Do · 來自烏克蘭的獨立遊戲工作室",
@@ -1806,6 +1904,8 @@
   "cp.next": "喜歡嗎？免費試玩裡，還有整座博物館的畫在等你。",
   "cp.pix.more": "更多關於 Pix",
   "cp.aria": "CubePix 迷你解謎：填滿和你的方塊數字相同的格子",
+  "cp.picPrev": "上一幅畫",
+  "cp.picNext": "下一幅畫",
   "od.tag": "兩條軌道。一指搞定。",
   "od.lead": "輕點一下就能換道，貼著尖刺擦身而過累積連擊，趁還沒被擊中，把寶石收入囊中。解鎖 Orbit III，一路衝上全球排行榜。",
   "od.free": "免費",
@@ -1897,6 +1997,11 @@
   "foot.rights": "版權所有。",
   "nf.title": "這個頁面迷路了",
   "nf.text": "它可能搬家了，或是連結裡有錯字。我們做的一切都在首頁。",
-  "nf.home": "回到 Lewydo"
+  "nf.home": "回到 Lewydo",
+  "music.fav": "Vlad 最愛的歌",
+  "music.label": "Vlad 最愛的歌：sombr — 12 to 12",
+  "music.close": "關閉歌曲",
+  "music.hint": "聽聽 Vlad 最愛的歌",
+  "music.thanks": "謝謝你，sombr！到 YouTube 看 MV"
  }
 }

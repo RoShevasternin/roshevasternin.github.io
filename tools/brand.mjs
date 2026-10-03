@@ -37,7 +37,7 @@ const GLOW = { delay: 0.05, steps: [[1.15, 0.12, 'sineOut'], [1.05, 0.28, 'sineI
 export function brandJson({ SITE, YEAR, G, CP, IDS }) {
   const B = SITE + 'brand/', K = B + 'kit/';
   const part = (p) => ({ what: p.what, dp: p.dp, png: K + 'png/' + p.id + '.png', px: pngSize(`brand/kit/png/${p.id}.png`), webp: K + 'webp/' + p.id + '.webp' });
-  const about = Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, site: T.site, games: T.games }]; }));
+  const about = Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, thanks: T.thanks, site: T.site, games: T.games }]; }));
   return {
     _about: 'The Lewydo™ brand standard in numbers — for game code and for Claude. The same as the page ' + B + ' (rules, live previews). ' +
       'Take the pictures and the code as they are; never redraw the mark. Sizes are dp (the design size, 360×800 screens); the PNGs are @3x of them.',
@@ -85,9 +85,13 @@ export function brandJson({ SITE, YEAR, G, CP, IDS }) {
       css: { sineOut: 'cubic-bezier(.61,1,.88,1)', sineIn: 'cubic-bezier(.12,0,.39,0)' }, reducedMotion: 'no beat' },
     about: { size: [360, 800], beat: 'every time it opens',
       layout: { back: { at: [16, 44], size: [40, 40] }, title: { at: [80, 53], font: 'Nunito ExtraBold 16, uppercase, white 70%' }, backRadius: 12, glow: { at: [30, 62], size: [300, 300], color: '#6DF593', opacity: 0.08 },
-        lockup: { at: [76, 108] }, text: { at: [24, 456], size: [312, 92], font: 'Nunito Medium 15 / 23, centred' },
-        siteButton: { at: [32, 584], size: [296, 52], radius: 16, style: 'green #3DDC84, text #04120A' }, address: { at: [32, 648], text: 'roshevasternin.github.io' },
-        gamesButton: { at: [32, 682], size: [296, 52], radius: 16, style: 'outlined' }, copyright: { at: [32, 764], text: `© ${YEAR} Lewydo™` } },
+        lockup: { at: [76, 108] }, column: 'from the text down, one centred column: each part follows the one above (the text\'s length differs by language)',
+        text: { at: [24, 452], width: 312, font: 'Nunito Medium 15 / 23, centred' },
+        thanks: { below: 'text', gap: 8, width: 312, font: 'Nunito ExtraBold 15 / 23, white, centred',
+          rule: '«Thank you for playing!» is the text\'s own last line: centred, one line in every language — a long one gets smaller, it never wraps; never the end of the paragraph' },
+        siteButton: { below: 'thanks', gap: 14, size: [296, 52], radius: 16, style: 'green #3DDC84, text #04120A' }, address: { below: 'siteButton', gap: 12, text: 'roshevasternin.github.io' },
+        gamesButton: { below: 'address', gap: 16, size: [296, 52], radius: 16, style: 'outlined' },
+        copyright: { at: [32, 764], text: `© ${YEAR} Lewydo™`, note: 'at least 18 below the games button' } },
       links: { site: SITE, games: G.devPage }, texts: about },
     rules: {
       do: ['Use the pictures and the code of the kit as they are.', 'Keep the colours, the font and the proportions.',

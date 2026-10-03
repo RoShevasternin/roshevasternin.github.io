@@ -60,6 +60,16 @@ test('both games can be played right on the page', async ({ page }) => {
   await page.goto('./?lang=en');
   await page.locator('#cubepix').scrollIntoViewIfNeeded();
   await expect(page.locator('#cpLayer')).toHaveText(/LAYER \d+ \/ \d+/i);                              // a painting reveals itself
+  const cur = () => page.locator('#cpThumbs .thumb[aria-current="true"]').getAttribute('data-i');
+  await expect(page.locator('#cpThumbs .thumb')).toHaveCount(4);                                      // the paintings themselves, not little squares
+  expect(await cur()).toBe('0');
+  await page.locator('#cpNext').click(); expect(await cur()).toBe('1');                               // big arrows on the frame
+  await page.locator('#cpPrev').click(); await page.locator('#cpPrev').click(); expect(await cur()).toBe('3');
+  await page.locator('#cpThumbs .thumb').nth(2).click(); expect(await cur()).toBe('2');               // a tap on a picture
+  const m = await page.locator('#cpStage .mat').boundingBox();                                         // a swipe across the painting
+  await page.mouse.move(m.x + m.width * .8, m.y + m.height / 2); await page.mouse.down();
+  await page.mouse.move(m.x + m.width * .2, m.y + m.height / 2, { steps: 8 }); await page.mouse.up();
+  expect(await cur()).toBe('3');
   await page.locator('#cpTry').click();                                                                // CubePix: the little puzzle
   await expect(page.locator('#pzHint')).toBeVisible();
   for (let i = 0; i < 300 && !(await page.locator('#pzDone').isVisible()); i++) { await page.keyboard.press('Enter'); await page.waitForTimeout(10); }
@@ -101,6 +111,8 @@ test('the brand page: the splash, About us in every language, every download, br
   await page.locator('#abLang').selectOption('uk');                                                  // About us, the games' own words
   await expect(page.locator('#abTitle')).toHaveText('Про нас');
   await expect(page.locator('#abText')).toContainText('Влад');
+  await expect(page.locator('#abText')).not.toContainText('Дякуємо');                                // the thank-you is not the paragraph's end…
+  await expect(page.locator('#abThanks')).toHaveText('Дякуємо, що граєте!');                          // …but its own last line
   await page.locator('.tabs button', { hasText: 'BrandScreen.kt' }).click();                         // the code, file by file
   await expect(page.locator('pre.src:visible')).toContainText('class BrandScreen');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
@@ -110,6 +122,8 @@ test('the brand page: the splash, About us in every language, every download, br
   const B = await (await request.get('./brand/brand.json')).json();
   expect(B.slogan).toBe('Love What You Do');
   expect(Object.keys(B.about.texts)).toHaveLength(15);
+  for (const [L, A] of Object.entries(B.about.texts)) { expect(A.thanks, L).toBeTruthy(); expect(A.text, L).not.toContain(A.thanks); }
+  expect(B.about.layout.thanks.rule).toMatch(/own last line/);
   for (const u of [...Object.values(B.images).flatMap((i) => [i.png, i.webp]), B.atlas.atlas, B.atlas.png, ...Object.values(B.code).map((c) => c.url)])
     expect((await request.get(u.replace('https://roshevasternin.github.io/', './'))).status(), u).toBe(200);
   expect(B.pronunciation.ipa).toBe('/lɛv.waɪ.doʊ/');                                                 // how to say it
@@ -158,4 +172,61 @@ test('the brand page speaks all 15 languages, fills every text and never scrolls
   await page.goto('./?lang=');                                                                        // the site remembers it too
   await expect(page.locator('html')).toHaveAttribute('lang', 'de');
   expect(w.errs).toEqual([]);
+});
+
+// the brand standard (owner 03.10.2026): «Thank you for playing!» — About us' own last line, centred, ONE line in every language
+test('About us: the thank-you is one centred line under the text in all 15 languages, on the brand page and on the site', async ({ page }) => {
+  const w = watch(page);
+  await page.goto('./brand/?lang=en');
+  for (const L of LANGS) {
+    await page.locator('#abLang').selectOption(L);
+    const r = await page.locator('#abThanks').evaluate((e) => { const b = e.getBoundingClientRect(), c = e.parentElement.getBoundingClientRect(), t = document.createRange();
+      t.selectNodeContents(e); const tb = t.getBoundingClientRect();
+      return { lines: Math.round(e.offsetHeight / parseFloat(getComputedStyle(e).lineHeight)), fits: e.scrollWidth <= e.clientWidth + 1, off: Math.abs((tb.left + tb.right) / 2 - (c.left + c.right) / 2),
+        gap: document.getElementById('abSite').getBoundingClientRect().top - b.bottom }; });
+    expect(r.lines, L).toBe(1); expect(r.fits, L).toBe(true); expect(r.off, L).toBeLessThan(3); expect(r.gap, L).toBeGreaterThan(5);   // and clear of the button
+  }
+  await page.goto('./?lang=uk');
+  await expect(page.locator('#studio .sub.thanks')).toHaveText('Дякуємо, що граєте!');
+  await expect(page.locator('#studio .sub').first()).not.toContainText('Дякуємо');
+  expect(w.errs).toEqual([]);
+});
+
+// Vlad's favourite song (owner 03.10.2026; he chose «only the song, through YouTube»): it isn't ours, so it is never a file on the
+// site — YouTube's own player, asked for only when the record is tapped, in sight while it plays (≥ 200 × 200), credited and linked
+test('Vlad’s favourite song: the record opens YouTube’s own player only on a tap — credited, linked, on and off', async ({ page }) => {
+  const w = watch(page);
+  await page.route(/youtube|ytimg|googlevideo/, (r) => r.abort());                                   // offline here: what matters is what the page asks for, and when
+  await page.goto('./?lang=uk');
+  const fab = page.locator('#muFab'), card = page.locator('#muCard');
+  await expect(fab).toHaveAttribute('aria-label', /^Улюблена пісня Влада: sombr\s—\s12 to 12$/);
+  await expect(page.locator('#muHint')).toBeVisible({ timeout: 5000 });                               // the first visit: whose song it is
+  expect([...w.ext]).toEqual([]);                                                                     // nothing from YouTube until the tap
+  await expect(page.locator('#muPlayer iframe')).toHaveCount(0);
+  await fab.click();
+  await expect(card).toBeVisible();
+  await expect(page.locator('#muHint')).toBeHidden();
+  await expect(fab).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#muPlayer iframe')).toHaveAttribute('src', /^https:\/\/www\.youtube-nocookie\.com\/embed\/cZgUiR31m-Y\?autoplay=1/);
+  const b = await page.locator('#muPlayer').boundingBox();
+  expect(b.width).toBeGreaterThanOrEqual(200); expect(b.height).toBeGreaterThanOrEqual(200);          // YouTube's rule: the player in sight, at least 200 × 200
+  await expect(card).toContainText('Улюблена пісня Влада');
+  await expect(card).toContainText(/sombr\s—\s12 to 12/);
+  await expect(page.locator('.mu-thanks')).toHaveAttribute('href', 'https://www.youtube.com/watch?v=cZgUiR31m-Y');   // thanks to the author: his video
+  await expect(page.locator('.foot-music a')).toHaveAttribute('href', 'https://www.youtube.com/watch?v=cZgUiR31m-Y'); // the credit stays in the footer
+  await fab.click();                                                                                  // off
+  await expect(card).toBeHidden(); await expect(fab).toHaveAttribute('aria-pressed', 'false');
+  await fab.click(); await expect(card).toBeVisible();                                                // on again
+  await page.keyboard.press('Escape'); await expect(card).toBeHidden();                               // Esc — off
+  await page.setViewportSize({ width: 320, height: 640 });                                            // the smallest phone: still ≥ 200 × 200, nothing sideways
+  await page.goto('./?lang=uk');
+  await fab.click();
+  const s = await page.locator('#muPlayer').boundingBox();
+  expect(s.width).toBeGreaterThanOrEqual(200); expect(s.height).toBeGreaterThanOrEqual(200);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
+  await page.locator('#muX').click(); await expect(card).toBeHidden();
+  await page.goto('./brand/?lang=en');                                                                // the brand page has it too
+  await expect(page.locator('#muFab')).toHaveAttribute('aria-label', /^Vlad’s favourite song: sombr\s—\s12 to 12$/);
+  await expect(page.locator('#muHint')).toBeHidden();                                                 // the word by the record — once
+  expect(w.errs.filter((e) => !/Failed to load resource|ERR_FAILED/.test(e))).toEqual([]);
 });

@@ -160,11 +160,15 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 .ab-back{left:16px;top:44px;width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;}
 .ab-title{left:80px;top:53px;width:200px;height:22px;text-align:center;font:800 16px/22px "Nunito",sans-serif;text-transform:uppercase;color:rgba(255,255,255,.7);}
 .scr-about .lw-lockup{position:absolute;left:76px;top:108px;}
-.ab-text{left:24px;top:456px;width:312px;text-align:center;font:500 15px/23px "Nunito",sans-serif;color:rgba(255,255,255,.86);}
-.ab-b1,.ab-b2{left:32px;width:296px;height:52px;border-radius:16px;display:grid;place-items:center;font:800 16px "Nunito",sans-serif;}
-.ab-b1{top:584px;background:#3DDC84;color:#04120A;} .ab-b2{top:682px;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(157,245,194,.5);}
-.ab-url{left:32px;top:648px;width:296px;text-align:center;font:700 13px/18px "Nunito",sans-serif;color:#9DF5C2;}
-.ab-c{left:32px;top:764px;width:296px;text-align:center;font:600 12px/15px "Nunito",sans-serif;color:rgba(255,255,255,.5);}
+/* the text and what follows it, one column from 452: the buttons follow the text, © stays at 764 (lower only if a language's text is long) */
+.ab-col{left:24px;top:452px;width:312px;min-height:327px;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.ab-text{font:500 15px/23px "Nunito",sans-serif;color:rgba(255,255,255,.86);}
+/* «Thank you for playing!» — the text's own last line: centred, one line in every language (smaller, never wrapped) */
+.ab-thanks{margin-top:8px;max-width:100%;font:800 15px/23px "Nunito",sans-serif;color:#fff;white-space:nowrap;overflow:hidden;}
+.ab-b1,.ab-b2{flex:none;width:296px;height:52px;border-radius:16px;display:grid;place-items:center;font:800 16px "Nunito",sans-serif;}
+.ab-b1{margin-top:14px;background:#3DDC84;color:#04120A;} .ab-b2{margin-top:16px;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(157,245,194,.5);}
+.ab-url{margin-top:12px;width:296px;font:700 13px/18px "Nunito",sans-serif;color:#9DF5C2;}
+.ab-c{margin-top:auto;padding-top:18px;width:296px;font:600 12px/15px "Nunito",sans-serif;color:rgba(255,255,255,.5);}
 .mn-title{left:0;right:0;top:150px;text-align:center;font:900 44px/1 "Nunito",sans-serif;color:rgba(255,255,255,.14);letter-spacing:.06em;}
 .mn-b{left:60px;width:240px;height:56px;border-radius:16px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);}
 .mn-note{left:0;right:0;top:600px;text-align:center;font:700 13px "Nunito",sans-serif;color:rgba(255,255,255,.35);}
@@ -364,8 +368,8 @@ footer p{margin-top:8px;}
       <div class="type">
         <div class="panel"><p class="eyebrow" data-t="b.type.eyebrow"></p><p class="big" lang="en">Lewydo</p><p class="slo" lang="en"><b>L</b>ov<b>e</b> <b>W</b>hat <b>Y</b>ou <b>Do</b></p>
           <ul class="spec"><li data-t="b.type.name"></li><li data-t="b.type.slogan"></li><li data-t="b.type.pics"></li></ul></div>
-        <div class="panel"><p class="eyebrow" data-t="b.text.eyebrow"></p><p class="body" id="textAbout"></p>
-          <ul class="spec"><li data-t="b.text.1"></li><li data-t="b.text.2"></li><li data-t="b.text.3"></li></ul></div>
+        <div class="panel"><p class="eyebrow" data-t="b.text.eyebrow"></p><p class="body" id="textAbout"></p><p class="body thanks" id="textThanks"></p>
+          <ul class="spec"><li data-t="b.text.1"></li><li data-t="b.text.thanks"></li><li data-t="b.text.2"></li><li data-t="b.text.3"></li></ul></div>
       </div>
     </div>
   </section>
@@ -390,8 +394,8 @@ footer p{margin-top:8px;}
           <div class="device"><div class="screen scr-about">
             <i class="abs ab-glow"></i><span class="abs ab-back"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <span class="abs ab-title" id="abTitle">About us</span>{{lockup:aboutLock}}
-            <p class="abs ab-text" id="abText"></p><span class="abs ab-b1" id="abSite">Our website</span><span class="abs ab-url">roshevasternin.github.io</span>
-            <span class="abs ab-b2" id="abGames">Our games on Google Play</span><span class="abs ab-c">© {{year}} Lewydo™</span>
+            <div class="abs ab-col"><p class="ab-text" id="abText"></p><p class="ab-thanks" id="abThanks"></p><span class="ab-b1" id="abSite">Our website</span><span class="ab-url">roshevasternin.github.io</span>
+            <span class="ab-b2" id="abGames">Our games on Google Play</span><span class="ab-c">© {{year}} Lewydo™</span></div>
           </div></div>
           <div class="langpick"><label for="abLang" data-t="b.about.lang"></label><select id="abLang">{{langOptions}}</select><button class="btn btn-line btn-sm" type="button" id="abCopy" data-t="b.about.copy"></button></div>
           <p data-t="b.ph.about.d"></p>
@@ -487,7 +491,8 @@ footer p{margin-top:8px;}
 https://roshevasternin.github.io/brand/ — the rules and a live preview
 https://roshevasternin.github.io/brand/brand.json — every number, text (15 languages) and file address
 If the web is blocked in your sandbox: git clone --depth 1 https://github.com/RoShevasternin/roshevasternin.github.io and use its brand/ folder (brand/kit/…, brand/brand.json).
-Take the pictures, the LibGDX atlas and the code from the kit as they are — never redraw the mark. The heart beats once when the brand appears, never in a loop.</pre>
+Take the pictures, the LibGDX atlas and the code from the kit as they are — never redraw the mark. The heart beats once when the brand appears, never in a loop.
+About us: the text, then «Thank you for playing!» as its own last line — centred, one line in every language (smaller, never wrapped).</pre>
         <button class="btn btn-line btn-sm" type="button" id="promptCopy" style="margin-top:12px" data-t="b.copy"></button>
       </div>
     </div>
@@ -499,9 +504,11 @@ Take the pictures, the LibGDX atlas and the code from the kit as they are — ne
     <a class="lw-pill" href="/" data-lang-link aria-label="Lewydo">{{sig}}{{go}}</a>
     <p data-t="b.foot"></p>
     <p><a href="/" data-lang-link data-t="b.foot.home"></a> · <a href="/brand/brand.json">brand.json</a> · <a href="https://github.com/RoShevasternin/roshevasternin.github.io/tree/main/brand" rel="noopener" data-t="b.foot.gh"></a></p>
+    <p class="foot-music">♪ <a href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener" data-t="music.label"></a></p>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+{{music}}
 
 <script id="data" type="application/json">{{DATA}}</script>
 <script>
@@ -535,7 +542,7 @@ function applyLang() {
   $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); a.setAttribute('href', a.dataset.base + (lang === 'en' ? '' : '?lang=' + lang)); });
   $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag; $('#langCode').textContent = lang === 'zh-TW' ? '繁中' : lang.toUpperCase();
   $$('#langMenu button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
-  $('#textAbout').textContent = (D.about[lang] || D.about.en).text; $('#textAbout').lang = lang;
+  { const A = D.about[lang] || D.about.en; $('#textAbout').textContent = A.text; $('#textThanks').textContent = A.thanks; $('#textAbout').lang = $('#textThanks').lang = lang; }
   if (abLang) { abLang.value = lang; showAbout(false); }
 }
 function setLang(id) { if (!IDS.includes(id) || id === lang) return; lang = id; store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);
@@ -588,9 +595,12 @@ $$('.themes button').forEach((b) => b.addEventListener('click', () => { document
 
 // About us in every language (the games' own words)
 function showAbout(beat = true) { const A = D.about[abLang.value] || D.about.en; $('#abText').textContent = A.text; $('#abTitle').textContent = A.title; $('#abSite').textContent = A.site; $('#abGames').textContent = A.games;
-  $('.scr-about').lang = abLang.value; if (beat) again($('.lw-logo', $('#aboutLock')), 'lw-beating'); }
+  $('.scr-about').lang = abLang.value; fitLine($('#abThanks'), A.thanks); if (beat) again($('.lw-logo', $('#aboutLock')), 'lw-beating'); }
+// one line in every language: a long one gets smaller instead of wrapping (the brand's «Thank you for playing!»)
+function fitLine(el, text) { el.textContent = text; el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);
+  while (fs > 10 && el.scrollWidth > el.clientWidth + .5) { fs -= .5; el.style.fontSize = fs + 'px'; } }
 abLang.addEventListener('change', () => showAbout());
-$('#abCopy').addEventListener('click', () => copy((D.about[abLang.value] || D.about.en).text));
+$('#abCopy').addEventListener('click', () => { const A = D.about[abLang.value] || D.about.en; copy(A.text + '\n\n' + A.thanks); });   // the thank-you is its own last line
 
 // colours, code, the prompt
 $$('[data-copy]').forEach((b) => b.addEventListener('click', () => copy(b.dataset.copy)));
