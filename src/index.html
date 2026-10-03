@@ -319,11 +319,11 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 
 /* ── the story: a line that fills as you read ── */
 .story{padding:clamp(90px,11vw,140px) 0;}
-.tl{position:relative;list-style:none;margin-top:48px;padding-left:40px;--prog:0;}
-.tl::before,.tl::after{content:"";position:absolute;left:10px;top:8px;width:3px;border-radius:3px;}
+.tl{position:relative;isolation:isolate;list-style:none;margin-top:48px;padding-left:40px;--prog:0;}
+.tl::before,.tl::after{content:"";position:absolute;z-index:0;left:10px;top:8px;width:3px;border-radius:3px;}
 .tl::before{bottom:8px;background:rgba(157,245,194,.14);}
 .tl::after{height:calc((100% - 16px) * var(--prog));background:linear-gradient(#3DDC84,#6DF593);box-shadow:0 0 14px rgba(109,245,147,.6);}
-.tl-i{position:relative;padding-bottom:38px;}
+.tl-i{position:relative;z-index:1;padding-bottom:38px;}
 .tl-i:last-child{padding-bottom:0;}
 .tl-i::before{content:"";position:absolute;left:-40px;top:3px;width:23px;height:23px;border-radius:50%;background:#0E1024;box-shadow:inset 0 0 0 3px rgba(157,245,194,.28);transition:box-shadow .4s ease,background-color .4s ease;}
 .tl-i.on::before{box-shadow:inset 0 0 0 3px #3DDC84,0 0 18px rgba(61,220,132,.75);}
