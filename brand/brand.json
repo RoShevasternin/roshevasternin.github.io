@@ -585,6 +585,29 @@
    }
   }
  },
+ "loader": {
+  "credits": {
+   "where": "the screen right after the splash (the game's own loader, LoaderScreen) — never on the splash itself",
+   "lines": [
+    "Powered by LibGDX",
+    "Developed by Lewydo™",
+    "Version {versionName}"
+   ],
+   "version": "the app's own version name, read at run time (Android: BuildConfig.VERSION_NAME) — never typed in, so it follows every release",
+   "font": "Inter Medium 10, line height auto (12), letter spacing 0",
+   "color": "#FFFFFF",
+   "opacity": 0.25,
+   "align": "center",
+   "box": {
+    "width": 360,
+    "height": 36,
+    "bottom": 28,
+    "safeArea": "add the bottom inset"
+   },
+   "language": "English in every language — a signature",
+   "why": "who made the game, on what, and which version (owner 04.10.2026)"
+  }
+ },
  "workflow": {
   "rule": "Prototype first, then the game",
   "why": "The prototype is quick to test in a browser, and the game never drifts from it.",
