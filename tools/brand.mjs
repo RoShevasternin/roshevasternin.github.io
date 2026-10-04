@@ -93,7 +93,7 @@ export function brandJson({ SITE, YEAR, G, CP, IDS }) {
         gamesButton: { below: 'address', gap: 16, size: [296, 52], radius: 16, style: 'outlined' },
         copyright: { at: [32, 764], text: `© ${YEAR} Lewydo™`, note: 'at least 18 below the games button' } },
       links: { site: SITE, games: G.devPage }, texts: about },
-    loader: { credits: { where: 'the screen right after the splash (the game\'s own loader, LoaderScreen) — never on the splash itself',
+    loader: { credits: { where: 'the screen right after the splash (the game\'s own loader, LoaderScreen) — never on the splash itself, and only there (not in About us)',
       lines: ['Powered by LibGDX', 'Developed by Lewydo™', 'Version {versionName}'],
       version: 'the app\'s own version name, read at run time (Android: BuildConfig.VERSION_NAME) — never typed in, so it follows every release',
       font: 'Inter Medium 10, line height auto (12), letter spacing 0', color: '#FFFFFF', opacity: 0.25, align: 'center',

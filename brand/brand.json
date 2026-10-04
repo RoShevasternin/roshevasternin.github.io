@@ -587,7 +587,7 @@
  },
  "loader": {
   "credits": {
-   "where": "the screen right after the splash (the game's own loader, LoaderScreen) — never on the splash itself",
+   "where": "the screen right after the splash (the game's own loader, LoaderScreen) — never on the splash itself, and only there (not in About us)",
    "lines": [
     "Powered by LibGDX",
     "Developed by Lewydo™",
