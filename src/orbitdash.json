@@ -1,0 +1,100 @@
+{
+ "_about": "Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs). Руками не правити.",
+ "levels": [
+  {
+   "id": "first-light",
+   "name": "FIRST LIGHT",
+   "genre": "SYNTHWAVE",
+   "dots": 1,
+   "bpm": 104,
+   "palette": {
+    "bg": "06071A",
+    "ring": "1C2250",
+    "player": "FFE9C4",
+    "gem": "FFC857",
+    "spike": "FF4D6D"
+   },
+   "sky": {
+    "speed": 0.8,
+    "fill": 0.5,
+    "twinkle": 0.45
+   }
+  },
+  {
+   "id": "slow-orbit",
+   "name": "SLOW ORBIT",
+   "genre": "LO-FI",
+   "dots": 2,
+   "bpm": 84,
+   "palette": {
+    "bg": "06121C",
+    "ring": "1B3B55",
+    "player": "BFE9FF",
+    "gem": "FFD9A8",
+    "spike": "FF7B9C"
+   },
+   "sky": {
+    "speed": 0.35,
+    "fill": 0.8,
+    "twinkle": 0.6
+   }
+  },
+  {
+   "id": "neon-drift",
+   "name": "NEON DRIFT",
+   "genre": "PHONK",
+   "dots": 3,
+   "bpm": 140,
+   "palette": {
+    "bg": "07030F",
+    "ring": "2A1446",
+    "player": "FF3EC8",
+    "gem": "19F7E2",
+    "spike": "FF2E55"
+   },
+   "sky": {
+    "speed": 1,
+    "fill": 0.55,
+    "twinkle": 0.35
+   }
+  },
+  {
+   "id": "hyperlane",
+   "name": "HYPERLANE",
+   "genre": "DARKSYNTH",
+   "dots": 4,
+   "bpm": 160,
+   "palette": {
+    "bg": "04020A",
+    "ring": "1E0F3A",
+    "player": "25F4FF",
+    "gem": "FFE45C",
+    "spike": "FF2A6D"
+   },
+   "sky": {
+    "speed": 1.3,
+    "fill": 0.55,
+    "twinkle": 0.25
+   }
+  },
+  {
+   "id": "starborn",
+   "name": "STARBORN",
+   "genre": "CINEMATIC BASS",
+   "dots": 3,
+   "bpm": 130,
+   "palette": {
+    "bg": "04050F",
+    "ring": "1B2346",
+    "player": "E6EEFF",
+    "gem": "6FE3FF",
+    "spike": "FF3B5C"
+   },
+   "sky": {
+    "speed": 0.8,
+    "fill": 0.5,
+    "twinkle": 0.5
+   }
+  }
+ ]
+}

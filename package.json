@@ -8,7 +8,8 @@
     "test": "node tools/build.mjs --strict && playwright test --config tests/playwright.config.mjs site.spec",
     "look": "playwright test --config tests/playwright.config.mjs look.spec",
     "kit": "playwright test --config tests/playwright.config.mjs kit.spec",
-    "cubepix": "node tools/cubepix-snapshot.mjs"
+    "cubepix": "node tools/cubepix-snapshot.mjs",
+    "orbitdash": "node tools/orbitdash-snapshot.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.56.0"

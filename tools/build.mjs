@@ -10,6 +10,7 @@ const ROOT = new URL('../', import.meta.url);
 const read = (p) => readFileSync(new URL(p, ROOT), 'utf8'), json = (p) => JSON.parse(read(p));
 const SITE = 'https://roshevasternin.github.io/', YEAR = 2026;
 const SS = json('src/strings.json'), BS = json('src/brand-strings.json'), G = json('src/games.json'), CP = json('src/cubepix.json'), LANGS = json('src/langs.json');
+const OD = json('src/orbitdash.json');   // рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs)
 const IDS = LANGS.map((L) => L.id);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -94,7 +95,7 @@ const ogGames = [G.cubepix.icon, G.orbitdash.icon, ...G.more.map((g) => g.icon)]
 
 const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: CP.counts.pics, floors: CP.counts.floors, cpLangs: CP.counts.langs };
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
-const DATA = { langs: LANGS, S: SMAIN, counts, cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: CP.pics } };
+const DATA = { langs: LANGS, S: SMAIN, counts, cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: CP.pics }, od: OD.levels };
 const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Lewydo', slogan: 'Love What You Do', url: SITE, logo: SITE + 'assets/icon-512.png',
   founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia Overchenko' }], foundingLocation: 'Poltava region, Ukraine',
   sameAs: [G.devPage, ...SOCIAL.map(([, , u]) => u)] };
@@ -118,6 +119,7 @@ const fill = (html) => {
       'od.site': G.orbitdash.site, 'od.web': G.orbitdash.demo, 'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon }[k]))
     .replace('{{hreflang}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}">`].join('\n'))
     .replace('{{ldjson}}', () => JSON.stringify(ld).replace(/</g, '\\u003c'))
+    .replace('{{odShowcase}}', () => read('src/orbit-showcase.js'))
     .replace('{{DATA}}', () => JSON.stringify(DATA).replace(/</g, '\\u003c'));
   const PR = new Intl.PluralRules('en');
   const tx = (k, n) => { let v = S.en[k]; if (v && typeof v === 'object') v = v[PR.select(n ?? 0)] ?? v.other; if (v == null) throw new Error('no string ' + k); return v; };

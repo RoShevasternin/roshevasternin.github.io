@@ -54,7 +54,7 @@ test('the pixels become the Lewydo heart; tap it and they fly again', async ({ p
   expect(w.errs).toEqual([]);
 });
 
-test('both games can be played right on the page', async ({ page }) => {
+test('both games show themselves right on the page: CubePix plays, Orbit Dash walks its levels', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   const w = watch(page);
   await page.goto('./?lang=en');
@@ -78,13 +78,18 @@ test('both games can be played right on the page', async ({ page }) => {
   await expect(page.locator('#pzFact')).not.toBeEmpty();
   await page.locator('#cpBack').click();
   await expect(page.locator('#cpTry')).toBeVisible();
-  await page.locator('#orbitdash').scrollIntoViewIfNeeded();                                            // Orbit Dash: plays itself until you tap
-  await expect(page.locator('#odHint')).toContainText('Tap to play');
-  await page.locator('#odCv').click();
-  await expect(page.locator('#odHint')).toHaveText(/Tap to switch orbits|Crash!/);
+  await page.locator('#orbitdash').scrollIntoViewIfNeeded();                                        // Orbit Dash: a showcase of its levels (src/orbitdash.json)
+  const pills = page.locator('.od-pill');
+  await expect(pills).toHaveCount(5);
+  await expect(page.locator('#odName')).toHaveText(await pills.nth(0).innerText());
+  await pills.nth(2).click();                                                                      // a pill repaints the scene into that level
+  await expect(pills.nth(2)).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#odName')).toHaveText(await pills.nth(2).innerText());
+  await page.locator('#odNext').click();                                                           // the arrows walk through the levels too
+  await expect(pills.nth(3)).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#odMeta')).toContainText('BPM');
   await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', '/Game-Orbit-Dash/play/');   // the whole game in the browser comes first, as with CubePix
   await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
-  await expect(page.locator('.od .od-shots img')).toHaveCount(3);                                   // real frames from the game
   expect(w.errs).toEqual([]);
 });
 
