@@ -27,7 +27,7 @@ and the heartbeat, the menu signature and About us.
 - **The splash (BrandScreen)** — the first screen of every game, ≈ 3 s: the heart fades in 0.3→1.1 s and beats once at 1.1;
   «Lewydo» comes into focus 0.9→1.5 (scale 1.06→1), the slogan 1.3→1.9; the line opens from the middle 1.7→2.4 (exp5Out);
   0.6 s to take it in → the game's LoaderScreen. The Lockup is in the middle of the screen (76, 239 on 360×800).
-- **The loader credits (LoaderScreen)** — on the screen right after the splash (never on the splash itself), at the bottom:
+- **The loader credits (LoaderScreen)** — on the screen right after the splash (never on the splash itself; only there, not in About us), at the bottom:
   «Powered by LibGDX» / «Developed by Lewydo™» / «Version» + the app's own version name, **read at run time** (Android:
   `BuildConfig.VERSION_NAME`) — never typed in, so it follows every release. Inter Medium 10, line height 12, white 25 %, centred;
   a 360×36 block, 28 above the bottom (+ the safe area). English in every language. The loader itself is the game's own.
