@@ -60,6 +60,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 | `src/strings.json` | усі тексти сайту 15 мовами (англійська — еталон) |
 | `src/games.json` | ігри: адреси, Google Play, кольори, іконки, `released` |
 | `src/cubepix.json` | CubePix: картини, назви, слова гри (зокрема текст «Про нас» — однаковий у всіх іграх), лого. **Генерує** `npm run cubepix` |
+| `src/orbitdash.json`, `src/orbit-showcase.js` | Orbit Dash: рівні (назва, жанр, BPM, палітра) — **генерує** `npm run orbitdash`; вітрина рівнів — копія з сайту гри |
 | `src/langs.json` | 15 мов; прапорці — векторні картинки `assets/flags/<мова>.svg` (flag-icons, MIT; `zh-TW` — нейтральна плитка «繁», як в іграх) |
 | `src/heart.kt` | код, з якого «складається» серце в картці «Він кодить. Вона малює» |
 | `src/music.html` | платівка й «Улюблена пісня Влада» (плеєр YouTube лише після тапу) — вставка `{{music}}` на обох сторінках; платівка `{{vinyl}}` — у `tools/build.mjs` |
@@ -67,7 +68,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 | `src/brand.html` | шаблон сторінки бренду `/brand/`; тексти — `src/brand-strings.json` (15 мов, ключі `b.…`); `tools/brand.mjs` — її частини, `brand.json` і zip |
 | `brand/` | **бренд-кіт** (див. вище): `kit/` і `README.md` — джерело, решта генерується |
 | `tools/build.mjs` | збірка → `index.html`, `brand/…`, `404.html`, `robots.txt`, `sitemap.xml` |
-| `tools/webp.py`, `tools/fetch-fonts.py`, `tools/cubepix-snapshot.mjs` | картинки → WebP; шрифти (Nunito, літери ORBIT DASH з Unbounded); дані CubePix |
+| `tools/webp.py`, `tools/fetch-fonts.py`, `tools/cubepix-snapshot.mjs`, `tools/orbitdash-snapshot.mjs` | картинки → WebP; шрифти (Nunito, літери ORBIT DASH з Unbounded); дані CubePix і Orbit Dash |
 | `tests/` | `npm test` (`site.spec`), `npm run look`, `npm run kit`; `serve.mjs` — сервер як GitHub Pages |
 | `app-ads.txt` | **для AdMob — не чіпати й не видаляти** (без нього реклама в іграх заробляє менше) |
 | `assets/` | шрифти, іконки й банери ігор, `og.png`, іконки сайту |
@@ -87,9 +88,12 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
      Під кнопками — картка **«Знайомся: Pix»** (маскот — кубик на ім'я Pix, Cube + Pix = CubePix; власник 03.10.2026): Pix
      (`assets/games/cubepix-pix.webp` — намальований кодом гри, як на її сайті) вітається мовою відвідувача; заголовок, текст і привіт —
      слова сайту гри (`cp:pixTitle`, `cp:pixName`, `cp:pixHi` зі снапшота), посилання «Більше про Pix» → `/Game-CubePix/?lang=xx#pix`.
-   - **Orbit Dash** (уже в Google Play): міні-гра «дві орбіти, один тап» у «корпусі» (рамка, підказка всередині).
-     Поки не натиснеш, грає сама. Під нею — три справжні кадри з гри (`assets/games/orbitdash-shot-*.webp`, беруться
-     зі скриншотів сайту гри). Кнопки: **«Грати в браузері»** → `/Game-Orbit-Dash/play/` (уся гра у вебі, з 04.10.2026),
+   - **Orbit Dash** (уже в Google Play): **вітрина рівнів** у рамці телефона (власник 04.10.2026: міні-гра тут лагала й
+     виглядала негарно). Сцена гри танцює під біт рівня; стрілки й пігулки під телефоном перемикають рівень — усе
+     перефарбовується в його палітру, як картина в CubePix. Малює `src/orbit-showcase.js` — копія вітрини з сайту гри;
+     рівні (назва, жанр, BPM, палітра) — `src/orbitdash.json`, знімок із сайту гри
+     (`node tools/orbitdash-snapshot.mjs <клон Game-Orbit-Dash>/index.html`, потім `npm run build`).
+     Кнопки: **«Грати в браузері»** → `/Game-Orbit-Dash/play/` (уся гра у вебі, з 04.10.2026),
      далі Google Play і сайт гри — тим самим порядком, що в CubePix.
 3. **Більше від Lewydo:** картки інших ігор, що нахиляються за курсором.
 4. **Студія:** текст «Про нас» (як у іграх) і окремим рядком «Дякуємо, що граєте!» (`cp:thanks`), цифри, картка «код ↔ дизайн» з повзунком і картки Влада та Лілі.
@@ -131,6 +135,7 @@ npm run look           # сторінка картинками (телефон �
 npm run kit            # картинки сайту з кіта (іконки, OG, logo/banner/brand.png)
 npm run serve          # http://localhost:5190/
 npm run cubepix -- <клон RoShevasternin/Game-CubePix>/index.html   # оновити дані CubePix з його сайту
+npm run orbitdash -- <клон RoShevasternin/Game-Orbit-Dash>/index.html  # оновити рівні Orbit Dash з його сайту
 ```
 
 ## Правила

@@ -153,7 +153,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .jump img{width:30px;height:30px;border-radius:9px;}
 .jump small{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);}
 .chap{position:relative;padding:clamp(80px,11vw,150px) 0;}
-.chap-in{display:grid;gap:48px;align-items:center;}
+.chap-in{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;align-items:center;}
 .od .chap-txt{order:-1;}
 @media (min-width:980px){.chap-in{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:70px;} .chap.od .chap-in{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);} .od .chap-txt{order:0;}}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;font-weight:900;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;}
@@ -252,23 +252,44 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .btn-cyan{background:#00E5FF;color:#051226;box-shadow:0 0 34px rgba(0,229,255,.45);}
 @media (hover:hover){.btn-cyan:hover{box-shadow:0 0 50px rgba(0,229,255,.68);transform:translateY(-2px);}}
 .od-line{background:rgba(0,229,255,.06);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.45);}
-.od-box{position:relative;width:min(100%,470px);margin:0 auto;}
-/* Міні-гра стоїть у «корпусі», а не голою канвою: рамка, внутрішнє сяйво й підказка
-   всередині — як вікно гри на її сайті. Так блок читається як гра, а не як декорація. */
-.od-screen{position:relative;border-radius:28px;overflow:hidden;
-  background:linear-gradient(180deg,rgba(18,22,52,.92),rgba(8,10,26,.92));
-  box-shadow:inset 0 0 0 1px rgba(0,229,255,.22),0 0 60px rgba(0,229,255,.12),inset 0 0 80px rgba(0,229,255,.05);}
-#odCv{display:block;width:100%;aspect-ratio:1;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;outline:none;}
-.od-screen:focus-within{box-shadow:inset 0 0 0 2px rgba(0,229,255,.6),0 0 70px rgba(0,229,255,.2);}
-.od-hint{position:absolute;left:0;right:0;bottom:0;margin:0;padding:16px 14px 18px;text-align:center;
-  font-weight:900;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:#bff6ff;min-height:22px;
-  background:linear-gradient(180deg,transparent,rgba(6,8,22,.92));pointer-events:none;}
-.od-keys{display:block;margin-top:3px;font-weight:700;letter-spacing:.04em;text-transform:none;color:var(--ink3);font-size:12.5px;}
-/* Справжні кадри з гри — під корпусом, щоб було видно не лише міні-гру */
-.od-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;}
-.od-shots img{width:100%;height:auto;border-radius:14px;display:block;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);background:#0b0d1d;}
-.od-cap{margin-top:10px;text-align:center;font-weight:800;font-size:12px;letter-spacing:.14em;
+.od-box{position:relative;width:min(100%,430px);margin:0 auto;}
+/* Вітрина: сцена гри в рамці телефона, стрілки з боків і смужка рівнів під нею —
+   та сама будова, що в блоці CubePix (рама, стрілки, мініатюри картин).
+   Це показ, а не гра: сцена танцює під біт рівня й перефарбовується його палітрою. */
+.od-spot{position:absolute;left:50%;top:45%;width:100%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;
+  background:radial-gradient(closest-side,rgba(0,229,255,.22),rgba(0,229,255,.07) 52%,transparent 78%);}
+.od-stage{position:relative;display:flex;align-items:center;gap:clamp(6px,1.6vw,14px);}
+.od-phone{position:relative;flex:1;min-width:0;border-radius:clamp(26px,5vw,36px);padding:clamp(6px,1.2vw,8px);
+  background:linear-gradient(155deg,#2a3166,#10132e 42%,#070920);
+  box-shadow:0 0 0 1px rgba(255,255,255,.09),0 40px 80px -28px rgba(0,0,0,.9),0 0 90px -16px rgba(0,229,255,.28);}
+.od-phone::before{content:"";position:absolute;left:50%;top:clamp(10px,2.2vw,14px);transform:translateX(-50%);
+  width:54px;height:4px;border-radius:99px;background:rgba(255,255,255,.14);z-index:2;}
+.od-screen{position:relative;border-radius:clamp(21px,4.2vw,29px);overflow:hidden;background:#05061a;aspect-ratio:360/640;}
+#odCv{display:block;width:100%;height:100%;}
+.od-glass{position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.1),transparent 36%);}
+.od-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 15px;text-align:center;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(3,4,16,.92));}
+.od-cap b{display:block;font-weight:900;font-size:13px;letter-spacing:.17em;}
+.od-cap span{display:block;margin-top:4px;font-weight:800;font-size:10.5px;letter-spacing:.17em;color:var(--ink3);}
+.od-nav{flex:none;width:clamp(36px,7vw,46px);height:clamp(36px,7vw,46px);border-radius:50%;border:0;cursor:pointer;
+  display:grid;place-items:center;color:#9ff6ff;background:rgba(0,229,255,.1);
+  box-shadow:inset 0 0 0 1px rgba(0,229,255,.4);transition:background .2s,transform .15s;}
+.od-nav:hover{background:rgba(0,229,255,.2);}
+.od-nav:active{transform:scale(.92);}
+.od-nav svg{width:40%;height:40%;}
+/* Смужка рівнів: пігулки переносяться й лишаються по центру — нічого не зрізається
+   ні на телефоні, ні на ПК (на вузькому екрані стає два рядки замість одного). */
+.od-rail{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;justify-content:center;}
+.od-pill{flex:none;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+  border:0;cursor:pointer;padding:9px 14px;border-radius:999px;color:var(--ink2);background:rgba(255,255,255,.05);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);transition:background .2s,box-shadow .2s,transform .15s,color .2s;}
+.od-pill i{width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a);}
+.od-pill b{font-weight:900;font-size:11.5px;letter-spacing:.12em;}
+@media (hover:hover){.od-pill:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}}
+.od-pill:active{transform:scale(.96);}
+.od-pill[aria-pressed=true]{color:#fff;background:color-mix(in srgb,var(--a) 16%,transparent);
+  box-shadow:inset 0 0 0 1px var(--a),0 0 26px -10px var(--a);}
+.od-note{margin-top:14px;text-align:center;font-weight:800;font-size:12px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ink3);}
 
 /* more games: cards that lean towards the pointer */
@@ -551,16 +572,24 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
   <section class="chap od" id="orbitdash" data-world="orbit" data-sec="games" aria-labelledby="odTitle">
     <div class="wrap chap-in">
       <div class="od-box rv">
-        <div class="od-screen">
-          <canvas id="odCv" width="1" height="1" tabindex="0" role="button" data-ta="aria-label:od.aria"></canvas>
-          <p class="od-hint" id="odHint" aria-live="polite"></p>
+        <div class="od-spot" aria-hidden="true"></div>
+        <div class="od-stage">
+          <button class="od-nav" type="button" id="odPrev" data-ta="aria-label:od.prev">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="od-phone">
+            <div class="od-screen">
+              <canvas id="odCv" role="img" data-ta="aria-label:od.aria"></canvas>
+              <div class="od-glass"></div>
+              <div class="od-cap"><b id="odName"></b><span id="odMeta"></span></div>
+            </div>
+          </div>
+          <button class="od-nav" type="button" id="odNext" data-ta="aria-label:od.next">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
-        <div class="od-shots">
-          <img src="/assets/games/orbitdash-shot-1.webp" width="360" height="800" alt="" decoding="async" loading="lazy">
-          <img src="/assets/games/orbitdash-shot-2.webp" width="360" height="800" alt="" decoding="async" loading="lazy">
-          <img src="/assets/games/orbitdash-shot-3.webp" width="360" height="800" alt="" decoding="async" loading="lazy">
-        </div>
-        <p class="od-cap" data-t="od.shots"></p>
+        <div class="od-rail" id="odPills" role="group" data-ta="aria-label:od.levelsAria"></div>
+        <p class="od-note" data-t="od.levels"></p>
       </div>
       <div class="chap-txt rv">
         <span class="badge" data-t="badge.live"></span>
@@ -705,6 +734,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
 </div>
 
 <script id="data" type="application/json">{{DATA}}</script>
+<script>{{odShowcase}}</script>
 <script>
 (() => {
 'use strict';
@@ -981,55 +1011,44 @@ const cubepix = (() => {
   return { start: () => show(0), rz: 0 };
 })();
 
-// ── Orbit Dash: two orbits, one tap. Until you tap, it plays itself ──
+// ── Orbit Dash: вітрина рівня, а не міні-гра ──────────────────────────────────
+// Сцена гри в рамці телефона танцює під біт рівня; стрілки й пігулки перемикають
+// рівень — уся сцена перефарбовується в його палітру (як картина в CubePix).
+// Малює OrbitShowcase — копія вітрини з репозиторію гри (src/orbit-showcase.js).
 const orbit = (() => {
-  const cv = $('#odCv'), x = cv.getContext('2d'), vis = seen(cv), hint = $('#odHint');
-  const C = { ring: '#2b3060', ringOn: '#3c4596', player: '#00E5FF', gem: '#FFD54A', spike: '#FF3D68' };
-  let S = 400, cx = 200, cy = 200, R = [160, 108], last = 0;
-  const st = { mode: 'demo', th: -Math.PI / 2, lane: 0, r: 0, objs: [], score: 0, best: +(store.get('lewydo:od-best') || 0), boom: 0, overAt: 0, trail: [] };
-  const norm = (a) => { a = (a + Math.PI) % 6.2832; if (a < 0) a += 6.2832; return a - Math.PI; };
-  function size() { const w = cv.getBoundingClientRect().width || 360; S = w; cv.width = Math.round(S * DPR); cv.height = Math.round(S * DPR); x.setTransform(DPR, 0, 0, DPR, 0, 0);
-    cx = cy = S / 2; R = [S * .41, S * .27]; st.r = R[st.lane]; st.trail = []; }
-  function say() { hint.innerHTML = RM ? '' : esc(T(st.mode === 'demo' ? 'od.demo' : st.mode === 'over' ? 'od.over' : 'od.play')) + (st.mode === 'demo' ? '<span class="od-keys">Space · Enter</span>' : ''); }
-  function reset(mode) { Object.assign(st, { mode, score: 0, objs: [], boom: 0 }); say(); }
-  function spawn() { const a = st.th + 1.1 + Math.random() * 2.6; if (st.objs.some((o) => Math.abs(norm(o.a - a)) < .44)) return false;
-    st.objs.push({ a, lane: Math.random() < .5 ? 0 : 1, gem: Math.random() < .6, hit: 0 }); return true; }
-  function tap() { if (RM) return; if (st.mode !== 'play') reset('play'); st.lane ^= 1; }
-  function crash(now) { st.boom = 1; st.mode = 'over'; st.overAt = now; if (st.score > st.best) { st.best = st.score; store.set('lewydo:od-best', String(st.best)); } say(); }
-  function step(dt, now) {
-    if (st.mode === 'over') { st.boom = Math.max(0, st.boom - dt * 1.4); if (now - st.overAt > 8000) reset('demo'); return; }
-    const w = Math.min(3.3, 1.9 + st.score * .045); st.th += w * dt; st.r += (R[st.lane] - st.r) * Math.min(1, dt * 18);
-    if (st.mode === 'demo') { const ahead = st.objs.filter((o) => !o.hit && norm(o.a - st.th) > 0 && norm(o.a - st.th) < .62).sort((a, b) => norm(a.a - st.th) - norm(b.a - st.th))[0];
-      if (ahead && ((!ahead.gem && ahead.lane === st.lane) || (ahead.gem && ahead.lane !== st.lane && norm(ahead.a - st.th) < .3))) st.lane ^= 1; }
-    for (const o of st.objs) { if (o.hit) { o.hit += dt * 3; continue; }
-      if (Math.abs(norm(o.a - st.th)) < .075 && Math.abs(st.r - R[o.lane]) < S * .05) { if (o.gem) { o.hit = .01; st.score++; } else if (st.mode === 'play') { o.hit = .01; crash(now); return; } } }
-    st.objs = st.objs.filter((o) => norm(o.a - st.th) > -1 && o.hit < 1);
-    for (let n = 0; n < 4 && st.objs.filter((o) => !o.hit).length < 6; n++) spawn();
-    st.trail.push([cx + Math.cos(st.th) * st.r, cy + Math.sin(st.th) * st.r]); if (st.trail.length > 16) st.trail.shift(); }
-  function draw() {
-    x.clearRect(0, 0, S, S);
-    const g = x.createRadialGradient(cx, cy, 0, cx, cy, S * .5); g.addColorStop(0, 'rgba(0,229,255,.12)'); g.addColorStop(.7, 'rgba(0,229,255,.03)'); g.addColorStop(1, 'rgba(0,229,255,0)');
-    x.fillStyle = g; x.fillRect(0, 0, S, S);
-    R.forEach((r, i) => { x.beginPath(); x.arc(cx, cy, r, 0, 6.2832); x.lineWidth = S * .017; x.strokeStyle = i === st.lane ? C.ringOn : C.ring; x.stroke(); });
-    for (const o of st.objs) { const r = R[o.lane], px = cx + Math.cos(o.a) * r, py = cy + Math.sin(o.a) * r, k = 1 + o.hit * 1.6;
-      x.save(); x.globalAlpha = Math.max(0, 1 - o.hit); x.translate(px, py); x.shadowBlur = 14;
-      if (o.gem) { x.rotate(o.a + Math.PI / 4); const s = S * .034 * k; x.shadowColor = C.gem; x.fillStyle = C.gem; x.fillRect(-s / 2, -s / 2, s, s); }
-      else { x.rotate(o.a + (o.lane ? Math.PI : 0)); const s = S * .04 * k; x.shadowColor = C.spike; x.fillStyle = C.spike; x.beginPath(); x.moveTo(s * .9, 0); x.lineTo(-s * .45, -s * .62); x.lineTo(-s * .45, s * .62); x.closePath(); x.fill(); }
-      x.restore(); }
-    st.trail.forEach(([tx, ty], i) => { const k = i / st.trail.length; x.globalAlpha = k * .35; x.fillStyle = C.player; x.beginPath(); x.arc(tx, ty, S * .02 * k, 0, 6.2832); x.fill(); });
-    x.globalAlpha = 1;
-    x.save(); x.shadowColor = C.player; x.shadowBlur = 24; x.fillStyle = C.player; x.beginPath(); x.arc(cx + Math.cos(st.th) * st.r, cy + Math.sin(st.th) * st.r, S * .032, 0, 6.2832); x.fill(); x.restore();
-    x.textAlign = 'center'; x.textBaseline = 'middle';
-    if (st.mode !== 'demo') { x.fillStyle = '#fff'; x.font = `900 ${Math.round(S * .13)}px Nunito, sans-serif`; x.fillText(String(st.score), cx, cy - S * .02);
-      x.fillStyle = 'rgba(191,246,255,.75)'; x.font = `800 ${Math.round(S * .036)}px Nunito, sans-serif`; x.fillText(`${T('od.best')} ${st.best}`, cx, cy + S * .075); }
-    else { const s = S * .05, p = .75 + .25 * Math.sin(performance.now() / 300); x.save(); x.translate(cx, cy); x.rotate(Math.PI / 4); x.globalAlpha = p; x.shadowColor = C.gem; x.shadowBlur = 20; x.fillStyle = C.gem; x.fillRect(-s / 2, -s / 2, s, s); x.restore(); }
-    if (st.boom) { x.fillStyle = `rgba(255,61,104,${st.boom * .3})`; x.beginPath(); x.arc(cx, cy, S * .5, 0, 6.2832); x.fill(); } }
-  const frame = (now) => { requestAnimationFrame(frame); if (!vis()) { last = 0; return; } const dt = last ? Math.min(.05, (now - last) / 1000) : 0; last = now; step(dt, now); draw(); };
-  cv.addEventListener('pointerdown', (e) => { e.preventDefault(); tap(); });
-  cv.addEventListener('keydown', (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); tap(); } });
-  new ResizeObserver(() => { size(); if (RM) draw(); }).observe(cv);
-  onLang.push(say);
-  return { start() { size(); say(); for (let n = 0; n < 6; n++) spawn(); if (RM) draw(); else requestAnimationFrame(frame); } };
+  const cv = $('#odCv'), pills = $('#odPills'), nameEl = $('#odName'), metaEl = $('#odMeta');
+  const L = (D.od || []);
+  let show = null, cur = 0;
+
+  const meta = (l) => [l.genre, l.bpm ? l.bpm + ' BPM' : null].filter(Boolean).join(' · ');
+  function label() {
+    const l = L[cur]; if (!l) return;
+    nameEl.textContent = l.name; metaEl.textContent = meta(l);
+    [...pills.children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === cur)));
+  }
+  function go(i) {
+    if (!L.length) return;
+    cur = (i + L.length) % L.length;
+    if (show) show.setLevel(cur);
+    label();
+  }
+
+  return { start() {
+    if (!cv || !L.length || !window.OrbitShowcase) return;
+    L.forEach((l, i) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'od-pill'; b.setAttribute('aria-pressed', 'false');
+      b.style.setProperty('--a', '#' + l.palette.player);
+      b.innerHTML = '<i></i><b></b>';
+      b.lastChild.textContent = l.name;
+      b.addEventListener('click', () => go(i));
+      pills.appendChild(b);
+    });
+    show = window.OrbitShowcase(cv, { levels: L, cy: 0.44 });
+    $('#odPrev').addEventListener('click', () => go(cur - 1));
+    $('#odNext').addEventListener('click', () => go(cur + 1));
+    label();
+  } };
 })();
 
 // ── code ↔ design ──
