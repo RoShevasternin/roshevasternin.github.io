@@ -82,7 +82,9 @@ test('both games can be played right on the page', async ({ page }) => {
   await expect(page.locator('#odHint')).toContainText('Tap to play');
   await page.locator('#odCv').click();
   await expect(page.locator('#odHint')).toHaveText(/Tap to switch orbits|Crash!/);
-  await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', /com\.lewydo\.orbitdash/);
+  await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', '/Game-Orbit-Dash/play/');   // the whole game in the browser comes first, as with CubePix
+  await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
+  await expect(page.locator('.od .od-shots img')).toHaveCount(3);                                   // real frames from the game
   expect(w.errs).toEqual([]);
 });
 

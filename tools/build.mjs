@@ -113,9 +113,9 @@ const fill = (html) => {
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo)
-    .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|od\.site|od\.play|od\.privacy|od\.icon)\}\}/g, (m, k) => ({
+    .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|od\.site|od\.web|od\.play|od\.privacy|od\.icon)\}\}/g, (m, k) => ({
       url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon,
-      'od.site': G.orbitdash.site, 'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon }[k]))
+      'od.site': G.orbitdash.site, 'od.web': G.orbitdash.demo, 'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon }[k]))
     .replace('{{hreflang}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}">`].join('\n'))
     .replace('{{ldjson}}', () => JSON.stringify(ld).replace(/</g, '\\u003c'))
     .replace('{{DATA}}', () => JSON.stringify(DATA).replace(/</g, '\\u003c'));

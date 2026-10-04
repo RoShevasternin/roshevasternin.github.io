@@ -132,7 +132,9 @@
   "music.label": "Vlad’s favourite song: sombr — 12 to 12",
   "music.close": "Turn the song off",
   "music.hint": "Play Vlad’s favourite song",
-  "music.thanks": "Thank you, sombr! The video on YouTube"
+  "music.thanks": "Thank you, sombr! The video on YouTube",
+  "od.browser": "Play in your browser",
+  "od.shots": "Straight from the game"
  },
  "id": {
   "meta.title": "Lewydo™ — Love What You Do · studio game indie dari Ukraina",
@@ -263,7 +265,9 @@
   "music.label": "Lagu favorit Vlad: sombr — 12 to 12",
   "music.close": "Matikan lagu",
   "music.hint": "Putar lagu favorit Vlad",
-  "music.thanks": "Terima kasih, sombr! Videonya di YouTube"
+  "music.thanks": "Terima kasih, sombr! Videonya di YouTube",
+  "od.browser": "Main di browser",
+  "od.shots": "Langsung dari game"
  },
  "de": {
   "meta.title": "Lewydo™ — Love What You Do · Indie-Spielestudio aus der Ukraine",
@@ -397,7 +401,9 @@
   "music.label": "Vlads Lieblingssong: sombr — 12 to 12",
   "music.close": "Song ausschalten",
   "music.hint": "Hör dir Vlads Lieblingssong an",
-  "music.thanks": "Danke, sombr! Das Video auf YouTube"
+  "music.thanks": "Danke, sombr! Das Video auf YouTube",
+  "od.browser": "Im Browser spielen",
+  "od.shots": "Direkt aus dem Spiel"
  },
  "es": {
   "meta.title": "Lewydo™ — Love What You Do · estudio indie de videojuegos de Ucrania",
@@ -534,7 +540,9 @@
   "music.label": "La canción favorita de Vlad: sombr — 12 to 12",
   "music.close": "Apagar la canción",
   "music.hint": "Escucha la canción favorita de Vlad",
-  "music.thanks": "¡Gracias, sombr! El videoclip en YouTube"
+  "music.thanks": "¡Gracias, sombr! El videoclip en YouTube",
+  "od.browser": "Jugar en el navegador",
+  "od.shots": "Directo del juego"
  },
  "fr": {
   "meta.title": "Lewydo™ — Love What You Do · studio de jeux indépendant ukrainien",
@@ -671,7 +679,9 @@
   "music.label": "La chanson préférée de Vlad: sombr — 12 to 12",
   "music.close": "Couper la chanson",
   "music.hint": "Écoute la chanson préférée de Vlad",
-  "music.thanks": "Merci, sombr ! Le clip sur YouTube"
+  "music.thanks": "Merci, sombr ! Le clip sur YouTube",
+  "od.browser": "Jouer dans le navigateur",
+  "od.shots": "Tout droit du jeu"
  },
  "it": {
   "meta.title": "Lewydo™ — Love What You Do · studio indie di videogiochi dall’Ucraina",
@@ -808,7 +818,9 @@
   "music.label": "La canzone preferita di Vlad: sombr — 12 to 12",
   "music.close": "Spegni la canzone",
   "music.hint": "Ascolta la canzone preferita di Vlad",
-  "music.thanks": "Grazie, sombr! Il video su YouTube"
+  "music.thanks": "Grazie, sombr! Il video su YouTube",
+  "od.browser": "Gioca nel browser",
+  "od.shots": "Direttamente dal gioco"
  },
  "nl": {
   "meta.title": "Lewydo™ — Love What You Do · indiegamestudio uit Oekraïne",
@@ -942,7 +954,9 @@
   "music.label": "Vlads lievelingsnummer: sombr — 12 to 12",
   "music.close": "Nummer uitzetten",
   "music.hint": "Luister naar Vlads lievelingsnummer",
-  "music.thanks": "Dank je, sombr! De clip op YouTube"
+  "music.thanks": "Dank je, sombr! De clip op YouTube",
+  "od.browser": "Speel in je browser",
+  "od.shots": "Rechtstreeks uit de game"
  },
  "pl": {
   "meta.title": "Lewydo™ — Love What You Do · niezależne studio gier z Ukrainy",
@@ -1082,7 +1096,9 @@
   "music.label": "Ulubiona piosenka Vlada: sombr — 12 to 12",
   "music.close": "Wyłącz piosenkę",
   "music.hint": "Posłuchaj ulubionej piosenki Vlada",
-  "music.thanks": "Dziękujemy, sombr! Teledysk na YouTube"
+  "music.thanks": "Dziękujemy, sombr! Teledysk na YouTube",
+  "od.browser": "Zagraj w przeglądarce",
+  "od.shots": "Prosto z gry"
  },
  "pt": {
   "meta.title": "Lewydo™ — Love What You Do · estúdio indie de jogos da Ucrânia",
@@ -1219,7 +1235,9 @@
   "music.label": "A música favorita do Vlad: sombr — 12 to 12",
   "music.close": "Desligar a música",
   "music.hint": "Ouça a música favorita do Vlad",
-  "music.thanks": "Obrigado, sombr! O clipe no YouTube"
+  "music.thanks": "Obrigado, sombr! O clipe no YouTube",
+  "od.browser": "Jogar no navegador",
+  "od.shots": "Diretamente do jogo"
  },
  "vi": {
   "meta.title": "Lewydo™ — Love What You Do · studio game indie đến từ Ukraina",
@@ -1350,7 +1368,9 @@
   "music.label": "Bài hát yêu thích của Vlad: sombr — 12 to 12",
   "music.close": "Tắt bài hát",
   "music.hint": "Nghe bài hát yêu thích của Vlad",
-  "music.thanks": "Cảm ơn sombr! Xem MV trên YouTube"
+  "music.thanks": "Cảm ơn sombr! Xem MV trên YouTube",
+  "od.browser": "Chơi trên trình duyệt",
+  "od.shots": "Lấy thẳng từ trò chơi"
  },
  "tr": {
   "meta.title": "Lewydo™ — Love What You Do · Ukraynalı bağımsız oyun stüdyosu",
@@ -1484,7 +1504,9 @@
   "music.label": "Vlad’ın en sevdiği şarkı: sombr — 12 to 12",
   "music.close": "Şarkıyı kapat",
   "music.hint": "Vlad’ın en sevdiği şarkıyı dinle",
-  "music.thanks": "Teşekkürler, sombr! Klip YouTube’da"
+  "music.thanks": "Teşekkürler, sombr! Klip YouTube’da",
+  "od.browser": "Tarayıcıda oyna",
+  "od.shots": "Doğrudan oyundan"
  },
  "uk": {
   "meta.title": "Lewydo™ — Love What You Do · ігрова інді-студія з України",
@@ -1624,7 +1646,9 @@
   "music.label": "Улюблена пісня Влада: sombr — 12 to 12",
   "music.close": "Вимкнути пісню",
   "music.hint": "Увімкни улюблену пісню Влада",
-  "music.thanks": "Дякуємо, sombr! Кліп на YouTube"
+  "music.thanks": "Дякуємо, sombr! Кліп на YouTube",
+  "od.browser": "Грати в браузері",
+  "od.shots": "Просто з гри"
  },
  "ko": {
   "meta.title": "Lewydo™ — Love What You Do · 우크라이나 인디 게임 스튜디오",
@@ -1755,7 +1779,9 @@
   "music.label": "Vlad가 가장 좋아하는 노래: sombr — 12 to 12",
   "music.close": "노래 끄기",
   "music.hint": "Vlad가 가장 좋아하는 노래 듣기",
-  "music.thanks": "고마워요, sombr! 뮤직비디오는 YouTube에서"
+  "music.thanks": "고마워요, sombr! 뮤직비디오는 YouTube에서",
+  "od.browser": "브라우저에서 플레이",
+  "od.shots": "게임에서 그대로"
  },
  "ja": {
   "meta.title": "Lewydo™ — Love What You Do · ウクライナのインディーゲームスタジオ",
@@ -1886,7 +1912,9 @@
   "music.label": "Vladのお気に入りの曲：sombr — 12 to 12",
   "music.close": "曲を止める",
   "music.hint": "Vladのお気に入りの曲を聴く",
-  "music.thanks": "ありがとう、sombr！ MVはYouTubeで"
+  "music.thanks": "ありがとう、sombr！ MVはYouTubeで",
+  "od.browser": "ブラウザで遊ぶ",
+  "od.shots": "ゲームそのままの画面"
  },
  "zh-TW": {
   "meta.title": "Lewydo™ — Love What You Do · 來自烏克蘭的獨立遊戲工作室",
@@ -2017,6 +2045,8 @@
   "music.label": "Vlad 最愛的歌：sombr — 12 to 12",
   "music.close": "關閉歌曲",
   "music.hint": "聽聽 Vlad 最愛的歌",
-  "music.thanks": "謝謝你，sombr！到 YouTube 看 MV"
+  "music.thanks": "謝謝你，sombr！到 YouTube 看 MV",
+  "od.browser": "在瀏覽器遊玩",
+  "od.shots": "直接取自遊戲"
  }
 }
