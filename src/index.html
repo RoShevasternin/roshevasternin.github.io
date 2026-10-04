@@ -253,10 +253,23 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 @media (hover:hover){.btn-cyan:hover{box-shadow:0 0 50px rgba(0,229,255,.68);transform:translateY(-2px);}}
 .od-line{background:rgba(0,229,255,.06);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.45);}
 .od-box{position:relative;width:min(100%,470px);margin:0 auto;}
-#odCv{width:100%;aspect-ratio:1;border-radius:50%;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;outline:none;}
-#odCv:focus-visible{box-shadow:0 0 0 3px rgba(0,229,255,.55);}
-.od-hint{margin-top:14px;text-align:center;font-weight:900;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#bff6ff;min-height:22px;}
-.od-keys{display:block;margin-top:2px;font-weight:700;letter-spacing:.04em;text-transform:none;color:var(--ink3);font-size:13px;}
+/* Міні-гра стоїть у «корпусі», а не голою канвою: рамка, внутрішнє сяйво й підказка
+   всередині — як вікно гри на її сайті. Так блок читається як гра, а не як декорація. */
+.od-screen{position:relative;border-radius:28px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(18,22,52,.92),rgba(8,10,26,.92));
+  box-shadow:inset 0 0 0 1px rgba(0,229,255,.22),0 0 60px rgba(0,229,255,.12),inset 0 0 80px rgba(0,229,255,.05);}
+#odCv{display:block;width:100%;aspect-ratio:1;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;outline:none;}
+.od-screen:focus-within{box-shadow:inset 0 0 0 2px rgba(0,229,255,.6),0 0 70px rgba(0,229,255,.2);}
+.od-hint{position:absolute;left:0;right:0;bottom:0;margin:0;padding:16px 14px 18px;text-align:center;
+  font-weight:900;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:#bff6ff;min-height:22px;
+  background:linear-gradient(180deg,transparent,rgba(6,8,22,.92));pointer-events:none;}
+.od-keys{display:block;margin-top:3px;font-weight:700;letter-spacing:.04em;text-transform:none;color:var(--ink3);font-size:12.5px;}
+/* Справжні кадри з гри — під корпусом, щоб було видно не лише міні-гру */
+.od-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;}
+.od-shots img{width:100%;height:auto;border-radius:14px;display:block;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);background:#0b0d1d;}
+.od-cap{margin-top:10px;text-align:center;font-weight:800;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink3);}
 
 /* more games: cards that lean towards the pointer */
 .shelf{display:grid;gap:22px;margin-top:44px;}
@@ -538,8 +551,16 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
   <section class="chap od" id="orbitdash" data-world="orbit" data-sec="games" aria-labelledby="odTitle">
     <div class="wrap chap-in">
       <div class="od-box rv">
-        <canvas id="odCv" width="1" height="1" tabindex="0" role="button" data-ta="aria-label:od.aria"></canvas>
-        <p class="od-hint" id="odHint" aria-live="polite"></p>
+        <div class="od-screen">
+          <canvas id="odCv" width="1" height="1" tabindex="0" role="button" data-ta="aria-label:od.aria"></canvas>
+          <p class="od-hint" id="odHint" aria-live="polite"></p>
+        </div>
+        <div class="od-shots">
+          <img src="/assets/games/orbitdash-shot-1.webp" width="360" height="800" alt="" decoding="async" loading="lazy">
+          <img src="/assets/games/orbitdash-shot-2.webp" width="360" height="800" alt="" decoding="async" loading="lazy">
+          <img src="/assets/games/orbitdash-shot-3.webp" width="360" height="800" alt="" decoding="async" loading="lazy">
+        </div>
+        <p class="od-cap" data-t="od.shots"></p>
       </div>
       <div class="chap-txt rv">
         <span class="badge" data-t="badge.live"></span>
@@ -548,7 +569,8 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="chap-lead" data-t="od.lead"></p>
         <ul class="od-chips"><li data-t="od.free"></li><li data-t="od.offline"></li><li data-t="od.ranks"></li></ul>
         <div class="ctas">
-          <a class="btn btn-cyan" href="{{od.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
+          <a class="btn btn-cyan" href="{{od.web}}" data-t="od.browser"></a>
+          <a class="btn od-line" href="{{od.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
           <a class="btn od-line" href="{{od.site}}" data-t="game.site"></a>
         </div>
       </div>
