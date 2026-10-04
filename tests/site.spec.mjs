@@ -10,8 +10,25 @@ const watch = (page) => { const errs = [], ext = new Set();
   page.on('request', (r) => { const u = new URL(r.url()); if (u.protocol.startsWith('http') && u.hostname !== 'localhost') ext.add(u.origin); });
   return { errs, ext }; };
 
+// Orbit Dash's block shows the game itself: its site's play/embed.html (the prototype + a director). npm test speaks to a stand-in
+// that answers the same messages; with OD_SITE=<a build of the Orbit Dash site> (tests/serve.mjs) the real game answers.
+const REAL_OD = !!process.env.OD_SITE;
+const OD_STUB = `<!doctype html><meta charset="utf-8"><body style="margin:0;background:#04050f"><script>
+var got = []; addEventListener('message', function (e) { var m = e.data; if (!m || !m.od) return; got.push(m);
+  if (m.od === 'level') parent.postMessage({ od: 'state', mode: 'watch', level: m.id || 'first-light', trailer: !m.id }, '*'); });
+parent.postMessage({ od: 'ready' }, '*');
+setTimeout(function () { parent.postMessage({ od: 'tick', t: 56, end: 72, bg: '#06071a', level: 'first-light' }, '*'); }, 60);
+</script>`;
+const PIXEL = Buffer.from('UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=', 'base64');
+// the game's own site isn't in this repo (on Pages it is the next door): every page gets the stand-in, unless OD_SITE gives the real one
+const odStub = async (ctx) => { if (REAL_OD) return;
+  await ctx.route('**/Game-Orbit-Dash/play/embed.html*', (r) => r.fulfill({ contentType: 'text/html', body: OD_STUB }));
+  await ctx.route('**/Game-Orbit-Dash/assets/media/poster.webp', (r) => r.fulfill({ contentType: 'image/webp', body: PIXEL })); };
+test.beforeEach(async ({ context }) => { await odStub(context); });
+
 test('speaks the visitor’s language, switches to any of 15, remembers it, and asks no third party for anything', async ({ browser }) => {
-  const ctx = await browser.newContext({ locale: 'pt-BR' }), page = await ctx.newPage(), w = watch(page);
+  const ctx = await browser.newContext({ locale: 'pt-BR' }); await odStub(ctx);
+  const page = await ctx.newPage(), w = watch(page);
   await page.goto('./');
   await expect(page.locator('html')).toHaveAttribute('lang', 'pt');                                   // the device's language
   await page.locator('#langBtn').click();
@@ -54,7 +71,7 @@ test('the pixels become the Lewydo heart; tap it and they fly again', async ({ p
   expect(w.errs).toEqual([]);
 });
 
-test('both games show themselves right on the page: CubePix plays, Orbit Dash walks its levels', async ({ page }) => {
+test('both games show themselves right on the page: CubePix plays, Orbit Dash is the game itself', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   const w = watch(page);
   await page.goto('./?lang=en');
@@ -78,16 +95,26 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash wa
   await expect(page.locator('#pzFact')).not.toBeEmpty();
   await page.locator('#cpBack').click();
   await expect(page.locator('#cpTry')).toBeVisible();
-  await page.locator('#orbitdash').scrollIntoViewIfNeeded();                                        // Orbit Dash: a showcase of its levels (src/orbitdash.json)
+  const L = JSON.parse(readFileSync(new URL('../src/orbitdash.json', import.meta.url), 'utf8')).levels;
+  await page.locator('#orbitdash').scrollIntoViewIfNeeded();                                        // the game loads when you get to it
   const pills = page.locator('.od-pill');
-  await expect(pills).toHaveCount(5);
-  await expect(page.locator('#odName')).toHaveText(await pills.nth(0).innerText());
-  await pills.nth(2).click();                                                                      // a pill repaints the scene into that level
-  await expect(pills.nth(2)).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('#odName')).toHaveText(await pills.nth(2).innerText());
-  await page.locator('#odNext').click();                                                           // the arrows walk through the levels too
+  await expect(pills).toHaveCount(L.length + 1);                                                   // «All levels» + every level
+  await expect(page.locator('#odScreen iframe')).toHaveAttribute('src', '/Game-Orbit-Dash/play/embed.html');
+  await expect(page.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });
+  const game = () => page.frame({ url: /embed\.html/ });
+  const level = () => REAL_OD ? game().evaluate(() => { const i = window.__orbitDev.current.beatInfo(); return i && i.id; })
+    : game().evaluate(() => { const l = got.filter((m) => m.od === 'level').pop(); return l ? l.id : undefined; });
+  const tap = () => game().evaluate((real) => real ? (document.querySelector('#odx .tap span') || {}).textContent
+    : (got.filter((m) => m.od === 'labels').pop() || {}).tap, REAL_OD).catch(() => null);
+  await expect.poll(tap, { timeout: 15_000 }).toBe('TAP TO PLAY');                                  // the words in the frame — the page's language
+  await pills.nth(3).click();                                                                      // a pill → that level in the game
   await expect(pills.nth(3)).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('#odMeta')).toContainText('BPM');
+  await expect.poll(level, { timeout: 15_000 }).toBe(L[2].id);
+  await page.locator('#odNext').click();                                                           // the arrows walk through the levels too
+  await expect(pills.nth(4)).toHaveAttribute('aria-pressed', 'true');
+  await expect.poll(level, { timeout: 15_000 }).toBe(L[3].id);
+  await pills.nth(0).click();                                                                      // «All levels» — the trailer again
+  await expect(pills.nth(0)).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', '/Game-Orbit-Dash/play/');   // the whole game in the browser comes first, as with CubePix
   await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
   expect(w.errs).toEqual([]);
@@ -215,6 +242,7 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
   await expect(page.locator('#muHint')).toBeHidden();
   await expect(fab).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('#muPlayer iframe')).toHaveAttribute('src', /^https:\/\/www\.youtube-nocookie\.com\/embed\/cZgUiR31m-Y\?autoplay=1/);
+  await card.evaluate((el) => Promise.all(el.getAnimations().map((a) => a.finished)));                // measured at rest: mid-entrance the transform gives 199.9999…
   const b = await page.locator('#muPlayer').boundingBox();
   expect(b.width).toBeGreaterThanOrEqual(200); expect(b.height).toBeGreaterThanOrEqual(200);          // YouTube's rule: the player in sight, at least 200 × 200
   await expect(card).toContainText('Улюблена пісня Влада');

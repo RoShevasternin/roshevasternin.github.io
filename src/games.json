@@ -12,6 +12,8 @@
  "orbitdash": {
   "site": "/Game-Orbit-Dash/",
   "demo": "/Game-Orbit-Dash/play/",
+  "embed": "/Game-Orbit-Dash/play/embed.html",
+  "poster": "/Game-Orbit-Dash/assets/media/poster.webp",
   "privacy": "/Game-Orbit-Dash/privacy.html",
   "released": true,
   "play": "https://play.google.com/store/apps/details?id=com.lewydo.orbitdash",
