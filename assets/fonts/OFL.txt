@@ -1,5 +1,6 @@
 Nunito — Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)
 Unbounded — Copyright 2022 The Unbounded Project Authors (https://github.com/googlefonts/unbounded)
+Inter — Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)
 
 These Font Software are licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at: https://openfontlicense.org

@@ -264,3 +264,23 @@ test('contacts: the work Telegram and Lewydo\'s own pages; the brand page and br
   expect(B.font.name).toMatch(/^Nunito Black 54 \/ 74/); expect(B.font.slogan).toMatch(/^Nunito 14 \/ 19/);   // round numbers
   expect(w.errs).toEqual([]);
 });
+
+test('the loader credits — the Lewydo standard: a fourth phone on the brand page, its numbers, brand.json and the text for Claude', async ({ page, request }) => {
+  const w = watch(page);
+  await page.goto('./brand/?lang=uk');
+  await expect(page.locator('.phones .ph')).toHaveCount(4);                                // splash, loader, About us, menu
+  const cr = page.locator('.scr-loader .ld-credits span');
+  await expect(cr).toHaveText(['Powered by LibGDX', 'Developed by Lewydo™', 'Version 1.0.0']);
+  const st = await page.locator('.scr-loader .ld-credits').evaluate((e) => { const c = getComputedStyle(e);
+    return [c.fontFamily.split(',')[0].replace(/"/g, ''), c.fontWeight, c.fontSize, c.lineHeight, c.color, e.offsetTop, e.offsetHeight, e.offsetWidth]; });
+  expect(st).toEqual(['Inter', '500', '10px', '12px', 'rgba(255, 255, 255, 0.25)', 736, 36, 360]);   // Figma: 360×36, 28 above the bottom of 800
+  expect(await page.evaluate(() => document.fonts.check('500 10px Inter'))).toBe(true);    // the page's own Inter, no third party
+  await expect(page.locator('.ph').nth(1).locator('h3 span')).toHaveText('Хто створив');
+  await expect(page.locator('[data-t="b.num.5"]')).toContainText('Powered by LibGDX');
+  await expect(page.locator('#promptText')).toContainText('Loader: on the screen right after the splash');
+  const B = await (await request.get('./brand/brand.json')).json();
+  expect(B.loader.credits.lines).toEqual(['Powered by LibGDX', 'Developed by Lewydo™', 'Version {versionName}']);
+  expect(B.loader.credits.box).toMatchObject({ width: 360, height: 36, bottom: 28 });
+  expect(B.loader.credits.opacity).toBe(0.25);
+  expect(w.errs).toEqual([]);
+});

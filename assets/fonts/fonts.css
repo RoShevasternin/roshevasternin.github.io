@@ -1,4 +1,4 @@
-/* Nunito (the Lewydo brand font) and the ORBIT DASH letters of Unbounded — SIL OFL 1.1 (OFL.txt); tools/fetch-fonts.py */
+/* Nunito (the Lewydo brand font), the ORBIT DASH letters of Unbounded and the loader credits' letters of Inter — SIL OFL 1.1 (OFL.txt); tools/fetch-fonts.py */
 /* cyrillic-ext */
 @font-face {
   font-family: 'Nunito';
@@ -51,4 +51,12 @@
   font-weight: 900;
   font-display: swap;
   src: url(unbounded-orbitdash.woff2) format('woff2');
+}
+/* Inter Medium, only the letters of the loader credits */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(inter-credits.woff2) format('woff2');
 }
