@@ -66,7 +66,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 | `src/strings.json` | усі тексти сайту 15 мовами (англійська — еталон) |
 | `src/games.json` | ігри: адреси, Google Play, кольори, іконки, `released` |
 | `src/cubepix.json` | CubePix: картини, назви, слова гри (зокрема текст «Про нас» — однаковий у всіх іграх), лого. **Генерує** `npm run cubepix` |
-| `src/orbitdash.json`, `src/orbit-showcase.js` | Orbit Dash: рівні (назва, жанр, BPM, палітра) — **генерує** `npm run orbitdash`; вітрина рівнів — копія з сайту гри |
+| `src/orbitdash.json` | Orbit Dash: рівні (назва, жанр, BPM, палітра) для пігулок під телефоном — **генерує** `npm run orbitdash` (знімок із сайту гри) |
 | `src/langs.json` | 15 мов; прапорці — векторні картинки `assets/flags/<мова>.svg` (flag-icons, MIT; `zh-TW` — нейтральна плитка «繁», як в іграх) |
 | `src/heart.kt` | код, з якого «складається» серце в картці «Він кодить. Вона малює» |
 | `src/music.html` | платівка й «Улюблена пісня Влада» (плеєр YouTube лише після тапу) — вставка `{{music}}` на обох сторінках; платівка `{{vinyl}}` — у `tools/build.mjs` |
@@ -94,13 +94,19 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
      Під кнопками — картка **«Знайомся: Pix»** (маскот — кубик на ім'я Pix, Cube + Pix = CubePix; власник 03.10.2026): Pix
      (`assets/games/cubepix-pix.webp` — намальований кодом гри, як на її сайті) вітається мовою відвідувача; заголовок, текст і привіт —
      слова сайту гри (`cp:pixTitle`, `cp:pixName`, `cp:pixHi` зі снапшота), посилання «Більше про Pix» → `/Game-CubePix/?lang=xx#pix`.
-   - **Orbit Dash** (уже в Google Play): **вітрина рівнів** у рамці телефона (власник 04.10.2026: міні-гра тут лагала й
-     виглядала негарно). Сцена гри танцює під біт рівня; стрілки й пігулки під телефоном перемикають рівень — усе
-     перефарбовується в його палітру, як картина в CubePix. Малює `src/orbit-showcase.js` — копія вітрини з сайту гри;
-     рівні (назва, жанр, BPM, палітра) — `src/orbitdash.json`, знімок із сайту гри
-     (`node tools/orbitdash-snapshot.mjs <клон Game-Orbit-Dash>/index.html`, потім `npm run build`).
+   - **Orbit Dash** (уже в Google Play): у рамці телефона — **сама гра**, не імітація (власник 04.10.2026: «та міні-гра не
+     така як у прототипі… мєрзка»): `/Game-Orbit-Dash/play/embed.html` — прототип гри з її сайту (збирається в
+     Game-Orbit-Dash-PRIVATE, `site/src/embed.js`). Сама грає найкращі шматки рівнів, тап — рівень твій, з музикою; поки гра
+     вантажиться — постер `/Game-Orbit-Dash/assets/media/poster.webp` (той самий кадр). Вантажиться, коли до блоку догорнули;
+     поза екраном стоїть. Пігулки «Усі рівні» + 5 рівнів і стрілки — повідомлення `level`; підписи в кадрі — мовою сторінки
+     (`labels`: `od.tap/sound/watch/loading`); сяйво — барва м'яча рівня на екрані. Оновився прототип → сайт гри перезібрався
+     (сам, після злиття в приватному репо) → і тут уже нова гра. Протокол — `site/README.md` приватного репо, «Жива гра».
+     Рівні для пігулок — `src/orbitdash.json` (`node tools/orbitdash-snapshot.mjs <клон Game-Orbit-Dash>/index.html`, потім `npm run build`).
      Кнопки: **«Грати в браузері»** → `/Game-Orbit-Dash/play/` (уся гра у вебі, з 04.10.2026),
      далі Google Play і сайт гри — тим самим порядком, що в CubePix.
+     **Тести:** гра — сусідній репозиторій, тож `npm test` говорить із заглушкою тим самим протоколом; щоб перевірити зі справжньою
+     грою — `OD_SITE=<Game-Orbit-Dash-PRIVATE/site/dist чи клон Game-Orbit-Dash> npm test` (`tests/serve.mjs` віддає її за `/Game-Orbit-Dash/`,
+     як Pages; так само `npm run look`).
 3. **Більше від Lewydo:** картки інших ігор, що нахиляються за курсором.
 4. **Студія:** текст «Про нас» (як у іграх) і окремим рядком «Дякуємо, що граєте!» (`cp:thanks`), цифри, картка «код ↔ дизайн» з повзунком і картки Влада та Лілі.
 5. **Історія:** 2017 Java → 2021 геймдев → 14.10.2022 Влад ❤ Ліля → 2025 народження Lewydo (підпис статей Влада на Medium: «Love what you do» + 💚)
