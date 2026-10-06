@@ -86,3 +86,13 @@ of the song is used — no sample, riff or melody; every note is synthesised, so
 - `preview7.py <folder> <out.html>` fills `preview7.template.html` (from round 6's page): the five sounds, the splash «як зараз»
   and an idea, «+ струна»: the line under the slogan rings like a guitar string — a lens of light, a short muted twitch on the
   lub (2.12 s), a ringing pluck on the dub (2.40 s). Shown: https://claude.ai/artifact/CoFJYBUeWBF9SzUZFWkW8q
+
+### Round 7b (06.10.2026) — «зроби наш звук максимально схожим»
+The owner asked to use the cut itself — no (the artist's recording); he chose «максимально схожим». `make_sound7b.py <kit D4 .wav>
+<game D4 .wav>` (run with `PYTHONPATH=tools/sonic`, after make_sound7.py in the same folder) takes round 7's guitars and brings
+them to the song's SOUND, kept here only as numbers: its third-octave tone curve (`TARGET`) by a matching EQ, its width
+(almost mono, side/mid 0.10 — the guitars in the middle), its density (a compressor after the EQ and a soft tanh limiter) and
+its bass (a finger-plucked bass guitar under the hits). Round 7 was 11 dB (rms over the bands) off the cut's tone, 8–30 dB
+darker above 1 kHz; X/Y/Z are 2–3 dB off. → X «Як у пісні · ближче» (U + bass; lub 0.15 s in, start at 1.97 s), Y «Гітарне
+серце · ближче» (T), Z «Додому · ближче» (W + a bass going up E1 → A1) + timing7b.json. The page (same address) now shows
+X, Y, Z, T, U and D4; V and W are in round 7's files.
