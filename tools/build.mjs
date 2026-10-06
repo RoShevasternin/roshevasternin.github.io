@@ -97,7 +97,7 @@ const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: C
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
 const DATA = { langs: LANGS, S: SMAIN, counts, cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: CP.pics }, od: OD.levels };
 const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Lewydo', slogan: 'Love What You Do', url: SITE, logo: SITE + 'assets/icon-512.png',
-  founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia Overchenko' }], foundingLocation: 'Poltava region, Ukraine',
+  founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia' }], foundingLocation: 'Poltava region, Ukraine',
   sameAs: [G.devPage, ...SOCIAL.map(([, , u]) => u)] };
 
 // the record from our games (CubePix's pixel vinyl, with the Lewydo green on its label) — the site's music button (src/music.html)
