@@ -269,7 +269,7 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
 });
 
 // the contacts (owner 03.10.2026): the work Telegram, Lewydo's own pages; and the brand page says how every Lewydo game is made
-test('contacts: the work Telegram and Lewydo\'s own pages; the brand page and brand.json say «prototype first»', async ({ page, request }) => {
+test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the brand page and brand.json say «prototype first»', async ({ page, request }) => {
   const w = watch(page);
   await page.goto('./?lang=uk');
   const hrefs = await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')));
@@ -282,6 +282,9 @@ test('contacts: the work Telegram and Lewydo\'s own pages; the brand page and br
   await expect(page.locator('.social-h')).toHaveText('Lewydo в соцмережах');
   const ld = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
   expect(ld.sameAs).toContain('https://www.tiktok.com/@lewydo_game');
+  // first names only, no surnames (owner 06.10.2026)
+  await expect(page.locator('[data-t="p.lilya.who"]')).toHaveText('Лілія, веб- і UX/UI-дизайнерка');
+  expect(ld.founder.map((f) => f.name)).toEqual(['Vlad', 'Liliia']);
   await page.goto('./brand/?lang=uk');
   await expect(page.locator('#work h2')).toHaveText('Спершу прототип, потім гра');
   await expect(page.locator('#work .flow li')).toHaveCount(3);
