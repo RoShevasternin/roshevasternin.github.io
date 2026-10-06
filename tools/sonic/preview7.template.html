@@ -1,0 +1,285 @@
+<title>Lewydo Heartbeat 7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap">
+<style>
+/* Layout: one stage (the phone with the splash) and its controls side by side; the sounds and the timeline under it. A single, deliberate brand-night look. */
+:root{
+  --night:#0E1024; --panel:#151935; --panel2:#1b2044; --ink:#ffffff; --ink2:rgba(236,255,244,.82); --ink3:rgba(236,255,244,.58);
+  --glow:#6DF593; --green:#3DDC84; --mint:#9DF5C2; --dark:#04120A; --line:rgba(157,245,194,.16); --pink:#ff8fb8;
+  --f:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:var(--night);}
+body{color:var(--ink);font:500 16px/1.55 var(--f);padding-inline:16px;padding-block:28px 56px;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(70% 45% at 30% 0%,rgba(61,220,132,.14),transparent 70%),var(--night);}
+.wrap{max-width:1120px;margin:0 auto;}
+.eyebrow{font-weight:900;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mint);}
+h1{font-weight:900;font-size:clamp(30px,5vw,46px);line-height:1.05;margin-top:8px;text-wrap:balance;}
+.lede{color:var(--ink2);max-width:640px;margin-top:12px;font-size:17px;}
+.top{display:grid;gap:28px;margin-top:28px;align-items:start;}
+@media (min-width:900px){.top{grid-template-columns:auto minmax(0,1fr);gap:44px;}}
+/* the phone */
+.device{--z:.66;justify-self:center;width:calc(360px * var(--z) + 18px);height:calc(800px * var(--z) + 18px);padding:9px;border-radius:38px;background:#06071a;
+  box-shadow:0 0 0 2px #2a2f5c,0 30px 70px rgba(0,0,0,.6);position:relative;}
+@media (max-width:420px){.device{--z:.58;}}
+.screen{position:relative;width:360px;height:800px;transform:scale(var(--z));transform-origin:0 0;border-radius:30px;overflow:hidden;background:var(--night);}
+.screen .lw-lockup{position:absolute;left:76px;top:239px;}
+.tap{position:absolute;left:0;right:0;bottom:7%;display:flex;justify-content:center;border:0;background:none;color:#fff;cursor:pointer;font:900 22px var(--f);}
+.tap span{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--green);color:var(--dark);font-size:24px;box-shadow:0 0 34px rgba(61,220,132,.5);}
+.tap[hidden]{display:none;}
+/* controls */
+.ctl{display:flex;flex-direction:column;gap:20px;min-width:0;}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 22px;border-radius:15px;border:0;cursor:pointer;font:900 16px var(--f);
+  background:var(--green);color:var(--dark);box-shadow:0 0 28px rgba(61,220,132,.35);transition:transform .12s;}
+.btn:active{transform:scale(.97);}
+.btn.ghost{background:rgba(61,220,132,.07);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(157,245,194,.4);}
+.btn:focus-visible,.seg button:focus-visible,.snd:focus-visible{outline:2px solid var(--mint);outline-offset:3px;}
+.label{font-weight:900;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);}
+.seg{display:inline-flex;padding:4px;border-radius:14px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);flex-wrap:wrap;}
+.seg button{border:0;background:none;color:var(--ink2);font:800 15px var(--f);padding:9px 14px;border-radius:10px;cursor:pointer;}
+.seg button[aria-pressed="true"]{background:var(--green);color:var(--dark);}
+.sounds{display:grid;gap:12px;}
+@media (min-width:640px){.sounds{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (min-width:1180px){.sounds{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media (min-width:640px){.snd.ref{grid-column:span 2;}}          /* five cards: the comparison spans two, so every row is full */
+.snd{position:relative;text-align:left;display:flex;flex-direction:column;gap:6px;padding:16px 16px 14px;border-radius:18px;border:0;cursor:pointer;color:inherit;font:inherit;
+  background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .15s,background .15s;}
+.snd[aria-pressed="true"]{background:var(--panel2);box-shadow:inset 0 0 0 2px var(--green),0 0 30px rgba(61,220,132,.18);}
+.snd b{font-weight:900;font-size:17px;} .snd small{color:var(--ink3);font-size:14px;line-height:1.45;}
+.snd .tag{align-self:flex-start;font:900 11px var(--f);letter-spacing:.14em;color:var(--dark);background:var(--mint);padding:3px 8px;border-radius:999px;}
+.snd canvas{width:100%;height:44px;margin-top:4px;}
+.snd .play{align-self:flex-start;margin-top:2px;font:800 14px var(--f);color:var(--mint);}
+.note{color:var(--ink3);font-size:14.5px;}
+/* timeline */
+.tl{margin-top:34px;padding:20px;border-radius:22px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);}
+.tl-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;}
+.tl-h h2{font-weight:900;font-size:21px;}
+.track{position:relative;margin-top:16px;}
+.tr{display:grid;grid-template-columns:118px minmax(0,1fr);gap:10px;align-items:center;margin:7px 0;font-size:14px;color:var(--ink2);}
+.bar{position:relative;height:14px;border-radius:7px;background:rgba(255,255,255,.05);}
+.bar i{position:absolute;top:0;bottom:0;border-radius:7px;background:linear-gradient(90deg,var(--green),var(--mint));}
+.bar i.beat{background:var(--pink);} .bar i.hold{background:rgba(255,255,255,.16);}
+.bar i.snd-m{width:3px;border-radius:2px;background:#fff;box-shadow:0 0 10px #fff;}
+.axis{display:grid;grid-template-columns:118px minmax(0,1fr);gap:10px;font:700 12px var(--mono);color:var(--ink3);}
+.axis div{display:flex;justify-content:space-between;}
+.ph{position:absolute;top:0;bottom:22px;width:2px;background:#fff;box-shadow:0 0 12px #fff;opacity:0;pointer-events:none;}
+.cols{display:grid;gap:18px;margin-top:22px;}
+@media (min-width:820px){.cols{grid-template-columns:1fr 1fr;}}
+.card{padding:20px;border-radius:20px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);}
+.card h3{font-weight:900;font-size:18px;margin-bottom:8px;}
+.psy{margin-top:22px;} .tricks{display:grid;gap:10px;padding-left:22px;color:var(--ink2);font-size:15px;}
+@media (min-width:820px){.tricks{grid-template-columns:1fr 1fr;column-gap:34px;}}
+.tricks li::marker{color:var(--mint);font-weight:900;}
+.card .tricks li{padding-left:4px;} .card .tricks li::before{display:none;}
+.card ul{list-style:none;display:grid;gap:7px;color:var(--ink2);font-size:15px;}
+.card li{padding-left:16px;position:relative;} .card li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--green);}
+.card b{color:#fff;}
+code{font-family:var(--mono);font-size:.9em;color:var(--mint);}
+
+/* ── the Lewydo mark (the kit's composition) ── */
+.lw-lockup{display:flex;flex-direction:column;align-items:center;width:208px;height:322px;}
+.lw-logo{position:relative;display:block;flex:none;width:208px;height:208px;}
+.lw-back,.lw-front,.lw-aura{position:absolute;display:block;transform-origin:50% 50%;}
+.lw-back,.lw-aura{left:0;top:0;width:100%;height:100%;}
+.lw-aura{opacity:0;pointer-events:none;}
+.lw-front{left:16.346%;top:16.346%;width:67.308%;height:67.308%;}
+.lw-name{display:block;flex:none;width:208px;height:74px;}
+.lw-slogan{display:block;flex:none;width:208px;height:19px;}
+.lw-line{display:block;flex:none;width:146px;height:1px;min-height:1px;margin-top:20px;}
+img{max-width:none;}
+
+@keyframes lwFadeIn{to{opacity:1}}
+@keyframes lwFocus{to{opacity:1;transform:scale(1)}}
+@keyframes lwOpen{to{transform:scaleX(1)}}
+/* v3 — the splash as it is now (kit, D4): everything arrives, then the heart beats twice with two waves of light; the words stay still.
+   v7 — the same, and the line under the slogan rings like a guitar string: a short muted twitch on the lub, a ringing pluck on the dub. */
+.v3 .lw-logo,.v7 .lw-logo{opacity:0;transform:scale(.94);animation:lwArrive .7s cubic-bezier(.22,1,.36,1) .15s forwards;}
+.v3 .lw-name,.v7 .lw-name{opacity:0;transform:scale(1.06);animation:lwFocus .55s cubic-bezier(.5,0,.5,1) .55s forwards;}
+.v3 .lw-slogan,.v7 .lw-slogan{opacity:0;transform:scale(1.06);animation:lwFocus .55s cubic-bezier(.5,0,.5,1) .85s forwards;}
+.v3 .lw-line,.v7 .lw-line{opacity:0;transform:scaleX(0);animation:lwFadeIn .3s linear 1.15s forwards,lwOpen .7s cubic-bezier(.16,1,.3,1) 1.15s forwards;}
+.v3 .lw-front,.v7 .lw-front{animation:lwBeat 900ms linear 2s 1;}
+.v3 .lw-back,.v7 .lw-back{animation:lwBloom 1000ms linear 2s 1 forwards;}
+.v3 .lw-aura.a1,.v7 .lw-aura.a1{animation:lwWave 1s cubic-bezier(.2,.7,.3,1) 2.12s 1;}
+.v3 .lw-aura.a2,.v7 .lw-aura.a2{animation:lwWave2 .9s cubic-bezier(.2,.7,.3,1) 2.40s 1;}
+@keyframes lwArrive{to{opacity:1;transform:scale(1)}}
+@keyframes lwBeat{
+  0%{transform:scale(1);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  11%{transform:scale(.95);animation-timing-function:cubic-bezier(.2,.9,.3,1)}          /* 2.10 s — a breath in */
+  19%{transform:scale(1.2);animation-timing-function:cubic-bezier(.45,0,.55,1)}         /* 2.17 s — LUB */
+  31%{transform:scale(.97);animation-timing-function:cubic-bezier(.2,.9,.3,1)}
+  50%{transform:scale(1.12);animation-timing-function:cubic-bezier(.45,0,.55,1)}        /* 2.45 s — DUB */
+  63%{transform:scale(.985);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  80%{transform:scale(1.012)}
+  100%{transform:scale(1)}}
+@keyframes lwBloom{
+  0%{transform:scale(1);filter:brightness(1)}
+  12%{transform:scale(.98);filter:brightness(1);animation-timing-function:cubic-bezier(.2,.9,.3,1)}
+  22%{transform:scale(1.3);filter:brightness(1.4);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  40%{transform:scale(1.1);filter:brightness(1.1);animation-timing-function:cubic-bezier(.2,.9,.3,1)}
+  52%{transform:scale(1.2);filter:brightness(1.25);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  100%{transform:scale(1.05);filter:brightness(1)}}
+@keyframes lwWave{0%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
+@keyframes lwWave2{0%{opacity:.32;transform:scale(1)}100%{opacity:0;transform:scale(1.55)}}
+.screen.out .lw-lockup{opacity:0;transition:opacity .4s ease;}
+/* the string: a lens of light over the line (146 × 1 at y 321 of the lockup) — how a plucked string looks, thickest in the middle */
+.lw-string{position:absolute;left:31px;top:315px;width:146px;height:13px;opacity:0;pointer-events:none;transform-origin:50% 50%;
+  background:radial-gradient(closest-side,rgba(157,245,194,.95),rgba(109,245,147,.4) 55%,rgba(109,245,147,0));clip-path:ellipse(50% 50% at 50% 50%);}
+.v7 .lw-string{animation:lwMuted .26s ease-out 2.12s 1,lwPluck 1.5s linear 2.40s 1;}
+@keyframes lwMuted{0%{opacity:0;transform:scaleY(.15)}20%{opacity:.55;transform:scaleY(.45)}55%{opacity:.2;transform:scaleY(.2)}100%{opacity:0;transform:scaleY(.1)}}
+@keyframes lwPluck{0%{opacity:0;transform:scaleY(.2)}3%{opacity:1;transform:scaleY(1)}7%{transform:scaleY(.62)}11%{transform:scaleY(.95)}16%{transform:scaleY(.55)}
+  22%{transform:scaleY(.82)}30%{opacity:.75;transform:scaleY(.48)}40%{transform:scaleY(.66)}52%{opacity:.5;transform:scaleY(.38)}66%{opacity:.32;transform:scaleY(.46)}
+  82%{opacity:.15;transform:scaleY(.24)}100%{opacity:0;transform:scaleY(.1)}}
+@media (prefers-reduced-motion:reduce){.v3 .lw-aura,.v7 .lw-aura,.v7 .lw-string{display:none;}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Lewydo · бренд · прев'ю · раунд 7</p>
+  <h1>Гітарне серцебиття</h1>
+  <p class="lede">Звук серця на заставці в дусі вступу sombr — «12 to 12»: гітара б'ється разом із серцем. Темп, ля мажор і подвійний удар — як у пісні. А кожна нота й сам звук — наші, зіграні з нуля, тож їх можна ставити в усі ігри.</p>
+
+  <div class="top">
+    <div class="device" aria-label="Заставка гри, 360×800">
+      <div class="screen" id="screen">
+        <span class="lw-lockup" id="lock" role="img" aria-label="Lewydo — Love What You Do">
+          <span class="lw-logo"><img class="lw-aura a1" src="%BACK%" alt=""><img class="lw-aura a2" src="%BACK%" alt=""><img class="lw-back" src="%BACK%" alt=""><img class="lw-front" src="%FRONT%" alt=""></span>
+          <img class="lw-name" src="%NAME%" alt=""><img class="lw-slogan" src="%SLOGAN%" alt=""><img class="lw-line" src="%LINE%" alt="">
+          <span class="lw-string" aria-hidden="true"></span>
+        </span>
+      </div>
+      <button class="tap" id="tap" type="button" aria-label="Програти заставку зі звуком"><span>▶</span></button>
+    </div>
+
+    <div class="ctl">
+      <div class="row"><button class="btn" id="play" type="button">▶ Програти заставку</button><button class="btn ghost" id="beatOnly" type="button">♥ Лише удар</button></div>
+      <div>
+        <p class="label">Анімація</p>
+        <div class="seg" role="group" aria-label="Анімація" style="margin-top:8px">
+          <button type="button" data-ver="v3" aria-pressed="true">Як зараз</button><button type="button" data-ver="v7" aria-pressed="false">+ струна (ідея)</button>
+        </div>
+      </div>
+      <div>
+        <p class="label">Звук серця</p>
+        <div class="sounds" style="margin-top:8px">
+          <button class="snd" type="button" data-snd="T" aria-pressed="true"><span class="tag">РАДЖУ</span><b>T · «Гітарне серце»</b><small>Наш «бум-бум» з кіта, а на ньому гітара: на першому ударі приглушене «дум», на другому відкривається акорд і дзвенить. Серце те саме, гітара додає мелодію, і її добре чути в динаміку телефона.</small><canvas width="300" height="44" aria-hidden="true"></canvas><span class="play">▶ Слухати</span></button>
+          <button class="snd" type="button" data-snd="U" aria-pressed="false"><span class="tag">ЯК У ПІСНІ</span><b>U · «Як у пісні»</b><small>Найближче до вступу. Перед першим ударом коротке «та», як подвійні удари в пісні: «та-ДУМ… ДУМ». Обидва удари — приглушена гітара з м'якою бочкою, і з другого розкривається акорд. Найбільше енергії.</small><canvas width="300" height="44" aria-hidden="true"></canvas><span class="play">▶ Слухати</span></button>
+          <button class="snd" type="button" data-snd="V" aria-pressed="false"><b>V · «Акустика»</b><small>Тепла акустична гітара пальцями: великий палець на приглушеній низькій ля, потім м'який перебір ля мажору. Дерево й маленька кімната. Найзатишніший.</small><canvas width="300" height="44" aria-hidden="true"></canvas><span class="play">▶ Слухати</span></button>
+          <button class="snd" type="button" data-snd="W" aria-pressed="false"><b>W · «Додому»</b><small>Бас іде вгору: приглушене мі, потім відкрите ля. Це найстаріше «додому» в музиці. Під ударами м'який теплий пульс. Найспокійніший.</small><canvas width="300" height="44" aria-hidden="true"></canvas><span class="play">▶ Слухати</span></button>
+          <button class="snd ref" type="button" data-snd="D4" aria-pressed="false"><span class="tag">ЯК ЗАРАЗ</span><b>D4 · «Бум-бум»</b><small>Теперішній звук серця так, як він звучить у грі на телефоні. Для порівняння.</small><canvas width="300" height="44" aria-hidden="true"></canvas><span class="play">▶ Слухати</span></button>
+        </div>
+        <div class="row" style="margin-top:10px"><div class="seg" role="group" aria-label="Звук у заставці"><button type="button" data-mute="0" aria-pressed="true">Зі звуком</button><button type="button" data-mute="1" aria-pressed="false">Без звуку</button></div></div>
+      </div>
+      <p class="note">Усі звуки однаково гучні в динаміку телефона, так само як теперішній у грі. Тож порівнюєш звук, а не гучність. Послухай і з динаміка, і в навушниках.</p>
+    </div>
+  </div>
+
+  <section class="tl" aria-label="Таймлайн заставки">
+    <div class="tl-h"><h2>Заставка, секунда за секундою</h2><span class="note">≈3,5 с · тап пропускає</span></div>
+    <div class="track" id="track">
+      <div class="tr"><span>Серце й сяйво</span><div class="bar"><i style="left:4.3%;width:20%"></i></div></div>
+      <div class="tr"><span>«Lewydo»</span><div class="bar"><i style="left:15.7%;width:15.7%"></i></div></div>
+      <div class="tr"><span>Слоган</span><div class="bar"><i style="left:24.3%;width:15.7%"></i></div></div>
+      <div class="tr"><span>Лінія з центру</span><div class="bar"><i style="left:32.9%;width:20%"></i></div></div>
+      <div class="tr"><span>Серцебиття</span><div class="bar"><i class="beat" style="left:57.1%;width:25.7%"></i></div></div>
+      <div class="tr"><span>Гітара: удари</span><div class="bar"><i class="snd-m" style="left:57.1%;opacity:.45" title="U: «та» на 2,00 с"></i><i class="snd-m" style="left:60.6%"></i><i class="snd-m" style="left:68.6%"></i><i class="hold" style="left:68.6%;width:31.4%;opacity:.55" title="акорд дзвенить і згасає"></i></div></div>
+      <div class="tr"><span>Пауза → гра</span><div class="bar"><i class="hold" style="left:82.9%;width:17.1%"></i></div></div>
+      <div class="axis"><span></span><div><span>0</span><span>0,5</span><span>1</span><span>1,5</span><span>2</span><span>2,5</span><span>3</span><span>3,5 с</span></div></div>
+      <i class="ph" id="ph"></i>
+    </div>
+  </section>
+
+  <section class="card psy" aria-label="Що взяв із пісні й чому так">
+    <h3>Що взяв із пісні й чому так</h3>
+    <ol class="tricks">
+      <li><b>Темп і подвійний удар.</b> У вступі ≈125 ударів на хвилину, і удари йдуть парами з паузою ≈0,11 с: «та-ДУМ». Серце на заставці — теж пара ударів (між ними 0,28 с, як у справжнього серця). U ще й додає «та» перед першим ударом.</li>
+      <li><b>Ля мажор.</b> Пісня в ля мажорі. Наш «бум-бум» теж у ля (ля → мі), тож гітара лягає на серце без жодної фальші.</li>
+      <li><b>Гітара — наша.</b> Жодного шматка пісні, рифу чи мелодії. Кожна струна зіграна з нуля: модель струни, палець, долоня, що глушить, корпус, підсилювач, хорус і зал. Звук належить Lewydo, тож скарг від правовласників не буде.</li>
+      <li><b>Чути на телефоні.</b> Гітара звучить там, де грає динамік телефона (100 Гц – 3 кГц). Тому її добре чути навіть без навушників, на відміну від чистого «бум-бум».</li>
+      <li><b>Як справжнє серце.</b> Перший удар сильніший і короткий (приглушена струна), мить тиші, другий м'якший, і він дзвенить. Пальцями, без медіатора: м'який початок і жодного металевого дзвону.</li>
+      <li><b>Довжина.</b> Акорд дзвенить ≈1,5 с і тихо згасає, коли заставка вже переходить у гру.</li>
+      <li><b>Струна — лише ідея.</b> Лінія під слоганом може дзенькнути, як струна, разом із гітарою. Не треба — заставка лишається як зараз.</li>
+      <li><b>Майже нічого не переробляти.</b> T, V і W б'ють на тих самих ударах, що й зараз (звук з 2,09 с), тож міняється лише файл. У U «та» раніше, і звук стартує з 1,97 с.</li>
+    </ol>
+  </section>
+
+  <div class="cols">
+    <div class="card"><h3>Що змінюється</h3><ul>
+      <li><b>Звук</b> — гітара на нашому серці (T) або сама гітара (U, V, W).</li>
+      <li><b>Картинка</b> — та сама. Струна на лінії — лише якщо сподобається.</li>
+      <li>Вступ пісні можна ввімкнути в себе й порівняти: темп і ля мажор ті самі.</li>
+    </ul></div>
+    <div class="card"><h3>Коли скажеш «так»</h3><ul>
+      <li>Звук ляже в бренд-кіт (<code>brand/kit/sound/</code>, веб і LibGDX) і в <code>brand.json</code>.</li>
+      <li>Оновлю сторінку бренду, сайт Lewydo, сайти ігор, а в CubePix і Orbit Dash — патчем (файл звуку; для U ще момент старту).</li>
+      <li>Обереш струну — вона піде в CSS кіта й у Kotlin.</li>
+    </ul></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const SND = { T: '%ST%', U: '%SU%', V: '%SV%', W: '%SW%', D4: '%SD4%' };
+  const PRE = %PRE%, LUB = 2.12;          // per sound: where its first heartbeat («lub») sits in the file; the picture's lub is 2.12 s
+  const total = () => 3.5;
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  let ver = 'v3', snd = 'T', mute = false, ctx = null, bufs = {}, timers = [], src = null;
+  const screen = $('#screen'), lock = $('#lock'), ph = $('#ph');
+
+  const bytes = (uri) => { const s = atob(uri.slice(uri.indexOf(',') + 1)), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return u.buffer; };
+  const audio = async () => {
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if (ctx.state === 'suspended') await ctx.resume();
+    await Promise.all(Object.keys(SND).map(async (k) => { if (!bufs[k]) bufs[k] = await ctx.decodeAudioData(bytes(SND[k])); }));
+    return ctx;
+  };
+  const playBuf = (k, at) => { if (src) try { src.stop(); } catch (e) {} src = ctx.createBufferSource(); src.buffer = bufs[k]; src.connect(ctx.destination);
+    const now = ctx.currentTime; if (at < now) src.start(now, now - at); else src.start(at); };   // U starts before the picture's lub
+  const clear = () => { timers.forEach(clearTimeout); timers = []; screen.classList.remove('out', 'v3', 'v7'); void screen.offsetWidth; };
+  const latency = () => (ctx ? (ctx.outputLatency || 0) + (ctx.baseLatency || 0) : 0);
+  let raf = 0;
+  const playhead = (t0) => { cancelAnimationFrame(raf); const run = () => { const t = (performance.now() - t0) / 1000;
+    if (t > total() + .1) { ph.style.opacity = 0; return; } ph.style.opacity = 1; ph.style.left = `calc(118px + 10px + (100% - 128px) * ${Math.min(t, total()) / total()})`; raf = requestAnimationFrame(run); }; run(); };
+
+  async function play() {
+    $('#tap').hidden = true;
+    clear();
+    if (!mute) await audio();
+    const lead = 0.12, lat = latency();
+    const startMs = (lead + lat) * 1000;                          // start the picture when the sound would be heard
+    if (!mute) playBuf(snd, ctx.currentTime + lead + LUB - PRE[snd]);
+    timers.push(setTimeout(() => { screen.classList.add(ver); playhead(performance.now()); }, startMs));
+    timers.push(setTimeout(() => screen.classList.add('out'), startMs + total() * 1000));
+  }
+  async function beatOnly() {          // just the finale: the mark already in place, the timeline jumps to 1.9 s (U's «та» is at 2.00)
+    $('#tap').hidden = true; clear(); if (!mute) await audio();
+    const from = 1.9, lead = 0.12, lat = latency();
+    if (!mute) playBuf(snd, ctx.currentTime + lead + (LUB - from) - PRE[snd]);
+    timers.push(setTimeout(() => { screen.classList.add(ver); lock.getAnimations({ subtree: true }).forEach((a) => { a.currentTime = from * 1000; });
+      playhead(performance.now() - from * 1000); }, (lead + lat) * 1000));
+    timers.push(setTimeout(() => screen.classList.add('out'), (lead + lat + total() - from) * 1000));
+  }
+  $('#play').addEventListener('click', play); $('#tap').addEventListener('click', play); $('#beatOnly').addEventListener('click', beatOnly);
+  $$('[data-ver]').forEach((b) => b.addEventListener('click', () => { ver = b.dataset.ver; $$('[data-ver]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); beatOnly(); }));
+  $$('[data-mute]').forEach((b) => b.addEventListener('click', () => { mute = b.dataset.mute === '1'; $$('[data-mute]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); }));
+  $$('.snd').forEach((b) => b.addEventListener('click', async () => { snd = b.dataset.snd; $$('.snd').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    await audio(); playBuf(snd, ctx.currentTime + 0.03); }));
+
+  // the waveform of each sound (decoded without playing: an OfflineAudioContext needs no tap)
+  (async () => {
+    try {
+      const off = new OfflineAudioContext(1, 48000, 48000);
+      for (const b of $$('.snd')) {
+        const buf = await off.decodeAudioData(bytes(SND[b.dataset.snd]));
+        const d = buf.getChannelData(0), cv = $('canvas', b), g = cv.getContext('2d'), W = cv.width, H = cv.height, n = Math.floor(d.length * 0.8 / W);
+        g.fillStyle = '#6DF593';
+        let top = 1e-6; for (let i = 0; i < d.length; i++) top = Math.max(top, Math.abs(d[i]));
+        for (let x = 0; x < W; x++) { let m = 0; for (let i = x * n; i < (x + 1) * n; i++) m = Math.max(m, Math.abs(d[i] || 0)); const h = Math.max(1, m / top * H * .95); g.fillRect(x, (H - h) / 2, 1, h); }
+      }
+    } catch (e) {}
+  })();
+  // the first still frame: the mark in place, waiting for a tap
+  screen.classList.add('v3'); lock.getAnimations({ subtree: true }).forEach((a) => a.finish());
+})();
+</script>

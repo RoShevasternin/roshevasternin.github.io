@@ -61,3 +61,28 @@ mallet, A2 → E2), with D's timing (the lub 30 ms in → the splash keeps start
 - Why D2: the heart is low (110 / 82 Hz) and a phone speaker plays almost nothing under 300 Hz — on a phone, D's notes were the
   audible part; without them D0 is ≈ 6 dB quieter there.
 - `preview6.py <folder> <out.html>` fills `preview6.template.html` (heart-only animations). Shown: https://claude.ai/artifact/2yJ6fXcAw4KDrX187fHJwi
+
+## Round 7 (06.10.2026) — «гітарне серцебиття», preview awaiting the owner's pick
+The owner sent a 1.8 s cut of the intro of sombr — «12 to 12»: «ця мелодія мені подобається… там гітарне серцебиття… як би ти
+це зробив під мій бренд, коли б'ється серце, і як би це виглядало». Measured from the cut (it is not kept anywhere — the song is
+the artist's): ≈125 BPM; A major (A → D); 75 % of the energy under 250 Hz; the beat in pairs ≈0.11 s apart («та-ДУМ»). Nothing
+of the song is used — no sample, riff or melody; every note is synthesised, so the sound is Lewydo's.
+- `make_sound7.py <kit D4 .wav> <the game's D4 .wav>` (run from an empty folder; no other module needed) → T «Гітарне серце»
+  (recommended: the kit's D4 heart untouched + a guitar on it — a muted A on the lub, an open Amaj7 over the low E on the dub),
+  U «Як у пісні» (a muted «та» a 16th before the lub, muted chugs on both beats over a soft double kick, the open A blooms;
+  **its lub is 0.15 s in → start it at 1.97 s**), V «Акустика» (thumb on a muted low A, a soft rolled A major, a wooden body),
+  W «Додому» (a muted E → an open A, the bass goes up; a warm pulse under each beat), D4_game (the reference) — .wav + .mp3 +
+  timing7.json. T, V and W keep D's timing (lub 0.03 s in, the dub 0.28 s later → the splash keeps 2.09 s).
+- The guitar: an extended Karplus–Strong string — the delay line starts as the pulled string (a mix of its shape, a triangle
+  with the corner at the pluck point, and its speed, a two-level pulse — what a pickup or a bridge passes on), plus a little
+  finger noise, through a soft «finger» lowpass; a gentle lowpass in the loop; a linear fractional delay keeps every string in
+  tune. Palm-muted = t60 ≈ 0.16 s, dark, a slight settle in pitch and the hand's thud. Strums go string by string (9–12 ms;
+  V rolls at 20 ms), each a touch softer and a few cents off. Then a clean amp (soft drive, the neck pickup's warmth, the top
+  rolled off at 4.8 kHz), a chorus **only above 280 Hz** (on the low strings a chorus swung the volume ±7 dB) and a hall.
+  V is mono-safe (no Haas delay: a phone in portrait plays mono).
+- Levels: every file has the same loudness on a phone speaker as the game's D4 (the phone version B, CubePix
+  `cubepix-libgdx/assets/sound/lewydo-heartbeat.ogg`): 300 Hz – 3 kHz at −21 dB over the loudest 300 ms; peaks ≤ −1 dBFS
+  (a soft ceiling). The ring lasts ≈1.5 s; the files are 2.4 s with a 0.45 s fade.
+- `preview7.py <folder> <out.html>` fills `preview7.template.html` (from round 6's page): the five sounds, the splash «як зараз»
+  and an idea, «+ струна»: the line under the slogan rings like a guitar string — a lens of light, a short muted twitch on the
+  lub (2.12 s), a ringing pluck on the dub (2.40 s). Shown: https://claude.ai/artifact/CoFJYBUeWBF9SzUZFWkW8q
