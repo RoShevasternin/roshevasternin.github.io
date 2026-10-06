@@ -1,4 +1,4 @@
-# Lewydo sonic logo — how it was made (the owner chose **D4 «Бум-бум · м'якше»** on 02.10.2026 — D's heart without the notes; it is in brand/kit/sound/)
+# Lewydo sonic logo — how it was made (the owner chose **D4 «Бум-бум · м'якше»** on 02.10.2026 and kept it for good on 06.10.2026 — D's heart without the notes; it is in brand/kit/sound/)
 
 - `make_sound.py` — synthesises the heartbeat sound in three directions: A «Тук-тук», B «Серце й сяйво» (recommended), C «Бум-бум»
   (`python3 tools/sonic/make_sound.py` → A_heartbeat.wav, B_heart_glow.wav, C_bum_bum.wav, timing.json; 48 kHz stereo; the «lub» hits 30 ms in).
@@ -62,7 +62,10 @@ mallet, A2 → E2), with D's timing (the lub 30 ms in → the splash keeps start
   audible part; without them D0 is ≈ 6 dB quieter there.
 - `preview6.py <folder> <out.html>` fills `preview6.template.html` (heart-only animations). Shown: https://claude.ai/artifact/2yJ6fXcAw4KDrX187fHJwi
 
-## Round 7 (06.10.2026) — «гітарне серцебиття», preview awaiting the owner's pick
+## Round 7 (06.10.2026) — «гітарне серцебиття», closed: the owner kept D4
+The decision, the same day: «все, звук бренду не чіпаємо, хай як є такий і буде, він гарний». D4 stays in the kit for good;
+these tools stay only as history.
+
 The owner sent a 1.8 s cut of the intro of sombr — «12 to 12»: «ця мелодія мені подобається… там гітарне серцебиття… як би ти
 це зробив під мій бренд, коли б'ється серце, і як би це виглядало». Measured from the cut (it is not kept anywhere — the song is
 the artist's): ≈125 BPM; A major (A → D); 75 % of the energy under 250 Hz; the beat in pairs ≈0.11 s apart («та-ДУМ»). Nothing
