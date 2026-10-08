@@ -99,3 +99,9 @@ its bass (a finger-plucked bass guitar under the hits). Round 7 was 11 dB (rms o
 darker above 1 kHz; X/Y/Z are 2–3 dB off. → X «Як у пісні · ближче» (U + bass; lub 0.15 s in, start at 1.97 s), Y «Гітарне
 серце · ближче» (T), Z «Додому · ближче» (W + a bass going up E1 → A1) + timing7b.json. The page (same address) now shows
 X, Y, Z, T, U and D4; V and W are in round 7's files.
+
+## The phone version — the one file everywhere (08.10.2026)
+- `make_phone.py <kit D4 .wav> <out .wav> 2.2 2.5 120 280 2000` (needs numpy) — D4 + its own overtones 280 Hz – 2 kHz (×2.2), soft
+  saturation 2.5, high-pass 120 Hz, peak −1 dBFS: version B, chosen for CubePix on 03.10.2026 («on the phone it's very quiet»), then
+  copied by Orbit Dash. On 08.10.2026 the owner: «the brand sound is better now, and it must sound the same everywhere» — the kit's
+  `brand/kit/sound/` now holds this very version: the `.ogg` byte for byte from the games, the `.wav` decoded from it, the `.mp3` from the `.wav`.
