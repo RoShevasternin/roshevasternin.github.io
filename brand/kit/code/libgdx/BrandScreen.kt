@@ -1,6 +1,7 @@
 // Lewydo™ brand kit — https://roshevasternin.github.io/brand/
 // The first screen of every Lewydo game: the Lewydo Lockup appears, the heart beats with the Lewydo sound (≈ 4 s), then the game's LoaderScreen.
-// The sound: kit/sound/lewydo-heartbeat.ogg → assets/sound/ (load it with your game's sounds, play it at your game's sound volume).
+// The sound: kit/sound/lewydo-heartbeat.ogg → assets/sound/ as is — the same file in every Lewydo game, byte for byte (load it with
+// your game's sounds; full volume at their usual level, quieter only when the player turns the sounds down).
 // Put it in your game and replace «yourgame» with your game's package. Built on the Lewydo LibGDX base
 // (AdvancedScreen, AConstraintLayout, AAutoLayout, SizeScaler, animShow / animHide) and the BRAND atlas of this kit.
 package com.lewydo.yourgame.game.screens
@@ -25,7 +26,11 @@ class BrandScreen : AdvancedScreen() {
     private val aBrandGroup by lazy { ABrandGroup(this) }
     private val brandSound: Sound by lazy { Gdx.audio.newSound(Gdx.files.internal("sound/lewydo-heartbeat.ogg")) }
 
-    /** Your game's sound volume, 0..1 (0 when the player turned the sounds off). Wire it to your settings. */
+    /**
+     * The Lewydo sound's volume, 0..1: 1.0 when your game's sounds are at their usual (default) level — the file is already
+     * levelled for phone speakers; quieter only if the player turned the sounds down; 0 when they are off. Wire it to your settings
+     * (CubePix: `AudioMixer.brandAt` — 1.0 at the default step 8, 2.5 dB less per step below).
+     */
     private fun soundVolume(): Float = 1f
 
     // ------------------------------------------------------------------------
