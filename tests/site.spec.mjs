@@ -275,7 +275,7 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
   const hrefs = await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')));
   expect(hrefs.filter((h) => h.startsWith('https://t.me/'))).toEqual(['https://t.me/vlad_libgdx', 'https://t.me/vlad_libgdx']);   // Vlad's card and the contacts
   for (const u of ['https://www.tiktok.com/@lewydo_game', 'https://www.instagram.com/lewydo_game/', 'https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw',
-    'https://www.facebook.com/profile.php?id=61594804110096']) {
+    'https://www.facebook.com/profile.php?id=61594804110096', 'https://discord.gg/PvUA3DwSP']) {
     await expect(page.locator(`.social a[href="${u}"]`)).toHaveCount(1);
     await expect(page.locator(`.foot-social a[href="${u}"]`)).toHaveCount(1);
   }
@@ -292,6 +292,7 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
   const B = await (await request.get('./brand/brand.json')).json();
   expect(B.workflow.rule).toBe('Prototype first, then the game');
   expect(B.socials.telegram).toBe('https://t.me/vlad_libgdx');
+  expect(B.socials.discord).toBe('https://discord.gg/PvUA3DwSP');
   expect(B.font.name).toMatch(/^Nunito Black 54 \/ 74/); expect(B.font.slogan).toMatch(/^Nunito 14 \/ 19/);   // round numbers
   expect(w.errs).toEqual([]);
 });
