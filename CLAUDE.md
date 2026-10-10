@@ -82,6 +82,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 | `tests/` | `npm test` (`site.spec`), `npm run look`, `npm run kit`; `serve.mjs` — сервер як GitHub Pages |
 | `app-ads.txt` | **для AdMob — не чіпати й не видаляти** (без нього реклама в іграх заробляє менше) |
 | `assets/` | шрифти, іконки й банери ігор, `og.png`, іконки сайту |
+| `docs/social/` | **картинки студії для соцмереж — не для сайту** (власник 10.10.2026): оригінали власника `owner/` (банер 1920×384, 16:9, аватар 512), шапка X 1500×500, **стиль** (зелено-чорний фон, сітка, знак із засічками) — `docs/social/README.md`. Нова картинка для мереж — у цьому стилі й з цих оригіналів |
 
 `index.html`, `404.html`, `robots.txt`, `sitemap.xml`, `brand/index.html`, `brand/brand.json`, `brand/lewydo-brand-kit.zip` **згенеровані**:
 правити `src/` (і `brand/kit/`), потім `npm run build`.
