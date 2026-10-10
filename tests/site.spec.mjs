@@ -79,14 +79,16 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await expect(page.locator('#cpLayer')).toHaveText(/LAYER \d+ \/ \d+/i);                              // a painting reveals itself
   const cur = () => page.locator('#cpThumbs .thumb[aria-current="true"]').getAttribute('data-i');
   await expect(page.locator('#cpThumbs .thumb')).toHaveCount(4);                                      // the paintings themselves, not little squares
-  expect(await cur()).toBe('0');
-  await page.locator('#cpNext').click(); expect(await cur()).toBe('1');                               // big arrows on the frame
-  await page.locator('#cpPrev').click(); await page.locator('#cpPrev').click(); expect(await cur()).toBe('3');
-  await page.locator('#cpThumbs .thumb').nth(2).click(); expect(await cur()).toBe('2');               // a tap on a picture
-  const m = await page.locator('#cpStage .mat').boundingBox();                                         // a swipe across the painting
+  await expect.poll(cur).toBe('0');
+  await page.locator('#cpNext').click(); await expect.poll(cur).toBe('1');                               // big arrows on the frame
+  await page.locator('#cpPrev').click(); await page.locator('#cpPrev').click(); await expect.poll(cur).toBe('3');
+  await page.locator('#cpThumbs .thumb').nth(2).click(); await expect.poll(cur).toBe('2');               // a tap on a picture
+  let m = null;                                                                                       // a swipe across the painting —
+  for (let i = 0, b; i < 40; i++) {                                                                   // once the page stopped scrolling
+    b = await page.locator('#cpStage .mat').boundingBox(); if (m && b && b.x === m.x && b.y === m.y) break; m = b; await page.waitForTimeout(50); }
   await page.mouse.move(m.x + m.width * .8, m.y + m.height / 2); await page.mouse.down();
   await page.mouse.move(m.x + m.width * .2, m.y + m.height / 2, { steps: 8 }); await page.mouse.up();
-  expect(await cur()).toBe('3');
+  await expect.poll(cur).toBe('3');
   await page.locator('#cpTry').click();                                                                // CubePix: the little puzzle
   await expect(page.locator('#pzHint')).toBeVisible();
   for (let i = 0; i < 300 && !(await page.locator('#pzDone').isVisible()); i++) { await page.keyboard.press('Enter'); await page.waitForTimeout(10); }
