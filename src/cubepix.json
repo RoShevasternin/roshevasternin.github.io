@@ -3,7 +3,7 @@
  "counts": {
   "pics": 74,
   "floors": 8,
-  "langs": 38
+  "langs": 82
  },
  "hero": [
   "great_wave",
@@ -128,6 +128,16 @@
  },
  "pics": {
   "great_wave": {
+   "om": {
+    "n": "Dhambalii Guddaa Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "gara 1831"
+   },
+   "af": {
+    "n": "Die Groot Golf by Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "ca. 1831"
+   },
    "az": {
     "n": "Kanaqavada böyük dalğa",
     "a": "Katsusika Hokusay",
@@ -142,6 +152,16 @@
     "n": "Ombak Besar di Kanagawa",
     "a": "Katsushika Hokusai",
     "y": "sekitar 1831"
+   },
+   "bs": {
+    "n": "Veliki talas kod Kanagawe",
+    "a": "Katsushika Hokusai",
+    "y": "oko 1831"
+   },
+   "ca": {
+    "n": "La gran onada de Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "c. 1831"
    },
    "cs": {
     "n": "Velká vlna u Kanagawy",
@@ -173,6 +193,11 @@
     "a": "Katsushika Hokusai",
     "y": "c. 1831"
    },
+   "eu": {
+    "n": "Kanagawako olatu handia",
+    "a": "Katsushika Hokusai",
+    "y": "1831 inguru"
+   },
    "fil": {
     "n": "Malaking Alon sa Kanagawa",
     "a": "Katsushika Hokusai",
@@ -183,15 +208,45 @@
     "a": "Katsushika Hokusai",
     "y": "vers 1831"
    },
+   "gl": {
+    "n": "A gran onda de Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "c. 1831"
+   },
+   "ha": {
+    "n": "Babban Raƙumin Ruwa na Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "kimanin 1831"
+   },
    "hr": {
     "n": "Veliki val kod Kanagawe",
     "a": "Katsushika Hokusai",
     "y": "oko 1831."
    },
+   "ig": {
+    "n": "Ebili Mmiri Ukwu, Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "ihe dị ka 1831"
+   },
+   "zu": {
+    "n": "Igagasi Elikhulu eKanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "cishe ngo-1831"
+   },
+   "is": {
+    "n": "Stóra aldan við Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "um 1831"
+   },
    "it": {
     "n": "La grande onda",
     "a": "Katsushika Hokusai",
     "y": "1831 circa"
+   },
+   "sw": {
+    "n": "Wimbi Kuu la Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "takriban 1831"
    },
    "lv": {
     "n": "Lielais vilnis pie Kanagavas",
@@ -218,6 +273,11 @@
     "a": "Katsushika Hokusai",
     "y": "ca. 1831"
    },
+   "uz": {
+    "n": "Kanagavadagi ulkan toʻlqin",
+    "a": "Katsusika Xokusay",
+    "y": "taxm. 1831"
+   },
    "pl": {
     "n": "Wielka fala w Kanagawie",
     "a": "Katsushika Hokusai",
@@ -233,6 +293,11 @@
     "a": "Katsushika Hokusai",
     "y": "cca 1831"
    },
+   "sq": {
+    "n": "Vala e madhe e Kanagavës",
+    "a": "Katsushika Hokusai",
+    "y": "rreth 1831"
+   },
    "sk": {
     "n": "Veľká vlna pri Kanagawe",
     "a": "Kacušika Hokusai",
@@ -242,6 +307,11 @@
     "n": "Veliki val pri Kanagavi",
     "a": "Katsushika Hokusai",
     "y": "okoli 1831"
+   },
+   "so": {
+    "n": "Mawjadda Weyn ee Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "qiyaastii 1831"
    },
    "fi": {
     "n": "Kanagawan suuri aalto",
@@ -263,45 +333,190 @@
     "a": "Katsushika Hokusai",
     "y": "yak. 1831"
    },
+   "tk": {
+    "n": "Kanagawadaky uly tolkun",
+    "a": "Katsuşika Hokusaý",
+    "y": "takm. 1831"
+   },
+   "yo": {
+    "n": "Ìgbì Ńlá Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "nǹkan bí 1831"
+   },
    "el": {
     "n": "Μεγάλο κύμα της Καναγκάβα",
     "a": "Κατσουσίκα Χοκουσάι",
     "y": "περ. 1831"
+   },
+   "be": {
+    "n": "Вялікая хваля ў Канагаве",
+    "a": "Кацусіка Хакусай",
+    "y": "каля 1831"
    },
    "bg": {
     "n": "Голямата вълна в Канагава",
     "a": "Кацушика Хокусай",
     "y": "ок. 1831"
    },
+   "ky": {
+    "n": "Канагавадагы улуу толкун",
+    "a": "Кацусика Хокусай",
+    "y": "болжол менен 1831"
+   },
    "kk": {
     "n": "Канагавадағы ұлы толқын",
     "a": "Кацусика Хокусай",
     "y": "шамамен 1831"
+   },
+   "mk": {
+    "n": "Големиот бран кај Канагава",
+    "a": "Кацушика Хокусаи",
+    "y": "околу 1831"
+   },
+   "mn": {
+    "n": "Канагавагийн их давалгаа",
+    "a": "Кацушика Хокусай",
+    "y": "1831 орчим"
+   },
+   "sr": {
+    "n": "Велики талас код Канагаве",
+    "a": "Кацушика Хокусаи",
+    "y": "око 1831."
+   },
+   "tg": {
+    "n": "Мавҷи бузурги Канагава",
+    "a": "Катсусика Ҳокусай",
+    "y": "тақрибан 1831"
    },
    "uk": {
     "n": "Велика хвиля в Канаґаві",
     "a": "Кацусіка Хокусай",
     "y": "бл. 1831"
    },
+   "ka": {
+    "n": "დიდი ტალღა კანაგავასთან",
+    "a": "კაცუსიკა ჰოკუსაი",
+    "y": "დაახლ. 1831"
+   },
+   "hy": {
+    "n": "Մեծ ալիքը Կանագավայի մոտ",
+    "a": "Կացուսիկա Հոկուսայ",
+    "y": "մոտ 1831"
+   },
    "he": {
     "n": "הגל הגדול של קנגאווה",
     "a": "קצושיקה הוקוסאי",
     "y": "בערך 1831"
+   },
+   "ur": {
+    "n": "کاناگاوا کی عظیم لہر",
+    "a": "کاتسوشیکا ہوکوسائی",
+    "y": "تقریباً 1831"
    },
    "ar": {
     "n": "موجة كاناغاوا العظيمة",
     "a": "كاتسوشيكا هوكوساي",
     "y": "نحو 1831"
    },
+   "ps": {
+    "n": "د کاناګاوا لویه څپه",
+    "a": "کاتسوشیکا هوکوسای",
+    "y": "شاوخوا 1831"
+   },
+   "fa": {
+    "n": "موج بزرگ کاناگاوا",
+    "a": "کاتسوشیکا هوکوسای",
+    "y": "حدود 1831"
+   },
+   "am": {
+    "n": "ታላቁ የካናጋዋ ማዕበል",
+    "a": "ካትሱሺካ ሆኩሳይ",
+    "y": "1831 ገደማ"
+   },
+   "ne": {
+    "n": "कानागावाको ठूलो छाल",
+    "a": "कात्सुशिका होकुसाई",
+    "y": "करिब 1831"
+   },
+   "mr": {
+    "n": "कानागावाची मोठी लाट",
+    "a": "कात्सुशिका होकुसाई",
+    "y": "सुमारे 1831"
+   },
    "hi": {
     "n": "कानागावा की बड़ी लहर",
     "a": "कात्सुशिका होकुसाई",
     "y": "लगभग 1831"
    },
+   "as": {
+    "n": "কানাগাৱাৰ বিশাল ঢৌ",
+    "a": "কাৎসুছিকা হোকুছাই",
+    "y": "প্ৰায় 1831"
+   },
+   "bn": {
+    "n": "কানাগাওয়ার বিশাল ঢেউ",
+    "a": "কাৎসুশিকা হোকুসাই",
+    "y": "আনু. 1831"
+   },
+   "pa": {
+    "n": "ਕਾਨਾਗਾਵਾ ਦੀ ਵੱਡੀ ਲਹਿਰ",
+    "a": "ਕਾਤਸੁਸ਼ਿਕਾ ਹੋਕੁਸਾਈ",
+    "y": "ਲਗਭਗ 1831"
+   },
+   "gu": {
+    "n": "કાનાગાવાનું મહાન મોજું",
+    "a": "કાત્સુશિકા હોકુસાઈ",
+    "y": "આશરે 1831"
+   },
+   "or": {
+    "n": "କାନାଗାୱାର ବିରାଟ ଢେଉ",
+    "a": "କାତ୍ସୁଶିକା ହୋକୁସାଇ",
+    "y": "ପ୍ରାୟ 1831"
+   },
+   "ta": {
+    "n": "கனகாவாவின் பெரும் அலை",
+    "a": "கட்சுஷிகா ஹொகுசாய்",
+    "y": "சுமார் 1831"
+   },
+   "te": {
+    "n": "కనగావా వద్ద మహా అల",
+    "a": "కత్సుషికా హొకుసాయ్",
+    "y": "సుమారు 1831"
+   },
+   "kn": {
+    "n": "ಕಾನಾಗಾವಾದ ಮಹಾ ಅಲೆ",
+    "a": "ಕಟ್ಸುಶಿಕಾ ಹೊಕುಸಾಯ್",
+    "y": "ಸುಮಾರು 1831"
+   },
+   "ml": {
+    "n": "കനഗാവയിലെ വലിയ തിര",
+    "a": "കത്സുഷിക ഹൊകുസായ്",
+    "y": "ഏകദേശം 1831"
+   },
+   "si": {
+    "n": "කනගාවා අසල මහා රළ",
+    "a": "කට්සුෂිකා හොකුසායි",
+    "y": "1831 පමණ"
+   },
    "th": {
     "n": "คลื่นยักษ์นอกฝั่งคานางาวะ",
     "a": "คัตสึชิกะ โฮกูไซ",
     "y": "ราวปี 1831"
+   },
+   "lo": {
+    "n": "ຄື້ນໃຫຍ່ນອກຝັ່ງຄານາງາວະ",
+    "a": "ຄັດສຶຊິກະ ໂຮກຸໄຊ",
+    "y": "ປະມານປີ 1831"
+   },
+   "my": {
+    "n": "ကာနာဂါဝါ ကမ်းလွန် လှိုင်းကြီး",
+    "a": "ခတ်ဆုရှိကာ ဟိုခုဆိုင်း",
+    "y": "1831 ခန့်"
+   },
+   "km": {
+    "n": "រលកធំនៅកាណាហ្កាវ៉ា",
+    "a": "កាត់ស៊ូស៊ីកា ហុកសាយ",
+    "y": "ប្រហែល 1831"
    },
    "ko": {
     "n": "가나가와 해변의 높은 파도",
@@ -313,6 +528,11 @@
     "a": "葛飾北斎",
     "y": "1831年頃"
    },
+   "zh-CN": {
+    "n": "神奈川冲浪里",
+    "a": "葛饰北斋",
+    "y": "约1831年"
+   },
    "zh-TW": {
     "n": "神奈川沖浪裏",
     "a": "葛飾北齋",
@@ -320,6 +540,16 @@
    }
   },
   "starry_night": {
+   "om": {
+    "n": "Halkan Urjii Qabeessa",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "af": {
+    "n": "Die sterrenag",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "az": {
     "n": "Ulduzlu gecə",
     "a": "Vinsent van Qoq",
@@ -332,6 +562,16 @@
    },
    "ms": {
     "n": "Malam Berbintang",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "bs": {
+    "n": "Zvjezdana noć",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "ca": {
+    "n": "La nit estelada",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -365,6 +605,11 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "eu": {
+    "n": "Gau izartsua",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "fil": {
     "n": "Ang Mabituing Gabi",
     "a": "Vincent van Gogh",
@@ -375,13 +620,43 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "gl": {
+    "n": "A noite estrelada",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "ha": {
+    "n": "Daren Taurari",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "hr": {
     "n": "Zvjezdana noć",
     "a": "Vincent van Gogh",
     "y": "1889."
    },
+   "ig": {
+    "n": "Abalị Kpakpando",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "zu": {
+    "n": "Ubusuku Obunezinkanyezi",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "is": {
+    "n": "Stjörnunóttin",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "it": {
     "n": "Notte stellata",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sw": {
+    "n": "Usiku wa Nyota",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -410,6 +685,11 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "uz": {
+    "n": "Yulduzli tun",
+    "a": "Vinsent van Gog",
+    "y": "1889"
+   },
    "pl": {
     "n": "Gwiaździsta noc",
     "a": "Vincent van Gogh",
@@ -425,6 +705,11 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "sq": {
+    "n": "Nata me yje",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "sk": {
     "n": "Hviezdna noc",
     "a": "Vincent van Gogh",
@@ -432,6 +717,11 @@
    },
    "sl": {
     "n": "Zvezdna noč",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "so": {
+    "n": "Habeenka Xiddigaha leh",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -455,13 +745,33 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "tk": {
+    "n": "Ýyldyzly gije",
+    "a": "Winsent wan Gog",
+    "y": "1889"
+   },
+   "yo": {
+    "n": "Alẹ́ Ìràwọ̀",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "el": {
     "n": "Έναστρη νύχτα",
     "a": "Βίνσεντ βαν Γκογκ",
     "y": "1889"
    },
+   "be": {
+    "n": "Зорная ноч",
+    "a": "Вінцэнт ван Гог",
+    "y": "1889"
+   },
    "bg": {
     "n": "Звездна нощ",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "ky": {
+    "n": "Жылдыздуу түн",
     "a": "Винсент ван Гог",
     "y": "1889"
    },
@@ -470,9 +780,39 @@
     "a": "Винсент ван Гог",
     "y": "1889"
    },
+   "mk": {
+    "n": "Ѕвездена ноќ",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "mn": {
+    "n": "Одтой шөнө",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "sr": {
+    "n": "Звездана ноћ",
+    "a": "Винсент ван Гог",
+    "y": "1889."
+   },
+   "tg": {
+    "n": "Шаби пурситора",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
    "uk": {
     "n": "Зоряна ніч",
     "a": "Вінсент ван Гог",
+    "y": "1889"
+   },
+   "ka": {
+    "n": "ვარსკვლავიანი ღამე",
+    "a": "ვინსენტ ვან გოგი",
+    "y": "1889"
+   },
+   "hy": {
+    "n": "Աստղալից գիշեր",
+    "a": "Վինսենթ վան Գոգ",
     "y": "1889"
    },
    "he": {
@@ -480,9 +820,39 @@
     "a": "וינסנט ואן גוך",
     "y": "1889"
    },
+   "ur": {
+    "n": "تاروں بھری رات",
+    "a": "ونسنٹ وین گو",
+    "y": "1889"
+   },
    "ar": {
     "n": "ليلة النجوم",
     "a": "فنسنت فان غوخ",
+    "y": "1889"
+   },
+   "ps": {
+    "n": "ستوري شپه",
+    "a": "وینسنټ وان ګوګ",
+    "y": "1889"
+   },
+   "fa": {
+    "n": "شب پرستاره",
+    "a": "وینسنت ون گوگ",
+    "y": "1889"
+   },
+   "am": {
+    "n": "በከዋክብት የተሞላው ሌሊት",
+    "a": "ቪንሰንት ቫን ጎ",
+    "y": "1889"
+   },
+   "ne": {
+    "n": "तारामय रात",
+    "a": "भिन्सेन्ट भ्यान गग",
+    "y": "1889"
+   },
+   "mr": {
+    "n": "तारांकित रात्र",
+    "a": "व्हिन्सेंट व्हॅन गॉग",
     "y": "1889"
    },
    "hi": {
@@ -490,9 +860,74 @@
     "a": "विन्सेंट वैन गॉग",
     "y": "1889"
    },
+   "as": {
+    "n": "তৰাভৰা ৰাতি",
+    "a": "ভিনচেণ্ট ভান গখ",
+    "y": "1889"
+   },
+   "bn": {
+    "n": "তারাভরা রাত",
+    "a": "ভিনসেন্ট ভ্যান গগ",
+    "y": "1889"
+   },
+   "pa": {
+    "n": "ਤਾਰਿਆਂ ਭਰੀ ਰਾਤ",
+    "a": "ਵਿਨਸੈਂਟ ਵੈਨ ਗੌਗ",
+    "y": "1889"
+   },
+   "gu": {
+    "n": "તારાભરી રાત",
+    "a": "વિન્સેન્ટ વાન ગો",
+    "y": "1889"
+   },
+   "or": {
+    "n": "ତାରାଭରା ରାତି",
+    "a": "ଭିନ୍ସେଣ୍ଟ ଭାନ୍ ଗଗ୍",
+    "y": "1889"
+   },
+   "ta": {
+    "n": "விண்மீன்கள் நிறைந்த இரவு",
+    "a": "வின்சென்ட் வான் கோ",
+    "y": "1889"
+   },
+   "te": {
+    "n": "నక్షత్రాల రాత్రి",
+    "a": "విన్సెంట్ వాన్ గోహ్",
+    "y": "1889"
+   },
+   "kn": {
+    "n": "ತಾರಾಮಯ ರಾತ್ರಿ",
+    "a": "ವಿನ್ಸೆಂಟ್ ವ್ಯಾನ್ ಗಾಗ್",
+    "y": "1889"
+   },
+   "ml": {
+    "n": "നക്ഷത്രരാത്രി",
+    "a": "വിൻസെന്റ് വാൻ ഗോഗ്",
+    "y": "1889"
+   },
+   "si": {
+    "n": "තරු පිරි රාත්‍රිය",
+    "a": "වින්සන්ට් වැන් ගෝ",
+    "y": "1889"
+   },
    "th": {
     "n": "ราตรีประดับดาว",
     "a": "วินเซนต์ แวน โก๊ะ",
+    "y": "1889"
+   },
+   "lo": {
+    "n": "ຄ່ຳຄືນແຫ່ງດວງດາວ",
+    "a": "ວິນເຊັນ ແວນ ໂກະ",
+    "y": "1889"
+   },
+   "my": {
+    "n": "ကြယ်စုံသော ည",
+    "a": "ဗင်းဆင့် ဗန်ဂိုး",
+    "y": "1889"
+   },
+   "km": {
+    "n": "រាត្រីពោរពេញដោយផ្កាយ",
+    "a": "វ៉ាំងសង់ វ៉ាន់ហ្គោក",
     "y": "1889"
    },
    "ko": {
@@ -505,6 +940,11 @@
     "a": "フィンセント・ファン・ゴッホ",
     "y": "1889"
    },
+   "zh-CN": {
+    "n": "星月夜",
+    "a": "文森特·梵高",
+    "y": "1889年"
+   },
    "zh-TW": {
     "n": "星夜",
     "a": "文森·梵谷",
@@ -512,6 +952,16 @@
    }
   },
   "irises": {
+   "om": {
+    "n": "Abaaboo Irisii",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "af": {
+    "n": "Irisse",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "az": {
     "n": "Süsənlər",
     "a": "Vinsent van Qoq",
@@ -524,6 +974,16 @@
    },
    "ms": {
     "n": "Bunga Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "bs": {
+    "n": "Perunike",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "ca": {
+    "n": "Lliris",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -557,6 +1017,11 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "eu": {
+    "n": "Lirioak",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "fil": {
     "n": "Mga Iris",
     "a": "Vincent van Gogh",
@@ -567,13 +1032,43 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "gl": {
+    "n": "Lirios",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "ha": {
+    "n": "Furannin Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "hr": {
     "n": "Perunike",
     "a": "Vincent van Gogh",
     "y": "1889."
    },
+   "ig": {
+    "n": "Okooko Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "zu": {
+    "n": "Ama-iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "is": {
+    "n": "Sverðliljur",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "it": {
     "n": "Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sw": {
+    "n": "Irisi",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -602,6 +1097,11 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "uz": {
+    "n": "Gulsafsarlar",
+    "a": "Vinsent van Gog",
+    "y": "1889"
+   },
    "pl": {
     "n": "Irysy",
     "a": "Vincent van Gogh",
@@ -617,6 +1117,11 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "sq": {
+    "n": "Shpatoret",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "sk": {
     "n": "Kosatce",
     "a": "Vincent van Gogh",
@@ -624,6 +1129,11 @@
    },
    "sl": {
     "n": "Perunike",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "so": {
+    "n": "Ubaxyada Iris",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -647,13 +1157,33 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "tk": {
+    "n": "Irisler",
+    "a": "Winsent wan Gog",
+    "y": "1889"
+   },
+   "yo": {
+    "n": "Òdòdó Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "el": {
     "n": "Ίριδες",
     "a": "Βίνσεντ βαν Γκογκ",
     "y": "1889"
    },
+   "be": {
+    "n": "Ірысы",
+    "a": "Вінцэнт ван Гог",
+    "y": "1889"
+   },
    "bg": {
     "n": "Ириси",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "ky": {
+    "n": "Иристер",
     "a": "Винсент ван Гог",
     "y": "1889"
    },
@@ -662,9 +1192,39 @@
     "a": "Винсент ван Гог",
     "y": "1889"
    },
+   "mk": {
+    "n": "Перуники",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "mn": {
+    "n": "Цахилдаг",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "sr": {
+    "n": "Перунике",
+    "a": "Винсент ван Гог",
+    "y": "1889."
+   },
+   "tg": {
+    "n": "Савсанҳо",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
    "uk": {
     "n": "Іриси",
     "a": "Вінсент ван Гог",
+    "y": "1889"
+   },
+   "ka": {
+    "n": "ზამბახები",
+    "a": "ვინსენტ ვან გოგი",
+    "y": "1889"
+   },
+   "hy": {
+    "n": "Հիրիկներ",
+    "a": "Վինսենթ վան Գոգ",
     "y": "1889"
    },
    "he": {
@@ -672,9 +1232,39 @@
     "a": "וינסנט ואן גוך",
     "y": "1889"
    },
+   "ur": {
+    "n": "آئرس کے پھول",
+    "a": "ونسنٹ وین گو",
+    "y": "1889"
+   },
    "ar": {
     "n": "زهور السوسن",
     "a": "فنسنت فان غوخ",
+    "y": "1889"
+   },
+   "ps": {
+    "n": "زنبقونه",
+    "a": "وینسنټ وان ګوګ",
+    "y": "1889"
+   },
+   "fa": {
+    "n": "زنبق‌ها",
+    "a": "وینسنت ون گوگ",
+    "y": "1889"
+   },
+   "am": {
+    "n": "አይሪስ አበቦች",
+    "a": "ቪንሰንት ቫን ጎ",
+    "y": "1889"
+   },
+   "ne": {
+    "n": "आइरिसका फूल",
+    "a": "भिन्सेन्ट भ्यान गग",
+    "y": "1889"
+   },
+   "mr": {
+    "n": "आयरिस फुले",
+    "a": "व्हिन्सेंट व्हॅन गॉग",
     "y": "1889"
    },
    "hi": {
@@ -682,9 +1272,74 @@
     "a": "विन्सेंट वैन गॉग",
     "y": "1889"
    },
+   "as": {
+    "n": "আইৰিছ",
+    "a": "ভিনচেণ্ট ভান গখ",
+    "y": "1889"
+   },
+   "bn": {
+    "n": "আইরিস",
+    "a": "ভিনসেন্ট ভ্যান গগ",
+    "y": "1889"
+   },
+   "pa": {
+    "n": "ਸੋਸਨ ਦੇ ਫੁੱਲ",
+    "a": "ਵਿਨਸੈਂਟ ਵੈਨ ਗੌਗ",
+    "y": "1889"
+   },
+   "gu": {
+    "n": "આઇરિસનાં ફૂલ",
+    "a": "વિન્સેન્ટ વાન ગો",
+    "y": "1889"
+   },
+   "or": {
+    "n": "ଆଇରିସ୍",
+    "a": "ଭିନ୍ସେଣ୍ଟ ଭାନ୍ ଗଗ୍",
+    "y": "1889"
+   },
+   "ta": {
+    "n": "ஐரிஸ் மலர்கள்",
+    "a": "வின்சென்ட் வான் கோ",
+    "y": "1889"
+   },
+   "te": {
+    "n": "ఐరిస్ పూలు",
+    "a": "విన్సెంట్ వాన్ గోహ్",
+    "y": "1889"
+   },
+   "kn": {
+    "n": "ಐರಿಸ್ ಹೂಗಳು",
+    "a": "ವಿನ್ಸೆಂಟ್ ವ್ಯಾನ್ ಗಾಗ್",
+    "y": "1889"
+   },
+   "ml": {
+    "n": "ഐറിസുകൾ",
+    "a": "വിൻസെന്റ് വാൻ ഗോഗ്",
+    "y": "1889"
+   },
+   "si": {
+    "n": "අයිරිස් මල්",
+    "a": "වින්සන්ට් වැන් ගෝ",
+    "y": "1889"
+   },
    "th": {
     "n": "ดอกไอริส",
     "a": "วินเซนต์ แวน โก๊ะ",
+    "y": "1889"
+   },
+   "lo": {
+    "n": "ດອກໄອຣິສ",
+    "a": "ວິນເຊັນ ແວນ ໂກະ",
+    "y": "1889"
+   },
+   "my": {
+    "n": "အိုင်းရစ်ပန်းများ",
+    "a": "ဗင်းဆင့် ဗန်ဂိုး",
+    "y": "1889"
+   },
+   "km": {
+    "n": "ផ្កាអាយរីស",
+    "a": "វ៉ាំងសង់ វ៉ាន់ហ្គោក",
     "y": "1889"
    },
    "ko": {
@@ -697,6 +1352,11 @@
     "a": "フィンセント・ファン・ゴッホ",
     "y": "1889"
    },
+   "zh-CN": {
+    "n": "鸢尾花",
+    "a": "文森特·梵高",
+    "y": "1889年"
+   },
    "zh-TW": {
     "n": "鳶尾花",
     "a": "文森·梵谷",
@@ -704,6 +1364,16 @@
    }
   },
   "water_lilies": {
+   "om": {
+    "n": "Haroo Lilii Bishaanii",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "af": {
+    "n": "Die waterleliedam",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "az": {
     "n": "Suzanbaqlı gölməçə",
     "a": "Klod Mone",
@@ -716,6 +1386,16 @@
    },
    "ms": {
     "n": "Kolam Teratai",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "bs": {
+    "n": "Jezerce s lopočima",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "ca": {
+    "n": "L'estany de nimfees",
     "a": "Claude Monet",
     "y": "1899"
    },
@@ -749,6 +1429,11 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "eu": {
+    "n": "Nenufarren urmaela",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "fil": {
     "n": "Ang Lawa ng mga Water Lily",
     "a": "Claude Monet",
@@ -759,13 +1444,43 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "gl": {
+    "n": "O estanque dos nenúfares",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "ha": {
+    "n": "Tafkin Bado",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "hr": {
     "n": "Jezerce s lopočima",
     "a": "Claude Monet",
     "y": "1899."
    },
+   "ig": {
+    "n": "Ọdọ Mmiri Lili",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "zu": {
+    "n": "Ichibi Lezimbali Zamanzi",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "is": {
+    "n": "Vatnaliljutjörnin",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "it": {
     "n": "Lo stagno delle ninfee",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "sw": {
+    "n": "Bwawa la Yungiyungi",
     "a": "Claude Monet",
     "y": "1899"
    },
@@ -794,6 +1509,11 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "uz": {
+    "n": "Nilufarlar hovuzi",
+    "a": "Klod Mone",
+    "y": "1899"
+   },
    "pl": {
     "n": "Staw z nenufarami",
     "a": "Claude Monet",
@@ -809,6 +1529,11 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "sq": {
+    "n": "Pellgu me zambakë uji",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "sk": {
     "n": "Jazierko s leknami",
     "a": "Claude Monet",
@@ -816,6 +1541,11 @@
    },
    "sl": {
     "n": "Ribnik z lokvanji",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "so": {
+    "n": "Balliga Ubaxa Biyaha",
     "a": "Claude Monet",
     "y": "1899"
    },
@@ -839,13 +1569,33 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "tk": {
+    "n": "Suw nilüferli howuz",
+    "a": "Klod Mone",
+    "y": "1899"
+   },
+   "yo": {
+    "n": "Adágún Òdòdó Lílì",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "el": {
     "n": "Η λίμνη με τα νούφαρα",
     "a": "Κλοντ Μονέ",
     "y": "1899"
    },
+   "be": {
+    "n": "Сажалка з гарлачыкамі",
+    "a": "Клод Манэ",
+    "y": "1899"
+   },
    "bg": {
     "n": "Езерото с водни лилии",
+    "a": "Клод Моне",
+    "y": "1899"
+   },
+   "ky": {
+    "n": "Суу лилиялары бар көлмө",
     "a": "Клод Моне",
     "y": "1899"
    },
@@ -854,9 +1604,39 @@
     "a": "Клод Моне",
     "y": "1899"
    },
+   "mk": {
+    "n": "Езерцето со локвањи",
+    "a": "Клод Моне",
+    "y": "1899"
+   },
+   "mn": {
+    "n": "Усны сараанатай цөөрөм",
+    "a": "Клод Моне",
+    "y": "1899"
+   },
+   "sr": {
+    "n": "Језерце с локвањима",
+    "a": "Клод Моне",
+    "y": "1899."
+   },
+   "tg": {
+    "n": "Ҳавзи нилуфарҳои обӣ",
+    "a": "Клод Моне",
+    "y": "1899"
+   },
    "uk": {
     "n": "Ставок із лататтям",
     "a": "Клод Моне",
+    "y": "1899"
+   },
+   "ka": {
+    "n": "დუმფარების ტბორი",
+    "a": "კლოდ მონე",
+    "y": "1899"
+   },
+   "hy": {
+    "n": "Ջրաշուշանների լճակ",
+    "a": "Կլոդ Մոնե",
     "y": "1899"
    },
    "he": {
@@ -864,9 +1644,39 @@
     "a": "קלוד מונה",
     "y": "1899"
    },
+   "ur": {
+    "n": "کنول کا تالاب",
+    "a": "کلود مونے",
+    "y": "1899"
+   },
    "ar": {
     "n": "بركة زنابق الماء",
     "a": "كلود مونيه",
+    "y": "1899"
+   },
+   "ps": {
+    "n": "د اوبو نیلوفرو ډنډ",
+    "a": "کلود مونې",
+    "y": "1899"
+   },
+   "fa": {
+    "n": "برکه نیلوفرهای آبی",
+    "a": "کلود مونه",
+    "y": "1899"
+   },
+   "am": {
+    "n": "የውሃ አበቦች ኩሬ",
+    "a": "ክሎድ ሞኔ",
+    "y": "1899"
+   },
+   "ne": {
+    "n": "वाटर लिलीको पोखरी",
+    "a": "क्लोद मोने",
+    "y": "1899"
+   },
+   "mr": {
+    "n": "जलकमळांचे तळे",
+    "a": "क्लॉड मोने",
     "y": "1899"
    },
    "hi": {
@@ -874,9 +1684,74 @@
     "a": "क्लोद मोने",
     "y": "1899"
    },
+   "as": {
+    "n": "ভেটফুলৰ পুখুৰী",
+    "a": "ক্লদ মনে",
+    "y": "1899"
+   },
+   "bn": {
+    "n": "শাপলা পুকুর",
+    "a": "ক্লদ মোনে",
+    "y": "1899"
+   },
+   "pa": {
+    "n": "ਨੀਲੋਫ਼ਰ ਦਾ ਤਲਾਬ",
+    "a": "ਕਲੋਦ ਮੋਨੇ",
+    "y": "1899"
+   },
+   "gu": {
+    "n": "પોયણીનું તળાવ",
+    "a": "ક્લોદ મોને",
+    "y": "1899"
+   },
+   "or": {
+    "n": "କଇଁ ପୋଖରୀ",
+    "a": "କ୍ଲୋଦ୍ ମୋନେ",
+    "y": "1899"
+   },
+   "ta": {
+    "n": "அல்லிக் குளம்",
+    "a": "கிளோட் மொனே",
+    "y": "1899"
+   },
+   "te": {
+    "n": "కలువల కొలను",
+    "a": "క్లాడ్ మోనే",
+    "y": "1899"
+   },
+   "kn": {
+    "n": "ನೀರುತಾವರೆ ಕೊಳ",
+    "a": "ಕ್ಲಾಡ್ ಮೊನೆ",
+    "y": "1899"
+   },
+   "ml": {
+    "n": "ആമ്പൽക്കുളം",
+    "a": "ക്ലോദ് മോനെ",
+    "y": "1899"
+   },
+   "si": {
+    "n": "මානෙල් පොකුණ",
+    "a": "ක්ලෝඩ් මොනේ",
+    "y": "1899"
+   },
    "th": {
     "n": "สระบัวสาย",
     "a": "โคลด โมเนต์",
+    "y": "1899"
+   },
+   "lo": {
+    "n": "ໜອງບົວສາຍ",
+    "a": "ໂກລດ໌ ໂມເນ",
+    "y": "1899"
+   },
+   "my": {
+    "n": "ရေကြာကန်",
+    "a": "ကလော့ဒ် မိုနေး",
+    "y": "1899"
+   },
+   "km": {
+    "n": "ស្រះផ្កាព្រលិត",
+    "a": "ក្លូដ ម៉ូណេ",
     "y": "1899"
    },
    "ko": {
@@ -889,6 +1764,11 @@
     "a": "クロード・モネ",
     "y": "1899"
    },
+   "zh-CN": {
+    "n": "睡莲池",
+    "a": "克劳德·莫奈",
+    "y": "1899年"
+   },
    "zh-TW": {
     "n": "睡蓮池",
     "a": "克勞德·莫內",
@@ -896,6 +1776,18 @@
    }
   },
   "strawberry": {
+   "om": {
+    "n": "Istirooberii",
+    "a": "",
+    "y": "",
+    "f": "Istirooberiin beerii dhugaa miti: “sanyiin” xiqqaan isa irra jiru hundi mudura adda, kan keessa isaatti sanyii qabu dha."
+   },
+   "af": {
+    "n": "Aarbei",
+    "a": "",
+    "y": "",
+    "f": "’n Aarbei is nie ’n ware bessie nie: elke klein “saadjie” daarop is ’n aparte vruggie met ’n saad binne-in."
+   },
    "az": {
     "n": "Çiyələk",
     "a": "",
@@ -913,6 +1805,18 @@
     "a": "",
     "y": "",
     "f": "Strawberi bukan beri sebenar: setiap “biji” kecil padanya ialah buah berasingan yang mempunyai biji di dalamnya."
+   },
+   "bs": {
+    "n": "Jagoda",
+    "a": "",
+    "y": "",
+    "f": "Jagoda nije prava bobica: svaka sitna „sjemenka“ na njoj zaseban je plod sa sjemenkom unutra."
+   },
+   "ca": {
+    "n": "Maduixa",
+    "a": "",
+    "y": "",
+    "f": "La maduixa no és una baia de veritat: cada «llavor» que té és un fruit separat amb una llavor a dins."
    },
    "cs": {
     "n": "Jahoda",
@@ -950,6 +1854,12 @@
     "y": "",
     "f": "La fresa no es una baya verdadera: cada «semillita» de su superficie es un fruto aparte con una semilla dentro."
    },
+   "eu": {
+    "n": "Marrubia",
+    "a": "",
+    "y": "",
+    "f": "Marrubia ez da benetako baia: gainean dituen “hazi” txiki bakoitza fruitu bereizi bat da, barruan hazi bat duena."
+   },
    "fil": {
     "n": "Strawberry",
     "a": "",
@@ -962,17 +1872,53 @@
     "y": "",
     "f": "La fraise n’est pas une vraie baie : chaque petite « graine » à sa surface est un fruit à part entière, avec une graine à l’intérieur."
    },
+   "gl": {
+    "n": "Amorodo",
+    "a": "",
+    "y": "",
+    "f": "O amorodo non é unha baga de verdade: cada diminuta «semente» é un froito separado cunha semente dentro."
+   },
+   "ha": {
+    "n": "Strawberry",
+    "a": "",
+    "y": "",
+    "f": "Strawberry ba ainihin berry ba ne: kowace ƙaramar “ƙwaya” a jikinsa ɗan itace ne daban mai iri a ciki."
+   },
    "hr": {
     "n": "Jagoda",
     "a": "",
     "y": "",
     "f": "Jagoda nije prava boba: svaka sitna „sjemenka” na njoj zaseban je plod sa sjemenkom unutra."
    },
+   "ig": {
+    "n": "Strọberị",
+    "a": "",
+    "y": "",
+    "f": "Strọberị abụghị ezigbo beri: “mkpụrụ” nta ọ bụla dị n'elu ya bụ mkpụrụ osisi dị iche nwere mkpụrụ n'ime ya."
+   },
+   "zu": {
+    "n": "Isitrobheli",
+    "a": "",
+    "y": "",
+    "f": "Isitrobheli asisona ijikijolo langempela: “imbewu” ngayinye encane kuso iyisithelo esihlukile esinembewu ngaphakathi."
+   },
+   "is": {
+    "n": "Jarðarber",
+    "a": "",
+    "y": "",
+    "f": "Jarðarber er ekki raunverulegt ber: hvert lítið „fræ“ á því er sérstakur ávöxtur með fræi inni í."
+   },
    "it": {
     "n": "Fragola",
     "a": "",
     "y": "",
     "f": "La fragola non è una vera bacca: ogni piccolo «seme» sulla sua superficie è un frutto a sé, con dentro un seme."
+   },
+   "sw": {
+    "n": "Stroberi",
+    "a": "",
+    "y": "",
+    "f": "Stroberi si beri halisi: kila “mbegu” ndogo juu yake ni tunda tofauti lenye mbegu ndani."
    },
    "lv": {
     "n": "Zemene",
@@ -1004,6 +1950,12 @@
     "y": "",
     "f": "Et jordbær er ikke et ekte bær: hvert lille «frø» på det er en egen frukt med et frø inni."
    },
+   "uz": {
+    "n": "Qulupnay",
+    "a": "",
+    "y": "",
+    "f": "Qulupnay haqiqiy rezavor emas: ustidagi har bir mitti «urugʻ» — ichida urugʻi bor alohida meva."
+   },
    "pl": {
     "n": "Truskawka",
     "a": "",
@@ -1022,6 +1974,12 @@
     "y": "",
     "f": "Căpșuna nu e o bacă adevărată: fiecare „sămânță” mică de pe ea e un fruct separat, cu o sămânță înăuntru."
    },
+   "sq": {
+    "n": "Luleshtrydhe",
+    "a": "",
+    "y": "",
+    "f": "Luleshtrydhja nuk është kokrrë e vërtetë: çdo “farë” e vogël mbi të është një frut më vete me farë brenda."
+   },
    "sk": {
     "n": "Jahoda",
     "a": "",
@@ -1033,6 +1991,12 @@
     "a": "",
     "y": "",
     "f": "Jagoda botanično ni prava jagoda: vsako drobno »seme« na njej je ločen plod s semenom v sebi."
+   },
+   "so": {
+    "n": "Istaroberi",
+    "a": "",
+    "y": "",
+    "f": "Istaroberigu ma aha beri dhab ah: “iniin” kasta oo yar oo dushiisa ku taal waa miro gooni ah oo iniin ku jirto."
    },
    "fi": {
     "n": "Mansikka",
@@ -1058,11 +2022,29 @@
     "y": "",
     "f": "Çilek aslında gerçek bir üzümsü meyve değil: üstündeki her minik “tohum”, içinde tohum taşıyan ayrı bir meyvedir."
    },
+   "tk": {
+    "n": "Ýertudana",
+    "a": "",
+    "y": "",
+    "f": "Ýertudana hakyky miweje däl: onuň üstündäki her ownujak «tohum» içinde tohumy bolan aýratyn miwedir."
+   },
+   "yo": {
+    "n": "Sítírọ́bẹ́rì",
+    "a": "",
+    "y": "",
+    "f": "Sítírọ́bẹ́rì kì í ṣe bẹ́rì gidi: “irúgbìn” kékeré kọ̀ọ̀kan lára rẹ̀ jẹ́ èso ọ̀tọ̀ tí irúgbìn wà nínú rẹ̀."
+   },
    "el": {
     "n": "Φράουλα",
     "a": "",
     "y": "",
     "f": "Η φράουλα δεν είναι αληθινό μούρο: κάθε μικροσκοπικός «σπόρος» της είναι ξεχωριστός καρπός με έναν σπόρο μέσα."
+   },
+   "be": {
+    "n": "Трускаўка",
+    "a": "",
+    "y": "",
+    "f": "Трускаўка — не сапраўдная ягада: кожнае «зярнятка» на ёй — гэта асобны плод з насенінкай унутры."
    },
    "bg": {
     "n": "Ягода",
@@ -1070,11 +2052,41 @@
     "y": "",
     "f": "Ягодата всъщност не е истински ягодоплод: всяко малко „семенце“ по нея е отделен плод със семка вътре."
    },
+   "ky": {
+    "n": "Кулпунай",
+    "a": "",
+    "y": "",
+    "f": "Кулпунай чыныгы мөмө эмес: анын үстүндөгү ар бир кичинекей «урук» — ичинде уругу бар өзүнчө жемиш."
+   },
    "kk": {
     "n": "Құлпынай",
     "a": "",
     "y": "",
     "f": "Құлпынай нағыз жидек емес: оның бетіндегі әр кішкентай «тұқым» — ішінде тұқымы бар жеке жеміс."
+   },
+   "mk": {
+    "n": "Јагода",
+    "a": "",
+    "y": "",
+    "f": "Јагодата не е вистинско бобинесто овошје: секое ситно „семе“ на неа е посебен плод со семка внатре."
+   },
+   "mn": {
+    "n": "Гүзээлзгэнэ",
+    "a": "",
+    "y": "",
+    "f": "Гүзээлзгэнэ жинхэнэ жимсгэнэ биш: дээрх жижигхэн «үр» бүр нь дотроо үртэй тусдаа жимс юм."
+   },
+   "sr": {
+    "n": "Јагода",
+    "a": "",
+    "y": "",
+    "f": "Јагода није право бобичасто воће: свака ситна „семенка“ на њој је засебан плод са семеном унутра."
+   },
+   "tg": {
+    "n": "Қулфинай",
+    "a": "",
+    "y": "",
+    "f": "Қулфинай буттамеваи ҳақиқӣ нест: ҳар «тухмча»-и хурди рӯи он меваи алоҳидаест, ки дарунаш тухм дорад."
    },
    "uk": {
     "n": "Полуниця",
@@ -1082,11 +2094,29 @@
     "y": "",
     "f": "Полуниця — не справжня ягода: кожне «зернятко» на ній — це окремий плід із насінинкою всередині."
    },
+   "ka": {
+    "n": "მარწყვი",
+    "a": "",
+    "y": "",
+    "f": "მარწყვი ნამდვილი კენკრა არ არის: ყოველი პაწაწინა „თესლი“ მასზე ცალკე ნაყოფია, შიგნით თესლით."
+   },
+   "hy": {
+    "n": "Ելակ",
+    "a": "",
+    "y": "",
+    "f": "Ելակն իսկական հատապտուղ չէ․ նրա վրայի ամեն փոքրիկ «սերմ» առանձին պտուղ է՝ ներսում սերմով։"
+   },
    "he": {
     "n": "תות שדה",
     "a": "",
     "y": "",
     "f": "תות השדה הוא לא \"ענבה\" אמיתית: כל \"זרע\" קטנטן עליו הוא פרי נפרד, ובתוכו זרע."
+   },
+   "ur": {
+    "n": "اسٹرابیری",
+    "a": "",
+    "y": "",
+    "f": "اسٹرابیری اصل بیری نہیں: اس پر ہر ننھا “بیج” دراصل ایک الگ پھل ہے جس کے اندر بیج ہوتا ہے۔"
    },
    "ar": {
     "n": "فراولة",
@@ -1094,17 +2124,125 @@
     "y": "",
     "f": "الفراولة ليست توتة حقيقية: كل «بذرة» صغيرة عليها ثمرة مستقلة في داخلها بذرة."
    },
+   "ps": {
+    "n": "د ځمکې توت",
+    "a": "",
+    "y": "",
+    "f": "د ځمکې توت په رښتیا توت نه دی: پر هغه هر کوچنی «تخم» یوه جلا مېوه ده چې دننه یې یو تخم دی."
+   },
+   "fa": {
+    "n": "توت‌فرنگی",
+    "a": "",
+    "y": "",
+    "f": "توت‌فرنگی در واقع سته نیست: هر «دانه» ریزِ رویش میوه‌ای جداست که دانه‌ای در خود دارد."
+   },
+   "am": {
+    "n": "እንጆሪ",
+    "a": "",
+    "y": "",
+    "f": "እንጆሪ እውነተኛ ቤሪ አይደለም፦ በላዩ ያለው እያንዳንዱ ትንሽ «ዘር» በውስጡ ዘር ያለው የተለየ ፍሬ ነው።"
+   },
+   "ne": {
+    "n": "स्ट्रबेरी",
+    "a": "",
+    "y": "",
+    "f": "स्ट्रबेरी वास्तवमा बेरी होइन: यसमाथिको हरेक सानो “बिउ” भित्र बिउ भएको छुट्टै फल हो।"
+   },
+   "mr": {
+    "n": "स्ट्रॉबेरी",
+    "a": "",
+    "y": "",
+    "f": "स्ट्रॉबेरी खरी बेरी नाही: तिच्यावरचे प्रत्येक छोटे “बी” हे आत बी असलेले एक वेगळे फळ असते."
+   },
    "hi": {
     "n": "स्ट्रॉबेरी",
     "a": "",
     "y": "",
     "f": "स्ट्रॉबेरी असली बेरी नहीं है: उस पर हर छोटा “बीज” असल में एक अलग फल है, जिसके अंदर बीज होता है।"
    },
+   "as": {
+    "n": "ষ্ট্ৰবেৰী",
+    "a": "",
+    "y": "",
+    "f": "ষ্ট্ৰবেৰী প্ৰকৃত বেৰী নহয়: ইয়াৰ গাৰ প্ৰতিটো সৰু “গুটি” আচলতে এটা সুকীয়া ফল, যাৰ ভিতৰত এটা গুটি থাকে।"
+   },
+   "bn": {
+    "n": "স্ট্রবেরি",
+    "a": "",
+    "y": "",
+    "f": "স্ট্রবেরি আসলে বেরি নয়: এর গায়ের প্রতিটি ছোট্ট “বীজ” আলাদা একটা ফল, যার ভেতরে একটা বীজ।"
+   },
+   "pa": {
+    "n": "ਸਟ੍ਰਾਬੇਰੀ",
+    "a": "",
+    "y": "",
+    "f": "ਸਟ੍ਰਾਬੇਰੀ ਅਸਲ ਬੇਰੀ ਨਹੀਂ ਹੈ: ਇਸ ਉੱਤੇ ਹਰ ਨਿੱਕਾ “ਬੀਜ” ਇੱਕ ਵੱਖਰਾ ਫਲ ਹੈ, ਜਿਸਦੇ ਅੰਦਰ ਬੀਜ ਹੁੰਦਾ ਹੈ।"
+   },
+   "gu": {
+    "n": "સ્ટ્રોબેરી",
+    "a": "",
+    "y": "",
+    "f": "સ્ટ્રોબેરી સાચી બેરી નથી: તેના પરનું દરેક નાનું “બીજ” અંદર બીજવાળું અલગ ફળ છે."
+   },
+   "or": {
+    "n": "ଷ୍ଟ୍ରବେରି",
+    "a": "",
+    "y": "",
+    "f": "ଷ୍ଟ୍ରବେରି ପ୍ରକୃତ ବେରି ନୁହେଁ: ଏହା ଉପରର ପ୍ରତିଟି ଛୋଟ “ମଞ୍ଜି” ଅସଲରେ ଭିତରେ ମଞ୍ଜି ଥିବା ଏକ ଅଲଗା ଫଳ।"
+   },
+   "ta": {
+    "n": "ஸ்ட்ராபெரி",
+    "a": "",
+    "y": "",
+    "f": "ஸ்ட்ராபெரி உண்மையான பெர்ரி அல்ல: அதன் மேலுள்ள ஒவ்வொரு சிறு “விதையும்” உள்ளே விதை கொண்ட தனிப் பழம்."
+   },
+   "te": {
+    "n": "స్ట్రాబెర్రీ",
+    "a": "",
+    "y": "",
+    "f": "స్ట్రాబెర్రీ నిజమైన బెర్రీ కాదు: దానిపై ఉండే ప్రతి చిన్న “విత్తనం” లోపల విత్తనం ఉన్న ఒక విడి పండు."
+   },
+   "kn": {
+    "n": "ಸ್ಟ್ರಾಬೆರಿ",
+    "a": "",
+    "y": "",
+    "f": "ಸ್ಟ್ರಾಬೆರಿ ನಿಜವಾದ ಬೆರಿ ಅಲ್ಲ: ಅದರ ಮೇಲಿನ ಪ್ರತಿ ಪುಟ್ಟ “ಬೀಜ”ವೂ ಒಳಗೆ ಬೀಜವಿರುವ ಪ್ರತ್ಯೇಕ ಹಣ್ಣು."
+   },
+   "ml": {
+    "n": "സ്ട്രോബെറി",
+    "a": "",
+    "y": "",
+    "f": "സ്ട്രോബെറി ശരിക്കുള്ള ബെറിയല്ല: അതിന്മേലുള്ള ഓരോ കുഞ്ഞു “കുരുവും” ഉള്ളിൽ വിത്തുള്ള വേറിട്ട ഓരോ പഴമാണ്."
+   },
+   "si": {
+    "n": "ස්ට්‍රෝබෙරි",
+    "a": "",
+    "y": "",
+    "f": "ස්ට්‍රෝබෙරි ඇත්ත බෙරියක් නෙවෙයි: ඒ මත තියෙන හැම පුංචි “ඇටයක්ම” ඇතුළේ බීජයක් තියෙන වෙනම ඵලයක්."
+   },
    "th": {
     "n": "สตรอว์เบอร์รี",
     "a": "",
     "y": "",
     "f": "สตรอว์เบอร์รีไม่ใช่เบอร์รีแท้: “เมล็ด” เล็กๆ แต่ละเม็ดบนผิวคือผลแยกกันที่มีเมล็ดอยู่ข้างใน"
+   },
+   "lo": {
+    "n": "ໝາກສະຕໍເບີຣີ",
+    "a": "",
+    "y": "",
+    "f": "ສະຕໍເບີຣີບໍ່ແມ່ນໝາກເບີຣີແທ້: “ເມັດ” ນ້ອຍໆແຕ່ລະເມັດເທິງມັນແມ່ນໝາກໄມ້ແຍກກັນ ທີ່ມີເມັດຢູ່ຂ້າງໃນ"
+   },
+   "my": {
+    "n": "စတော်ဘယ်ရီ",
+    "a": "",
+    "y": "",
+    "f": "စတော်ဘယ်ရီက တကယ့် ဘယ်ရီသီး မဟုတ်ဘူး: အပေါ်က “အစေ့” လေးတစ်ခုချင်းက အထဲမှာ အစေ့ပါတဲ့ သီးခြား အသီးတစ်လုံးပါ။"
+   },
+   "km": {
+    "n": "ស្ត្របឺរី",
+    "a": "",
+    "y": "",
+    "f": "ស្ត្របឺរីមិនមែនជាផ្លែបឺរីពិតទេ៖ «គ្រាប់» តូចៗនីមួយៗលើវា គឺជាផ្លែមួយដាច់ដោយឡែក ដែលមានគ្រាប់នៅខាងក្នុង។"
    },
    "ko": {
     "n": "딸기",
@@ -1118,6 +2256,12 @@
     "y": "",
     "f": "いちごは本当のベリーではありません。表面の小さな「種」は一つひとつが果実で、その中に種が入っています。"
    },
+   "zh-CN": {
+    "n": "草莓",
+    "a": "",
+    "y": "",
+    "f": "草莓并不是真正的浆果：表面每一粒小小的“籽”，其实都是一个独立的果实，里面包着一粒种子。"
+   },
    "zh-TW": {
     "n": "草莓",
     "a": "",
@@ -1127,6 +2271,70 @@
   }
  },
  "S": {
+  "om": {
+   "tagline": "SUURAA KUUBII KUUBIIN MUL'ISI",
+   "lead": "Tapha qalbii tasgabbaa'aa jaallattoota aartiitiif. Kuubiiwwan dachaa dachaadhaan guuti, fakkiiwwan beekamoon, ajaa'ibni addunyaa fi qabeenyi piksalii xixiqqoon lubbuu horatu. Suuraan hundi ibsa muuziyeemii fi seenaa dhugaa tokkoon xumurama.",
+   "play": "Brawuzarii keessatti taphadhu",
+   "soon": "Dhiyootti ni dhufa",
+   "pics": {
+    "one": "suuraa {n}",
+    "other": "suuraa {n}"
+   },
+   "floors": {
+    "one": "darbii {n}",
+    "other": "darbii {n}"
+   },
+   "langs": {
+    "one": "afaan {n}",
+    "other": "afaan {n}"
+   },
+   "free": "Bilisa",
+   "layer": "DACHAA {a} / {b}",
+   "revealed": "SUURAAN MUL'ATE",
+   "about": "Lewydo istuudiyoo taphaa walabaa nama lamaa, Yukireen irraa ti. Vlad koodii barreessa, Lilya dizaayinii hojjetti. Waliin taphoota nuti taphachuu jaallannu hojjenna.",
+   "thanks": "Taphachuu keetiif galatoomi!",
+   "site": "Weebsaayitii keenya",
+   "games": "Taphoota keenya Google Play irratti",
+   "fact": "Ni beektaa?",
+   "how": "Kuubiin kee lakkoofsa agarsiisa. Kuubiiwwan lakkoofsa walfakkaataa qaban tuqi, ykn sansalata dheeraa tokkoon irra harkisi: sansalanni qabxii caalaa kenna.",
+   "demo": "Fakkii muuziyeemii keessaa, dachaa dachaadhaan mul'ate",
+   "aboutTitle": "Eenyu nuti",
+   "pixTitle": "Pix waliin wal barradhu",
+   "pixName": "Inni kuubii (cube) dha, maqaan isaa Pix. Lamaan walitti yoo makte CubePix argatta: taphichi maqaa isaa baata.",
+   "pixHi": "Akkam! Ani Pix."
+  },
+  "af": {
+   "tagline": "ONTHUL DIE PRENT KUBUS VIR KUBUS",
+   "lead": "’n Kalm raaisel vir kunsliefhebbers. Vul die kubusse laag vir laag, en beroemde skilderye, wêreldwonders en klein pikselskatte kom lewendig. Elke prent eindig met ’n museumbordjie en ’n ware storie.",
+   "play": "Speel in die blaaier",
+   "soon": "Binnekort op",
+   "pics": {
+    "one": "{n} prent",
+    "other": "{n} prente"
+   },
+   "floors": {
+    "one": "{n} verdieping",
+    "other": "{n} verdiepings"
+   },
+   "langs": {
+    "one": "{n} taal",
+    "other": "{n} tale"
+   },
+   "free": "Gratis",
+   "layer": "LAAG {a} / {b}",
+   "revealed": "PRENT ONTHUL",
+   "about": "Lewydo is ’n indie-speletjiesateljee van twee mense uit Oekraïne. Vlad kodeer, Lilya ontwerp. Saam maak ons die speletjies wat ons self graag speel.",
+   "thanks": "Dankie dat jy speel!",
+   "site": "Ons webwerf",
+   "games": "Ons speletjies op Google Play",
+   "fact": "Weetjie",
+   "how": "Jou kubus wys ’n getal. Tik op die selle met dieselfde getal, of vee in een lang ketting oor hulle: kettings tel meer punte.",
+   "demo": "’n Skildery uit die museum, laag vir laag onthul",
+   "aboutTitle": "Oor ons",
+   "pixTitle": "Ontmoet Pix",
+   "pixName": "Hy is ’n kubus, en sy naam is Pix. Sit die twee saam en jy kry CubePix: die speletjie dra sy naam.",
+   "pixHi": "Hallo! Ek is Pix."
+  },
   "az": {
    "tagline": "ŞƏKLİ KUB-KUB AÇ",
    "lead": "İncəsənəti sevənlər üçün sakit tapmaca. Kubları qat-qat doldur — məşhur tablolar, dünya möcüzələri və kiçik piksel xəzinələr canlansın. Hər şəkil muzey etiketi və real hekayə ilə bitir.",
@@ -1216,6 +2424,76 @@
    "pixTitle": "Kenali Pix",
    "pixName": "Dia sebiji kiub (cube), dan namanya Pix. Gabungkan kedua-duanya dan jadilah CubePix: permainan ini membawa namanya.",
    "pixHi": "Hai! Aku Pix."
+  },
+  "bs": {
+   "tagline": "OTKRIJ SLIKU KOCKU PO KOCKU",
+   "lead": "Mirna zagonetka za ljubitelje umjetnosti. Popunjavaj kocke sloj po sloj i oživi čuvene slike, svjetska čuda i mala piksel-blaga. Svaka slika završava muzejskim natpisom i istinitom pričom.",
+   "play": "Igraj u pregledniku",
+   "soon": "Uskoro na",
+   "pics": {
+    "one": "{n} slika",
+    "few": "{n} slike",
+    "other": "{n} slika"
+   },
+   "floors": {
+    "one": "{n} sprat",
+    "few": "{n} sprata",
+    "other": "{n} spratova"
+   },
+   "langs": {
+    "one": "{n} jezik",
+    "few": "{n} jezika",
+    "other": "{n} jezika"
+   },
+   "free": "Besplatno",
+   "layer": "SLOJ {a} / {b}",
+   "revealed": "SLIKA JE OTKRIVENA",
+   "about": "Lewydo je indie studio od dvoje ljudi iz Ukrajine. Vlad programira, Lilya dizajnira. Zajedno pravimo igre koje i sami volimo igrati.",
+   "thanks": "Hvala što igraš!",
+   "site": "Naša stranica",
+   "games": "Naše igre na Google Playu",
+   "fact": "Zanimljivost",
+   "how": "Tvoja kocka pokazuje broj. Dodiruj polja s istim brojem ili prevuci preko njih u jednom dugom lancu: lanci donose više bodova.",
+   "demo": "Slika iz muzeja, otkrivena sloj po sloj",
+   "aboutTitle": "O nama",
+   "pixTitle": "Upoznaj Pixa",
+   "pixName": "On je kocka (engl. cube), a ime mu je Pix. Spoji to dvoje i dobiješ CubePix: igra nosi njegovo ime.",
+   "pixHi": "Zdravo! Ja sam Pix."
+  },
+  "ca": {
+   "tagline": "DESCOBREIX LA IMATGE CUB A CUB",
+   "lead": "Un trencaclosques tranquil per als amants de l'art. Omple els cubs capa a capa i cobraran vida quadres famosos, meravelles del món i petits tresors de píxels. Cada imatge acaba amb una cartel·la de museu i una història real.",
+   "play": "Juga al navegador",
+   "soon": "Aviat a",
+   "pics": {
+    "one": "{n} imatge",
+    "many": "{n} imatges",
+    "other": "{n} imatges"
+   },
+   "floors": {
+    "one": "{n} planta",
+    "many": "{n} plantes",
+    "other": "{n} plantes"
+   },
+   "langs": {
+    "one": "{n} idioma",
+    "many": "{n} idiomes",
+    "other": "{n} idiomes"
+   },
+   "free": "Gratis",
+   "layer": "CAPA {a} / {b}",
+   "revealed": "IMATGE DESCOBERTA",
+   "about": "Lewydo és un estudi indie de dues persones d'Ucraïna. En Vlad programa, la Lilya dissenya. Junts fem els jocs als quals ens encanta jugar.",
+   "thanks": "Gràcies per jugar!",
+   "site": "El nostre web",
+   "games": "Els nostres jocs a Google Play",
+   "fact": "Curiositat",
+   "how": "El teu cub mostra un número. Toca les caselles amb el mateix número o llisca per sobre seu en una sola cadena llarga: les cadenes donen més punts.",
+   "demo": "Un quadre del museu, descobert capa a capa",
+   "aboutTitle": "Qui som",
+   "pixTitle": "Coneix Pix",
+   "pixName": "És un cub i es diu Pix. Ajunta les dues coses i tens CubePix: el joc porta el seu nom.",
+   "pixHi": "Hola! Soc Pix."
   },
   "cs": {
    "tagline": "ODHAL OBRAZ KOSTKU PO KOSTCE",
@@ -1415,6 +2693,38 @@
    "pixName": "Es un cubo, Cube en inglés, y se llama Pix. Junta las dos palabras y tendrás CubePix: el juego lleva su nombre.",
    "pixHi": "¡Hola! Soy Pix."
   },
+  "eu": {
+   "tagline": "AGERRARAZI IRUDIA KUBOZ KUBO",
+   "lead": "Puzzle lasai bat artearen zaleentzat. Bete kuboak geruzaz geruza, eta margolan ospetsuek, munduko mirariek eta pixel-altxor txikiek bizia hartzen dute. Irudi bakoitza museoko kartel batekin eta benetako istorio batekin amaitzen da.",
+   "play": "Jokatu nabigatzailean",
+   "soon": "Laster hemen:",
+   "pics": {
+    "one": "{n} irudi",
+    "other": "{n} irudi"
+   },
+   "floors": {
+    "one": "{n} solairu",
+    "other": "{n} solairu"
+   },
+   "langs": {
+    "one": "{n} hizkuntza",
+    "other": "{n} hizkuntza"
+   },
+   "free": "Doan",
+   "layer": "GERUZA {a} / {b}",
+   "revealed": "IRUDIA AGERIAN",
+   "about": "Lewydo Ukrainako indie joko-estudio bat da, bi lagunek osatua. Vlad programatzailea da, eta Lilya diseinatzailea. Elkarrekin, guk geuk gustura jokatzen ditugun jokoak egiten ditugu.",
+   "thanks": "Eskerrik asko jokatzeagatik!",
+   "site": "Gure webgunea",
+   "games": "Gure jokoak Google Play-n",
+   "fact": "Datu bitxia",
+   "how": "Zure kuboak zenbaki bat erakusten du. Sakatu zenbaki bera duten gelaxkak, edo irristatu hatza haien gainetik kate luze batean: kateek puntu gehiago ematen dituzte.",
+   "demo": "Museoko margolan bat, geruzaz geruza agertua",
+   "aboutTitle": "Guri buruz",
+   "pixTitle": "Ezagutu Pix",
+   "pixName": "Kubo bat da (ingelesez, cube), eta bere izena Pix da. Biak elkartuz gero, CubePix: jokoak bere izena darama.",
+   "pixHi": "Kaixo! Pix naiz."
+  },
   "fil": {
    "tagline": "ILITAW ANG OBRA, CUBE KADA CUBE",
    "lead": "Isang relaks na puzzle para sa mga mahilig sa sining. Punuin ang mga cube, layer kada layer, at mabubuhay ang mga sikat na painting, mga kamanghaan ng mundo at maliliit na pixel na kayamanan. Nagtatapos ang bawat larawan sa isang label ng museo at isang totoong kuwento.",
@@ -1479,6 +2789,70 @@
    "pixName": "C’est un cube, et il s’appelle Pix. Assemble Cube et Pix, et tu obtiens CubePix : le jeu porte son nom.",
    "pixHi": "Coucou ! Moi, c’est Pix."
   },
+  "gl": {
+   "tagline": "DESCOBRE A IMAXE CUBO A CUBO",
+   "lead": "Un crebacabezas tranquilo para amantes da arte. Enche os cubos capa a capa e cobran vida cadros famosos, marabillas do mundo e pequenos tesouros en píxeles. Cada imaxe remata cunha cartela de museo e unha historia real.",
+   "play": "Xogar no navegador",
+   "soon": "Moi pronto en",
+   "pics": {
+    "one": "{n} imaxe",
+    "other": "{n} imaxes"
+   },
+   "floors": {
+    "one": "{n} andar",
+    "other": "{n} andares"
+   },
+   "langs": {
+    "one": "{n} idioma",
+    "other": "{n} idiomas"
+   },
+   "free": "Gratis",
+   "layer": "CAPA {a} / {b}",
+   "revealed": "IMAXE DESCUBERTA",
+   "about": "Lewydo é un estudio indie de dúas persoas de Ucraína. Vlad programa, Lilya deseña. Xuntos facemos os xogos aos que nos encanta xogar.",
+   "thanks": "Grazas por xogar!",
+   "site": "O noso sitio web",
+   "games": "Os nosos xogos en Google Play",
+   "fact": "Curiosidade",
+   "how": "O teu cubo mostra un número. Toca as casas co mesmo número ou desliza o dedo por elas nunha longa cadea: as cadeas dan máis puntos.",
+   "demo": "Un cadro do museo, descuberto capa a capa",
+   "aboutTitle": "Quen somos",
+   "pixTitle": "Coñece a Pix",
+   "pixName": "É un cubo e chámase Pix. Xunta os dous e tes CubePix: o xogo leva o seu nome.",
+   "pixHi": "Ola! Son Pix."
+  },
+  "ha": {
+   "tagline": "BAYYANA HOTO KUBI BAYAN KUBI",
+   "lead": "Wasan wuyar warwarewa mai natsuwa ga masu son fasaha. Cika kubobi shafi bayan shafi, sai shahararrun zane-zane, al'ajaban duniya da ƙananan taskokin pixel su samu rai. Kowane hoto yana ƙarewa da katin bayani na gidan tarihi da labari na gaskiya.",
+   "play": "Yi wasa a burauza",
+   "soon": "Ba da daɗewa ba a",
+   "pics": {
+    "one": "hoto {n}",
+    "other": "hotuna {n}"
+   },
+   "floors": {
+    "one": "bene {n}",
+    "other": "benaye {n}"
+   },
+   "langs": {
+    "one": "harshe {n}",
+    "other": "harsuna {n}"
+   },
+   "free": "Kyauta",
+   "layer": "SHAFI {a} / {b}",
+   "revealed": "HOTO YA BAYYANA",
+   "about": "Lewydo ƙaramin kamfanin wasanni ne na mutum biyu daga Ukraine. Vlad yana rubuta code, Lilya tana zayyana. Tare muna yin wasannin da mu kanmu muke son yi.",
+   "thanks": "Mun gode da wasanka!",
+   "site": "Shafinmu na intanet",
+   "games": "Wasanninmu a Google Play",
+   "fact": "Ka sani?",
+   "how": "Kubinka yana nuna lamba. Taɓa murabba'ai masu lamba iri ɗaya, ko ka ja yatsa a kansu cikin doguwar sarƙa ɗaya: sarƙoƙi suna ba da ƙarin maki.",
+   "demo": "Zane daga gidan tarihi, ana bayyana shi shafi bayan shafi",
+   "aboutTitle": "Game da mu",
+   "pixTitle": "Haɗu da Pix",
+   "pixName": "Shi kubi ne (cube), sunansa kuma Pix. Haɗa su biyu za ka sami CubePix: wasan yana ɗauke da sunansa.",
+   "pixHi": "Sannu! Ni ne Pix."
+  },
   "hr": {
    "tagline": "OTKRIJ SLIKU KOCKICU PO KOCKICU",
    "lead": "Opuštajuća zagonetka za ljubitelje umjetnosti. Ispunjavaj kockice sloj po sloj i oživi slavne slike, čuda svijeta i male pikselne dragocjenosti. Svaka slika završava muzejskom legendom i istinitom pričom.",
@@ -1514,6 +2888,99 @@
    "pixName": "On je kockica, na engleskom cube, a ime mu je Pix. Spoji to dvoje i dobiješ CubePix: igra nosi njegovo ime.",
    "pixHi": "Bok! Ja sam Pix."
   },
+  "ig": {
+   "tagline": "KPUGHEE IHE OSISE CUBE NA CUBE",
+   "lead": "Egwuregwu mgbagwoju anya dị jụụ maka ndị hụrụ nka n'anya. Mejupụta cube nkebi na nkebi, ihe osise a ma ama, ihe ịtụnanya ụwa na obere akụ pixel ga-abịa ndụ. Ihe osise ọ bụla na-ejedebe na ndetu ụlọ ngosi na akụkọ eziokwu.",
+   "play": "Gwuo n'ihe nchọgharị",
+   "soon": "Ọ na-abịa n'oge na-adịghị anya na",
+   "pics": {
+    "other": "ihe osise {n}"
+   },
+   "floors": {
+    "other": "okpukpu {n}"
+   },
+   "langs": {
+    "other": "asụsụ {n}"
+   },
+   "free": "N'efu",
+   "layer": "NKEBI {a} / {b}",
+   "revealed": "IHE OSISE APỤTALA",
+   "about": "Lewydo bụ obere studio egwuregwu nke mmadụ abụọ si Ukraine. Vlad na-ede koodu, Lilya na-ahazi ọdịdị. Anyị abụọ na-eme egwuregwu ndị anyị n'onwe anyị hụrụ n'anya igwu.",
+   "thanks": "Daalụ maka igwu egwu!",
+   "site": "Websaịtị anyị",
+   "games": "Egwuregwu anyị na Google Play",
+   "fact": "Ị maara?",
+   "how": "Cube gị na-egosi nọmba. Pịa cube ndị nwere otu nọmba ahụ, ma ọ bụ dọọ mkpịsị aka gafee ha n'otu agbụ ogologo: agbụ na-enye akara karịa.",
+   "demo": "Ihe osise sitere n'ụlọ ngosi, nke na-apụta nkebi na nkebi",
+   "aboutTitle": "Banyere anyị",
+   "pixTitle": "Mata Pix",
+   "pixName": "Ọ bụ cube, aha ya bụ Pix. Jikọta ha abụọ, ị ga-enweta CubePix: egwuregwu ahụ na-ebu aha ya.",
+   "pixHi": "Ndewo! Abụ m Pix."
+  },
+  "zu": {
+   "tagline": "VEZA ISITHOMBE NGAMAKHYUBHU",
+   "lead": "Iphazili ezolile yabathanda ubuciko. Gcwalisa amakhyubhu ungqimba ngongqimba, futhi imidwebo edumile, izimangaliso zomhlaba namagugu amancane amaphikseli kuyaphila. Isithombe ngasinye siphetha ngelebula yemnyuziyamu nendaba yeqiniso.",
+   "play": "Dlala esipheqululini",
+   "soon": "Maduze ku-",
+   "pics": {
+    "one": "isithombe esingu-{n}",
+    "other": "izithombe ezingu-{n}"
+   },
+   "floors": {
+    "one": "isitezi esingu-{n}",
+    "other": "izitezi ezingu-{n}"
+   },
+   "langs": {
+    "one": "ulimi olu-{n}",
+    "other": "izilimi ezingu-{n}"
+   },
+   "free": "Mahhala",
+   "layer": "UNGQIMBA {a} / {b}",
+   "revealed": "ISITHOMBE SIVEZIWE",
+   "about": "I-Lewydo yisitudiyo esincane semidlalo sabantu ababili sase-Ukraine. U-Vlad ubhala ikhodi, u-Lilya uyaklama. Ndawonye senza imidlalo esithanda ukuyidlala.",
+   "thanks": "Siyabonga ngokudlala!",
+   "site": "Iwebhusayithi yethu",
+   "games": "Imidlalo yethu ku-Google Play",
+   "fact": "Iqiniso elimnandi",
+   "how": "Ikhyubhu yakho ikhombisa inombolo. Thepha amaseli anenombolo efanayo, noma uswayiphe phezu kwawo ngeketanga elilodwa elide: amaketanga anikeza amaphuzu amaningi.",
+   "demo": "Umdwebo ovela emnyuziyamu, uvezwa ungqimba ngongqimba",
+   "aboutTitle": "Ngathi",
+   "pixTitle": "Hlangana no-Pix",
+   "pixName": "Uyikhyubhu, futhi igama lakhe ngu-Pix. Kuhlanganise kokubili uthole i-CubePix: umdlalo uthwala igama lakhe.",
+   "pixHi": "Sawubona! Ngingu-Pix."
+  },
+  "is": {
+   "tagline": "AFHJÚPAÐU MYND KUBB FYRIR KUBB",
+   "lead": "Róleg þraut fyrir listunnendur. Fylltu kubbana lag fyrir lag og fræg málverk, undur veraldar og litlir pixlafjársjóðir lifna við. Hverri mynd lýkur með safnskilti og sannri sögu.",
+   "play": "Spila í vafranum",
+   "soon": "Væntanlegt á",
+   "pics": {
+    "one": "{n} mynd",
+    "other": "{n} myndir"
+   },
+   "floors": {
+    "one": "{n} hæð",
+    "other": "{n} hæðir"
+   },
+   "langs": {
+    "one": "{n} tungumál",
+    "other": "{n} tungumál"
+   },
+   "free": "Ókeypis",
+   "layer": "LAG {a} / {b}",
+   "revealed": "MYNDIN AFHJÚPUÐ",
+   "about": "Lewydo er tveggja manna indie-leikjastúdíó frá Úkraínu. Vlad forritar, Lilya hannar. Saman gerum við leikina sem við elskum að spila.",
+   "thanks": "Takk fyrir að spila!",
+   "site": "Vefsíðan okkar",
+   "games": "Leikirnir okkar á Google Play",
+   "fact": "Vissir þú?",
+   "how": "Kubburinn þinn sýnir tölu. Ýttu á reitina með sömu tölu eða strjúktu yfir þá í einni langri keðju: keðjur gefa fleiri stig.",
+   "demo": "Málverk úr safninu, afhjúpað lag fyrir lag",
+   "aboutTitle": "Um okkur",
+   "pixTitle": "Hittu Pix",
+   "pixName": "Hann er kubbur og heitir Pix. Settu þetta tvennt saman og þú færð CubePix: leikurinn ber nafnið hans.",
+   "pixHi": "Hæ! Ég er Pix."
+  },
   "it": {
    "tagline": "SCOPRI IL QUADRO CUBO PER CUBO",
    "lead": "Un rompicapo rilassante per chi ama l’arte. Riempi i cubi strato dopo strato e prendono vita quadri famosi, meraviglie del mondo e piccoli tesori in pixel. Ogni quadro si chiude con una didascalia da museo e una storia vera.",
@@ -1545,6 +3012,38 @@
    "pixTitle": "Ecco Pix",
    "pixName": "È un cubo, in inglese Cube, e si chiama Pix. Metti insieme le due parole e ottieni CubePix: il gioco porta il suo nome.",
    "pixHi": "Ciao! Sono Pix."
+  },
+  "sw": {
+   "tagline": "FUNUA PICHA TABAKA KWA TABAKA",
+   "lead": "Fumbo tulivu kwa wapenzi wa sanaa. Jaza michemraba tabaka kwa tabaka, na michoro maarufu, maajabu ya dunia na hazina ndogo za pikseli hupata uhai. Kila picha huishia kwa kibao cha maelezo cha makumbusho na hadithi ya kweli.",
+   "play": "Cheza kwenye kivinjari",
+   "soon": "Inakuja hivi karibuni kwenye",
+   "pics": {
+    "one": "picha {n}",
+    "other": "picha {n}"
+   },
+   "floors": {
+    "one": "ghorofa {n}",
+    "other": "ghorofa {n}"
+   },
+   "langs": {
+    "one": "lugha {n}",
+    "other": "lugha {n}"
+   },
+   "free": "Bure",
+   "layer": "TABAKA {a} / {b}",
+   "revealed": "PICHA IMEFUNULIWA",
+   "about": "Lewydo ni studio ndogo ya michezo ya watu wawili kutoka Ukraine. Vlad anaandika msimbo, Lilya anabuni. Pamoja tunatengeneza michezo tunayopenda kucheza wenyewe.",
+   "thanks": "Asante kwa kucheza!",
+   "site": "Tovuti yetu",
+   "games": "Michezo yetu kwenye Google Play",
+   "fact": "Je, wajua?",
+   "how": "Mchemraba wako unaonyesha namba. Gusa visanduku vyenye namba hiyo, au telezesha kidole juu yake kwa mnyororo mmoja mrefu: minyororo hupata alama zaidi.",
+   "demo": "Mchoro kutoka makumbusho, unaofunuliwa tabaka kwa tabaka",
+   "aboutTitle": "Kuhusu sisi",
+   "pixTitle": "Mfahamu Pix",
+   "pixName": "Yeye ni mchemraba — kwa Kiingereza “cube” — na jina lake ni Pix. Ukiyaunganisha mawili hayo unapata CubePix: mchezo unabeba jina lake.",
+   "pixHi": "Jambo! Mimi ni Pix."
   },
   "lv": {
    "tagline": "ATKLĀJ ATTĒLU KUBIŅU PA KUBIŅAM",
@@ -1715,6 +3214,38 @@
    "pixName": "Han er en kube, og han heter Pix. Sett dem sammen, så får du CubePix: spillet bærer navnet hans.",
    "pixHi": "Hei! Jeg er Pix."
   },
+  "uz": {
+   "tagline": "RASMNI KUBMA-KUB OCH",
+   "lead": "Sanʼatni sevuvchilar uchun sokin boshqotirma. Kublarni qatlamma-qatlam toʻldir — mashhur rasmlar, dunyo moʻjizalari va kichik piksel xazinalar jonlanadi. Har bir rasm muzey yorligʻi va haqiqiy hikoya bilan yakunlanadi.",
+   "play": "Brauzerda oʻynash",
+   "soon": "Tez kunda:",
+   "pics": {
+    "one": "{n} ta rasm",
+    "other": "{n} ta rasm"
+   },
+   "floors": {
+    "one": "{n} ta qavat",
+    "other": "{n} ta qavat"
+   },
+   "langs": {
+    "one": "{n} ta til",
+    "other": "{n} ta til"
+   },
+   "free": "Bepul",
+   "layer": "QATLAM {a} / {b}",
+   "revealed": "RASM OCHILDI",
+   "about": "Lewydo — Ukrainadagi ikki kishilik indie oʻyin studiyasi. Vlad kod yozadi, Lilya dizayn qiladi. Biz birga oʻzimiz oʻynashni yoqtiradigan oʻyinlarni yaratamiz.",
+   "thanks": "Oʻynaganingiz uchun rahmat!",
+   "site": "Saytimiz",
+   "games": "Oʻyinlarimiz Google Play doʻkonida",
+   "fact": "Qiziqarli fakt",
+   "how": "Kubingda raqam bor. Shu raqamli kataklarni bos yoki ular boʻylab bitta uzun zanjir qilib sur: zanjirlar koʻproq ochko beradi.",
+   "demo": "Muzeydagi rasm qatlamma-qatlam ochilmoqda",
+   "aboutTitle": "Biz haqimizda",
+   "pixTitle": "Pix bilan tanish",
+   "pixName": "U kub, ismi esa Pix. Ikkalasini qoʻshsang, CubePix chiqadi: oʻyin uning ismi bilan atalgan.",
+   "pixHi": "Salom! Men Pixman."
+  },
   "pl": {
    "tagline": "ODKRYJ OBRAZ KOSTKA PO KOSTCE",
    "lead": "Spokojna łamigłówka dla miłośników sztuki. Wypełniaj kostki warstwa po warstwie, a ożyją słynne obrazy, cuda świata i małe pikselowe skarby. Każdy obraz kończy się muzealną tabliczką i prawdziwą historią.",
@@ -1820,6 +3351,38 @@
    "pixName": "E un cub (în engleză, cube) și se numește Pix. Pune-le împreună și obții CubePix: jocul îi poartă numele.",
    "pixHi": "Salut! Eu sunt Pix."
   },
+  "sq": {
+   "tagline": "ZBULO FIGURËN KUB PAS KUBI",
+   "lead": "Një enigmë e qetë për ata që e duan artin. Mbush kubet shtresë pas shtrese dhe piktura të famshme, mrekulli të botës e thesare të vogla piksel marrin jetë. Çdo figurë mbyllet me një etiketë muzeu dhe një histori të vërtetë.",
+   "play": "Luaj në shfletues",
+   "soon": "Së shpejti në",
+   "pics": {
+    "one": "{n} figurë",
+    "other": "{n} figura"
+   },
+   "floors": {
+    "one": "{n} kat",
+    "other": "{n} kate"
+   },
+   "langs": {
+    "one": "{n} gjuhë",
+    "other": "{n} gjuhë"
+   },
+   "free": "Falas",
+   "layer": "SHTRESA {a} / {b}",
+   "revealed": "FIGURA U ZBULUA",
+   "about": "Lewydo është një studio indie lojërash me dy veta nga Ukraina. Vlad shkruan kodin, Lilya bën dizajnin. Bashkë bëjmë lojërat që na pëlqen t’i luajmë.",
+   "thanks": "Faleminderit që luani!",
+   "site": "Faqja jonë",
+   "games": "Lojërat tona në Google Play",
+   "fact": "A e di?",
+   "how": "Kubi yt tregon një numër. Trokit mbi qelizat me të njëjtin numër ose rrëshqit gishtin mbi to në një zinxhir të gjatë: zinxhirët japin më shumë pikë.",
+   "demo": "Një pikturë nga muzeu, e zbuluar shtresë pas shtrese",
+   "aboutTitle": "Rreth nesh",
+   "pixTitle": "Njihu me Pix",
+   "pixName": "Ai është një kub dhe quhet Pix. Bashkoji të dyja dhe del CubePix: loja mban emrin e tij.",
+   "pixHi": "Përshëndetje! Unë jam Pix."
+  },
   "sk": {
    "tagline": "ODKRY OBRAZ KOCKU PO KOCKE",
    "lead": "Pokojný hlavolam pre milovníkov umenia. Vypĺňaj kocky vrstvu po vrstve a ožijú slávne obrazy, divy sveta aj malé pixelové poklady. Každý obraz sa končí múzejným popiskom a skutočným príbehom.",
@@ -1895,6 +3458,38 @@
    "pixTitle": "Spoznaj Pixa",
    "pixName": "Je kocka, po angleško »cube«, in ime mu je Pix. Ko oboje združiš, dobiš CubePix: igra nosi njegovo ime.",
    "pixHi": "Živjo! Jaz sem Pix."
+  },
+  "so": {
+   "tagline": "MUUJI SAWIRKA KUUB-KUUB",
+   "lead": "Halxiraale degan oo loogu talagalay kuwa farshaxanka jecel. Kuubabka lakab-lakab u buuxi, sawirro caan ah, yaababka adduunka iyo khasnado pixel ah oo yaryar ayaa nolol yeesha. Sawir kasta wuxuu ku dhammaadaa sharraxaad matxaf iyo sheeko run ah.",
+   "play": "Ku ciyaar browser-ka",
+   "soon": "Dhowaan ku imanaya",
+   "pics": {
+    "one": "{n} sawir",
+    "other": "{n} sawir"
+   },
+   "floors": {
+    "one": "{n} dabaq",
+    "other": "{n} dabaq"
+   },
+   "langs": {
+    "one": "{n} luuqad",
+    "other": "{n} luuqadood"
+   },
+   "free": "Bilaash",
+   "layer": "LAKAB {a} / {b}",
+   "revealed": "SAWIRKU WAA MUUQDAA",
+   "about": "Lewydo waa istuudiyo ciyaaro oo madax-bannaan oo laba qof ah, kana yimid Yukreeyn. Vlad wuxuu qoraa koodka, Lilya waxay samaysaa naqshadda. Wadajir ayaannu u samaynaa ciyaaraha aan jecel nahay inaan ciyaarno.",
+   "thanks": "Mahadsanid inaad ciyaartay!",
+   "site": "Websaydkayaga",
+   "games": "Ciyaarahayaga Google Play",
+   "fact": "Xaqiiq xiiso leh",
+   "how": "Kuubkaagu wuxuu muujiyaa lambar. Taabo unugyada leh isla lambarkaas, ama farta ku mari hal silsilad oo dheer: silsiladuhu dhibco badan bay keenaan.",
+   "demo": "Sawir ka mid ah matxafka, oo lakab-lakab loo muujiyay",
+   "aboutTitle": "Naga saabsan",
+   "pixTitle": "Baro Pix",
+   "pixName": "Waa kuub (cube), magaciisuna waa Pix. Labada isku dar oo waxaad helaysaa CubePix: ciyaartu magaciisa ayay wadataa.",
+   "pixHi": "Haye! Anigu waxaan ahay Pix."
   },
   "fi": {
    "tagline": "PALJASTA KUVA KUUTIO KERRALLAAN",
@@ -2021,6 +3616,67 @@
    "pixName": "O bir küp, İngilizcesiyle Cube; adı da Pix. İkisini birleştirince CubePix çıkıyor: oyun onun adını taşıyor.",
    "pixHi": "Merhaba! Ben Pix."
   },
+  "tk": {
+   "tagline": "SURATY KUBMA-KUB AÇ",
+   "lead": "Sungaty söýýänler üçin rahat başgatyny. Kublary gatlak-gatlak doldur — meşhur suratlar, dünýä täsinlikleri we kiçijik piksel hazynalary janlanar. Her surat muzeý ýazgysy we hakyky hekaýa bilen tamamlanýar.",
+   "play": "Brauzerde oýna",
+   "soon": "Ýakyn wagtda:",
+   "pics": {
+    "one": "{n} surat",
+    "other": "{n} surat"
+   },
+   "floors": {
+    "one": "{n} gat",
+    "other": "{n} gat"
+   },
+   "langs": {
+    "one": "{n} dil",
+    "other": "{n} dil"
+   },
+   "free": "Mugt",
+   "layer": "GATLAK {a} / {b}",
+   "revealed": "SURAT AÇYLDY",
+   "about": "Lewydo — Ukrainadan iki adamlyk garaşsyz oýun studiýasy. Vlad kod ýazýar, Lilya dizaýn edýär. Biz özümiziň oýnamagy halaýan oýunlarymyzy bile döredýäris.",
+   "thanks": "Oýnaýanyň üçin sag bol!",
+   "site": "Saýtymyz",
+   "games": "Google Play-däki oýunlarymyz",
+   "fact": "Gyzykly fakt",
+   "how": "Kubuň bir sany görkezýär. Şol sanly öýjüklere bas ýa-da olaryň üstünden bir uzyn zynjyr bilen süýşür: zynjyrlar has köp utuk berýär.",
+   "demo": "Muzeýden gatlak-gatlak açylýan surat",
+   "aboutTitle": "Biz barada",
+   "pixTitle": "Pix bilen tanyş bol",
+   "pixName": "Ol kub, ady bolsa Pix. Ikisini birleşdir — CubePix bolar: oýun onuň adyny göterýär.",
+   "pixHi": "Salam! Men Pix."
+  },
+  "yo": {
+   "tagline": "ṢÍ ÀWÒRÁN PAYÁ KÚBÙ LẸ́YÌN KÚBÙ",
+   "lead": "Eré àdììtú tó dákẹ́ jẹ́ẹ́ fún àwọn olùfẹ́ ọnà. Kún àwọn kúbù ní ìpele-ìpele, àwọn àwòrán olókìkí, ìyanu àgbáyé àti ìṣúra pixel kékeré yóò sì di alààyè. Gbogbo àwòrán ló ń parí pẹ̀lú àkọlé ilé ọnà àti ìtàn òtítọ́.",
+   "play": "Ṣeré nínú ẹ̀rọ aṣàwákiri",
+   "soon": "Ó ń bọ̀ láìpẹ́ sí",
+   "pics": {
+    "other": "àwòrán {n}"
+   },
+   "floors": {
+    "other": "àjà {n}"
+   },
+   "langs": {
+    "other": "èdè {n}"
+   },
+   "free": "Ọ̀fẹ́",
+   "layer": "ÌPELE {a} / {b}",
+   "revealed": "ÀWÒRÁN TI HÀN",
+   "about": "Lewydo jẹ́ ilé-iṣẹ́ eré indie ti ènìyàn méjì láti Ukraine. Vlad ń kọ kóòdù, Lilya ń ṣe àwòrán. Papọ̀, à ń ṣe àwọn eré tí àwa náà fẹ́ràn láti ṣe.",
+   "thanks": "O ṣeun fún ṣíṣeré!",
+   "site": "Ojú-òpó wẹ́ẹ̀bù wa",
+   "games": "Àwọn eré wa lórí Google Play",
+   "fact": "Ṣé o mọ̀?",
+   "how": "Kúbù rẹ ń fi nọ́mbà kan hàn. Tẹ̀ àwọn kúbù tó ní nọ́mbà kan náà, tàbí fa ìka kọjá lórí wọn ní ẹ̀wọ̀n gígùn kan: ẹ̀wọ̀n ń mú àmì púpọ̀ wá.",
+   "demo": "Àwòrán kan láti ilé ọnà, tó ń hàn ní ìpele-ìpele",
+   "aboutTitle": "Nípa wa",
+   "pixTitle": "Mọ Pix",
+   "pixName": "Kúbù ni, orúkọ rẹ̀ sì ni Pix. Pa méjèèjì pọ̀, wàá rí CubePix: eré náà ń jẹ́ orúkọ rẹ̀.",
+   "pixHi": "Báwo! Èmi ni Pix."
+  },
   "el": {
    "tagline": "ΑΠΟΚΑΛΥΨΕ ΤΗΝ ΕΙΚΟΝΑ ΚΥΒΟ-ΚΥΒΟ",
    "lead": "Ένα ήρεμο παζλ για όσους αγαπούν την τέχνη. Γέμισε τους κύβους στρώση-στρώση και ζωντανεύουν διάσημοι πίνακες, θαύματα του κόσμου και μικροί θησαυροί σε pixel. Κάθε εικόνα τελειώνει με μια λεζάντα μουσείου και μια αληθινή ιστορία.",
@@ -2052,6 +3708,44 @@
    "pixTitle": "Γνώρισε τον Pix",
    "pixName": "Είναι κύβος (cube) και τον λένε Pix. Βάλε τα δύο μαζί και έχεις CubePix: το παιχνίδι έχει το όνομά του.",
    "pixHi": "Γεια! Είμαι ο Pix."
+  },
+  "be": {
+   "tagline": "РАСКРЫЙ КАРЦІНУ КУБІКАМІ",
+   "lead": "Спакойная галаваломка для тых, хто любіць мастацтва. Запаўняй кубікі слой за слоем — і ажываюць знакамітыя карціны, цуды свету і маленькія піксельныя скарбы. Кожная карціна заканчваецца музейнай этыкеткай з праўдзівай гісторыяй.",
+   "play": "Гуляць у браўзеры",
+   "soon": "Хутка ў",
+   "pics": {
+    "one": "{n} карціна",
+    "few": "{n} карціны",
+    "many": "{n} карцін",
+    "other": "{n} карціны"
+   },
+   "floors": {
+    "one": "{n} паверх",
+    "few": "{n} паверхі",
+    "many": "{n} паверхаў",
+    "other": "{n} паверха"
+   },
+   "langs": {
+    "one": "{n} мова",
+    "few": "{n} мовы",
+    "many": "{n} моў",
+    "other": "{n} мовы"
+   },
+   "free": "Бясплатна",
+   "layer": "СЛОЙ {a} / {b}",
+   "revealed": "КАРЦІНУ РАСКРЫТА",
+   "about": "Lewydo — інды-студыя з двух чалавек з Украіны. Улад піша код, Ліля робіць дызайн. Разам мы робім гульні, у якія самі любім гуляць.",
+   "thanks": "Дзякуй, што гуляеш!",
+   "site": "Наш сайт",
+   "games": "Нашы гульні ў Google Play",
+   "fact": "Цікавы факт",
+   "how": "На тваім кубіку — нумар. Націскай на клеткі з тым самым нумарам або вядзі па іх пальцам адным доўгім ланцужком: ланцужкі даюць больш ачкоў.",
+   "demo": "Карціна з музея раскрываецца слой за слоем",
+   "aboutTitle": "Пра нас",
+   "pixTitle": "Знаёмся: Pix",
+   "pixName": "Ён кубік, гэта значыць Cube, а завуць яго Pix. Разам атрымліваецца CubePix — гульня носіць яго імя.",
+   "pixHi": "Прывітанне! Я Pix."
   },
   "bg": {
    "tagline": "РАЗКРИЙ КАРТИНА КУБЧЕ ПО КУБЧЕ",
@@ -2085,6 +3779,38 @@
    "pixName": "Той е кубче (на английски cube), а името му е Pix. Сложи ги заедно и ще получиш CubePix: играта носи неговото име.",
    "pixHi": "Здрасти! Аз съм Pix."
   },
+  "ky": {
+   "tagline": "СҮРӨТТҮ КУБ-КУБ МЕНЕН АЧ",
+   "lead": "Искусствону сүйгөндөр үчүн тынч пазл. Кубдарды катмар-катмар толтур — атактуу сүрөттөр, дүйнө кереметтери жана кичинекей пиксель кенчтер жанданат. Ар бир сүрөт музей этикеткасы жана чыныгы окуя менен аяктайт.",
+   "play": "Браузерде ойноо",
+   "soon": "Жакында:",
+   "pics": {
+    "one": "{n} сүрөт",
+    "other": "{n} сүрөт"
+   },
+   "floors": {
+    "one": "{n} кабат",
+    "other": "{n} кабат"
+   },
+   "langs": {
+    "one": "{n} тил",
+    "other": "{n} тил"
+   },
+   "free": "Акысыз",
+   "layer": "КАТМАР {a} / {b}",
+   "revealed": "СҮРӨТ АЧЫЛДЫ",
+   "about": "Lewydo — Украинадагы эки кишилик инди оюн студиясы. Влад код жазат, Лиля дизайн жасайт. Өзүбүз ойногонду жакшы көргөн оюндарды чогуу жасайбыз.",
+   "thanks": "Ойногонуң үчүн рахмат!",
+   "site": "Биздин сайт",
+   "games": "Google Play'деги оюндарыбыз",
+   "fact": "Кызыктуу факт",
+   "how": "Кубуң бир санды көрсөтөт. Ошол эле сан жазылган уячаларды бас же аларды бир узун чынжыр менен сүр: чынжырлар көбүрөөк упай берет.",
+   "demo": "Музейдеги сүрөт катмар-катмар ачылууда",
+   "aboutTitle": "Биз жөнүндө",
+   "pixTitle": "Pix менен тааныш",
+   "pixName": "Ал — куб, анын аты Pix. Экөөнү бириктирсең, CubePix болот: оюн анын атын алып жүрөт.",
+   "pixHi": "Салам! Мен Pix."
+  },
   "kk": {
    "tagline": "СУРЕТТІ ТЕКШЕЛЕП АШ",
    "lead": "Өнерді сүйетіндерге арналған жайбарақат басқатырғыш. Текшелерді қат-қатымен толтыр — атақты суреттер, әлем ғажайыптары мен кішкентай пиксель қазыналары жанданады. Әр сурет шынайы оқиғасы бар музей түсініктемесімен аяқталады.",
@@ -2116,6 +3842,137 @@
    "pixTitle": "Танысып ал: Pix",
    "pixName": "Ол — текше, яғни Cube, ал аты — Pix. Екеуін қоссаң, CubePix шығады: ойын оның атын алып жүр.",
    "pixHi": "Сәлем! Мен — Pix."
+  },
+  "mk": {
+   "tagline": "ОТКРИЈ ЈА СЛИКАТА КОЦКА ПО КОЦКА",
+   "lead": "Мирна сложувалка за љубителите на уметноста. Пополнувај ги коцките слој по слој — и оживуваат познати слики, светски чуда и мали пиксел-богатства. Секоја слика завршува со музејска табличка и вистинска приказна.",
+   "play": "Играј во прелистувачот",
+   "soon": "Наскоро на",
+   "pics": {
+    "one": "{n} слика",
+    "other": "{n} слики"
+   },
+   "floors": {
+    "one": "{n} кат",
+    "other": "{n} ката"
+   },
+   "langs": {
+    "one": "{n} јазик",
+    "other": "{n} јазици"
+   },
+   "free": "Бесплатно",
+   "layer": "СЛОЈ {a} / {b}",
+   "revealed": "СЛИКАТА Е ОТКРИЕНА",
+   "about": "Lewydo е инди студио за игри од двајца луѓе од Украина. Влад програмира, Лиља дизајнира. Заедно правиме игри што и самите сакаме да ги играме.",
+   "thanks": "Ти благодариме што играш!",
+   "site": "Нашиот сајт",
+   "games": "Нашите игри на Google Play",
+   "fact": "Интересен факт",
+   "how": "Твојата коцка покажува број. Допри ги ќелиите со истиот број или повлечи преку нив во еден долг синџир: синџирите носат повеќе поени.",
+   "demo": "Слика од музејот, откриена слој по слој",
+   "aboutTitle": "За нас",
+   "pixTitle": "Запознај го Pix",
+   "pixName": "Тој е коцка (на англиски cube), а името му е Pix. Спој ги двете и добиваш CubePix: играта го носи неговото име.",
+   "pixHi": "Здраво! Јас сум Pix."
+  },
+  "mn": {
+   "tagline": "ЗУРГИЙГ КУБ КУБААР НЭЭ",
+   "lead": "Урлагт дуртай хүмүүст зориулсан тайван таавар. Кубуудыг давхарга давхаргаар дүүргэхэд алдартай уран зургууд, дэлхийн гайхамшгууд, жижигхэн пиксел эрдэнэсүүд амилна. Зураг бүр музейн тайлбар, бодит түүхээр төгсдөг.",
+   "play": "Хөтөч дээр тоглох",
+   "soon": "Удахгүй гарна",
+   "pics": {
+    "one": "{n} зураг",
+    "other": "{n} зураг"
+   },
+   "floors": {
+    "one": "{n} давхар",
+    "other": "{n} давхар"
+   },
+   "langs": {
+    "one": "{n} хэл",
+    "other": "{n} хэл"
+   },
+   "free": "Үнэгүй",
+   "layer": "ДАВХАРГА {a} / {b}",
+   "revealed": "ЗУРАГ НЭЭГДЛЭЭ",
+   "about": "Lewydo бол Украины хоёр хүний бие даасан тоглоомын студи. Влад код бичдэг, Лиля дизайн хийдэг. Бид хамтдаа өөрсдийн тоглох дуртай тоглоомуудаа бүтээдэг.",
+   "thanks": "Тоглосонд баярлалаа!",
+   "site": "Манай сайт",
+   "games": "Манай тоглоомууд Google Play-д",
+   "fact": "Сонирхолтой баримт",
+   "how": "Чиний куб тоо харуулна. Ижил тоотой нүднүүдийг товш, эсвэл тэдгээрийн дээгүүр нэг урт гинжээр гулсуул: гинж илүү оноо өгнө.",
+   "demo": "Давхарга давхаргаар нээгдэж буй музейн уран зураг",
+   "aboutTitle": "Бидний тухай",
+   "pixTitle": "Pix-тэй танилц",
+   "pixName": "Тэр бол куб, нэр нь Pix. Хоёуланг нь нийлүүлбэл CubePix болно: тоглоом түүний нэрээр нэрлэгдсэн.",
+   "pixHi": "Сайн уу! Би Pix."
+  },
+  "sr": {
+   "tagline": "ОТКРИЈ СЛИКУ КОЦКУ ПО КОЦКУ",
+   "lead": "Мирна загонетка за љубитеље уметности. Попуњавај коцке слој по слој и оживеће чувене слике, светска чуда и мала пиксел-блага. Свака слика се завршава музејским натписом и истинитом причом.",
+   "play": "Играј у прегледачу",
+   "soon": "Ускоро на",
+   "pics": {
+    "one": "{n} слика",
+    "few": "{n} слике",
+    "other": "{n} слика"
+   },
+   "floors": {
+    "one": "{n} спрат",
+    "few": "{n} спрата",
+    "other": "{n} спратова"
+   },
+   "langs": {
+    "one": "{n} језик",
+    "few": "{n} језика",
+    "other": "{n} језика"
+   },
+   "free": "Бесплатно",
+   "layer": "СЛОЈ {a} / {b}",
+   "revealed": "СЛИКА ЈЕ ОТКРИВЕНА",
+   "about": "Lewydo је инди студио од двоје људи из Украјине. Влад програмира, Лиља дизајнира. Заједно правимо игре које и сами волимо да играмо.",
+   "thanks": "Хвала што играш!",
+   "site": "Наш сајт",
+   "games": "Наше игре на Google Play-у",
+   "fact": "Занимљивост",
+   "how": "Твоја коцка показује број. Додирни поља са истим бројем или превуци преко њих у једном дугом ланцу: ланци доносе више бодова.",
+   "demo": "Слика из музеја, откривена слој по слој",
+   "aboutTitle": "О нама",
+   "pixTitle": "Упознај Pix-а",
+   "pixName": "Он је коцка (на енглеском cube), а име му је Pix. Споји то двоје и добијаш CubePix: игра носи његово име.",
+   "pixHi": "Здраво! Ја сам Pix."
+  },
+  "tg": {
+   "tagline": "РАСМРО КУБИК БА КУБИК КУШО",
+   "lead": "Муаммои ором барои дӯстдорони санъат. Кубикҳоро қабат ба қабат пур кун, ва асарҳои машҳур, аҷоиботи ҷаҳон ва ганҷҳои хурди пикселӣ ҷон мегиранд. Ҳар расм бо лавҳаи музей ва қиссаи воқеӣ анҷом меёбад.",
+   "play": "Дар браузер бозӣ кун",
+   "soon": "Ба наздикӣ дар",
+   "pics": {
+    "one": "{n} расм",
+    "other": "{n} расм"
+   },
+   "floors": {
+    "one": "{n} ошёна",
+    "other": "{n} ошёна"
+   },
+   "langs": {
+    "one": "{n} забон",
+    "other": "{n} забон"
+   },
+   "free": "Ройгон",
+   "layer": "ҚАБАТИ {a} / {b}",
+   "revealed": "РАСМ КУШОДА ШУД",
+   "about": "Lewydo — студияи инди-бозиҳо аз ду нафар аз Украина. Влад код менависад, Лиля тарроҳӣ мекунад. Якҷоя бозиҳое месозем, ки худамон бозӣ карданашро дӯст медорем.",
+   "thanks": "Ташаккур, ки бозӣ мекунӣ!",
+   "site": "Сайти мо",
+   "games": "Бозиҳои мо дар Google Play",
+   "fact": "Далели ҷолиб",
+   "how": "Кубики ту рақамеро нишон медиҳад. Ба ҳуҷайраҳои ҳамон рақам пахш кун ё ангуштро аз рӯи онҳо дар як занҷири дароз кашон: занҷирҳо холи бештар медиҳанд.",
+   "demo": "Асаре аз музей, ки қабат ба қабат кушода мешавад",
+   "aboutTitle": "Дар бораи мо",
+   "pixTitle": "Бо Pix шинос шав",
+   "pixName": "Ӯ кубик аст, ва номаш Pix. Ҳардуро якҷоя кун — CubePix мешавад: бозӣ номи ӯро дорад.",
+   "pixHi": "Салом! Ман Pix ҳастам."
   },
   "uk": {
    "tagline": "РОЗКРИЙ КАРТИНУ КУБИКАМИ",
@@ -2155,6 +4012,70 @@
    "pixName": "Він кубик, тобто Cube, а звати його Pix. Разом виходить CubePix — гра носить його ім’я.",
    "pixHi": "Привіт! Я Pix."
   },
+  "ka": {
+   "tagline": "გამოაჩინე სურათი კუბ-კუბად",
+   "lead": "მშვიდი თავსატეხი ხელოვნების მოყვარულთათვის. შეავსე კუბები ფენა-ფენა — და ცოცხლდება ცნობილი ნახატები, მსოფლიოს საოცრებები და პატარა პიქსელური განძები. ყოველი სურათი მუზეუმის ეტიკეტითა და ნამდვილი ისტორიით სრულდება.",
+   "play": "ითამაშე ბრაუზერში",
+   "soon": "მალე",
+   "pics": {
+    "one": "{n} სურათი",
+    "other": "{n} სურათი"
+   },
+   "floors": {
+    "one": "{n} სართული",
+    "other": "{n} სართული"
+   },
+   "langs": {
+    "one": "{n} ენა",
+    "other": "{n} ენა"
+   },
+   "free": "უფასო",
+   "layer": "ფენა {a} / {b}",
+   "revealed": "სურათი გამოჩნდა",
+   "about": "Lewydo — ორკაციანი ინდი-სტუდიაა უკრაინიდან. ვლადი კოდს წერს, ლილია დიზაინს ქმნის. ერთად ვქმნით თამაშებს, რომლებიც თავად გვიყვარს.",
+   "thanks": "მადლობა, რომ თამაშობ!",
+   "site": "ჩვენი საიტი",
+   "games": "ჩვენი თამაშები Google Play-ში",
+   "fact": "საინტერესო ფაქტი",
+   "how": "შენს კუბზე ციფრია. შეეხე უჯრებს იმავე ციფრით ან ერთი გრძელი ჯაჭვით გაუსვი მათ თითი: ჯაჭვები მეტ ქულას იძლევა.",
+   "demo": "ნახატი მუზეუმიდან, ფენა-ფენა გამოჩენილი",
+   "aboutTitle": "ჩვენ შესახებ",
+   "pixTitle": "გაიცანი Pix",
+   "pixName": "ის კუბია და მისი სახელია Pix. ერთად — CubePix: თამაში მის სახელს ატარებს.",
+   "pixHi": "გამარჯობა! მე Pix ვარ."
+  },
+  "hy": {
+   "tagline": "ՆԿԱՐԸ՝ ԽՈՐԱՆԱՐԴ ԱՌ ԽՈՐԱՆԱՐԴ",
+   "lead": "Հանգիստ գլուխկոտրուկ արվեստի սիրահարների համար։ Լրացրու խորանարդները շերտ առ շերտ, և կենդանանում են հայտնի կտավներ, աշխարհի հրաշալիքներ ու պիքսելային փոքրիկ գանձեր։ Յուրաքանչյուր նկար ավարտվում է թանգարանային պիտակով և իրական պատմությամբ։",
+   "play": "Խաղալ բրաուզերում",
+   "soon": "Շուտով՝",
+   "pics": {
+    "one": "{n} նկար",
+    "other": "{n} նկար"
+   },
+   "floors": {
+    "one": "{n} հարկ",
+    "other": "{n} հարկ"
+   },
+   "langs": {
+    "one": "{n} լեզու",
+    "other": "{n} լեզու"
+   },
+   "free": "Անվճար",
+   "layer": "ՇԵՐՏ {a} / {b}",
+   "revealed": "ՆԿԱՐԸ ԲԱՑՎԱԾ Է",
+   "about": "Lewydo-ն երկու հոգուց բաղկացած ինդի խաղային ստուդիա է Ուկրաինայից։ Վլադը գրում է կոդը, Լիլյան՝ դիզայնը։ Միասին ստեղծում ենք խաղեր, որոնք ինքներս ենք սիրում խաղալ։",
+   "thanks": "Շնորհակալ ենք, որ խաղում ես!",
+   "site": "Մեր կայքը",
+   "games": "Մեր խաղերը Google Play-ում",
+   "fact": "Հետաքրքիր փաստ",
+   "how": "Քո խորանարդը թիվ է ցույց տալիս։ Հպիր նույն թվով վանդակներին կամ սահեցրու մատդ դրանց վրայով մեկ երկար շղթայով․ շղթաներն ավելի շատ միավոր են տալիս։",
+   "demo": "Կտավ թանգարանից՝ բացվում է շերտ առ շերտ",
+   "aboutTitle": "Մեր մասին",
+   "pixTitle": "Ծանոթացիր Pix-ի հետ",
+   "pixName": "Նա խորանարդ է (cube), և նրա անունը Pix է։ Միացրու երկուսը, և կստանաս CubePix․ խաղը կրում է նրա անունը։",
+   "pixHi": "Բարև! Ես Pix-ն եմ։"
+  },
   "he": {
    "tagline": "חשפו את התמונה קובייה אחר קובייה",
    "lead": "פאזל רגוע לאוהבי אמנות. מלאו את הקוביות שכבה אחר שכבה — וציורים מפורסמים, פלאי תבל ואוצרות פיקסלים קטנים יתעוררו לחיים. כל תמונה מסתיימת בשלט מוזיאון ובסיפור אמיתי.",
@@ -2189,6 +4110,38 @@
    "pixTitle": "הכירו את Pix",
    "pixName": "הוא קובייה — Cube, ושמו Pix. מחברים את השניים ומקבלים CubePix: המשחק נושא את שמו.",
    "pixHi": "היי! אני Pix."
+  },
+  "ur": {
+   "tagline": "کیوب بہ کیوب تصویر ظاہر کرو",
+   "lead": "فن سے محبت کرنے والوں کے لیے ایک پرسکون پزل۔ کیوبز کو تہہ بہ تہہ بھرو، اور مشہور پینٹنگز، دنیا کے عجائبات اور ننھے پکسل خزانے جی اٹھتے ہیں۔ ہر تصویر میوزیم کی تختی اور ایک سچی کہانی پر ختم ہوتی ہے۔",
+   "play": "براؤزر میں کھیلو",
+   "soon": "جلد آ رہا ہے",
+   "pics": {
+    "one": "{n} تصویر",
+    "other": "{n} تصویریں"
+   },
+   "floors": {
+    "one": "{n} منزل",
+    "other": "{n} منزلیں"
+   },
+   "langs": {
+    "one": "{n} زبان",
+    "other": "{n} زبانیں"
+   },
+   "free": "مفت",
+   "layer": "تہہ {a} / {b}",
+   "revealed": "تصویر ظاہر ہو گئی",
+   "about": "Lewydo یوکرین کا دو افراد کا انڈی گیم اسٹوڈیو ہے۔ ولاد کوڈ لکھتا ہے، لیلیا ڈیزائن کرتی ہے۔ ہم مل کر وہ گیمز بناتے ہیں جو ہمیں خود کھیلنا پسند ہیں۔",
+   "thanks": "کھیلنے کا شکریہ!",
+   "site": "ہماری ویب سائٹ",
+   "games": "Google Play پر ہماری گیمز",
+   "fact": "دلچسپ حقیقت",
+   "how": "تمہارا کیوب ایک نمبر دکھاتا ہے۔ اسی نمبر والے خانوں کو ٹیپ کرو، یا ایک لمبی زنجیر میں ان پر انگلی پھیرو: زنجیریں زیادہ پوائنٹس دیتی ہیں۔",
+   "demo": "میوزیم کی ایک پینٹنگ، تہہ بہ تہہ ظاہر ہوتی ہوئی",
+   "aboutTitle": "ہمارا تعارف",
+   "pixTitle": "Pix سے ملو",
+   "pixName": "وہ ایک کیوب ہے، اور اس کا نام Pix ہے۔ دونوں کو ملاؤ تو بنتا ہے CubePix: گیم اسی کے نام پر ہے۔",
+   "pixHi": "ہیلو! میں Pix ہوں۔"
   },
   "ar": {
    "tagline": "اكشف اللوحة مكعبًا بعد مكعب",
@@ -2234,6 +4187,166 @@
    "pixName": "إنه مكعّب (Cube)، واسمه Pix. اجمعهما معًا تحصل على CubePix: اللعبة تحمل اسمه.",
    "pixHi": "مرحبًا! أنا Pix."
   },
+  "ps": {
+   "tagline": "انځور مکعب په مکعب څرګند کړه",
+   "lead": "د هنر مینوالو لپاره آرامه معمايي لوبه. مکعبونه لایه په لایه ډک کړه، او مشهورې نقاشۍ، د نړۍ عجایب او کوچنۍ پیکسلي خزانې ژوندۍ کېږي. هر انځور د موزیم په لیبل او یوې رښتینې کیسې پای ته رسېږي.",
+   "play": "په براوزر کې لوبه وکړه",
+   "soon": "ژر راځي په",
+   "pics": {
+    "one": "{n} انځور",
+    "other": "{n} انځورونه"
+   },
+   "floors": {
+    "one": "{n} پوړ",
+    "other": "{n} پوړونه"
+   },
+   "langs": {
+    "one": "{n} ژبه",
+    "other": "{n} ژبې"
+   },
+   "free": "وړیا",
+   "layer": "لایه {a} / {b}",
+   "revealed": "انځور څرګند شو",
+   "about": "Lewydo له اوکراین څخه د دوو کسانو خپلواکه د لوبو سټوډیو ده. ولاد کوډ لیکي، لیلیا ډیزاین کوي. موږ یوځای هغه لوبې جوړوو چې پخپله یې په لوبولو مینه لرو.",
+   "thanks": "مننه چې لوبه کوې!",
+   "site": "زموږ وېبپاڼه",
+   "games": "زموږ لوبې په Google Play کې",
+   "fact": "په زړه پورې حقیقت",
+   "how": "ستا مکعب یوه شمېره ښيي. پر هغو خانو ګوته ووهه چې همدا شمېره لري، یا پرې په یوه اوږده ځنځیر کې ګوته وښویوه: ځنځیرونه ډېر امتیازونه ورکوي.",
+   "demo": "د موزیم یوه نقاشي، لایه په لایه څرګندېږي",
+   "aboutTitle": "زموږ په اړه",
+   "pixTitle": "له Pix سره وپېژنه",
+   "pixName": "هغه یو مکعب دی — په انګرېزي Cube — او نوم یې Pix دی. دواړه یوځای کړه، CubePix جوړېږي: لوبه د هغه نوم لري.",
+   "pixHi": "سلام! زه Pix یم."
+  },
+  "fa": {
+   "tagline": "تصویر را مکعب به مکعب آشکار کن",
+   "lead": "پازلی آرام برای دوستداران هنر. مکعب‌ها را لایه به لایه پر کن تا نقاشی‌های مشهور، عجایب جهان و گنجینه‌های کوچک پیکسلی جان بگیرند. هر تصویر با یک برچسب موزه و یک داستان واقعی تمام می‌شود.",
+   "play": "در مرورگر بازی کن",
+   "soon": "به‌زودی در",
+   "pics": {
+    "one": "{n} تصویر",
+    "other": "{n} تصویر"
+   },
+   "floors": {
+    "one": "{n} طبقه",
+    "other": "{n} طبقه"
+   },
+   "langs": {
+    "one": "{n} زبان",
+    "other": "{n} زبان"
+   },
+   "free": "رایگان",
+   "layer": "لایه {a} / {b}",
+   "revealed": "تصویر آشکار شد",
+   "about": "Lewydo یک استودیوی بازی‌سازی مستقل دونفره از اوکراین است. ولاد کد می‌نویسد، لیلیا طراحی می‌کند. با هم بازی‌هایی می‌سازیم که خودمان عاشق بازی کردنشان هستیم.",
+   "thanks": "ممنون که بازی می‌کنی!",
+   "site": "وب‌سایت ما",
+   "games": "بازی‌های ما در Google Play",
+   "fact": "نکته جالب",
+   "how": "مکعبت یک عدد نشان می‌دهد. روی خانه‌هایی با همان عدد ضربه بزن، یا با یک زنجیره بلند رویشان بکش: زنجیره‌ها امتیاز بیشتری دارند.",
+   "demo": "نقاشی‌ای از موزه که لایه به لایه آشکار می‌شود",
+   "aboutTitle": "درباره ما",
+   "pixTitle": "با Pix آشنا شو",
+   "pixName": "او یک مکعب (Cube) است و اسمش Pix. این دو را کنار هم بگذار تا CubePix شود: بازی اسم او را دارد.",
+   "pixHi": "سلام! من Pix هستم."
+  },
+  "am": {
+   "tagline": "ሥዕሉን ኪዩብ በኪዩብ ግለጥ",
+   "lead": "ሥነ ጥበብ ለሚወዱ የተረጋጋ እንቆቅልሽ። ኪዩቦቹን ንብርብር በንብርብር ሙላ፣ ዝነኛ ሥዕሎች፣ የዓለም ድንቆችና ትናንሽ የፒክሰል ሀብቶች ሕያው ይሆናሉ። እያንዳንዱ ሥዕል በሙዚየም መግለጫና በእውነተኛ ታሪክ ይጠናቀቃል።",
+   "play": "በአሳሹ ውስጥ ተጫወት",
+   "soon": "በቅርቡ በ",
+   "pics": {
+    "one": "{n} ሥዕል",
+    "other": "{n} ሥዕሎች"
+   },
+   "floors": {
+    "one": "{n} ፎቅ",
+    "other": "{n} ፎቆች"
+   },
+   "langs": {
+    "one": "{n} ቋንቋ",
+    "other": "{n} ቋንቋዎች"
+   },
+   "free": "ነፃ",
+   "layer": "ንብርብር {a} / {b}",
+   "revealed": "ሥዕሉ ተገለጠ",
+   "about": "Lewydo ከዩክሬን የሁለት ሰዎች ኢንዲ የጨዋታ ስቱዲዮ ነው። ቭላድ ኮድ ይጽፋል፣ ሊሊያ ዲዛይን ትሠራለች። አብረን መጫወት የምንወዳቸውን ጨዋታዎች እንሠራለን።",
+   "thanks": "ስለተጫወትክ እናመሰግናለን!",
+   "site": "ድረ-ገጻችን",
+   "games": "ጨዋታዎቻችን በGoogle Play",
+   "fact": "አስደናቂ እውነታ",
+   "how": "ኪዩብህ ቁጥር ያሳያል። ተመሳሳይ ቁጥር ያላቸውን ሕዋሶች ንካ፣ ወይም በአንድ ረጅም ሰንሰለት በላያቸው አንሸራት፦ ሰንሰለቶች ብዙ ነጥብ ያስገኛሉ።",
+   "demo": "ከሙዚየሙ የተገኘ ሥዕል፣ ንብርብር በንብርብር ሲገለጥ",
+   "aboutTitle": "ስለ እኛ",
+   "pixTitle": "Pixን ተዋወቅ",
+   "pixName": "እሱ ኪዩብ ነው፣ ስሙም Pix ነው። ሁለቱን አንድ ላይ አድርግ፣ CubePix ይሆናል፦ ጨዋታው የእሱን ስም ይዟል።",
+   "pixHi": "ሰላም! እኔ Pix ነኝ።"
+  },
+  "ne": {
+   "tagline": "क्युब-क्युब गर्दै चित्र खोल",
+   "lead": "कला मन पराउनेहरूका लागि शान्त पजल। क्युबहरू तह-तह गर्दै भर, अनि प्रसिद्ध चित्र, विश्वका आश्चर्य र साना पिक्सेल खजाना जीवित हुन्छन्। हरेक चित्र संग्रहालयको लेबल र एउटा सत्य कथासँग टुंगिन्छ।",
+   "play": "ब्राउजरमा खेल",
+   "soon": "चाँडै आउँदै",
+   "pics": {
+    "one": "{n} चित्र",
+    "other": "{n} चित्र"
+   },
+   "floors": {
+    "one": "{n} तल्ला",
+    "other": "{n} तल्ला"
+   },
+   "langs": {
+    "one": "{n} भाषा",
+    "other": "{n} भाषा"
+   },
+   "free": "निःशुल्क",
+   "layer": "तह {a} / {b}",
+   "revealed": "चित्र खुल्यो",
+   "about": "Lewydo युक्रेनको दुई जनाको इन्डी गेम स्टुडियो हो। भ्लाद कोड लेख्छन्, लिल्या डिजाइन गर्छिन्। हामी सँगै आफूलाई खेल्न मन पर्ने गेम बनाउँछौँ।",
+   "thanks": "खेलेकोमा धन्यवाद!",
+   "site": "हाम्रो वेबसाइट",
+   "games": "Google Play मा हाम्रा गेम",
+   "fact": "रोचक तथ्य",
+   "how": "तिम्रो क्युबमा एउटा अंक देखिन्छ। उही अंक भएका कोठामा ट्याप गर, वा एउटै लामो चेनमा तिनमाथि स्वाइप गर: चेनले बढी अंक दिन्छ।",
+   "demo": "संग्रहालयको एउटा चित्र, तह-तह गर्दै खुल्दै",
+   "aboutTitle": "हाम्रोबारे",
+   "pixTitle": "Pix लाई चिन",
+   "pixName": "ऊ क्युब (Cube) हो, र उसको नाम Pix हो। दुवै जोड्दा CubePix बन्छ: गेमले उसकै नाम बोकेको छ।",
+   "pixHi": "नमस्ते! म Pix हुँ।"
+  },
+  "mr": {
+   "tagline": "क्यूब-क्यूबने चित्र उलगड",
+   "lead": "कलाप्रेमींसाठी एक शांत पझल. थरा-थराने क्यूब भर, आणि प्रसिद्ध चित्रे, जगातील आश्चर्ये आणि छोटे पिक्सेल खजिने जिवंत होतात. प्रत्येक चित्राच्या शेवटी संग्रहालयाचा माहितीफलक आणि एक खरी कथा असते.",
+   "play": "ब्राउझरमध्ये खेळ",
+   "soon": "लवकरच येथे",
+   "pics": {
+    "one": "{n} चित्र",
+    "other": "{n} चित्रे"
+   },
+   "floors": {
+    "one": "{n} मजला",
+    "other": "{n} मजले"
+   },
+   "langs": {
+    "one": "{n} भाषा",
+    "other": "{n} भाषा"
+   },
+   "free": "मोफत",
+   "layer": "थर {a} / {b}",
+   "revealed": "चित्र उलगडले",
+   "about": "Lewydo हा युक्रेनमधला दोघांचा इंडी गेम स्टुडिओ आहे. व्लाद कोड लिहितो, लिल्या डिझाइन करते. आम्हाला स्वतः खेळायला आवडतात असे गेम आम्ही मिळून बनवतो.",
+   "thanks": "खेळल्याबद्दल धन्यवाद!",
+   "site": "आमची वेबसाइट",
+   "games": "Google Play वर आमचे गेम",
+   "fact": "रंजक माहिती",
+   "how": "तुझ्या क्यूबवर एक आकडा दिसतो. त्याच आकड्याच्या चौकोनांवर टॅप कर, किंवा एका लांब साखळीत त्यांच्यावरून बोट सरकव: साखळ्यांना जास्त गुण मिळतात.",
+   "demo": "संग्रहालयातील एक चित्र, थरा-थराने उलगडताना",
+   "aboutTitle": "आमच्याबद्दल",
+   "pixTitle": "Pix ला भेट",
+   "pixName": "तो एक क्यूब आहे, आणि त्याचे नाव Pix. दोन्ही जोडले की होते CubePix: गेमला त्याचेच नाव आहे.",
+   "pixHi": "नमस्कार! मी Pix."
+  },
   "hi": {
    "tagline": "क्यूब-दर-क्यूब तस्वीर खोलो",
    "lead": "कला पसंद करने वालों के लिए एक सुकून भरा पज़ल। क्यूबों को परत-दर-परत भरो — और मशहूर पेंटिंग्स, दुनिया के अजूबे और छोटे-छोटे पिक्सेल ख़ज़ाने जी उठते हैं। हर तस्वीर के अंत में म्यूज़ियम का लेबल और एक सच्ची कहानी मिलती है।",
@@ -2266,6 +4379,326 @@
    "pixName": "वह एक क्यूब है, और उसका नाम Pix है। दोनों को मिलाओ तो बनता है CubePix: गेम उसी के नाम पर है।",
    "pixHi": "नमस्ते! मैं Pix हूँ।"
   },
+  "as": {
+   "tagline": "কিউবে কিউবে ছবিখন প্ৰকাশ কৰা",
+   "lead": "শিল্পপ্ৰেমীৰ বাবে এক শান্ত পাজল। স্তৰে স্তৰে কিউব ভৰোৱা, আৰু বিখ্যাত চিত্ৰ, বিশ্বৰ আশ্চৰ্য আৰু সৰু সৰু পিক্সেল ৰত্নবোৰ জীৱন্ত হৈ উঠে। প্ৰতিখন ছবিৰ শেষত থাকে সংগ্ৰহালয়ৰ পৰিচয়-ফলক আৰু এটা সঁচা কাহিনী।",
+   "play": "ব্ৰাউজাৰত খেলা",
+   "soon": "সোনকালে আহিব",
+   "pics": {
+    "one": "{n}খন ছবি",
+    "other": "{n}খন ছবি"
+   },
+   "floors": {
+    "one": "{n}টা মহলা",
+    "other": "{n}টা মহলা"
+   },
+   "langs": {
+    "one": "{n}টা ভাষা",
+    "other": "{n}টা ভাষা"
+   },
+   "free": "বিনামূলীয়া",
+   "layer": "স্তৰ {a} / {b}",
+   "revealed": "ছবি প্ৰকাশ পালে",
+   "about": "Lewydo ইউক্ৰেইনৰ দুজনীয়া এটা ইণ্ডি গেম ষ্টুডিঅ'। ভ্লাদে ক'ড লিখে, লিলিয়াই ডিজাইন কৰে। আমি একেলগে সেই গেমবোৰ বনাওঁ, যিবোৰ খেলি আমি নিজেই ভাল পাওঁ।",
+   "thanks": "খেলাৰ বাবে ধন্যবাদ!",
+   "site": "আমাৰ ৱেবছাইট",
+   "games": "Google Play-ত আমাৰ গেম",
+   "fact": "আমোদজনক তথ্য",
+   "how": "তোমাৰ কিউবত এটা সংখ্যা দেখা যায়। একে সংখ্যাৰ ঘৰবোৰ টিপা, বা এটা দীঘল শিকলিত সেইবোৰৰ ওপৰেৰে আঙুলি বুলোৱা: শিকলিয়ে বেছি পইণ্ট দিয়ে।",
+   "demo": "সংগ্ৰহালয়ৰ এখন চিত্ৰ, স্তৰে স্তৰে প্ৰকাশিত",
+   "aboutTitle": "আমাৰ বিষয়ে",
+   "pixTitle": "Pix-ৰ সৈতে চিনাকি হোৱা",
+   "pixName": "সি এটা কিউব, আৰু তাৰ নাম Pix। দুয়োটা একেলগ কৰিলে হয় CubePix: গেমটোৱে তাৰেই নাম বহন কৰে।",
+   "pixHi": "নমস্কাৰ! মই Pix।"
+  },
+  "bn": {
+   "tagline": "কিউবে কিউবে ছবি ফুটিয়ে তোলো",
+   "lead": "শিল্পপ্রেমীদের জন্য এক শান্ত পাজল। স্তরে স্তরে কিউব ভরাও, আর জীবন্ত হয়ে উঠবে বিখ্যাত ছবি, বিশ্বের আশ্চর্য আর ছোট্ট পিক্সেল-রত্ন। প্রতিটি ছবির শেষে থাকে জাদুঘরের লেবেল আর একটা সত্যি গল্প।",
+   "play": "ব্রাউজারে খেলো",
+   "soon": "শিগগিরই আসছে",
+   "pics": {
+    "one": "{n}টি ছবি",
+    "other": "{n}টি ছবি"
+   },
+   "floors": {
+    "one": "{n}টি তলা",
+    "other": "{n}টি তলা"
+   },
+   "langs": {
+    "one": "{n}টি ভাষা",
+    "other": "{n}টি ভাষা"
+   },
+   "free": "ফ্রি",
+   "layer": "স্তর {a} / {b}",
+   "revealed": "ছবি ফুটে উঠেছে",
+   "about": "Lewydo ইউক্রেনের দুজনের একটা ইন্ডি গেম স্টুডিও। ভ্লাদ কোড লেখে, লিলিয়া ডিজাইন করে। আমরা মিলে সেই গেমগুলো বানাই, যেগুলো খেলতে নিজেরাই ভালোবাসি।",
+   "thanks": "খেলার জন্য ধন্যবাদ!",
+   "site": "আমাদের ওয়েবসাইট",
+   "games": "Google Play-তে আমাদের গেম",
+   "fact": "মজার তথ্য",
+   "how": "তোমার কিউবে একটা সংখ্যা দেখা যায়। একই সংখ্যার ঘরগুলোয় ট্যাপ করো, অথবা একটা লম্বা চেইনে সেগুলোর ওপর দিয়ে সোয়াইপ করো: চেইনে বেশি পয়েন্ট মেলে।",
+   "demo": "জাদুঘরের একটা ছবি, স্তরে স্তরে ফুটে উঠছে",
+   "aboutTitle": "আমাদের কথা",
+   "pixTitle": "Pix-এর সঙ্গে পরিচয়",
+   "pixName": "ও একটা কিউব, আর ওর নাম Pix। দুটো জুড়ে দিলেই CubePix: গেমটার নাম ওরই নামে।",
+   "pixHi": "হাই! আমি Pix।"
+  },
+  "pa": {
+   "tagline": "ਕਿਊਬ-ਦਰ-ਕਿਊਬ ਤਸਵੀਰ ਉਭਾਰੋ",
+   "lead": "ਕਲਾ ਪ੍ਰੇਮੀਆਂ ਲਈ ਇੱਕ ਸ਼ਾਂਤ ਪਜ਼ਲ। ਕਿਊਬਾਂ ਨੂੰ ਪਰਤ-ਦਰ-ਪਰਤ ਭਰੋ, ਅਤੇ ਮਸ਼ਹੂਰ ਪੇਂਟਿੰਗਾਂ, ਦੁਨੀਆ ਦੇ ਅਜੂਬੇ ਅਤੇ ਨਿੱਕੇ ਪਿਕਸਲ ਖ਼ਜ਼ਾਨੇ ਜੀਅ ਉੱਠਦੇ ਹਨ। ਹਰ ਤਸਵੀਰ ਦੇ ਅਖ਼ੀਰ ਵਿੱਚ ਅਜਾਇਬਘਰ ਦਾ ਲੇਬਲ ਅਤੇ ਇੱਕ ਸੱਚੀ ਕਹਾਣੀ ਹੁੰਦੀ ਹੈ।",
+   "play": "ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੇਡੋ",
+   "soon": "ਜਲਦੀ ਆ ਰਹੀ ਹੈ",
+   "pics": {
+    "one": "{n} ਤਸਵੀਰ",
+    "other": "{n} ਤਸਵੀਰਾਂ"
+   },
+   "floors": {
+    "one": "{n} ਮੰਜ਼ਿਲ",
+    "other": "{n} ਮੰਜ਼ਿਲਾਂ"
+   },
+   "langs": {
+    "one": "{n} ਭਾਸ਼ਾ",
+    "other": "{n} ਭਾਸ਼ਾਵਾਂ"
+   },
+   "free": "ਮੁਫ਼ਤ",
+   "layer": "ਪਰਤ {a} / {b}",
+   "revealed": "ਤਸਵੀਰ ਉੱਭਰ ਆਈ",
+   "about": "Lewydo ਯੂਕਰੇਨ ਦਾ ਦੋ ਜਣਿਆਂ ਦਾ ਇੰਡੀ ਗੇਮ ਸਟੂਡੀਓ ਹੈ। ਵਲਾਦ ਕੋਡ ਲਿਖਦਾ ਹੈ, ਲਿਲੀਆ ਡਿਜ਼ਾਈਨ ਕਰਦੀ ਹੈ। ਮਿਲ ਕੇ ਅਸੀਂ ਉਹ ਗੇਮਾਂ ਬਣਾਉਂਦੇ ਹਾਂ ਜੋ ਸਾਨੂੰ ਖ਼ੁਦ ਖੇਡਣੀਆਂ ਪਸੰਦ ਹਨ।",
+   "thanks": "ਖੇਡਣ ਲਈ ਸ਼ੁਕਰੀਆ!",
+   "site": "ਸਾਡੀ ਵੈੱਬਸਾਈਟ",
+   "games": "Google Play 'ਤੇ ਸਾਡੀਆਂ ਗੇਮਾਂ",
+   "fact": "ਦਿਲਚਸਪ ਤੱਥ",
+   "how": "ਤੁਹਾਡਾ ਕਿਊਬ ਇੱਕ ਨੰਬਰ ਦਿਖਾਉਂਦਾ ਹੈ। ਉਸੇ ਨੰਬਰ ਵਾਲੇ ਖ਼ਾਨਿਆਂ 'ਤੇ ਟੈਪ ਕਰੋ, ਜਾਂ ਇੱਕ ਲੰਮੀ ਲੜੀ ਵਿੱਚ ਉਨ੍ਹਾਂ ਉੱਤੇ ਸਵਾਈਪ ਕਰੋ: ਲੜੀਆਂ ਨਾਲ ਵੱਧ ਅੰਕ ਮਿਲਦੇ ਹਨ।",
+   "demo": "ਅਜਾਇਬਘਰ ਦੀ ਇੱਕ ਪੇਂਟਿੰਗ, ਪਰਤ-ਦਰ-ਪਰਤ ਉੱਭਰਦੀ ਹੋਈ",
+   "aboutTitle": "ਸਾਡੇ ਬਾਰੇ",
+   "pixTitle": "Pix ਨੂੰ ਮਿਲੋ",
+   "pixName": "ਉਹ ਇੱਕ ਕਿਊਬ ਹੈ, ਅਤੇ ਉਸਦਾ ਨਾਂ Pix ਹੈ। ਦੋਵਾਂ ਨੂੰ ਜੋੜੋ ਤਾਂ ਬਣਦਾ ਹੈ CubePix: ਗੇਮ ਦਾ ਨਾਂ ਉਸੇ ਦੇ ਨਾਂ 'ਤੇ ਹੈ।",
+   "pixHi": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ Pix ਹਾਂ।"
+  },
+  "gu": {
+   "tagline": "ક્યુબે ક્યુબે ચિત્ર ખોલ",
+   "lead": "કલાપ્રેમીઓ માટે શાંત પઝલ. ક્યુબને સ્તર-દર-સ્તર ભર, અને પ્રખ્યાત ચિત્રો, વિશ્વની અજાયબીઓ અને નાનકડા પિક્સેલ ખજાના જીવંત થાય છે. દરેક ચિત્રના અંતે મ્યુઝિયમ લેબલ અને એક સાચી વાર્તા હોય છે.",
+   "play": "બ્રાઉઝરમાં રમ",
+   "soon": "ટૂંક સમયમાં",
+   "pics": {
+    "one": "{n} ચિત્ર",
+    "other": "{n} ચિત્રો"
+   },
+   "floors": {
+    "one": "{n} માળ",
+    "other": "{n} માળ"
+   },
+   "langs": {
+    "one": "{n} ભાષા",
+    "other": "{n} ભાષાઓ"
+   },
+   "free": "મફત",
+   "layer": "સ્તર {a} / {b}",
+   "revealed": "ચિત્ર ખૂલ્યું",
+   "about": "Lewydo યુક્રેનનો બે લોકોનો ઇન્ડી ગેમ સ્ટુડિયો છે. વ્લાદ કોડ લખે છે, લિલ્યા ડિઝાઇન કરે છે. સાથે મળીને અમે એવી ગેમ્સ બનાવીએ છીએ જે અમને પોતાને રમવી ગમે છે.",
+   "thanks": "રમવા બદલ આભાર!",
+   "site": "અમારી વેબસાઇટ",
+   "games": "Google Play પર અમારી ગેમ્સ",
+   "fact": "રસપ્રદ તથ્ય",
+   "how": "તારો ક્યુબ એક આંકડો બતાવે છે. એ જ આંકડાવાળાં ખાનાં પર ટેપ કર, અથવા એક લાંબી સાંકળમાં તેમના પર સ્વાઇપ કર: સાંકળથી વધુ પોઇન્ટ મળે છે.",
+   "demo": "મ્યુઝિયમનું એક ચિત્ર, સ્તર-દર-સ્તર ખૂલતું",
+   "aboutTitle": "અમારા વિશે",
+   "pixTitle": "Pix ને મળ",
+   "pixName": "તે ક્યુબ છે, અને તેનું નામ Pix છે. બંનેને જોડ તો મળે CubePix: ગેમ તેનું નામ ધરાવે છે.",
+   "pixHi": "હાય! હું Pix છું."
+  },
+  "or": {
+   "tagline": "କ୍ୟୁବ୍ ପରେ କ୍ୟୁବ୍, ଛବି ଫୁଟାଅ",
+   "lead": "କଳାପ୍ରେମୀଙ୍କ ପାଇଁ ଏକ ଶାନ୍ତ ପଜଲ୍। ସ୍ତର ପରେ ସ୍ତର କ୍ୟୁବ୍ ଭର, ଆଉ ପ୍ରସିଦ୍ଧ ଚିତ୍ର, ବିଶ୍ୱର ଆଶ୍ଚର୍ଯ୍ୟ ଓ ଛୋଟ ପିକ୍ସେଲ୍ ରତ୍ନ ଜୀବନ୍ତ ହୋଇଉଠେ। ପ୍ରତିଟି ଛବି ଶେଷରେ ମିଳେ ସଂଗ୍ରହାଳୟ ଲେବଲ୍ ଓ ଗୋଟେ ସତ କାହାଣୀ।",
+   "play": "ବ୍ରାଉଜରରେ ଖେଳ",
+   "soon": "ଶୀଘ୍ର ଆସୁଛି",
+   "pics": {
+    "one": "{n}ଟି ଛବି",
+    "other": "{n}ଟି ଛବି"
+   },
+   "floors": {
+    "one": "{n}ଟି ମହଲା",
+    "other": "{n}ଟି ମହଲା"
+   },
+   "langs": {
+    "one": "{n}ଟି ଭାଷା",
+    "other": "{n}ଟି ଭାଷା"
+   },
+   "free": "ମାଗଣା",
+   "layer": "ସ୍ତର {a} / {b}",
+   "revealed": "ଛବି ପ୍ରକାଶିତ",
+   "about": "Lewydo ୟୁକ୍ରେନର ଦୁଇ ଜଣଙ୍କର ଏକ ଇଣ୍ଡି ଗେମ୍ ଷ୍ଟୁଡିଓ। ଭ୍ଲାଦ୍ କୋଡ୍ ଲେଖେ, ଲିଲିୟା ଡିଜାଇନ୍ କରେ। ଆମେ ମିଳିମିଶି ସେହି ଗେମ୍ ବନାଉ, ଯାହା ଖେଳିବାକୁ ନିଜେ ଭଲ ପାଉ।",
+   "thanks": "ଖେଳିଥିବାରୁ ଧନ୍ୟବାଦ!",
+   "site": "ଆମ ୱେବସାଇଟ୍",
+   "games": "Google Playରେ ଆମ ଗେମ୍",
+   "fact": "ମଜାଦାର ତଥ୍ୟ",
+   "how": "ତୁମ କ୍ୟୁବ୍ ଗୋଟେ ସଂଖ୍ୟା ଦେଖାଏ। ସେହି ସଂଖ୍ୟା ଥିବା ଘରଗୁଡ଼ିକୁ ଟ୍ୟାପ୍ କର, କିମ୍ବା ଗୋଟେ ଲମ୍ବା ଚେନରେ ସେଗୁଡ଼ିକ ଉପରେ ସ୍ୱାଇପ୍ କର: ଚେନରେ ଅଧିକ ପଏଣ୍ଟ ମିଳେ।",
+   "demo": "ସଂଗ୍ରହାଳୟର ଏକ ଚିତ୍ର, ସ୍ତର ପରେ ସ୍ତର ପ୍ରକାଶିତ",
+   "aboutTitle": "ଆମ ବିଷୟରେ",
+   "pixTitle": "Pix ସହ ପରିଚିତ ହୁଅ",
+   "pixName": "ସେ ଗୋଟେ କ୍ୟୁବ୍, ଆଉ ତା'ର ନାମ Pix। ଦୁଇଟିକୁ ଯୋଡ଼ିଲେ ହୁଏ CubePix: ଗେମଟି ତା'ର ନାମ ବହନ କରେ।",
+   "pixHi": "ନମସ୍କାର! ମୁଁ Pix।"
+  },
+  "ta": {
+   "tagline": "க்யூப் க்யூபாகப் படத்தை வெளிப்படுத்து",
+   "lead": "கலை ரசிகர்களுக்கான அமைதியான புதிர். க்யூப்களை அடுக்கு அடுக்காக நிரப்பு — புகழ்பெற்ற ஓவியங்களும் உலக அதிசயங்களும் சின்னஞ்சிறு பிக்சல் பொக்கிஷங்களும் உயிர் பெறும். ஒவ்வொரு படமும் அருங்காட்சியகக் குறிப்புடனும் ஓர் உண்மைக் கதையுடனும் முடிகிறது.",
+   "play": "பிரவுசரில் விளையாடு",
+   "soon": "விரைவில் வருகிறது",
+   "pics": {
+    "one": "{n} படம்",
+    "other": "{n} படங்கள்"
+   },
+   "floors": {
+    "one": "{n} தளம்",
+    "other": "{n} தளங்கள்"
+   },
+   "langs": {
+    "one": "{n} மொழி",
+    "other": "{n} மொழிகள்"
+   },
+   "free": "இலவசம்",
+   "layer": "அடுக்கு {a} / {b}",
+   "revealed": "படம் வெளிப்பட்டது",
+   "about": "Lewydo என்பது உக்ரைனைச் சேர்ந்த இருவரின் இண்டி கேம் ஸ்டுடியோ. விளாட் கோட் எழுதுகிறார், லில்யா வடிவமைக்கிறார். நாங்களே விளையாட விரும்பும் கேம்களை இருவரும் சேர்ந்து உருவாக்குகிறோம்.",
+   "thanks": "விளையாடியதற்கு நன்றி!",
+   "site": "எங்கள் இணையதளம்",
+   "games": "Google Play-இல் எங்கள் கேம்கள்",
+   "fact": "சுவாரசியத் தகவல்",
+   "how": "உன் க்யூப் ஓர் எண்ணைக் காட்டும். அதே எண் உள்ள கட்டங்களைத் தட்டு, அல்லது ஒரே நீண்ட சங்கிலியாக அவற்றின் மேல் ஸ்வைப் செய்: சங்கிலிகள் அதிகப் புள்ளிகள் தரும்.",
+   "demo": "அடுக்கு அடுக்காக வெளிப்படும் அருங்காட்சியக ஓவியம்",
+   "aboutTitle": "எங்களைப் பற்றி",
+   "pixTitle": "Pix-ஐச் சந்தி",
+   "pixName": "அவன் ஒரு க்யூப், அவன் பெயர் Pix. இரண்டையும் சேர்த்தால் CubePix: கேம் அவன் பெயரையே சுமக்கிறது.",
+   "pixHi": "ஹாய்! நான் Pix."
+  },
+  "te": {
+   "tagline": "క్యూబ్ క్యూబ్‌గా చిత్రాన్ని బయటపెట్టు",
+   "lead": "కళాప్రియుల కోసం ప్రశాంతమైన పజిల్. క్యూబ్‌లను పొర పొరగా నింపు — ప్రసిద్ధ పెయింటింగ్స్, ప్రపంచ వింతలు, చిన్న పిక్సెల్ నిధులు ప్రాణం పోసుకుంటాయి. ప్రతి చిత్రం చివర ఒక మ్యూజియం లేబుల్, ఒక నిజమైన కథ.",
+   "play": "బ్రౌజర్‌లో ఆడు",
+   "soon": "త్వరలో వస్తోంది",
+   "pics": {
+    "one": "{n} చిత్రం",
+    "other": "{n} చిత్రాలు"
+   },
+   "floors": {
+    "one": "{n} అంతస్తు",
+    "other": "{n} అంతస్తులు"
+   },
+   "langs": {
+    "one": "{n} భాష",
+    "other": "{n} భాషలు"
+   },
+   "free": "ఉచితం",
+   "layer": "పొర {a} / {b}",
+   "revealed": "చిత్రం బయటపడింది",
+   "about": "Lewydo — ఉక్రెయిన్‌కు చెందిన ఇద్దరి ఇండీ గేమ్ స్టూడియో. వ్లాద్ కోడ్ రాస్తాడు, లిల్యా డిజైన్ చేస్తుంది. మేం ఆడటానికి ఇష్టపడే గేమ్స్‌నే కలిసి తయారుచేస్తాం.",
+   "thanks": "ఆడినందుకు ధన్యవాదాలు!",
+   "site": "మా వెబ్‌సైట్",
+   "games": "Google Playలో మా గేమ్స్",
+   "fact": "ఆసక్తికర విషయం",
+   "how": "నీ క్యూబ్ ఒక అంకెను చూపిస్తుంది. అదే అంకె ఉన్న గడులను నొక్కు, లేదా ఒకే పొడవైన చైన్‌లో వాటి మీదుగా స్వైప్ చెయ్: చైన్లకు ఎక్కువ పాయింట్లు వస్తాయి.",
+   "demo": "మ్యూజియంలోని ఒక పెయింటింగ్, పొర పొరగా బయటపడుతోంది",
+   "aboutTitle": "మా గురించి",
+   "pixTitle": "Pixని కలువు",
+   "pixName": "అతను ఒక క్యూబ్ (Cube), అతని పేరు Pix. రెండూ కలిపితే CubePix: గేమ్‌కి అతని పేరే పెట్టారు.",
+   "pixHi": "హాయ్! నేను Pix."
+  },
+  "kn": {
+   "tagline": "ಒಂದೊಂದೇ ಕ್ಯೂಬ್‌ನಿಂದ ಚಿತ್ರ ಮೂಡಿಸು",
+   "lead": "ಕಲಾಪ್ರೇಮಿಗಳಿಗಾಗಿ ಒಂದು ಶಾಂತ ಪಜಲ್. ಪದರ ಪದರವಾಗಿ ಕ್ಯೂಬ್‌ಗಳನ್ನು ತುಂಬಿಸು — ಪ್ರಸಿದ್ಧ ವರ್ಣಚಿತ್ರಗಳು, ವಿಶ್ವದ ಅದ್ಭುತಗಳು ಮತ್ತು ಪುಟ್ಟ ಪಿಕ್ಸೆಲ್ ನಿಧಿಗಳು ಜೀವ ತಳೆಯುತ್ತವೆ. ಪ್ರತಿ ಚಿತ್ರವೂ ಮ್ಯೂಸಿಯಂ ಲೇಬಲ್ ಮತ್ತು ಒಂದು ನಿಜ ಕಥೆಯೊಂದಿಗೆ ಮುಗಿಯುತ್ತದೆ.",
+   "play": "ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಆಡು",
+   "soon": "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ",
+   "pics": {
+    "one": "{n} ಚಿತ್ರ",
+    "other": "{n} ಚಿತ್ರಗಳು"
+   },
+   "floors": {
+    "one": "{n} ಮಹಡಿ",
+    "other": "{n} ಮಹಡಿಗಳು"
+   },
+   "langs": {
+    "one": "{n} ಭಾಷೆ",
+    "other": "{n} ಭಾಷೆಗಳು"
+   },
+   "free": "ಉಚಿತ",
+   "layer": "ಪದರ {a} / {b}",
+   "revealed": "ಚಿತ್ರ ಮೂಡಿತು",
+   "about": "Lewydo ಉಕ್ರೇನ್‌ನ ಇಬ್ಬರ ಇಂಡಿ ಗೇಮ್ ಸ್ಟುಡಿಯೋ. ವ್ಲಾಡ್ ಕೋಡ್ ಬರೆಯುತ್ತಾನೆ, ಲಿಲ್ಯಾ ವಿನ್ಯಾಸ ಮಾಡುತ್ತಾಳೆ. ನಾವೇ ಆಡಲು ಇಷ್ಟಪಡುವ ಗೇಮ್‌ಗಳನ್ನು ಒಟ್ಟಿಗೆ ಮಾಡುತ್ತೇವೆ.",
+   "thanks": "ಆಡಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದ!",
+   "site": "ನಮ್ಮ ವೆಬ್‌ಸೈಟ್",
+   "games": "Google Playನಲ್ಲಿ ನಮ್ಮ ಗೇಮ್‌ಗಳು",
+   "fact": "ಕುತೂಹಲಕಾರಿ ಸಂಗತಿ",
+   "how": "ನಿನ್ನ ಕ್ಯೂಬ್ ಒಂದು ಸಂಖ್ಯೆ ತೋರಿಸುತ್ತದೆ. ಅದೇ ಸಂಖ್ಯೆಯ ಚೌಕಗಳನ್ನು ಒತ್ತು, ಅಥವಾ ಒಂದೇ ಉದ್ದ ಸರಪಳಿಯಾಗಿ ಅವುಗಳ ಮೇಲೆ ಸ್ವೈಪ್ ಮಾಡು: ಸರಪಳಿಗಳಿಗೆ ಹೆಚ್ಚು ಅಂಕ.",
+   "demo": "ಮ್ಯೂಸಿಯಂನ ಒಂದು ವರ್ಣಚಿತ್ರ, ಪದರ ಪದರವಾಗಿ ಮೂಡುತ್ತಿದೆ",
+   "aboutTitle": "ನಮ್ಮ ಬಗ್ಗೆ",
+   "pixTitle": "Pix ಅನ್ನು ಭೇಟಿಯಾಗು",
+   "pixName": "ಅವನು ಕ್ಯೂಬ್, ಅವನ ಹೆಸರು Pix. ಎರಡನ್ನೂ ಸೇರಿಸಿದರೆ CubePix: ಗೇಮ್‌ಗೆ ಅವನದೇ ಹೆಸರು.",
+   "pixHi": "ಹಾಯ್! ನಾನು Pix."
+  },
+  "ml": {
+   "tagline": "ക്യൂബ് ക്യൂബായി ചിത്രം തെളിയിക്കൂ",
+   "lead": "കലയെ സ്നേഹിക്കുന്നവർക്കായി ഒരു ശാന്തമായ പസിൽ. ക്യൂബുകൾ ലെയർ ലെയറായി നിറയ്ക്കൂ — പ്രശസ്ത ചിത്രങ്ങളും ലോകാത്ഭുതങ്ങളും കുഞ്ഞു പിക്സൽ നിധികളും ജീവൻ വെക്കും. ഓരോ ചിത്രവും ഒരു മ്യൂസിയം ലേബലിലും ഒരു യഥാർത്ഥ കഥയിലും അവസാനിക്കുന്നു.",
+   "play": "ബ്രൗസറിൽ കളിക്കൂ",
+   "soon": "ഉടൻ വരുന്നു",
+   "pics": {
+    "one": "{n} ചിത്രം",
+    "other": "{n} ചിത്രങ്ങൾ"
+   },
+   "floors": {
+    "one": "{n} നില",
+    "other": "{n} നിലകൾ"
+   },
+   "langs": {
+    "one": "{n} ഭാഷ",
+    "other": "{n} ഭാഷകൾ"
+   },
+   "free": "സൗജന്യം",
+   "layer": "ലെയർ {a} / {b}",
+   "revealed": "ചിത്രം തെളിഞ്ഞു",
+   "about": "Lewydo — യുക്രെയ്‌നിൽ നിന്നുള്ള രണ്ടുപേരുടെ ഇൻഡി ഗെയിം സ്റ്റുഡിയോ. വ്ലാദ് കോഡ് എഴുതുന്നു, ലില്യ ഡിസൈൻ ചെയ്യുന്നു. ഞങ്ങൾക്ക് കളിക്കാൻ ഇഷ്ടമുള്ള ഗെയിമുകൾ ഒരുമിച്ച് ഉണ്ടാക്കുന്നു.",
+   "thanks": "കളിച്ചതിന് നന്ദി!",
+   "site": "ഞങ്ങളുടെ വെബ്സൈറ്റ്",
+   "games": "Google Play-യിൽ ഞങ്ങളുടെ ഗെയിമുകൾ",
+   "fact": "രസകരമായ വസ്തുത",
+   "how": "നിന്റെ ക്യൂബിൽ ഒരു അക്കമുണ്ട്. അതേ അക്കമുള്ള കളങ്ങളിൽ തൊടൂ, അല്ലെങ്കിൽ ഒരൊറ്റ നീണ്ട ചെയിനായി അവയിലൂടെ വിരലോടിക്കൂ: ചെയിനുകൾക്ക് കൂടുതൽ പോയിന്റ് കിട്ടും.",
+   "demo": "മ്യൂസിയത്തിലെ ഒരു ചിത്രം, ലെയർ ലെയറായി തെളിയുന്നു",
+   "aboutTitle": "ഞങ്ങളെപ്പറ്റി",
+   "pixTitle": "Pix-നെ പരിചയപ്പെടൂ",
+   "pixName": "അവൻ ഒരു ക്യൂബാണ്, ഇംഗ്ലീഷിൽ Cube, അവന്റെ പേര് Pix. രണ്ടും ചേർത്താൽ CubePix: ഗെയിമിന് അവന്റെ പേരാണ്.",
+   "pixHi": "ഹായ്! ഞാൻ Pix."
+  },
+  "si": {
+   "tagline": "කියුබෙන් කියුබ පින්තූරය මතු කරන්න",
+   "lead": "කලාවට ආදරය කරන අයට සන්සුන් ප්‍රහේලිකාවක්. ස්තරයෙන් ස්තරය කියුබ් පුරවන්න, එතකොට ප්‍රසිද්ධ සිතුවම්, ලෝක පුදුම සහ පුංචි පික්සල් නිධන් පණ ගන්නවා. හැම පින්තූරයක්ම ඉවර වෙන්නේ කෞතුකාගාර විස්තර පතකින් සහ සැබෑ කතාවකින්.",
+   "play": "බ්‍රවුසරයේ සෙල්ලම් කරන්න",
+   "soon": "ළඟදීම",
+   "pics": {
+    "one": "පින්තූර {n}",
+    "other": "පින්තූර {n}"
+   },
+   "floors": {
+    "one": "මහල් {n}",
+    "other": "මහල් {n}"
+   },
+   "langs": {
+    "one": "භාෂා {n}",
+    "other": "භාෂා {n}"
+   },
+   "free": "නොමිලේ",
+   "layer": "ස්තරය {a} / {b}",
+   "revealed": "පින්තූරය මතු වුණා",
+   "about": "Lewydo කියන්නේ යුක්‍රේනයේ දෙන්නෙක්ගේ ඉන්ඩි ගේම් ස්ටූඩියෝ එකක්. ව්ලාද් කෝඩ් ලියනවා, ලිල්‍යා ඩිසයින් කරනවා. අපිම සෙල්ලම් කරන්න කැමති ගේම් අපි දෙන්නා එකතු වෙලා හදනවා.",
+   "thanks": "සෙල්ලම් කළාට ස්තූතියි!",
+   "site": "අපේ වෙබ් අඩවිය",
+   "games": "Google Play එකේ අපේ ගේම්",
+   "fact": "රසවත් කරුණ",
+   "how": "ඔයාගේ කියුබ් එකේ අංකයක් පේනවා. ඒ අංකයම තියෙන කොටු ටැප් කරන්න, නැත්නම් එක දිගු දාමයකින් ඒවා හරහා ස්වයිප් කරන්න: දාමවලින් වැඩි ලකුණු.",
+   "demo": "කෞතුකාගාරයේ සිතුවමක්, ස්තරයෙන් ස්තරය මතු වෙමින්",
+   "aboutTitle": "අප ගැන",
+   "pixTitle": "Pix හඳුනාගන්න",
+   "pixName": "එයා කියුබ් එකක් (ඉංග්‍රීසියෙන් Cube), එයාගේ නම Pix. දෙක එකතු කළාම CubePix: ගේම් එකට තියෙන්නේ එයාගේ නම.",
+   "pixHi": "හායි! මම Pix."
+  },
   "th": {
    "tagline": "เผยภาพทีละคิวบ์",
    "lead": "เกมพัซเซิลแสนสบายสำหรับคนรักศิลปะ ระบายคิวบ์ทีละเลเยอร์ แล้วภาพวาดชื่อดัง สิ่งมหัศจรรย์ของโลก และขุมทรัพย์พิกเซลเล็กๆ จะมีชีวิตขึ้นมา ทุกภาพจบด้วยป้ายพิพิธภัณฑ์และเรื่องจริงหนึ่งเรื่อง",
@@ -2294,6 +4727,93 @@
    "pixTitle": "มารู้จัก Pix กัน",
    "pixName": "เขาเป็นคิวบ์ (Cube) และชื่อของเขาคือ Pix เอาสองคำมารวมกันก็ได้ CubePix: เกมนี้ใช้ชื่อของเขา",
    "pixHi": "สวัสดี! เราชื่อ Pix นะ"
+  },
+  "lo": {
+   "tagline": "ເປີດເຜີຍຮູບ ເທື່ອລະລູກບາດ",
+   "lead": "ເກມປິດສະໜາແບບສະບາຍໆສຳລັບຄົນຮັກສິລະປະ ເຕີມລູກບາດເທື່ອລະຊັ້ນສີ ແລ້ວພາບແຕ້ມທີ່ມີຊື່ສຽງ ສິ່ງມະຫັດສະຈັນຂອງໂລກ ແລະ ສົມບັດພິກເຊວນ້ອຍໆຈະມີຊີວິດຂຶ້ນມາ ທຸກຮູບຈົບດ້ວຍປ້າຍອະທິບາຍ ແລະ ເລື່ອງຈິງ",
+   "play": "ຫຼິ້ນໃນບຣາວເຊີ",
+   "soon": "ໄວໆນີ້ໃນ",
+   "pics": {
+    "other": "{n} ຮູບ"
+   },
+   "floors": {
+    "other": "{n} ຊັ້ນ"
+   },
+   "langs": {
+    "other": "{n} ພາສາ"
+   },
+   "free": "ຟຣີ",
+   "layer": "ຊັ້ນສີ {a} / {b}",
+   "revealed": "ຮູບປາກົດແລ້ວ",
+   "about": "Lewydo ແມ່ນສະຕູດິໂອເກມອິນດີ້ສອງຄົນຈາກຢູເຄຣນ ວລາດຂຽນໂຄດ ລີເລຍອອກແບບ ພວກເຮົາຮ່ວມກັນສ້າງເກມທີ່ພວກເຮົາມັກຫຼິ້ນເອງ",
+   "thanks": "ຂອບໃຈທີ່ຫຼິ້ນ!",
+   "site": "ເວັບໄຊຂອງພວກເຮົາ",
+   "games": "ເກມຂອງພວກເຮົາໃນ Google Play",
+   "fact": "ເລື່ອງໜ້າຮູ້",
+   "how": "ລູກບາດຂອງເຈົ້າສະແດງຕົວເລກ ແຕະຊ່ອງທີ່ມີເລກດຽວກັນ ຫຼື ລາກຜ່ານພວກມັນເປັນໂສ້ຍາວ: ໂສ້ໄດ້ຄະແນນຫຼາຍກວ່າ",
+   "demo": "ພາບແຕ້ມຈາກຫໍພິພິທະພັນ ທີ່ປາກົດຂຶ້ນເທື່ອລະຊັ້ນສີ",
+   "aboutTitle": "ກ່ຽວກັບເຮົາ",
+   "pixTitle": "ມາຮູ້ຈັກ Pix",
+   "pixName": "ລາວເປັນລູກບາດ (Cube) ແລະ ຊື່ຂອງລາວແມ່ນ Pix ເອົາສອງຄຳມາລວມກັນ ກໍ່ໄດ້ CubePix: ເກມນີ້ໃຊ້ຊື່ຂອງລາວ",
+   "pixHi": "ສະບາຍດີ! ຂ້ອຍແມ່ນ Pix"
+  },
+  "my": {
+   "tagline": "ပုံကို ကုဗတစ်တုံးချင်း ဖော်ပါ",
+   "lead": "အနုပညာ ချစ်သူတွေအတွက် အေးဆေးတဲ့ ပဟေဠိ။ ကုဗတွေကို အလွှာလိုက် ဖြည့်လိုက်ရင် နာမည်ကျော် ပန်းချီကားတွေ၊ ကမ္ဘာ့အံ့ဖွယ်တွေနဲ့ ပစ်ဆယ် ရတနာလေးတွေ အသက်ဝင်လာမယ်။ ပုံတိုင်းက ပြတိုက်အညွှန်းနဲ့ စစ်မှန်တဲ့ ဇာတ်လမ်းတစ်ပုဒ်နဲ့ ဆုံးတယ်။",
+   "play": "ဘရောက်ဇာမှာ ကစား",
+   "soon": "မကြာမီ ရောက်လာမယ်",
+   "pics": {
+    "other": "ပုံ {n} ပုံ"
+   },
+   "floors": {
+    "other": "အထပ် {n} ထပ်"
+   },
+   "langs": {
+    "other": "ဘာသာစကား {n} မျိုး"
+   },
+   "free": "အခမဲ့",
+   "layer": "အလွှာ {a} / {b}",
+   "revealed": "ပုံ ပေါ်လာပြီ",
+   "about": "Lewydo က ယူကရိန်းက လူနှစ်ယောက်ပါတဲ့ အင်ဒီဂိမ်း စတူဒီယိုလေးပါ။ ဗလဒ်က ကုဒ်ရေးပြီး လီလျာက ဒီဇိုင်းဆွဲတယ်။ ကျွန်ုပ်တို့ ကိုယ်တိုင် ကစားရတာ ကြိုက်တဲ့ ဂိမ်းတွေကို အတူတူ ဖန်တီးပါတယ်။",
+   "thanks": "ကစားပေးလို့ ကျေးဇူးပါ!",
+   "site": "ကျွန်ုပ်တို့ ဝက်ဘ်ဆိုက်",
+   "games": "Google Play ပေါ်က ကျွန်ုပ်တို့ ဂိမ်းများ",
+   "fact": "စိတ်ဝင်စားစရာ",
+   "how": "သင့်ကုဗမှာ ဂဏန်းတစ်ခု ပြထားတယ်။ အဲဒီဂဏန်းပါတဲ့ အကွက်တွေကို နှိပ်ပါ၊ ဒါမှမဟုတ် ကွင်းဆက်ရှည်တစ်ခုအဖြစ် ပွတ်ဆွဲပါ: ကွင်းဆက်တွေက အမှတ် ပိုရတယ်။",
+   "demo": "အလွှာလိုက် ဖော်ထားတဲ့ ပြတိုက်က ပန်းချီကား",
+   "aboutTitle": "ကျွန်ုပ်တို့အကြောင်း",
+   "pixTitle": "Pix နဲ့ တွေ့ပါ",
+   "pixName": "သူက ကုဗ (Cube) ဖြစ်ပြီး နာမည်က Pix။ နှစ်ခု ပေါင်းလိုက်ရင် CubePix: ဂိမ်းက သူ့နာမည်ကို ဆောင်ထားတယ်။",
+   "pixHi": "ဟိုင်း! ကျွန်တော် Pix ပါ။"
+  },
+  "km": {
+   "tagline": "បង្ហាញរូបភាពម្ដងមួយគូបៗ",
+   "lead": "ហ្គេមប្រាជ្ញាដ៏ស្ងប់សម្រាប់អ្នកស្រឡាញ់សិល្បៈ។ បំពេញគូបម្ដងមួយស្រទាប់ ហើយគំនូរល្បីៗ អច្ឆរិយៈពិភពលោក និងកំណប់ភីកសែលតូចៗ នឹងមានជីវិតឡើង។ រូបភាពនីមួយៗបញ្ចប់ដោយផ្លាកសារមន្ទីរ និងរឿងពិតមួយ។",
+   "play": "លេងក្នុងកម្មវិធីរុករក",
+   "soon": "ឆាប់ៗនេះនៅលើ",
+   "pics": {
+    "other": "{n} រូបភាព"
+   },
+   "floors": {
+    "other": "{n} ជាន់"
+   },
+   "langs": {
+    "other": "{n} ភាសា"
+   },
+   "free": "ឥតគិតថ្លៃ",
+   "layer": "ស្រទាប់ {a} / {b}",
+   "revealed": "រូបភាពបានបង្ហាញ",
+   "about": "Lewydo គឺជាស្ទូឌីយោហ្គេមឯករាជ្យពីរនាក់មកពីអ៊ុយក្រែន។ វ្លាដសរសេរកូដ លីលីយ៉ារចនា។ យើងរួមគ្នាបង្កើតហ្គេមដែលយើងចូលចិត្តលេង។",
+   "thanks": "អរគុណដែលបានលេង!",
+   "site": "គេហទំព័ររបស់យើង",
+   "games": "ហ្គេមរបស់យើងនៅលើ Google Play",
+   "fact": "ការពិតគួរឱ្យចាប់អារម្មណ៍",
+   "how": "គូបរបស់អ្នកបង្ហាញលេខមួយ។ ចុចក្រឡាដែលមានលេខដូចគ្នា ឬអូសកាត់វាជាខ្សែសង្វាក់វែងតែមួយ៖ ខ្សែសង្វាក់ផ្ដល់ពិន្ទុច្រើនជាង។",
+   "demo": "គំនូរមួយពីសារមន្ទីរ បង្ហាញម្ដងមួយស្រទាប់",
+   "aboutTitle": "អំពីយើង",
+   "pixTitle": "ស្គាល់ Pix",
+   "pixName": "គេជាគូប ហើយឈ្មោះគេគឺ Pix។ ដាក់ទាំងពីរបញ្ចូលគ្នា អ្នកនឹងបាន CubePix៖ ហ្គេមនេះមានឈ្មោះរបស់គេ។",
+   "pixHi": "សួស្ដី! ខ្ញុំគឺ Pix។"
   },
   "ko": {
    "tagline": "큐브 하나씩 그림을 드러내요",
@@ -2352,6 +4872,35 @@
    "pixTitle": "Pixを紹介します",
    "pixName": "Pixはキューブ、英語でCube。そして名前はPix。ふたつを合わせるとCubePix。ゲームの名前は、Pixの名前でもあるんです。",
    "pixHi": "こんにちは！ぼくはPixだよ。"
+  },
+  "zh-CN": {
+   "tagline": "用方块一块块揭开画作",
+   "lead": "一款献给艺术爱好者的宁静解谜游戏。一层一层填满方块，世界名画、世界奇观和小小的像素珍宝就会活过来。每幅画的最后，都有一张展签和一个真实的故事。",
+   "play": "在浏览器中游玩",
+   "soon": "即将登陆",
+   "pics": {
+    "other": "{n} 幅画"
+   },
+   "floors": {
+    "other": "{n} 层楼"
+   },
+   "langs": {
+    "other": "{n} 种语言"
+   },
+   "free": "免费",
+   "layer": "第 {a} / {b} 层",
+   "revealed": "画作揭晓",
+   "about": "Lewydo 是来自乌克兰的双人独立游戏工作室。弗拉德写代码，莉莉娅做设计。我们一起做自己也爱玩的游戏。",
+   "thanks": "感谢游玩！",
+   "site": "我们的官网",
+   "games": "我们在Google Play上的游戏",
+   "fact": "冷知识",
+   "how": "你的方块上显示着一个数字。点击数字相同的格子，或者手指一路滑过它们，连成一条长长的连锁：连锁得分更高。",
+   "demo": "博物馆里的一幅画，正一层层揭晓",
+   "aboutTitle": "关于我们",
+   "pixTitle": "认识一下 Pix",
+   "pixName": "他是一个方块（Cube），名字叫 Pix。两者合在一起就是 CubePix：游戏用的正是他的名字。",
+   "pixHi": "你好！我是 Pix。"
   },
   "zh-TW": {
    "tagline": "用方塊一塊塊揭開畫作",
