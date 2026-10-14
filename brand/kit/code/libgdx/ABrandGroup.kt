@@ -6,7 +6,7 @@
 //   0.85 → 1.40 s  the slogan comes into focus
 //   1.15 → 1.85 s  the line opens from the middle
 //   2.00 s         the finale (LewydoHeartbeat.finale): a breath in, LUB at 2.17, DUB at 2.45, two waves of light
-//   2.09 s         onSound() — play kit/sound/lewydo-heartbeat.ogg (the heart only; its first beat is 0.03 s in, on the lub)
+//   2.09 s         onSound() — play kit/sound/lewydo-heartbeat.wav (the heart only; its first beat is 0.03 s in, on the lub)
 //   3.80 s         onComplete
 package com.lewydo.yourgame.game.actors.brand
 

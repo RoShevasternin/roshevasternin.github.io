@@ -524,6 +524,7 @@ https://roshevasternin.github.io/brand/ — the rules and a live preview
 https://roshevasternin.github.io/brand/brand.json — every number, text (every language of our games) and file address
 If the web is blocked in your sandbox: git clone --depth 1 https://github.com/RoShevasternin/roshevasternin.github.io and use its brand/ folder (brand/kit/…, brand/brand.json).
 Take the pictures, the LibGDX atlas and the code from the kit as they are — never redraw the mark. The heart beats once when the brand appears, never in a loop.
+The sound: kit/sound/lewydo-heartbeat.wav — the one file for the game, its web prototype and its site; copy it as is, byte for byte (check its sha256 in brand.json), never convert it to .ogg or .mp3; once, with the splash, at full volume when the game's sounds are at their usual level.
 About us: the text, then «Thank you for playing!» as its own last line — centred, one line in every language (smaller, never wrapped).
 Loader: on the screen right after the splash (never on the splash itself; only there — not in About us), at the bottom — «Powered by LibGDX» / «Developed by Lewydo™» / «Version» + the app's own version name, read at run time (never typed in): Inter Medium 10, line height 12, white 25 %, centred, a 360×36 block 28 above the bottom (+ safe area); English in every language.
 How we work: prototype first — everything new is made and tested in the game's web prototype, then ported to the game. Never add anything new directly in the game: the prototype would not know it.</pre>
@@ -568,7 +569,7 @@ const splashIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIn
 const inPhone = $('#splashLock'); inPhone.classList.add('lw-wait'); splashIO.observe(inPhone);
 // the Lewydo sound: with a tap (browsers allow sound only after one) the splash plays with it — the sound starts at 2.09 s,
 // its first beat lands on the heart's lub (2.12 s); «Listen» plays it alone and lights the two hearts on its two beats
-const brandSound = new Audio('/brand/kit/sound/lewydo-heartbeat.mp3'); brandSound.preload = 'auto';
+const brandSound = new Audio('/brand/kit/sound/lewydo-heartbeat.wav'); brandSound.preload = 'auto';
 let sndT = [];
 const playSound = (after = 0) => { sndT.forEach(clearTimeout); sndT = []; brandSound.pause(); brandSound.currentTime = 0;
   sndT.push(setTimeout(() => brandSound.play().catch(() => {}), after * 1000)); return after; };

@@ -2,6 +2,7 @@
 // and the brand page (/brand/): its splash, About us in every language, every download, brand.json, the kit zip, the sound and «How to say it».
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const LANGS = JSON.parse(readFileSync(new URL('../src/langs.json', import.meta.url), 'utf8')).map((L) => L.id);
 const RTL = ['ar', 'he', 'fa', 'ur', 'ps'];
@@ -228,10 +229,15 @@ test('the brand page: the splash, About us in every language, every download, br
   for (const u of [...Object.values(B.images).flatMap((i) => [i.png, i.webp]), B.atlas.atlas, B.atlas.png, ...Object.values(B.code).map((c) => c.url)])
     expect((await request.get(u.replace('https://roshevasternin.github.io/', './'))).status(), u).toBe(200);
   expect(B.pronunciation.ipa).toBe('/lɛv.waɪ.doʊ/');                                                 // how to say it
-  for (const u of Object.values(B.sound.files)) {                                                     // the Lewydo sound, every format
+  expect(Object.keys(B.sound.files)).toEqual(['wav']);                                                // the Lewydo sound: one WAV, nothing else
+  for (const u of Object.values(B.sound.files)) {
     const r = await request.get(u.replace('https://roshevasternin.github.io/', './'));
-    expect(r.status(), u).toBe(200); expect((await r.body()).length, u).toBeGreaterThan(20000);
+    expect(r.status(), u).toBe(200); const wav = await r.body();
+    expect(wav.length, u).toBe(B.sound.file.bytes); expect(createHash('sha256').update(wav).digest('hex'), u).toBe(B.sound.file.sha256);
+    expect(wav.subarray(0, 4).toString() + wav.subarray(8, 16).toString(), u).toBe('RIFFWAVEfmt ');
+    expect([wav.readUInt16LE(20), wav.readUInt16LE(22), wav.readUInt32LE(24), wav.readUInt16LE(34)], u).toEqual([1, 2, 48000, 16]); // PCM, stereo, 48 kHz, 16-bit
   }
+  for (const x of ['ogg', 'mp3']) expect((await request.get(`./brand/kit/sound/lewydo-heartbeat.${x}`)).status(), x).toBe(404);
   const zip = await (await request.get('./brand/lewydo-brand-kit.zip')).body();
   expect(zip.subarray(0, 2).toString()).toBe('PK');
   expect(w.errs).toEqual([]);
