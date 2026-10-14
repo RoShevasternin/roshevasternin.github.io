@@ -34,10 +34,11 @@ export const CODE = [
 const HEART = [[1.13, 0.10, 'sineOut'], [1.0, 0.12, 'sineIn'], [1.07, 0.10, 'sineOut'], [1.0, 0.12, 'sineIn']];
 const GLOW = { delay: 0.05, steps: [[1.15, 0.12, 'sineOut'], [1.05, 0.28, 'sineIn']] };
 
-export function brandJson({ SITE, YEAR, G, CP, IDS }) {
+export function brandJson({ SITE, YEAR, G, S, IDS }) {
   const B = SITE + 'brand/', K = B + 'kit/';
   const part = (p) => ({ what: p.what, dp: p.dp, png: K + 'png/' + p.id + '.png', px: pngSize(`brand/kit/png/${p.id}.png`), webp: K + 'webp/' + p.id + '.webp' });
-  const about = Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, thanks: T.thanks, site: T.site, games: T.games }]; }));
+  // About us in every language of ours: the games' own words (the CubePix site's, or the studio's supplement where it has none yet)
+  const about = Object.fromEntries(IDS.map((L) => [L, { title: S[L]['cp:aboutTitle'], text: S[L]['cp:about'], thanks: S[L]['cp:thanks'], site: S[L]['cp:site'], games: S[L]['cp:games'] }]));
   return {
     _about: 'The Lewydo™ brand standard in numbers — for game code and for Claude. The same as the page ' + B + ' (rules, live previews). ' +
       'Take the pictures and the code as they are; never redraw the mark. Sizes are dp (the design size, 360×800 screens); the PNGs are @3x of them.',

@@ -20,8 +20,9 @@
 <link rel="apple-touch-icon" href="/assets/icon-180.png">
 <link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
+{{langBoot}}
 <style>
-/* The Lewydo brand page: the standard shown with the kit itself — the same pictures, CSS and code the games use. English only. */
+/* The Lewydo brand page: the standard shown with the kit itself — the same pictures, CSS and code the games use. Every language of the site. */
 :root{--bg:#0E1024;--ink:#fff;--ink2:rgba(242,255,247,.84);--ink3:rgba(242,255,247,.6);--green:#3DDC84;--glow:#6DF593;--mint:#9DF5C2;
   --line:rgba(157,245,194,.16);--panel:rgba(20,24,54,.72);--wrap:1180px;--gut:20px;
   --f:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;color-scheme:dark;}
@@ -34,8 +35,8 @@ a{color:var(--mint);}
 [hidden]{display:none !important;}
 .wrap{width:100%;max-width:calc(var(--wrap) + var(--gut) * 2);margin:0 auto;padding:0 var(--gut);}
 :focus-visible{outline:2px solid var(--mint);outline-offset:3px;}
-.skip{position:absolute;left:-9999px;top:10px;z-index:100;background:var(--green);color:#04120A;padding:10px 16px;border-radius:12px;font-weight:900;}
-.skip:focus{left:12px;}
+.skip{position:absolute;inset-inline-start:12px;top:10px;max-width:calc(100vw - 24px);transform:translateY(-200%);z-index:100;background:var(--green);color:#04120A;padding:10px 16px;border-radius:12px;font-weight:900;}
+.skip:focus{transform:none;}
 
 {{brandCss}}
 
@@ -45,8 +46,9 @@ a{color:var(--mint);}
 .home{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
 .home .lw-sig{transform:scale(1.5);transform-origin:0 50%;margin-right:36px;}
 .home b{font-weight:900;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);padding:5px 10px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(157,245,194,.35);}
-@media (max-width:420px){.home{gap:8px;} .home .lw-sig{transform:scale(1.25);margin-right:18px;} .home b{font-size:11px;letter-spacing:.14em;padding:4px 8px;}}
-.nav{display:none;margin-left:auto;gap:2px;}
+@media (max-width:420px){.home{gap:8px;min-width:0;} .home .lw-sig{transform:scale(1.25);margin-right:18px;} .home b{font-size:11px;letter-spacing:.08em;padding:4px 8px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}}
+@media (max-width:360px){.home .lw-sig{transform:scale(1.1);margin-right:8px;} .home b{font-size:10px;letter-spacing:.04em;padding:4px 7px;}}
+.nav{display:none;margin-inline-start:auto;gap:2px;}
 .nav a{padding:9px 12px;border-radius:12px;color:var(--ink2);font-weight:800;font-size:15px;text-decoration:none;}
 .nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
 @media (min-width:1240px){.nav{display:flex;} .nav a{white-space:nowrap;}}
@@ -68,7 +70,7 @@ section{padding:clamp(70px,9vw,120px) 0 0;}
 .panel{border-radius:24px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);}
 .grid2{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);} @media (min-width:900px){.grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}}
 .spec{list-style:none;margin-top:16px;display:grid;gap:8px;font-size:15.5px;color:var(--ink2);}
-.spec li{padding-left:18px;position:relative;} .spec li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--green);}
+.spec li{padding-inline-start:18px;position:relative;} .spec li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--green);}
 .spec b{color:#fff;}
 code,kbd{font-family:var(--mono);font-size:.9em;color:var(--mint);overflow-wrap:anywhere;}
 .anatomy,.rules,.type,.phones,.hb,.dl-grid,.where{grid-template-columns:minmax(0,1fr);}
@@ -83,8 +85,8 @@ code,kbd{font-family:var(--mono);font-size:.9em;color:var(--mint);overflow-wrap:
   background:radial-gradient(50% 42% at 50% 34%,rgba(61,220,132,.16),transparent 70%);}
 .stagebox .lw-lockup{--lw-s:1.15;}
 @media (min-width:960px){
-  .hero-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:40px;text-align:left;}
-  .hero .sub{margin-left:0;} .hero .ctas{justify-content:flex-start;}
+  .hero-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:40px;text-align:start;}
+  .hero .sub{margin-inline-start:0;} .hero .ctas{justify-content:flex-start;}
   .stagebox{order:0;} .stagebox .lw-lockup{--lw-s:1.45;}
 }
 .replay{margin-top:18px;}
@@ -131,7 +133,7 @@ code,kbd{font-family:var(--mono);font-size:.9em;color:var(--mint);overflow-wrap:
 
 /* colours + type */
 .swatches{display:grid;gap:14px;margin-top:30px;grid-template-columns:repeat(2,1fr);} @media (min-width:760px){.swatches{grid-template-columns:repeat(5,1fr);}}
-.sw{display:flex;flex-direction:column;justify-content:flex-end;min-height:150px;padding:14px;border-radius:18px;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;
+.sw{display:flex;flex-direction:column;justify-content:flex-end;min-height:150px;padding:14px;border-radius:18px;border:0;cursor:pointer;text-align:start;font:inherit;color:inherit;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);transition:transform .15s ease;}
 .sw:hover{transform:translateY(-3px);}
 .sw b{font:800 16px var(--mono);} .sw span{font-size:14px;opacity:.8;} .sw em{font-style:normal;font-size:12px;font-weight:800;opacity:.7;margin-top:4px;}
@@ -192,11 +194,12 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 .tl-ax div{display:flex;justify-content:space-between;}
 .langpick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:10px;justify-content:center;}
 /* our own chevron: the browser's own one floats (iOS draws it off-centre against our padding) */
-.langpick select{-webkit-appearance:none;appearance:none;font:700 15px var(--f);color:#fff;border:0;border-radius:12px;padding:9px 40px 9px 14px;cursor:pointer;
+.langpick select{-webkit-appearance:none;appearance:none;font:700 15px var(--f);color:#fff;border:0;border-radius:12px;padding-block:9px;padding-inline:14px 40px;cursor:pointer;
   background:#151935 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%239DF5C2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center/12px 8px;
   box-shadow:inset 0 0 0 1px rgba(157,245,194,.3);}
 .langpick select:focus-visible{outline:3px solid #fff;outline-offset:2px;}
 .langpick select option{color:#fff;background:#151935;}
+[dir="rtl"] .langpick select{background-position:left 14px center;}
 
 /* heartbeat */
 .hb{display:grid;gap:28px;margin-top:30px;align-items:center;} @media (min-width:900px){.hb{grid-template-columns:.8fr 1.2fr;}}
@@ -209,7 +212,7 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 .beatgraph.go .playhead{animation:lwRun .5s linear 1;}
 @keyframes lwRun{0%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(var(--run))}}
 .graph .lg{display:flex;gap:18px;margin-top:10px;font-size:14px;color:var(--ink2);}
-.graph .lg i{display:inline-block;width:14px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px;}
+.graph .lg i{display:inline-block;width:14px;height:4px;border-radius:2px;vertical-align:middle;margin-inline-end:6px;}
 .code{margin-top:22px;overflow:hidden;}
 .hb-finale{margin-top:22px;}
 .sound{display:grid;gap:20px;align-items:center;margin-top:22px;padding:24px;
@@ -224,7 +227,7 @@ body[data-theme="orbit"]{--scr:#0e1024;--scr-light:radial-gradient(75% 60% at 50
 .tabs{display:flex;flex-wrap:wrap;gap:4px;}
 .tabs button{border:0;background:none;color:var(--ink3);font:800 14px var(--mono);padding:10px 12px;border-radius:10px 10px 0 0;cursor:pointer;}
 .tabs button[aria-selected="true"]{color:#fff;background:rgba(61,220,132,.12);}
-.code-bar{display:flex;gap:8px;padding-bottom:8px;margin-left:auto;}
+.code-bar{display:flex;gap:8px;padding-bottom:8px;margin-inline-start:auto;}
 pre.src{margin:0;padding:18px 20px 22px;max-height:520px;overflow:auto;font:600 13px/1.6 var(--mono);color:#dff;white-space:pre;tab-size:4;}
 pre.src .k{color:#9DF5C2;} pre.src .n{color:#FFD54A;} pre.src .s{color:#FF8FC7;} pre.src .c{color:rgba(190,220,210,.55);} pre.src .f{color:#7fd8ff;}
 
@@ -251,8 +254,8 @@ pre.src .k{color:#9DF5C2;} pre.src .n{color:#FFD54A;} pre.src .s{color:#FF8FC7;}
 .flow .no .flow-n{background:#ff4d6d;color:#fff;}
 .flow p{color:var(--ink2);font-size:15.5px;line-height:1.55;} .flow p b{color:#fff;}
 .steps{list-style:none;counter-reset:s;display:grid;gap:14px;margin-top:26px;}
-.steps li{position:relative;padding:18px 18px 18px 64px;min-width:0;}
-.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:#3DDC84;color:#04120A;font-weight:900;display:grid;place-items:center;}
+.steps li{position:relative;padding-block:18px;padding-inline:64px 18px;min-width:0;}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:18px;top:16px;width:32px;height:32px;border-radius:50%;background:#3DDC84;color:#04120A;font-weight:900;display:grid;place-items:center;}
 .steps b{display:block;font-weight:900;font-size:17px;} .steps span{color:var(--ink2);font-size:15.5px;}
 .prompt{margin-top:22px;padding:20px;}
 .prompt pre{white-space:pre-wrap;overflow-wrap:anywhere;font:600 14px/1.6 var(--mono);color:#dff;margin-top:10px;}
@@ -266,25 +269,11 @@ footer p{margin-top:8px;}
 .toast.on{opacity:1;transform:translate(-50%,0);}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 
-/* languages: the same 15 as the site and the games */
-:lang(ja){--f:"Nunito","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;}
-:lang(ko){--f:"Nunito","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;}
-:lang(zh-TW){--f:"Nunito","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;}
-:lang(ja){word-break:auto-phrase;line-break:strict;} :lang(ko){word-break:keep-all;} :lang(zh-TW){line-break:strict;}
-.langsel{position:relative;margin-left:auto;}
-@media (min-width:1240px){.langsel{margin-left:6px;}}
-.lang-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border-radius:12px;border:0;background:rgba(255,255,255,.06);color:#fff;
-  font:900 14px var(--f);letter-spacing:.06em;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(157,245,194,.18);}
-.lang-btn:hover{background:rgba(255,255,255,.1);}
-.flag{display:inline-flex;flex:none;}
-.flag img,.flag svg{display:block;width:24px;height:16px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.18);}
-.lang-menu{position:absolute;right:0;top:calc(100% + 10px);width:min(290px,calc(100vw - 32px));max-height:min(70vh,560px);overflow:auto;padding:8px;border-radius:18px;
-  background:rgba(18,21,48,.96);box-shadow:0 0 0 1px rgba(157,245,194,.18),0 20px 50px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
-.lang-menu button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:8px 12px;border:0;border-radius:12px;background:none;color:var(--ink2);
-  font:700 16px var(--f);text-align:left;cursor:pointer;}
-.lang-menu button:hover,.lang-menu button:focus-visible{background:rgba(61,220,132,.12);color:#fff;outline:none;}
-.lang-menu button[aria-selected="true"]{color:var(--mint);}
-.lang-menu button[aria-selected="true"]::after{content:"✓";margin-left:auto;font-weight:900;}
+/* languages: all of the site's (src/lang.css) */
+@media (min-width:1240px){.langsel{margin-inline-start:6px;}}
+{{langCss}}
+/* right to left (ar, he, fa, ur, ps): the page mirrors; the game screens in the phones, the timelines, graphs and code keep their sides */
+[dir="rtl"] :is(.home,.device,.tl-track,.tl-ax,.graph svg,.anat-fig,.dont,.code,.beatgraph){direction:ltr;}
 </style>
 </head>
 <body data-theme="lewydo">
@@ -297,8 +286,12 @@ footer p{margin-top:8px;}
       <a href="#heartbeat" data-t="b.nav.heartbeat"></a><a href="#downloads" data-t="b.nav.downloads"></a><a href="#dev" data-t="b.nav.dev"></a>
     </nav>
     <div class="langsel">
-      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
-      <div class="lang-menu" id="langMenu" role="listbox" hidden></div>
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
+      <div class="lang-menu" id="langMenu" hidden>
+        <input class="lang-find" id="langFind" type="search" autocomplete="off" spellcheck="false" enterkeyhint="go">
+        <div class="lang-scroll"><div class="lang-list" id="langList" role="listbox" data-ta="aria-label:lang.title"></div>
+          <p class="lang-none" id="langNone" hidden data-t="lang.none"></p><p class="lang-stop" id="langStop"></p></div>
+      </div>
     </div>
   </div>
 </header>
@@ -340,7 +333,7 @@ footer p{margin-top:8px;}
         <p class="name"><b>L</b><b>e</b><b>W</b><b>Y</b><b>Do</b></p>
         <p class="spell-note" data-t="b.spell"></p>
         <div class="say"><button class="btn btn-green btn-sm" type="button" data-say data-ta="aria-label:say.aria"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.6 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-t="say.btn"></span></button>
-          <span class="say-spell" data-t="say.spell"></span><span class="say-ipa">/lɛv.waɪ.doʊ/</span></div>
+          <span class="say-spell" data-t="say.spell"></span><span class="say-ipa" dir="ltr">/lɛv.waɪ.doʊ/</span></div>
         <p class="say-note" data-t="b.say.note"></p>
       </div>
       <div class="where">
@@ -386,7 +379,7 @@ footer p{margin-top:8px;}
       <div class="type">
         <div class="panel"><p class="eyebrow" data-t="b.type.eyebrow"></p><p class="big" lang="en">Lewydo</p><p class="slo" lang="en"><b>L</b>ov<b>e</b> <b>W</b>hat <b>Y</b>ou <b>Do</b></p>
           <ul class="spec"><li data-t="b.type.name"></li><li data-t="b.type.slogan"></li><li data-t="b.type.pics"></li></ul></div>
-        <div class="panel"><p class="eyebrow" data-t="b.text.eyebrow"></p><p class="body" id="textAbout"></p><p class="body thanks" id="textThanks"></p>
+        <div class="panel"><p class="eyebrow" data-t="b.text.eyebrow"></p><p class="body" id="textAbout" dir="auto"></p><p class="body thanks" id="textThanks" dir="auto"></p>
           <ul class="spec"><li data-t="b.text.1"></li><li data-t="b.text.thanks"></li><li data-t="b.text.2"></li><li data-t="b.text.3"></li></ul></div>
       </div>
     </div>
@@ -528,7 +521,7 @@ footer p{margin-top:8px;}
         <p class="eyebrow" data-t="b.prompt"></p>
         <pre id="promptText" lang="en">Use the Lewydo brand kit for this game's brand (splash, loader credits, menu signature, About us, heartbeat):
 https://roshevasternin.github.io/brand/ — the rules and a live preview
-https://roshevasternin.github.io/brand/brand.json — every number, text (15 languages) and file address
+https://roshevasternin.github.io/brand/brand.json — every number, text (every language of our games) and file address
 If the web is blocked in your sandbox: git clone --depth 1 https://github.com/RoShevasternin/roshevasternin.github.io and use its brand/ folder (brand/kit/…, brand/brand.json).
 Take the pictures, the LibGDX atlas and the code from the kit as they are — never redraw the mark. The heart beats once when the brand appears, never in a loop.
 About us: the text, then «Thank you for playing!» as its own last line — centred, one line in every language (smaller, never wrapped).
@@ -561,43 +554,10 @@ const again = (el, cls) => { if (!el) return; el.classList.remove(cls); void el.
 const toast = (t) => { const e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => e.classList.remove('on'), 1400); };
 const store = { get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
 
-// ── language: ?lang= → the visitor's choice (shared with the site and CubePix) → the device → English ──
-const IDS = D.langs.map((L) => L.id);
-const pick = (tag) => { if (!tag) return null; const t = String(tag).toLowerCase();
-  if (t.startsWith('zh')) return /^zh-(tw|hk|mo)|hant/.test(t) ? 'zh-TW' : null;
-  if (t === 'in' || t.startsWith('in-')) return 'id';
-  const b = t.split('-')[0]; return IDS.includes(b) ? b : null; };
-const urlLang = new URLSearchParams(location.search).get('lang');
-const saved = [store.get('lewydo:lang'), store.get('cubepix-site:lang')].find((l) => IDS.includes(l));
-let lang = (IDS.includes(urlLang) && urlLang) || saved || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
-const T = (k) => D.S[lang][k] ?? D.S.en[k] ?? '';
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-// names stay English even in CAPS (Turkish casing would give «KOTLİN»)
-const rich = (s) => { let h = esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>')
-  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' rel="noopener"' : ''}>${t}</a>`);
-  return lang === 'tr' ? h.replace(/(<[^>]*>)|\b(Kotlin|LibGDX|Lewydo|CubePix|Orbit Dash|Google Play|Nunito|Figma|Claude)\b/g, (m, tag, n) => tag || `<span lang="en">${n}</span>`) : h; };
-function applyLang() {
-  document.documentElement.lang = lang;
-  $$('[data-t]').forEach((el) => { const v = T(el.dataset.t); if (el.tagName === 'TITLE') document.title = v; else el.innerHTML = rich(v); });
-  $$('[data-ta]').forEach((el) => { const [a, k] = el.dataset.ta.split(/:(.+)/); el.setAttribute(a, T(k)); });
-  $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); a.setAttribute('href', a.dataset.base + (lang === 'en' ? '' : '?lang=' + lang)); });
-  $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag; $('#langCode').textContent = lang === 'zh-TW' ? '繁中' : lang.toUpperCase();
-  $$('#langMenu button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
-  { const A = D.about[lang] || D.about.en; $('#textAbout').textContent = A.text; $('#textThanks').textContent = A.thanks; $('#textAbout').lang = $('#textThanks').lang = lang; }
-  if (abLang) { abLang.value = lang; showAbout(false); }
-}
-function setLang(id) { if (!IDS.includes(id) || id === lang) return; lang = id; store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);
-  try { const u = new URL(location.href); u.searchParams.set('lang', id); history.replaceState(null, '', u); } catch (e) {}
-  applyLang(); }
-const menu = $('#langMenu'), langBtn = $('#langBtn');
-menu.innerHTML = D.langs.map((L) => `<button type="button" role="option" data-lang="${L.id}" lang="${L.id}"><span class="flag">${L.flag}</span>${esc(L.name)}</button>`).join('');
-const openMenu = (on) => { menu.hidden = !on; langBtn.setAttribute('aria-expanded', String(on)); if (on) (menu.querySelector('[aria-selected="true"]') || menu.firstChild).focus(); };
-langBtn.addEventListener('click', () => openMenu(menu.hidden));
-menu.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; setLang(b.dataset.lang); openMenu(false); langBtn.focus(); });
-menu.addEventListener('keydown', (e) => { const bs = $$('button', menu), i = bs.indexOf(document.activeElement);
-  if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
-  else if (e.key === 'Escape') { openMenu(false); langBtn.focus(); } });
-document.addEventListener('click', (e) => { if (!menu.hidden && !e.target.closest('.langsel')) openMenu(false); });
+{{langJs}}
+// About us follows the page's language (the games' own words: D.about — every language, in the page)
+onLang.push(() => { const A = D.about[lang] || D.about.en; $('#textAbout').textContent = A.text; $('#textThanks').textContent = A.thanks; $('#textAbout').lang = $('#textThanks').lang = lang;
+  if (abLang) { abLang.value = lang; showAbout(false); } });
 
 const abLang = $('#abLang');
 const copy = (text) => { const done = () => toast('✓ ' + T('b.copied'));
@@ -636,7 +596,7 @@ $$('.themes button').forEach((b) => b.addEventListener('click', () => { document
 
 // About us in every language (the games' own words)
 function showAbout(beat = true) { const A = D.about[abLang.value] || D.about.en; $('#abText').textContent = A.text; $('#abTitle').textContent = A.title; $('#abSite').textContent = A.site; $('#abGames').textContent = A.games;
-  $('.scr-about').lang = abLang.value; fitLine($('#abThanks'), A.thanks); if (beat) again($('.lw-logo', $('#aboutLock')), 'lw-beating'); }
+  $('.scr-about').lang = abLang.value; $('.scr-about').dir = RTL.includes(abLang.value) ? 'rtl' : 'ltr'; fitLine($('#abThanks'), A.thanks); if (beat) again($('.lw-logo', $('#aboutLock')), 'lw-beating'); }
 // one line in every language: a long one gets smaller instead of wrapping (the brand's «Thank you for playing!»)
 function fitLine(el, text) { el.textContent = text; el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);
   while (fs > 10 && el.scrollWidth > el.clientWidth + .5) { fs -= .5; el.style.fontSize = fs + 'px'; } }
@@ -651,7 +611,7 @@ const pickTab = (i) => { tabs.forEach((t, j) => t.setAttribute('aria-selected', 
 tabs.forEach((t, i) => t.addEventListener('click', () => pickTab(i))); pickTab(0);
 $('#codeCopy').addEventListener('click', () => { const i = tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true'); copy(panes[i].textContent); });
 $('#promptCopy').addEventListener('click', () => copy($('#promptText').textContent));
-applyLang();
+startLang();
 })();
 </script>
 </body>

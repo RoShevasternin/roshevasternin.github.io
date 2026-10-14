@@ -1,0 +1,71 @@
+/* ── languages (src/lang.css — the same on both pages, tools/build.mjs puts it into each): the picker, the scripts' own fonts, right to left ── */
+/* the picker: a search field, all our languages (flag, the language's own name and, smaller, its name in the page's language),
+   and last — the row of Russia (never a language of ours: not chosen, not a link; owner 14.10.2026) */
+.langsel{position:relative;margin-inline-start:auto;}
+.lang-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border-radius:12px;border:0;background:rgba(255,255,255,.06);color:#fff;
+  font:900 14px var(--f);letter-spacing:.06em;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(157,245,194,.18);}
+.lang-btn:hover{background:rgba(255,255,255,.1);}
+.lang-btn[aria-busy="true"] #langCode{opacity:.5;}
+#langCode{direction:ltr;}
+.flag{display:inline-flex;flex:none;}
+.flag img,.flag svg{display:block;width:24px;height:16px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.18);}
+.lang-menu{position:absolute;inset-inline-end:0;top:calc(100% + 10px);z-index:50;display:flex;flex-direction:column;width:min(320px,calc(100vw - 32px));
+  max-height:min(74vh,620px);padding:8px;border-radius:18px;background:rgba(18,21,48,.97);
+  box-shadow:0 0 0 1px rgba(157,245,194,.18),0 20px 50px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
+.lang-find{flex:none;width:100%;min-height:42px;margin-bottom:6px;padding-block:0;padding-inline:38px 12px;border:0;border-radius:12px;color:#fff;font:700 15px var(--f);
+  background:rgba(255,255,255,.07) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5' fill='none' stroke='%239DF5C2' stroke-width='2.4'/%3E%3Cpath d='m15.5 15.5 5 5' stroke='%239DF5C2' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 12px 50%/16px 16px;
+  box-shadow:inset 0 0 0 1px rgba(157,245,194,.2);-webkit-appearance:none;appearance:none;}
+[dir="rtl"] .lang-find{background-position:right 12px center;}
+.lang-find::placeholder{color:rgba(242,255,247,.5);}
+.lang-find::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;}
+.lang-find:focus-visible{outline:2px solid var(--mint);outline-offset:0;}
+.lang-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(157,245,194,.3) transparent;}
+.lang-list button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:6px 12px;border:0;border-radius:12px;background:none;color:var(--ink2);
+  font:700 16px/1.25 var(--f);text-align:start;cursor:pointer;}
+.lang-list button:hover,.lang-list button:focus-visible{background:rgba(61,220,132,.12);color:#fff;outline:none;}
+.lang-list button[aria-selected="true"]{color:var(--mint);}
+.lang-list button[aria-selected="true"]::after{content:"✓";margin-inline-start:auto;font-weight:900;}
+.lang-nm{display:flex;flex-direction:column;min-width:0;}
+.lang-nm small{font-weight:600;font-size:12.5px;color:var(--ink3);letter-spacing:0;}
+.lang-nm small:empty{display:none;}
+.lang-none{padding:10px 12px;color:var(--ink3);font-weight:700;font-size:14px;}
+.lang-stop{display:flex;align-items:center;gap:12px;margin-top:6px;padding:12px 12px 6px;border-top:1px solid rgba(157,245,194,.14);color:var(--ink3);cursor:default;}
+.lang-stop .flag img{width:28px;height:19px;}
+.lang-stop b{display:block;font-weight:800;font-size:14px;line-height:1.3;color:#fff;}
+.lang-stop small{display:block;margin-top:2px;font-weight:700;font-size:12.5px;line-height:1.35;}
+
+/* long words (Tamil, Malayalam, Armenian, German…) break rather than push a phone page sideways */
+h1,h2,h3,p,li,dd,dt,figcaption{overflow-wrap:break-word;}
+
+/* the scripts' own fonts: Nunito (Latin, Cyrillic, Vietnamese) stays first for our names; the rest — the device's own fonts (no third party) */
+:lang(ja){--f:"Nunito","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;}
+:lang(ko){--f:"Nunito","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;}
+:lang(zh-TW){--f:"Nunito","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;}
+:lang(zh-CN){--f:"Nunito","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;}
+:lang(el){--f:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;}
+:lang(ar),:lang(fa),:lang(ur),:lang(ps){--f:"Nunito","Noto Sans Arabic","SF Arabic","Geeza Pro","Segoe UI","Tahoma",sans-serif;}
+:lang(he){--f:"Nunito","Noto Sans Hebrew","SF Hebrew","Arial Hebrew","Segoe UI",Arial,sans-serif;}
+:lang(hi),:lang(mr),:lang(ne){--f:"Nunito","Noto Sans Devanagari","Kohinoor Devanagari","Nirmala UI","Mangal",sans-serif;}
+:lang(bn),:lang(as){--f:"Nunito","Noto Sans Bengali","Kohinoor Bangla","Nirmala UI","Vrinda",sans-serif;}
+:lang(pa){--f:"Nunito","Noto Sans Gurmukhi","Gurmukhi Sangam MN","Nirmala UI","Raavi",sans-serif;}
+:lang(gu){--f:"Nunito","Noto Sans Gujarati","Kohinoor Gujarati","Gujarati Sangam MN","Nirmala UI","Shruti",sans-serif;}
+:lang(or){--f:"Nunito","Noto Sans Oriya","Oriya Sangam MN","Nirmala UI","Kalinga",sans-serif;}
+:lang(ta){--f:"Nunito","Noto Sans Tamil","Tamil Sangam MN","Nirmala UI","Latha",sans-serif;}
+:lang(te){--f:"Nunito","Noto Sans Telugu","Kohinoor Telugu","Telugu Sangam MN","Nirmala UI","Gautami",sans-serif;}
+:lang(kn){--f:"Nunito","Noto Sans Kannada","Kannada Sangam MN","Nirmala UI","Tunga",sans-serif;}
+:lang(ml){--f:"Nunito","Noto Sans Malayalam","Malayalam Sangam MN","Nirmala UI","Kartika",sans-serif;}
+:lang(si){--f:"Nunito","Noto Sans Sinhala","Sinhala Sangam MN","Nirmala UI","Iskoola Pota",sans-serif;}
+:lang(th){--f:"Nunito","Noto Sans Thai","Thonburi","Leelawadee UI","Tahoma",sans-serif;}
+:lang(lo){--f:"Nunito","Noto Sans Lao","Lao Sangam MN","Leelawadee UI","Lao UI",sans-serif;}
+:lang(my){--f:"Nunito","Noto Sans Myanmar","Myanmar Sangam MN","Myanmar Text","Padauk",sans-serif;}
+:lang(km){--f:"Nunito","Noto Sans Khmer","Khmer Sangam MN","Leelawadee UI","Khmer UI",sans-serif;}
+:lang(ka){--f:"Nunito","Noto Sans Georgian","Helvetica Neue","Sylfaen",sans-serif;}
+:lang(hy){--f:"Nunito","Noto Sans Armenian","Mshtakan","Sylfaen",sans-serif;}
+:lang(am){--f:"Nunito","Noto Sans Ethiopic","Kefa","Nyala","Ebrima",sans-serif;}
+/* lines break between phrases, not inside words: Japanese by phrase (where the browser can), Korean between words */
+:lang(ja){word-break:auto-phrase;line-break:strict;} :lang(ko){word-break:keep-all;} :lang(zh-TW),:lang(zh-CN){line-break:strict;}
+/* scripts whose letters join or stack: no letter-spacing (it would tear Arabic apart and break Indic clusters), and room for the marks above and below */
+:is(:lang(ar),:lang(fa),:lang(ur),:lang(ps),:lang(hi),:lang(mr),:lang(ne),:lang(bn),:lang(as),:lang(pa),:lang(gu),:lang(or),:lang(ta),:lang(te),:lang(kn),:lang(ml),:lang(si),:lang(th),:lang(lo),:lang(my),:lang(km)){letter-spacing:0 !important;}
+:is(h1,h2,h3,.h2):is(:lang(ar),:lang(fa),:lang(ur),:lang(ps),:lang(hi),:lang(mr),:lang(ne),:lang(bn),:lang(as),:lang(pa),:lang(gu),:lang(or),:lang(ta),:lang(te),:lang(kn),:lang(ml),:lang(si),:lang(th),:lang(lo),:lang(my),:lang(km)){line-height:1.4;}
+/* right to left (ar, he, fa, ur, ps): the page mirrors; the Lewydo mark, code, numbers and the games' own pictures keep their sides */
+[dir="rtl"] :is(.lw-sig,.lw-pill,.lw-lockup,code,pre,.say-ipa,.ipa){direction:ltr;}

@@ -3,7 +3,7 @@
 The one source of the Lewydo brand for every Lewydo project: the pictures, the LibGDX atlas, the code of the splash screen
 and the heartbeat, the menu signature and About us.
 
-- **The page** (15 languages; rules, live previews, the splash, About us): https://roshevasternin.github.io/brand/
+- **The page** (every language of our games; rules, live previews, the splash, About us): https://roshevasternin.github.io/brand/
 - **The numbers** (every size, colour, timing, text and file address — for code and for Claude): https://roshevasternin.github.io/brand/brand.json
 - **Everything in one file:** https://roshevasternin.github.io/brand/lewydo-brand-kit.zip
 - **If the web is blocked** (a sandbox): `git clone --depth 1 https://github.com/RoShevasternin/roshevasternin.github.io` → the `brand/` folder.
@@ -34,7 +34,7 @@ and the heartbeat, the menu signature and About us.
   (`brand.json` → `loader.credits`.)
 - **The menu signature** — a 28-high pill at the bottom of every menu, centred, 34 from the bottom: the logo 24 + the name, and a ›.
   Tap → About us. It beats once when the menu appears.
-- **About us** — the Lockup at top 108, the studio text (15 languages in `brand.json`), then **«Thank you for playing!» as its own
+- **About us** — the Lockup at top 108, the studio text (every language of our games in `brand.json`), then **«Thank you for playing!» as its own
   last line**: centred, one line in every language (a long one gets smaller, it never wraps; never the end of the paragraph —
   `brand.json` → `about.texts.<lang>.thanks`). «Our website» → https://roshevasternin.github.io/, «Our games on Google Play» → our
   developer page, «© 2026 Lewydo™». The heart beats every time it opens.

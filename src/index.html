@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <script type="application/ld+json">{{ldjson}}</script>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('safe')},5000);if(/[?&]og\b/.test(location.search))document.documentElement.classList.add('og');if(/[?&]kit\b/.test(location.search))document.documentElement.classList.add('kit');</script>
+{{langBoot}}
 <style>
 /* Lewydo™ — the studio site. The brand is the standard of docs/brand (Figma «00 Brand», «Lewydo / Lockup», «Lewydo / Signature»):
    the same numbers as every Lewydo game. Every game below lives in its own «world»: the page changes as you scroll into it. */
@@ -33,11 +34,6 @@
   --line:rgba(157,245,194,.16);--panel:rgba(20,24,54,.66);--wrap:1180px;--gut:20px;
   --f:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;color-scheme:dark;}
-:lang(ja){--f:"Nunito","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;}
-:lang(ko){--f:"Nunito","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;}
-:lang(zh-TW){--f:"Nunito","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;}
-/* lines break between phrases, not inside words: Japanese by phrase (where the browser can), Korean between words */
-:lang(ja){word-break:auto-phrase;line-break:strict;} :lang(ko){word-break:keep-all;} :lang(zh-TW){line-break:strict;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
 body{min-height:100vh;color:var(--ink);font:500 17px/1.62 var(--f);overflow-x:hidden;overflow-x:clip;--acc:#3DDC84;transition:--acc .9s ease;
@@ -48,8 +44,8 @@ a{color:inherit;}
 [hidden]{display:none !important;}
 .wrap{width:100%;max-width:calc(var(--wrap) + var(--gut) * 2);margin:0 auto;padding:0 var(--gut);}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
-.skip{position:absolute;left:-9999px;top:10px;z-index:100;background:var(--green);color:#04120A;padding:10px 16px;border-radius:12px;font-weight:900;}
-.skip:focus{left:12px;}
+.skip{position:absolute;inset-inline-start:12px;top:10px;max-width:calc(100vw - 24px);transform:translateY(-200%);z-index:100;background:var(--green);color:#04120A;padding:10px 16px;border-radius:12px;font-weight:900;}
+.skip:focus{transform:none;}
 :focus-visible{outline:2px solid var(--mint);outline-offset:3px;}
 
 /* ── the worlds behind the page: Lewydo · CubePix · Orbit Dash · more games ── */
@@ -59,7 +55,8 @@ a{color:inherit;}
 .w-lewydo::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(157,245,194,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(157,245,194,.05) 1px,transparent 1px);
   background-size:56px 56px;-webkit-mask:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);mask:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);}
 .w-cubepix{background:radial-gradient(55% 50% at 18% 12%,rgba(176,124,255,.26),transparent 72%),radial-gradient(50% 46% at 92% 88%,rgba(255,60,172,.2),transparent 72%),#0b0a1e;}
-.w-orbit{background:radial-gradient(75% 65% at 50% 42%,#1c2044 0%,#0e1024 58%,#060816 100%);}
+.w-orbit{background:radial-gradient(55% 48% at 50% 40%,rgba(0,229,255,.13),transparent 72%),radial-gradient(42% 55% at 0% 62%,rgba(106,61,255,.09),transparent 72%),
+  radial-gradient(120% 95% at 50% 45%,transparent 58%,rgba(0,0,0,.38)),#0e1024;}   /* Orbit Dash UI v2 «D1 Clean Neon»: the game's sky — the ball's aura, a violet side, a vignette */
 .w-more{background:radial-gradient(55% 50% at 85% 0%,rgba(255,176,58,.15),transparent 72%),radial-gradient(55% 50% at 0% 100%,rgba(77,217,255,.13),transparent 72%),#0f1129;}
 body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[data-world="orbit"] .w-orbit,body[data-world="more"] .w-more{opacity:1;}
 #sky{position:fixed;left:0;top:0;z-index:-1;pointer-events:none;}
@@ -92,26 +89,14 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
   box-shadow:0 0 12px var(--acc);pointer-events:none;}
 .home{display:inline-flex;align-items:center;height:48px;text-decoration:none;border-radius:12px;opacity:0;transform:translateY(-4px);transition:opacity .35s ease,transform .35s ease;}
 .home .lw-sig{transform:scale(1.5);transform-origin:0 50%;}
-.home{width:calc(73px * 1.5);}
+.home{width:calc(73px * 1.5);direction:ltr;}
 .scrolled .home,.no-hero .home{opacity:1;transform:none;}
-.nav{display:none;margin-left:auto;gap:2px;}
+.nav{display:none;margin-inline-start:auto;gap:2px;}
 .nav a{padding:9px 14px;border-radius:12px;color:var(--ink2);font-weight:800;font-size:15px;text-decoration:none;transition:color .2s,background-color .2s;}
 .nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
 .nav a[aria-current="true"]{color:var(--acc);}
-.langsel{position:relative;margin-left:auto;}
-@media (min-width:880px){.nav{display:flex;} .langsel{margin-left:6px;}}
-.lang-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border-radius:12px;border:0;background:rgba(255,255,255,.06);color:#fff;
-  font:900 14px var(--f);letter-spacing:.06em;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(157,245,194,.18);}
-.lang-btn:hover{background:rgba(255,255,255,.1);}
-.flag{display:inline-flex;flex:none;}
-.flag img,.flag svg{display:block;width:24px;height:16px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.18);}
-.lang-menu{position:absolute;right:0;top:calc(100% + 10px);width:min(290px,calc(100vw - 32px));max-height:min(70vh,560px);overflow:auto;padding:8px;border-radius:18px;
-  background:rgba(18,21,48,.96);box-shadow:0 0 0 1px rgba(157,245,194,.18),0 20px 50px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
-.lang-menu button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:8px 12px;border:0;border-radius:12px;background:none;color:var(--ink2);
-  font:700 16px var(--f);text-align:left;cursor:pointer;}
-.lang-menu button:hover,.lang-menu button:focus-visible{background:rgba(61,220,132,.12);color:#fff;outline:none;}
-.lang-menu button[aria-selected="true"]{color:var(--mint);}
-.lang-menu button[aria-selected="true"]::after{content:"✓";margin-left:auto;font-weight:900;}
+@media (min-width:880px){.nav{display:flex;} .langsel{margin-inline-start:6px;}}
+{{langCss}}
 
 /* ── the hero: pixels of every Lewydo game fly together into the heart ── */
 .hero{position:relative;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;
@@ -147,7 +132,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 /* ── worlds: the chapters ── */
 .intro{padding:clamp(70px,9vw,120px) 0 0;}
 .jump{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px;list-style:none;}
-.jump a{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);
+.jump a{display:inline-flex;align-items:center;gap:10px;padding-block:10px;padding-inline:10px 16px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);
   text-decoration:none;font-weight:900;font-size:15px;transition:background-color .2s,transform .2s;}
 .jump a:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
 .jump img{width:30px;height:30px;border-radius:9px;}
@@ -183,9 +168,9 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .cp .ctas{gap:10px;}
 .soon{margin-top:16px;color:var(--ink3);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px;}
 .soon .gp{width:18px;height:18px;opacity:.7;}
-.soon .app-ic{width:44px;height:44px;border-radius:11px;margin-right:4px;box-shadow:0 4px 16px rgba(255,60,172,.35),0 0 0 1px rgba(255,255,255,.08);}   /* «Кубик-художник» — іконка гри */
+.soon .app-ic{width:44px;height:44px;border-radius:11px;margin-inline-end:4px;box-shadow:0 4px 16px rgba(255,60,172,.35),0 0 0 1px rgba(255,255,255,.08);}   /* «Кубик-художник» — іконка гри */
 /* Pix, the CubePix mascot: a card under the game's buttons; he says hi in the visitor's language (the game site's own words) */
-.pix-meet{display:flex;gap:16px;align-items:center;max-width:560px;margin-top:22px;padding:14px 16px 14px 12px;text-decoration:none;color:inherit;
+.pix-meet{display:flex;gap:16px;align-items:center;max-width:560px;margin-top:22px;padding-block:14px;padding-inline:12px 16px;text-decoration:none;color:inherit;
   background:linear-gradient(170deg,#1f1a4c,#141139);box-shadow:0 -3px 0 0 #2e2966,0 3px 0 0 #2e2966,-3px 0 0 0 #2e2966,3px 0 0 0 #2e2966,0 8px 0 0 rgba(3,2,12,.55);transition:transform .15s,box-shadow .15s;}
 @media (hover:hover){.pix-meet:hover{transform:translateY(-3px);box-shadow:0 -3px 0 0 #ff3cac,0 3px 0 0 #ff3cac,-3px 0 0 0 #ff3cac,3px 0 0 0 #ff3cac,0 8px 0 0 rgba(3,2,12,.55),0 0 26px rgba(255,60,172,.35);}}
 .pix-pic{flex:none;width:104px;display:flex;flex-direction:column;align-items:center;}
@@ -207,7 +192,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .playing #cpCv{cursor:pointer;touch-action:none;}
 .stage-bar{display:flex;align-items:center;gap:12px;margin-top:18px;min-height:64px;}
 .cube{flex:none;width:52px;height:52px;}
-.stage-txt{flex:1;min-width:0;text-align:left;}
+.stage-txt{flex:1;min-width:0;text-align:start;}
 .layer-t{font-weight:900;font-size:14.5px;letter-spacing:.1em;text-transform:uppercase;color:#FFD60A;min-height:20px;}
 .plq{margin-top:6px;display:inline-block;padding:6px 10px;background:linear-gradient(180deg,#e9d69a,#b99440);color:#2c1d02;font-weight:900;font-size:15px;line-height:1.25;
   box-shadow:0 2px 0 #5a3f08,inset 0 1px 0 rgba(255,255,255,.6);max-width:100%;}
@@ -238,20 +223,40 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .pz-done .next{margin-top:10px;font-weight:800;}
 .pz-done .btn{margin-top:12px;}
 
-/* Orbit Dash — a neon space world, and the game itself to try: one tap switches orbits */
+/* Orbit Dash — its own world in the game's UI v2 «D1 Clean Neon» (Orbit Dash 2.0, docs/research/ui-v2/DESIGN-SYSTEM.md of the game):
+   the star sky, glass panels, one lit cyan enamel button, gold only for value and «new», Inter ExtraBold caps for the wordmark,
+   a coloured bar before a section label — and the game itself to try: one tap switches orbits */
+.od{--od-acc:#00E5FF;--od-gold:#FFD54A;--od-music:#FF4FD8;}
+.od-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
 .od .badge{background:rgba(0,229,255,.1);color:#9ff6ff;box-shadow:inset 0 0 0 1px rgba(0,229,255,.5);}
 .od .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#00E5FF;box-shadow:0 0 10px #00E5FF;animation:live 1.6s ease-in-out infinite;}
 @keyframes live{50%{opacity:.35}}
-.od-title{font-family:"Unbounded",var(--f);font-weight:900;line-height:.94;font-size:clamp(48px,7.4vw,90px);letter-spacing:.05em;margin-top:22px;}
+.od-ver{display:inline-flex;align-items:center;padding:6px 11px;border-radius:999px;font:800 13px/1 "Inter Display",var(--f);letter-spacing:.12em;color:#2b1800;
+  background:linear-gradient(180deg,#ffeca0,#ffd54a 56%,#f2b02c);box-shadow:0 2px 0 #9c5f08;}
+.od-title{font-family:"Inter Display",var(--f);font-weight:800;line-height:1;font-size:clamp(46px,7vw,86px);letter-spacing:.22em;margin-top:22px;margin-inline-end:-.22em;}
 .od-title span{display:block;}
-.od-title .o{color:#00E5FF;text-shadow:0 0 34px rgba(0,229,255,.75),0 0 8px rgba(0,229,255,.5);}
-.od-title .d{color:#FFD54A;text-shadow:0 0 34px rgba(255,213,74,.65),0 0 8px rgba(255,213,74,.45);}
+.od-title .o{color:#00E5FF;text-shadow:0 0 30px rgba(0,229,255,.6),0 0 8px rgba(0,229,255,.45);}
+.od-title .d{color:#FFD54A;text-shadow:0 0 26px rgba(255,213,74,.45);}
 .od-tagline{font-weight:900;font-size:clamp(20px,2.2vw,24px);margin-top:22px;}
-.od-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;list-style:none;}
-.od-chips li{padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-weight:800;font-size:14px;color:#d8fbff;}
-.btn-cyan{background:#00E5FF;color:#051226;box-shadow:0 0 34px rgba(0,229,255,.45);}
-@media (hover:hover){.btn-cyan:hover{box-shadow:0 0 50px rgba(0,229,255,.68);transform:translateY(-2px);}}
-.od-line{background:rgba(0,229,255,.06);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.45);}
+.od-new{position:relative;max-width:560px;margin-top:22px;padding:16px 18px 18px;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(46,50,95,.58),rgba(30,34,69,.40));box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+.od-sec{display:flex;align-items:center;gap:8px;font:800 12px/1 "Inter Display",var(--f);letter-spacing:.16em;color:rgba(255,255,255,.74);}
+.od-sec::before{content:"";width:3px;height:14px;border-radius:2px;background:var(--od-acc);box-shadow:0 0 8px var(--od-acc);}
+.od-new>p:not(.od-sec){margin-top:10px;color:var(--ink2);font-size:16px;line-height:1.55;}
+.od-new>p b{color:#fff;}
+.od-trails{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none;direction:ltr;}
+.od-trails li{--t:#7d88b8;padding:5px 8px 4px;border-radius:8px;font:800 10.5px/1 "Inter Display",var(--f);letter-spacing:.12em;color:#fff;
+  background:rgba(8,9,21,.55);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--t) 70%,transparent),0 0 12px -4px var(--t);}
+.od-trails .r{--t:#3d9bff;} .od-trails .e{--t:#b45cff;} .od-trails .l{--t:#ff3ec8;} .od-trails .m{--t:#ff4fd8;}
+.od-trails .m::before{content:"♪";margin-inline-end:4px;color:#ff8fe9;}
+.od-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;}
+.od-chips li{padding:8px 12px;border-radius:10px;background:linear-gradient(180deg,rgba(46,50,95,.5),rgba(30,34,69,.35));box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+  font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#d8fbff;}
+/* one lit button (the game's PLAY: cyan enamel, dark ink); the rest — quiet glass slabs */
+.btn-cyan{background:linear-gradient(180deg,#52edff,#00e5ff 56%,#00cee6);color:#002024;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 0 30px rgba(0,229,255,.42);}
+@media (hover:hover){.btn-cyan:hover{box-shadow:0 0 46px rgba(0,229,255,.62);transform:translateY(-2px);}}
+.od-line{background:linear-gradient(180deg,rgba(46,50,95,.58),rgba(30,34,69,.40));color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);}
+@media (hover:hover){.od-line:hover{background:linear-gradient(180deg,rgba(56,60,106,.7),rgba(35,40,80,.5));transform:translateY(-2px);}}
 .od-box{--odc:#00E5FF;position:relative;width:min(100%,430px);margin:0 auto;}
 /* Сама гра в рамці телефона — прототип із сайту гри (/Game-Orbit-Dash/play/embed.html): сама грає найкращі шматки
    рівнів, тап — рівень твій. Стрілки й пігулки під телефоном вибирають рівень; сяйво — барва м'яча рівня на екрані. */
@@ -300,7 +305,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .gcard .ban{aspect-ratio:800/391;background:#0d0f22;overflow:hidden;}
 .gcard .ban img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
 .gcard:hover .ban img{transform:scale(1.04);}
-.gcard .ico{position:relative;width:64px;height:64px;border-radius:17px;margin:-34px 0 0 18px;box-shadow:0 10px 24px rgba(0,0,0,.5),0 0 0 3px #10132c;}
+.gcard .ico{position:relative;width:64px;height:64px;border-radius:17px;margin-top:-34px;margin-inline-start:18px;box-shadow:0 10px 24px rgba(0,0,0,.5),0 0 0 3px #10132c;}
 .gcard .body{display:flex;flex-direction:column;gap:8px;flex:1;padding:12px 18px 20px;}
 .gcard .genre{font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c);}
 .gcard h3{font-weight:900;font-size:19px;line-height:1.25;}
@@ -365,21 +370,21 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 
 /* ── the story: a line that fills as you read ── */
 .story{padding:clamp(90px,11vw,140px) 0;}
-.tl{position:relative;isolation:isolate;list-style:none;margin-top:48px;padding-left:40px;--prog:0;}
-.tl::before,.tl::after{content:"";position:absolute;z-index:0;left:10px;top:8px;width:3px;border-radius:3px;}
+.tl{position:relative;isolation:isolate;list-style:none;margin-top:48px;padding-inline-start:40px;--prog:0;}
+.tl::before,.tl::after{content:"";position:absolute;z-index:0;inset-inline-start:10px;top:8px;width:3px;border-radius:3px;}
 .tl::before{bottom:8px;background:rgba(157,245,194,.14);}
 .tl::after{height:calc((100% - 16px) * var(--prog));background:linear-gradient(#3DDC84,#6DF593);box-shadow:0 0 14px rgba(109,245,147,.6);}
 .tl-i{position:relative;z-index:1;padding-bottom:38px;}
 .tl-i:last-child{padding-bottom:0;}
-.tl-i::before{content:"";position:absolute;left:-40px;top:3px;width:23px;height:23px;border-radius:50%;background:#0E1024;box-shadow:inset 0 0 0 3px rgba(157,245,194,.28);transition:box-shadow .4s ease,background-color .4s ease;}
+.tl-i::before{content:"";position:absolute;inset-inline-start:-40px;top:3px;width:23px;height:23px;border-radius:50%;background:#0E1024;box-shadow:inset 0 0 0 3px rgba(157,245,194,.28);transition:box-shadow .4s ease,background-color .4s ease;}
 .tl-i.on::before{box-shadow:inset 0 0 0 3px #3DDC84,0 0 18px rgba(61,220,132,.75);}
 .tl-i.love.on::before{box-shadow:inset 0 0 0 3px #ff6b9d,0 0 18px rgba(255,107,157,.75);}
 .tl-when{font-weight:900;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);}
 .love .tl-when{color:#ff9ec0;}
-.tl-i.brand::before{width:31px;height:31px;top:-1px;margin-left:-4px;background:url(/brand/kit/webp/brand_front.webp) 50% 50%/100% no-repeat,transparent;box-shadow:none;}
+.tl-i.brand::before{width:31px;height:31px;top:-1px;margin-inline-start:-4px;background:url(/brand/kit/webp/brand_front.webp) 50% 50%/100% no-repeat,transparent;box-shadow:none;}
 .tl-i.brand.on::before{box-shadow:none;filter:drop-shadow(0 0 9px rgba(109,245,147,.9));}
 .brand .tl-when{color:#6DF593;}
-.tl-i.pix::before{width:46px;height:46px;top:-11px;margin-left:-11.5px;border-radius:0;background:url(/assets/games/cubepix-pix.webp) 50% 50%/100% no-repeat,transparent;box-shadow:none;}
+.tl-i.pix::before{width:46px;height:46px;top:-11px;margin-inline-start:-11.5px;border-radius:0;background:url(/assets/games/cubepix-pix.webp) 50% 50%/100% no-repeat,transparent;box-shadow:none;}
 .tl-i.pix.on::before{box-shadow:none;filter:drop-shadow(0 0 9px rgba(255,60,172,.85));}
 .pix .tl-when{color:#ff8fc7;}
 .tl-i.next::before{box-shadow:inset 0 0 0 3px rgba(157,245,194,.5);background:transparent;outline:2px dashed rgba(157,245,194,.45);outline-offset:3px;}
@@ -391,12 +396,12 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .tl-i p{color:var(--ink3);max-width:540px;}
 .tl-i p a{color:var(--mint);font-weight:800;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;}
 @media (min-width:900px){
-  .tl{padding-left:0;} .tl::before,.tl::after{left:50%;margin-left:-1.5px;}
-  .tl-i{width:50%;padding-right:56px;text-align:right;} .tl-i p{margin-left:auto;}
-  .tl-i:nth-child(even){margin-left:50%;padding-right:0;padding-left:56px;text-align:left;} .tl-i:nth-child(even) p{margin-left:0;}
-  .tl-i::before{left:auto;right:-11.5px;} .tl-i:nth-child(even)::before{left:-11.5px;right:auto;}
-  .tl-i.brand::before{margin:0;right:-15.5px;} .tl-i.brand:nth-child(even)::before{left:-15.5px;}
-  .tl-i.pix::before{margin:0;right:-23px;} .tl-i.pix:nth-child(even)::before{left:-23px;right:auto;}
+  .tl{padding-inline-start:0;} .tl::before,.tl::after{inset-inline-start:50%;margin-inline-start:-1.5px;}
+  .tl-i{width:50%;padding-inline-end:56px;text-align:end;} .tl-i p{margin-inline-start:auto;}
+  .tl-i:nth-child(even){margin-inline-start:50%;padding-inline-end:0;padding-inline-start:56px;text-align:start;} .tl-i:nth-child(even) p{margin-inline-start:0;}
+  .tl-i::before{inset-inline-start:auto;inset-inline-end:-11.5px;} .tl-i:nth-child(even)::before{inset-inline-start:-11.5px;inset-inline-end:auto;}
+  .tl-i.brand::before{margin:0;inset-inline-end:-15.5px;} .tl-i.brand:nth-child(even)::before{inset-inline-start:-15.5px;}
+  .tl-i.pix::before{margin:0;inset-inline-end:-23px;} .tl-i.pix:nth-child(even)::before{inset-inline-start:-23px;inset-inline-end:auto;}
 }
 
 /* ── contact ── */
@@ -427,6 +432,11 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .foot-links a{color:var(--ink3);font-weight:700;font-size:15px;text-decoration:none;}
 .foot-links a:hover{color:#fff;}
 .foot-c{margin-top:18px;color:var(--ink3);font-size:14px;}
+
+/* right to left (ar, he, fa, ur, ps): the reading line grows from the right; the games' own pictures and controls keep their sides —
+   the CubePix logo and paintings, the Orbit Dash phone with its arrows and level pills, the code ↔ design slider */
+[dir="rtl"] .top::after{transform-origin:100% 50%;}
+[dir="rtl"] :is(.plogo,.stage .gframe,.thumbs,.od-stage,.od-rail,.cd,.home){direction:ltr;}
 
 /* reveal as it comes into view */
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);}
@@ -486,8 +496,12 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <a href="/brand/" data-t="nav.brand"></a>
     </nav>
     <div class="langsel">
-      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
-      <div class="lang-menu" id="langMenu" role="listbox" hidden></div>
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
+      <div class="lang-menu" id="langMenu" hidden>
+        <input class="lang-find" id="langFind" type="search" autocomplete="off" spellcheck="false" enterkeyhint="go">
+        <div class="lang-scroll"><div class="lang-list" id="langList" role="listbox" data-ta="aria-label:lang.title"></div>
+          <p class="lang-none" id="langNone" hidden data-t="lang.none"></p><p class="lang-stop" id="langStop"></p></div>
+      </div>
     </div>
   </div>
 </header>
@@ -535,10 +549,10 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         </ul>
         <div class="ctas">
           <a class="btn px-btn px-pink" href="{{cp.demo}}">▶ <span data-t="cp:play"></span></a>
-          <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link data-t="game.site"></a>
+          <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link="cp" data-t="game.site"></a>
         </div>
         <p class="soon"><img class="app-ic" src="{{cp.icon}}" alt="" width="44" height="44">{{gpIcon}}<span><span data-t="cp:soon"></span> Google Play</span></p>
-        <a class="pix-meet" href="{{cp.site}}#pix" data-lang-link>
+        <a class="pix-meet" href="{{cp.site}}#pix" data-lang-link="cp">
           <span class="pix-pic"><span class="pix-hi" data-t="cp:pixHi"></span><img src="/assets/games/cubepix-pix.webp" alt="" width="88" height="88"></span>
           <span class="pix-tx"><b data-t="cp:pixTitle"></b><span data-t="cp:pixName"></span><em><span data-t="cp.pix.more"></span> →</em></span>
         </a>
@@ -588,11 +602,13 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="od-note" data-t="od.levels"></p>
       </div>
       <div class="chap-txt rv">
-        <span class="badge" data-t="badge.live"></span>
-        <h2 class="od-title" id="odTitle"><span class="o">ORBIT</span><span class="d">DASH</span></h2>
+        <div class="od-tags"><span class="badge" data-t="badge.live"></span><span class="od-ver" lang="en">{{od.version}}</span></div>
+        <h2 class="od-title" id="odTitle" lang="en"><span class="o">ORBIT</span><span class="d">DASH</span></h2>
         <p class="od-tagline" data-t="od.tag"></p>
         <p class="chap-lead" data-t="od.lead"></p>
-        <ul class="od-chips"><li data-t="od.free"></li><li data-t="od.music"></li><li data-t="od.offline"></li></ul>
+        <div class="od-new"><p class="od-sec" lang="en">ORBIT DASH {{od.version}}</p><p data-t="od.new"></p>
+          <ul class="od-trails" lang="en" aria-label="COMET, BEADS, DASH, HELIX, EMBERS, PIXEL, ECHO, DRIFT, ZAP, NOVA">{{od.trails}}</ul></div>
+        <ul class="od-chips"><li data-t="od.music"></li><li data-t="od.free"></li><li data-t="od.offline"></li></ul>
         <div class="ctas">
           <a class="btn btn-cyan" href="{{od.web}}" data-t="od.browser"></a>
           <a class="btn od-line" href="{{od.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
@@ -619,7 +635,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="sub" data-t="cp:about"></p>
         <p class="sub thanks" data-t="cp:thanks" data-fit></p>
         <p class="say"><button class="say-btn" type="button" data-say data-ta="aria-label:say.aria"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.6 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-t="say.btn"></span></button>
-          <b class="say-spell" data-t="say.spell"></b><span class="say-ipa">/lɛv.waɪ.doʊ/</span></p>
+          <b class="say-spell" data-t="say.spell"></b><span class="say-ipa" dir="ltr">/lɛv.waɪ.doʊ/</span></p>
         <ul class="stats"><li data-t="stat.people" data-n="people"></li><li data-t="stat.games" data-n="games"></li><li data-t="stat.langs" data-n="langs"></li></ul>
       </div>
       <div class="cd-wrap rv">
@@ -706,7 +722,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
     <p class="foot-made" data-t="foot.made"></p>
     <nav class="foot-social" aria-label="Lewydo">{{social:fs}}</nav>
     <nav class="foot-links" aria-label="Lewydo">
-      <a href="{{cp.site}}" data-lang-link>CubePix</a><a href="{{od.site}}">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a>
+      <a href="{{cp.site}}" data-lang-link="cp">CubePix</a><a href="{{od.site}}">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a>
       <a href="{{cp.privacy}}"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}"><span data-t="foot.privacy"></span> · Orbit Dash</a>
     </nav>
     <p class="foot-c">© {{year}} Lewydo™ · Love What You Do · <span data-t="foot.rights"></span></p>
@@ -744,52 +760,12 @@ const easeIO = (t) => (t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
 const seen = (el, margin = '0px') => { let on = false; new IntersectionObserver((es) => es.forEach((e) => { on = e.isIntersecting; }), { rootMargin: margin }).observe(el); return () => on && !document.hidden; };
 const beat = (el) => { if (!el) return; el.classList.remove('lw-beating'); void el.offsetWidth; el.classList.add('lw-beating'); };
 
-// ── language: ?lang= → the visitor's choice → the device → English (the same 15 languages and rules as our games) ──
-const IDS = D.langs.map((L) => L.id);
-const pick = (tag) => { if (!tag) return null; const t = String(tag).toLowerCase();
-  if (t.startsWith('zh')) return /^zh-(tw|hk|mo)|hant/.test(t) ? 'zh-TW' : null;
-  if (t === 'in' || t.startsWith('in-')) return 'id';
-  const b = t.split('-')[0]; return IDS.includes(b) ? b : null; };
-const urlLang = new URLSearchParams(location.search).get('lang');
-const saved = [store.get('lewydo:lang'), store.get('cubepix-site:lang')].find((l) => IDS.includes(l));
-let lang = (IDS.includes(urlLang) && urlLang) || saved || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
-const PR = {}; const plural = (n) => (PR[lang] ??= new Intl.PluralRules(lang)).select(n);
-const T = (k, n) => { let v = D.S[lang][k] ?? D.S.en[k] ?? ''; if (typeof v === 'object') v = v[plural(n ?? 0)] ?? v.other; return String(v).replace(/\{n\}/g, n ?? ''); };
-const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-// names stay English even in CAPS: Turkish casing would give «KOTLİN»
-const NAMES = /\b(Kotlin|LibGDX|Java|Box2D|Android|Lewydo|CubePix|Orbit Dash|Orbit III|Google Play|Telegram|UX\/UI|Team Lead|Idle)\b/g;
-const rich = (s) => { let h = esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>')
-  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' rel="noopener"' : ''}>${t}</a>`);
-  return lang === 'tr' ? h.replace(NAMES, '<span lang="en">$1</span>') : h; };
-const pic = (key, f) => { const p = D.cp.pics[key]; return (p[lang] || p.en)[f] || ''; };
-const onLang = [];
-function applyLang() {
-  document.documentElement.lang = lang;
-  $$('[data-t]').forEach((el) => { const n = el.dataset.n ? D.counts[el.dataset.n] : undefined, v = T(el.dataset.t, n);
-    if (el.tagName === 'TITLE') document.title = v; else el.innerHTML = rich(v); });
-  $$('[data-ta]').forEach((el) => { const [a, k] = el.dataset.ta.split(/:(.+)/); el.setAttribute(a, T(k)); });
-  $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); const [b, h] = a.dataset.base.split('#');
-    a.setAttribute('href', b + (lang === 'en' ? '' : '?lang=' + lang) + (h ? '#' + h : '')); });
-  $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag; $('#langCode').textContent = lang === 'zh-TW' ? '繁中' : lang.toUpperCase();
-  $$('#langMenu button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
-  onLang.forEach((f) => f()); fitLines();
-}
+{{langJs}}
+const pic = (key, f) => { const own = DICT[lang] && DICT[lang].pics; return ((own && own[key]) || D.cp.pics[key])[f] || ''; };
 // one line in every language: a long one gets smaller instead of wrapping (the brand's «Thank you for playing!»)
 function fitLines() { $$('[data-fit]').forEach((el) => { el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);
   while (fs > 11 && el.scrollWidth > el.clientWidth + .5) { fs -= .5; el.style.fontSize = fs + 'px'; } }); }
-addEventListener('resize', fitLines); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLines);
-function setLang(id) { if (!IDS.includes(id) || id === lang) return; lang = id; store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);
-  try { const u = new URL(location.href); u.searchParams.set('lang', id); history.replaceState(null, '', u); } catch (e) {}
-  applyLang(); }
-const menu = $('#langMenu'), langBtn = $('#langBtn');
-menu.innerHTML = D.langs.map((L) => `<button type="button" role="option" data-lang="${L.id}" lang="${L.id}"><span class="flag">${L.flag}</span>${esc(L.name)}</button>`).join('');
-const openMenu = (on) => { menu.hidden = !on; langBtn.setAttribute('aria-expanded', String(on)); if (on) (menu.querySelector('[aria-selected="true"]') || menu.firstChild).focus(); };
-langBtn.addEventListener('click', () => openMenu(menu.hidden));
-menu.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; setLang(b.dataset.lang); openMenu(false); langBtn.focus(); });
-menu.addEventListener('keydown', (e) => { const bs = $$('button', menu), i = bs.indexOf(document.activeElement);
-  if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length].focus(); }
-  else if (e.key === 'Escape') { openMenu(false); langBtn.focus(); } });
-document.addEventListener('click', (e) => { if (!menu.hidden && !e.target.closest('.langsel')) openMenu(false); });
+onLang.push(fitLines); addEventListener('resize', fitLines); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLines);
 
 // how to say «Lewydo»: Lev-why-do (/lɛv.waɪ.doʊ/) — the device's own voice says it
 $$('[data-say]').forEach((b) => b.addEventListener('click', () => { const S = window.speechSynthesis; if (!S) return;
@@ -1101,7 +1077,7 @@ if (!RM && matchMedia('(hover: hover)').matches) { const h = $('#top');
   h.addEventListener('pointermove', (e) => { const r = h.getBoundingClientRect(); h.style.setProperty('--mx', (e.clientX - r.left) + 'px'); h.style.setProperty('--my', (e.clientY - r.top) + 'px'); h.style.setProperty('--lamp', '1'); });
   h.addEventListener('pointerleave', () => h.style.setProperty('--lamp', '0')); }
 
-applyLang();
+startLang();
 if (OG || document.documentElement.classList.contains('kit')) { hero.start(); return; }
 sky.start(); hero.start(); cubepix.start(); orbit.start(); codeDesign(); story();
 })();

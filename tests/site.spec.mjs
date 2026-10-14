@@ -1,9 +1,11 @@
 // npm test — the built site (npm run build first; npm test does it): languages, the heart, both mini-games, links, no third party,
-// and the brand page (/brand/): its splash, About us in 15 languages, every download, brand.json, the kit zip, the sound and «How to say it».
+// and the brand page (/brand/): its splash, About us in every language, every download, brand.json, the kit zip, the sound and «How to say it».
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
 const LANGS = JSON.parse(readFileSync(new URL('../src/langs.json', import.meta.url), 'utf8')).map((L) => L.id);
+const RTL = ['ar', 'he', 'fa', 'ur', 'ps'];
+const STOP_RU = 'Россия, останови войну в Украине';
 const watch = (page) => { const errs = [], ext = new Set();
   page.on('pageerror', (e) => errs.push(e.message));
   page.on('console', (m) => { if (m.type() === 'error') errs.push(m.text()); });
@@ -26,13 +28,14 @@ const odStub = async (ctx) => { if (REAL_OD) return;
   await ctx.route('**/Game-Orbit-Dash/assets/media/poster.webp', (r) => r.fulfill({ contentType: 'image/webp', body: PIXEL })); };
 test.beforeEach(async ({ context }) => { await odStub(context); });
 
-test('speaks the visitor’s language, switches to any of 15, remembers it, and asks no third party for anything', async ({ browser }) => {
+test('speaks the visitor’s language, switches to any of ours, remembers it, and asks no third party for anything', async ({ browser }) => {
   const ctx = await browser.newContext({ locale: 'pt-BR' }); await odStub(ctx);
   const page = await ctx.newPage(), w = watch(page);
   await page.goto('./');
   await expect(page.locator('html')).toHaveAttribute('lang', 'pt');                                   // the device's language
   await page.locator('#langBtn').click();
-  await expect(page.locator('#langMenu button')).toHaveCount(15);
+  await expect(page.locator('#langMenu button')).toHaveCount(LANGS.length);
+  await expect(page.locator('#langMenu button').last()).toHaveAttribute('data-lang', 'km');            // the game's order: Latin, then the other scripts
   await page.locator('#langMenu button[data-lang="uk"]').click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'uk');
   expect(page.url()).toContain('lang=uk');
@@ -43,16 +46,78 @@ test('speaks the visitor’s language, switches to any of 15, remembers it, and 
   await expect(page.locator('.tl-i.pix h3')).toHaveText('Народився Pix');                                       // the day he was invented, in the story
   await page.goto('./');                                                                              // remembered
   await expect(page.locator('html')).toHaveAttribute('lang', 'uk');
+  await expect(page.locator('.stats li').nth(2)).toHaveText(new RegExp(`^${LANGS.length}\\s*мов`));      // all our languages
+  await page.locator('#langBtn').click();                                                             // the list: find by the name in the page's language…
+  await page.locator('#langFind').fill('німецька');
+  await expect(page.locator('#langMenu button:visible')).toHaveCount(1);
+  await expect(page.locator('#langMenu button:visible')).toHaveAttribute('data-lang', 'de');
+  await page.locator('#langFind').fill('japanese');                                                   // …in English…
+  await expect(page.locator('#langMenu button:visible')).toHaveAttribute('data-lang', 'ja');
+  await page.locator('#langFind').fill('');
+  await expect(page.locator('#langMenu button[data-lang="de"] small')).toHaveText('німецька');        // each language says what it is, in the page's language
   expect(w.errs).toEqual([]);
   expect([...w.ext]).toEqual([]);
   await ctx.close();
 });
 
+// no Russian, anywhere (owner 13–14.10.2026): not a language of ours; every language list ends with the row of Russia — the flag
+// stained with blood, «Россия, останови войну в Украине» and, under it, the same in the visitor's language; not chosen, not a link
+test('no Russian: a Russian device gets English, and every list ends with «Россия, останови войну в Украине» — not a language', async ({ browser, request }) => {
+  const ctx = await browser.newContext({ locale: 'ru-RU' }); await odStub(ctx);
+  const page = await ctx.newPage(), w = watch(page);
+  await page.goto('./');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await page.goto('./?lang=ru');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  expect((await request.get('./lang/ru.json')).status()).toBe(404);
+  expect(await page.locator('link[hreflang="ru"]').count()).toBe(0);
+  for (const [path, L, own] of [['./?lang=uk', 'uk', 'Росіє, припини війну в Україні'], ['./brand/?lang=en', 'en', 'Russia, stop the war in Ukraine']]) {
+    await page.goto(path);
+    await page.locator('#langBtn').click();
+    await expect(page.locator('#langMenu button[data-lang="ru"]')).toHaveCount(0);
+    const stop = page.locator('#langStop');
+    await expect(stop).toBeVisible();
+    await expect(stop.locator('b')).toHaveText(STOP_RU);
+    await expect(stop.locator('small')).toHaveText(own);
+    await expect(stop.locator('img')).toHaveAttribute('src', '/assets/flags/ru-stained.svg');
+    expect(await stop.evaluate((e) => !!e.closest('[role="listbox"]') || !!e.querySelector('a,button,[role="option"]'))).toBe(false);   // not a language, not a link
+    const last = await page.locator('#langMenu .lang-scroll').evaluate((e) => [...e.children].filter((c) => !c.hidden).pop().id);
+    expect(last, path).toBe('langStop');                                                              // the very end of the list
+    await stop.click(); await expect(page.locator('html')).toHaveAttribute('lang', L);               // a tap changes nothing
+  }
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+  await ctx.close();
+});
+
+// right to left (ar, he, fa, ur, ps): the page mirrors, the Lewydo mark and the games' pictures keep their sides
+test('right to left: Arabic and Hebrew mirror the page and keep the mark, the paintings and the phone as they are', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  const w = watch(page);
+  for (const L of ['ar', 'he']) {
+    await page.goto(`./?lang=${L}`);
+    await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+    await expect(page.locator('html')).toHaveAttribute('lang', L);
+    const lb = await page.locator('#langBtn').boundingBox(), home = await page.locator('.top .home').boundingBox();
+    expect(lb.x, L).toBeLessThan(home.x);                                                            // the language button moved to the left, the mark to the right
+    expect(await page.locator('.top .lw-sig').evaluate((e) => getComputedStyle(e).direction)).toBe('ltr');
+    expect(await page.locator('#cpStage .thumbs').evaluate((e) => getComputedStyle(e).direction)).toBe('ltr');
+    await expect(page.locator('html')).toHaveAttribute('data-words', L);
+    if (L === 'ar') expect(await page.locator('.eyebrow').first().evaluate((e) => getComputedStyle(e).letterSpacing)).toBe('normal');   // Arabic letters stay joined
+  }
+  await page.goto('./?lang=en');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
+  expect(w.errs).toEqual([]);
+});
+
 test('every language fills every text, and nothing scrolls sideways on a small phone', async ({ page }) => {
+  test.setTimeout(600_000);
   await page.setViewportSize({ width: 320, height: 700 });
   for (const L of LANGS) {
     await page.goto(`./?lang=${L}`);
     await expect(page.locator('html')).toHaveAttribute('lang', L);
+    await expect(page.locator('html')).toHaveAttribute('dir', RTL.includes(L) ? 'rtl' : 'ltr');
+    await expect(page.locator('html')).toHaveAttribute('data-words', L);                             // its words arrived (lang/<id>.json)
     const bad = await page.evaluate(() => [...document.querySelectorAll('[data-t]')].filter((e) => !e.closest('#og,#kit') && (!e.textContent.trim() || /\{\w+\}/.test(e.textContent))).map((e) => e.dataset.t));
     expect(bad, L).toEqual([]);
     expect(await page.evaluate(() => document.documentElement.scrollWidth), L).toBeLessThanOrEqual(320);
@@ -157,7 +222,7 @@ test('the brand page: the splash, About us in every language, every download, br
   for (const h of links) expect((await request.get('.' + h)).status(), h).toBe(200);
   const B = await (await request.get('./brand/brand.json')).json();
   expect(B.slogan).toBe('Love What You Do');
-  expect(Object.keys(B.about.texts)).toHaveLength(15);
+  expect(Object.keys(B.about.texts)).toEqual(LANGS);                                                 // every language of ours, in the list's order
   for (const [L, A] of Object.entries(B.about.texts)) { expect(A.thanks, L).toBeTruthy(); expect(A.text, L).not.toContain(A.thanks); }
   expect(B.about.layout.thanks.rule).toMatch(/own last line/);
   for (const u of [...Object.values(B.images).flatMap((i) => [i.png, i.webp]), B.atlas.atlas, B.atlas.png, ...Object.values(B.code).map((c) => c.url)])
@@ -191,12 +256,14 @@ test('«How to say it»: both pages say Lev-why-do in the device’s voice, and 
   expect(w.errs).toEqual([]);
 });
 
-test('the brand page speaks all 15 languages, fills every text and never scrolls sideways', async ({ page }) => {
+test('the brand page speaks all our languages, fills every text and never scrolls sideways', async ({ page }) => {
+  test.setTimeout(600_000);
   await page.setViewportSize({ width: 320, height: 700 });
   const w = watch(page);
   for (const L of LANGS) {
     await page.goto(`./brand/?lang=${L}`);
     await expect(page.locator('html')).toHaveAttribute('lang', L);
+    await expect(page.locator('html')).toHaveAttribute('data-words', L);                             // its words arrived (brand/lang/<id>.json)
     const bad = await page.evaluate(() => [...document.querySelectorAll('[data-t]')].filter((e) => !e.textContent.trim()).map((e) => e.dataset.t));
     expect(bad, L).toEqual([]);
     expect(await page.evaluate(() => document.documentElement.scrollWidth), L).toBeLessThanOrEqual(320);
@@ -211,7 +278,8 @@ test('the brand page speaks all 15 languages, fills every text and never scrolls
 });
 
 // the brand standard (owner 03.10.2026): «Thank you for playing!» — About us' own last line, centred, ONE line in every language
-test('About us: the thank-you is one centred line under the text in all 15 languages, on the brand page and on the site', async ({ page }) => {
+test('About us: the thank-you is one centred line under the text in every language, on the brand page and on the site', async ({ page }) => {
+  test.setTimeout(300_000);
   const w = watch(page);
   await page.goto('./brand/?lang=en');
   for (const L of LANGS) {
@@ -260,6 +328,7 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
   await page.setViewportSize({ width: 320, height: 640 });                                            // the smallest phone: still ≥ 200 × 200, nothing sideways
   await page.goto('./?lang=uk');
   await fab.click();
+  await card.evaluate((e) => Promise.all(e.getAnimations().map((a) => a.finished)));                 // measured after its slide-in, not mid-move
   const s = await page.locator('#muPlayer').boundingBox();
   expect(s.width).toBeGreaterThanOrEqual(200); expect(s.height).toBeGreaterThanOrEqual(200);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
