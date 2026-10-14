@@ -3,7 +3,7 @@
 The website of **Lewydo**, a two-person indie game studio from Ukraine: Vlad codes, Lilya designs.
 
 **https://roshevasternin.github.io/** — our games in their own worlds (CubePix and Orbit Dash can be played right on the page),
-the studio, our story and how to reach us, in 15 languages.
+the studio, our story and how to reach us, in every language of our games (82).
 
 - 🎨 [CubePix](https://roshevasternin.github.io/Game-CubePix/) — reveal famous paintings cube by cube ([web demo](https://roshevasternin.github.io/Game-CubePix/play/))
 - 🪐 [Orbit Dash](https://roshevasternin.github.io/Game-Orbit-Dash/) — two orbits, one tap ([Google Play](https://play.google.com/store/apps/details?id=com.lewydo.orbitdash))
@@ -12,4 +12,4 @@ the studio, our story and how to reach us, in 15 languages.
   the pictures, the LibGDX atlas, the splash screen, the menu signature, About us and the heartbeat ([`brand/`](brand/), [brand.json](https://roshevasternin.github.io/brand/brand.json))
 
 The pages are built from `src/` (`npm run build`); see `CLAUDE.md` for how the site works.
-© 2026 Lewydo™. The Lewydo mark and the games are ours; fonts: Nunito and Unbounded (SIL OFL, `assets/fonts/OFL.txt`); flags: flag-icons (MIT, `assets/flags/LICENSE`).
+© 2026 Lewydo™. The Lewydo mark and the games are ours; fonts: Nunito and Inter (SIL OFL, `assets/fonts/OFL.txt`); flags: flag-icons (MIT, `assets/flags/LICENSE`).

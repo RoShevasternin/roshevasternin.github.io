@@ -1,5 +1,5 @@
 {
- "_about": "The studio's games. CubePix and Orbit Dash have their own worlds on the page (src/index.html); «more» are the cards under «More from Lewydo», in this order. Texts: game.<id>.genre and game.<id>.d in src/strings.json. A new game: its icon (192 px) and banner (800 px wide) → python3 tools/webp.py … assets/games/, an entry here, its two strings in every language, npm run build.",
+ "_about": "The studio's games. CubePix and Orbit Dash have their own worlds on the page (src/index.html); «more» are the cards under «More from Lewydo», in this order. Texts: game.<id>.genre and game.<id>.d in src/i18n/<lang>.json → site. A new game: its icon (192 px) and banner (800 px wide) → python3 tools/webp.py … assets/games/, an entry here, its two strings in every language, npm run build. A game updated (version, design, features, languages, icon) → its world here and its words, in the same task (CLAUDE.md, «Гра оновилась»).",
  "devPage": "https://play.google.com/store/apps/dev?id=5953840215091948966",
  "cubepix": {
   "site": "/Game-CubePix/",
@@ -16,6 +16,50 @@
   "poster": "/Game-Orbit-Dash/assets/media/poster.webp",
   "privacy": "/Game-Orbit-Dash/privacy.html",
   "released": true,
+  "version": "2.0",
+  "_trails": "The ten ball trails of Orbit Dash 2.0, the game's order (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level.",
+  "trails": [
+   [
+    "COMET",
+    "c"
+   ],
+   [
+    "BEADS",
+    "r"
+   ],
+   [
+    "DASH",
+    "r"
+   ],
+   [
+    "HELIX",
+    "e"
+   ],
+   [
+    "EMBERS",
+    "l"
+   ],
+   [
+    "PIXEL",
+    "m"
+   ],
+   [
+    "ECHO",
+    "m"
+   ],
+   [
+    "DRIFT",
+    "m"
+   ],
+   [
+    "ZAP",
+    "m"
+   ],
+   [
+    "NOVA",
+    "m"
+   ]
+  ],
   "play": "https://play.google.com/store/apps/details?id=com.lewydo.orbitdash",
   "icon": "/assets/games/orbitdash-icon.webp"
  },

@@ -1,77 +1,499 @@
 [
  {
+  "id": "om",
+  "name": "Afaan Oromoo",
+  "en": "Oromo",
+  "flag": "<img src=\"/assets/flags/om.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "af",
+  "name": "Afrikaans",
+  "en": "Afrikaans",
+  "flag": "<img src=\"/assets/flags/af.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "az",
+  "name": "Azərbaycanca",
+  "en": "Azerbaijani",
+  "flag": "<img src=\"/assets/flags/az.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
   "id": "id",
   "name": "Bahasa Indonesia",
+  "en": "Indonesian",
   "flag": "<img src=\"/assets/flags/id.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ms",
+  "name": "Bahasa Melayu",
+  "en": "Malay",
+  "flag": "<img src=\"/assets/flags/ms.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "bs",
+  "name": "Bosanski",
+  "en": "Bosnian",
+  "flag": "<img src=\"/assets/flags/bs.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ca",
+  "name": "Català",
+  "en": "Catalan",
+  "flag": "<img src=\"/assets/flags/ca.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "cs",
+  "name": "Čeština",
+  "en": "Czech",
+  "flag": "<img src=\"/assets/flags/cs.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "da",
+  "name": "Dansk",
+  "en": "Danish",
+  "flag": "<img src=\"/assets/flags/da.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "de",
   "name": "Deutsch",
+  "en": "German",
   "flag": "<img src=\"/assets/flags/de.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "et",
+  "name": "Eesti",
+  "en": "Estonian",
+  "flag": "<img src=\"/assets/flags/et.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "en",
   "name": "English",
+  "en": "English",
   "flag": "<img src=\"/assets/flags/en.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "es",
   "name": "Español",
+  "en": "Spanish",
   "flag": "<img src=\"/assets/flags/es.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "eu",
+  "name": "Euskara",
+  "en": "Basque",
+  "flag": "<img src=\"/assets/flags/eu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "fil",
+  "name": "Filipino",
+  "en": "Filipino",
+  "flag": "<img src=\"/assets/flags/fil.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "fr",
   "name": "Français",
+  "en": "French",
   "flag": "<img src=\"/assets/flags/fr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "gl",
+  "name": "Galego",
+  "en": "Galician",
+  "flag": "<img src=\"/assets/flags/gl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ha",
+  "name": "Hausa",
+  "en": "Hausa",
+  "flag": "<img src=\"/assets/flags/ha.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "hr",
+  "name": "Hrvatski",
+  "en": "Croatian",
+  "flag": "<img src=\"/assets/flags/hr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ig",
+  "name": "Igbo",
+  "en": "Igbo",
+  "flag": "<img src=\"/assets/flags/ig.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "zu",
+  "name": "isiZulu",
+  "en": "Zulu",
+  "flag": "<img src=\"/assets/flags/zu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "is",
+  "name": "Íslenska",
+  "en": "Icelandic",
+  "flag": "<img src=\"/assets/flags/is.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "it",
   "name": "Italiano",
+  "en": "Italian",
   "flag": "<img src=\"/assets/flags/it.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "sw",
+  "name": "Kiswahili",
+  "en": "Swahili",
+  "flag": "<img src=\"/assets/flags/sw.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "lv",
+  "name": "Latviešu",
+  "en": "Latvian",
+  "flag": "<img src=\"/assets/flags/lv.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "lt",
+  "name": "Lietuvių",
+  "en": "Lithuanian",
+  "flag": "<img src=\"/assets/flags/lt.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "hu",
+  "name": "Magyar",
+  "en": "Hungarian",
+  "flag": "<img src=\"/assets/flags/hu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "nl",
   "name": "Nederlands",
+  "en": "Dutch",
   "flag": "<img src=\"/assets/flags/nl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "nb",
+  "name": "Norsk",
+  "en": "Norwegian Bokmål",
+  "flag": "<img src=\"/assets/flags/nb.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "uz",
+  "name": "Oʻzbekcha",
+  "en": "Uzbek",
+  "flag": "<img src=\"/assets/flags/uz.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "pl",
   "name": "Polski",
+  "en": "Polish",
   "flag": "<img src=\"/assets/flags/pl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "pt",
   "name": "Português",
+  "en": "Portuguese",
   "flag": "<img src=\"/assets/flags/pt.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ro",
+  "name": "Română",
+  "en": "Romanian",
+  "flag": "<img src=\"/assets/flags/ro.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "sq",
+  "name": "Shqip",
+  "en": "Albanian",
+  "flag": "<img src=\"/assets/flags/sq.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "sk",
+  "name": "Slovenčina",
+  "en": "Slovak",
+  "flag": "<img src=\"/assets/flags/sk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "sl",
+  "name": "Slovenščina",
+  "en": "Slovenian",
+  "flag": "<img src=\"/assets/flags/sl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "so",
+  "name": "Soomaali",
+  "en": "Somali",
+  "flag": "<img src=\"/assets/flags/so.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "fi",
+  "name": "Suomi",
+  "en": "Finnish",
+  "flag": "<img src=\"/assets/flags/fi.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "sv",
+  "name": "Svenska",
+  "en": "Swedish",
+  "flag": "<img src=\"/assets/flags/sv.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "vi",
   "name": "Tiếng Việt",
+  "en": "Vietnamese",
   "flag": "<img src=\"/assets/flags/vi.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "tr",
   "name": "Türkçe",
+  "en": "Turkish",
   "flag": "<img src=\"/assets/flags/tr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "tk",
+  "name": "Türkmençe",
+  "en": "Turkmen",
+  "flag": "<img src=\"/assets/flags/tk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "yo",
+  "name": "Yorùbá",
+  "en": "Yoruba",
+  "flag": "<img src=\"/assets/flags/yo.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "be",
+  "name": "Беларуская",
+  "en": "Belarusian",
+  "flag": "<img src=\"/assets/flags/be.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "bg",
+  "name": "Български",
+  "en": "Bulgarian",
+  "flag": "<img src=\"/assets/flags/bg.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ky",
+  "name": "Кыргызча",
+  "en": "Kyrgyz",
+  "flag": "<img src=\"/assets/flags/ky.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "mk",
+  "name": "Македонски",
+  "en": "Macedonian",
+  "flag": "<img src=\"/assets/flags/mk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "mn",
+  "name": "Монгол",
+  "en": "Mongolian",
+  "flag": "<img src=\"/assets/flags/mn.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "sr",
+  "name": "Српски",
+  "en": "Serbian",
+  "flag": "<img src=\"/assets/flags/sr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "tg",
+  "name": "Тоҷикӣ",
+  "en": "Tajik",
+  "flag": "<img src=\"/assets/flags/tg.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "uk",
   "name": "Українська",
+  "en": "Ukrainian",
   "flag": "<img src=\"/assets/flags/uk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "kk",
+  "name": "Қазақ тілі",
+  "en": "Kazakh",
+  "flag": "<img src=\"/assets/flags/kk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "el",
+  "name": "Ελληνικά",
+  "en": "Greek",
+  "flag": "<img src=\"/assets/flags/el.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "ko",
   "name": "한국어",
+  "en": "Korean",
   "flag": "<img src=\"/assets/flags/ko.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "ja",
   "name": "日本語",
+  "en": "Japanese",
   "flag": "<img src=\"/assets/flags/ja.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "zh-CN",
+  "name": "简体中文",
+  "en": "Chinese (China)",
+  "flag": "<img src=\"/assets/flags/zh-CN.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  },
  {
   "id": "zh-TW",
   "name": "繁體中文",
+  "en": "Traditional Chinese",
   "flag": "<img src=\"/assets/flags/zh-TW.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "hy",
+  "name": "Հայերեն",
+  "en": "Armenian",
+  "flag": "<img src=\"/assets/flags/hy.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "he",
+  "name": "עברית",
+  "en": "Hebrew",
+  "dir": "rtl",
+  "flag": "<img src=\"/assets/flags/he.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ur",
+  "name": "اردو",
+  "en": "Urdu",
+  "dir": "rtl",
+  "flag": "<img src=\"/assets/flags/ur.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ar",
+  "name": "العربية",
+  "en": "Arabic",
+  "dir": "rtl",
+  "flag": "<img src=\"/assets/flags/ar.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "fa",
+  "name": "فارسی",
+  "en": "Persian",
+  "dir": "rtl",
+  "flag": "<img src=\"/assets/flags/fa.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ps",
+  "name": "پښتو",
+  "en": "Pashto",
+  "dir": "rtl",
+  "flag": "<img src=\"/assets/flags/ps.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ne",
+  "name": "नेपाली",
+  "en": "Nepali",
+  "flag": "<img src=\"/assets/flags/ne.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "mr",
+  "name": "मराठी",
+  "en": "Marathi",
+  "flag": "<img src=\"/assets/flags/mr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "hi",
+  "name": "हिन्दी",
+  "en": "Hindi",
+  "flag": "<img src=\"/assets/flags/hi.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "as",
+  "name": "অসমীয়া",
+  "en": "Assamese",
+  "flag": "<img src=\"/assets/flags/as.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "bn",
+  "name": "বাংলা",
+  "en": "Bangla",
+  "flag": "<img src=\"/assets/flags/bn.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "pa",
+  "name": "ਪੰਜਾਬੀ",
+  "en": "Punjabi",
+  "flag": "<img src=\"/assets/flags/pa.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "gu",
+  "name": "ગુજરાતી",
+  "en": "Gujarati",
+  "flag": "<img src=\"/assets/flags/gu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "or",
+  "name": "ଓଡ଼ିଆ",
+  "en": "Odia",
+  "flag": "<img src=\"/assets/flags/or.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ta",
+  "name": "தமிழ்",
+  "en": "Tamil",
+  "flag": "<img src=\"/assets/flags/ta.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "te",
+  "name": "తెలుగు",
+  "en": "Telugu",
+  "flag": "<img src=\"/assets/flags/te.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "kn",
+  "name": "ಕನ್ನಡ",
+  "en": "Kannada",
+  "flag": "<img src=\"/assets/flags/kn.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ml",
+  "name": "മലയാളം",
+  "en": "Malayalam",
+  "flag": "<img src=\"/assets/flags/ml.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "si",
+  "name": "සිංහල",
+  "en": "Sinhala",
+  "flag": "<img src=\"/assets/flags/si.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "th",
+  "name": "ไทย",
+  "en": "Thai",
+  "flag": "<img src=\"/assets/flags/th.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "lo",
+  "name": "ລາວ",
+  "en": "Lao",
+  "flag": "<img src=\"/assets/flags/lo.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "my",
+  "name": "မြန်မာ",
+  "en": "Burmese",
+  "flag": "<img src=\"/assets/flags/my.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "ka",
+  "name": "ქართული",
+  "en": "Georgian",
+  "flag": "<img src=\"/assets/flags/ka.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "am",
+  "name": "አማርኛ",
+  "en": "Amharic",
+  "flag": "<img src=\"/assets/flags/am.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
+ },
+ {
+  "id": "km",
+  "name": "ខ្មែរ",
+  "en": "Khmer",
+  "flag": "<img src=\"/assets/flags/km.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"
  }
 ]

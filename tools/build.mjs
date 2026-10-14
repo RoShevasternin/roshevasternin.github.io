@@ -1,21 +1,30 @@
-// npm run build — src/ → index.html, brand/ (the brand page, brand.json, the kit zip), 404.html, robots.txt, sitemap.xml: the pages GitHub Pages serves at https://roshevasternin.github.io/
-// English is written into the pages themselves (search engines, no JavaScript); all 15 languages ride along inside the page and
-// its script swaps in the visitor's. The build is deterministic (no dates, no randomness): the same sources → the same files.
+// npm run build — src/ → index.html, brand/ (the brand page, brand.json, the kit zip), 404.html, robots.txt, sitemap.xml, and one small
+// words file per language for each page (lang/<id>.json, brand/lang/<id>.json): what GitHub Pages serves at https://roshevasternin.github.io/
+// English is written into the pages themselves (search engines, no JavaScript); every other language (src/langs.json — our games'
+// languages) is fetched by the page when the visitor needs it (src/lang-boot.js, src/lang.js). The build is deterministic
+// (no dates, no randomness): the same sources → the same files.
 //   npm run build            warns about missing translations (English is shown there)
 //   npm run build -- --strict   fails on them instead (what npm test runs)
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync } from 'node:fs';
 import { brandJson, zip, kitFiles, beatGraph, codeParts, dlCards } from './brand.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const read = (p) => readFileSync(new URL(p, ROOT), 'utf8'), json = (p) => JSON.parse(read(p));
 const SITE = 'https://roshevasternin.github.io/', YEAR = 2026;
-const SS = json('src/strings.json'), BS = json('src/brand-strings.json'), G = json('src/games.json'), CP = json('src/cubepix.json'), LANGS = json('src/langs.json');
+const G = json('src/games.json'), CP = json('src/cubepix.json'), LANGS = json('src/langs.json'), NAMES = json('src/langnames.json');
 const OD = json('src/orbitdash.json');   // рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs)
-const IDS = LANGS.map((L) => L.id);
+const IDS = LANGS.map((L) => L.id), RTL = LANGS.filter((L) => L.dir === 'rtl').map((L) => L.id);
+// no Russian, anywhere (owner 13–14.10.2026): not a language of ours — the lists end with the row «Россия, останови войну в Украине» instead
+if (IDS.includes('ru') || readdirSync(new URL('src/i18n/', ROOT)).includes('ru.json')) { console.error('✗ Russian is never a language of Lewydo (CLAUDE.md, «Мови»)'); process.exit(1); }
+for (const f of readdirSync(new URL('src/i18n/', ROOT))) if (!IDS.includes(f.replace(/\.json$/, ''))) { console.error(`✗ src/i18n/${f}: not in src/langs.json`); process.exit(1); }
+// the words, one file per language (src/i18n/<id>.json): site — the main page, brand — the brand page, cubepix — the CubePix supplement
+const I18N = Object.fromEntries(IDS.map((L) => { try { return [L, json(`src/i18n/${L}.json`)]; } catch (e) { return [L, {}]; } }));
+const SS = Object.fromEntries(IDS.map((L) => [L, I18N[L].site || {}])), BS = Object.fromEntries(IDS.map((L) => [L, I18N[L].brand || {}]));
+const STOP = { flag: '<img src="/assets/flags/ru-stained.svg" alt="" width="28" height="21" loading="lazy" decoding="async">', text: 'Россия, останови войну в Украине' };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-// ── words: the site's own (src/strings.json) + CubePix's own (src/cubepix.json, as cp:…) ──
-const problems = [], S = {};
+// ── words: the site's own (src/i18n/<id>.json → site, brand) + CubePix's own (src/cubepix.json, as cp:…) ──
+const problems = [], notes = [], S = {}, PICS = {};
 const forms = (v) => (typeof v === 'object' ? Object.values(v) : [v]);
 for (const L of IDS) {
   S[L] = {};
@@ -29,7 +38,21 @@ for (const L of IDS) {
     S[L][k] = v;
   }
   for (const k of Object.keys(SS[L] || {})) if (!(k in SS.en)) problems.push(`${L}: «${k}» is not an English key`);
-  for (const [k, v] of Object.entries(CP.S[L] || CP.S.en)) S[L]['cp:' + k] = v;
+  // CubePix's words: the CubePix site's own (the snapshot) → our supplement for a language it does not speak yet → a problem
+  const snap = CP.S[L], sup = I18N[L].cubepix || {};
+  if (snap && (sup.S || sup.pics)) notes.push(`${L}: the CubePix site speaks it now — its supplement (src/i18n/${L}.json → cubepix) is no longer used; delete it`);
+  for (const [k, en] of Object.entries(CP.S.en)) {
+    const v = snap?.[k] ?? sup.S?.[k];
+    if (v == null) { problems.push(`${L}: CubePix «${k}» is neither on the CubePix site nor in the supplement (src/i18n/${L}.json → cubepix.S)`); S[L]['cp:' + k] = en; continue; }
+    if ((typeof en === 'object') !== (typeof v === 'object') || (typeof v === 'object' && (v.other == null || forms(v).some((f) => !f.includes('{n}'))))) problems.push(`${L}: CubePix «${k}» must be plural forms {one, …, other}, each with {n}`);
+    if (forms(v).some((f) => !String(f).trim())) problems.push(`${L}: CubePix «${k}» is empty`);
+    S[L]['cp:' + k] = v;
+  }
+  for (const k of Object.keys(sup.S || {})) if (!(k in CP.S.en)) problems.push(`${L}: CubePix supplement «${k}» is not a key of src/cubepix.json`);
+  PICS[L] = Object.fromEntries(Object.keys(CP.pics).map((p) => { const v = CP.pics[p][L] ?? sup.pics?.[p];
+    if (!v || !v.n) { problems.push(`${L}: the painting «${p}» has no name (src/i18n/${L}.json → cubepix.pics)`); return [p, CP.pics[p].en]; }
+    if (p === CP.puzzle && !v.f) problems.push(`${L}: the puzzle «${p}» has no fun fact (cubepix.pics.${p}.f)`);
+    return [p, v]; }));
   // the brand page's own words (src/brand-strings.json) → b.…
   for (const [k, en] of Object.entries(BS.en)) {
     const v = BS[L]?.[k];
@@ -46,6 +69,8 @@ for (const [k, v] of Object.entries(S.fr)) if (!k.startsWith('cp:')) S.fr[k] = t
 // a dash never starts a line: it holds on to the word before it (every language)
 const dash = (s) => s.replace(/ ([—–]) /g, '\u00a0$1 ');
 for (const L of IDS) for (const [k, v] of Object.entries(S[L])) if (!k.startsWith('cp:')) S[L][k] = typeof v === 'string' ? dash(v) : Object.fromEntries(Object.entries(v).map(([f, x]) => [f, dash(x)]));
+for (const L of IDS) if (!NAMES[L]) problems.push(`${L}: no language names (src/langnames.json)`);
+if (notes.length) console.log('· ' + notes.join('\n· '));
 if (problems.length) { console.warn('⚠ ' + problems.join('\n⚠ ')); if (process.argv.includes('--strict')) process.exit(1); }
 
 // ── the pieces ──
@@ -65,6 +90,10 @@ const W = art('webp'), P = art('png');
 const logo = W.logo, mark = W.logo(), lockup = W.lockup(), sig = W.sig();
 const go = '<svg class="lw-go" viewBox="0 0 5 8" aria-hidden="true"><path d="M1 1l3 3-3 3" fill="none" stroke="#9DF5C2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const brandCss = read('brand/kit/code/web/lewydo-brand.css');
+// languages, the same on both pages: the boot script (<head>), the picker and the words (src/lang.js), the CSS (src/lang.css)
+const langCss = read('src/lang.css'), langFonts = langCss.slice(langCss.indexOf("/* the scripts' own fonts"));
+const langBoot = (base) => '<script>' + read('src/lang-boot.js').replace(/^\/\/.*\n/gm, '').replace('__BOOT__', () => JSON.stringify({ ids: IDS, rtl: RTL, base })) + '</script>';
+const langJs = read('src/lang.js');
 const gpIcon = '<svg class="gp" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.6 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/>' +
   '<path fill="#FFCE00" d="m17 8.6 3.3 1.9c.9.5.9 1.8 0 2.4L17 15.4 13.6 12z"/><path fill="#FF3A44" d="M17 15.4 5 22.3c-.5.3-1 .2-1.4 0L13.6 12z"/><path fill="#00F076" d="M3.6 1.8c.4-.2.9-.3 1.4 0l12 6.8L13.6 12z"/></svg>';
 const ICONS = {
@@ -99,7 +128,14 @@ const ogGames = [G.cubepix.icon, G.orbitdash.icon, ...G.more.map((g) => g.icon)]
 
 const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: CP.counts.pics, floors: CP.counts.floors, cpLangs: CP.counts.langs };
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
-const DATA = { langs: LANGS, S: SMAIN, counts, cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: CP.pics }, od: OD.levels };
+const enPics = Object.fromEntries(Object.keys(CP.pics).map((p) => [p, CP.pics[p].en]));
+const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cpLangs: Object.keys(CP.S), counts,
+  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics }, od: OD.levels };
+// one words file per language and page — the page fetches the visitor's (English rides in the page itself)
+const langFiles = (dir, make) => { mkdirSync(new URL(dir, ROOT), { recursive: true });
+  for (const f of readdirSync(new URL(dir, ROOT))) if (!IDS.includes(f.replace(/\.json$/, ''))) rmSync(new URL(dir + f, ROOT));
+  for (const L of IDS) writeFileSync(new URL(`${dir}${L}.json`, ROOT), JSON.stringify(make(L))); };
+langFiles('lang/', (L) => ({ S: SMAIN[L], pics: PICS[L], names: NAMES[L] }));
 const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Lewydo', slogan: 'Love What You Do', url: SITE, logo: SITE + 'assets/icon-512.png',
   founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia' }], foundingLocation: 'Poltava region, Ukraine',
   sameAs: [G.devPage, ...SOCIAL.map(([, , u]) => u)] };
@@ -118,10 +154,12 @@ const fill = (html) => {
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo)
-    .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon)\}\}/g, (m, k) => ({
+    .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
+    .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
       url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon,
       'od.site': G.orbitdash.site, 'od.web': G.orbitdash.demo, 'od.embed': G.orbitdash.embed, 'od.poster': G.orbitdash.poster,
-      'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon }[k]))
+      'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon, 'od.version': G.orbitdash.version }[k]))
+    .replace(/\{\{langCss\}\}/g, () => langCss).replace('{{langFonts}}', () => langFonts).replace('{{langJs}}', () => langJs)
     .replace('{{hreflang}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}">`].join('\n'))
     .replace('{{ldjson}}', () => JSON.stringify(ld).replace(/</g, '\\u003c'))
     .replace('{{DATA}}', () => JSON.stringify(DATA).replace(/</g, '\\u003c'));
@@ -136,15 +174,19 @@ const fill = (html) => {
   return html;
 };
 const out = (p, s) => writeFileSync(new URL(p, ROOT), s);
-out('index.html', fill(read('src/index.html')));
+out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => langBoot('/lang/'))));
 const NF = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(['nf.title', 'nf.text', 'nf.home'].map((k) => [k, S[L][k]]))]));
-out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).replace('{{DATA404}}', JSON.stringify(NF).replace(/</g, '\\u003c'))));
+out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).replace('{{DATA404}}', JSON.stringify({ S: NF, rtl: RTL }).replace(/</g, '\\u003c'))));
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
-const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, CP, IDS }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
+const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, S, IDS }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
 out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
-const BKEYS = ['skip', 'lang.title', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', ...Object.keys(BS.en).map((k) => 'b.' + k)];
-const BDATA = { langs: LANGS, S: Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]))])), about: Object.fromEntries(IDS.map((L) => { const T = CP.S[L] || CP.S.en; return [L, { title: T.aboutTitle, text: T.about, thanks: T.thanks, site: T.site, games: T.games }]; })) };
-out('brand/index.html', fill(read('src/brand.html')
+const BKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', ...Object.keys(BS.en).map((k) => 'b.' + k)];
+const bWords = (L) => Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]));
+// About us in every language rides in the page (its own language picker shows any of them): the games' own words
+const BDATA = { langs: LANGS, base: '/brand/lang/', S: { en: bWords('en') }, stop: STOP,
+  about: Object.fromEntries(IDS.map((L) => [L, { title: S[L]['cp:aboutTitle'], text: S[L]['cp:about'], thanks: S[L]['cp:thanks'], site: S[L]['cp:site'], games: S[L]['cp:games'] }])) };
+langFiles('brand/lang/', (L) => ({ S: bWords(L), names: NAMES[L] }));
+out('brand/index.html', fill(read('src/brand.html').replace('{{langBoot}}', () => langBoot('/brand/lang/'))
   .replace('{{langOptions}}', () => LANGS.map((L) => `<option value="${L.id}"${L.id === 'en' ? ' selected' : ''}>${esc(L.name)}</option>`).join(''))
   .replace('{{beatGraph}}', () => beatGraph()).replace('{{codeTabs}}', () => bcode.tabs).replace('{{codePanes}}', () => bcode.panes)
   .replace('{{dlCards}}', () => dlCards({ W })).replace(/\{\{zipMb\}\}/g, () => (ZIP.length / 1048576).toFixed(1))
@@ -155,4 +197,4 @@ const pages = ['', 'brand/', 'Game-CubePix/', 'Game-CubePix/play/', 'Game-CubePi
 out('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   pages.map((p) => `  <url><loc>${SITE}${p}</loc></url>`).join('\n') + '\n</urlset>\n');
 const kb = (p) => Math.round(read(p).length / 1024);
-console.log(`✓ index.html ${kb('index.html')} KB · brand/ (index.html ${kb('brand/index.html')} KB, brand.json, lewydo-brand-kit.zip ${Math.round(ZIP.length / 1024)} KB) · 404.html · robots.txt · sitemap.xml — ${IDS.length} languages${problems.length ? `, ${problems.length} translation problems (see above)` : ''}`);
+console.log(`✓ index.html ${kb('index.html')} KB · lang/ · brand/ (index.html ${kb('brand/index.html')} KB, lang/, brand.json, lewydo-brand-kit.zip ${Math.round(ZIP.length / 1024)} KB) · 404.html · robots.txt · sitemap.xml — ${IDS.length} languages${problems.length ? `, ${problems.length} translation problems (see above)` : ''}`);

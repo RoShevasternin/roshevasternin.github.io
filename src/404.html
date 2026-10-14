@@ -11,10 +11,11 @@
 <style>
 /* A lost page anywhere on roshevasternin.github.io lands here (GitHub Pages), so every path is absolute. The mark is the standard. */
 *{box-sizing:border-box;margin:0;padding:0;}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 20px;text-align:center;color:#fff;font:500 17px/1.6 "Nunito",system-ui,sans-serif;
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 20px;text-align:center;color:#fff;font:500 17px/1.6 var(--f,"Nunito",system-ui,sans-serif);
   background:radial-gradient(60% 50% at 50% 0%,rgba(61,220,132,.18),transparent 72%),#0E1024;}
 main{max-width:520px;display:flex;flex-direction:column;align-items:center;}
 {{brandCss}}
+{{langFonts}}
 .code{margin-top:26px;font-weight:900;font-size:13px;letter-spacing:.24em;color:#9DF5C2;}
 h1{font-weight:900;font-size:clamp(30px,6vw,42px);line-height:1.1;margin-top:8px;}
 p{color:rgba(242,255,247,.8);margin-top:12px;}
@@ -33,12 +34,15 @@ a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;
 <script id="data" type="application/json">{{DATA404}}</script>
 <script>
 (() => {
-  const D = JSON.parse(document.getElementById('data').textContent), ids = Object.keys(D);
-  const pick = (t) => { t = String(t || '').toLowerCase(); if (t.startsWith('zh')) return /^zh-(tw|hk|mo)|hant/.test(t) ? 'zh-TW' : null;
-    if (t === 'in' || t.startsWith('in-')) return 'id'; const b = t.split('-')[0]; return ids.includes(b) ? b : null; };
-  let saved = null; try { saved = localStorage.getItem('lewydo:lang') || localStorage.getItem('cubepix-site:lang'); } catch (e) {}
-  const lang = (ids.includes(saved) && saved) || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
-  document.documentElement.lang = lang;
+  const { S: D, rtl } = JSON.parse(document.getElementById('data').textContent), ids = Object.keys(D);
+  // the same rules as every page of ours (src/lang-boot.js): the visitor's choice → the device (old codes too; no Russian) → English
+  const ALIAS = { iw: 'he', in: 'id', tl: 'fil', no: 'nb', nn: 'nb', prs: 'fa' };
+  const pick = (tag) => { if (!tag) return null; const p = String(tag).replace(/_/g, '-').toLowerCase().split('-');
+    if (p[0] === 'zh') return p.includes('hant') || p.some((x) => x === 'tw' || x === 'hk' || x === 'mo') ? 'zh-TW' : 'zh-CN';
+    const b = ALIAS[p[0]] || p[0]; return ids.includes(b) ? b : null; };
+  const get = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  const lang = [get('lewydo:lang'), get('cubepix-site:lang')].find((l) => ids.includes(l)) || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
+  document.documentElement.lang = lang; document.documentElement.dir = rtl.includes(lang) ? 'rtl' : 'ltr';
   document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = D[lang][el.dataset.t] || D.en[el.dataset.t]; });
   setTimeout(() => document.querySelector('.lw-logo').classList.add('lw-beating'), 200);
 })();

@@ -3,7 +3,7 @@
  "counts": {
   "pics": 74,
   "floors": 8,
-  "langs": 15
+  "langs": 38
  },
  "hero": [
   "great_wave",
@@ -128,15 +128,40 @@
  },
  "pics": {
   "great_wave": {
+   "az": {
+    "n": "Kanaqavada böyük dalğa",
+    "a": "Katsusika Hokusay",
+    "y": "təxminən 1831"
+   },
    "id": {
     "n": "Ombak Besar Kanagawa",
     "a": "Katsushika Hokusai",
     "y": "sekitar 1831"
    },
+   "ms": {
+    "n": "Ombak Besar di Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "sekitar 1831"
+   },
+   "cs": {
+    "n": "Velká vlna u Kanagawy",
+    "a": "Kacušika Hokusai",
+    "y": "kolem 1831"
+   },
+   "da": {
+    "n": "Den store bølge",
+    "a": "Katsushika Hokusai",
+    "y": "ca. 1831"
+   },
    "de": {
     "n": "Die große Welle",
     "a": "Katsushika Hokusai",
     "y": "um 1831"
+   },
+   "et": {
+    "n": "Suur laine Kanagawa juures",
+    "a": "Katsushika Hokusai",
+    "y": "u 1831"
    },
    "en": {
     "n": "Great Wave off Kanagawa",
@@ -148,18 +173,48 @@
     "a": "Katsushika Hokusai",
     "y": "c. 1831"
    },
+   "fil": {
+    "n": "Malaking Alon sa Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "bandang 1831"
+   },
    "fr": {
     "n": "La Grande Vague",
     "a": "Katsushika Hokusai",
     "y": "vers 1831"
+   },
+   "hr": {
+    "n": "Veliki val kod Kanagawe",
+    "a": "Katsushika Hokusai",
+    "y": "oko 1831."
    },
    "it": {
     "n": "La grande onda",
     "a": "Katsushika Hokusai",
     "y": "1831 circa"
    },
+   "lv": {
+    "n": "Lielais vilnis pie Kanagavas",
+    "a": "Kacušika Hokusai",
+    "y": "ap 1831"
+   },
+   "lt": {
+    "n": "Didžioji Kanagavos banga",
+    "a": "Kacušika Hokusai",
+    "y": "apie 1831"
+   },
+   "hu": {
+    "n": "A nagy hullám Kanagavánál",
+    "a": "Kacusika Hokuszai",
+    "y": "1831 körül"
+   },
    "nl": {
     "n": "De grote golf",
+    "a": "Katsushika Hokusai",
+    "y": "ca. 1831"
+   },
+   "nb": {
+    "n": "Den store bølgen",
     "a": "Katsushika Hokusai",
     "y": "ca. 1831"
    },
@@ -173,6 +228,31 @@
     "a": "Katsushika Hokusai",
     "y": "c. 1831"
    },
+   "ro": {
+    "n": "Marele val de la Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "cca 1831"
+   },
+   "sk": {
+    "n": "Veľká vlna pri Kanagawe",
+    "a": "Kacušika Hokusai",
+    "y": "okolo 1831"
+   },
+   "sl": {
+    "n": "Veliki val pri Kanagavi",
+    "a": "Katsushika Hokusai",
+    "y": "okoli 1831"
+   },
+   "fi": {
+    "n": "Kanagawan suuri aalto",
+    "a": "Katsushika Hokusai",
+    "y": "n. 1831"
+   },
+   "sv": {
+    "n": "Stora vågen vid Kanagawa",
+    "a": "Katsushika Hokusai",
+    "y": "ca 1831"
+   },
    "vi": {
     "n": "Sóng lừng Kanagawa",
     "a": "Katsushika Hokusai",
@@ -183,10 +263,45 @@
     "a": "Katsushika Hokusai",
     "y": "yak. 1831"
    },
+   "el": {
+    "n": "Μεγάλο κύμα της Καναγκάβα",
+    "a": "Κατσουσίκα Χοκουσάι",
+    "y": "περ. 1831"
+   },
+   "bg": {
+    "n": "Голямата вълна в Канагава",
+    "a": "Кацушика Хокусай",
+    "y": "ок. 1831"
+   },
+   "kk": {
+    "n": "Канагавадағы ұлы толқын",
+    "a": "Кацусика Хокусай",
+    "y": "шамамен 1831"
+   },
    "uk": {
     "n": "Велика хвиля в Канаґаві",
     "a": "Кацусіка Хокусай",
     "y": "бл. 1831"
+   },
+   "he": {
+    "n": "הגל הגדול של קנגאווה",
+    "a": "קצושיקה הוקוסאי",
+    "y": "בערך 1831"
+   },
+   "ar": {
+    "n": "موجة كاناغاوا العظيمة",
+    "a": "كاتسوشيكا هوكوساي",
+    "y": "نحو 1831"
+   },
+   "hi": {
+    "n": "कानागावा की बड़ी लहर",
+    "a": "कात्सुशिका होकुसाई",
+    "y": "लगभग 1831"
+   },
+   "th": {
+    "n": "คลื่นยักษ์นอกฝั่งคานางาวะ",
+    "a": "คัตสึชิกะ โฮกูไซ",
+    "y": "ราวปี 1831"
    },
    "ko": {
     "n": "가나가와 해변의 높은 파도",
@@ -205,13 +320,38 @@
    }
   },
   "starry_night": {
+   "az": {
+    "n": "Ulduzlu gecə",
+    "a": "Vinsent van Qoq",
+    "y": "1889"
+   },
    "id": {
     "n": "Malam Berbintang",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "ms": {
+    "n": "Malam Berbintang",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "cs": {
+    "n": "Hvězdná noc",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "da": {
+    "n": "Stjernenat",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "de": {
     "n": "Die Sternennacht",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "et": {
+    "n": "Tähine öö",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -225,18 +365,48 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "fil": {
+    "n": "Ang Mabituing Gabi",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "fr": {
     "n": "La Nuit étoilée",
     "a": "Vincent van Gogh",
     "y": "1889"
+   },
+   "hr": {
+    "n": "Zvjezdana noć",
+    "a": "Vincent van Gogh",
+    "y": "1889."
    },
    "it": {
     "n": "Notte stellata",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "lv": {
+    "n": "Zvaigžņotā nakts",
+    "a": "Vinsents van Gogs",
+    "y": "1889"
+   },
+   "lt": {
+    "n": "Žvaigždėta naktis",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "hu": {
+    "n": "Csillagos éj",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "nl": {
     "n": "De sterrennacht",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "nb": {
+    "n": "Stjernenatt",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -250,6 +420,31 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "ro": {
+    "n": "Noapte înstelată",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sk": {
+    "n": "Hviezdna noc",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sl": {
+    "n": "Zvezdna noč",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "fi": {
+    "n": "Tähtikirkas yö",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sv": {
+    "n": "Stjärnenatten",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "vi": {
     "n": "Đêm đầy sao",
     "a": "Vincent van Gogh",
@@ -260,9 +455,44 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "el": {
+    "n": "Έναστρη νύχτα",
+    "a": "Βίνσεντ βαν Γκογκ",
+    "y": "1889"
+   },
+   "bg": {
+    "n": "Звездна нощ",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "kk": {
+    "n": "Жұлдызды түн",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
    "uk": {
     "n": "Зоряна ніч",
     "a": "Вінсент ван Гог",
+    "y": "1889"
+   },
+   "he": {
+    "n": "ליל כוכבים",
+    "a": "וינסנט ואן גוך",
+    "y": "1889"
+   },
+   "ar": {
+    "n": "ليلة النجوم",
+    "a": "فنسنت فان غوخ",
+    "y": "1889"
+   },
+   "hi": {
+    "n": "तारों भरी रात",
+    "a": "विन्सेंट वैन गॉग",
+    "y": "1889"
+   },
+   "th": {
+    "n": "ราตรีประดับดาว",
+    "a": "วินเซนต์ แวน โก๊ะ",
     "y": "1889"
    },
    "ko": {
@@ -282,13 +512,38 @@
    }
   },
   "irises": {
+   "az": {
+    "n": "Süsənlər",
+    "a": "Vinsent van Qoq",
+    "y": "1889"
+   },
    "id": {
     "n": "Bunga Iris",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "ms": {
+    "n": "Bunga Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "cs": {
+    "n": "Kosatce",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "da": {
+    "n": "Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "de": {
     "n": "Schwertlilien",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "et": {
+    "n": "Iirised",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -302,18 +557,48 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "fil": {
+    "n": "Mga Iris",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "fr": {
     "n": "Les Iris",
     "a": "Vincent van Gogh",
     "y": "1889"
+   },
+   "hr": {
+    "n": "Perunike",
+    "a": "Vincent van Gogh",
+    "y": "1889."
    },
    "it": {
     "n": "Iris",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "lv": {
+    "n": "Īrisi",
+    "a": "Vinsents van Gogs",
+    "y": "1889"
+   },
+   "lt": {
+    "n": "Irisai",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "hu": {
+    "n": "Íriszek",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "nl": {
     "n": "Irissen",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "nb": {
+    "n": "Iriser",
     "a": "Vincent van Gogh",
     "y": "1889"
    },
@@ -327,6 +612,31 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "ro": {
+    "n": "Irișii",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sk": {
+    "n": "Kosatce",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sl": {
+    "n": "Perunike",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "fi": {
+    "n": "Kurjenmiekat",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
+   "sv": {
+    "n": "Irisar",
+    "a": "Vincent van Gogh",
+    "y": "1889"
+   },
    "vi": {
     "n": "Hoa diên vĩ",
     "a": "Vincent van Gogh",
@@ -337,9 +647,44 @@
     "a": "Vincent van Gogh",
     "y": "1889"
    },
+   "el": {
+    "n": "Ίριδες",
+    "a": "Βίνσεντ βαν Γκογκ",
+    "y": "1889"
+   },
+   "bg": {
+    "n": "Ириси",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
+   "kk": {
+    "n": "Құртқашаштар",
+    "a": "Винсент ван Гог",
+    "y": "1889"
+   },
    "uk": {
     "n": "Іриси",
     "a": "Вінсент ван Гог",
+    "y": "1889"
+   },
+   "he": {
+    "n": "אירוסים",
+    "a": "וינסנט ואן גוך",
+    "y": "1889"
+   },
+   "ar": {
+    "n": "زهور السوسن",
+    "a": "فنسنت فان غوخ",
+    "y": "1889"
+   },
+   "hi": {
+    "n": "आइरिस",
+    "a": "विन्सेंट वैन गॉग",
+    "y": "1889"
+   },
+   "th": {
+    "n": "ดอกไอริส",
+    "a": "วินเซนต์ แวน โก๊ะ",
     "y": "1889"
    },
    "ko": {
@@ -359,13 +704,38 @@
    }
   },
   "water_lilies": {
+   "az": {
+    "n": "Suzanbaqlı gölməçə",
+    "a": "Klod Mone",
+    "y": "1899"
+   },
    "id": {
     "n": "Kolam Teratai",
     "a": "Claude Monet",
     "y": "1899"
    },
+   "ms": {
+    "n": "Kolam Teratai",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "cs": {
+    "n": "Jezírko s lekníny",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "da": {
+    "n": "Åkandedammen",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "de": {
     "n": "Der Seerosenteich",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "et": {
+    "n": "Vesiroosidega tiik",
     "a": "Claude Monet",
     "y": "1899"
    },
@@ -379,18 +749,48 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "fil": {
+    "n": "Ang Lawa ng mga Water Lily",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "fr": {
     "n": "Le Bassin aux nymphéas",
     "a": "Claude Monet",
     "y": "1899"
+   },
+   "hr": {
+    "n": "Jezerce s lopočima",
+    "a": "Claude Monet",
+    "y": "1899."
    },
    "it": {
     "n": "Lo stagno delle ninfee",
     "a": "Claude Monet",
     "y": "1899"
    },
+   "lv": {
+    "n": "Ūdensrožu dīķis",
+    "a": "Klods Monē",
+    "y": "1899"
+   },
+   "lt": {
+    "n": "Vandens lelijų tvenkinys",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "hu": {
+    "n": "Tavirózsás tó",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "nl": {
     "n": "De waterlelievijver",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "nb": {
+    "n": "Vannliljedammen",
     "a": "Claude Monet",
     "y": "1899"
    },
@@ -404,6 +804,31 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "ro": {
+    "n": "Iazul cu nuferi",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "sk": {
+    "n": "Jazierko s leknami",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "sl": {
+    "n": "Ribnik z lokvanji",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "fi": {
+    "n": "Lumpeelampi",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
+   "sv": {
+    "n": "Näckrosdammen",
+    "a": "Claude Monet",
+    "y": "1899"
+   },
    "vi": {
     "n": "Ao hoa súng",
     "a": "Claude Monet",
@@ -414,9 +839,44 @@
     "a": "Claude Monet",
     "y": "1899"
    },
+   "el": {
+    "n": "Η λίμνη με τα νούφαρα",
+    "a": "Κλοντ Μονέ",
+    "y": "1899"
+   },
+   "bg": {
+    "n": "Езерото с водни лилии",
+    "a": "Клод Моне",
+    "y": "1899"
+   },
+   "kk": {
+    "n": "Тұңғиықтар тоғаны",
+    "a": "Клод Моне",
+    "y": "1899"
+   },
    "uk": {
     "n": "Ставок із лататтям",
     "a": "Клод Моне",
+    "y": "1899"
+   },
+   "he": {
+    "n": "בריכת הנופרים",
+    "a": "קלוד מונה",
+    "y": "1899"
+   },
+   "ar": {
+    "n": "بركة زنابق الماء",
+    "a": "كلود مونيه",
+    "y": "1899"
+   },
+   "hi": {
+    "n": "कुमुदिनी का तालाब",
+    "a": "क्लोद मोने",
+    "y": "1899"
+   },
+   "th": {
+    "n": "สระบัวสาย",
+    "a": "โคลด โมเนต์",
     "y": "1899"
    },
    "ko": {
@@ -436,17 +896,47 @@
    }
   },
   "strawberry": {
+   "az": {
+    "n": "Çiyələk",
+    "a": "",
+    "y": "",
+    "f": "Çiyələk əsl giləmeyvə deyil: üstündəki hər kiçik “toxum” içində toxumu olan ayrıca bir meyvədir."
+   },
    "id": {
     "n": "Stroberi",
     "a": "",
     "y": "",
     "f": "Stroberi bukan buah beri sejati: tiap “biji” kecil di permukaannya adalah buah tersendiri yang berisi biji."
    },
+   "ms": {
+    "n": "Strawberi",
+    "a": "",
+    "y": "",
+    "f": "Strawberi bukan beri sebenar: setiap “biji” kecil padanya ialah buah berasingan yang mempunyai biji di dalamnya."
+   },
+   "cs": {
+    "n": "Jahoda",
+    "a": "",
+    "y": "",
+    "f": "Jahoda není pravá bobule: každé drobné „semínko“ na ní je samostatný plod se semenem uvnitř."
+   },
+   "da": {
+    "n": "Jordbær",
+    "a": "",
+    "y": "",
+    "f": "Et jordbær er ikke et rigtigt bær: hvert lille »frø« på det er en selvstændig frugt med et frø indeni."
+   },
    "de": {
     "n": "Erdbeere",
     "a": "",
     "y": "",
     "f": "Die Erdbeere ist keine echte Beere: Jedes winzige „Samenkorn“ auf ihr ist eine eigene Frucht mit einem Samen darin."
+   },
+   "et": {
+    "n": "Maasikas",
+    "a": "",
+    "y": "",
+    "f": "Maasikas pole päris mari: iga pisike „seeme“ selle pinnal on eraldi vili, mille sees on seeme."
    },
    "en": {
     "n": "Strawberry",
@@ -460,11 +950,23 @@
     "y": "",
     "f": "La fresa no es una baya verdadera: cada «semillita» de su superficie es un fruto aparte con una semilla dentro."
    },
+   "fil": {
+    "n": "Strawberry",
+    "a": "",
+    "y": "",
+    "f": "Hindi tunay na berry ang strawberry: bawat maliit na “buto” nito ay hiwalay na prutas na may buto sa loob."
+   },
    "fr": {
     "n": "Fraise",
     "a": "",
     "y": "",
     "f": "La fraise n’est pas une vraie baie : chaque petite « graine » à sa surface est un fruit à part entière, avec une graine à l’intérieur."
+   },
+   "hr": {
+    "n": "Jagoda",
+    "a": "",
+    "y": "",
+    "f": "Jagoda nije prava boba: svaka sitna „sjemenka” na njoj zaseban je plod sa sjemenkom unutra."
    },
    "it": {
     "n": "Fragola",
@@ -472,11 +974,35 @@
     "y": "",
     "f": "La fragola non è una vera bacca: ogni piccolo «seme» sulla sua superficie è un frutto a sé, con dentro un seme."
    },
+   "lv": {
+    "n": "Zemene",
+    "a": "",
+    "y": "",
+    "f": "Zemene nav īsta oga: katra sīkā «sēkliņa» uz tās ir atsevišķs auglis ar sēklu iekšā."
+   },
+   "lt": {
+    "n": "Braškė",
+    "a": "",
+    "y": "",
+    "f": "Braškė nėra tikra uoga: kiekviena jos „sėklytė“ — tai atskiras vaisius su sėkla viduje."
+   },
+   "hu": {
+    "n": "Eper",
+    "a": "",
+    "y": "",
+    "f": "Az eper nem valódi bogyó: a rajta lévő minden apró „mag” külön termés, benne egy maggal."
+   },
    "nl": {
     "n": "Aardbei",
     "a": "",
     "y": "",
     "f": "Een aardbei is geen echte bes: elk “zaadje” erop is een apart vruchtje met een zaadje erin."
+   },
+   "nb": {
+    "n": "Jordbær",
+    "a": "",
+    "y": "",
+    "f": "Et jordbær er ikke et ekte bær: hvert lille «frø» på det er en egen frukt med et frø inni."
    },
    "pl": {
     "n": "Truskawka",
@@ -490,6 +1016,36 @@
     "y": "",
     "f": "O morango não é uma baga de verdade: cada “sementinha” nele é um fruto à parte, com uma semente dentro."
    },
+   "ro": {
+    "n": "Căpșună",
+    "a": "",
+    "y": "",
+    "f": "Căpșuna nu e o bacă adevărată: fiecare „sămânță” mică de pe ea e un fruct separat, cu o sămânță înăuntru."
+   },
+   "sk": {
+    "n": "Jahoda",
+    "a": "",
+    "y": "",
+    "f": "Jahoda nie je pravá bobuľa: každé drobné „semienko“ na nej je samostatný plod so semenom vnútri."
+   },
+   "sl": {
+    "n": "Jagoda",
+    "a": "",
+    "y": "",
+    "f": "Jagoda botanično ni prava jagoda: vsako drobno »seme« na njej je ločen plod s semenom v sebi."
+   },
+   "fi": {
+    "n": "Mansikka",
+    "a": "",
+    "y": "",
+    "f": "Mansikka ei ole oikea marja: jokainen sen pieni ”siemen” on erillinen hedelmä, jonka sisällä on siemen."
+   },
+   "sv": {
+    "n": "Jordgubbe",
+    "a": "",
+    "y": "",
+    "f": "En jordgubbe är inget riktigt bär: varje litet ”frö” på den är en egen frukt med ett frö inuti."
+   },
    "vi": {
     "n": "Dâu tây",
     "a": "",
@@ -502,11 +1058,53 @@
     "y": "",
     "f": "Çilek aslında gerçek bir üzümsü meyve değil: üstündeki her minik “tohum”, içinde tohum taşıyan ayrı bir meyvedir."
    },
+   "el": {
+    "n": "Φράουλα",
+    "a": "",
+    "y": "",
+    "f": "Η φράουλα δεν είναι αληθινό μούρο: κάθε μικροσκοπικός «σπόρος» της είναι ξεχωριστός καρπός με έναν σπόρο μέσα."
+   },
+   "bg": {
+    "n": "Ягода",
+    "a": "",
+    "y": "",
+    "f": "Ягодата всъщност не е истински ягодоплод: всяко малко „семенце“ по нея е отделен плод със семка вътре."
+   },
+   "kk": {
+    "n": "Құлпынай",
+    "a": "",
+    "y": "",
+    "f": "Құлпынай нағыз жидек емес: оның бетіндегі әр кішкентай «тұқым» — ішінде тұқымы бар жеке жеміс."
+   },
    "uk": {
     "n": "Полуниця",
     "a": "",
     "y": "",
     "f": "Полуниця — не справжня ягода: кожне «зернятко» на ній — це окремий плід із насінинкою всередині."
+   },
+   "he": {
+    "n": "תות שדה",
+    "a": "",
+    "y": "",
+    "f": "תות השדה הוא לא \"ענבה\" אמיתית: כל \"זרע\" קטנטן עליו הוא פרי נפרד, ובתוכו זרע."
+   },
+   "ar": {
+    "n": "فراولة",
+    "a": "",
+    "y": "",
+    "f": "الفراولة ليست توتة حقيقية: كل «بذرة» صغيرة عليها ثمرة مستقلة في داخلها بذرة."
+   },
+   "hi": {
+    "n": "स्ट्रॉबेरी",
+    "a": "",
+    "y": "",
+    "f": "स्ट्रॉबेरी असली बेरी नहीं है: उस पर हर छोटा “बीज” असल में एक अलग फल है, जिसके अंदर बीज होता है।"
+   },
+   "th": {
+    "n": "สตรอว์เบอร์รี",
+    "a": "",
+    "y": "",
+    "f": "สตรอว์เบอร์รีไม่ใช่เบอร์รีแท้: “เมล็ด” เล็กๆ แต่ละเม็ดบนผิวคือผลแยกกันที่มีเมล็ดอยู่ข้างใน"
    },
    "ko": {
     "n": "딸기",
@@ -529,12 +1127,43 @@
   }
  },
  "S": {
+  "az": {
+   "tagline": "ŞƏKLİ KUB-KUB AÇ",
+   "lead": "İncəsənəti sevənlər üçün sakit tapmaca. Kubları qat-qat doldur — məşhur tablolar, dünya möcüzələri və kiçik piksel xəzinələr canlansın. Hər şəkil muzey etiketi və real hekayə ilə bitir.",
+   "play": "Brauzerdə oyna",
+   "soon": "Tezliklə:",
+   "pics": {
+    "one": "{n} şəkil",
+    "other": "{n} şəkil"
+   },
+   "floors": {
+    "one": "{n} mərtəbə",
+    "other": "{n} mərtəbə"
+   },
+   "langs": {
+    "one": "{n} dil",
+    "other": "{n} dil"
+   },
+   "free": "Pulsuz",
+   "layer": "QAT {a} / {b}",
+   "revealed": "ŞƏKİL AÇILDI",
+   "about": "Lewydo — Ukraynadan iki nəfərlik müstəqil oyun studiyasıdır. Vlad kod yazır, Lilya dizayn edir. Birlikdə özümüzün oynamağı sevdiyimiz oyunları yaradırıq.",
+   "thanks": "Oynadığın üçün sağ ol!",
+   "site": "Saytımız",
+   "games": "Google Play-dəki oyunlarımız",
+   "fact": "Maraqlı fakt",
+   "how": "Kubunun üstündə rəqəm var. Eyni rəqəmli xanalara toxun və ya barmağını onların üzərindən bir uzun zəncirlə sürüşdür: zəncirlər daha çox xal verir.",
+   "demo": "Muzeydən bir tablo qat-qat açılır",
+   "aboutTitle": "Haqqımızda",
+   "pixTitle": "Pix ilə tanış ol",
+   "pixName": "O, kubdur (Cube), adı isə Pix-dir. İkisini birləşdir — CubePix alınır: oyun onun adını daşıyır.",
+   "pixHi": "Salam! Mən Pix-əm."
+  },
   "id": {
    "tagline": "UNGKAP GAMBAR KUBUS DEMI KUBUS",
    "lead": "Puzzle santai untuk pencinta seni. Isi kubus lapis demi lapis, dan lukisan terkenal, keajaiban dunia, serta harta karun pixel kecil pun hidup. Setiap gambar diakhiri label museum dan kisah nyata.",
    "play": "Main di browser",
    "soon": "Segera hadir di",
-   "demoNote": "Demo gratis di browser: lantai-lantai pertama museum.",
    "pics": {
     "other": "{n} gambar"
    },
@@ -549,24 +1178,120 @@
    "revealed": "GAMBAR TERUNGKAP",
    "about": "Lewydo adalah studio game indie dua orang dari Ukraina. Vlad menulis kode, Lilya mendesain. Bersama, kami membuat game yang kami sendiri suka mainkan.",
    "thanks": "Terima kasih sudah bermain!",
-   "langTitle": "BAHASA",
    "site": "Situs kami",
    "games": "Game kami di Google Play",
    "fact": "Fakta seru",
    "how": "Kubusmu menunjukkan sebuah nomor. Ketuk kotak-kotak dengan nomor yang sama, atau geser jarimu melewatinya dalam satu rantai panjang: rantai kasih poin lebih banyak.",
    "demo": "Lukisan dari museum, terungkap lapis demi lapis",
-   "gp": "Temukan di",
    "aboutTitle": "Tentang kami",
    "pixTitle": "Kenalan dengan Pix",
    "pixName": "Dia sebuah kubus, bahasa Inggrisnya Cube, dan namanya Pix. Gabungkan keduanya, jadilah CubePix: game ini memakai namanya.",
    "pixHi": "Halo! Aku Pix."
+  },
+  "ms": {
+   "tagline": "DEDAHKAN GAMBAR KIUB DEMI KIUB",
+   "lead": "Teka-teki yang tenang untuk pencinta seni. Isi kiub lapisan demi lapisan, dan lukisan terkenal, keajaiban dunia serta khazanah piksel kecil akan menjadi hidup. Setiap gambar diakhiri dengan label muzium dan kisah benar.",
+   "play": "Main dalam pelayar",
+   "soon": "Akan datang di",
+   "pics": {
+    "other": "{n} gambar"
+   },
+   "floors": {
+    "other": "{n} tingkat"
+   },
+   "langs": {
+    "other": "{n} bahasa"
+   },
+   "free": "Percuma",
+   "layer": "LAPISAN {a} / {b}",
+   "revealed": "GAMBAR TERDEDAH",
+   "about": "Lewydo ialah studio permainan indie dua orang dari Ukraine. Vlad menulis kod, Lilya mereka bentuk. Bersama-sama, kami mencipta permainan yang kami sendiri suka mainkan.",
+   "thanks": "Terima kasih kerana bermain!",
+   "site": "Laman web kami",
+   "games": "Permainan kami di Google Play",
+   "fact": "Fakta menarik",
+   "how": "Kiubmu menunjukkan satu nombor. Ketik petak bernombor sama, atau leret merentasinya dalam satu rantai panjang: rantai memberi lebih banyak mata.",
+   "demo": "Sebuah lukisan dari muzium, didedahkan lapisan demi lapisan",
+   "aboutTitle": "Tentang kami",
+   "pixTitle": "Kenali Pix",
+   "pixName": "Dia sebiji kiub (cube), dan namanya Pix. Gabungkan kedua-duanya dan jadilah CubePix: permainan ini membawa namanya.",
+   "pixHi": "Hai! Aku Pix."
+  },
+  "cs": {
+   "tagline": "ODHAL OBRAZ KOSTKU PO KOSTCE",
+   "lead": "Klidný hlavolam pro milovníky umění. Zaplňuj kostky vrstvu po vrstvě a uvidíš, jak ožívají slavné obrazy, divy světa i malé pixelové poklady. Každý obraz končí muzejním popiskem a pravdivým příběhem.",
+   "play": "Hrát v prohlížeči",
+   "soon": "Brzy na",
+   "pics": {
+    "one": "{n} obraz",
+    "few": "{n} obrazy",
+    "many": "{n} obrazu",
+    "other": "{n} obrazů"
+   },
+   "floors": {
+    "one": "{n} patro",
+    "few": "{n} patra",
+    "many": "{n} patra",
+    "other": "{n} pater"
+   },
+   "langs": {
+    "one": "{n} jazyk",
+    "few": "{n} jazyky",
+    "many": "{n} jazyka",
+    "other": "{n} jazyků"
+   },
+   "free": "Zdarma",
+   "layer": "VRSTVA {a} / {b}",
+   "revealed": "OBRAZ ODHALEN",
+   "about": "Lewydo je dvoučlenné nezávislé herní studio z Ukrajiny. Vlad programuje, Lilya se stará o design. Společně tvoříme hry, které sami rádi hrajeme.",
+   "thanks": "Děkujeme, že hraješ!",
+   "site": "Náš web",
+   "games": "Naše hry v Google Play",
+   "fact": "Zajímavost",
+   "how": "Tvoje kostka ukazuje číslo. Ťukej na políčka se stejným číslem, nebo po nich přejeď prstem v jednom dlouhém řetězci – řetězce dávají víc bodů.",
+   "demo": "Obraz z muzea odhalovaný vrstvu po vrstvě",
+   "aboutTitle": "O nás",
+   "pixTitle": "Seznam se s Pixem",
+   "pixName": "Je to kostka, anglicky cube, a jmenuje se Pix. Dej to dohromady a vyjde ti CubePix: hra nese jeho jméno.",
+   "pixHi": "Ahoj! Já jsem Pix."
+  },
+  "da": {
+   "tagline": "AFSLØR BILLEDET KUBE FOR KUBE",
+   "lead": "Et roligt puslespil for kunstelskere. Fyld kuberne lag for lag, så vågner berømte malerier, verdens vidundere og små pixelskatte til live. Hvert billede slutter med et museumsskilt og en sand historie.",
+   "play": "Spil i browseren",
+   "soon": "Kommer snart på",
+   "pics": {
+    "one": "{n} billede",
+    "other": "{n} billeder"
+   },
+   "floors": {
+    "one": "{n} etage",
+    "other": "{n} etager"
+   },
+   "langs": {
+    "one": "{n} sprog",
+    "other": "{n} sprog"
+   },
+   "free": "Gratis",
+   "layer": "LAG {a} / {b}",
+   "revealed": "BILLEDET ER AFSLØRET",
+   "about": "Lewydo er et indie-spilstudie på to personer fra Ukraine. Vlad koder, Lilya designer. Sammen laver vi de spil, vi selv elsker at spille.",
+   "thanks": "Tak, fordi du spiller!",
+   "site": "Vores hjemmeside",
+   "games": "Vores spil på Google Play",
+   "fact": "Vidste du?",
+   "how": "Din kube viser et tal. Tryk på felterne med samme tal, eller stryg hen over dem i én lang kæde: kæder giver flere point.",
+   "demo": "Et maleri fra museet, afsløret lag for lag",
+   "aboutTitle": "Om os",
+   "pixTitle": "Mød Pix",
+   "pixName": "Han er en kube, på engelsk cube, og han hedder Pix. Sæt de to sammen, så får du CubePix: Spillet bærer hans navn.",
+   "pixHi": "Hej! Jeg er Pix."
   },
   "de": {
    "tagline": "DECK DAS BILD MIT WÜRFELN AUF",
    "lead": "Ein entspanntes Puzzle für alle, die Kunst lieben. Füll die Würfel Ebene für Ebene — und berühmte Gemälde, Weltwunder und kleine Pixelschätze erwachen zum Leben. Jedes Bild endet mit einem Museumsschild und einer wahren Geschichte.",
    "play": "Im Browser spielen",
    "soon": "Bald bei",
-   "demoNote": "Kostenlose Demo im Browser: die ersten Etagen des Museums.",
    "pics": {
     "one": "{n} Bild",
     "other": "{n} Bilder"
@@ -584,24 +1309,53 @@
    "revealed": "BILD ENTHÜLLT",
    "about": "Lewydo ist ein Indie-Studio aus der Ukraine – wir sind zu zweit. Vlad programmiert, Lilya gestaltet. Zusammen machen wir die Spiele, die wir selbst gern spielen.",
    "thanks": "Danke fürs Spielen!",
-   "langTitle": "SPRACHE",
    "site": "Unsere Website",
    "games": "Unsere Spiele bei Google Play",
    "fact": "Schon gewusst?",
    "how": "Dein Würfel zeigt eine Zahl. Tippe auf die Felder mit derselben Zahl oder zieh in einer langen Kette darüber: Ketten bringen mehr Punkte.",
    "demo": "Ein Gemälde aus dem Museum, Ebene für Ebene enthüllt",
-   "gp": "Jetzt bei",
    "aboutTitle": "Über uns",
    "pixTitle": "Das ist Pix",
    "pixName": "Er ist ein Würfel, auf Englisch Cube, und er heißt Pix. Zusammen ergibt das CubePix: Das Spiel trägt seinen Namen.",
    "pixHi": "Hallo! Ich bin Pix."
+  },
+  "et": {
+   "tagline": "MAALI PILT KUUBIK KUUBIKU HAAVAL",
+   "lead": "Rahulik mõistatus kunstisõpradele. Täida kuubikud kiht kihi haaval ja kuulsad maalid, maailmaimed ning pisikesed piksliaarded ärkavad ellu. Iga pildi lõpus ootab muuseumisilt ja tõestisündinud lugu.",
+   "play": "Mängi brauseris",
+   "soon": "Varsti saadaval",
+   "pics": {
+    "one": "{n} pilt",
+    "other": "{n} pilti"
+   },
+   "floors": {
+    "one": "{n} korrus",
+    "other": "{n} korrust"
+   },
+   "langs": {
+    "one": "{n} keel",
+    "other": "{n} keelt"
+   },
+   "free": "Tasuta",
+   "layer": "KIHT {a} / {b}",
+   "revealed": "PILT ON VALMIS",
+   "about": "Lewydo on kaheliikmeline indie-mängustuudio Ukrainast. Vlad kirjutab koodi, Lilya disainib. Koos teeme mänge, mida ise armastame mängida.",
+   "thanks": "Aitäh mängimast!",
+   "site": "Meie veebileht",
+   "games": "Meie mängud Google Play poes",
+   "fact": "Huvitav fakt",
+   "how": "Sinu kuubikul on number. Puuduta sama numbriga ruute või libista üle nende ühe pika ahelana: ahelad annavad rohkem punkte.",
+   "demo": "Maal muuseumist, mis tuleb nähtavale kiht kihi haaval",
+   "aboutTitle": "Meist",
+   "pixTitle": "Tutvu Pixiga",
+   "pixName": "Ta on kuubik (inglise keeles cube) ja tema nimi on Pix. Pane need kokku ja saad CubePix: mäng kannab tema nime.",
+   "pixHi": "Tere! Mina olen Pix."
   },
   "en": {
    "tagline": "REVEAL THE PICTURE CUBE BY CUBE",
    "lead": "A calm puzzle for art lovers. Fill the cubes layer by layer, and famous paintings, wonders of the world and little pixel treasures come to life. Every picture ends with a museum label and a true story.",
    "play": "Play in the browser",
    "soon": "Coming soon to",
-   "demoNote": "Free demo in your browser: the first floors of the museum.",
    "pics": {
     "one": "{n} picture",
     "other": "{n} pictures"
@@ -619,13 +1373,11 @@
    "revealed": "PICTURE REVEALED",
    "about": "Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play.",
    "thanks": "Thank you for playing!",
-   "langTitle": "LANGUAGE",
    "site": "Our website",
    "games": "Our games on Google Play",
    "fact": "Fun fact",
    "how": "Your cube shows a number. Tap the cells with the same number, or swipe across them in one long chain: chains score more.",
    "demo": "A painting from the museum, revealed layer by layer",
-   "gp": "Get it on",
    "aboutTitle": "About us",
    "pixTitle": "Meet Pix",
    "pixName": "He’s a cube, and his name is Pix. Put the two together and you get CubePix: the game carries his name.",
@@ -636,7 +1388,6 @@
    "lead": "Un rompecabezas tranquilo para quienes aman el arte. Rellena los cubos capa a capa y verás cobrar vida cuadros famosos, maravillas del mundo y pequeños tesoros en píxeles. Cada imagen termina con una cartela de museo y una historia real.",
    "play": "Jugar en el navegador",
    "soon": "Próximamente en",
-   "demoNote": "Demo gratis en el navegador: los primeros pisos del museo.",
    "pics": {
     "one": "{n} imagen",
     "other": "{n} imágenes"
@@ -654,24 +1405,53 @@
    "revealed": "IMAGEN REVELADA",
    "about": "Lewydo es un estudio indie de dos personas de Ucrania. Vlad programa, Lilya diseña. Juntos hacemos los juegos a los que nos encanta jugar.",
    "thanks": "Gracias por jugar!",
-   "langTitle": "IDIOMA",
    "site": "Nuestra web",
    "games": "Nuestros juegos en Google Play",
    "fact": "Dato curioso",
    "how": "Tu cubo muestra un número. Toca las casillas con ese mismo número o desliza el dedo sobre ellas en una cadena larga: las cadenas dan más puntos.",
    "demo": "Un cuadro del museo, revelado capa a capa",
-   "gp": "Disponible en",
    "aboutTitle": "Sobre nosotros",
    "pixTitle": "Te presentamos a Pix",
    "pixName": "Es un cubo, Cube en inglés, y se llama Pix. Junta las dos palabras y tendrás CubePix: el juego lleva su nombre.",
    "pixHi": "¡Hola! Soy Pix."
+  },
+  "fil": {
+   "tagline": "ILITAW ANG OBRA, CUBE KADA CUBE",
+   "lead": "Isang relaks na puzzle para sa mga mahilig sa sining. Punuin ang mga cube, layer kada layer, at mabubuhay ang mga sikat na painting, mga kamanghaan ng mundo at maliliit na pixel na kayamanan. Nagtatapos ang bawat larawan sa isang label ng museo at isang totoong kuwento.",
+   "play": "Maglaro sa browser",
+   "soon": "Malapit na sa",
+   "pics": {
+    "one": "{n} larawan",
+    "other": "{n} larawan"
+   },
+   "floors": {
+    "one": "{n} palapag",
+    "other": "{n} palapag"
+   },
+   "langs": {
+    "one": "{n} wika",
+    "other": "{n} wika"
+   },
+   "free": "Libre",
+   "layer": "LAYER {a} / {b}",
+   "revealed": "LUMITAW ANG LARAWAN!",
+   "about": "Ang Lewydo ay isang indie game studio ng dalawang tao mula sa Ukraine. Si Vlad ang nagko-code, si Lilya ang nagdidisenyo. Magkasama naming ginagawa ang mga larong gustong-gusto naming laruin.",
+   "thanks": "Salamat sa paglalaro!",
+   "site": "Ang aming website",
+   "games": "Ang aming mga laro sa Google Play",
+   "fact": "Alam mo ba?",
+   "how": "May numero ang cube mo. I-tap ang mga cell na may parehong numero, o mag-swipe sa mga ito sa isang mahabang chain: mas maraming puntos ang mga chain.",
+   "demo": "Isang painting mula sa museo, lumilitaw layer kada layer",
+   "aboutTitle": "Tungkol sa amin",
+   "pixTitle": "Kilalanin si Pix",
+   "pixName": "Isa siyang cube, at Pix ang pangalan niya. Pagsamahin ang dalawa at CubePix ang lalabas: dala ng laro ang pangalan niya.",
+   "pixHi": "Hi! Ako si Pix."
   },
   "fr": {
    "tagline": "RÉVÈLE L'IMAGE CUBE PAR CUBE",
    "lead": "Un casse-tête tout en douceur pour les amoureux de l’art. Remplis les cubes couche par couche, et des tableaux célèbres, des merveilles du monde et de petits trésors en pixels prennent vie. Chaque image se termine par un cartel de musée et une histoire vraie.",
    "play": "Jouer dans le navigateur",
    "soon": "Bientôt sur",
-   "demoNote": "Démo gratuite dans le navigateur : les premiers étages du musée.",
    "pics": {
     "one": "{n} image",
     "other": "{n} images"
@@ -689,24 +1469,56 @@
    "revealed": "IMAGE RÉVÉLÉE",
    "about": "Lewydo est un studio de jeux indépendant de deux personnes, en Ukraine. Vlad code, Lilya fait le design. Ensemble, nous créons les jeux auxquels nous adorons jouer.",
    "thanks": "Merci de jouer !",
-   "langTitle": "LANGUE",
    "site": "Notre site",
    "games": "Nos jeux sur Google Play",
    "fact": "Le savais-tu ?",
    "how": "Ton cube affiche un numéro. Touche les cases qui portent le même numéro, ou glisse le doigt dessus en une longue chaîne : les chaînes rapportent plus de points.",
    "demo": "Un tableau du musée, dévoilé couche par couche",
-   "gp": "Disponible sur",
    "aboutTitle": "À propos",
    "pixTitle": "Voici Pix",
    "pixName": "C’est un cube, et il s’appelle Pix. Assemble Cube et Pix, et tu obtiens CubePix : le jeu porte son nom.",
    "pixHi": "Coucou ! Moi, c’est Pix."
+  },
+  "hr": {
+   "tagline": "OTKRIJ SLIKU KOCKICU PO KOCKICU",
+   "lead": "Opuštajuća zagonetka za ljubitelje umjetnosti. Ispunjavaj kockice sloj po sloj i oživi slavne slike, čuda svijeta i male pikselne dragocjenosti. Svaka slika završava muzejskom legendom i istinitom pričom.",
+   "play": "Igraj u pregledniku",
+   "soon": "Uskoro na",
+   "pics": {
+    "one": "{n} slika",
+    "few": "{n} slike",
+    "other": "{n} slika"
+   },
+   "floors": {
+    "one": "{n} kat",
+    "few": "{n} kata",
+    "other": "{n} katova"
+   },
+   "langs": {
+    "one": "{n} jezik",
+    "few": "{n} jezika",
+    "other": "{n} jezika"
+   },
+   "free": "Besplatno",
+   "layer": "SLOJ {a} / {b}",
+   "revealed": "SLIKA OTKRIVENA",
+   "about": "Lewydo je dvočlani indie studio za igre iz Ukrajine. Vlad programira, Lilya dizajnira. Zajedno radimo igre koje i sami volimo igrati.",
+   "thanks": "Hvala što igraš!",
+   "site": "Naša web-stranica",
+   "games": "Naše igre na Google Playu",
+   "fact": "Zanimljivost",
+   "how": "Tvoja kockica pokazuje broj. Dodiruj polja s istim brojem ili povuci prstom preko njih u jednom dugom lancu: lanci donose više bodova.",
+   "demo": "Slika iz muzeja, otkrivena sloj po sloj",
+   "aboutTitle": "O nama",
+   "pixTitle": "Upoznaj Pixa",
+   "pixName": "On je kockica, na engleskom cube, a ime mu je Pix. Spoji to dvoje i dobiješ CubePix: igra nosi njegovo ime.",
+   "pixHi": "Bok! Ja sam Pix."
   },
   "it": {
    "tagline": "SCOPRI IL QUADRO CUBO PER CUBO",
    "lead": "Un rompicapo rilassante per chi ama l’arte. Riempi i cubi strato dopo strato e prendono vita quadri famosi, meraviglie del mondo e piccoli tesori in pixel. Ogni quadro si chiude con una didascalia da museo e una storia vera.",
    "play": "Gioca nel browser",
    "soon": "Presto su",
-   "demoNote": "Demo gratuita nel browser: i primi piani del museo.",
    "pics": {
     "one": "{n} quadro",
     "other": "{n} quadri"
@@ -724,24 +1536,126 @@
    "revealed": "QUADRO SVELATO",
    "about": "Lewydo è uno studio indie di due persone dall’Ucraina. Vlad programma, Lilya disegna. Insieme creiamo i giochi a cui amiamo giocare.",
    "thanks": "Grazie di giocare!",
-   "langTitle": "LINGUA",
    "site": "Il nostro sito",
    "games": "I nostri giochi su Google Play",
    "fact": "Curiosità",
    "how": "Il tuo cubo mostra un numero. Tocca le caselle con lo stesso numero o passaci sopra col dito in una lunga catena: le catene danno più punti.",
    "demo": "Un quadro del museo, svelato strato dopo strato",
-   "gp": "Disponibile su",
    "aboutTitle": "Chi siamo",
    "pixTitle": "Ecco Pix",
    "pixName": "È un cubo, in inglese Cube, e si chiama Pix. Metti insieme le due parole e ottieni CubePix: il gioco porta il suo nome.",
    "pixHi": "Ciao! Sono Pix."
+  },
+  "lv": {
+   "tagline": "ATKLĀJ ATTĒLU KUBIŅU PA KUBIŅAM",
+   "lead": "Mierīga mīkla mākslas mīļotājiem. Aizpildi kubiņus slāni pēc slāņa — un atdzīvojas slavenas gleznas, pasaules brīnumi un mazi pikseļu dārgumi. Katrs attēls noslēdzas ar muzeja etiķeti un patiesu stāstu.",
+   "play": "Spēlēt pārlūkā",
+   "soon": "Drīzumā",
+   "pics": {
+    "zero": "{n} attēli",
+    "one": "{n} attēls",
+    "other": "{n} attēli"
+   },
+   "floors": {
+    "zero": "{n} stāvi",
+    "one": "{n} stāvs",
+    "other": "{n} stāvi"
+   },
+   "langs": {
+    "zero": "{n} valodas",
+    "one": "{n} valoda",
+    "other": "{n} valodas"
+   },
+   "free": "Bez maksas",
+   "layer": "SLĀNIS {a} / {b}",
+   "revealed": "ATTĒLS ATKLĀTS",
+   "about": "Lewydo ir neatkarīga divu cilvēku spēļu studija no Ukrainas. Vlad raksta kodu, Lilya veido dizainu. Kopā mēs radām spēles, kuras paši mīlam spēlēt.",
+   "thanks": "Paldies, ka spēlē!",
+   "site": "Mūsu vietne",
+   "games": "Mūsu spēles Google Play",
+   "fact": "Interesants fakts",
+   "how": "Uz tava kubiņa ir skaitlis. Pieskaries šūnām ar tādu pašu skaitli vai velc pāri tām vienā garā ķēdē: ķēdes dod vairāk punktu.",
+   "demo": "Glezna no muzeja, atklāta slāni pēc slāņa",
+   "aboutTitle": "Par mums",
+   "pixTitle": "Iepazīsties ar Pix",
+   "pixName": "Viņš ir kubiņš (angliski — cube), un viņu sauc Pix. Saliec abus kopā, un sanāk CubePix: spēle nes viņa vārdu.",
+   "pixHi": "Sveiki! Es esmu Pix."
+  },
+  "lt": {
+   "tagline": "ATIDENK PAVEIKSLĄ PO KUBELĮ",
+   "lead": "Ramus galvosūkis meno mylėtojams. Pildyk kubelius sluoksnis po sluoksnio — ir atgyja garsūs paveikslai, pasaulio stebuklai ir maži pikselių lobiai. Kiekvienas paveikslas baigiasi muziejaus etikete su tikra istorija.",
+   "play": "Žaisti naršyklėje",
+   "soon": "Netrukus",
+   "pics": {
+    "one": "{n} paveikslas",
+    "few": "{n} paveikslai",
+    "many": "{n} paveikslo",
+    "other": "{n} paveikslų"
+   },
+   "floors": {
+    "one": "{n} aukštas",
+    "few": "{n} aukštai",
+    "many": "{n} aukšto",
+    "other": "{n} aukštų"
+   },
+   "langs": {
+    "one": "{n} kalba",
+    "few": "{n} kalbos",
+    "many": "{n} kalbos",
+    "other": "{n} kalbų"
+   },
+   "free": "Nemokamai",
+   "layer": "SLUOKSNIS {a} / {b}",
+   "revealed": "PAVEIKSLAS ATIDENGTAS",
+   "about": "Lewydo — dviejų žmonių nepriklausoma žaidimų studija iš Ukrainos. Vlad rašo kodą, Lilya kuria dizainą. Kartu kuriame žaidimus, kuriuos patys mėgstame žaisti.",
+   "thanks": "Ačiū, kad žaidžiate!",
+   "site": "Mūsų svetainė",
+   "games": "Mūsų žaidimai Google Play",
+   "fact": "Įdomus faktas",
+   "how": "Ant tavo kubelio — skaičius. Paliesk langelius su tuo pačiu skaičiumi arba perbrauk per juos viena ilga grandinėle: grandinėlės duoda daugiau taškų.",
+   "demo": "Paveikslas iš muziejaus atsiskleidžia sluoksnis po sluoksnio",
+   "aboutTitle": "Apie mus",
+   "pixTitle": "Susipažink: Pix",
+   "pixName": "Jis — kubelis, angliškai Cube, o jo vardas Pix. Sudėk juos kartu ir gausi CubePix: žaidimas vadinasi jo vardu.",
+   "pixHi": "Labas! Aš Pix."
+  },
+  "hu": {
+   "tagline": "KOCKÁNKÉNT TÁRD FEL A KÉPET",
+   "lead": "Nyugodt fejtörő a művészet szerelmeseinek. Töltsd ki a kockákat rétegről rétegre, és életre kelnek a híres festmények, a világ csodái és az apró pixelkincsek. Minden kép egy múzeumi felirattal és egy igaz történettel zárul.",
+   "play": "Játssz a böngészőben",
+   "soon": "Hamarosan itt:",
+   "pics": {
+    "one": "{n} kép",
+    "other": "{n} kép"
+   },
+   "floors": {
+    "one": "{n} emelet",
+    "other": "{n} emelet"
+   },
+   "langs": {
+    "one": "{n} nyelv",
+    "other": "{n} nyelv"
+   },
+   "free": "Ingyenes",
+   "layer": "RÉTEG {a} / {b}",
+   "revealed": "A KÉP FELTÁRVA",
+   "about": "A Lewydo egy kétfős független játékstúdió Ukrajnából. Vlad programoz, Lilya tervez. Együtt olyan játékokat készítünk, amelyekkel mi magunk is szeretünk játszani.",
+   "thanks": "Köszönjük, hogy játszol!",
+   "site": "Weboldalunk",
+   "games": "Játékaink a Google Playen",
+   "fact": "Érdekesség",
+   "how": "A kockádon egy szám látható. Koppints az ugyanilyen számú cellákra, vagy húzd végig rajtuk az ujjad egyetlen hosszú láncban: a láncok több pontot érnek.",
+   "demo": "Egy festmény a múzeumból, rétegről rétegre feltárva",
+   "aboutTitle": "Rólunk",
+   "pixTitle": "Ismerd meg Pixet!",
+   "pixName": "Ő egy kocka, angolul cube, a neve pedig Pix. Tedd össze a kettőt, és kész a CubePix: a játék az ő nevét viseli.",
+   "pixHi": "Szia! Pix vagyok."
   },
   "nl": {
    "tagline": "ONTHUL HET PLAATJE MET BLOKJES",
    "lead": "Een rustige puzzel voor wie van kunst houdt. Vul de blokjes laag voor laag, en beroemde schilderijen, wereldwonderen en kleine pixelschatten komen tot leven. Elk plaatje eindigt met een museumbordje en een waar verhaal.",
    "play": "Speel in de browser",
    "soon": "Binnenkort op",
-   "demoNote": "Gratis demo in de browser: de eerste verdiepingen van het museum.",
    "pics": {
     "one": "{n} plaatje",
     "other": "{n} plaatjes"
@@ -759,24 +1673,53 @@
    "revealed": "PLAATJE ONTHULD",
    "about": "Lewydo is een indiegamestudio van twee mensen uit Oekraïne. Vlad programmeert, Lilya ontwerpt. Samen maken we de games die we zelf graag spelen.",
    "thanks": "Bedankt voor het spelen!",
-   "langTitle": "TAAL",
    "site": "Onze website",
    "games": "Onze games op Google Play",
    "fact": "Leuk weetje",
    "how": "Je blokje toont een nummer. Tik op de vakjes met hetzelfde nummer, of veeg eroverheen in één lange ketting: kettingen leveren meer punten op.",
    "demo": "Een schilderij uit het museum, laag voor laag onthuld",
-   "gp": "Ontdek het op",
    "aboutTitle": "Over ons",
    "pixTitle": "Maak kennis met Pix",
    "pixName": "Hij is een blokje, in het Engels Cube, en hij heet Pix. Zet die twee samen en je krijgt CubePix: het spel draagt zijn naam.",
    "pixHi": "Hoi! Ik ben Pix."
+  },
+  "nb": {
+   "tagline": "AVDEKK BILDET KUBE FOR KUBE",
+   "lead": "Et rolig puslespill for kunstelskere. Fyll kubene lag for lag, så våkner kjente malerier, verdens underverker og små pikselskatter til liv. Hvert bilde ender med en museumsetikett og en sann historie.",
+   "play": "Spill i nettleseren",
+   "soon": "Kommer snart på",
+   "pics": {
+    "one": "{n} bilde",
+    "other": "{n} bilder"
+   },
+   "floors": {
+    "one": "{n} etasje",
+    "other": "{n} etasjer"
+   },
+   "langs": {
+    "one": "{n} språk",
+    "other": "{n} språk"
+   },
+   "free": "Gratis",
+   "layer": "LAG {a} / {b}",
+   "revealed": "BILDET ER AVDEKKET",
+   "about": "Lewydo er et indiespillstudio på to personer fra Ukraina. Vlad koder, Lilya designer. Sammen lager vi spillene vi selv elsker å spille.",
+   "thanks": "Takk for at du spiller!",
+   "site": "Nettstedet vårt",
+   "games": "Spillene våre på Google Play",
+   "fact": "Visste du?",
+   "how": "Kuben din viser et tall. Trykk på rutene med samme tall, eller sveip over dem i én lang kjede: kjeder gir flere poeng.",
+   "demo": "Et maleri fra museet, avdekket lag for lag",
+   "aboutTitle": "Om oss",
+   "pixTitle": "Møt Pix",
+   "pixName": "Han er en kube, og han heter Pix. Sett dem sammen, så får du CubePix: spillet bærer navnet hans.",
+   "pixHi": "Hei! Jeg er Pix."
   },
   "pl": {
    "tagline": "ODKRYJ OBRAZ KOSTKA PO KOSTCE",
    "lead": "Spokojna łamigłówka dla miłośników sztuki. Wypełniaj kostki warstwa po warstwie, a ożyją słynne obrazy, cuda świata i małe pikselowe skarby. Każdy obraz kończy się muzealną tabliczką i prawdziwą historią.",
    "play": "Graj w przeglądarce",
    "soon": "Wkrótce w",
-   "demoNote": "Darmowe demo w przeglądarce: pierwsze piętra muzeum.",
    "pics": {
     "one": "{n} obraz",
     "few": "{n} obrazy",
@@ -800,13 +1743,11 @@
    "revealed": "OBRAZ ODKRYTY",
    "about": "Lewydo to dwuosobowe niezależne studio gier z Ukrainy. Vlad programuje, Lilya projektuje. Razem robimy gry, w które sami uwielbiamy grać.",
    "thanks": "Dziękujemy, że grasz!",
-   "langTitle": "JĘZYK",
    "site": "Nasza strona",
    "games": "Nasze gry w Google Play",
    "fact": "Ciekawostka",
    "how": "Twoja kostka pokazuje numer. Dotykaj pól z tym samym numerem albo przesuwaj po nich palcem, tworząc jeden długi łańcuch: łańcuchy dają więcej punktów.",
    "demo": "Obraz z muzeum odkrywany warstwa po warstwie",
-   "gp": "Pobierz z",
    "aboutTitle": "O nas",
    "pixTitle": "Poznaj Pixa",
    "pixName": "Jest kostką, po angielsku Cube, a na imię ma Pix. Połącz jedno z drugim, a wyjdzie CubePix: gra nosi jego imię.",
@@ -817,7 +1758,6 @@
    "lead": "Um quebra-cabeça tranquilo para quem ama arte. Preencha os cubos camada por camada e veja ganhar vida pinturas famosas, maravilhas do mundo e pequenos tesouros em pixel. Cada imagem termina com uma etiqueta de museu e uma história real.",
    "play": "Jogar no navegador",
    "soon": "Em breve no",
-   "demoNote": "Demo grátis no navegador: os primeiros andares do museu.",
    "pics": {
     "one": "{n} imagem",
     "other": "{n} imagens"
@@ -835,24 +1775,196 @@
    "revealed": "IMAGEM REVELADA",
    "about": "Lewydo é um estúdio indie de duas pessoas da Ucrânia. Vlad programa, Lilya faz o design. Juntos fazemos os jogos que adoramos jogar.",
    "thanks": "Obrigado por jogar!",
-   "langTitle": "IDIOMA",
    "site": "Nosso site",
    "games": "Nossos jogos no Google Play",
    "fact": "Curiosidade",
    "how": "Seu cubo mostra um número. Toque nas casas com o mesmo número ou deslize o dedo por elas numa corrente longa: correntes dão mais pontos.",
    "demo": "Uma pintura do museu, revelada camada por camada",
-   "gp": "Disponível no",
    "aboutTitle": "Sobre nós",
    "pixTitle": "Conheça o Pix",
    "pixName": "Ele é um cubo, Cube em inglês, e se chama Pix. Junte os dois e você tem CubePix: o jogo leva o nome dele.",
    "pixHi": "Oi! Eu sou o Pix."
+  },
+  "ro": {
+   "tagline": "DEZVĂLUIE TABLOUL CUB CU CUB",
+   "lead": "Un puzzle relaxant pentru iubitorii de artă. Umple cuburile strat cu strat și vezi cum prind viață tablouri celebre, minuni ale lumii și mici comori în pixeli. Fiecare tablou se încheie cu o etichetă de muzeu și o poveste adevărată.",
+   "play": "Joacă în browser",
+   "soon": "În curând pe",
+   "pics": {
+    "one": "{n} tablou",
+    "few": "{n} tablouri",
+    "other": "{n} de tablouri"
+   },
+   "floors": {
+    "one": "{n} etaj",
+    "few": "{n} etaje",
+    "other": "{n} de etaje"
+   },
+   "langs": {
+    "one": "{n} limbă",
+    "few": "{n} limbi",
+    "other": "{n} de limbi"
+   },
+   "free": "Gratuit",
+   "layer": "STRATUL {a} / {b}",
+   "revealed": "TABLOU DEZVĂLUIT",
+   "about": "Lewydo este un studio indie de jocuri din Ucraina, format din doi oameni. Vlad scrie codul, Lilya face designul. Împreună facem jocurile pe care ne place să le jucăm.",
+   "thanks": "Îți mulțumim că joci!",
+   "site": "Site-ul nostru",
+   "games": "Jocurile noastre pe Google Play",
+   "fact": "Curiozitate",
+   "how": "Cubul tău arată un număr. Atinge celulele cu același număr sau glisează peste ele într-un singur lanț lung: lanțurile aduc mai multe puncte.",
+   "demo": "Un tablou din muzeu, dezvăluit strat cu strat",
+   "aboutTitle": "Despre noi",
+   "pixTitle": "Fă cunoștință cu Pix",
+   "pixName": "E un cub (în engleză, cube) și se numește Pix. Pune-le împreună și obții CubePix: jocul îi poartă numele.",
+   "pixHi": "Salut! Eu sunt Pix."
+  },
+  "sk": {
+   "tagline": "ODKRY OBRAZ KOCKU PO KOCKE",
+   "lead": "Pokojný hlavolam pre milovníkov umenia. Vypĺňaj kocky vrstvu po vrstve a ožijú slávne obrazy, divy sveta aj malé pixelové poklady. Každý obraz sa končí múzejným popiskom a skutočným príbehom.",
+   "play": "Hrať v prehliadači",
+   "soon": "Už čoskoro na",
+   "pics": {
+    "one": "{n} obraz",
+    "few": "{n} obrazy",
+    "many": "{n} obrazu",
+    "other": "{n} obrazov"
+   },
+   "floors": {
+    "one": "{n} poschodie",
+    "few": "{n} poschodia",
+    "many": "{n} poschodia",
+    "other": "{n} poschodí"
+   },
+   "langs": {
+    "one": "{n} jazyk",
+    "few": "{n} jazyky",
+    "many": "{n} jazyka",
+    "other": "{n} jazykov"
+   },
+   "free": "Zadarmo",
+   "layer": "VRSTVA {a} / {b}",
+   "revealed": "OBRAZ ODKRYTÝ",
+   "about": "Lewydo je nezávislé herné štúdio z Ukrajiny, ktoré tvoria dvaja ľudia. Vlad programuje, Lilya robí dizajn. Spolu tvoríme hry, ktoré sami radi hráme.",
+   "thanks": "Ďakujeme, že hráte!",
+   "site": "Naša webová stránka",
+   "games": "Naše hry v Google Play",
+   "fact": "Zaujímavosť",
+   "how": "Na tvojej kocke je číslo. Ťukaj na políčka s rovnakým číslom alebo nimi prejdi prstom v jednej dlhej reťazi: reťaze dávajú viac bodov.",
+   "demo": "Obraz z múzea, odkrývaný vrstvu po vrstve",
+   "aboutTitle": "O nás",
+   "pixTitle": "Zoznám sa s Pixom",
+   "pixName": "Je to kocka, po anglicky cube, a volá sa Pix. Spoj to dokopy a vznikne CubePix: hra nesie jeho meno.",
+   "pixHi": "Ahoj! Ja som Pix."
+  },
+  "sl": {
+   "tagline": "RAZKRIJ SLIKO KOCKO ZA KOCKO",
+   "lead": "Umirjena uganka za ljubitelje umetnosti. Zapolnjuj kocke plast za plastjo in oživele bodo slavne slike, čudesa sveta in drobni pikselni zakladi. Vsaka slika se konča z muzejsko tablico in resnično zgodbo.",
+   "play": "Igraj v brskalniku",
+   "soon": "Kmalu v trgovini",
+   "pics": {
+    "one": "{n} slika",
+    "two": "{n} sliki",
+    "few": "{n} slike",
+    "other": "{n} slik"
+   },
+   "floors": {
+    "one": "{n} nadstropje",
+    "two": "{n} nadstropji",
+    "few": "{n} nadstropja",
+    "other": "{n} nadstropij"
+   },
+   "langs": {
+    "one": "{n} jezik",
+    "two": "{n} jezika",
+    "few": "{n} jeziki",
+    "other": "{n} jezikov"
+   },
+   "free": "Brezplačno",
+   "layer": "PLAST {a} / {b}",
+   "revealed": "SLIKA RAZKRITA",
+   "about": "Lewydo je dvočlanski neodvisen studio za videoigre iz Ukrajine. Vlad programira, Lilya oblikuje. Skupaj ustvarjava igre, ki jih tudi sama rada igrava.",
+   "thanks": "Hvala, ker igraš!",
+   "site": "Naša spletna stran",
+   "games": "Naše igre v trgovini Google Play",
+   "fact": "Zanimivost",
+   "how": "Tvoja kocka kaže številko. Dotakni se celic z isto številko ali podrsaj čez njih v eni dolgi verigi: verige prinesejo več točk.",
+   "demo": "Slika iz muzeja, razkrita plast za plastjo",
+   "aboutTitle": "O nas",
+   "pixTitle": "Spoznaj Pixa",
+   "pixName": "Je kocka, po angleško »cube«, in ime mu je Pix. Ko oboje združiš, dobiš CubePix: igra nosi njegovo ime.",
+   "pixHi": "Živjo! Jaz sem Pix."
+  },
+  "fi": {
+   "tagline": "PALJASTA KUVA KUUTIO KERRALLAAN",
+   "lead": "Rauhallinen pulmapeli taiteen ystäville. Täytä kuutiot taso tasolta, ja kuuluisat maalaukset, maailman ihmeet ja pienet pikseliaarteet heräävät eloon. Jokainen kuva päättyy museon teoskylttiin ja todelliseen tarinaan.",
+   "play": "Pelaa selaimessa",
+   "soon": "Tulossa pian",
+   "pics": {
+    "one": "{n} kuva",
+    "other": "{n} kuvaa"
+   },
+   "floors": {
+    "one": "{n} kerros",
+    "other": "{n} kerrosta"
+   },
+   "langs": {
+    "one": "{n} kieli",
+    "other": "{n} kieltä"
+   },
+   "free": "Ilmainen",
+   "layer": "TASO {a} / {b}",
+   "revealed": "KUVA PALJASTETTU",
+   "about": "Lewydo on kahden hengen indiepelistudio Ukrainasta. Vlad koodaa, Lilya suunnittelee. Yhdessä teemme pelejä, joita itse rakastamme pelata.",
+   "thanks": "Kiitos, että pelaat!",
+   "site": "Verkkosivumme",
+   "games": "Pelimme Google Playssa",
+   "fact": "Tiesitkö?",
+   "how": "Kuutiossasi on numero. Napauta ruutuja, joissa on sama numero, tai pyyhkäise niiden yli yhtenä pitkänä ketjuna: ketjuista saa enemmän pisteitä.",
+   "demo": "Maalaus museosta, paljastettuna taso tasolta",
+   "aboutTitle": "Tietoa meistä",
+   "pixTitle": "Tässä on Pix",
+   "pixName": "Hän on kuutio, englanniksi cube, ja hänen nimensä on Pix. Yhdessä niistä tulee CubePix: peli kantaa hänen nimeään.",
+   "pixHi": "Hei! Minä olen Pix."
+  },
+  "sv": {
+   "tagline": "AVSLÖJA BILDEN KUB FÖR KUB",
+   "lead": "Ett lugnt pussel för alla som älskar konst. Fyll kuberna lager för lager, så vaknar berömda målningar, världens underverk och små pixelskatter till liv. Varje bild avslutas med en museiskylt och en sann historia.",
+   "play": "Spela i webbläsaren",
+   "soon": "Kommer snart till",
+   "pics": {
+    "one": "{n} bild",
+    "other": "{n} bilder"
+   },
+   "floors": {
+    "one": "{n} våning",
+    "other": "{n} våningar"
+   },
+   "langs": {
+    "one": "{n} språk",
+    "other": "{n} språk"
+   },
+   "free": "Gratis",
+   "layer": "LAGER {a} / {b}",
+   "revealed": "BILDEN ÄR AVSLÖJAD",
+   "about": "Lewydo är en ukrainsk indiespelstudio på två personer. Vlad kodar, Lilya designar. Tillsammans gör vi spelen som vi själva älskar att spela.",
+   "thanks": "Tack för att du spelar!",
+   "site": "Vår webbplats",
+   "games": "Våra spel på Google Play",
+   "fact": "Visste du?",
+   "how": "Din kub visar en siffra. Tryck på rutorna med samma siffra eller svep över dem i en lång kedja – kedjor ger fler poäng.",
+   "demo": "En målning från museet som avslöjas lager för lager",
+   "aboutTitle": "Om oss",
+   "pixTitle": "Hälsa på Pix",
+   "pixName": "Han är en kub, cube på engelska, och han heter Pix. Sätt ihop orden så får du CubePix: spelet bär hans namn.",
+   "pixHi": "Hej! Jag är Pix."
   },
   "vi": {
    "tagline": "HÉ LỘ BỨC TRANH TỪNG KHỐI MỘT",
    "lead": "Trò chơi giải đố thư thái cho người yêu nghệ thuật. Tô đầy các khối theo từng lớp, và những bức tranh nổi tiếng, kỳ quan thế giới cùng các báu vật pixel nhỏ xinh sẽ sống dậy. Mỗi bức tranh khép lại bằng một tấm nhãn bảo tàng và một câu chuyện có thật.",
    "play": "Chơi trên trình duyệt",
    "soon": "Sắp có trên",
-   "demoNote": "Bản demo miễn phí trên trình duyệt: những tầng đầu tiên của bảo tàng.",
    "pics": {
     "other": "{n} bức tranh"
    },
@@ -867,13 +1979,11 @@
    "revealed": "BỨC TRANH ĐÃ LỘ DIỆN",
    "about": "Lewydo là studio game indie hai người đến từ Ukraina. Vlad viết code, Lilya thiết kế. Cùng nhau, chúng tôi làm những trò chơi mà chính mình yêu thích.",
    "thanks": "Cảm ơn bạn đã chơi!",
-   "langTitle": "NGÔN NGỮ",
    "site": "Trang web của chúng tôi",
    "games": "Game của chúng tôi trên Google Play",
    "fact": "Bạn có biết?",
    "how": "Khối của bạn hiện một con số. Chạm vào các ô có cùng số, hoặc lướt ngón tay qua chúng thành một chuỗi dài: chuỗi cho nhiều điểm hơn.",
    "demo": "Một bức tranh trong bảo tàng, hé lộ từng lớp",
-   "gp": "Tải trên",
    "aboutTitle": "Về chúng tôi",
    "pixTitle": "Làm quen với Pix",
    "pixName": "Pix là một khối, mà khối trong tiếng Anh là Cube. Ghép Cube với Pix, ta có CubePix: trò chơi mang chính tên của Pix.",
@@ -884,7 +1994,6 @@
    "lead": "Sanatı sevenler için sakin bir bulmaca. Küpleri katman katman doldur; ünlü tablolar, dünya harikaları ve küçük piksel hazineleri canlansın. Her resim bir müze etiketi ve gerçek bir hikâyeyle biter.",
    "play": "Tarayıcıda oyna",
    "soon": "Çok yakında",
-   "demoNote": "Tarayıcıda ücretsiz demo: müzenin ilk katları.",
    "pics": {
     "one": "{n} resim",
     "other": "{n} resim"
@@ -902,24 +2011,117 @@
    "revealed": "RESİM AÇILDI",
    "about": "Lewydo, Ukrayna’dan iki kişilik bağımsız bir oyun stüdyosu. Vlad kodluyor, Lilya tasarlıyor. Birlikte oynamayı sevdiğimiz oyunları yapıyoruz.",
    "thanks": "Oynadığın için teşekkürler!",
-   "langTitle": "DİL",
    "site": "Web sitemiz",
    "games": "Google Play’deki oyunlarımız",
    "fact": "İlginç bilgi",
    "how": "Küpünde bir numara var. Aynı numaralı hücrelere dokun ya da parmağınla tek uzun bir zincir hâlinde üzerlerinden kaydır: zincirler daha çok puan getirir.",
    "demo": "Müzeden bir tablo, katman katman ortaya çıkıyor",
-   "gp": "Hemen indir:",
    "aboutTitle": "Hakkımızda",
    "pixTitle": "Pix’le tanış",
    "pixName": "O bir küp, İngilizcesiyle Cube; adı da Pix. İkisini birleştirince CubePix çıkıyor: oyun onun adını taşıyor.",
    "pixHi": "Merhaba! Ben Pix."
+  },
+  "el": {
+   "tagline": "ΑΠΟΚΑΛΥΨΕ ΤΗΝ ΕΙΚΟΝΑ ΚΥΒΟ-ΚΥΒΟ",
+   "lead": "Ένα ήρεμο παζλ για όσους αγαπούν την τέχνη. Γέμισε τους κύβους στρώση-στρώση και ζωντανεύουν διάσημοι πίνακες, θαύματα του κόσμου και μικροί θησαυροί σε pixel. Κάθε εικόνα τελειώνει με μια λεζάντα μουσείου και μια αληθινή ιστορία.",
+   "play": "Παίξε στον browser",
+   "soon": "Σύντομα στο",
+   "pics": {
+    "one": "{n} εικόνα",
+    "other": "{n} εικόνες"
+   },
+   "floors": {
+    "one": "{n} όροφος",
+    "other": "{n} όροφοι"
+   },
+   "langs": {
+    "one": "{n} γλώσσα",
+    "other": "{n} γλώσσες"
+   },
+   "free": "Δωρεάν",
+   "layer": "ΣΤΡΩΣΗ {a} / {b}",
+   "revealed": "ΕΙΚΟΝΑ ΑΠΟΚΑΛΥΦΘΗΚΕ",
+   "about": "Η Lewydo είναι ένα indie στούντιο παιχνιδιών δύο ατόμων από την Ουκρανία. Ο Vlad γράφει τον κώδικα, η Lilya σχεδιάζει. Μαζί φτιάχνουμε τα παιχνίδια που μας αρέσει να παίζουμε.",
+   "thanks": "Ευχαριστούμε που παίζετε!",
+   "site": "Η ιστοσελίδα μας",
+   "games": "Τα παιχνίδια μας στο Google Play",
+   "fact": "Το ήξερες;",
+   "how": "Ο κύβος σου δείχνει έναν αριθμό. Πάτα τα κελιά με τον ίδιο αριθμό ή σύρε το δάχτυλο πάνω τους σε μια μεγάλη αλυσίδα: οι αλυσίδες δίνουν περισσότερους πόντους.",
+   "demo": "Ένας πίνακας από το μουσείο που αποκαλύπτεται στρώση-στρώση",
+   "aboutTitle": "Σχετικά με εμάς",
+   "pixTitle": "Γνώρισε τον Pix",
+   "pixName": "Είναι κύβος (cube) και τον λένε Pix. Βάλε τα δύο μαζί και έχεις CubePix: το παιχνίδι έχει το όνομά του.",
+   "pixHi": "Γεια! Είμαι ο Pix."
+  },
+  "bg": {
+   "tagline": "РАЗКРИЙ КАРТИНА КУБЧЕ ПО КУБЧЕ",
+   "lead": "Спокоен пъзел за любителите на изкуството. Запълвай кубчетата слой по слой и прочути картини, чудеса на света и малки пикселни съкровища оживяват. Всяка картина завършва с музеен етикет и истинска история.",
+   "play": "Играй в браузъра",
+   "soon": "Скоро в",
+   "pics": {
+    "one": "{n} картина",
+    "other": "{n} картини"
+   },
+   "floors": {
+    "one": "{n} етаж",
+    "other": "{n} етажа"
+   },
+   "langs": {
+    "one": "{n} език",
+    "other": "{n} езика"
+   },
+   "free": "Безплатно",
+   "layer": "СЛОЙ {a} / {b}",
+   "revealed": "КАРТИНАТА Е РАЗКРИТА",
+   "about": "Lewydo е инди студио за игри от Украйна, в което сме двама души. Vlad пише кода, Lilya прави дизайна. Заедно създаваме игрите, които самите ние обичаме да играем.",
+   "thanks": "Благодарим, че играете!",
+   "site": "Нашият сайт",
+   "games": "Нашите игри в Google Play",
+   "fact": "Интересен факт",
+   "how": "Твоето кубче показва число. Докосвай клетките със същото число или плъзни пръст по тях в една дълга верига: веригите носят повече точки.",
+   "demo": "Картина от музея, разкрита слой по слой",
+   "aboutTitle": "За нас",
+   "pixTitle": "Запознай се с Pix",
+   "pixName": "Той е кубче (на английски cube), а името му е Pix. Сложи ги заедно и ще получиш CubePix: играта носи неговото име.",
+   "pixHi": "Здрасти! Аз съм Pix."
+  },
+  "kk": {
+   "tagline": "СУРЕТТІ ТЕКШЕЛЕП АШ",
+   "lead": "Өнерді сүйетіндерге арналған жайбарақат басқатырғыш. Текшелерді қат-қатымен толтыр — атақты суреттер, әлем ғажайыптары мен кішкентай пиксель қазыналары жанданады. Әр сурет шынайы оқиғасы бар музей түсініктемесімен аяқталады.",
+   "play": "Браузерде ойнау",
+   "soon": "Жақында",
+   "pics": {
+    "one": "{n} сурет",
+    "other": "{n} сурет"
+   },
+   "floors": {
+    "one": "{n} қабат",
+    "other": "{n} қабат"
+   },
+   "langs": {
+    "one": "{n} тіл",
+    "other": "{n} тіл"
+   },
+   "free": "Тегін",
+   "layer": "ҚАТ {a} / {b}",
+   "revealed": "СУРЕТ АШЫЛДЫ",
+   "about": "Lewydo — Украинадан шыққан екі адамдық инди ойын студиясы. Vlad код жазады, Lilya дизайн жасайды. Біз өзіміз ойнағанды жақсы көретін ойындарды бірге жасаймыз.",
+   "thanks": "Ойнағаның үшін рақмет!",
+   "site": "Біздің сайт",
+   "games": "Google Play дүкеніндегі ойындарымыз",
+   "fact": "Қызық дерек",
+   "how": "Текшеңде сан тұр. Дәл сондай саны бар ұяшықтарды түрт немесе олардың бойымен бір ұзын тізбекпен сырғыт: тізбектер көбірек ұпай береді.",
+   "demo": "Музейдегі сурет қат-қатымен ашылады",
+   "aboutTitle": "Біз туралы",
+   "pixTitle": "Танысып ал: Pix",
+   "pixName": "Ол — текше, яғни Cube, ал аты — Pix. Екеуін қоссаң, CubePix шығады: ойын оның атын алып жүр.",
+   "pixHi": "Сәлем! Мен — Pix."
   },
   "uk": {
    "tagline": "РОЗКРИЙ КАРТИНУ КУБИКАМИ",
    "lead": "Спокійна головоломка для тих, хто любить мистецтво. Заповнюй кубики шар за шаром — і оживають знамениті картини, чудеса світу й маленькі піксельні скарби. Кожна картина закінчується музейною етикеткою з правдивою історією.",
    "play": "Грати в браузері",
    "soon": "Скоро в",
-   "demoNote": "Безкоштовне демо в браузері — перші поверхи музею.",
    "pics": {
     "one": "{n} картина",
     "few": "{n} картини",
@@ -943,24 +2145,161 @@
    "revealed": "КАРТИНУ РОЗКРИТО",
    "about": "Lewydo — інді-студія з двох людей з України. Влад пише код, Ліля робить дизайн. Разом ми робимо ігри, у які самі любимо грати.",
    "thanks": "Дякуємо, що граєте!",
-   "langTitle": "МОВА",
    "site": "Наш сайт",
    "games": "Наші ігри в Google Play",
    "fact": "Цікавий факт",
    "how": "На твоєму кубі — номер. Тисни на клітинки з тим самим номером або веди по них пальцем одним довгим ланцюжком: ланцюжки дають більше очок.",
    "demo": "Картина з музею розкривається шар за шаром",
-   "gp": "Доступно в",
    "aboutTitle": "Про нас",
    "pixTitle": "Знайомся: Pix",
    "pixName": "Він кубик, тобто Cube, а звати його Pix. Разом виходить CubePix — гра носить його ім’я.",
    "pixHi": "Привіт! Я Pix."
+  },
+  "he": {
+   "tagline": "חשפו את התמונה קובייה אחר קובייה",
+   "lead": "פאזל רגוע לאוהבי אמנות. מלאו את הקוביות שכבה אחר שכבה — וציורים מפורסמים, פלאי תבל ואוצרות פיקסלים קטנים יתעוררו לחיים. כל תמונה מסתיימת בשלט מוזיאון ובסיפור אמיתי.",
+   "play": "לשחק בדפדפן",
+   "soon": "בקרוב ב-",
+   "pics": {
+    "one": "{n} תמונה",
+    "two": "{n} תמונות",
+    "other": "{n} תמונות"
+   },
+   "floors": {
+    "one": "{n} קומה",
+    "two": "{n} קומות",
+    "other": "{n} קומות"
+   },
+   "langs": {
+    "one": "{n} שפה",
+    "two": "{n} שפות",
+    "other": "{n} שפות"
+   },
+   "free": "בחינם",
+   "layer": "שכבה {a} / {b}",
+   "revealed": "התמונה נחשפה",
+   "about": "Lewydo הוא סטודיו אינדי קטן למשחקים מאוקראינה — שני אנשים בסך הכול. Vlad מתכנת, Lilya מעצבת. יחד אנחנו יוצרים את המשחקים שאנחנו עצמנו אוהבים לשחק.",
+   "thanks": "תודה שאתם משחקים!",
+   "site": "האתר שלנו",
+   "games": "המשחקים שלנו ב-Google Play",
+   "fact": "הידעתם?",
+   "how": "על הקובייה שלכם יש מספר. הקישו על המשבצות עם אותו מספר, או החליקו עליהן בשרשרת אחת ארוכה: שרשראות נותנות יותר נקודות.",
+   "demo": "ציור מהמוזיאון נחשף שכבה אחר שכבה",
+   "aboutTitle": "עלינו",
+   "pixTitle": "הכירו את Pix",
+   "pixName": "הוא קובייה — Cube, ושמו Pix. מחברים את השניים ומקבלים CubePix: המשחק נושא את שמו.",
+   "pixHi": "היי! אני Pix."
+  },
+  "ar": {
+   "tagline": "اكشف اللوحة مكعبًا بعد مكعب",
+   "lead": "لعبة ألغاز هادئة لمحبي الفن. املأ المكعبات طبقةً بعد طبقة، فتدبّ الحياة في لوحات شهيرة وعجائب الدنيا وكنوز بكسل صغيرة. تنتهي كل لوحة ببطاقة متحفية وقصة حقيقية.",
+   "play": "العب في المتصفح",
+   "soon": "قريبًا على",
+   "pics": {
+    "zero": "{n} لوحة",
+    "one": "{n} لوحة",
+    "two": "{n} لوحتان",
+    "few": "{n} لوحات",
+    "many": "{n} لوحة",
+    "other": "{n} لوحة"
+   },
+   "floors": {
+    "zero": "{n} طابق",
+    "one": "{n} طابق",
+    "two": "{n} طابقان",
+    "few": "{n} طوابق",
+    "many": "{n} طابقًا",
+    "other": "{n} طابق"
+   },
+   "langs": {
+    "zero": "{n} لغة",
+    "one": "{n} لغة",
+    "two": "{n} لغتان",
+    "few": "{n} لغات",
+    "many": "{n} لغة",
+    "other": "{n} لغة"
+   },
+   "free": "مجانًا",
+   "layer": "الطبقة {a} / {b}",
+   "revealed": "انكشفت اللوحة",
+   "about": "استوديو Lewydo فريق ألعاب مستقل من أوكرانيا يتكوّن من شخصين: يبرمج Vlad، وتصمّم Lilya. معًا نصنع الألعاب التي نحب أن نلعبها.",
+   "thanks": "شكرًا لأنك تلعب!",
+   "site": "موقعنا",
+   "games": "ألعابنا على Google Play",
+   "fact": "معلومة طريفة",
+   "how": "يظهر على مكعبك رقم. اضغط على الخانات التي تحمل الرقم نفسه، أو مرّر إصبعك عليها في سلسلة واحدة طويلة: السلاسل تمنحك نقاطًا أكثر.",
+   "demo": "لوحة من المتحف تنكشف طبقةً بعد طبقة",
+   "aboutTitle": "من نحن",
+   "pixTitle": "تعرّف إلى Pix",
+   "pixName": "إنه مكعّب (Cube)، واسمه Pix. اجمعهما معًا تحصل على CubePix: اللعبة تحمل اسمه.",
+   "pixHi": "مرحبًا! أنا Pix."
+  },
+  "hi": {
+   "tagline": "क्यूब-दर-क्यूब तस्वीर खोलो",
+   "lead": "कला पसंद करने वालों के लिए एक सुकून भरा पज़ल। क्यूबों को परत-दर-परत भरो — और मशहूर पेंटिंग्स, दुनिया के अजूबे और छोटे-छोटे पिक्सेल ख़ज़ाने जी उठते हैं। हर तस्वीर के अंत में म्यूज़ियम का लेबल और एक सच्ची कहानी मिलती है।",
+   "play": "ब्राउज़र में खेलो",
+   "soon": "जल्द ही आ रहा है",
+   "pics": {
+    "one": "{n} तस्वीर",
+    "other": "{n} तस्वीरें"
+   },
+   "floors": {
+    "one": "{n} मंज़िल",
+    "other": "{n} मंज़िलें"
+   },
+   "langs": {
+    "one": "{n} भाषा",
+    "other": "{n} भाषाएँ"
+   },
+   "free": "फ़्री",
+   "layer": "परत {a} / {b}",
+   "revealed": "तस्वीर खुल गई",
+   "about": "Lewydo यूक्रेन का दो लोगों का इंडी गेम स्टूडियो है। Vlad कोड लिखते हैं, Lilya डिज़ाइन करती हैं। हम मिलकर वो गेम बनाते हैं जिन्हें खेलना हमें ख़ुद पसंद है।",
+   "thanks": "खेलने के लिए शुक्रिया!",
+   "site": "हमारी वेबसाइट",
+   "games": "Google Play पर हमारे गेम्स",
+   "fact": "मज़ेदार बात",
+   "how": "तुम्हारे क्यूब पर एक नंबर है। उसी नंबर वाले खानों पर टैप करो, या एक लंबी चेन में उन पर उँगली फेरो: चेन से ज़्यादा पॉइंट्स मिलते हैं।",
+   "demo": "म्यूज़ियम की एक पेंटिंग, जो परत-दर-परत खुलती है",
+   "aboutTitle": "हमारे बारे में",
+   "pixTitle": "Pix से मिलो",
+   "pixName": "वह एक क्यूब है, और उसका नाम Pix है। दोनों को मिलाओ तो बनता है CubePix: गेम उसी के नाम पर है।",
+   "pixHi": "नमस्ते! मैं Pix हूँ।"
+  },
+  "th": {
+   "tagline": "เผยภาพทีละคิวบ์",
+   "lead": "เกมพัซเซิลแสนสบายสำหรับคนรักศิลปะ ระบายคิวบ์ทีละเลเยอร์ แล้วภาพวาดชื่อดัง สิ่งมหัศจรรย์ของโลก และขุมทรัพย์พิกเซลเล็กๆ จะมีชีวิตขึ้นมา ทุกภาพจบด้วยป้ายพิพิธภัณฑ์และเรื่องจริงหนึ่งเรื่อง",
+   "play": "เล่นในเบราว์เซอร์",
+   "soon": "เร็วๆ นี้บน",
+   "pics": {
+    "other": "{n} ภาพ"
+   },
+   "floors": {
+    "other": "{n} ชั้น"
+   },
+   "langs": {
+    "other": "{n} ภาษา"
+   },
+   "free": "ฟรี",
+   "layer": "เลเยอร์ {a} / {b}",
+   "revealed": "เผยภาพแล้ว",
+   "about": "Lewydo คือสตูดิโอเกมอินดี้สองคนจากยูเครน Vlad เขียนโค้ด Lilya ออกแบบ เราสองคนช่วยกันสร้างเกมที่เราเองก็รักที่จะเล่น",
+   "thanks": "ขอบคุณที่เล่นเกมของเรา!",
+   "site": "เว็บไซต์ของเรา",
+   "games": "เกมของเราใน Google Play",
+   "fact": "เกร็ดน่ารู้",
+   "how": "คิวบ์ของคุณมีตัวเลขอยู่ แตะช่องที่มีเลขเดียวกัน หรือลากผ่านช่องเหล่านั้นให้เป็นคอมโบยาวๆ คอมโบได้แต้มมากกว่า",
+   "demo": "ภาพวาดจากพิพิธภัณฑ์ ที่เผยออกมาทีละเลเยอร์",
+   "aboutTitle": "เกี่ยวกับเรา",
+   "pixTitle": "มารู้จัก Pix กัน",
+   "pixName": "เขาเป็นคิวบ์ (Cube) และชื่อของเขาคือ Pix เอาสองคำมารวมกันก็ได้ CubePix: เกมนี้ใช้ชื่อของเขา",
+   "pixHi": "สวัสดี! เราชื่อ Pix นะ"
   },
   "ko": {
    "tagline": "큐브 하나씩 그림을 드러내요",
    "lead": "예술을 사랑하는 분을 위한 편안한 퍼즐. 한 레이어씩 큐브를 채우면 명화와 세계의 불가사의, 작은 픽셀 보물이 살아나요. 그림을 완성할 때마다 박물관 설명판과 실제 이야기가 기다려요.",
    "play": "브라우저에서 플레이",
    "soon": "곧 출시",
-   "demoNote": "브라우저에서 무료 데모: 박물관의 처음 몇 층을 즐겨 보세요.",
    "pics": {
     "other": "그림 {n}점"
    },
@@ -975,13 +2314,11 @@
    "revealed": "그림 완성",
    "about": "Lewydo는 우크라이나의 2인 인디 게임 스튜디오예요. Vlad는 코드를, Lilya는 디자인을 맡아요. 우리가 즐겨 하는 게임을 함께 만들어요.",
    "thanks": "플레이해 주셔서 고마워요!",
-   "langTitle": "언어",
    "site": "웹사이트",
    "games": "Google Play의 우리 게임",
    "fact": "재미있는 사실",
    "how": "내 큐브에는 번호가 있어요. 같은 번호의 칸을 탭하거나, 손가락을 떼지 않고 길게 이어서 드래그하세요. 체인을 만들면 점수를 더 받아요.",
    "demo": "박물관의 명화가 레이어마다 드러나는 모습",
-   "gp": "다운로드하기",
    "aboutTitle": "소개",
    "pixTitle": "Pix를 소개해요",
    "pixName": "Pix는 큐브, 영어로 Cube예요. 그리고 이름은 Pix죠. 둘을 합치면 CubePix! 게임 이름에 Pix의 이름이 담겨 있어요.",
@@ -992,7 +2329,6 @@
    "lead": "アートが好きな人のための、のんびりパズル。レイヤーごとにキューブを埋めていくと、名画や世界の不思議、小さなピクセルの宝物がよみがえります。絵が完成するたびに、美術館の解説パネルと本当にあった物語が待っています。",
    "play": "ブラウザでプレイ",
    "soon": "近日配信",
-   "demoNote": "ブラウザで無料デモ：美術館の最初のフロアを遊べます。",
    "pics": {
     "other": "{n}枚の絵"
    },
@@ -1007,13 +2343,11 @@
    "revealed": "絵が完成！",
    "about": "Lewydo はウクライナの2人組インディーゲームスタジオです。Vlad がコードを書き、Lilya がデザインを担当。自分たちが大好きなゲームを一緒に作っています。",
    "thanks": "遊んでくれてありがとう！",
-   "langTitle": "言語",
    "site": "ウェブサイト",
    "games": "Google Play の私たちのゲーム",
    "fact": "豆知識",
    "how": "キューブには番号が書いてあります。同じ番号のマスをタップするか、指を離さずに一気になぞりましょう。チェーンにすると得点アップ！",
    "demo": "美術館の名画がレイヤーごとに姿を現します",
-   "gp": "今すぐ入手",
    "aboutTitle": "私たちについて",
    "pixTitle": "Pixを紹介します",
    "pixName": "Pixはキューブ、英語でCube。そして名前はPix。ふたつを合わせるとCubePix。ゲームの名前は、Pixの名前でもあるんです。",
@@ -1024,7 +2358,6 @@
    "lead": "一款獻給藝術愛好者的療癒解謎遊戲。一層一層填滿方塊，世界名畫、世界奇觀和小小的像素寶物就會活起來。每完成一幅畫，都有一張博物館說明牌和一個真實的故事。",
    "play": "在瀏覽器中遊玩",
    "soon": "即將登上",
-   "demoNote": "瀏覽器免費試玩：博物館的前幾層樓。",
    "pics": {
     "other": "{n} 幅畫"
    },
@@ -1039,13 +2372,11 @@
    "revealed": "畫作揭曉",
    "about": "Lewydo 是來自烏克蘭的兩人獨立遊戲工作室。Vlad 寫程式，Lilya 負責設計。我們一起做自己愛玩的遊戲。",
    "thanks": "謝謝你的遊玩！",
-   "langTitle": "語言",
    "site": "我們的網站",
    "games": "我們在 Google Play 的遊戲",
    "fact": "冷知識",
    "how": "你的方塊上有一個數字。點擊數字相同的格子，或手指不離開螢幕一路滑過去連成長長的連鎖：連鎖能拿到更多分數。",
    "demo": "博物館裡的一幅名畫，正一層層揭曉",
-   "gp": "立即下載",
    "aboutTitle": "關於我們",
    "pixTitle": "認識 Pix",
    "pixName": "他是一顆方塊，英文叫 Cube，名字叫 Pix。兩個合在一起就是 CubePix：遊戲的名字裡，就有他的名字。",
