@@ -136,7 +136,8 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    Instagram https://www.instagram.com/lewydo_game/, YouTube https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw (канал Влада
    @veldan1202, де він пише про ігри Lewydo), Facebook https://www.facebook.com/profile.php?id=61594804110096, **Discord** (09.10.2026, сервер Lewydo, канал general)
    https://discord.gg/PvUA3DwSP — `SOCIAL` у `tools/build.mjs` (і `sameAs` у JSON-LD, `brand.json` → `socials`). Сайти ігор ведуть
-   у свій канал того ж сервера: CubePix https://discord.gg/qD87CA9Q8, Orbit Dash https://discord.gg/aYJzP2vSt.
+   у свій канал того ж сервера: CubePix https://discord.gg/qD87CA9Q8, Orbit Dash https://discord.gg/aYJzP2vSt. **X** (14.10.2026)
+   https://x.com/lewydo_game — там само (`SOCIAL`, `sameAs`, `socials.x`); сайти ігор — посилання в підвалі.
    **Пошта Lewydo — roshevasternin@gmail.com** (власник 03.10.2026): на неї — «Написати нам» (`contact.mail`), картка Влада,
    `brand.json` → `socials.email`; veldan1202@… — особиста, на сайті й у кіті не показувати.
 8. **`/brand/` — вкладка «Бренд»** (у меню й підвалі; посилання й під карткою «код ↔ дизайн»): як упізнати Lewydo, правила,
