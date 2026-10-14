@@ -29,7 +29,7 @@
     const replay = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
     // the Lewydo sound starts 2.09 s into the splash (its first beat lands on the heart's «lub» at 2.12 s). Browsers allow sound
     // only after a tap, so a web splash that opens by itself stays silent; respect your game's sound setting (off = silence).
-    const sound = new Audio('../../sound/lewydo-heartbeat.mp3'); sound.preload = 'auto'; sound.volume = 1;
+    const sound = new Audio('../../sound/lewydo-heartbeat.wav'); sound.preload = 'auto'; sound.volume = 1;
     let t = 0;
     document.getElementById('again').onclick = () => {
       replay(document.getElementById('splash'), 'lw-splash');

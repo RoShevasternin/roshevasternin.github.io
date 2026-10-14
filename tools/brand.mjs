@@ -2,12 +2,15 @@
 // brand/lewydo-brand-kit.zip (the whole kit in one file) and the parts of brand/index.html made from the kit (downloads, code, the beat graph).
 // The kit in brand/kit/ is the source; all of this only describes it. Deterministic like the rest of the build: the same kit → the same bytes.
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const ROOT = new URL('../', import.meta.url);
 const buf = (p) => readFileSync(new URL(p, ROOT)), has = (p) => existsSync(new URL(p, ROOT));
 const list = (dir) => readdirSync(new URL(dir, ROOT)).filter((f) => !f.startsWith('.')).sort();
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const pngSize = (p) => { const b = buf(p); return [b.readUInt32BE(16), b.readUInt32BE(20)]; };
+const sha256 = (p) => createHash('sha256').update(buf(p)).digest('hex');
+const SOUND = 'brand/kit/sound/lewydo-heartbeat.wav';
 const kb = (p) => { const n = buf(p).length; return n < 1024 ? n + ' B' : Math.round(n / 1024) + ' KB'; };
 
 // ── the standard in numbers (dp = the design size; the pictures are @3x of it) ──
@@ -70,17 +73,19 @@ export function brandJson({ SITE, YEAR, G, CP, IDS }) {
         { part: 'line', from: 1.15, to: 1.85, fadeIn: 0.3, scaleX: [0, 1], interpolation: 'exp5Out', origin: 'center' },
         { part: 'heartbeat finale', from: 2.0, lub: 2.17, dub: 2.45, to: 2.9, code: 'LewydoHeartbeat.finale' },
         { part: 'waves of light', at: [2.12, 2.4], what: 'two copies of brand_back: alpha 0.55 → 0, scale 1 → 1.9; alpha 0.32 → 0, scale 1 → 1.55' },
-        { part: 'sound', at: 2.09, file: 'kit/sound/lewydo-heartbeat.*', note: 'the heart only; its first beat is 0.03 s in — on the lub' },
+        { part: 'sound', at: 2.09, file: 'kit/sound/lewydo-heartbeat.wav', note: 'the heart only; its first beat is 0.03 s in — on the lub' },
         { part: 'onComplete', at: 3.8 }],
       then: 'the game\'s LoaderScreen', theme: 'The background and the ambient light may follow the game. The Lockup, its numbers, its timeline and its sound never change.' },
     sound: { name: 'The Lewydo sound', what: 'The heart only: two soft, round tuned heartbeats (A2 → E2, a felt mallet), lub and dub, on the heart\'s two beats — with their own overtones, so a phone speaker plays them too.',
-      everywhere: 'One file everywhere (owner 08.10.2026: «it must sound the same everywhere»): every game, its web prototype and its site play these very files — the .ogg is byte for byte the one in CubePix and Orbit Dash (sha256 0f0d3f4c…); the .wav and .mp3 are made from it.',
-      files: { ogg: K + 'sound/lewydo-heartbeat.ogg', mp3: K + 'sound/lewydo-heartbeat.mp3', wav: K + 'sound/lewydo-heartbeat.wav' },
-      seconds: 2.2, firstBeat: 0.03, beats: [0.03, 0.31], level: '−13.5 LUFS, peaks −1 dBFS (the phone version; the gain does the rest: 1.0)', gain: 'Full (1.0) when the game\'s sounds are at their usual level; the player\'s slider may only make it quieter; sounds off = 0.',
+      everywhere: 'One file everywhere (owner 08.10.2026: «it must sound the same everywhere»; 14.10.2026: «WAV, so it is high quality — the same everywhere»): every game, its web prototype and its site play this very .wav, byte for byte (check the sha256). Lossless, so every platform plays the very same samples. There are no .ogg or .mp3 copies: each decoder (Android, iOS, browsers) would make them sound a little different.',
+      files: { wav: K + 'sound/lewydo-heartbeat.wav' },
+      file: { name: 'lewydo-heartbeat.wav', format: 'WAV (RIFF), PCM 16-bit, 48 kHz, stereo, no metadata chunks', frames: 105600, bytes: buf(SOUND).length, sha256: sha256(SOUND) },
+      source: 'Decoded bit-exact (14.10.2026) from the kit\'s former .ogg — the one the games played since 08.10.2026, sha256 0f0d3f4c… (in git history): ffmpeg -i lewydo-heartbeat.ogg -map_metadata -1 -fflags +bitexact -flags:a +bitexact -c:a pcm_s16le lewydo-heartbeat.wav',
+      seconds: 2.2, firstBeat: 0.03, beats: [0.03, 0.31], level: '−13.5 LUFS, peak −0.94 dBFS (≈ −1; the phone version; the gain does the rest: 1.0)', gain: 'Full (1.0) when the game\'s sounds are at their usual level; the player\'s slider may only make it quieter; sounds off = 0.',
       startInSplash: 2.09, rules: ['Once per launch, with the splash — never in a loop.', 'At full volume when the game\'s sounds are at their usual level (gain 1.0); the player\'s slider may only make it quieter; sounds off = silence.',
-        'One file everywhere — every game, its web prototype and its site — so Lewydo sounds the same wherever it is heard. Never a quieter or a «web» copy.',
+        'One file everywhere — lewydo-heartbeat.wav in every game, its web prototype and its site, byte for byte — so Lewydo sounds the same wherever it is heard. Never a quieter, a «web» or a compressed (.ogg / .mp3) copy.',
         'Never change, cut, speed up or layer it under music.', 'Browsers allow sound only after a tap: a web splash that opens by itself stays silent.'],
-      generator: 'tools/sonic/make_sound6.py (variant D4 «Бум-бум · м\'якше»: D\'s heart without its notes, rounder) → tools/sonic/make_phone.py kit.wav out.wav 2.2 2.5 120 280 2000 (the phone version B, 03.10.2026: its own overtones 280 Hz – 2 kHz, peak −1 dBFS)' },
+      generator: 'tools/sonic/make_sound6.py (variant D4 «Бум-бум · м\'якше»: D\'s heart without its notes, rounder) → tools/sonic/make_phone.py kit.wav out.wav 2.2 2.5 120 280 2000 (the phone version B, 03.10.2026: its own overtones 280 Hz – 2 kHz, peak −1 dBFS) → .ogg in the games (08.10.2026) → this .wav, decoded from it bit-exact (14.10.2026)' },
     pronunciation: { ipa: '/lɛv.waɪ.doʊ/', say: 'Lev-why-do', uk: 'Лев-вай-до', from: 'Love What You Do — said quickly' },
     heartbeat: { once: true, when: ['the splash shows', 'About us opens (every time)', 'the menu pill appears'], never: 'in a loop (no Actions.forever, no infinite)',
       front: HEART.map(([scale, seconds, ease]) => ({ scale, seconds, ease })), back: { delay: GLOW.delay, steps: GLOW.steps.map(([scale, seconds, ease]) => ({ scale, seconds, ease })), stays: 1.05 },
@@ -193,7 +198,7 @@ export function dlCards({ W }) {
     card('pill', img('/brand/kit/png/pill.png', ...pngSize('brand/kit/png/pill.png'), ' style="width:auto;height:54px"'), [png('pill')]),
     card('atlas', img('/brand/kit/webp/brand_front.webp', 420, 420, ' style="width:90px"'),
       [a('/brand/kit/atlas/brand.atlas', 'brand.atlas'), a('/brand/kit/atlas/brand.png', `brand.png · ${pngSize('brand/kit/atlas/brand.png').join('×')} · ${kb('brand/kit/atlas/brand.png')}`)]),
-    card('sound', '<span class="pv-code">♥ ♪</span>', ['ogg', 'mp3', 'wav'].map((x) => a(`/brand/kit/sound/lewydo-heartbeat.${x}`, `lewydo-heartbeat.${x} · ${kb(`brand/kit/sound/lewydo-heartbeat.${x}`)}`))),
+    card('sound', '<span class="pv-code">♥ ♪</span>', [a('/' + SOUND, `lewydo-heartbeat.wav · ${kb(SOUND)}`)]),
     card('code', '<span class="pv-code">&lt;/&gt;</span>', CODE.map(([f]) => a('/brand/kit/code/' + f, f.split('/').pop()))),
     card('icon', img('/assets/icon-512.png', 512, 512, ' style="width:110px;border-radius:24px"'),
       [a('/assets/icon-512.png', 'icon 512×512'), a('/assets/icon-180.png', 'icon 180×180'), a('/assets/favicon.png', 'favicon 64×64')]),

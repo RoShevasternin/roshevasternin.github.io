@@ -105,3 +105,7 @@ X, Y, Z, T, U and D4; V and W are in round 7's files.
   saturation 2.5, high-pass 120 Hz, peak −1 dBFS: version B, chosen for CubePix on 03.10.2026 («on the phone it's very quiet»), then
   copied by Orbit Dash. On 08.10.2026 the owner: «the brand sound is better now, and it must sound the same everywhere» — the kit's
   `brand/kit/sound/` now holds this very version: the `.ogg` byte for byte from the games, the `.wav` decoded from it, the `.mp3` from the `.wav`.
+- 14.10.2026 the owner: «WAV, so it is high quality — the same everywhere». The kit holds **only** `lewydo-heartbeat.wav` (sha256
+  `97761208…`): decoded bit-exact from that `.ogg` (`ffmpeg -i lewydo-heartbeat.ogg -map_metadata -1 -fflags +bitexact -flags:a +bitexact
+  -c:a pcm_s16le lewydo-heartbeat.wav`, no LIST chunk) — byte for byte the file in Orbit Dash. The `.ogg` and `.mp3` are gone (git history).
+  The preview scripts above now play this `.wav` as «the current sound».
