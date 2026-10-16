@@ -120,7 +120,8 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
      **Світ Orbit Dash — у стилі гри 2.0, «D1 Clean Neon»** (UI v2 гри, 14.10.2026): небо гри (сяйво м'яча, фіолетовий бік, віньєтка),
      слово ORBIT DASH — Inter Display, як у грі; бейдж версії (`src/games.json` → `orbitdash.version`) і **10 слідів м'яча** — назви
      й рідкість з гри (`orbitdash.trails`: c/r/e/l — за ціною в самоцвітах, m — за пройдений музичний рівень; назви не перекладаються);
-     текст `od.new` — що нового (сліди, магазин, відродження, тренування). Іконка — нова з гри 2.0 (`assets/games/orbitdash-icon.webp`).
+     текст `od.new` — що нового в останньому оновленні (з 2.1, 16.10.2026: 82 мови, гра сама бере мову телефона, глобус у
+     налаштуваннях — ті самі слова, що на сайті гри; у 2.0 було: сліди, магазин, відродження, тренування). Іконка — нова з гри 2.0 (`assets/games/orbitdash-icon.webp`).
      **Тести:** гра — сусідній репозиторій, тож `npm test` говорить із заглушкою тим самим протоколом; щоб перевірити зі справжньою
      грою — `OD_SITE=<Game-Orbit-Dash-PRIVATE/site/dist чи клон Game-Orbit-Dash> npm test` (`tests/serve.mjs` віддає її за `/Game-Orbit-Dash/`,
      як Pages; так само `npm run look`).
