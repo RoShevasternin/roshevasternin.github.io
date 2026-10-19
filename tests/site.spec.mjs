@@ -195,6 +195,7 @@ test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async (
   await expect(page.locator('.lw-lockup')).toBeVisible();
   await expect(page.locator('a[href="/"]')).toBeVisible();
   expect(await (await request.get('./app-ads.txt')).text()).toContain('pub-4052300465234748');        // AdMob reads it: never lose it
+  expect(await (await request.get('./googlea91a80ac974455de.html')).text()).toContain('google-site-verification');  // Search Console → Play Console: never lose it
   expect(await (await request.get('./robots.txt')).text()).toContain('sitemap.xml');
   expect(await (await request.get('./sitemap.xml')).text()).toContain('Game-CubePix/');
   expect(await (await request.get('./sitemap.xml')).text()).toContain('/brand/');
