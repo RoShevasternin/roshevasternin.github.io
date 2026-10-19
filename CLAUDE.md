@@ -89,7 +89,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 | `tools/webp.py`, `tools/fetch-fonts.py`, `tools/cubepix-snapshot.mjs`, `tools/orbitdash-snapshot.mjs` | картинки → WebP; шрифти (Nunito; підмножина Inter — підпис творців і слово ORBIT DASH, як у грі 2.0); дані CubePix і Orbit Dash |
 | `tests/` | `npm test` (`site.spec`), `npm run look`, `npm run kit`; `serve.mjs` — сервер як GitHub Pages |
 | `app-ads.txt` | **для AdMob — не чіпати й не видаляти** (без нього реклама в іграх заробляє менше) |
-| `googlea91a80ac974455de.html` | **підтвердження сайту в Google Search Console — не чіпати й не видаляти** (19.10.2026: через нього Play Console підтверджує сайт розробника; видалиш — підтвердження злетить) |
+| `googlea91a80ac974455de.html` | **підтвердження сайту в Google Search Console — не чіпати й не видаляти** (19.10.2026: через нього Play Console підтверджує сайт розробника; видалиш — підтвердження злетить); запасний спосіб — мета-тег `google-site-verification` у `src/index.html`, теж не чіпати |
 | `assets/` | шрифти, іконки й банери ігор, `og.png`, іконки сайту |
 | `docs/social/` | **картинки студії для соцмереж — не для сайту** (власник 10.10.2026): оригінали власника `owner/` (банер 1920×384, 16:9, аватар 512), шапка X 1500×500, **стиль** (зелено-чорний фон, сітка, знак із засічками) — `docs/social/README.md`. Нова картинка для мереж — у цьому стилі й з цих оригіналів |
 
