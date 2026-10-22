@@ -393,6 +393,22 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 @keyframes tlNext{50%{box-shadow:inset 0 0 0 3px #3DDC84,0 0 18px rgba(61,220,132,.75);}}
 .next .tl-when{color:var(--mint);font-style:italic;}
 @media (prefers-reduced-motion:reduce){.tl-i.next.on::before{animation:none;}}
+/* 22.10.2026 — the first streamer to play our game live (TikTok LIVE): a red «live» dot, the clip (our own file, loaded on play), the thank-you, his links */
+.tl-i.live::before{box-shadow:inset 0 0 0 3px rgba(254,44,85,.45);}
+.tl-i.live.on::before{box-shadow:inset 0 0 0 3px #FE2C55,0 0 18px rgba(254,44,85,.8);}
+.live .tl-when{color:#ff8aa0;}
+.live .tl-when::after{content:"LIVE";display:inline-block;margin-inline-start:10px;padding:2px 7px;border-radius:5px;background:#FE2C55;color:#fff;font-size:11px;letter-spacing:.12em;vertical-align:1px;}
+.tl-live{margin:14px 0 0;max-width:540px;border-radius:18px;overflow:hidden;background:#05060f;box-shadow:inset 0 0 0 1px rgba(254,44,85,.35),0 18px 50px rgba(0,0,0,.4);}
+.tl-live video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#05060f;}
+.tl-thanks{margin:16px 0 0;max-width:540px;padding:18px 20px;border-radius:18px;text-align:start;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);}
+.tl-i .tl-thanks p{color:#fff;font-weight:700;font-size:16.5px;line-height:1.5;max-width:none;}
+.tl-thanks p::before{content:"💚 ";}
+.tl-thanks footer{margin-top:8px;color:var(--mint);font-weight:800;font-size:14px;}
+.tl-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;max-width:540px;}
+.tl-links a{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 16px;border-radius:12px;color:#fff;font-weight:800;font-size:15px;text-decoration:none;overflow-wrap:anywhere;
+  background:rgba(254,44,85,.12);box-shadow:inset 0 0 0 1px rgba(254,44,85,.45);transition:background-color .15s ease;}
+.tl-links a:hover{background:rgba(254,44,85,.24);}
+.tl-links svg{width:18px;height:18px;fill:#fff;flex:none;}
 .tl-i h3{font-weight:900;font-size:clamp(21px,2.4vw,26px);line-height:1.25;margin:4px 0 6px;}
 .tl-i p{color:var(--ink3);max-width:540px;}
 .tl-i p a{color:var(--mint);font-weight:800;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;}
@@ -403,6 +419,8 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
   .tl-i::before{inset-inline-start:auto;inset-inline-end:-11.5px;} .tl-i:nth-child(even)::before{inset-inline-start:-11.5px;inset-inline-end:auto;}
   .tl-i.brand::before{margin:0;inset-inline-end:-15.5px;} .tl-i.brand:nth-child(even)::before{inset-inline-start:-15.5px;}
   .tl-i.pix::before{margin:0;inset-inline-end:-23px;} .tl-i.pix:nth-child(even)::before{inset-inline-start:-23px;inset-inline-end:auto;}
+  .tl-i .tl-live,.tl-i .tl-thanks,.tl-i .tl-links{margin-inline-start:auto;} .tl-i .tl-links{justify-content:flex-end;}
+  .tl-i:nth-child(even) .tl-live,.tl-i:nth-child(even) .tl-thanks,.tl-i:nth-child(even) .tl-links{margin-inline-start:0;} .tl-i:nth-child(even) .tl-links{justify-content:flex-start;}
 }
 
 /* ── contact ── */
@@ -693,6 +711,11 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <li class="tl-i rv"><p class="tl-when" data-t="story.od.when"></p><h3 data-t="story.od.t"></h3><p data-t="story.od.d"></p></li>
         <li class="tl-i rv"><p class="tl-when" data-t="story.proto.when"></p><h3 data-t="story.proto.t"></h3><p data-t="story.proto.d"></p></li>
         <li class="tl-i pix rv"><p class="tl-when" data-t="story.pix.when"></p><h3 data-t="story.pix.t"></h3><p data-t="story.pix.d"></p></li>
+        <li class="tl-i live rv" id="first-live"><p class="tl-when" data-t="story.live.when"></p><h3 data-t="story.live.t"></h3><p data-t="story.live.d"></p>
+          <figure class="tl-live"><video controls playsinline preload="none" width="1280" height="720" data-poster="/assets/story/first-live.jpg" data-ta="aria-label:story.live.video">
+            <source src="/assets/story/first-live.mp4" type="video/mp4"></video></figure>
+          <blockquote class="tl-thanks"><p data-t="story.live.thanks"></p><footer data-t="story.live.sign"></footer></blockquote>
+          <div class="tl-links"><a href="https://www.tiktok.com/@malcev_ua" rel="noopener">{{ico:tiktok}}<span dir="ltr">@malcev_ua</span></a><a href="https://choko.link/abbie" rel="noopener">{{ico:link}}<span dir="ltr">choko.link/abbie</span></a></div></li>
         <li class="tl-i next rv"><p class="tl-when" data-t="story.next.when"></p><h3 data-t="story.next.t"></h3><p data-t="story.next.d"></p></li>
       </ol>
     </div>
@@ -1067,6 +1090,8 @@ if (!RM && matchMedia('(hover: hover)').matches) $$('.gcard').forEach((c) => {
 // things appear as they come into view; the CubePix logo drops in; the contact heart beats once
 const rio = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; e.target.classList.add('in'); rio.unobserve(e.target); }), { rootMargin: '0px 0px -8% 0px' });
 $$('.rv').forEach((el) => rio.observe(el));
+// the first live stream's clip: its poster only when the story gets near (the video itself — only when tapped: preload="none")
+$$('video[data-poster]').forEach((v) => new IntersectionObserver((es, o) => es.forEach((e) => { if (e.isIntersecting) { v.poster = v.dataset.poster; o.disconnect(); } }), { rootMargin: '600px 0px' }).observe(v));
 new IntersectionObserver((es, o) => es.forEach((e) => { if (e.isIntersecting) { $('#cubepix').classList.add('seen'); o.disconnect(); } }), { threshold: .25 }).observe($('#cubepix'));
 new IntersectionObserver((es, o) => es.forEach((e) => { if (e.isIntersecting) { beat($('#contactBeat')); o.disconnect(); } }), { threshold: .6 }).observe($('.contact-mark'));
 // the header: the Lewydo signature once the big one has scrolled away, and a thin line in the world's colour showing how far you've read

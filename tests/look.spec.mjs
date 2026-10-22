@@ -3,9 +3,10 @@
 // Languages: LANGS=uk,en npm run look (default: uk). REDUCE=1 — with reduced motion (every animation at its end).
 // The brand page: PAGE=brand npm run look → shots/brand-uk-phone-1.png … (LANGS works the same)
 import { test } from '@playwright/test';
+import { fileURLToPath } from 'node:url';
 import { mkdirSync, readdirSync, rmSync } from 'node:fs';
 
-const OUT = new URL('../shots/', import.meta.url).pathname;
+const OUT = fileURLToPath(new URL('../shots/', import.meta.url));
 const BRAND = process.env.PAGE === 'brand';
 const LANGS = (process.env.LANGS || 'uk').split(',').map((s) => s.trim()).filter(Boolean);
 const P = BRAND ? 'brand-' : '';
