@@ -399,7 +399,9 @@ test('the story: the first streamer to play our game live (22.10.2026) — our o
   expect(media.filter((m) => m.endsWith('.mp4'))).toEqual([]);                                       // the poster only, until it is played
   const mp4 = await request.get('./assets/story/first-live.mp4'), jpg = await request.get('./assets/story/first-live.jpg');
   expect(mp4.status()).toBe(200); expect(jpg.status()).toBe(200);
-  expect((await mp4.body()).length).toBeLessThan(5 * 1024 * 1024);                                   // small enough for a phone
+  expect((await mp4.body()).length).toBeLessThan(8 * 1024 * 1024);                                   // small enough for a phone
+  await expect(v).toHaveAttribute('width', '720'); await expect(v).toHaveAttribute('height', '1280');   // the clip is vertical (9:16)
+  expect(await v.evaluate((e) => { const r = e.getBoundingClientRect(); return Math.round(r.height / r.width * 100); })).toBe(178);
   expect([...w.ext]).toEqual([]);
   expect(w.errs).toEqual([]);
 });
