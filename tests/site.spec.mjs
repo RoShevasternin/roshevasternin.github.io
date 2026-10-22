@@ -385,7 +385,7 @@ test('the story: the first streamer to play our game live (22.10.2026) — our o
   const li = page.locator('#first-live');
   await expect(li.locator('h3')).toHaveText('Orbit Dash у прямому ефірі TikTok');
   await expect(li.locator('.tl-thanks p')).toHaveText('Дякую, Андрію, що ти мій перший блогер, який провів прямий ефір, граючи в мою гру. Дуже тобі дякую!');
-  await expect(li.locator('.tl-thanks footer')).toHaveText('— Влад, співзасновник Lewydo');
+  await expect(li.locator('.tl-thanks footer')).toHaveText('— Veldan, засновник Lewydo');
   await expect(li.locator('.tl-links a[href="https://www.tiktok.com/@malcev_ua"]')).toHaveText('@malcev_ua');
   await expect(li.locator('.tl-links a[href="https://choko.link/abbie"]')).toHaveText('choko.link/abbie');
   const v = li.locator('video');
