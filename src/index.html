@@ -398,8 +398,10 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .tl-i.live.on::before{box-shadow:inset 0 0 0 3px #FE2C55,0 0 18px rgba(254,44,85,.8);}
 .live .tl-when{color:#ff8aa0;}
 .live .tl-when::after{content:"LIVE";display:inline-block;margin-inline-start:10px;padding:2px 7px;border-radius:5px;background:#FE2C55;color:#fff;font-size:11px;letter-spacing:.12em;vertical-align:1px;}
-.tl-live{margin:14px 0 0;max-width:540px;border-radius:18px;overflow:hidden;background:#05060f;box-shadow:inset 0 0 0 1px rgba(254,44,85,.35),0 18px 50px rgba(0,0,0,.4);}
-.tl-live video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#05060f;}
+/* the clip is vertical (9:16, 720×1280): on a phone — the column's width; on a wider screen — at most 70% of the screen's height, centred */
+.tl-live{margin:14px auto 0;width:100%;max-width:400px;border-radius:18px;overflow:hidden;background:#05060f;box-shadow:inset 0 0 0 1px rgba(254,44,85,.35),0 18px 50px rgba(0,0,0,.4);}
+.tl-live video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#05060f;}
+@media (min-width:600px){.tl-live{max-width:min(400px,calc(70vh * 9 / 16));}}
 .tl-thanks{margin:16px 0 0;max-width:540px;padding:18px 20px;border-radius:18px;text-align:start;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);}
 .tl-i .tl-thanks p{color:#fff;font-weight:700;font-size:16.5px;line-height:1.5;max-width:none;}
 .tl-thanks p::before{content:"💚 ";}
@@ -419,8 +421,8 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
   .tl-i::before{inset-inline-start:auto;inset-inline-end:-11.5px;} .tl-i:nth-child(even)::before{inset-inline-start:-11.5px;inset-inline-end:auto;}
   .tl-i.brand::before{margin:0;inset-inline-end:-15.5px;} .tl-i.brand:nth-child(even)::before{inset-inline-start:-15.5px;}
   .tl-i.pix::before{margin:0;inset-inline-end:-23px;} .tl-i.pix:nth-child(even)::before{inset-inline-start:-23px;inset-inline-end:auto;}
-  .tl-i .tl-live,.tl-i .tl-thanks,.tl-i .tl-links{margin-inline-start:auto;} .tl-i .tl-links{justify-content:flex-end;}
-  .tl-i:nth-child(even) .tl-live,.tl-i:nth-child(even) .tl-thanks,.tl-i:nth-child(even) .tl-links{margin-inline-start:0;} .tl-i:nth-child(even) .tl-links{justify-content:flex-start;}
+  .tl-i .tl-thanks,.tl-i .tl-links{margin-inline-start:auto;} .tl-i .tl-links{justify-content:flex-end;}
+  .tl-i:nth-child(even) .tl-thanks,.tl-i:nth-child(even) .tl-links{margin-inline-start:0;} .tl-i:nth-child(even) .tl-links{justify-content:flex-start;}
 }
 
 /* ── contact ── */
@@ -712,7 +714,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <li class="tl-i rv"><p class="tl-when" data-t="story.proto.when"></p><h3 data-t="story.proto.t"></h3><p data-t="story.proto.d"></p></li>
         <li class="tl-i pix rv"><p class="tl-when" data-t="story.pix.when"></p><h3 data-t="story.pix.t"></h3><p data-t="story.pix.d"></p></li>
         <li class="tl-i live rv" id="first-live"><p class="tl-when" data-t="story.live.when"></p><h3 data-t="story.live.t"></h3><p data-t="story.live.d"></p>
-          <figure class="tl-live"><video controls playsinline preload="none" width="1280" height="720" data-poster="/assets/story/first-live.jpg" data-ta="aria-label:story.live.video">
+          <figure class="tl-live"><video controls playsinline preload="none" width="720" height="1280" data-poster="/assets/story/first-live.jpg" data-ta="aria-label:story.live.video">
             <source src="/assets/story/first-live.mp4" type="video/mp4"></video></figure>
           <blockquote class="tl-thanks"><p data-t="story.live.thanks"></p><footer data-t="story.live.sign"></footer></blockquote>
           <div class="tl-links"><a href="https://www.tiktok.com/@malcev_ua" rel="noopener">{{ico:tiktok}}<span dir="ltr">@malcev_ua</span></a><a href="https://choko.link/abbie" rel="noopener">{{ico:link}}<span dir="ltr">choko.link/abbie</span></a></div></li>
