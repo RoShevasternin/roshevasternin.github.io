@@ -4,8 +4,9 @@
 //   brand.png (the Lockup, transparent). (The brand kit's own pictures in brand/kit/png are the owner's Figma exports — never rendered.)
 //   Run after changing the mark, the fonts or the OG card (then commit the pictures).
 import { test } from '@playwright/test';
+import { fileURLToPath } from 'node:url';
 
-const R = new URL('../', import.meta.url).pathname;
+const R = fileURLToPath(new URL('../', import.meta.url));
 test.use({ deviceScaleFactor: 1 });
 
 test('brand pictures', async ({ page }) => {

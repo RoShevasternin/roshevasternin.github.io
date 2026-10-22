@@ -378,6 +378,32 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
   expect(w.errs).toEqual([]);
 });
 
+test('the story: the first streamer to play our game live (22.10.2026) — our own clip, loaded only when needed; the thank-you; his links', async ({ page, request }) => {
+  const w = watch(page), media = [];
+  page.on('request', (r) => { if (/\/assets\/story\//.test(r.url())) media.push(new URL(r.url()).pathname); });
+  await page.goto('./?lang=uk');
+  const li = page.locator('#first-live');
+  await expect(li.locator('h3')).toHaveText('Orbit Dash у прямому ефірі TikTok');
+  await expect(li.locator('.tl-thanks p')).toHaveText('Дякую, Андрію, що ти мій перший блогер, який провів прямий ефір, граючи в мою гру. Дуже тобі дякую!');
+  await expect(li.locator('.tl-thanks footer')).toHaveText('— Влад, співзасновник Lewydo');
+  await expect(li.locator('.tl-links a[href="https://www.tiktok.com/@malcev_ua"]')).toHaveText('@malcev_ua');
+  await expect(li.locator('.tl-links a[href="https://choko.link/abbie"]')).toHaveText('choko.link/abbie');
+  const v = li.locator('video');
+  await expect(v).toHaveAttribute('preload', 'none'); await expect(v).toHaveAttribute('controls', '');
+  expect(await v.evaluate((e) => e.autoplay || e.muted)).toBe(false);                               // never plays by itself
+  await expect(v.locator('source')).toHaveAttribute('src', '/assets/story/first-live.mp4');         // our own file, no embed
+  await expect(v).toHaveAttribute('aria-label', /Андрій грає в Orbit Dash/);
+  expect(media).toEqual([]);                                                                         // nothing of it on the first screen
+  await li.scrollIntoViewIfNeeded();
+  await expect.poll(() => v.evaluate((e) => e.getAttribute('poster'))).toBe('/assets/story/first-live.jpg');
+  expect(media.filter((m) => m.endsWith('.mp4'))).toEqual([]);                                       // the poster only, until it is played
+  const mp4 = await request.get('./assets/story/first-live.mp4'), jpg = await request.get('./assets/story/first-live.jpg');
+  expect(mp4.status()).toBe(200); expect(jpg.status()).toBe(200);
+  expect((await mp4.body()).length).toBeLessThan(5 * 1024 * 1024);                                   // small enough for a phone
+  expect([...w.ext]).toEqual([]);
+  expect(w.errs).toEqual([]);
+});
+
 test('the loader credits — the Lewydo standard: a fourth phone on the brand page, its numbers, brand.json and the text for Claude', async ({ page, request }) => {
   const w = watch(page);
   await page.goto('./brand/?lang=uk');

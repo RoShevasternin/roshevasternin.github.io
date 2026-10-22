@@ -3,8 +3,10 @@
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = new URL('../', import.meta.url).pathname, PORT = +(process.argv[2] || 5190);
+const ROOT = fileURLToPath(new URL('../', import.meta.url)),   // a file path (a clone in a folder with a space works too)
+  PORT = +(process.argv[2] || 5190);
 // OD_SITE=<a build of the Orbit Dash site (Game-Orbit-Dash-PRIVATE/site/dist or a clone of Game-Orbit-Dash)> — served at
 // /Game-Orbit-Dash/, as on Pages, so the live game in the Orbit Dash block plays here too (npm run look; npm test checks it then)
 const OD = process.env.OD_SITE ? normalize(process.env.OD_SITE + '/') : null, ODP = '/Game-Orbit-Dash/';
