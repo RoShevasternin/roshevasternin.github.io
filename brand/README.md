@@ -57,5 +57,22 @@ and the heartbeat, the menu signature and About us.
 - A game may theme **the background and the ambient light** behind the mark to its own world — never the mark itself.
 - Keep the mark on a dark background.
 
+## Screen bottom: edge to edge (every game, from 28.10.2026)
+
+The iPhone Home indicator and the Android navigation bar never take space from the game — no empty strip at the bottom.
+
+- **The ad banner sits at the very bottom of the screen, full width** (inline / anchored adaptive). The rounded screen corners may clip it —
+  that is fine; never make it narrower. The game content sits right above the banner. On iPhone the banner lies over the Home indicator.
+- **No banner** (ads removed or not loaded): the background and everything that scrolls (lists, grids, boards, settings, sheets) goes to the
+  very bottom, under the Home indicator / navigation bar, with **a bottom inset of the same height inside the scroll** — the last row can
+  always be scrolled above the bar, to be seen and tapped.
+- **Buttons that do not scroll stay above the bar**, so the swipe home never lands on a button.
+- **iOS:** the Home indicator hides by itself (`prefersHomeIndicatorAutoHidden`; libGDX `hideHomeIndicator = true`) and the first swipe from
+  the bottom only shows it (`preferredScreenEdgesDeferringSystemGestures = .bottom`). iOS still shows it after any touch and hides it a few
+  seconds later — there is no public API to keep it hidden, do not promise it. **Android:** immersive mode.
+- The top stays as before: titles and buttons below the notch / Dynamic Island / status bar.
+
+The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/bottom-edge.md` in the studio site repo.
+
 © 2026 Lewydo™. The Lewydo mark is ours: use it only in Lewydo projects, and only as this kit shows it.
 Nunito is free under the SIL Open Font License.
