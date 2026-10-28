@@ -77,5 +77,18 @@ The iPhone Home indicator and the Android navigation bar never take space from t
 
 The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/bottom-edge.md` in the studio site repo.
 
+## Rewarded ads: the button is honest about the ad (every game, from 28.10.2026)
+
+A rewarded ad is loaded before it can play, and after every show the next one loads. A player who sees a dead button leaves — and
+the ad was only loading. So every «watch an ad» button shows **three states**:
+- **Ready** — the button itself.
+- **Loading** — three small cubes lighting up in turn and «Ad is loading…» (`ads.loading`). **Not dimmed** (wait, it is coming), not
+  tappable; the moment the ad is there the button comes alive by itself with a small hop.
+- **None** — dimmed «No ad right now» (`ads.none`) when there is no ad (offline, no fill); the game keeps trying.
+- Both lines share one cell: the button keeps its width in every state. A small button shows only the cubes (loading) or «–» (none).
+- The state comes from the ad SDK itself, polled every frame. The daily limit is a separate screen, not a button state.
+
+The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/rewarded-ads.md` in the studio site repo.
+
 © 2026 Lewydo™. The Lewydo mark is ours: use it only in Lewydo projects, and only as this kit shows it.
 Nunito is free under the SIL Open Font License.
