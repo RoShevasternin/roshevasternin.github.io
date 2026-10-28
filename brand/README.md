@@ -79,14 +79,17 @@ The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/bottom-edge.md` 
 
 ## Rewarded ads: the button is honest about the ad (every game, from 28.10.2026)
 
-A rewarded ad is loaded before it can play, and after every show the next one loads. A player who sees a dead button leaves — and
-the ad was only loading. So every «watch an ad» button shows **three states**:
+A rewarded ad is loaded before it can play, and after every show the next one loads — so right after watching one (×2), the button
+next to it (revive, again) is usually waiting for the next ad. A player who sees a dead button leaves — and the ad was only loading.
+What matters is the **state**, not the look: every «watch an ad» button tells the player whether the ad is ready, worth waiting for, or
+not coming. Each game draws it in its own style (CubePix — cubes, Orbit Dash — a spinner):
 - **Ready** — the button itself.
-- **Loading** — three small cubes lighting up in turn and «Ad is loading…» (`ads.loading`). **Not dimmed** (wait, it is coming), not
-  tappable; the moment the ad is there the button comes alive by itself with a small hop.
-- **None** — dimmed «No ad right now» (`ads.none`) when there is no ad (offline, no fill); the game keeps trying.
-- Both lines share one cell: the button keeps its width in every state. A small button shows only the cubes (loading) or «–» (none).
-- The state comes from the ad SDK itself, polled every frame. The daily limit is a separate screen, not a button state.
+- **Loading** — a moving «loading» sign in the button and a short «Ad is loading…». **Not dimmed** (wait, it is coming), stays in place;
+  the moment the ad is there the button comes alive by itself with a small hop / pop.
+- **None** — clearly dimmed with an honest reason: «No ad right now» (and «No internet» if the game can tell); the game keeps trying.
+- Loading ≠ none: two different looks. The state comes from the ad SDK wrapper (loaded · request in flight · failed, waiting to retry),
+  which reports every change. No false promise: loading too long (≈ 10 s) shows «none». Nothing jumps; one reason line per ad.
+- The daily limit is a separate screen, not a button state.
 
 The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/rewarded-ads.md` in the studio site repo.
 
