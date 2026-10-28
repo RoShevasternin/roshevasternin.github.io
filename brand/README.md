@@ -71,6 +71,9 @@ The iPhone Home indicator and the Android navigation bar never take space from t
   the bottom only shows it (`preferredScreenEdgesDeferringSystemGestures = .bottom`). iOS still shows it after any touch and hides it a few
   seconds later — there is no public API to keep it hidden, do not promise it. **Android:** immersive mode.
 - The top stays as before: titles and buttons below the notch / Dynamic Island / status bar.
+- **Dims cover the whole screen** (owner 28.10.2026): a window's dim or dark backdrop goes from the very top to the very bottom, under the
+  Home indicator / navigation bar too; only the window's content stays in the room above the banner. The banner itself is never dimmed
+  (on the phone it is the system's own view over the game).
 
 The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/bottom-edge.md` in the studio site repo.
 
