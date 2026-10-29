@@ -138,7 +138,8 @@ const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cp
 const cpEvents = Object.keys(CP.events || {}).map((ev) => { const pic = `assets/games/cubepix-${ev}.webp`;
   return `<a class="cp-ev" href="${G.cubepix.site}#event" data-lang-link="cp" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
-    `<span class="cp-ev-tx"><b data-t="cp:ev_${ev}"></b><span data-t="cp:evText_${ev}"></span><em><span class="cp-ev-left"></span> →</em></span></a>`; }).join('\n');
+    `<span class="cp-ev-tx"><b data-t="cp:ev_${ev}"></b><span data-t="cp:evText_${ev}"></span>` +
+    (CP.S.en && CP.S.en['evDress_' + ev] ? `<span class="cp-ev-dress" data-t="cp:evDress_${ev}"></span>` : '') + `<em><span class="cp-ev-left"></span> →</em></span></a>`; }).join('\n');
 // one words file per language and page — the page fetches the visitor's (English rides in the page itself)
 const langFiles = (dir, make) => { mkdirSync(new URL(dir, ROOT), { recursive: true });
   for (const f of readdirSync(new URL(dir, ROOT))) if (!IDS.includes(f.replace(/\.json$/, ''))) rmSync(new URL(dir + f, ROOT));
