@@ -106,5 +106,13 @@ itself, so on Android there is no row. The row lives in SETTINGS, last among the
 
 The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/restore-purchases.md` in the studio site repo.
 
+## Tall windows scroll, they do not shrink (every game, from 29.10.2026)
+
+A window whose content can grow (record shelf, rewards, shop, settings, languages, boards — anything that grows with seasonal events) is
+never taller than the room (above the banner, below the notch). Its title and Close stay put and **only the middle scrolls**, with a soft
+fade at an edge that still has content. Never scale the whole window down to fit (`fit = min(1, room / height)` + `setScale`).
+**Exception:** a static page with no list (the kit's ABOUT US) may simply scale down as a whole. Check every window at 360×640 with a banner
+and on an iPhone with a notch. Full prompt — `docs/ux/dialog-fit.md` in the studio site repo.
+
 © 2026 Lewydo™. The Lewydo mark is ours: use it only in Lewydo projects, and only as this kit shows it.
 Nunito is free under the SIL Open Font License.
