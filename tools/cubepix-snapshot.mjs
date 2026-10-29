@@ -27,6 +27,8 @@ const KEYS = { tagline: 'g:menu.tagline', lead: 'hero.lead', play: 'cta.play', s
 const EVENTS = Object.fromEntries(Object.entries(D.events || {}).map(([ev, e]) => [ev, { from: e.from, to: e.to, on: e.on }]));
 if (Object.keys(EVENTS).length) KEYS.evLeft = 'g:event.left';
 for (const ev of Object.keys(EVENTS)) { KEYS['ev_' + ev] = 'g:ev.' + ev; KEYS['evText_' + ev] = 'event.' + ev + '.d'; }
+// how the whole game dresses up for the holiday (its site's event.<event>.dress, 29.10.2026 — every screen themed), when the site has it
+for (const ev of Object.keys(EVENTS)) if (D.S.en && D.S.en['event.' + ev + '.dress']) KEYS['evDress_' + ev] = 'event.' + ev + '.dress';
 const S = Object.fromEntries(Object.keys(D.S).map((L) => [L, Object.fromEntries(Object.entries(KEYS).map(([k, g]) => [k, D.S[L][g]]))]));
 const hero = D.hero, puzzle = D.how;                                   // the showcase paintings; the small picture to play
 const out = {

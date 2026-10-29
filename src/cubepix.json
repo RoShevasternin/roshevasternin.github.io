@@ -2314,7 +2314,8 @@
     "other": "Guyyaa {n} hafe"
    },
    "ev_halloween": "Halloween muuziyeemii keessatti!",
-   "evText_halloween": "Hanga Sadaasa 30tti darbiin Halloween banaadha: fakkiiwwan sodaachisoo 8, adurree gurraattii fi koofiyaa falfaltuu irraa kaasee hanga mana hafuuraa fi lafee guddaa Kuniyoshiitti. Muuziyeemiin guutuun ayyaanaaf miidhagfata, Waalsiin Halloween waraqaa sagalee gara walitti makama, darbii xumuruunis Pix akka Ibsaa Buqqeetti uffachiisa."
+   "evText_halloween": "Hanga Sadaasa 30tti darbiin Halloween banaadha: fakkiiwwan sodaachisoo 8, adurree gurraattii fi koofiyaa falfaltuu irraa kaasee hanga mana hafuuraa fi lafee guddaa Kuniyoshiitti. Muuziyeemiin guutuun ayyaanaaf miidhagfata, Waalsiin Halloween waraqaa sagalee gara walitti makama, darbii xumuruunis Pix akka Ibsaa Buqqeetti uffachiisa.",
+   "evDress_halloween": "Taphni guutuun Halloween'f of miidhagsa: ibsi hunduu buqqee, simbirroo halkanii fi hidhaa hanqaaquu of isaa qaba; falfaltoonni cinaa menu irratti dhugaatii bilcheessanii ifa aduu fuldura balali'u; baala gannaa immoo suuta suutaan kufa."
   },
   "af": {
    "tagline": "ONTHUL DIE PRENT KUBUS VIR KUBUS",
@@ -2352,7 +2353,8 @@
     "other": "Nog {n} dae"
    },
    "ev_halloween": "Halloween in die museum!",
-   "evText_halloween": "Tot 30 November is 'n Halloween-vlak oop: 8 grillerige prente, van 'n swart kat en 'n heksehoed tot 'n spookhuis en Kuniyoshi se reuse-skelet. Die hele museum trek vir die fees aan, 'n Halloween-wals sluit by die plate aan, en as jy die vlak voltooi, trek Pix aan soos 'n pampoenlantern."
+   "evText_halloween": "Tot 30 November is 'n Halloween-vlak oop: 8 grillerige prente, van 'n swart kat en 'n heksehoed tot 'n spookhuis en Kuniyoshi se reuse-skelet. Die hele museum trek vir die fees aan, 'n Halloween-wals sluit by die plate aan, en as jy die vlak voltooi, trek Pix aan soos 'n pampoenlantern.",
+   "evDress_halloween": "Die hele speletjie trek aan vir Halloween: elke skerm kry sy eie pampoene, vlermuise en spinnerakke, hekse brou towerdrankies by die kieslys en vlieg oor die maan, en herfsblare dwarrel af."
   },
   "az": {
    "tagline": "ŞƏKLİ KUB-KUB AÇ",
@@ -2390,7 +2392,8 @@
     "other": "{n} gün qalıb"
    },
    "ev_halloween": "Muzeydə Hellouin!",
-   "evText_halloween": "30 noyabradək Hellouin mərtəbəsi açıqdır: qara pişik və cadugər papağından tutmuş kabuslu evə və Kuniyoşinin nəhəng skeletinə qədər 8 qorxulu şəkil. Bütün muzey bayrama bəzənir, plastinkalara Hellouin valsı qoşulur, mərtəbəni bitirdikdə isə Pix balqabaq fənərinə çevrilir."
+   "evText_halloween": "30 noyabradək Hellouin mərtəbəsi açıqdır: qara pişik və cadugər papağından tutmuş kabuslu evə və Kuniyoşinin nəhəng skeletinə qədər 8 qorxulu şəkil. Bütün muzey bayrama bəzənir, plastinkalara Hellouin valsı qoşulur, mərtəbəni bitirdikdə isə Pix balqabaq fənərinə çevrilir.",
+   "evDress_halloween": "Bütün oyun Hellouin üçün bəzənir: hər ekranın öz balqabaqları, yarasaları və hörümçək toru var, cadugərlər menyunun yanında iksir bişirib ayın qarşısından uçur, payız yarpaqları isə yavaş-yavaş tökülür."
   },
   "id": {
    "tagline": "UNGKAP GAMBAR KUBUS DEMI KUBUS",
@@ -2424,7 +2427,8 @@
     "other": "{n} hari lagi"
    },
    "ev_halloween": "Halloween di museum!",
-   "evText_halloween": "Hingga 30 November, lantai Halloween dibuka: 8 gambar seram, dari kucing hitam dan topi penyihir hingga rumah berhantu dan kerangka raksasa karya Kuniyoshi. Seluruh museum berdandan menyambut perayaan, waltz Halloween bergabung di antara piringan hitam, dan setelah lantai diselesaikan, Pix berdandan sebagai lentera labu."
+   "evText_halloween": "Hingga 30 November, lantai Halloween dibuka: 8 gambar seram, dari kucing hitam dan topi penyihir hingga rumah berhantu dan kerangka raksasa karya Kuniyoshi. Seluruh museum berdandan menyambut perayaan, waltz Halloween bergabung di antara piringan hitam, dan setelah lantai diselesaikan, Pix berdandan sebagai lentera labu.",
+   "evDress_halloween": "Seluruh game berdandan untuk Halloween: setiap layar punya labu, kelelawar, dan sarang laba-labanya sendiri, para penyihir meramu ramuan di dekat menu lalu terbang melintasi bulan, dan dedaunan musim gugur berguguran perlahan."
   },
   "ms": {
    "tagline": "DEDAHKAN GAMBAR KIUB DEMI KIUB",
@@ -2458,7 +2462,8 @@
     "other": "tinggal {n} hari"
    },
    "ev_halloween": "Halloween di muzium!",
-   "evText_halloween": "Sehingga 30 November, tingkat Halloween dibuka: 8 gambar seram, daripada kucing hitam dan topi ahli sihir hingga rumah berhantu dan rangka gergasi Kuniyoshi. Seluruh muzium berhias untuk perayaan, waltz Halloween menyertai rekod muzik, dan apabila tingkat itu siap, Pix berpakaian sebagai tanglung labu."
+   "evText_halloween": "Sehingga 30 November, tingkat Halloween dibuka: 8 gambar seram, daripada kucing hitam dan topi ahli sihir hingga rumah berhantu dan rangka gergasi Kuniyoshi. Seluruh muzium berhias untuk perayaan, waltz Halloween menyertai rekod muzik, dan apabila tingkat itu siap, Pix berpakaian sebagai tanglung labu.",
+   "evDress_halloween": "Seluruh permainan berhias untuk Halloween: setiap skrin ada labu, kelawar dan sarang labah-labahnya sendiri, ahli sihir mengacau ramuan di tepi menu dan terbang melintasi bulan, dan daun musim luruh gugur perlahan-lahan."
   },
   "bs": {
    "tagline": "OTKRIJ SLIKU KOCKU PO KOCKU",
@@ -2500,7 +2505,8 @@
     "other": "Još {n} dana"
    },
    "ev_halloween": "Noć vještica u muzeju!",
-   "evText_halloween": "Do 30. novembra otvoren je sprat Noć vještica: 8 jezivih slika, od crne mačke i vještičjeg šešira do uklete kuće i golemog kostura Kuniyoshija. Cijeli muzej se oblači za praznik, Valcer bundeva pridružuje se pločama, a kad dovršiš sprat, Pix se preodijeva u svjetiljku od bundeve."
+   "evText_halloween": "Do 30. novembra otvoren je sprat Noć vještica: 8 jezivih slika, od crne mačke i vještičjeg šešira do uklete kuće i golemog kostura Kuniyoshija. Cijeli muzej se oblači za praznik, Valcer bundeva pridružuje se pločama, a kad dovršiš sprat, Pix se preodijeva u svjetiljku od bundeve.",
+   "evDress_halloween": "Cijela igra se oblači za Noć vještica: na svakom ekranu su vlastite bundeve, šišmiši i paučina, pored menija vještice kuhaju napitke i lete ispred mjeseca, a odozgo se spušta jesenje lišće."
   },
   "ca": {
    "tagline": "DESCOBREIX LA IMATGE CUB A CUB",
@@ -2542,7 +2548,8 @@
     "other": "Queden {n} dies"
    },
    "ev_halloween": "Halloween al museu!",
-   "evText_halloween": "Fins al 30 de novembre hi ha una planta d'Halloween oberta: 8 quadres esfereïdors, del gat negre i el barret de bruixa a la casa encantada i l'esquelet gegant de Kuniyoshi. Tot el museu es vesteix de festa, un vals d'Halloween s'afegeix als discos i, en acabar la planta, Pix es disfressa de carabassa d'Halloween."
+   "evText_halloween": "Fins al 30 de novembre hi ha una planta d'Halloween oberta: 8 quadres esfereïdors, del gat negre i el barret de bruixa a la casa encantada i l'esquelet gegant de Kuniyoshi. Tot el museu es vesteix de festa, un vals d'Halloween s'afegeix als discos i, en acabar la planta, Pix es disfressa de carabassa d'Halloween.",
+   "evDress_halloween": "Tot el joc es vesteix per a Halloween: cada pantalla té les seves pròpies carabasses, ratpenats i teranyines, les bruixes preparen pocions al costat del menú i volen davant la lluna, i les fulles de tardor cauen suaument."
   },
   "cs": {
    "tagline": "ODHAL OBRAZ KOSTKU PO KOSTCE",
@@ -2588,7 +2595,8 @@
     "other": "ještě {n} dní"
    },
    "ev_halloween": "Halloween v muzeu!",
-   "evText_halloween": "Do 30. listopadu je otevřené halloweenské patro: 8 strašidelných obrázků, od černé kočky a čarodějnického klobouku po strašidelný dům a obří kostru od Kunijošiho. Celé muzeum se oblékne do svátečního, k deskám se přidá halloweenský valčík a po dokončení patra se Pix převlékne za dýňovou lucernu."
+   "evText_halloween": "Do 30. listopadu je otevřené halloweenské patro: 8 strašidelných obrázků, od černé kočky a čarodějnického klobouku po strašidelný dům a obří kostru od Kunijošiho. Celé muzeum se oblékne do svátečního, k deskám se přidá halloweenský valčík a po dokončení patra se Pix převlékne za dýňovou lucernu.",
+   "evDress_halloween": "Celá hra se převléká na Halloween: každá obrazovka má vlastní dýně, netopýry a pavučiny, u menu čarodějnice vaří lektvary a létají přes měsíc a shora poletuje podzimní listí."
   },
   "da": {
    "tagline": "AFSLØR BILLEDET KUBE FOR KUBE",
@@ -2626,7 +2634,8 @@
     "other": "{n} dage tilbage"
    },
    "ev_halloween": "Halloween på museet!",
-   "evText_halloween": "Til og med den 30. november er en Halloween-etage åben: 8 uhyggelige billeder, fra en sort kat og en heksehat til et spøgelseshus og Kuniyoshis kæmpestore skelet. Hele museet pynter sig til festen, en Halloween-vals slutter sig til pladerne, og når du fuldfører etagen, klæder Pix sig ud som en græskarlygte."
+   "evText_halloween": "Til og med den 30. november er en Halloween-etage åben: 8 uhyggelige billeder, fra en sort kat og en heksehat til et spøgelseshus og Kuniyoshis kæmpestore skelet. Hele museet pynter sig til festen, en Halloween-vals slutter sig til pladerne, og når du fuldfører etagen, klæder Pix sig ud som en græskarlygte.",
+   "evDress_halloween": "Hele spillet klæder sig ud til Halloween: hver skærm får sine egne græskar, flagermus og spindelvæv, hekse brygger eliksirer ved menuen og flyver hen over månen, og efterårsblade daler ned."
   },
   "de": {
    "tagline": "DECK DAS BILD MIT WÜRFELN AUF",
@@ -2664,7 +2673,8 @@
     "other": "noch {n} Tage"
    },
    "ev_halloween": "Halloween im Museum!",
-   "evText_halloween": "Bis zum 30. November ist die Halloween-Etage geöffnet: 8 schaurige Bilder, von der Schwarzen Katze und dem Hexenhut bis zum Spukhaus und Kuniyoshis riesigem Skelett. Das ganze Museum verkleidet sich für das Fest, ein Halloween-Walzer gesellt sich zu den Schallplatten, und wer die Etage abschließt, verkleidet Pix als Kürbislaterne."
+   "evText_halloween": "Bis zum 30. November ist die Halloween-Etage geöffnet: 8 schaurige Bilder, von der Schwarzen Katze und dem Hexenhut bis zum Spukhaus und Kuniyoshis riesigem Skelett. Das ganze Museum verkleidet sich für das Fest, ein Halloween-Walzer gesellt sich zu den Schallplatten, und wer die Etage abschließt, verkleidet Pix als Kürbislaterne.",
+   "evDress_halloween": "Das ganze Spiel verkleidet sich für Halloween: Auf jedem Bildschirm gibt es eigene Kürbisse, Fledermäuse und Spinnweben, Hexen brauen neben dem Menü Zaubertränke und fliegen über den Mond, und Herbstlaub rieselt herab."
   },
   "et": {
    "tagline": "MAALI PILT KUUBIK KUUBIKU HAAVAL",
@@ -2702,7 +2712,8 @@
     "other": "veel {n} päeva"
    },
    "ev_halloween": "Halloween muuseumis!",
-   "evText_halloween": "Kuni 30. novembrini on avatud Halloweeni korrus: 8 õudset pilti, mustast kassist ja nõiamütsist kummitusmajani ja Kuniyoshi hiigelsuure luukereni. Kogu muuseum riietub pühadeks, plaatidele lisandub Halloweeni valss ja korruse lõpetades riietub Pix kõrvitsalaternaks."
+   "evText_halloween": "Kuni 30. novembrini on avatud Halloweeni korrus: 8 õudset pilti, mustast kassist ja nõiamütsist kummitusmajani ja Kuniyoshi hiigelsuure luukereni. Kogu muuseum riietub pühadeks, plaatidele lisandub Halloweeni valss ja korruse lõpetades riietub Pix kõrvitsalaternaks.",
+   "evDress_halloween": "Kogu mäng riietub Halloweeniks: igal ekraanil on omad kõrvitsad, nahkhiired ja ämblikuvõrgud, menüü juures keedavad nõiad jooke ja lendavad üle kuu ning ülalt sajab sügislehti."
   },
   "en": {
    "tagline": "REVEAL THE PICTURE CUBE BY CUBE",
@@ -2740,7 +2751,8 @@
     "other": "{n} days left"
    },
    "ev_halloween": "Halloween at the museum!",
-   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern.",
+   "evDress_halloween": "The whole game dresses up for Halloween: every screen gets its own pumpkins, bats and cobwebs, witches brew potions by the menu and fly across the moon, and autumn leaves drift down."
   },
   "es": {
    "tagline": "DESCUBRE LA IMAGEN CUBO A CUBO",
@@ -2779,7 +2791,8 @@
     "other": "quedan {n} días"
    },
    "ev_halloween": "Halloween en el museo!",
-   "evText_halloween": "Hasta el 30 de noviembre hay una planta de Halloween abierta: 8 cuadros de miedo, desde un gato negro y un sombrero de bruja hasta una casa encantada y el esqueleto gigante de Kuniyoshi. Todo el museo se disfraza para la fiesta, un vals de Halloween se suma a los discos y, al terminar la planta, Pix se disfraza de calabaza de Halloween."
+   "evText_halloween": "Hasta el 30 de noviembre hay una planta de Halloween abierta: 8 cuadros de miedo, desde un gato negro y un sombrero de bruja hasta una casa encantada y el esqueleto gigante de Kuniyoshi. Todo el museo se disfraza para la fiesta, un vals de Halloween se suma a los discos y, al terminar la planta, Pix se disfraza de calabaza de Halloween.",
+   "evDress_halloween": "Todo el juego se disfraza para Halloween: cada pantalla tiene sus propias calabazas, murciélagos y telarañas, las brujas preparan pociones junto al menú y vuelan frente a la luna, y las hojas de otoño caen flotando."
   },
   "eu": {
    "tagline": "AGERRARAZI IRUDIA KUBOZ KUBO",
@@ -2817,7 +2830,8 @@
     "other": "{n} egun geratzen dira"
    },
    "ev_halloween": "Halloween museoan!",
-   "evText_halloween": "Azaroaren 30era arte Halloween solairua zabalik dago: 8 irudi beldurgarri, katu beltzetik eta sorgin-kapelatik etxe sorgindura eta Kuniyoshiren eskeleto erraldoira arte. Museo osoa jaiarako janzten da, Halloweeneko balsa diskoetara gehitzen da, eta solairua amaitzean Pix kalabaza-linterna bihurtzen da."
+   "evText_halloween": "Azaroaren 30era arte Halloween solairua zabalik dago: 8 irudi beldurgarri, katu beltzetik eta sorgin-kapelatik etxe sorgindura eta Kuniyoshiren eskeleto erraldoira arte. Museo osoa jaiarako janzten da, Halloweeneko balsa diskoetara gehitzen da, eta solairua amaitzean Pix kalabaza-linterna bihurtzen da.",
+   "evDress_halloween": "Jolas osoa Halloweenerako janzten da: pantaila bakoitzak bere kalabazak, saguzarrak eta armiarma-sareak ditu, sorginek edabeak prestatzen dituzte menuaren ondoan eta ilargiaren aurretik hegan egiten dute, eta udazkeneko hostoak poliki erortzen dira."
   },
   "fil": {
    "tagline": "ILITAW ANG OBRA, CUBE KADA CUBE",
@@ -2855,7 +2869,8 @@
     "other": "{n} araw pa"
    },
    "ev_halloween": "Halloween sa museo!",
-   "evText_halloween": "Hanggang Nobyembre 30, bukas ang palapag ng Halloween: 8 nakakatakot na larawan, mula sa itim na pusa at sumbrero ng bruha hanggang sa bahay na pinagmumultuhan at higanteng kalansay ni Kuniyoshi. Nagbibihis para sa pista ang buong museo, may Halloween waltz na dumadagdag sa mga record, at kapag natapos ang palapag, magbibihis si Pix bilang jack-o’-lantern."
+   "evText_halloween": "Hanggang Nobyembre 30, bukas ang palapag ng Halloween: 8 nakakatakot na larawan, mula sa itim na pusa at sumbrero ng bruha hanggang sa bahay na pinagmumultuhan at higanteng kalansay ni Kuniyoshi. Nagbibihis para sa pista ang buong museo, may Halloween waltz na dumadagdag sa mga record, at kapag natapos ang palapag, magbibihis si Pix bilang jack-o’-lantern.",
+   "evDress_halloween": "Ang buong laro ay nagbibihis para sa Halloween: bawat screen ay may sariling kalabasa, paniki at sapot ng gagamba; ang mga bruha ay nagluluto ng gayuma sa tabi ng menu at lumilipad sa harap ng buwan, at dahan-dahang nalalaglag ang mga dahon ng taglagas."
   },
   "fr": {
    "tagline": "RÉVÈLE L'IMAGE CUBE PAR CUBE",
@@ -2894,7 +2909,8 @@
     "other": "encore {n} jours"
    },
    "ev_halloween": "Halloween au musée !",
-   "evText_halloween": "Jusqu’au 30 novembre, un étage Halloween est ouvert : 8 tableaux à faire frissonner, du chat noir et du chapeau de sorcière à la maison hantée et au squelette géant de Kuniyoshi. Tout le musée se déguise pour la fête, une valse d’Halloween rejoint les disques, et terminer l’étage déguise Pix en citrouille d’Halloween."
+   "evText_halloween": "Jusqu’au 30 novembre, un étage Halloween est ouvert : 8 tableaux à faire frissonner, du chat noir et du chapeau de sorcière à la maison hantée et au squelette géant de Kuniyoshi. Tout le musée se déguise pour la fête, une valse d’Halloween rejoint les disques, et terminer l’étage déguise Pix en citrouille d’Halloween.",
+   "evDress_halloween": "Tout le jeu se déguise pour Halloween : chaque écran a ses propres citrouilles, chauves-souris et toiles d’araignée, des sorcières préparent des potions près du menu et traversent la lune en volant, et des feuilles d’automne tombent en tourbillonnant."
   },
   "gl": {
    "tagline": "DESCOBRE A IMAXE CUBO A CUBO",
@@ -2932,7 +2948,8 @@
     "other": "quedan {n} días"
    },
    "ev_halloween": "Halloween no museo!",
-   "evText_halloween": "Ata o 30 de novembro hai unha planta de Halloween aberta: 8 cadros arrepiantes, desde o gato negro e o chapeu de bruxa ata a casa encantada e o esqueleto xigante de Kuniyoshi. Todo o museo se disfraza para a festa, un vals de Halloween únese aos discos e, ao rematar a planta, Pix disfrázase de cabaza de Halloween."
+   "evText_halloween": "Ata o 30 de novembro hai unha planta de Halloween aberta: 8 cadros arrepiantes, desde o gato negro e o chapeu de bruxa ata a casa encantada e o esqueleto xigante de Kuniyoshi. Todo o museo se disfraza para a festa, un vals de Halloween únese aos discos e, ao rematar a planta, Pix disfrázase de cabaza de Halloween.",
+   "evDress_halloween": "Todo o xogo se viste para Halloween: cada pantalla ten as súas propias cabazas, morcegos e teas de araña, as meigas preparan pocións xunto ao menú e voan diante da lúa, e as follas de outono caen flotando."
   },
   "ha": {
    "tagline": "BAYYANA HOTO KUBI BAYAN KUBI",
@@ -2970,7 +2987,8 @@
     "other": "Saura kwanaki {n}"
    },
    "ev_halloween": "Halloween a gidan tarihi!",
-   "evText_halloween": "Har zuwa 30 ga Nuwamba, benen Halloween a buɗe yake: hotuna 8 masu ban tsoro, daga baƙar kyanwa da hular mayya zuwa gida mai fatalwa da babban kwarangwal na Kuniyoshi. Gidan tarihi gaba ɗaya yana ado don bikin, Rawar Kabewa ta shiga cikin rikodin, kuma kammala benen yana sa Pix ya yi ado a matsayin fitilar kabewa."
+   "evText_halloween": "Har zuwa 30 ga Nuwamba, benen Halloween a buɗe yake: hotuna 8 masu ban tsoro, daga baƙar kyanwa da hular mayya zuwa gida mai fatalwa da babban kwarangwal na Kuniyoshi. Gidan tarihi gaba ɗaya yana ado don bikin, Rawar Kabewa ta shiga cikin rikodin, kuma kammala benen yana sa Pix ya yi ado a matsayin fitilar kabewa.",
+   "evDress_halloween": "Dukan wasan yana ado don Halloween: kowane allo yana da kabewa, jemagu da yanar gizo-gizo nasa, mayu suna dafa magani kusa da menu suna tashi a gaban wata, ganyen kaka kuma suna sauka a hankali."
   },
   "hr": {
    "tagline": "OTKRIJ SLIKU KOCKICU PO KOCKICU",
@@ -3012,7 +3030,8 @@
     "other": "još {n} dana"
    },
    "ev_halloween": "Noć vještica u muzeju!",
-   "evText_halloween": "Do 30. studenoga otvoren je kat Noć vještica: 8 jezivih slika, od crne mačke i vještičjeg šešira do uklete kuće i golemog kostura Kuniyoshija. Cijeli se muzej oblači za blagdan, valcer Noći vještica pridružuje se pločama, a kad dovršiš kat, Pix se preodijeva u svjetiljku od bundeve."
+   "evText_halloween": "Do 30. studenoga otvoren je kat Noć vještica: 8 jezivih slika, od crne mačke i vještičjeg šešira do uklete kuće i golemog kostura Kuniyoshija. Cijeli se muzej oblači za blagdan, valcer Noći vještica pridružuje se pločama, a kad dovršiš kat, Pix se preodijeva u svjetiljku od bundeve.",
+   "evDress_halloween": "Cijela se igra odijeva za Noć vještica: na svakom zaslonu su vlastite bundeve, šišmiši i paučina, uz izbornik vještice kuhaju napitke i lete preko mjeseca, a odozgo se spušta jesensko lišće."
   },
   "ig": {
    "tagline": "KPUGHEE IHE OSISE CUBE NA CUBE",
@@ -3046,7 +3065,8 @@
     "other": "Ụbọchị {n} fọdụrụ"
    },
    "ev_halloween": "Halloween n'ụlọ ngosi!",
-   "evText_halloween": "Ruo Nọvemba 30, okpukpu Halloween meghere: ihe osise 8 na-atụ egwu, site na nwamba ojii na okpu amoosu ruo n'ụlọ mmụọ na ọkpụkpụ ukwu Kuniyoshi. Ụlọ ngosi dum na-eyi uwe maka ememe, Waltz Ugu na-abanye n'ime ndekọ, imecha okpukpu na-eme ka Pix yie dị ka Jack-o'-Lantern."
+   "evText_halloween": "Ruo Nọvemba 30, okpukpu Halloween meghere: ihe osise 8 na-atụ egwu, site na nwamba ojii na okpu amoosu ruo n'ụlọ mmụọ na ọkpụkpụ ukwu Kuniyoshi. Ụlọ ngosi dum na-eyi uwe maka ememe, Waltz Ugu na-abanye n'ime ndekọ, imecha okpukpu na-eme ka Pix yie dị ka Jack-o'-Lantern.",
+   "evDress_halloween": "Egwuregwu a niile na-eyi ihe maka Halloween: ihuenyo ọ bụla nwere ugu, ụsụ na ntanetị ududo nke ya; ndị amoosu na-esi ọgwụ n'akụkụ menu ma na-efe n'ihu ọnwa; akwụkwọ osisi nke mgbụsị akwụkwọ na-ada nwayọọ nwayọọ."
   },
   "zu": {
    "tagline": "VEZA ISITHOMBE NGAMAKHYUBHU",
@@ -3084,7 +3104,8 @@
     "other": "Kusele izinsuku ezingu-{n}"
    },
    "ev_halloween": "I-Halloween emnyuziyamu!",
-   "evText_halloween": "Kuze kube yizi-30 kuNovemba isitezi i-Halloween sivulekile: imidwebo eyisi-8 esabekayo, kusukela ekatini elimnyama nasesigqokweni somthakathi kuya endlini enezipoki nasethanjeni elikhulu likaKuniyoshi. Yonke imnyuziyamu iyagqoka ngomkhosi, i-waltz ye-Halloween ijoyina amarekhodi, futhi uma uqeda isitezi, uPix uguquka abe yisibani sethanga."
+   "evText_halloween": "Kuze kube yizi-30 kuNovemba isitezi i-Halloween sivulekile: imidwebo eyisi-8 esabekayo, kusukela ekatini elimnyama nasesigqokweni somthakathi kuya endlini enezipoki nasethanjeni elikhulu likaKuniyoshi. Yonke imnyuziyamu iyagqoka ngomkhosi, i-waltz ye-Halloween ijoyina amarekhodi, futhi uma uqeda isitezi, uPix uguquka abe yisibani sethanga.",
+   "evDress_halloween": "Umdlalo wonke uyagqoka i-Halloween: isikrini ngasinye sinamathanga aso, amalulwane nezintambo zesicabucabu, abathakathi bapheka iziphuzo eduze kwemenyu bese bendiza phambi kwenyanga, namaqabunga okwindla awa kancane."
   },
   "is": {
    "tagline": "AFHJÚPAÐU MYND KUBB FYRIR KUBB",
@@ -3122,7 +3143,8 @@
     "other": "{n} dagar eftir"
    },
    "ev_halloween": "Hrekkjavaka í safninu!",
-   "evText_halloween": "Til 30. nóvember er Hrekkjavökuhæðin opin: 8 hryllilegar myndir, frá svörtum ketti og nornahatti að draugahúsi og risavaxinni beinagrind Kuniyoshis. Allt safnið klæðir sig upp fyrir hátíðina, hrekkjavökuvals bætist við plöturnar og þegar þú klárar hæðina klæðist Pix graskerslukt."
+   "evText_halloween": "Til 30. nóvember er Hrekkjavökuhæðin opin: 8 hryllilegar myndir, frá svörtum ketti og nornahatti að draugahúsi og risavaxinni beinagrind Kuniyoshis. Allt safnið klæðir sig upp fyrir hátíðina, hrekkjavökuvals bætist við plöturnar og þegar þú klárar hæðina klæðist Pix graskerslukt.",
+   "evDress_halloween": "Allur leikurinn klæðir sig upp fyrir Hrekkjavöku: hver skjár fær sín eigin grasker, leðurblökur og köngulóarvefi, nornir brugga seiði við valmyndina og fljúga yfir tunglið, og haustlauf svífa niður."
   },
   "it": {
    "tagline": "SCOPRI IL QUADRO CUBO PER CUBO",
@@ -3161,7 +3183,8 @@
     "other": "ancora {n} giorni"
    },
    "ev_halloween": "Halloween al museo!",
-   "evText_halloween": "Fino al 30 novembre è aperto un piano di Halloween: 8 dipinti da brivido, dal gatto nero e dal cappello da strega alla casa stregata e al gigantesco scheletro di Kuniyoshi. Tutto il museo si veste a festa, un valzer di Halloween si aggiunge ai dischi e, completando il piano, Pix si trasforma in una zucca di Halloween."
+   "evText_halloween": "Fino al 30 novembre è aperto un piano di Halloween: 8 dipinti da brivido, dal gatto nero e dal cappello da strega alla casa stregata e al gigantesco scheletro di Kuniyoshi. Tutto il museo si veste a festa, un valzer di Halloween si aggiunge ai dischi e, completando il piano, Pix si trasforma in una zucca di Halloween.",
+   "evDress_halloween": "L’intero gioco si veste a festa per Halloween: ogni schermata ha le sue zucche, i suoi pipistrelli e le sue ragnatele, le streghe preparano pozioni accanto al menu e volano davanti alla luna, e le foglie d’autunno cadono leggere."
   },
   "sw": {
    "tagline": "FUNUA PICHA TABAKA KWA TABAKA",
@@ -3199,7 +3222,8 @@
     "other": "Siku {n} zimebaki"
    },
    "ev_halloween": "Halloween kwenye makumbusho!",
-   "evText_halloween": "Hadi Novemba 30, ghorofa ya Halloween imefunguliwa: picha 8 za kutisha, kuanzia paka mweusi na kofia ya mchawi hadi nyumba ya mizimu na kiunzi kikubwa cha Kuniyoshi. Makumbusho yote yanavaa kwa sherehe, waltz ya Halloween inaungana na rekodi, na ukikamilisha ghorofa, Pix anavaa kama taa ya boga."
+   "evText_halloween": "Hadi Novemba 30, ghorofa ya Halloween imefunguliwa: picha 8 za kutisha, kuanzia paka mweusi na kofia ya mchawi hadi nyumba ya mizimu na kiunzi kikubwa cha Kuniyoshi. Makumbusho yote yanavaa kwa sherehe, waltz ya Halloween inaungana na rekodi, na ukikamilisha ghorofa, Pix anavaa kama taa ya boga.",
+   "evDress_halloween": "Mchezo mzima unavaa mavazi ya Halloween: kila skrini ina maboga, popo na utando wa buibui wake, wachawi hutengeneza dawa karibu na menyu na kuruka mbele ya mwezi, na majani ya vuli hudondoka taratibu."
   },
   "lv": {
    "tagline": "ATKLĀJ ATTĒLU KUBIŅU PA KUBIŅAM",
@@ -3241,7 +3265,8 @@
     "other": "vēl {n} dienas"
    },
    "ev_halloween": "Helovīns muzejā!",
-   "evText_halloween": "Līdz 30. novembrim ir atvērts Helovīna stāvs: 8 baisi attēli – no melnā kaķa un raganas cepures līdz spoku mājai un Kunijoši milzu skeletam. Viss muzejs tērpjas svētkiem, ierakstiem pievienojas Helovīna valsis, bet, pabeidzot stāvu, Pix pārģērbjas par ķirbja laternu."
+   "evText_halloween": "Līdz 30. novembrim ir atvērts Helovīna stāvs: 8 baisi attēli – no melnā kaķa un raganas cepures līdz spoku mājai un Kunijoši milzu skeletam. Viss muzejs tērpjas svētkiem, ierakstiem pievienojas Helovīna valsis, bet, pabeidzot stāvu, Pix pārģērbjas par ķirbja laternu.",
+   "evDress_halloween": "Visa spēle tērpjas Helovīnam: katrā ekrānā ir savi ķirbji, sikspārņi un zirnekļtīkli, pie izvēlnes raganas vāra dzērienus un lido gar mēnesi, un no augšas virpuļo rudens lapas."
   },
   "lt": {
    "tagline": "ATIDENK PAVEIKSLĄ PO KUBELĮ",
@@ -3287,7 +3312,8 @@
     "other": "dar {n} dienų"
    },
    "ev_halloween": "Helovinas muziejuje!",
-   "evText_halloween": "Iki lapkričio 30 d. atidarytas Helovino aukštas: 8 baisingi paveikslai – nuo juodojo katino ir raganos skrybėlės iki namo su vaiduokliais ir milžiniško Kunijoši skeleto. Visas muziejus puošiasi šventei, prie plokštelių prisijungia Helovino valsas, o užbaigus aukštą Pix persirengia moliūgo žibintu."
+   "evText_halloween": "Iki lapkričio 30 d. atidarytas Helovino aukštas: 8 baisingi paveikslai – nuo juodojo katino ir raganos skrybėlės iki namo su vaiduokliais ir milžiniško Kunijoši skeleto. Visas muziejus puošiasi šventei, prie plokštelių prisijungia Helovino valsas, o užbaigus aukštą Pix persirengia moliūgo žibintu.",
+   "evDress_halloween": "Visas žaidimas pasipuošia Helovinui: kiekviename ekrane – savi moliūgai, šikšnosparniai ir voratinkliai, prie meniu raganos verda nuovirus ir skraido pro mėnulį, o iš viršaus sklando rudens lapai."
   },
   "hu": {
    "tagline": "KOCKÁNKÉNT TÁRD FEL A KÉPET",
@@ -3325,7 +3351,8 @@
     "other": "még {n} nap"
    },
    "ev_halloween": "Halloween a múzeumban!",
-   "evText_halloween": "November 30-ig nyitva áll a Halloween-emelet: 8 hátborzongató kép, a fekete macskától és a boszorkánykalaptól a kísértetházig és Kunijosi hatalmas csontvázáig. Az egész múzeum ünneplőbe öltözik, egy halloweeni keringő csatlakozik a lemezekhez, az emelet befejezésével pedig Pix töklámpásnak öltözik."
+   "evText_halloween": "November 30-ig nyitva áll a Halloween-emelet: 8 hátborzongató kép, a fekete macskától és a boszorkánykalaptól a kísértetházig és Kunijosi hatalmas csontvázáig. Az egész múzeum ünneplőbe öltözik, egy halloweeni keringő csatlakozik a lemezekhez, az emelet befejezésével pedig Pix töklámpásnak öltözik.",
+   "evDress_halloween": "A teljes játék Halloweenre öltözik: minden képernyőn saját tökök, denevérek és pókhálók vannak, a boszorkányok a menü mellett főzik a bájitalaikat, és átrepülnek a holdon, az őszi levelek pedig lassan hullanak."
   },
   "nl": {
    "tagline": "ONTHUL HET PLAATJE MET BLOKJES",
@@ -3363,7 +3390,8 @@
     "other": "nog {n} dagen"
    },
    "ev_halloween": "Halloween in het museum!",
-   "evText_halloween": "Tot 30 november is er een Halloween-verdieping open: 8 griezelige plaatjes, van een zwarte kat en een heksenhoed tot een spookhuis en het gigantische skelet van Kuniyoshi. Het hele museum verkleedt zich voor het feest, een Halloween-wals voegt zich bij de platen, en als je de verdieping afrondt, verkleedt Pix zich als pompoenlantaarn."
+   "evText_halloween": "Tot 30 november is er een Halloween-verdieping open: 8 griezelige plaatjes, van een zwarte kat en een heksenhoed tot een spookhuis en het gigantische skelet van Kuniyoshi. Het hele museum verkleedt zich voor het feest, een Halloween-wals voegt zich bij de platen, en als je de verdieping afrondt, verkleedt Pix zich als pompoenlantaarn.",
+   "evDress_halloween": "Het hele spel verkleedt zich voor Halloween: elk scherm krijgt zijn eigen pompoenen, vleermuizen en spinnenwebben, heksen brouwen drankjes naast het menu en vliegen langs de maan, en herfstbladeren dwarrelen naar beneden."
   },
   "nb": {
    "tagline": "AVDEKK BILDET KUBE FOR KUBE",
@@ -3401,7 +3429,8 @@
     "other": "{n} dager igjen"
    },
    "ev_halloween": "Halloween på museet!",
-   "evText_halloween": "Til og med 30. november er en Halloween-etasje åpen: 8 uhyggelige bilder, fra en svart katt og en heksehatt til et hjemsøkt hus og Kuniyoshis kjempestore skjelett. Hele museet kler seg ut til feiringen, en Halloween-vals blir med blant platene, og når du fullfører etasjen, kler Pix seg ut som en gresskarlykt."
+   "evText_halloween": "Til og med 30. november er en Halloween-etasje åpen: 8 uhyggelige bilder, fra en svart katt og en heksehatt til et hjemsøkt hus og Kuniyoshis kjempestore skjelett. Hele museet kler seg ut til feiringen, en Halloween-vals blir med blant platene, og når du fullfører etasjen, kler Pix seg ut som en gresskarlykt.",
+   "evDress_halloween": "Hele spillet kler seg ut til Halloween: hver skjerm får sine egne gresskar, flaggermus og spindelvev, hekser brygger trylledrikker ved menyen og flyr over månen, og høstløv svever ned."
   },
   "uz": {
    "tagline": "RASMNI KUBMA-KUB OCH",
@@ -3439,7 +3468,8 @@
     "other": "{n} kun qoldi"
    },
    "ev_halloween": "Muzeyda Xellouin!",
-   "evText_halloween": "30-noyabrgacha Xellouin qavati ochiq: qora mushuk va jodugar shlyapasidan tortib arvohlar uyi va Kuniyosining ulkan skeletigacha 8 ta qoʻrqinchli rasm. Butun muzey bayramga bezanadi, Xellouin valsi yozuvlarga qoʻshiladi, qavatni tugatish esa Pixni qovoq-chiroqqa aylantiradi."
+   "evText_halloween": "30-noyabrgacha Xellouin qavati ochiq: qora mushuk va jodugar shlyapasidan tortib arvohlar uyi va Kuniyosining ulkan skeletigacha 8 ta qoʻrqinchli rasm. Butun muzey bayramga bezanadi, Xellouin valsi yozuvlarga qoʻshiladi, qavatni tugatish esa Pixni qovoq-chiroqqa aylantiradi.",
+   "evDress_halloween": "Butun oʻyin Xellouinga bezanadi: har bir ekranda oʻz qovoqlari, koʻrshapalaklari va oʻrgimchak toʻrlari bor, jodugarlar menyu yonida iksir qaynatib, oy oldidan uchib oʻtadi, kuz barglari esa sekin toʻkiladi."
   },
   "pl": {
    "tagline": "ODKRYJ OBRAZ KOSTKA PO KOSTCE",
@@ -3485,7 +3515,8 @@
     "other": "jeszcze {n} dnia"
    },
    "ev_halloween": "Halloween w muzeum!",
-   "evText_halloween": "Do 30 listopada otwarte jest piętro Halloween: 8 upiornych obrazów, od czarnego kota i kapelusza czarownicy po nawiedzony dom i ogromny szkielet Kuniyoshiego. Całe muzeum przebiera się na święto, do płyt dołącza halloweenowy walc, a po ukończeniu piętra Pix przebiera się za dyniową latarnię."
+   "evText_halloween": "Do 30 listopada otwarte jest piętro Halloween: 8 upiornych obrazów, od czarnego kota i kapelusza czarownicy po nawiedzony dom i ogromny szkielet Kuniyoshiego. Całe muzeum przebiera się na święto, do płyt dołącza halloweenowy walc, a po ukończeniu piętra Pix przebiera się za dyniową latarnię.",
+   "evDress_halloween": "Cała gra przebiera się na Halloween: na każdym ekranie są własne dynie, nietoperze i pajęczyny, czarownice warzą eliksiry przy menu i latają na tle księżyca, a jesienne liście wirują w powietrzu."
   },
   "pt": {
    "tagline": "REVELE A IMAGEM CUBO A CUBO",
@@ -3524,7 +3555,8 @@
     "other": "faltam {n} dias"
    },
    "ev_halloween": "Halloween no museu!",
-   "evText_halloween": "Até 30 de novembro, o andar de Halloween está aberto: 8 quadros assustadores, do gato preto e do chapéu de bruxa à casa assombrada e ao esqueleto gigante de Kuniyoshi. O museu inteiro se fantasia para a festa, uma valsa de Halloween entra nos discos e, ao terminar o andar, Pix vira uma abóbora de Halloween."
+   "evText_halloween": "Até 30 de novembro, o andar de Halloween está aberto: 8 quadros assustadores, do gato preto e do chapéu de bruxa à casa assombrada e ao esqueleto gigante de Kuniyoshi. O museu inteiro se fantasia para a festa, uma valsa de Halloween entra nos discos e, ao terminar o andar, Pix vira uma abóbora de Halloween.",
+   "evDress_halloween": "O jogo inteiro se veste para o Halloween: cada tela ganha suas próprias abóboras, morcegos e teias de aranha, as bruxas preparam poções ao lado do menu e voam diante da lua, e folhas de outono caem flutuando."
   },
   "ro": {
    "tagline": "DEZVĂLUIE TABLOUL CUB CU CUB",
@@ -3566,7 +3598,8 @@
     "other": "încă {n} de zile"
    },
    "ev_halloween": "Halloween la muzeu!",
-   "evText_halloween": "Până pe 30 noiembrie e deschis etajul Halloween: 8 imagini înfricoșătoare, de la pisica neagră și pălăria de vrăjitoare până la casa bântuită și scheletul uriaș al lui Kuniyoshi. Tot muzeul se costumează pentru sărbătoare, un vals de Halloween se alătură discurilor, iar când termini etajul, Pix se costumează în felinar de dovleac."
+   "evText_halloween": "Până pe 30 noiembrie e deschis etajul Halloween: 8 imagini înfricoșătoare, de la pisica neagră și pălăria de vrăjitoare până la casa bântuită și scheletul uriaș al lui Kuniyoshi. Tot muzeul se costumează pentru sărbătoare, un vals de Halloween se alătură discurilor, iar când termini etajul, Pix se costumează în felinar de dovleac.",
+   "evDress_halloween": "Tot jocul se îmbracă de Halloween: fiecare ecran are dovlecii, liliecii și pânzele de păianjen ale lui, vrăjitoarele fierb poțiuni lângă meniu și zboară peste lună, iar frunzele de toamnă cad în vârtejuri."
   },
   "sq": {
    "tagline": "ZBULO FIGURËN KUB PAS KUBI",
@@ -3604,7 +3637,8 @@
     "other": "Mbeten {n} ditë"
    },
    "ev_halloween": "Halloween në muze!",
-   "evText_halloween": "Deri më 30 nëntor është i hapur kati i Halloween-it: 8 piktura të frikshme, nga macja e zezë dhe kapela e shtrigës te shtëpia me fantazma dhe skeleti gjigant i Kuniyoshit. I gjithë muzeu vishet për festën, një vals Halloween i bashkohet pllakave dhe kur e përfundon katin, Pix vishet si kungull fenerik."
+   "evText_halloween": "Deri më 30 nëntor është i hapur kati i Halloween-it: 8 piktura të frikshme, nga macja e zezë dhe kapela e shtrigës te shtëpia me fantazma dhe skeleti gjigant i Kuniyoshit. I gjithë muzeu vishet për festën, një vals Halloween i bashkohet pllakave dhe kur e përfundon katin, Pix vishet si kungull fenerik.",
+   "evDress_halloween": "I gjithë loja vishet për Halloween-in: çdo ekran ka kungujt, lakuriqët e natës dhe rrjetat e merimangës të veta, shtrigat gatuajnë pije magjike pranë menysë dhe fluturojnë para hënës, ndërsa gjethet e vjeshtës bien pa zhurmë."
   },
   "sk": {
    "tagline": "ODKRY OBRAZ KOCKU PO KOCKE",
@@ -3650,7 +3684,8 @@
     "other": "ešte {n} dní"
    },
    "ev_halloween": "Halloween v múzeu!",
-   "evText_halloween": "Do 30. novembra je otvorené halloweensko poschodie: 8 strašidelných obrazov, od čiernej mačky a klobúka čarodejnice po strašidelný dom a obrovskú kostru od Kunijošiho. Celé múzeum sa oblečie do sviatočného, k platniam pribudne halloweenský valčík a po dokončení poschodia sa Pix prezlečie za tekvicový lampión."
+   "evText_halloween": "Do 30. novembra je otvorené halloweensko poschodie: 8 strašidelných obrazov, od čiernej mačky a klobúka čarodejnice po strašidelný dom a obrovskú kostru od Kunijošiho. Celé múzeum sa oblečie do sviatočného, k platniam pribudne halloweenský valčík a po dokončení poschodia sa Pix prezlečie za tekvicový lampión.",
+   "evDress_halloween": "Celá hra sa preoblieka na Halloween: každá obrazovka má vlastné tekvice, netopiere a pavučiny, pri menu čarodejnice varia elixíry a lietajú popred mesiac a zhora padá jesenné lístie."
   },
   "sl": {
    "tagline": "RAZKRIJ SLIKO KOCKO ZA KOCKO",
@@ -3696,7 +3731,8 @@
     "other": "še {n} dni"
    },
    "ev_halloween": "Noč čarovnic v muzeju!",
-   "evText_halloween": "Do 30. novembra je odprto nadstropje Noč čarovnic: 8 srhljivih slik, od črne mačke in čarovniškega klobuka do hiše strahov in orjaškega okostnjaka izpod Kuniyoshijeve roke. Cel muzej se našemi za praznik, valček noči čarovnic se pridruži ploščam, ko dokončaš nadstropje, pa se Pix našemi v bučno svetilko."
+   "evText_halloween": "Do 30. novembra je odprto nadstropje Noč čarovnic: 8 srhljivih slik, od črne mačke in čarovniškega klobuka do hiše strahov in orjaškega okostnjaka izpod Kuniyoshijeve roke. Cel muzej se našemi za praznik, valček noči čarovnic se pridruži ploščam, ko dokončaš nadstropje, pa se Pix našemi v bučno svetilko.",
+   "evDress_halloween": "Cela igra se našemi za noč čarovnic: na vsakem zaslonu so lastne buče, netopirji in pajčevina, ob meniju čarovnice kuhajo napoje in letijo čez luno, od zgoraj pa se spuščajo jesenski listi."
   },
   "so": {
    "tagline": "MUUJI SAWIRKA KUUB-KUUB",
@@ -3734,7 +3770,8 @@
     "other": "{n} maalmood ayaa dhiman"
    },
    "ev_halloween": "Halloween wuxuu yimid matxafka!",
-   "evText_halloween": "Ilaa 30-ka Noofambar, dabaqa Halloween waa furan yahay: 8 sawir oo cabsi leh, laga bilaabo bisad madow iyo koofiyadda saaxiradda ilaa guri jinni lagu sheego iyo lafagurka weyn ee Kuniyoshi. Matxafka oo dhan wuu is-qurxiyaa dabaaldegga, Walsiga bocorka ayaa lagu darayaa rekodhada, dhammaystirka dabaqaana wuxuu Pix ka dhigaa bocor-nal."
+   "evText_halloween": "Ilaa 30-ka Noofambar, dabaqa Halloween waa furan yahay: 8 sawir oo cabsi leh, laga bilaabo bisad madow iyo koofiyadda saaxiradda ilaa guri jinni lagu sheego iyo lafagurka weyn ee Kuniyoshi. Matxafka oo dhan wuu is-qurxiyaa dabaaldegga, Walsiga bocorka ayaa lagu darayaa rekodhada, dhammaystirka dabaqaana wuxuu Pix ka dhigaa bocor-nal.",
+   "evDress_halloween": "Ciyaarta oo dhan waxay u labbistaa Halloween: shaashad kastaa waxay leedahay bocorradeeda, fiidmeerradeeda iyo shabagga caarada, saaxiraduna waxay cabitaan ku kariyaan agagaarka menu-ga oo ay hortiisa dayaxa ka duulaan, caleemaha dayrtuna si tartiib ah ayay u dhacaan."
   },
   "fi": {
    "tagline": "PALJASTA KUVA KUUTIO KERRALLAAN",
@@ -3772,7 +3809,8 @@
     "other": "vielä {n} päivää"
    },
    "ev_halloween": "Halloween museossa!",
-   "evText_halloween": "Marraskuun 30. päivään asti on avoinna Halloween-kerros: 8 karmivaa kuvaa mustasta kissasta ja noidan hatusta kummitustaloon ja Kuniyoshin jättimäiseen luurankoon. Koko museo pukeutuu juhlaan, Halloween-valssi liittyy levyihin, ja kun saat kerroksen valmiiksi, Pix pukeutuu kurpitsalyhdyksi."
+   "evText_halloween": "Marraskuun 30. päivään asti on avoinna Halloween-kerros: 8 karmivaa kuvaa mustasta kissasta ja noidan hatusta kummitustaloon ja Kuniyoshin jättimäiseen luurankoon. Koko museo pukeutuu juhlaan, Halloween-valssi liittyy levyihin, ja kun saat kerroksen valmiiksi, Pix pukeutuu kurpitsalyhdyksi.",
+   "evDress_halloween": "Koko peli pukeutuu halloweeniksi: jokaisella ruudulla on omat kurpitsansa, lepakkonsa ja hämähäkinverkkonsa, noidat keittävät taikajuomia valikon vieressä ja lentävät kuun poikki, ja syksyn lehdet leijailevat alas."
   },
   "sv": {
    "tagline": "AVSLÖJA BILDEN KUB FÖR KUB",
@@ -3810,7 +3848,8 @@
     "other": "{n} dagar kvar"
    },
    "ev_halloween": "Halloween på museet!",
-   "evText_halloween": "Till och med den 30 november är en Halloween-våning öppen: 8 kusliga bilder, från en svart katt och en häxhatt till ett spökhus och Kuniyoshis jättelika skelett. Hela museet klär upp sig för högtiden, en Halloween-vals ansluter till skivorna, och när du klarar våningen klär sig Pix som en pumpalykta."
+   "evText_halloween": "Till och med den 30 november är en Halloween-våning öppen: 8 kusliga bilder, från en svart katt och en häxhatt till ett spökhus och Kuniyoshis jättelika skelett. Hela museet klär upp sig för högtiden, en Halloween-vals ansluter till skivorna, och när du klarar våningen klär sig Pix som en pumpalykta.",
+   "evDress_halloween": "Hela spelet klär ut sig till Halloween: varje skärm får sina egna pumpor, fladdermöss och spindelväv, häxor brygger trolldrycker vid menyn och flyger över månen, och höstlöv singlar ner."
   },
   "vi": {
    "tagline": "HÉ LỘ BỨC TRANH TỪNG KHỐI MỘT",
@@ -3844,7 +3883,8 @@
     "other": "còn {n} ngày"
    },
    "ev_halloween": "Halloween ở bảo tàng!",
-   "evText_halloween": "Đến hết ngày 30 tháng 11, tầng Halloween mở cửa: 8 bức tranh rùng rợn, từ chú mèo đen và chiếc mũ phù thủy đến ngôi nhà ma ám và bộ xương khổng lồ của Kuniyoshi. Cả bảo tàng hóa trang đón lễ, một điệu valse Halloween gia nhập các đĩa nhạc, và khi hoàn thành tầng này, Pix sẽ hóa trang thành đèn lồng bí ngô."
+   "evText_halloween": "Đến hết ngày 30 tháng 11, tầng Halloween mở cửa: 8 bức tranh rùng rợn, từ chú mèo đen và chiếc mũ phù thủy đến ngôi nhà ma ám và bộ xương khổng lồ của Kuniyoshi. Cả bảo tàng hóa trang đón lễ, một điệu valse Halloween gia nhập các đĩa nhạc, và khi hoàn thành tầng này, Pix sẽ hóa trang thành đèn lồng bí ngô.",
+   "evDress_halloween": "Cả trò chơi hóa trang đón Halloween: mỗi màn hình có bí ngô, dơi và mạng nhện riêng, các phù thủy nấu thuốc bên cạnh menu rồi bay ngang vầng trăng, còn lá thu thì nhẹ nhàng rơi xuống."
   },
   "tr": {
    "tagline": "RESMİ KÜP KÜP ORTAYA ÇIKAR",
@@ -3882,7 +3922,8 @@
     "other": "{n} gün kaldı"
    },
    "ev_halloween": "Müzede Cadılar Bayramı!",
-   "evText_halloween": "30 Kasım’a kadar Cadılar Bayramı katı açık: kara kediden ve cadı şapkasından perili eve ve Kuniyoshi’nin dev iskeletine kadar 8 ürkütücü resim. Bütün müze bayram havasına bürünüyor, plaklara bir Cadılar Bayramı valsi katılıyor ve katı bitirince Pix cadılar bayramı balkabağı fenerine dönüşüyor."
+   "evText_halloween": "30 Kasım’a kadar Cadılar Bayramı katı açık: kara kediden ve cadı şapkasından perili eve ve Kuniyoshi’nin dev iskeletine kadar 8 ürkütücü resim. Bütün müze bayram havasına bürünüyor, plaklara bir Cadılar Bayramı valsi katılıyor ve katı bitirince Pix cadılar bayramı balkabağı fenerine dönüşüyor.",
+   "evDress_halloween": "Oyunun tamamı Cadılar Bayramı için süsleniyor: her ekranın kendi balkabakları, yarasaları ve örümcek ağları var, cadılar menünün yanında iksir kaynatıp ayın önünden uçuyor, sonbahar yaprakları da usulca dökülüyor."
   },
   "tk": {
    "tagline": "SURATY KUBMA-KUB AÇ",
@@ -3920,7 +3961,8 @@
     "other": "{n} gün galdy"
    },
    "ev_halloween": "Muzeýde Hellowin!",
-   "evText_halloween": "30-njy noýabra çenli Hellowin gaty açyk: gara pişikden we jadygöý şlýapasyndan arwahly öýe we Kuniýoşiniň ägirt uly skeletine çenli 8 gorkunç surat. Muzeýiň hemmesi baýram üçin bezelýär, Hellowin walsy ýazgylara goşulýar, gaty tamamlamak bolsa Pix-i kädi çyrasyna öwürýär."
+   "evText_halloween": "30-njy noýabra çenli Hellowin gaty açyk: gara pişikden we jadygöý şlýapasyndan arwahly öýe we Kuniýoşiniň ägirt uly skeletine çenli 8 gorkunç surat. Muzeýiň hemmesi baýram üçin bezelýär, Hellowin walsy ýazgylara goşulýar, gaty tamamlamak bolsa Pix-i kädi çyrasyna öwürýär.",
+   "evDress_halloween": "Bütin oýun Hellowin üçin bezelýär: her ekranyň öz kädileri, ýarganatlary we möjek tory bar, jadygöýler menýunyň ýanynda dermanlar gaýnadyp, aýyň öňünden uçup geçýär, güýz ýapraklary bolsa ýuwaşja dökülýär."
   },
   "yo": {
    "tagline": "ṢÍ ÀWÒRÁN PAYÁ KÚBÙ LẸ́YÌN KÚBÙ",
@@ -3954,7 +3996,8 @@
     "other": "Ọjọ́ {n} ló kù"
    },
    "ev_halloween": "Halloween ní ilé ọnà!",
-   "evText_halloween": "Títí di Oṣù Kọkànlá 30, àjà Halloween wà ní ṣíṣí: àwọn àwòrán ẹ̀rù 8, láti Ológbò Dúdú àti fìlà àjẹ́ dé ilé tí ẹ̀mí ń gbé àti egungun ńlá Kuniyoshi. Gbogbo ilé ọnà ń wọṣọ fún àjọ̀dún, Wáltì Elégédé darapọ̀ mọ́ àwọn àkọsílẹ̀, píparí àjà sì ń mú Pix wọṣọ bí Àtùpà Elégédé."
+   "evText_halloween": "Títí di Oṣù Kọkànlá 30, àjà Halloween wà ní ṣíṣí: àwọn àwòrán ẹ̀rù 8, láti Ológbò Dúdú àti fìlà àjẹ́ dé ilé tí ẹ̀mí ń gbé àti egungun ńlá Kuniyoshi. Gbogbo ilé ọnà ń wọṣọ fún àjọ̀dún, Wáltì Elégédé darapọ̀ mọ́ àwọn àkọsílẹ̀, píparí àjà sì ń mú Pix wọṣọ bí Àtùpà Elégédé.",
+   "evDress_halloween": "Gbogbo eré náà ń múra fún Halloween: ojú-ìwé kọ̀ọ̀kan ní elégédé, àdán àti òwú aláǹtakùn tirẹ̀, àwọn àjẹ́ ń se oògùn lẹ́gbẹ̀ẹ́ àtòjọ àṣàyàn wọ́n sì ń fò kọjá òṣùpá, ewé àkókò ìwọ́wé sì ń já bọ̀ díẹ̀díẹ̀."
   },
   "el": {
    "tagline": "ΑΠΟΚΑΛΥΨΕ ΤΗΝ ΕΙΚΟΝΑ ΚΥΒΟ-ΚΥΒΟ",
@@ -3992,7 +4035,8 @@
     "other": "απομένουν {n} μέρες"
    },
    "ev_halloween": "Halloween στο μουσείο!",
-   "evText_halloween": "Μέχρι τις 30 Νοεμβρίου είναι ανοιχτός ένας όροφος Halloween: 8 τρομακτικές εικόνες, από μια μαύρη γάτα και ένα καπέλο μάγισσας μέχρι ένα στοιχειωμένο σπίτι και τον γιγάντιο σκελετό του Κουνιγιόσι. Ολόκληρο το μουσείο ντύνεται για τη γιορτή, ένα βαλς του Halloween προστίθεται στους δίσκους, και όταν ολοκληρώσεις τον όροφο, ο Pix ντύνεται κολοκύθα-φανάρι."
+   "evText_halloween": "Μέχρι τις 30 Νοεμβρίου είναι ανοιχτός ένας όροφος Halloween: 8 τρομακτικές εικόνες, από μια μαύρη γάτα και ένα καπέλο μάγισσας μέχρι ένα στοιχειωμένο σπίτι και τον γιγάντιο σκελετό του Κουνιγιόσι. Ολόκληρο το μουσείο ντύνεται για τη γιορτή, ένα βαλς του Halloween προστίθεται στους δίσκους, και όταν ολοκληρώσεις τον όροφο, ο Pix ντύνεται κολοκύθα-φανάρι.",
+   "evDress_halloween": "Ολόκληρο το παιχνίδι ντύνεται για το Halloween: κάθε οθόνη έχει τις δικές της κολοκύθες, νυχτερίδες και ιστούς αράχνης, οι μάγισσες φτιάχνουν φίλτρα δίπλα στο μενού και πετούν μπροστά από το φεγγάρι, και τα φθινοπωρινά φύλλα πέφτουν απαλά."
   },
   "be": {
    "tagline": "РАСКРЫЙ КАРЦІНУ КУБІКАМІ",
@@ -4038,7 +4082,8 @@
     "other": "яшчэ {n} дня"
    },
    "ev_halloween": "Хэлоўін у музеі!",
-   "evText_halloween": "Да 30 лістапада адкрыты паверх Хэлоўін: 8 жахлівых карцін, ад чорнага ката і капелюша ведзьмы да дома з прывідамі і велізарнага шкілета Куніёсі. Увесь музей апранаецца да свята, да кружэлак далучаецца хэлоўінскі вальс, а калі завершыш паверх, Pix ператвараецца ў гарбузовы ліхтар."
+   "evText_halloween": "Да 30 лістапада адкрыты паверх Хэлоўін: 8 жахлівых карцін, ад чорнага ката і капелюша ведзьмы да дома з прывідамі і велізарнага шкілета Куніёсі. Увесь музей апранаецца да свята, да кружэлак далучаецца хэлоўінскі вальс, а калі завершыш паверх, Pix ператвараецца ў гарбузовы ліхтар.",
+   "evDress_halloween": "Уся гульня апранаецца на Хэлоўін: на кожным экране — свае гарбузы, кажаны і павуціна, каля меню ведзьмы вараць зелле і лётаюць на фоне месяца, а зверху кружляе восеньскае лісце."
   },
   "bg": {
    "tagline": "РАЗКРИЙ КАРТИНА КУБЧЕ ПО КУБЧЕ",
@@ -4076,7 +4121,8 @@
     "other": "още {n} дни"
    },
    "ev_halloween": "Хелоуин в музея!",
-   "evText_halloween": "До 30 ноември е отворен етажът Хелоуин: 8 зловещи картини – от черната котка и шапката на вещица до къщата с духове и гигантския скелет на Кунийоши. Целият музей се облича за празника, към плочите се присъединява хелоуински валс, а когато завършиш етажа, Pix се превръща в тиква-фенер."
+   "evText_halloween": "До 30 ноември е отворен етажът Хелоуин: 8 зловещи картини – от черната котка и шапката на вещица до къщата с духове и гигантския скелет на Кунийоши. Целият музей се облича за празника, към плочите се присъединява хелоуински валс, а когато завършиш етажа, Pix се превръща в тиква-фенер.",
+   "evDress_halloween": "Цялата игра се облича за Хелоуин: на всеки екран има свои тикви, прилепи и паяжини, край менюто вещици варят отвари и летят на фона на луната, а отгоре се носят есенни листа."
   },
   "ky": {
    "tagline": "СҮРӨТТҮ КУБ-КУБ МЕНЕН АЧ",
@@ -4114,7 +4160,8 @@
     "other": "{n} күн калды"
    },
    "ev_halloween": "Музейде Хэллоуин!",
-   "evText_halloween": "30-ноябрга чейин Хэллоуин кабаты ачык: кара мышык менен жез кемпирдин калпагынан баштап арбактуу үйгө жана Куниёсинин алп скелетине чейин 8 коркунучтуу сүрөт. Бүт музей майрамга кийинет, пластинкаларга Хэллоуин вальсы кошулат, ал эми кабатты бүтүрсөңүз, Pix ашкабак чырагына айланат."
+   "evText_halloween": "30-ноябрга чейин Хэллоуин кабаты ачык: кара мышык менен жез кемпирдин калпагынан баштап арбактуу үйгө жана Куниёсинин алп скелетине чейин 8 коркунучтуу сүрөт. Бүт музей майрамга кийинет, пластинкаларга Хэллоуин вальсы кошулат, ал эми кабатты бүтүрсөңүз, Pix ашкабак чырагына айланат.",
+   "evDress_halloween": "Бүт оюн Хэллоуинге кийинет: ар бир экранда өз ашкабактары, жарганаттары жана жөргөмүш торлору бар, меню жанында сыйкырчылар дары кайнатып, айдын алдынан учуп өтөт, күзгү жалбырактар болсо акырын төгүлөт."
   },
   "kk": {
    "tagline": "СУРЕТТІ ТЕКШЕЛЕП АШ",
@@ -4152,7 +4199,8 @@
     "other": "{n} күн қалды"
    },
    "ev_halloween": "Музейде Хэллоуин!",
-   "evText_halloween": "30 қарашаға дейін Хэллоуин қабаты ашық: қара мысық пен мыстанның қалпағынан бастап елесті үй мен Куниёсидің алып қаңқасына дейін — 8 қорқынышты сурет. Бүкіл мұражай мерекеге киінеді, пластинкаларға Хэллоуин вальсі қосылады, ал қабатты аяқтағанда Pix асқабақ шамына айналады."
+   "evText_halloween": "30 қарашаға дейін Хэллоуин қабаты ашық: қара мысық пен мыстанның қалпағынан бастап елесті үй мен Куниёсидің алып қаңқасына дейін — 8 қорқынышты сурет. Бүкіл мұражай мерекеге киінеді, пластинкаларға Хэллоуин вальсі қосылады, ал қабатты аяқтағанда Pix асқабақ шамына айналады.",
+   "evDress_halloween": "Бүкіл ойын Хэллоуинге киінеді: әр экранда өз асқабақтары, жарқанаттары мен өрмекші торлары бар, мәзір жанында сиқыршылар сусын қайнатып, ай алдынан ұшып өтеді, ал күзгі жапырақтар баяу төгіледі."
   },
   "mk": {
    "tagline": "ОТКРИЈ ЈА СЛИКАТА КОЦКА ПО КОЦКА",
@@ -4190,7 +4238,8 @@
     "other": "Уште {n} дена"
    },
    "ev_halloween": "Ноќ на вештерките во музејот!",
-   "evText_halloween": "До 30 ноември е отворен катот Ноќ на вештерките: 8 страшни слики, од црната мачка и шапката на вештерка до куќата на духови и огромниот скелет на Кунијоши. Целиот музеј се облекува за празникот, валсот за Ноќта на вештерките им се придружува на плочите, а кога ќе го завршиш катот, Pix се претвора во тиква-фенер."
+   "evText_halloween": "До 30 ноември е отворен катот Ноќ на вештерките: 8 страшни слики, од црната мачка и шапката на вештерка до куќата на духови и огромниот скелет на Кунијоши. Целиот музеј се облекува за празникот, валсот за Ноќта на вештерките им се придружува на плочите, а кога ќе го завршиш катот, Pix се претвора во тиква-фенер.",
+   "evDress_halloween": "Целата игра се облекува за Ноќта на вештерките: на секој екран има свои тикви, лилјаци и пајажини, покрај менито вештерки варат напитоци и летаат пред месечината, а одозгора паѓа есенско лисје."
   },
   "mn": {
    "tagline": "ЗУРГИЙГ КУБ КУБААР НЭЭ",
@@ -4228,7 +4277,8 @@
     "other": "{n} өдөр үлдлээ"
    },
    "ev_halloween": "Музейд Хэллоуин боллоо!",
-   "evText_halloween": "11-р сарын 30 хүртэл Хэллоуины давхар нээлттэй: хар муур, шуламын малгайгаас эхлээд сүнстэй байшин, Кунийошийн аварга араг яс хүртэл 8 аймшигт зураг. Музей бүхэлдээ баярт зориулан гоёж, пянзнуудад Хэллоуины вальс нэмэгдэж, давхрыг дуусгахад Pix хулуун дэнлүү болон хувирна."
+   "evText_halloween": "11-р сарын 30 хүртэл Хэллоуины давхар нээлттэй: хар муур, шуламын малгайгаас эхлээд сүнстэй байшин, Кунийошийн аварга араг яс хүртэл 8 аймшигт зураг. Музей бүхэлдээ баярт зориулан гоёж, пянзнуудад Хэллоуины вальс нэмэгдэж, давхрыг дуусгахад Pix хулуун дэнлүү болон хувирна.",
+   "evDress_halloween": "Бүх тоглоом Хэллоуинд зориулан хувцаслана: дэлгэц бүрт өөрийн гэсэн хулуу, сарьсан багваахай, аалзны тор бий, цэсний дэргэд шулмууд эм чанаж саран дээгүүр нисэж, намрын навчис аяархан унана."
   },
   "sr": {
    "tagline": "ОТКРИЈ СЛИКУ КОЦКУ ПО КОЦКУ",
@@ -4270,7 +4320,8 @@
     "other": "Још {n} дана"
    },
    "ev_halloween": "Ноћ вештица у музеју!",
-   "evText_halloween": "До 30. новембра отворен је спрат Ноћ вештица: 8 језивих слика, од црне мачке и вештичјег шешира до уклете куће и огромног костура Кунијошија. Цео музеј се облачи за празник, валцер Ноћи вештица придружује се плочама, а када завршиш спрат, Pix се претвара у бундеву-фењер."
+   "evText_halloween": "До 30. новембра отворен је спрат Ноћ вештица: 8 језивих слика, од црне мачке и вештичјег шешира до уклете куће и огромног костура Кунијошија. Цео музеј се облачи за празник, валцер Ноћи вештица придружује се плочама, а када завршиш спрат, Pix се претвара у бундеву-фењер.",
+   "evDress_halloween": "Цела игра се облачи за Ноћ вештица: на сваком екрану су своје бундеве, слепи мишеви и паучина, поред менија вештице кувају напитке и лете испред месеца, а одозго се спушта јесење лишће."
   },
   "tg": {
    "tagline": "РАСМРО КУБИК БА КУБИК КУШО",
@@ -4308,7 +4359,8 @@
     "other": "боз {n} рӯз"
    },
    "ev_halloween": "Ҳеллоуин дар музей!",
-   "evText_halloween": "То 30 ноябр ошёнаи Ҳеллоуин кушода аст: 8 расми даҳшатнок, аз гурбаи сиёҳ ва кулоҳи ҷодугар то хонаи арвоҳ ва скелети азими Кунийоши. Тамоми музей барои ид оро меёбад, Валси каду ба сабтҳо ҳамроҳ мешавад ва тамом кардани ошёна Pix-ро ба чароғи каду табдил медиҳад."
+   "evText_halloween": "То 30 ноябр ошёнаи Ҳеллоуин кушода аст: 8 расми даҳшатнок, аз гурбаи сиёҳ ва кулоҳи ҷодугар то хонаи арвоҳ ва скелети азими Кунийоши. Тамоми музей барои ид оро меёбад, Валси каду ба сабтҳо ҳамроҳ мешавад ва тамом кардани ошёна Pix-ро ба чароғи каду табдил медиҳад.",
+   "evDress_halloween": "Тамоми бозӣ ба Ҳеллоуин ороиш меёбад: ҳар экран кадуи худ, кӯршапаракҳо ва тори анкабут дорад, ҷодугарон дар назди меню шарбат мепазанд ва аз пеши моҳ парвоз мекунанд, баргҳои тирамоҳӣ бошанд оҳиста мерезанд."
   },
   "uk": {
    "tagline": "РОЗКРИЙ КАРТИНУ КУБИКАМИ",
@@ -4354,7 +4406,8 @@
     "other": "ще {n} дня"
    },
    "ev_halloween": "Хелловін у музеї!",
-   "evText_halloween": "До 30 листопада відкритий поверх Хелловін: 8 моторошних картин — від чорного кота й капелюха відьми до будинку із привидами та велетенського скелета Кунійосі. Увесь музей наряджається до свята, до платівок долучається хелловінський вальс, а завершений поверх перевдягає Pix у гарбуз-ліхтар."
+   "evText_halloween": "До 30 листопада відкритий поверх Хелловін: 8 моторошних картин — від чорного кота й капелюха відьми до будинку із привидами та велетенського скелета Кунійосі. Увесь музей наряджається до свята, до платівок долучається хелловінський вальс, а завершений поверх перевдягає Pix у гарбуз-ліхтар.",
+   "evDress_halloween": "Уся гра вбирається на Хелловін: на кожному екрані — свої гарбузи, кажани й павутина, біля меню відьми варять зілля й літають на тлі місяця, а згори кружляє осіннє листя."
   },
   "ka": {
    "tagline": "გამოაჩინე სურათი კუბ-კუბად",
@@ -4392,7 +4445,8 @@
     "other": "დარჩა {n} დღე"
    },
    "ev_halloween": "ჰელოუინი მუზეუმში!",
-   "evText_halloween": "30 ნოემბრამდე ღიაა ჰელოუინის სართული: 8 საშიში სურათი, შავი კატიდან და ჯადოქრის ქუდიდან მოჩვენებებიან სახლამდე და კუნიიოშის უზარმაზარ ჩონჩხამდე. მთელი მუზეუმი დღესასწაულისთვის იმოსება, ფირფიტებს ჰელოუინის ვალსი ემატება, სართულის დასრულებისას კი Pix გოგრის ფარნად გადაიქცევა."
+   "evText_halloween": "30 ნოემბრამდე ღიაა ჰელოუინის სართული: 8 საშიში სურათი, შავი კატიდან და ჯადოქრის ქუდიდან მოჩვენებებიან სახლამდე და კუნიიოშის უზარმაზარ ჩონჩხამდე. მთელი მუზეუმი დღესასწაულისთვის იმოსება, ფირფიტებს ჰელოუინის ვალსი ემატება, სართულის დასრულებისას კი Pix გოგრის ფარნად გადაიქცევა.",
+   "evDress_halloween": "მთელი თამაში ჰელოუინისთვის რთვება: ყველა ეკრანს თავისი გოგრები, ღამურები და ობობას ქსელები აქვს, მენიუს გვერდით ჯადოქრები წამლებს ხარშავენ და მთვარის წინ დაფრინავენ, შემოდგომის ფოთლები კი ნელა ცვივა."
   },
   "hy": {
    "tagline": "ՆԿԱՐԸ՝ ԽՈՐԱՆԱՐԴ ԱՌ ԽՈՐԱՆԱՐԴ",
@@ -4430,7 +4484,8 @@
     "other": "{n} օր է մնացել"
    },
    "ev_halloween": "Հելոուին թանգարանում!",
-   "evText_halloween": "Մինչև նոյեմբերի 30-ը բաց է Հելոուինի հարկը՝ 8 սարսափազդու նկար՝ սև կատվից ու կախարդի գլխարկից մինչև ուրվականների տունն ու Կունիյոշիի հսկա կմախքը։ Ամբողջ թանգարանը զարդարվում է տոնի համար, ձայնապնակներին միանում է Հելոուինի վալսը, իսկ հարկն ավարտելիս Pix-ը վերածվում է դդմի լապտերի։"
+   "evText_halloween": "Մինչև նոյեմբերի 30-ը բաց է Հելոուինի հարկը՝ 8 սարսափազդու նկար՝ սև կատվից ու կախարդի գլխարկից մինչև ուրվականների տունն ու Կունիյոշիի հսկա կմախքը։ Ամբողջ թանգարանը զարդարվում է տոնի համար, ձայնապնակներին միանում է Հելոուինի վալսը, իսկ հարկն ավարտելիս Pix-ը վերածվում է դդմի լապտերի։",
+   "evDress_halloween": "Ամբողջ խաղը հագնվում է Հելոուինի համար. յուրաքանչյուր էկրանին իր դդումներն են, չղջիկները և սարդոստայնները, մենյուի մոտ վհուկները դեղ են եփում և թռչում լուսնի առջևով, իսկ աշնանային տերևները կամաց-կամաց թափվում են."
   },
   "he": {
    "tagline": "חשפו את התמונה קובייה אחר קובייה",
@@ -4472,7 +4527,8 @@
     "other": "נותרו {n} ימים"
    },
    "ev_halloween": "הלואין במוזיאון!",
-   "evText_halloween": "עד 30 בנובמבר פתוחה קומת הלואין: 8 תמונות מצמררות, מחתול שחור וכובע מכשפה ועד בית רדוף רוחות והשלד הענק של קוניושי. כל המוזיאון מתחפש לכבוד החג, ואל התקליטים מצטרף ואלס הלואין, ובסיום הקומה Pix מתחפש לפנס דלעת."
+   "evText_halloween": "עד 30 בנובמבר פתוחה קומת הלואין: 8 תמונות מצמררות, מחתול שחור וכובע מכשפה ועד בית רדוף רוחות והשלד הענק של קוניושי. כל המוזיאון מתחפש לכבוד החג, ואל התקליטים מצטרף ואלס הלואין, ובסיום הקומה Pix מתחפש לפנס דלעת.",
+   "evDress_halloween": "כל המשחק מתחפש להלואין: בכל מסך יש דלעות, עטלפים וקורי עכביש משלו, מכשפות מבשלות שיקויים ליד התפריט וטסות מול הירח, ועלי סתיו יורדים בעדינות."
   },
   "ur": {
    "tagline": "کیوب بہ کیوب تصویر ظاہر کرو",
@@ -4510,7 +4566,8 @@
     "other": "{n} دن باقی"
    },
    "ev_halloween": "میوزیم میں ہیلووین!",
-   "evText_halloween": "30 نومبر تک ہیلووین منزل کھلی ہے: کالی بلی اور چڑیل کی ٹوپی سے لے کر آسیب زدہ گھر اور کونییوشی کے دیوقامت ڈھانچے تک 8 ڈراؤنی تصویریں۔ پورا میوزیم تہوار کے لیے سج جاتا ہے، ریکارڈز میں ہیلووین والٹز شامل ہو جاتا ہے، اور منزل مکمل کرنے پر Pix جیک او لینٹرن بن جاتا ہے۔"
+   "evText_halloween": "30 نومبر تک ہیلووین منزل کھلی ہے: کالی بلی اور چڑیل کی ٹوپی سے لے کر آسیب زدہ گھر اور کونییوشی کے دیوقامت ڈھانچے تک 8 ڈراؤنی تصویریں۔ پورا میوزیم تہوار کے لیے سج جاتا ہے، ریکارڈز میں ہیلووین والٹز شامل ہو جاتا ہے، اور منزل مکمل کرنے پر Pix جیک او لینٹرن بن جاتا ہے۔",
+   "evDress_halloween": "پورا کھیل ہیلووین کے لیے سج جاتا ہے: ہر اسکرین کے اپنے کدو، چمگادڑیں اور مکڑی کے جالے ہیں، جادوگرنیاں مینو کے پاس جوشاندے پکاتی اور چاند کے سامنے سے اڑتی ہیں، اور خزاں کے پتے آہستہ آہستہ گرتے ہیں۔"
   },
   "ar": {
    "tagline": "اكشف اللوحة مكعبًا بعد مكعب",
@@ -4564,7 +4621,8 @@
     "other": "بقي {n} يوم"
    },
    "ev_halloween": "هالوين في المتحف!",
-   "evText_halloween": "حتى 30 نوفمبر يظل طابق هالوين مفتوحًا: 8 لوحات مخيفة، من القطة السوداء وقبعة الساحرة إلى البيت المسكون وهيكل كونييوشي العظمي العملاق. يرتدي المتحف كله ثوب الاحتفال، وينضم فالس هالوين إلى الأسطوانات، وعند إكمال الطابق يتنكّر Pix في هيئة فانوس يقطين."
+   "evText_halloween": "حتى 30 نوفمبر يظل طابق هالوين مفتوحًا: 8 لوحات مخيفة، من القطة السوداء وقبعة الساحرة إلى البيت المسكون وهيكل كونييوشي العظمي العملاق. يرتدي المتحف كله ثوب الاحتفال، وينضم فالس هالوين إلى الأسطوانات، وعند إكمال الطابق يتنكّر Pix في هيئة فانوس يقطين.",
+   "evDress_halloween": "تتزيّن اللعبة كلها بأجواء هالوين: لكل شاشة يقطينها وخفافيشها وخيوط عناكبها، وتخلط الساحرات الجرعات قرب القائمة وتحلّق أمام القمر، وتتساقط أوراق الخريف برفق."
   },
   "ps": {
    "tagline": "انځور مکعب په مکعب څرګند کړه",
@@ -4602,7 +4660,8 @@
     "other": "{n} ورځې پاتې دي"
    },
    "ev_halloween": "په موزیم کې هالووین!",
-   "evText_halloween": "تر نومبر 30 پورې د هالووین پوړ پرانیستی دی: 8 ویرونکي انځورونه، له توري پیشو او د کوډګرې خولۍ څخه د ځورېدلي کور او د کونیوشي تر لوی هډوکي‌ډنګر پورې. ټول موزیم د جشن لپاره ځان سينګاروي، د هالووین والس په ریکارډونو کې ورګډېږي، او د پوړ بشپړول Pix د کدو لالټین ته اړوي."
+   "evText_halloween": "تر نومبر 30 پورې د هالووین پوړ پرانیستی دی: 8 ویرونکي انځورونه، له توري پیشو او د کوډګرې خولۍ څخه د ځورېدلي کور او د کونیوشي تر لوی هډوکي‌ډنګر پورې. ټول موزیم د جشن لپاره ځان سينګاروي، د هالووین والس په ریکارډونو کې ورګډېږي، او د پوړ بشپړول Pix د کدو لالټین ته اړوي.",
+   "evDress_halloween": "ټوله لوبه د هالووین لپاره سینګارېږي: هر سکرین خپل کدو، خفاشان او د عنکبوت تارونه لري، جادوګرې د مینو ترڅنګ شربتونه پخوي او د سپوږمۍ مخې ته الوځي، او د مني پاڼې ورو ورو ورېږي."
   },
   "fa": {
    "tagline": "تصویر را مکعب به مکعب آشکار کن",
@@ -4640,7 +4699,8 @@
     "other": "{n} روز مانده"
    },
    "ev_halloween": "هالووین در موزه!",
-   "evText_halloween": "تا ۳۰ نوامبر طبقهٔ هالووین باز است: ۸ تصویر ترسناک، از گربه سیاه و کلاه جادوگر تا خانه جن‌زده و اسکلت غول‌پیکر کونیوشی. تمام موزه برای جشن لباس عوض می‌کند، والس هالووین به صفحه‌های موسیقی اضافه می‌شود و با تمام کردن طبقه، Pix به فانوس کدو تبدیل می‌شود."
+   "evText_halloween": "تا ۳۰ نوامبر طبقهٔ هالووین باز است: ۸ تصویر ترسناک، از گربه سیاه و کلاه جادوگر تا خانه جن‌زده و اسکلت غول‌پیکر کونیوشی. تمام موزه برای جشن لباس عوض می‌کند، والس هالووین به صفحه‌های موسیقی اضافه می‌شود و با تمام کردن طبقه، Pix به فانوس کدو تبدیل می‌شود.",
+   "evDress_halloween": "کل بازی برای هالووین لباس می‌پوشد: هر صفحه کدوها، خفاش‌ها و تارهای عنکبوت خودش را دارد، جادوگرها کنار منو معجون می‌پزند و جلوی ماه پرواز می‌کنند، و برگ‌های پاییزی آرام فرود می‌آیند."
   },
   "am": {
    "tagline": "ሥዕሉን ኪዩብ በኪዩብ ግለጥ",
@@ -4678,7 +4738,8 @@
     "other": "{n} ቀናት ቀርተዋል"
    },
    "ev_halloween": "ሃሎዊን በሙዚየሙ!",
-   "evText_halloween": "እስከ ኖቬምበር 30 ድረስ የሃሎዊን ፎቅ ክፍት ነው፦ ከጥቁር ድመትና ከጠንቋይ ኮፍያ እስከ መናፍስት ያሉበት ቤትና የኩኒዮሺ ግዙፍ አጽም ድረስ 8 አስፈሪ ሥዕሎች። መላው ሙዚየም ለበዓሉ ይዋባል፣ የሃሎዊን ዋልትዝ ከሙዚቃ ዲስኮች ጋር ይቀላቀላል፣ ፎቁን ሲጨርሱ ደግሞ Pix የዱባ መብራት ይሆናል።"
+   "evText_halloween": "እስከ ኖቬምበር 30 ድረስ የሃሎዊን ፎቅ ክፍት ነው፦ ከጥቁር ድመትና ከጠንቋይ ኮፍያ እስከ መናፍስት ያሉበት ቤትና የኩኒዮሺ ግዙፍ አጽም ድረስ 8 አስፈሪ ሥዕሎች። መላው ሙዚየም ለበዓሉ ይዋባል፣ የሃሎዊን ዋልትዝ ከሙዚቃ ዲስኮች ጋር ይቀላቀላል፣ ፎቁን ሲጨርሱ ደግሞ Pix የዱባ መብራት ይሆናል።",
+   "evDress_halloween": "መላው ጨዋታ ለሃሎዊን ይለብሳል፦ እያንዳንዱ ማያ ገጽ የራሱ ዱባዎች፣ የሌሊት ወፎችና የሸረሪት ድሮች አሉት፤ ጠንቋዮች ከምናሌው አጠገብ መድኃኒት ይጠምቃሉ፤ በጨረቃ ፊት ይበራሉ፤ የመከር ቅጠሎችም ቀስ ብለው ይወርዳሉ።"
   },
   "ne": {
    "tagline": "क्युब-क्युब गर्दै चित्र खोल",
@@ -4716,7 +4777,8 @@
     "other": "{n} दिन बाँकी"
    },
    "ev_halloween": "संग्रहालयमा ह्यालोविन!",
-   "evText_halloween": "नोभेम्बर ३० सम्म ह्यालोविन तला खुला छ: कालो बिरालो र बोक्सीको टोपीदेखि भुतहा घर र कुनियोशीको विशाल कंकालसम्म ८ वटा डरलाग्दा चित्र। सिङ्गो संग्रहालय चाडका लागि सजिन्छ, रेकर्डहरूमा ह्यालोविन वाल्ट्ज थपिन्छ, र तला पूरा गर्दा Pix ज्याक-ओ-ल्यान्टर्न बन्छ।"
+   "evText_halloween": "नोभेम्बर ३० सम्म ह्यालोविन तला खुला छ: कालो बिरालो र बोक्सीको टोपीदेखि भुतहा घर र कुनियोशीको विशाल कंकालसम्म ८ वटा डरलाग्दा चित्र। सिङ्गो संग्रहालय चाडका लागि सजिन्छ, रेकर्डहरूमा ह्यालोविन वाल्ट्ज थपिन्छ, र तला पूरा गर्दा Pix ज्याक-ओ-ल्यान्टर्न बन्छ।",
+   "evDress_halloween": "पूरै खेल ह्यालोविनका लागि सजिन्छ: हरेक स्क्रिनमा आफ्नै फर्सी, चमेरा र माकुराको जाला छन्, मेनुको छेउमा बोक्सीहरूले काढा बनाउँछन् र चन्द्रमाअगाडि उड्छन्, अनि शरद् ऋतुका पातहरू बिस्तारै झर्छन्।"
   },
   "mr": {
    "tagline": "क्यूब-क्यूबने चित्र उलगड",
@@ -4754,7 +4816,8 @@
     "other": "{n} दिवस बाकी"
    },
    "ev_halloween": "संग्रहालयात हॅलोवीन!",
-   "evText_halloween": "३० नोव्हेंबरपर्यंत हॅलोवीन मजला खुला आहे: काळी मांजर आणि चेटकिणीची टोपी ते झपाटलेले घर आणि कुनियोशीचा अवाढव्य सांगाडा अशी ८ भीतीदायक चित्रे. संपूर्ण संग्रहालय सणासाठी सजते, रेकॉर्ड्समध्ये हॅलोवीन वॉल्ट्झ सामील होतो आणि मजला पूर्ण केल्यावर Pix जॅक-ओ-लँटर्न बनतो."
+   "evText_halloween": "३० नोव्हेंबरपर्यंत हॅलोवीन मजला खुला आहे: काळी मांजर आणि चेटकिणीची टोपी ते झपाटलेले घर आणि कुनियोशीचा अवाढव्य सांगाडा अशी ८ भीतीदायक चित्रे. संपूर्ण संग्रहालय सणासाठी सजते, रेकॉर्ड्समध्ये हॅलोवीन वॉल्ट्झ सामील होतो आणि मजला पूर्ण केल्यावर Pix जॅक-ओ-लँटर्न बनतो.",
+   "evDress_halloween": "संपूर्ण खेळ हॅलोवीनसाठी सजतो: प्रत्येक स्क्रीनवर स्वतःचे भोपळे, वटवाघळे आणि कोळीष्टके आहेत, मेनूजवळ चेटकिणी काढा बनवतात आणि चंद्रासमोरून उडतात, आणि शरद ऋतूची पाने हळूच खाली येतात."
   },
   "hi": {
    "tagline": "क्यूब-दर-क्यूब तस्वीर खोलो",
@@ -4792,7 +4855,8 @@
     "other": "{n} दिन बाकी"
    },
    "ev_halloween": "म्यूज़ियम में हैलोवीन!",
-   "evText_halloween": "30 नवंबर तक हैलोवीन मंज़िल खुली है: काली बिल्ली और चुड़ैल की टोपी से लेकर भुतहा घर और कुनियोशी के विशाल कंकाल तक 8 डरावनी तस्वीरें। पूरा म्यूज़ियम त्योहार के लिए सज जाता है, रिकॉर्ड्स में हैलोवीन वाल्ट्ज़ जुड़ जाता है, और मंज़िल पूरी करने पर Pix जैक-ओ-लैंटर्न बन जाता है।"
+   "evText_halloween": "30 नवंबर तक हैलोवीन मंज़िल खुली है: काली बिल्ली और चुड़ैल की टोपी से लेकर भुतहा घर और कुनियोशी के विशाल कंकाल तक 8 डरावनी तस्वीरें। पूरा म्यूज़ियम त्योहार के लिए सज जाता है, रिकॉर्ड्स में हैलोवीन वाल्ट्ज़ जुड़ जाता है, और मंज़िल पूरी करने पर Pix जैक-ओ-लैंटर्न बन जाता है।",
+   "evDress_halloween": "पूरा खेल हैलोवीन के लिए सज जाता है: हर स्क्रीन पर अपने कद्दू, चमगादड़ और मकड़ी के जाले हैं, मेन्यू के पास चुड़ैलें काढ़ा बनाती हैं और चाँद के सामने से उड़ती हैं, और पतझड़ के पत्ते धीरे-धीरे गिरते हैं।"
   },
   "as": {
    "tagline": "কিউবে কিউবে ছবিখন প্ৰকাশ কৰা",
@@ -4830,7 +4894,8 @@
     "other": "আৰু {n} দিন বাকী"
    },
    "ev_halloween": "সংগ্ৰহালয়ত হেল'ৱিন!",
-   "evText_halloween": "30 নৱেম্বৰলৈকে হেল'ৱিন মহলা খোলা: ক'লা মেকুৰী আৰু ডাইনীৰ টুপীৰ পৰা ভূতৰ ঘৰ আৰু কুনিয়োছিৰ বিশাল কংকাললৈকে 8খন ভয়ংকৰ ছবি। গোটেই সংগ্ৰহালয় উৎসৱৰ বাবে সাজে, ৰেকৰ্ডবোৰত এটা হেল'ৱিন ৱাল্টজ যোগ হয়, আৰু মহলা শেষ কৰিলে Pix জেক-অ'-লেণ্টাৰ্ন হৈ সাজে।"
+   "evText_halloween": "30 নৱেম্বৰলৈকে হেল'ৱিন মহলা খোলা: ক'লা মেকুৰী আৰু ডাইনীৰ টুপীৰ পৰা ভূতৰ ঘৰ আৰু কুনিয়োছিৰ বিশাল কংকাললৈকে 8খন ভয়ংকৰ ছবি। গোটেই সংগ্ৰহালয় উৎসৱৰ বাবে সাজে, ৰেকৰ্ডবোৰত এটা হেল'ৱিন ৱাল্টজ যোগ হয়, আৰু মহলা শেষ কৰিলে Pix জেক-অ'-লেণ্টাৰ্ন হৈ সাজে।",
+   "evDress_halloween": "গোটেই খেলটো হেল'ৱিনৰ বাবে সাজি-কাজি উঠে: প্ৰতিখন পৰ্দাৰ নিজা ৰঙালাও, বাদুলী আৰু মাকৰিজাল আছে, মেনুৰ কাষত ডাইনীবোৰে পানীয় তৈয়াৰ কৰে আৰু জোনৰ সন্মুখেৰে উৰি যায়, আৰু শৰতৰ পাতবোৰ লাহে লাহে সৰি পৰে।"
   },
   "bn": {
    "tagline": "কিউবে কিউবে ছবি ফুটিয়ে তোলো",
@@ -4868,7 +4933,8 @@
     "other": "আর {n} দিন বাকি"
    },
    "ev_halloween": "জাদুঘরে হ্যালোইন!",
-   "evText_halloween": "৩০ নভেম্বর পর্যন্ত হ্যালোইন তলা খোলা: কালো বিড়াল আর ডাইনির টুপি থেকে ভূতুড়ে বাড়ি এবং কুনিয়োশির বিশাল কঙ্কাল পর্যন্ত ৮টি গা-ছমছমে ছবি। পুরো জাদুঘর উৎসবের সাজে সেজে ওঠে, রেকর্ডে যোগ হয় হ্যালোইন ওয়াল্টজ, আর তলাটি শেষ করলে Pix সেজে ওঠে জ্যাক-ও-ল্যান্টার্ন।"
+   "evText_halloween": "৩০ নভেম্বর পর্যন্ত হ্যালোইন তলা খোলা: কালো বিড়াল আর ডাইনির টুপি থেকে ভূতুড়ে বাড়ি এবং কুনিয়োশির বিশাল কঙ্কাল পর্যন্ত ৮টি গা-ছমছমে ছবি। পুরো জাদুঘর উৎসবের সাজে সেজে ওঠে, রেকর্ডে যোগ হয় হ্যালোইন ওয়াল্টজ, আর তলাটি শেষ করলে Pix সেজে ওঠে জ্যাক-ও-ল্যান্টার্ন।",
+   "evDress_halloween": "পুরো খেলাটি হ্যালোইনের সাজে সেজে ওঠে: প্রতিটি পর্দায় নিজস্ব কুমড়ো, বাদুড় আর মাকড়সার জাল, মেনুর পাশে ডাইনিরা জাদু-পানীয় বানায় আর চাঁদের সামনে দিয়ে উড়ে যায়, আর শরতের পাতা ঝরে পড়ে।"
   },
   "pa": {
    "tagline": "ਕਿਊਬ-ਦਰ-ਕਿਊਬ ਤਸਵੀਰ ਉਭਾਰੋ",
@@ -4906,7 +4972,8 @@
     "other": "{n} ਦਿਨ ਬਾਕੀ"
    },
    "ev_halloween": "ਅਜਾਇਬਘਰ ਵਿੱਚ ਹੈਲੋਵੀਨ!",
-   "evText_halloween": "30 ਨਵੰਬਰ ਤੱਕ ਹੈਲੋਵੀਨ ਮੰਜ਼ਿਲ ਖੁੱਲ੍ਹੀ ਹੈ: ਕਾਲੀ ਬਿੱਲੀ ਅਤੇ ਡੈਣ ਦੀ ਟੋਪੀ ਤੋਂ ਲੈ ਕੇ ਭੂਤੀਆ ਘਰ ਅਤੇ ਕੁਨੀਯੋਸ਼ੀ ਦੇ ਵਿਸ਼ਾਲ ਪਿੰਜਰ ਤੱਕ 8 ਡਰਾਉਣੀਆਂ ਤਸਵੀਰਾਂ। ਸਾਰਾ ਮਿਊਜ਼ੀਅਮ ਤਿਉਹਾਰ ਲਈ ਸਜ ਜਾਂਦਾ ਹੈ, ਰਿਕਾਰਡਾਂ ਵਿੱਚ ਹੈਲੋਵੀਨ ਵਾਲਟਜ਼ ਜੁੜ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਮੰਜ਼ਿਲ ਪੂਰੀ ਕਰਨ ’ਤੇ Pix ਜੈਕ-ਓ-ਲੈਂਟਰਨ ਬਣ ਜਾਂਦਾ ਹੈ।"
+   "evText_halloween": "30 ਨਵੰਬਰ ਤੱਕ ਹੈਲੋਵੀਨ ਮੰਜ਼ਿਲ ਖੁੱਲ੍ਹੀ ਹੈ: ਕਾਲੀ ਬਿੱਲੀ ਅਤੇ ਡੈਣ ਦੀ ਟੋਪੀ ਤੋਂ ਲੈ ਕੇ ਭੂਤੀਆ ਘਰ ਅਤੇ ਕੁਨੀਯੋਸ਼ੀ ਦੇ ਵਿਸ਼ਾਲ ਪਿੰਜਰ ਤੱਕ 8 ਡਰਾਉਣੀਆਂ ਤਸਵੀਰਾਂ। ਸਾਰਾ ਮਿਊਜ਼ੀਅਮ ਤਿਉਹਾਰ ਲਈ ਸਜ ਜਾਂਦਾ ਹੈ, ਰਿਕਾਰਡਾਂ ਵਿੱਚ ਹੈਲੋਵੀਨ ਵਾਲਟਜ਼ ਜੁੜ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਮੰਜ਼ਿਲ ਪੂਰੀ ਕਰਨ ’ਤੇ Pix ਜੈਕ-ਓ-ਲੈਂਟਰਨ ਬਣ ਜਾਂਦਾ ਹੈ।",
+   "evDress_halloween": "ਸਾਰੀ ਖੇਡ ਹੈਲੋਵੀਨ ਲਈ ਸੱਜ ਜਾਂਦੀ ਹੈ: ਹਰ ਸਕ੍ਰੀਨ ਦੇ ਆਪਣੇ ਕੱਦੂ, ਚਮਗਿੱਦੜ ਅਤੇ ਮੱਕੜੀ ਦੇ ਜਾਲੇ ਹਨ, ਮੀਨੂ ਕੋਲ ਡੈਣਾਂ ਕਾੜ੍ਹਾ ਬਣਾਉਂਦੀਆਂ ਹਨ ਅਤੇ ਚੰਨ ਦੇ ਸਾਹਮਣਿਓਂ ਉੱਡਦੀਆਂ ਹਨ, ਅਤੇ ਪਤਝੜ ਦੇ ਪੱਤੇ ਹੌਲੀ-ਹੌਲੀ ਡਿੱਗਦੇ ਹਨ।"
   },
   "gu": {
    "tagline": "ક્યુબે ક્યુબે ચિત્ર ખોલ",
@@ -4944,7 +5011,8 @@
     "other": "{n} દિવસ બાકી"
    },
    "ev_halloween": "મ્યુઝિયમમાં હેલોવીન!",
-   "evText_halloween": "30 નવેમ્બર સુધી હેલોવીન માળ ખુલ્લો છે: કાળી બિલાડી અને ડાકણની ટોપીથી લઈને ભૂતિયું ઘર અને કુનિયોશીના વિશાળ હાડપિંજર સુધી 8 બિહામણાં ચિત્રો. આખું મ્યુઝિયમ તહેવાર માટે સજી જાય છે, રેકોર્ડ્સમાં હેલોવીન વોલ્ટ્ઝ ઉમેરાય છે, અને માળ પૂરો કરતાં Pix જેક-ઓ-લેન્ટર્ન બની જાય છે."
+   "evText_halloween": "30 નવેમ્બર સુધી હેલોવીન માળ ખુલ્લો છે: કાળી બિલાડી અને ડાકણની ટોપીથી લઈને ભૂતિયું ઘર અને કુનિયોશીના વિશાળ હાડપિંજર સુધી 8 બિહામણાં ચિત્રો. આખું મ્યુઝિયમ તહેવાર માટે સજી જાય છે, રેકોર્ડ્સમાં હેલોવીન વોલ્ટ્ઝ ઉમેરાય છે, અને માળ પૂરો કરતાં Pix જેક-ઓ-લેન્ટર્ન બની જાય છે.",
+   "evDress_halloween": "આખી રમત હેલોવીન માટે સજી જાય છે: દરેક સ્ક્રીનનાં પોતાનાં કોળાં, ચામાચીડિયાં અને કરોળિયાનાં જાળાં છે, મેનુ પાસે ડાકણો કાઢો બનાવે છે અને ચંદ્રની સામેથી ઊડે છે, અને પાનખરનાં પાન ધીમેથી ખરે છે."
   },
   "or": {
    "tagline": "କ୍ୟୁବ୍ ପରେ କ୍ୟୁବ୍, ଛବି ଫୁଟାଅ",
@@ -4982,7 +5050,8 @@
     "other": "{n} ଦିନ ବାକି"
    },
    "ev_halloween": "ସଂଗ୍ରହାଳୟରେ ହାଲୋଇନ୍!",
-   "evText_halloween": "ନଭେମ୍ବର 30 ପର୍ଯ୍ୟନ୍ତ ହାଲୋଇନ୍ ମହଲା ଖୋଲା: କଳା ବିଲେଇ ଓ ଡାହାଣୀ ଟୋପିରୁ ଭୂତୁଡ଼ିଆ ଘର ଓ କୁନିୟୋଶିଙ୍କ ବିଶାଳ କଙ୍କାଳ ପର୍ଯ୍ୟନ୍ତ 8ଟି ଭୟାନକ ଛବି। ସମଗ୍ର ସଂଗ୍ରହାଳୟ ଉତ୍ସବ ପାଇଁ ସାଜେ, ରେକର୍ଡରେ ଏକ ହାଲୋଇନ୍ ୱାଲ୍ଟଜ୍ ଯୋଗ ହୁଏ, ଆଉ ମହଲା ସାରିଲେ Pix ଜ୍ୟାକ୍-ଓ'-ଲଣ୍ଟର୍ନ୍ ହୋଇ ସଜେ।"
+   "evText_halloween": "ନଭେମ୍ବର 30 ପର୍ଯ୍ୟନ୍ତ ହାଲୋଇନ୍ ମହଲା ଖୋଲା: କଳା ବିଲେଇ ଓ ଡାହାଣୀ ଟୋପିରୁ ଭୂତୁଡ଼ିଆ ଘର ଓ କୁନିୟୋଶିଙ୍କ ବିଶାଳ କଙ୍କାଳ ପର୍ଯ୍ୟନ୍ତ 8ଟି ଭୟାନକ ଛବି। ସମଗ୍ର ସଂଗ୍ରହାଳୟ ଉତ୍ସବ ପାଇଁ ସାଜେ, ରେକର୍ଡରେ ଏକ ହାଲୋଇନ୍ ୱାଲ୍ଟଜ୍ ଯୋଗ ହୁଏ, ଆଉ ମହଲା ସାରିଲେ Pix ଜ୍ୟାକ୍-ଓ'-ଲଣ୍ଟର୍ନ୍ ହୋଇ ସଜେ।",
+   "evDress_halloween": "ପୂରା ଖେଳ ହାଲୋଇନ୍ ପାଇଁ ସଜେଇ ହୁଏ: ପ୍ରତ୍ୟେକ ସ୍କ୍ରିନର ନିଜର କଖାରୁ, ଚାମଚିକା ଓ ମକଡ଼ାଜାଲ ଅଛି, ମେନୁ ପାଖରେ ଡାଆଣୀମାନେ କାଢ଼ା ତିଆରି କରି ଜହ୍ନ ସାମନାରେ ଉଡ଼ନ୍ତି, ଆଉ ଶରତର ପତ୍ର ଧୀରେ ଧୀରେ ଝଡ଼ିପଡ଼େ।"
   },
   "ta": {
    "tagline": "க்யூப் க்யூபாகப் படத்தை வெளிப்படுத்து",
@@ -5020,7 +5089,8 @@
     "other": "இன்னும் {n} நாட்கள்"
    },
    "ev_halloween": "அருங்காட்சியகத்தில் ஹாலோவீன்!",
-   "evText_halloween": "நவம்பர் 30 வரை ஹாலோவீன் தளம் திறந்திருக்கிறது: கருப்புப் பூனை, சூனியக்காரியின் தொப்பி முதல் பேய் வீடு, குனியோஷியின் பிரம்மாண்ட எலும்புக்கூடு வரை 8 திகில் படங்கள். அருங்காட்சியகம் முழுவதும் விழாக்கோலம் பூண்டிருக்கும், இசைத்தட்டுகளில் ஹாலோவீன் வால்ட்ஸ் சேரும், தளத்தை முடித்தால் Pix பூசணி விளக்காக மாறிவிடும்."
+   "evText_halloween": "நவம்பர் 30 வரை ஹாலோவீன் தளம் திறந்திருக்கிறது: கருப்புப் பூனை, சூனியக்காரியின் தொப்பி முதல் பேய் வீடு, குனியோஷியின் பிரம்மாண்ட எலும்புக்கூடு வரை 8 திகில் படங்கள். அருங்காட்சியகம் முழுவதும் விழாக்கோலம் பூண்டிருக்கும், இசைத்தட்டுகளில் ஹாலோவீன் வால்ட்ஸ் சேரும், தளத்தை முடித்தால் Pix பூசணி விளக்காக மாறிவிடும்.",
+   "evDress_halloween": "முழு விளையாட்டும் ஹாலோவீனுக்காக அலங்கரித்துக்கொள்கிறது: ஒவ்வொரு திரையிலும் அதற்கே உரிய பூசணிகள், வௌவால்கள், சிலந்தி வலைகள் உள்ளன; மெனுவுக்கு அருகில் சூனியக்காரிகள் கஷாயம் காய்ச்சி நிலவின் முன்னே பறக்கிறார்கள்; இலையுதிர் காலத்து இலைகள் மெதுவாக உதிர்கின்றன."
   },
   "te": {
    "tagline": "క్యూబ్ క్యూబ్‌గా చిత్రాన్ని బయటపెట్టు",
@@ -5058,7 +5128,8 @@
     "other": "{n} రోజులు మిగిలాయి"
    },
    "ev_halloween": "మ్యూజియంలో హాలోవీన్!",
-   "evText_halloween": "నవంబర్ 30 వరకు హాలోవీన్ అంతస్తు తెరిచి ఉంది: నల్ల పిల్లి, మంత్రగత్తె టోపీ నుంచి దెయ్యాల ఇల్లు, కునియోషి గీసిన భారీ అస్థిపంజరం వరకు 8 భయపెట్టే చిత్రాలు. మ్యూజియం మొత్తం పండుగకు ముస్తాబవుతుంది, రికార్డులకు హాలోవీన్ వాల్ట్జ్ జతవుతుంది, అంతస్తును పూర్తి చేస్తే Pix గుమ్మడికాయ దీపంగా మారిపోతుంది."
+   "evText_halloween": "నవంబర్ 30 వరకు హాలోవీన్ అంతస్తు తెరిచి ఉంది: నల్ల పిల్లి, మంత్రగత్తె టోపీ నుంచి దెయ్యాల ఇల్లు, కునియోషి గీసిన భారీ అస్థిపంజరం వరకు 8 భయపెట్టే చిత్రాలు. మ్యూజియం మొత్తం పండుగకు ముస్తాబవుతుంది, రికార్డులకు హాలోవీన్ వాల్ట్జ్ జతవుతుంది, అంతస్తును పూర్తి చేస్తే Pix గుమ్మడికాయ దీపంగా మారిపోతుంది.",
+   "evDress_halloween": "ఆట మొత్తం హాలోవీన్ కోసం అలంకరించుకుంటుంది: ప్రతి స్క్రీన్‌కు తనదైన గుమ్మడికాయలు, గబ్బిలాలు, సాలెగూళ్లు ఉంటాయి; మెనూ దగ్గర మంత్రగత్తెలు కషాయం కాచి చంద్రుడి ముందు నుంచి ఎగురుతారు; శరదృతువు ఆకులు మెల్లగా రాలుతాయి."
   },
   "kn": {
    "tagline": "ಒಂದೊಂದೇ ಕ್ಯೂಬ್‌ನಿಂದ ಚಿತ್ರ ಮೂಡಿಸು",
@@ -5096,7 +5167,8 @@
     "other": "{n} ದಿನಗಳು ಬಾಕಿ"
    },
    "ev_halloween": "ಮ್ಯೂಸಿಯಂನಲ್ಲಿ ಹ್ಯಾಲೋವೀನ್!",
-   "evText_halloween": "ನವೆಂಬರ್ 30ರವರೆಗೆ ಹ್ಯಾಲೋವೀನ್ ಮಹಡಿ ತೆರೆದಿದೆ: ಕಪ್ಪು ಬೆಕ್ಕು, ಮಾಟಗಾತಿಯ ಟೋಪಿಯಿಂದ ಭೂತದ ಮನೆ ಮತ್ತು ಕುನಿಯೋಶಿಯ ದೈತ್ಯ ಅಸ್ಥಿಪಂಜರದವರೆಗೆ 8 ಭಯಾನಕ ಚಿತ್ರಗಳು. ಇಡೀ ಮ್ಯೂಸಿಯಂ ಹಬ್ಬಕ್ಕೆ ಸಿಂಗಾರಗೊಳ್ಳುತ್ತದೆ, ರೆಕಾರ್ಡ್‌ಗಳಿಗೆ ಹ್ಯಾಲೋವೀನ್ ವಾಲ್ಟ್ಜ್ ಸೇರುತ್ತದೆ, ಮತ್ತು ಮಹಡಿ ಮುಗಿಸಿದರೆ Pix ಕುಂಬಳಕಾಯಿ ದೀಪದ ವೇಷ ತೊಡುತ್ತದೆ."
+   "evText_halloween": "ನವೆಂಬರ್ 30ರವರೆಗೆ ಹ್ಯಾಲೋವೀನ್ ಮಹಡಿ ತೆರೆದಿದೆ: ಕಪ್ಪು ಬೆಕ್ಕು, ಮಾಟಗಾತಿಯ ಟೋಪಿಯಿಂದ ಭೂತದ ಮನೆ ಮತ್ತು ಕುನಿಯೋಶಿಯ ದೈತ್ಯ ಅಸ್ಥಿಪಂಜರದವರೆಗೆ 8 ಭಯಾನಕ ಚಿತ್ರಗಳು. ಇಡೀ ಮ್ಯೂಸಿಯಂ ಹಬ್ಬಕ್ಕೆ ಸಿಂಗಾರಗೊಳ್ಳುತ್ತದೆ, ರೆಕಾರ್ಡ್‌ಗಳಿಗೆ ಹ್ಯಾಲೋವೀನ್ ವಾಲ್ಟ್ಜ್ ಸೇರುತ್ತದೆ, ಮತ್ತು ಮಹಡಿ ಮುಗಿಸಿದರೆ Pix ಕುಂಬಳಕಾಯಿ ದೀಪದ ವೇಷ ತೊಡುತ್ತದೆ.",
+   "evDress_halloween": "ಇಡೀ ಆಟ ಹ್ಯಾಲೋವೀನ್‌ಗಾಗಿ ಅಲಂಕರಿಸಿಕೊಳ್ಳುತ್ತದೆ: ಪ್ರತಿ ಪರದೆಗೂ ತನ್ನದೇ ಕುಂಬಳಕಾಯಿಗಳು, ಬಾವಲಿಗಳು ಮತ್ತು ಜೇಡರ ಬಲೆಗಳಿವೆ; ಮೆನುವಿನ ಬಳಿ ಮಾಟಗಾತಿಯರು ಕಷಾಯ ಕುದಿಸಿ ಚಂದ್ರನ ಮುಂದೆ ಹಾರುತ್ತಾರೆ; ಶರತ್ಕಾಲದ ಎಲೆಗಳು ನಿಧಾನವಾಗಿ ಉದುರುತ್ತವೆ."
   },
   "ml": {
    "tagline": "ക്യൂബ് ക്യൂബായി ചിത്രം തെളിയിക്കൂ",
@@ -5134,7 +5206,8 @@
     "other": "{n} ദിവസം ബാക്കി"
    },
    "ev_halloween": "മ്യൂസിയത്തിൽ ഹാലോവീൻ!",
-   "evText_halloween": "നവംബർ 30 വരെ ഹാലോവീൻ നില തുറന്നിരിക്കുന്നു: കറുത്ത പൂച്ചയും മന്ത്രവാദിനിയുടെ തൊപ്പിയും മുതൽ പ്രേതഭവനവും കുനിയോഷിയുടെ ഭീമൻ അസ്ഥികൂടവും വരെ 8 പേടിപ്പെടുത്തുന്ന ചിത്രങ്ങൾ. മ്യൂസിയം മുഴുവൻ ആഘോഷത്തിനായി അണിഞ്ഞൊരുങ്ങുന്നു, റെക്കോർഡുകളിൽ ഹാലോവീൻ വാൾട്സ് ചേരുന്നു, നില പൂർത്തിയാക്കുമ്പോൾ Pix മത്തങ്ങാ വിളക്കായി വേഷം മാറുന്നു."
+   "evText_halloween": "നവംബർ 30 വരെ ഹാലോവീൻ നില തുറന്നിരിക്കുന്നു: കറുത്ത പൂച്ചയും മന്ത്രവാദിനിയുടെ തൊപ്പിയും മുതൽ പ്രേതഭവനവും കുനിയോഷിയുടെ ഭീമൻ അസ്ഥികൂടവും വരെ 8 പേടിപ്പെടുത്തുന്ന ചിത്രങ്ങൾ. മ്യൂസിയം മുഴുവൻ ആഘോഷത്തിനായി അണിഞ്ഞൊരുങ്ങുന്നു, റെക്കോർഡുകളിൽ ഹാലോവീൻ വാൾട്സ് ചേരുന്നു, നില പൂർത്തിയാക്കുമ്പോൾ Pix മത്തങ്ങാ വിളക്കായി വേഷം മാറുന്നു.",
+   "evDress_halloween": "കളി മുഴുവൻ ഹാലോവീനിനായി അണിഞ്ഞൊരുങ്ങുന്നു: ഓരോ സ്ക്രീനിനും സ്വന്തം മത്തങ്ങകളും വവ്വാലുകളും മാറാലകളുമുണ്ട്; മെനുവിനരികെ മന്ത്രവാദിനികൾ കഷായം തയ്യാറാക്കി ചന്ദ്രന്റെ മുന്നിലൂടെ പറക്കുന്നു; ശരത്കാല ഇലകൾ പതുക്കെ കൊഴിയുന്നു."
   },
   "si": {
    "tagline": "කියුබෙන් කියුබ පින්තූරය මතු කරන්න",
@@ -5172,7 +5245,8 @@
     "other": "තව දින {n}යි"
    },
    "ev_halloween": "කෞතුකාගාරයේ හැලොවීන්!",
-   "evText_halloween": "නොවැම්බර් 30 දක්වා හැලොවීන් මහල විවෘතයි: කළු පූසා සහ මායාකාරියගේ තොප්පියේ සිට හොල්මන් ගෙදර සහ කුනියොෂිගේ දැවැන්ත ඇටසැකිල්ල දක්වා බිය උපදවන සිතුවම් 8ක්. මුළු කෞතුකාගාරයම උත්සවයට සැරසෙයි, තැටිවලට හැලොවීන් වෝල්ට්ස් එකතු වෙයි, මහල අවසන් කළ විට Pix වට්ටක්කා පහනක් බවට පත් වෙයි."
+   "evText_halloween": "නොවැම්බර් 30 දක්වා හැලොවීන් මහල විවෘතයි: කළු පූසා සහ මායාකාරියගේ තොප්පියේ සිට හොල්මන් ගෙදර සහ කුනියොෂිගේ දැවැන්ත ඇටසැකිල්ල දක්වා බිය උපදවන සිතුවම් 8ක්. මුළු කෞතුකාගාරයම උත්සවයට සැරසෙයි, තැටිවලට හැලොවීන් වෝල්ට්ස් එකතු වෙයි, මහල අවසන් කළ විට Pix වට්ටක්කා පහනක් බවට පත් වෙයි.",
+   "evDress_halloween": "මුළු ක්‍රීඩාවම හැලොවීන් සඳහා සැරසෙයි: සෑම තිරයකටම තමන්ගේම වට්ටක්කා, වවුලන් සහ මකුළු දැල් ඇත, මෙනුව ළඟ මායාකාරියන් ඖෂධ පදම් කර සඳ ඉදිරියෙන් පියාසර කරයි, සරත් කාලයේ කොළ සෙමෙන් වැටේ."
   },
   "th": {
    "tagline": "เผยภาพทีละคิวบ์",
@@ -5206,7 +5280,8 @@
     "other": "เหลืออีก {n} วัน"
    },
    "ev_halloween": "ฮาโลวีนที่พิพิธภัณฑ์!",
-   "evText_halloween": "ถึงวันที่ 30 พฤศจิกายน ชั้นฮาโลวีนเปิดให้เข้าชม: ภาพสยองขวัญ 8 ภาพ ตั้งแต่แมวดำและหมวกแม่มดไปจนถึงบ้านผีสิงและโครงกระดูกยักษ์ของคูนิโยชิ พิพิธภัณฑ์ทั้งหลังแต่งตัวต้อนรับเทศกาล วอลทซ์ฮาโลวีนเข้ามาอยู่ในแผ่นเสียง และเมื่อจบชั้นนี้ Pix จะแปลงร่างเป็นโคมฟักทอง"
+   "evText_halloween": "ถึงวันที่ 30 พฤศจิกายน ชั้นฮาโลวีนเปิดให้เข้าชม: ภาพสยองขวัญ 8 ภาพ ตั้งแต่แมวดำและหมวกแม่มดไปจนถึงบ้านผีสิงและโครงกระดูกยักษ์ของคูนิโยชิ พิพิธภัณฑ์ทั้งหลังแต่งตัวต้อนรับเทศกาล วอลทซ์ฮาโลวีนเข้ามาอยู่ในแผ่นเสียง และเมื่อจบชั้นนี้ Pix จะแปลงร่างเป็นโคมฟักทอง",
+   "evDress_halloween": "ทั้งเกมแต่งตัวรับฮาโลวีน: ทุกหน้าจอมีฟักทอง ค้างคาว และใยแมงมุมเป็นของตัวเอง แม่มดต้มน้ำยาอยู่ข้างเมนูแล้วบินผ่านดวงจันทร์ และใบไม้ร่วงโปรยปรายลงมา"
   },
   "lo": {
    "tagline": "ເປີດເຜີຍຮູບ ເທື່ອລະລູກບາດ",
@@ -5240,7 +5315,8 @@
     "other": "ເຫຼືອ {n} ມື້"
    },
    "ev_halloween": "ຮາໂລວີນທີ່ຫໍພິພິທະພັນ!",
-   "evText_halloween": "ເຖິງວັນທີ 30 ພະຈິກ ຊັ້ນຮາໂລວີນເປີດແລ້ວ: ຮູບໜ້າຢ້ານ 8 ຮູບ ຕັ້ງແຕ່ແມວດຳ ແລະ ໝວກແມ່ມົດ ຈົນເຖິງເຮືອນຜີສິງ ແລະ ໂຄງກະດູກຍັກຂອງຄຸນິໂຢຊິ. ພິພິທະພັນທັງຫຼັງແຕ່ງຕົວຕ້ອນຮັບບຸນ, ວອລຊ໌ຮາໂລວີນເຂົ້າມາຢູ່ໃນແຜ່ນສຽງ, ແລະ ເມື່ອຈົບຊັ້ນນີ້ Pix ຈະກາຍເປັນໂຄມໝາກອຶ."
+   "evText_halloween": "ເຖິງວັນທີ 30 ພະຈິກ ຊັ້ນຮາໂລວີນເປີດແລ້ວ: ຮູບໜ້າຢ້ານ 8 ຮູບ ຕັ້ງແຕ່ແມວດຳ ແລະ ໝວກແມ່ມົດ ຈົນເຖິງເຮືອນຜີສິງ ແລະ ໂຄງກະດູກຍັກຂອງຄຸນິໂຢຊິ. ພິພິທະພັນທັງຫຼັງແຕ່ງຕົວຕ້ອນຮັບບຸນ, ວອລຊ໌ຮາໂລວີນເຂົ້າມາຢູ່ໃນແຜ່ນສຽງ, ແລະ ເມື່ອຈົບຊັ້ນນີ້ Pix ຈະກາຍເປັນໂຄມໝາກອຶ.",
+   "evDress_halloween": "ເກມທັງໝົດແຕ່ງຕົວຮັບຮາໂລວີນ: ແຕ່ລະໜ້າຈໍມີໝາກອຶ, ຄ້າງຄາວ ແລະ ໃຍແມງມຸມເປັນຂອງຕົນເອງ, ແມ່ມົດຕົ້ມຢາຢູ່ຂ້າງເມນູແລ້ວບິນຜ່ານດວງຈັນ, ແລະ ໃບໄມ້ລະດູໃບໄມ້ຫຼົ່ນຄ່ອຍໆຫຼົ່ນລົງມາ."
   },
   "my": {
    "tagline": "ပုံကို ကုဗတစ်တုံးချင်း ဖော်ပါ",
@@ -5274,7 +5350,8 @@
     "other": "{n} ရက် ကျန်တယ်"
    },
    "ev_halloween": "ပြတိုက်မှာ ဟယ်လိုဝင်း!",
-   "evText_halloween": "နိုဝင်ဘာ ၃၀ ရက်အထိ ဟယ်လိုဝင်းထပ် ဖွင့်ထားသည်- ကြောင်မည်းနှင့် စုန်းမ ဦးထုပ်မှ သရဲခြောက်တဲ့ အိမ်နှင့် ခုနိယိုရှိ၏ ကြီးမားသော အရိုးစုအထိ ကြောက်စရာပန်းချီကား ၈ ကား။ ပြတိုက်တစ်ခုလုံး ပွဲတော်အတွက် အလှဆင်ထားပြီး ဓာတ်ပြားများထဲသို့ ဟယ်လိုဝင်း ဝေါ့လ်ဇ်သီချင်း ပါဝင်လာကာ ထပ်ကို ပြီးအောင်လုပ်လျှင် Pix သည် ဖရုံသီးမီးအိမ်အဖြစ် ဝတ်စားမည်။"
+   "evText_halloween": "နိုဝင်ဘာ ၃၀ ရက်အထိ ဟယ်လိုဝင်းထပ် ဖွင့်ထားသည်- ကြောင်မည်းနှင့် စုန်းမ ဦးထုပ်မှ သရဲခြောက်တဲ့ အိမ်နှင့် ခုနိယိုရှိ၏ ကြီးမားသော အရိုးစုအထိ ကြောက်စရာပန်းချီကား ၈ ကား။ ပြတိုက်တစ်ခုလုံး ပွဲတော်အတွက် အလှဆင်ထားပြီး ဓာတ်ပြားများထဲသို့ ဟယ်လိုဝင်း ဝေါ့လ်ဇ်သီချင်း ပါဝင်လာကာ ထပ်ကို ပြီးအောင်လုပ်လျှင် Pix သည် ဖရုံသီးမီးအိမ်အဖြစ် ဝတ်စားမည်။",
+   "evDress_halloween": "ဂိမ်းတစ်ခုလုံး ဟယ်လိုဝင်းအတွက် ဝတ်ဆင်ထားသည်- စခရင်တိုင်းတွင် ကိုယ်ပိုင် ဖရုံသီးများ၊ လင်းနို့များနှင့် ပင့်ကူအိမ်များရှိပြီး မီနူးနားတွင် စုန်းမများ ဆေးရည်ချက်ကာ လကို ဖြတ်ပျံသန်းကြပြီး ဆောင်းဦးရွက်များ ဖြည်းညင်းစွာ ကြွေကျသည်။"
   },
   "km": {
    "tagline": "បង្ហាញរូបភាពម្ដងមួយគូបៗ",
@@ -5308,7 +5385,8 @@
     "other": "នៅសល់ {n} ថ្ងៃ"
    },
    "ev_halloween": "ហាឡូវីននៅសារមន្ទីរ!",
-   "evText_halloween": "រហូតដល់ថ្ងៃទី ៣០ ខែវិច្ឆិកា ជាន់ហាឡូវីនបើកហើយ៖ ពីឆ្មាខ្មៅ និងមួកមេធ្មប់ ដល់ផ្ទះខ្មោចលង និងគ្រោងឆ្អឹងយក្សរបស់គុនីយ៉ូស៊ី មានរូបភាពរន្ធត់ ៨។ សារមន្ទីរទាំងមូលតុបតែងខ្លួនទទួលពិធី ចង្វាក់វ៉ាល់ហាឡូវីនចូលរួមក្នុងថាសចម្រៀង ហើយពេលបញ្ចប់ជាន់នេះ Pix នឹងប្ដូរទៅជាចង្កៀងល្ពៅ។"
+   "evText_halloween": "រហូតដល់ថ្ងៃទី ៣០ ខែវិច្ឆិកា ជាន់ហាឡូវីនបើកហើយ៖ ពីឆ្មាខ្មៅ និងមួកមេធ្មប់ ដល់ផ្ទះខ្មោចលង និងគ្រោងឆ្អឹងយក្សរបស់គុនីយ៉ូស៊ី មានរូបភាពរន្ធត់ ៨។ សារមន្ទីរទាំងមូលតុបតែងខ្លួនទទួលពិធី ចង្វាក់វ៉ាល់ហាឡូវីនចូលរួមក្នុងថាសចម្រៀង ហើយពេលបញ្ចប់ជាន់នេះ Pix នឹងប្ដូរទៅជាចង្កៀងល្ពៅ។",
+   "evDress_halloween": "ហ្គេមទាំងមូលតុបតែងសម្រាប់ហាឡូវីន៖ អេក្រង់នីមួយៗមានល្ពៅ ប្រចៀវ និងសំណាញ់ពីងពាងផ្ទាល់ខ្លួន មេធ្មប់ចម្អិនថ្នាំក្បែរម៉ឺនុយ ហើយហោះកាត់មុខព្រះច័ន្ទ ចំណែកស្លឹកឈើស្ងួតរបស់រដូវស្លឹកឈើជ្រុះរសាត់ធ្លាក់ចុះយឺតៗ។"
   },
   "ko": {
    "tagline": "큐브 하나씩 그림을 드러내요",
@@ -5342,7 +5420,8 @@
     "other": "{n}일 남음"
    },
    "ev_halloween": "박물관의 핼러윈!",
-   "evText_halloween": "11월 30일까지 핼러윈 층이 열려 있어요. 검은 고양이와 마녀 모자부터 유령의 집, 구니요시의 거대한 해골까지 오싹한 그림 8점이 기다립니다. 미술관 전체가 축제 분위기로 단장하고, 레코드에는 핼러윈 왈츠가 더해지며, 층을 완성하면 Pix가 잭오랜턴으로 변신해요."
+   "evText_halloween": "11월 30일까지 핼러윈 층이 열려 있어요. 검은 고양이와 마녀 모자부터 유령의 집, 구니요시의 거대한 해골까지 오싹한 그림 8점이 기다립니다. 미술관 전체가 축제 분위기로 단장하고, 레코드에는 핼러윈 왈츠가 더해지며, 층을 완성하면 Pix가 잭오랜턴으로 변신해요.",
+   "evDress_halloween": "게임 전체가 핼러윈 옷으로 갈아입어요. 화면마다 저마다의 호박과 박쥐, 거미줄이 가득하고, 메뉴 옆에서는 마녀들이 물약을 끓이다 달을 가로질러 날아가며, 가을 낙엽이 살랑살랑 떨어져요."
   },
   "ja": {
    "tagline": "キューブで絵を描き出そう",
@@ -5376,7 +5455,8 @@
     "other": "あと{n}日"
    },
    "ev_halloween": "美術館のハロウィン！",
-   "evText_halloween": "11月30日まで、ハロウィンのフロアがオープン中。黒猫や魔女の帽子から、おばけ屋敷、国芳の巨大な骸骨まで、ぞくぞくする絵が8枚そろっています。美術館全体がお祝いの装いに変わり、レコードにはハロウィンのワルツが仲間入り。フロアを完成させると、Pixがジャック・オー・ランタンに変身します。"
+   "evText_halloween": "11月30日まで、ハロウィンのフロアがオープン中。黒猫や魔女の帽子から、おばけ屋敷、国芳の巨大な骸骨まで、ぞくぞくする絵が8枚そろっています。美術館全体がお祝いの装いに変わり、レコードにはハロウィンのワルツが仲間入り。フロアを完成させると、Pixがジャック・オー・ランタンに変身します。",
+   "evDress_halloween": "ゲーム全体がハロウィンの装いに。画面ごとにかぼちゃやコウモリ、クモの巣が飾られ、メニューのそばでは魔女が魔法の薬を煮込み、月を横切って飛んでいき、秋の落ち葉がひらひらと舞い落ちます。"
   },
   "zh-CN": {
    "tagline": "用方块一块块揭开画作",
@@ -5410,7 +5490,8 @@
     "other": "还剩 {n} 天"
    },
    "ev_halloween": "博物馆里的万圣节！",
-   "evText_halloween": "11 月 30 日前，万圣节楼层开放：8 幅诡异画作，从黑猫、女巫帽到鬼屋，再到歌川国芳笔下的巨大骷髅。整座博物馆换上节日装扮，万圣节华尔兹加入唱片集，完成这一层后，Pix 还会变身南瓜灯。"
+   "evText_halloween": "11 月 30 日前，万圣节楼层开放：8 幅诡异画作，从黑猫、女巫帽到鬼屋，再到歌川国芳笔下的巨大骷髅。整座博物馆换上节日装扮，万圣节华尔兹加入唱片集，完成这一层后，Pix 还会变身南瓜灯。",
+   "evDress_halloween": "整个游戏都换上万圣节装扮：每个画面都有专属的南瓜、蝙蝠和蜘蛛网，女巫在菜单旁熬煮魔药、飞过月亮，秋天的落叶也轻轻飘落。"
   },
   "zh-TW": {
    "tagline": "用方塊一塊塊揭開畫作",
@@ -5444,7 +5525,8 @@
     "other": "剩 {n} 天"
    },
    "ev_halloween": "博物館過萬聖節！",
-   "evText_halloween": "11 月 30 日前，萬聖節樓層開放：8 幅詭異畫作，從黑貓、女巫帽到鬼屋，再到歌川國芳筆下的巨大骷髏。整座博物館換上節慶裝扮，萬聖節華爾滋加入唱片收藏，完成這一層後，Pix 還會變身南瓜燈。"
+   "evText_halloween": "11 月 30 日前，萬聖節樓層開放：8 幅詭異畫作，從黑貓、女巫帽到鬼屋，再到歌川國芳筆下的巨大骷髏。整座博物館換上節慶裝扮，萬聖節華爾滋加入唱片收藏，完成這一層後，Pix 還會變身南瓜燈。",
+   "evDress_halloween": "整個遊戲都換上萬聖節裝扮：每個畫面都有專屬的南瓜、蝙蝠和蜘蛛網，女巫在選單旁熬煮魔藥、飛過月亮，秋天的落葉也輕輕飄落。"
   }
  },
  "logo": "<div class=\"plogo\" role=\"img\" aria-label=\"CubePix\"><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.00s\"><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.05s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.10s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.15s\"></i><b></b><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.16s\"><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.32s\"><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.48s\"><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.26s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.36s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i></div></div><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.64s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.43s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.48s\"></i><b></b><b></b><b></b></div><div class=\"pl-l\" style=\"--cols:3;--dl:0.80s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.40s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.45s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.50s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i></div><div class=\"pl-l\" style=\"--cols:5;--dl:0.96s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.52s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i></div></div></div>"
