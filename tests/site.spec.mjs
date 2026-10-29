@@ -415,6 +415,7 @@ test('the story: the first streamer to play our game live (22.10.2026) — our o
   await expect(v).toHaveAttribute('aria-label', /Андрій грає в Orbit Dash/);
   expect(media).toEqual([]);                                                                         // nothing of it on the first screen
   await li.scrollIntoViewIfNeeded();
+  await li.locator('.tl-tog').click();                                                              // 29.10: the story is cards — open this one
   await expect.poll(() => v.evaluate((e) => e.getAttribute('poster'))).toBe('/assets/story/first-live.jpg');
   expect(media.filter((m) => m.endsWith('.mp4'))).toEqual([]);                                       // the poster only, until it is played
   const mp4 = await request.get('./assets/story/first-live.mp4'), jpg = await request.get('./assets/story/first-live.jpg');

@@ -438,6 +438,36 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .tl-links a:hover{background:rgba(254,44,85,.24);}
 .tl-links svg{width:18px;height:18px;fill:#fff;flex:none;}
 .tl-i h3{font-weight:900;font-size:clamp(21px,2.4vw,26px);line-height:1.25;margin:4px 0 6px;}
+/* 29.10.2026 (owner): every story item is a card — the date, the title and a thumbnail; a tap opens the text, the photo or the clip.
+   The story grows long, so it stays short to scroll; «Show the whole story» opens every card. Text in even blocks (justified, hyphenated). */
+.tl-all{display:flex;justify-content:center;margin-top:26px;}
+.tl-allb{min-height:44px;padding:0 20px;border:0;border-radius:999px;background:rgba(61,220,132,.12);box-shadow:inset 0 0 0 1px rgba(61,220,132,.38);color:var(--mint);font:inherit;font-weight:800;font-size:15px;cursor:pointer;transition:background-color .15s ease;}
+.tl-allb:hover{background:rgba(61,220,132,.22);}
+.tl-allb:focus-visible{outline:2px solid var(--mint);outline-offset:3px;}
+.tl{margin-top:30px;}
+.tl-i{padding-bottom:14px;}
+.tl-i::before{top:26px;}
+.tl-i.brand::before{top:22px;} .tl-i.pix::before{top:15px;}
+.tl-card{position:relative;border-radius:18px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);text-align:start;transition:box-shadow .2s ease;}
+.tl-card:hover,.tl-i.open .tl-card{box-shadow:inset 0 0 0 1px rgba(157,245,194,.32);}
+.tl-head{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:14px 14px 14px 18px;}
+.tl-head .tl-when{font-size:12px;}
+.tl-i .tl-head h3{margin:3px 0 0;font-size:clamp(18px,2vw,21px);}
+.tl-thumb{display:block;width:56px;height:56px;border-radius:12px;object-fit:cover;background:#0b0d1d;box-shadow:inset 0 0 0 1px var(--line);}
+.tl-thumb[data-fit=contain]{object-fit:contain;padding:5px;}
+.tl-thumb[data-fit=top]{object-position:50% 30%;}
+.tl-chev{width:20px;height:20px;color:var(--ink3);transition:transform .25s ease;}
+.tl-i.open .tl-chev{transform:rotate(180deg);color:var(--mint);}
+.tl-tog{position:absolute;inset:0;width:100%;margin:0;padding:0;border:0;border-radius:18px;background:transparent;cursor:pointer;}
+.tl-tog:focus-visible{outline:2px solid var(--mint);outline-offset:2px;}
+.tl-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease;}
+.tl-i.open .tl-body{grid-template-rows:1fr;}
+.tl-in{min-height:0;overflow:hidden;}
+.tl-pad{padding:0 18px 18px;}
+.tl .tl-card .tl-pad > p{max-width:none;margin-inline-start:0;text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty;}
+.tl .tl-card .tl-photo,.tl .tl-card .tl-thanks,.tl .tl-card .tl-links{max-width:none;margin-inline-start:0;}
+.tl .tl-card .tl-links{justify-content:flex-start;}
+@media (prefers-reduced-motion:reduce){.tl-body,.tl-chev{transition:none;}}
 .tl-i p{color:var(--ink3);max-width:540px;}
 .tl-i p a{color:var(--mint);font-weight:800;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;}
 @media (min-width:900px){
@@ -729,28 +759,29 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
   <section class="story" id="story" data-world="lewydo" data-sec="story">
     <div class="wrap">
       <div class="center"><p class="eyebrow rv" data-t="story.eyebrow"></p><h2 class="h2 rv" data-t="story.title"></h2></div>
+      <div class="tl-all rv"><button class="tl-allb" id="tlAll" type="button" aria-expanded="false" aria-controls="tl"><span data-t="story.all.open"></span><span data-t="story.all.close" hidden></span></button></div>
       <ol class="tl" id="tl">
         <li class="tl-i rv"><p class="tl-when" data-t="story.1.when"></p><h3 data-t="story.1.t"></h3><p data-t="story.1.d"></p></li>
         <li class="tl-i rv"><p class="tl-when" data-t="story.2.when"></p><h3 data-t="story.2.t"></h3><p data-t="story.2.d"></p></li>
         <li class="tl-i love rv"><p class="tl-when" data-t="story.3.when"></p><h3 data-t="story.3.t"></h3><p data-t="story.3.d"></p></li>
-        <li class="tl-i brand rv"><p class="tl-when" data-t="story.brand.when"></p><h3 data-t="story.brand.t"></h3><p data-t="story.brand.d"></p></li>
-        <li class="tl-i rv"><p class="tl-when" data-t="story.imc.when"></p><h3 data-t="story.imc.t"></h3><p data-t="story.imc.d"></p></li>
-        <li class="tl-i rv"><p class="tl-when" data-t="story.idea.when"></p><h3 data-t="story.idea.t"></h3><p data-t="story.idea.d"></p></li>
+        <li class="tl-i brand rv" data-thumb="/brand/kit/webp/brand_front.webp" data-fit="contain"><p class="tl-when" data-t="story.brand.when"></p><h3 data-t="story.brand.t"></h3><p data-t="story.brand.d"></p></li>
+        <li class="tl-i rv" data-thumb="/assets/games/imc-icon.webp"><p class="tl-when" data-t="story.imc.when"></p><h3 data-t="story.imc.t"></h3><p data-t="story.imc.d"></p></li>
+        <li class="tl-i rv" data-thumb="/assets/games/cubepix-icon.webp"><p class="tl-when" data-t="story.idea.when"></p><h3 data-t="story.idea.t"></h3><p data-t="story.idea.d"></p></li>
         <li class="tl-i love rv"><p class="tl-when" data-t="story.4.when"></p><h3 data-t="story.4.t"></h3><p data-t="story.4.d"></p></li>
-        <li class="tl-i rv"><p class="tl-when" data-t="story.od.when"></p><h3 data-t="story.od.t"></h3><p data-t="story.od.d"></p></li>
-        <li class="tl-i rv"><p class="tl-when" data-t="story.proto.when"></p><h3 data-t="story.proto.t"></h3><p data-t="story.proto.d"></p></li>
-        <li class="tl-i pix rv"><p class="tl-when" data-t="story.pix.when"></p><h3 data-t="story.pix.t"></h3><p data-t="story.pix.d"></p></li>
-        <li class="tl-i lang rv" id="languages-82"><p class="tl-when" data-t="story.l10n.when"></p><h3 data-t="story.l10n.t"></h3><p data-t="story.l10n.d"></p><p data-t="story.l10n.d2"></p>
+        <li class="tl-i rv" data-thumb="/assets/games/orbitdash-icon.webp"><p class="tl-when" data-t="story.od.when"></p><h3 data-t="story.od.t"></h3><p data-t="story.od.d"></p></li>
+        <li class="tl-i rv" data-thumb="/assets/games/cubepix-icon.webp"><p class="tl-when" data-t="story.proto.when"></p><h3 data-t="story.proto.t"></h3><p data-t="story.proto.d"></p></li>
+        <li class="tl-i pix rv" data-thumb="/assets/games/cubepix-pix.webp" data-fit="contain"><p class="tl-when" data-t="story.pix.when"></p><h3 data-t="story.pix.t"></h3><p data-t="story.pix.d"></p></li>
+        <li class="tl-i lang rv" id="languages-82" data-thumb="/assets/story/desk-2026-10.webp"><p class="tl-when" data-t="story.l10n.when"></p><h3 data-t="story.l10n.t"></h3><p data-t="story.l10n.d"></p><p data-t="story.l10n.d2"></p>
           <figure class="tl-photo"><img src="/assets/story/desk-2026-10.webp" width="1000" height="750" loading="lazy" decoding="async" alt="" data-ta="alt:story.l10n.photo"><figcaption data-t="story.l10n.photo"></figcaption></figure></li>
-        <li class="tl-i live rv" id="first-live"><p class="tl-when" data-t="story.live.when"></p><h3 data-t="story.live.t"></h3><p data-t="story.live.d"></p>
+        <li class="tl-i live rv" id="first-live" data-thumb="/assets/story/first-live.jpg" data-fit="top"><p class="tl-when" data-t="story.live.when"></p><h3 data-t="story.live.t"></h3><p data-t="story.live.d"></p>
           <figure class="tl-live"><video controls playsinline preload="none" width="720" height="1280" data-poster="/assets/story/first-live.jpg" data-ta="aria-label:story.live.video">
             <source src="/assets/story/first-live.mp4" type="video/mp4"></video></figure>
           <button class="tl-tip" type="button" data-at="46" data-t="story.live.tip"></button>
           <blockquote class="tl-thanks"><p data-t="story.live.thanks"></p><footer data-t="story.live.sign"></footer></blockquote>
           <div class="tl-links"><a href="https://www.tiktok.com/@malcev_ua" rel="noopener">{{ico:tiktok}}<span dir="ltr">@malcev_ua</span></a><a href="https://choko.link/abbie" rel="noopener">{{ico:link}}<span dir="ltr">choko.link/abbie</span></a></div></li>
-        <li class="tl-i sale rv" id="first-sale"><p class="tl-when" data-t="story.sale.when"></p><h3 data-t="story.sale.t"></h3><p data-t="story.sale.d"></p></li>
-        <li class="tl-i ios rv" id="app-store"><p class="tl-when" data-t="story.ios.when"></p><h3 data-t="story.ios.t"></h3><p data-t="story.ios.d"></p></li>
-        <li class="tl-i next rv"><p class="tl-when" data-t="story.next.when"></p><h3 data-t="story.next.t"></h3><p data-t="story.next.d"></p></li>
+        <li class="tl-i sale rv" id="first-sale" data-thumb="/assets/games/orbitdash-icon.webp"><p class="tl-when" data-t="story.sale.when"></p><h3 data-t="story.sale.t"></h3><p data-t="story.sale.d"></p></li>
+        <li class="tl-i ios rv" id="app-store" data-thumb="/assets/games/orbitdash-icon.webp"><p class="tl-when" data-t="story.ios.when"></p><h3 data-t="story.ios.t"></h3><p data-t="story.ios.d"></p></li>
+        <li class="tl-i next rv" data-thumb="/assets/games/cubepix-icon.webp"><p class="tl-when" data-t="story.next.when"></p><h3 data-t="story.next.t"></h3><p data-t="story.next.d"></p></li>
       </ol>
     </div>
   </section>
@@ -1106,6 +1137,37 @@ const codeDesign = () => {
 };
 
 // ── the story line fills as you read ──
+// 29.10.2026 (owner): the story as cards — the date, the title and a thumbnail; a tap opens the rest (text, photo, clip); «Show the whole story»
+// opens every card; a link to an item (#first-live…) opens it. Without JS — everything stays open, as before.
+const storyCards = () => {
+  const tl = $('#tl'), all = $('#tlAll'); if (!tl) return;
+  const chev = '<svg class="tl-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const items = [];
+  const setOpen = (li, on) => { li.classList.toggle('open', on); const t = $('.tl-tog', li); t.setAttribute('aria-expanded', String(on)); $('.tl-body', li).inert = !on; };
+  const sync = () => { const n = items.filter((li) => li.classList.contains('open')).length, every = n === items.length;
+    all.setAttribute('aria-expanded', String(every)); const [o, c] = all.children; o.hidden = every; c.hidden = !every;
+    requestAnimationFrame(() => dispatchEvent(new Event('scroll'))); };
+  $$('.tl-i', tl).forEach((li, i) => {
+    const when = $('.tl-when', li), h = $('h3', li); if (!when || !h) return;
+    const rest = [...li.children].filter((c) => c !== when && c !== h);
+    const card = document.createElement('div'), head = document.createElement('div'), txt = document.createElement('div');
+    card.className = 'tl-card'; head.className = 'tl-head'; txt.className = 'tl-txt'; txt.append(when, h); head.append(txt);
+    if (li.dataset.thumb) { const im = new Image(56, 56); im.className = 'tl-thumb'; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; im.src = li.dataset.thumb;
+      if (li.dataset.fit) im.dataset.fit = li.dataset.fit; head.append(im); }
+    head.insertAdjacentHTML('beforeend', chev);
+    const tog = document.createElement('button'); tog.type = 'button'; tog.className = 'tl-tog'; tog.setAttribute('aria-controls', 'tlb' + i); head.append(tog);
+    const body = document.createElement('div'), inn = document.createElement('div'), pad = document.createElement('div');
+    body.className = 'tl-body'; body.id = 'tlb' + i; inn.className = 'tl-in'; pad.className = 'tl-pad'; pad.append(...rest); inn.append(pad); body.append(inn);
+    card.append(head, body); li.append(card);
+    const label = () => tog.setAttribute('aria-label', h.textContent.trim()); onLang.push(label); label();
+    tog.addEventListener('click', () => { setOpen(li, !li.classList.contains('open')); sync(); });
+    setOpen(li, false); items.push(li);
+  });
+  all.addEventListener('click', () => { const on = all.getAttribute('aria-expanded') !== 'true'; items.forEach((li) => setOpen(li, on)); sync(); });
+  const fromHash = () => { const li = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (li && li.classList.contains('tl-i')) { setOpen(li, true); sync(); requestAnimationFrame(() => li.scrollIntoView({ block: 'start' })); } };
+  addEventListener('hashchange', fromHash); fromHash(); sync();
+};
 const story = () => {
   const tl = $('#tl'), items = $$('.tl-i', tl); let q = 0;
   const upd = () => { q = 0; const r = tl.getBoundingClientRect(), p = clamp((innerHeight * .62 - r.top) / r.height);
@@ -1152,7 +1214,7 @@ if (!RM && matchMedia('(hover: hover)').matches) { const h = $('#top');
     onLang.push(() => { left.textContent = T('cp:evLeft', n); }); break; } })();
 startLang();
 if (OG || document.documentElement.classList.contains('kit')) { hero.start(); return; }
-sky.start(); hero.start(); cubepix.start(); orbit.start(); codeDesign(); story();
+sky.start(); hero.start(); cubepix.start(); orbit.start(); codeDesign(); storyCards(); story();
 })();
 </script>
 </body>
