@@ -93,5 +93,18 @@ not coming. Each game draws it in its own style (CubePix — cubes, Orbit Dash �
 
 The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/rewarded-ads.md` in the studio site repo.
 
+## Restore purchases: a plain row that says its own state (every game with purchases, from 29.10.2026)
+
+On iPhone a purchase that is not used up (REMOVE ADS…) must be restorable by a visible action (App Review 3.1.1); Google Play restores by
+itself, so on Android there is no row. The row lives in SETTINGS, last among the links, never from a paused run:
+- **One plain row** like the other settings rows: a «give back» icon and one label. No second line explaining it, no chevron (an action).
+- **The state replaces the row's own words**, right on the row (a toast hides under the settings dim): Restore purchases → Restoring…
+  (a busy sign on the right; a second tap does nothing) → ✓ Purchases restored (accent) / Nothing to restore / Couldn't restore (error
+  colour; a tap tries again — no «tap to try again» tail) → back to Restore purchases after ≈ 2.6 s (an error ≈ 3.6 s).
+- **Nothing jumps:** all five labels share one cell, so the row is as wide and tall as the longest from the start.
+- **Short texts:** every state in every language fits one line (≈ ≤ 20 Latin characters, CJK ≤ 10) — check by rendering each language.
+
+The full prompt to paste into a game's `CLAUDE.md` — `docs/ux/restore-purchases.md` in the studio site repo.
+
 © 2026 Lewydo™. The Lewydo mark is ours: use it only in Lewydo projects, and only as this kit shows it.
 Nunito is free under the SIL Open Font License.
