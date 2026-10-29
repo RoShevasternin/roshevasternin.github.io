@@ -29,14 +29,14 @@
   "gp.get": "Wuthole ku-",
   "cp.try": "Zama wena",
   "cp.back": "Buyela emidwebeni",
-  "cp.next": "Ukuthandile? Imnyuziyamu yonke yemidwebo ikulindile ku-demo yamahhala.",
+  "cp.next": "Ukuthandile? Imnyuziyamu yonke ikulindile — umdlalo ophelele, mahhala, ngqo kusiphequluli sakho.",
   "cp.pix.more": "Okwengeziwe ngo-Pix",
   "cp.aria": "Iphazili encane ye-CubePix: gcwalisa amaseli ngenombolo yekhyubhu yakho",
   "cp.picPrev": "Umdwebo wangaphambilini",
   "cp.picNext": "Umdwebo olandelayo",
   "od.tag": "Imizila emibili. Ukuthepha okukodwa. Konke ukugxuma kusesigqini.",
-  "od.lead": "Umdlalo wesigqi emkhathini ojulile: ukuthepha okukodwa kushintsha umzila, futhi konke ukugxuma kuwela esigqini somculo wethu. Amazinga amahlanu, imodi engapheli, i-Orbit III kanye nebhodi labaholi lomhlaba.",
-  "od.new": "Manje **ngezilimi ezingu-82**. Umdlalo uzikhethela ngokwawo ulimi lwefoni yakho. Lushintshe noma nini ngembulunga kuzilungiselelo.",
+  "od.lead": "Umdlalo wesigqi emkhathini ojulile: ukuthepha okukodwa kushintsha umzila, futhi konke ukugxuma kuwela esigqini somculo wethu. Amazinga amahlanu, imodi engapheli, imikhondo yebhola eyishumi nanye kanye ABAHOLAYO — ibhodi lezwe lakho nelomhlaba.",
+  "od.new": "**ABAHOLAYO**: khuphuka ebhodini lezwe lakho nelomhlaba, ngemincintiswano emine yesonto ngalinye nemiklomelo yamatshe ayigugu njalo ngoMsombuluko. Hlobisa umzila wakho — ibhola, umkhondo, isimo somzila nengoma yesizwe — bese unqoba ibhola elikhethekile le-STARDUST nomkhondo we-FLARE. Maduze ku-iPhone, futhi umdlalo wonke usudlalwa kakade kusiphequluli sakho.",
   "od.free": "Mahhala",
   "od.offline": "Kudlalwa ngaphandle kwe-inthanethi",
   "od.aria": "I-Orbit Dash — umdlalo wangempela, bukhoma",
@@ -126,6 +126,11 @@
   "story.live.tip": "Kusukela ku-0:46 — imizwa emihle kakhulu!",
   "story.live.thanks": "Ngiyabonga, Andrii, ngokuba yi-streamer yami yokuqala esakaze bukhoma idlala umdlalo wami. Ngiyabonga kakhulu!",
   "story.live.sign": "— U-Veldan, umsunguli we-Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Iwebhu iba inkundla yangempela",
+  "story.web.d": "Ngemva kwalokho kusakaza bukhoma, uVlad uqala ukuthatha iwebhu ngokuzimisela. Kuze kube yileso sikhathi besenza imidlalo yamafoni kuphela — i-Android ne-iOS — futhi inguqulo yewebhu ye-Orbit Dash yayiyi-demo nje yokunambitha umdlalo. Kodwa abasakazi nabadlali bacacile ukuthi bafuna ukudlala nasekhompyutheni, ngakho-ke uVlad uthatha ukuhambisa okuphelele kusiphequluli.",
+  "story.web.d2": "Manje sinenye inkundla: i-Orbit Dash ne-CubePix yimidlalo ephelele nasewebhu — akukho okufanele ukufakwe, vula nje udlale.",
+  "story.web.photo": "I-Orbit Dash ne-CubePix kusiphequluli — imidlalo ephelele efanayo nasemafonini.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Ukuthenga kokuqala",
   "story.sale.d": "Othile avela e-Italy uthenga SUSA IZIKHANGISO ku-Orbit Dash ngo-$3.99 — futhi $3.03 ifika kithi. Amadola okuqala umdlalo wethu awake awahola. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Konke okusha kuqala ku-prototype.** Isikrini, indlela yokudlala, umbhalo noma inombolo kwenziwa futhi kuhlolwe kuqala ku-prototype yewebhu yomdlalo — kuyashesha ukuhlola kusiphequluli.",
   "work.2": "**Umdlalo uthuthwa kuyo.** Umdlalo (LibGDX: Android, kamuva iOS) uthatha konke ku-prototype, izinombolo namagama kufana ncamashi: i-prototype iyisibonelo.",
   "work.3": "**Hhayi neze ngokuphambene.** Into entsha eyenziwe ngaphakathi komdlalo kuphela, i-prototype ayiyazi, futhi kokubili kuyahlukana. Ngisho nokulungisa: kuqala ku-prototype, bese emdlalweni."
- },
- "cubepix": {
-  "S": {
-   "tagline": "VEZA ISITHOMBE IKHYUBHU NGEKHYUBHU",
-   "lead": "Iphazili ezolile yabathandi bobuciko. Gcwalisa amakhyubhu ungqimba ngongqimba, futhi imidwebo edumile, izimangaliso zomhlaba nemicebo emincane yama-pixel kuyaphila. Isithombe ngasinye siphela ngelebula lemnyuziyamu nendaba yeqiniso.",
-   "play": "Dlala kusiphequluli",
-   "soon": "Maduze ku-",
-   "pics": {
-    "one": "isithombe esingu-{n}",
-    "other": "izithombe ezingu-{n}"
-   },
-   "floors": {
-    "one": "isitezi esingu-{n}",
-    "other": "izitezi ezingu-{n}"
-   },
-   "langs": {
-    "one": "ulimi olu-{n}",
-    "other": "izilimi eziyi-{n}"
-   },
-   "free": "Mahhala",
-   "layer": "UNGQIMBA {a} / {b}",
-   "revealed": "ISITHOMBE SIVEZIWE",
-   "about": "I-Lewydo yisitudiyo esincane semidlalo sabantu ababili sase-Ukraine. U-Vlad ubhala ikhodi, u-Lilya uyaklama. Ndawonye senza imidlalo nathi esithanda ukuyidlala.",
-   "thanks": "Siyabonga ngokudlala!",
-   "site": "Iwebhusayithi yethu",
-   "games": "Imidlalo yethu ku-Google Play",
-   "fact": "Iqiniso elijabulisayo",
-   "how": "Ikhyubhu yakho ikhombisa inombolo. Thepha amaseli anenombolo efanayo, noma uswayiphe phezu kwawo ngochungechunge olulodwa olude: uchungechunge lunikeza amaphuzu amaningi.",
-   "demo": "Umdwebo wemnyuziyamu, uvezwa ungqimba ngongqimba",
-   "aboutTitle": "Ngathi",
-   "pixTitle": "Hlangana no-Pix",
-   "pixName": "Uyikhyubhu (cube), futhi igama lakhe ngu-Pix. Kuhlanganise uthole i-CubePix: umdlalo uthwele igama lakhe.",
-   "pixHi": "Sawubona! Ngingu-Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Igagasi Elikhulu laseKanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "cishe ngo-1831"
-   },
-   "starry_night": {
-    "n": "Ubusuku Obunezinkanyezi",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Ama-iris",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Ichibi Lezimbali Zamanzi",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Isitrobheli",
-    "a": "",
-    "y": "",
-    "f": "Isitrobheli empeleni asiyona i-berry: «imbewu» ngayinye encane esikhumbeni saso iyisithelo esihlukile esinembewu ngaphakathi."
-   }
-  }
  }
 }

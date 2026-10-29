@@ -29,14 +29,14 @@
   "gp.get": "Ýükläp al:",
   "cp.try": "Özüň synap gör",
   "cp.back": "Suratlara gaýt",
-  "cp.next": "Halady my? Mugt demoda tutuş bir surat muzeýi saňa garaşýar.",
+  "cp.next": "Halady my? Tutuş muzeý saňa garaşýar — doly oýun, mugt, göni brauzerde.",
   "cp.pix.more": "Pix barada has köp",
   "cp.aria": "CubePix-iň kiçi tapmajasy: öýjükleri kubuňyň sany bilen doldur",
   "cp.picPrev": "Öňki surat",
   "cp.picNext": "Indiki surat",
   "od.tag": "Iki orbita. Bir basyş. Her bökmek — ritmde.",
-  "od.lead": "Giň giňişlikdäki ritm oýny: bir basyş orbitany çalyşýar, her bökmek bolsa öz sazymyzyň ritmine düşýär. Bäş dereje, tükeniksiz tertip, Orbit III we dünýä reýtingi.",
-  "od.new": "Indi **82 dilde**. Oýun telefonyňyň dilini özi saýlaýar. Islän wagtyň sazlamalardaky globus bilen çalyş.",
+  "od.lead": "Giň giňişlikdäki ritm oýny: bir basyş orbitany çalyşýar, her bökmek bolsa öz sazymyzyň ritmine düşýär. Bäş dereje, tükeniksiz tertip, on bir top yzy we REÝTING — ýurduňyň we dünýäniň tablisasy.",
+  "od.new": "**REÝTING**: ýurduňyň we dünýäniň tablisasynda ýokary çyk, her hepde 4 ýaryş we her duşenbe gymmatbaha daş baýraklary bilen. Orbitaňy bezäp goý — top, yz, orbitanyň şekili we gimn — we aýratyn STARDUST topy bilen FLARE yzyny ýeň. Ýakynda iPhone-da, tutuş oýun bolsa eýýäm brauzerde oýnalýar.",
   "od.free": "Mugt",
   "od.offline": "Internetsiz oýnalýar",
   "od.aria": "Orbit Dash — hakyky oýun, göni ýaýlymda",
@@ -126,6 +126,11 @@
   "story.live.tip": "0:46-dan başlap — iň gowy duýgular!",
   "story.live.thanks": "Sag bol, Andrii, meniň oýnumy oýnap, göni efir geçiren ilkinji blogerim bolanyň üçin. Köp sag bol!",
   "story.live.sign": "— Veldan, Lewydo-nyň esaslandyryjysy",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Web hakyky platforma öwrülýär",
+  "story.web.d": "Şol strimden soň Vlad webe çynlakaý garap başlaýar. Şol wagta çenli biz oýunlary diňe telefonlar üçin ýasaýardyk — Android we iOS — Orbit Dash oýunynyň web wersiýasy bolsa oýunyň tagamyny görmek üçin diňe demo boldy. Emma strimerler we oýunçylar kompýuterde hem oýnamak isleýändigi aýdyň, şonuň üçin Vlad brauzere doly porty öz üstüne alýar.",
+  "story.web.d2": "Indi bizde ýene bir platforma bar: Orbit Dash we CubePix webde hem doly oýunlar — hiç zat gurnamaly däl, aç-da oýna.",
+  "story.web.photo": "Brauzerde Orbit Dash we CubePix — telefonlardaky ýaly şol doly oýunlar.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Ilkinji satyn alyş",
   "story.sale.d": "Italiýadan kimdir biri Orbit Dash-da MAHABATSYZ $3.99-a satyn aldy — we bize $3.03 ýetdi. Oýunlarymyzyň gazanan ilkinji dollarlary. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Täze zatlaryň hemmesi prototipden başlaýar.** Ekran, mehanika, tekst ýa-da san ilki oýnuň web prototipinde edilýär we synalýar — brauzerde synamak çalt.",
   "work.2": "**Oýun ondan geçirilýär.** Oýun (LibGDX: Android, soňra iOS) hemme zady prototipden alýar, sanlar we sözler takyk şol bir: prototip — nusga.",
   "work.3": "**Hiç haçan tersine däl.** Diňe oýnuň içinde edilen täze zady prototip bilmeýär, we ikisi aýrylyşýar. Hatda düzediş hem: ilki prototipde, soňra oýunda."
- },
- "cubepix": {
-  "S": {
-   "tagline": "SURATY KUBMA-KUB AÇ",
-   "lead": "Sungat söýüjiler üçin rahatlandyryjy tapmaja. Kublary gatma-gat doldur, we meşhur suratlar, dünýäniň täsinlikleri we kiçijik piksel hazynalary janlanýar. Her surat muzeý ýazgysy we hakyky hekaýa bilen tamamlanýar.",
-   "play": "Brauzerde oýna",
-   "soon": "Ýakynda:",
-   "pics": {
-    "one": "{n} surat",
-    "other": "{n} surat"
-   },
-   "floors": {
-    "one": "{n} gat",
-    "other": "{n} gat"
-   },
-   "langs": {
-    "one": "{n} dil",
-    "other": "{n} dil"
-   },
-   "free": "Mugt",
-   "layer": "GAT {a} / {b}",
-   "revealed": "SURAT AÇYLDY",
-   "about": "Lewydo — Ukrainadan iki adamlyk garaşsyz oýun studiýasy. Vlad kod ýazýar, Lilya dizaýn edýär. Biz özümiziň oýnamagy halaýan oýunlarymyzy bile döredýäris.",
-   "thanks": "Oýnaýanyň üçin sag bol!",
-   "site": "Saýtymyz",
-   "games": "Google Play-däki oýunlarymyz",
-   "fact": "Gyzykly fakt",
-   "how": "Kubuň san görkezýär. Şol bir sanly öýjüklere bas ýa-da olaryň üstünden barmagyň bilen bir uzyn zynjyr edip süýşür: zynjyrlar has köp utuk berýär.",
-   "demo": "Gatma-gat açylýan muzeý suraty",
-   "aboutTitle": "Biz barada",
-   "pixTitle": "Pix bilen tanyş bol",
-   "pixName": "Ol kub (cube), ady bolsa Pix. Ikisini birleşdir, CubePix bolar: oýun onuň adyny göterýär.",
-   "pixHi": "Salam! Men Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Kanagawadaky beýik tolkun",
-    "a": "Katsushika Hokusai",
-    "y": "takmynan 1831"
-   },
-   "starry_night": {
-    "n": "Ýyldyzly gije",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Süsenler",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Suw liliýaly howuz",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Ýertudana",
-    "a": "",
-    "y": "",
-    "f": "Ýertudana hakyky miweje däl: onuň ýüzündäki her kiçijik «tohum» içinde tohumy bolan aýratyn miwedir."
-   }
-  }
  }
 }

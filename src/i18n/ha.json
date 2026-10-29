@@ -29,14 +29,14 @@
   "gp.get": "Sauke a",
   "cp.try": "Gwada da kanka",
   "cp.back": "Koma ga zane-zane",
-  "cp.next": "Ka ji daɗi? Gidan tarihi cike da zane-zane yana jiranka a demo kyauta.",
+  "cp.next": "Ka ji daɗi? Dukan gidan tarihi na jiranka — cikakken wasan, kyauta, kai tsaye a burauzarka.",
   "cp.pix.more": "Ƙari game da Pix",
   "cp.aria": "Ƙaramin wasan wuyar warwarewa na CubePix: cika akwatuna da lambar kubinka",
   "cp.picPrev": "Zanen baya",
   "cp.picNext": "Zane na gaba",
   "od.tag": "Da'ira biyu. Taɓawa ɗaya. Kowane tsalle a kan bugu.",
-  "od.lead": "Wasan bugu a cikin sararin samaniya: taɓawa ɗaya tana canza da'ira, kuma kowane tsalle yana faɗowa a kan bugun kiɗanmu na kanmu. Matakai biyar, yanayin Ba Ƙarshe, Orbit III da jerin gwanaye na duniya.",
-  "od.new": "Yanzu da **harsuna 82**. Wasan yana zaɓar harshen wayarka da kansa. Canza shi a kowane lokaci da duniya a cikin saituna.",
+  "od.lead": "Wasan bugu a cikin sararin samaniya: taɓawa ɗaya tana canza da'ira, kuma kowane tsalle yana faɗowa a kan bugun kiɗanmu na kanmu. Matakai biyar, yanayin Ba Ƙarshe, hanyoyin ƙwallo goma sha ɗaya da MATSAYI — jerin ƙasarka da na duniya.",
+  "od.new": "**MATSAYI**: hau jerin ƙasarka da na duniya, tare da gasa 4 a kowane mako da kyautar duwatsu masu daraja kowace Litinin. Kawata da'irarka — ƙwallo, hanya, siffar da'ira da waƙar yabo — ka kuma lashe ƙwallon STARDUST da hanyar FLARE na musamman. Nan ba da jimawa ba a iPhone, kuma duk wasan yana wasa a burauzarka yanzu.",
   "od.free": "Kyauta",
   "od.offline": "Ana yi ba tare da intanet ba",
   "od.aria": "Orbit Dash — ainihin wasan, kai tsaye",
@@ -126,6 +126,11 @@
   "story.live.tip": "Daga 0:46 — mafi kyawun motsin rai!",
   "story.live.thanks": "Na gode, Andrii, da kasancewarka mai yaɗa kai tsaye na farko da ya yi live yana buga wasana. Na gode ƙwarai da gaske!",
   "story.live.sign": "— Veldan, wanda ya kafa Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Yanar gizo ta zama ainihin dandamali",
+  "story.web.d": "Bayan wannan watsa shirin kai tsaye, Vlad ya fara ɗaukar yanar gizo da muhimmanci. Har zuwa lokacin, muna yin wasanni ne kawai don wayoyi — Android da iOS — kuma sigar yanar gizo ta Orbit Dash demo ce kawai don ɗanɗana wasan. Amma masu watsa shirye-shirye da 'yan wasa a fili suna son yin wasa a kwamfuta ma, don haka Vlad ya ɗauki cikakken sauya wasan zuwa burauza.",
+  "story.web.d2": "Yanzu muna da ƙarin dandamali ɗaya: Orbit Dash da CubePix cikakkun wasanni ne a yanar gizo ma — babu abin da za a sanya, kawai buɗe ka yi wasa.",
+  "story.web.photo": "Orbit Dash da CubePix a burauza — cikakkun wasannin nan ɗaya da na wayoyi.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Sayayyar farko",
   "story.sale.d": "Wani daga Italiya ya sayi CIRE TALLA a Orbit Dash a $3.99 — kuma $3.03 ya iso gare mu. Dalolin farko da wasanninmu suka taɓa samu. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Kowane sabon abu yana farawa a samfuri.** Allo, tsari, rubutu ko lamba ana yin su kuma a gwada su da farko a samfurin yanar gizo na wasan — gwaji a burauza yana da sauri.",
   "work.2": "**Ana kai wasan daga gare shi.** Wasan (LibGDX: Android, daga baya iOS) yana ɗaukar komai daga samfurin, lambobi da kalmomi daidai suke: samfurin shi ne mizani.",
   "work.3": "**Ba akasin haka ba.** Sabon abin da aka yi a cikin wasa kawai, samfurin bai san shi ba, kuma su biyun suna rabuwa. Ko gyara ma: farko a samfuri, sannan a wasa."
- },
- "cubepix": {
-  "S": {
-   "tagline": "BAYYANA HOTON KUBI BAYAN KUBI",
-   "lead": "Wasan wuyar warwarewa mai sanyaya rai ga masu son fasaha. Cika kubai shafi bayan shafi, sai shahararrun zane-zane, abubuwan al'ajabi na duniya da ƙananan taskokin pixel su rayu. Kowane hoto yana ƙarewa da alamar gidan tarihi da labari na gaskiya.",
-   "play": "Yi wasa a burauza",
-   "soon": "Nan ba da jimawa ba a",
-   "pics": {
-    "one": "hoto {n}",
-    "other": "hotuna {n}"
-   },
-   "floors": {
-    "one": "bene {n}",
-    "other": "benaye {n}"
-   },
-   "langs": {
-    "one": "harshe {n}",
-    "other": "harsuna {n}"
-   },
-   "free": "Kyauta",
-   "layer": "SHAFI {a} / {b}",
-   "revealed": "HOTON YA BAYYANA",
-   "about": "Lewydo ƙaramin kamfanin wasanni ne na mutum biyu daga Ukraine. Vlad yana rubuta code, Lilya tana zane. Tare muke yin wasannin da mu kanmu muke son yi.",
-   "thanks": "Mun gode da wasanka!",
-   "site": "Shafinmu na intanet",
-   "games": "Wasanninmu a Google Play",
-   "fact": "Abin sha'awa",
-   "how": "Kubinka yana nuna lamba. Taɓa akwatunan da ke da lamba iri ɗaya, ko ka ja yatsanka a kansu a sarƙa ɗaya mai tsawo: sarƙoƙi suna ba da maki fiye.",
-   "demo": "Zanen gidan tarihi, yana bayyana shafi bayan shafi",
-   "aboutTitle": "Game da mu",
-   "pixTitle": "Haɗu da Pix",
-   "pixName": "Shi kubi ne (cube), kuma sunansa Pix. Haɗa su sai ka samu CubePix: wasan yana ɗauke da sunansa.",
-   "pixHi": "Sannu! Ni ne Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Babban Raƙumin Ruwa na Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "kusan 1831"
-   },
-   "starry_night": {
-    "n": "Dare Mai Taurari",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Furannin Iris",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Tafkin Bado",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Strawberry",
-    "a": "",
-    "y": "",
-    "f": "Strawberry ba ainihin 'ya'yan itace mai ƙwaya ba ne: kowace ƙaramar «iri» a fatarta 'ya'yan itace ne daban mai iri a ciki."
-   }
-  }
  }
 }

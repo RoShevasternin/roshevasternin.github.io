@@ -29,14 +29,14 @@
   "gp.get": "Aconsegueix-lo a",
   "cp.try": "Prova-ho tu",
   "cp.back": "Torna als quadres",
-  "cp.next": "T’ha agradat? Tot un museu de quadres t’espera a la demo gratuïta.",
+  "cp.next": "T’ha agradat? Tot el museu t’espera — el joc complet, gratis, directament al navegador.",
   "cp.pix.more": "Més sobre en Pix",
   "cp.aria": "Mini trencaclosques de CubePix: omple les cel·les amb el número del teu cub",
   "cp.picPrev": "Quadre anterior",
   "cp.picNext": "Quadre següent",
   "od.tag": "Dues òrbites. Un toc. Cada salt al ritme.",
-  "od.lead": "Un joc de ritme a l’espai profund: un toc canvia d’òrbita, i cada salt cau al ritme de la nostra pròpia música. Cinc nivells, mode infinit, Orbit III i una classificació mundial.",
-  "od.new": "Ara en **82 idiomes**. El joc agafa sol l’idioma del teu telèfon. Canvia'l quan vulguis amb el globus dels ajustos.",
+  "od.lead": "Un joc de ritme a l’espai profund: un toc canvia d’òrbita, i cada salt cau al ritme de la nostra pròpia música. Cinc nivells, mode infinit, onze rastres per a la bola i RÀNQUING — la classificació del teu país i la mundial.",
+  "od.new": "**RÀNQUING**: puja a la classificació del teu país i a la mundial, amb 4 tornejos setmanals i premis de gemmes cada dilluns. Personalitza la teva òrbita — bola, rastre, forma d’òrbita i himne — i guanya la bola STARDUST i el rastre FLARE, exclusius. Aviat a l’iPhone, i tot el joc ja funciona al navegador.",
   "od.free": "Gratuït",
   "od.offline": "Es juga sense connexió",
   "od.aria": "Orbit Dash — el joc de veritat, en directe",
@@ -129,6 +129,11 @@
   "story.live.tip": "Des del 0:46: les millors emocions!",
   "story.live.thanks": "Gràcies, Andrii, per ser el meu primer streamer que fa un directe jugant al meu joc. Moltíssimes gràcies!",
   "story.live.sign": "— Veldan, fundador de Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "El web es converteix en una plataforma de debò",
+  "story.web.d": "Després d’aquell directe, Vlad comença a prendre’s el web seriosament. Fins llavors només fèiem jocs per a mòbils — Android i iOS — i la versió web d’Orbit Dash era només una demo per tastar el joc. Però els streamers i els jugadors volen jugar també a l’ordinador, així que Vlad es posa a fer un port complet al navegador.",
+  "story.web.d2": "Ara tenim una plataforma més: Orbit Dash i CubePix també són jocs complets al web — res a instal·lar, només obrir i jugar.",
+  "story.web.photo": "Orbit Dash i CubePix al navegador — els mateixos jocs complets que als mòbils.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "La primera compra",
   "story.sale.d": "Algú d'Itàlia compra SENSE ANUNCIS a Orbit Dash per $3.99, i a nosaltres ens arriben $3.03. Els primers dòlars que han guanyat mai els nostres jocs. Grazie mille! 🇮🇹",
@@ -358,70 +363,5 @@
   "work.1": "**Tot el que és nou comença al prototip.** Una pantalla, una mecànica, un text o un número es fa i es prova primer al prototip web del joc — és ràpid de provar al navegador.",
   "work.2": "**El joc es trasllada des d’ell.** El joc (LibGDX: Android, més endavant iOS) ho agafa tot del prototip, números i paraules exactament iguals: el prototip és la referència.",
   "work.3": "**Mai a l’inrevés.** Una cosa nova feta només dins del joc, el prototip no la coneix, i tots dos se separen. Fins i tot una correcció: primer al prototip, després al joc."
- },
- "cubepix": {
-  "S": {
-   "tagline": "REVELA EL QUADRE CUB A CUB",
-   "lead": "Un trencaclosques relaxant per als amants de l’art. Omple els cubs capa a capa, i quadres famosos, meravelles del món i petits tresors de píxels cobren vida. Cada quadre acaba amb una cartel·la de museu i una història real.",
-   "play": "Juga al navegador",
-   "soon": "Aviat a",
-   "pics": {
-    "one": "{n} quadre",
-    "other": "{n} quadres",
-    "many": "{n} quadres"
-   },
-   "floors": {
-    "one": "{n} planta",
-    "other": "{n} plantes",
-    "many": "{n} plantes"
-   },
-   "langs": {
-    "one": "{n} idioma",
-    "other": "{n} idiomes",
-    "many": "{n} idiomes"
-   },
-   "free": "Gratuït",
-   "layer": "CAPA {a} / {b}",
-   "revealed": "QUADRE REVELAT",
-   "about": "Lewydo és un estudi indie de dues persones d'Ucraïna. En Vlad programa, la Lilya dissenya. Junts fem els jocs que ens encanta jugar.",
-   "thanks": "Gràcies per jugar!",
-   "site": "El nostre web",
-   "games": "Els nostres jocs a Google Play",
-   "fact": "Curiositat",
-   "how": "El teu cub mostra un número. Toca les cel·les amb el mateix número, o passa-hi el dit per sobre en una cadena llarga: les cadenes donen més punts.",
-   "demo": "Un quadre de museu, que es revela capa a capa",
-   "aboutTitle": "Qui som",
-   "pixTitle": "Coneix en Pix",
-   "pixName": "És un cub (cube), i es diu Pix. Junta’ls i tens CubePix: el joc porta el seu nom.",
-   "pixHi": "Hola! Soc en Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "La gran onada de Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "cap a 1831"
-   },
-   "starry_night": {
-    "n": "La nit estelada",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Lliris",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "L’estany de nenúfars",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Maduixa",
-    "a": "",
-    "y": "",
-    "f": "La maduixa no és una baia de veritat: cada «llavor» petita de la seva pell és un fruit a part amb una llavor a dins."
-   }
-  }
  }
 }

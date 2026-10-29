@@ -29,14 +29,14 @@
   "gp.get": "Nweta ya na",
   "cp.try": "Nwalee ya n'onwe gị",
   "cp.back": "Laghachi na ihe osise",
-  "cp.next": "Ọ masịrị gị? Ụlọ ngosi nka zuru oke nke ihe osise na-eche gị na demo n'efu.",
+  "cp.next": "Ọ masịrị gị? Ụlọ ngosi nka dum na-eche gị — egwuregwu zuru ezu, n'efu, ozugbo n'ihe nchọgharị gị.",
   "cp.pix.more": "Ihe ndị ọzọ gbasara Pix",
   "cp.aria": "Obere egwuregwu nchọpụta CubePix: jupụta igbe ndị ahụ na nọmba cube gị",
   "cp.picPrev": "Ihe osise gara aga",
   "cp.picNext": "Ihe osise na-esote",
   "od.tag": "Okirikiri abụọ. Otu mpịa. Mwụli ọ bụla n'oge egwu.",
-  "od.lead": "Egwuregwu ụda egwu na mbara igwe dị omimi: otu mpịa na-agbanwe okirikiri, mwụli ọ bụla na-adakwasị n'ụda egwu nke anyị onwe anyị. Ọkwa ise, ọnọdụ Ebighebi, Orbit III na ndepụta ụwa niile.",
-  "od.new": "Ugbu a n'**asụsụ 82**. Egwuregwu ahụ na-ahọrọ asụsụ ekwentị gị n'onwe ya. Gbanwee ya mgbe ọ bụla site na ụwa dị na ntọala.",
+  "od.lead": "Egwuregwu ụda egwu na mbara igwe dị omimi: otu mpịa na-agbanwe okirikiri, mwụli ọ bụla na-adakwasị n'ụda egwu nke anyị onwe anyị. Ọkwa ise, ọnọdụ Ebighebi, ụzọ bọọlụ iri na otu na ỌNỌDỤ — ndepụta mba gị na nke ụwa.",
+  "od.new": "**ỌNỌDỤ**: rịgoro na ndepụta mba gị na nke ụwa, ya na asọmpi 4 kwa izu na ihe nrite nkume dị oke ọnụ ahịa kwa Mọnde. Chọọ okirikiri gị mma — bọọlụ, ụzọ, ọdịdị okirikiri na ukwe — meriekwa bọọlụ STARDUST na ụzọ FLARE pụrụ iche. N'oge na-adịghị anya na iPhone, egwuregwu ahụ niile na-agbakwa ugbu a n'ihe nchọgharị gị.",
   "od.free": "N'efu",
   "od.offline": "A na-egwu ya na-enweghị ịntanetị",
   "od.aria": "Orbit Dash — ezigbo egwuregwu, ozugbo",
@@ -123,6 +123,11 @@
   "story.live.tip": "Site na 0:46 — mmetụta kacha mma!",
   "story.live.thanks": "Daalụ, Andrii, maka ịbụ onye streamer mbụ m mere live ka ọ na-egwu egwuregwu m. Daalụ nke ukwuu!",
   "story.live.sign": "— Veldan, onye guzobere Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Weebụ ghọrọ ezigbo ikpo okwu",
+  "story.web.d": "Mgbe mgbasa ozi ozugbo ahụ gasịrị, Vlad na-amalite iwere weebụ dị ka ihe dị mkpa. Ruo oge ahụ, anyị na-eme egwuregwu naanị maka ekwentị — Android na iOS — ụdị weebụ nke Orbit Dash bụkwa naanị demo iji nwee ntakịrị ụtọ egwuregwu ahụ. Ma ndị na-agba mgbasa ozi ozugbo na ndị egwuregwu na-achọ ịgba egwu na kọmputa n'ezie, ya mere Vlad na-ewere ibuga zuru ezu gaa n'ihe nchọgharị.",
+  "story.web.d2": "Ugbu a anyị nwere ikpo okwu ọzọ: Orbit Dash na CubePix bụ egwuregwu zuru ezu na weebụ kwa — enweghị ihe ị ga-etinye, kpọghee ma gwuo.",
+  "story.web.photo": "Orbit Dash na CubePix n'ihe nchọgharị — otu egwuregwu zuru ezu dị ka n'ekwentị.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Ịzụta mbụ",
   "story.sale.d": "Otu onye si Italy zụrụ WEPỤ MGBASA OZI na Orbit Dash maka $3.99 — ma $3.03 bịaruru anyị. Dollar mbụ egwuregwu anyị rụpụtara. Grazie mille! 🇮🇹",
@@ -352,64 +357,5 @@
   "work.1": "**Ihe ọhụrụ niile na-amalite n'ụdị nlele.** Ihuenyo, usoro egwuregwu, ederede ma ọ bụ nọmba ka a na-ebu ụzọ mee ma nwalee n'ụdị nlele weebụ nke egwuregwu ahụ — ịnwale na ihe nchọgharị dị ngwa.",
   "work.2": "**A na-ebufe egwuregwu ahụ site na ya.** Egwuregwu ahụ (LibGDX: Android, emesịa iOS) na-ewe ihe niile site n'ụdị nlele, nọmba na okwu otu ụdị ahụ: ụdị nlele bụ ihe ntụaka.",
   "work.3": "**Ọ dịghị mgbe ọzọ.** Ihe ọhụrụ e mere naanị n'ime egwuregwu, ụdị nlele amaghị ya, ha abụọ ewee kewaa. Ọbụna ndozi: nke mbụ n'ụdị nlele, mgbe ahụ n'egwuregwu."
- },
- "cubepix": {
-  "S": {
-   "tagline": "KPỌPỤTA ONYONYO CUBE NA CUBE",
-   "lead": "Egwuregwu nchọpụta na-eme ka obi dajụọ maka ndị hụrụ nka n'anya. Jupụta cube ọkwa na ọkwa, ihe osise ama ama, ihe ịtụnanya ụwa na obere akụ pixel ga-adị ndụ. Onyonyo ọ bụla na-ejedebe na kaadị ụlọ ngosi nka na ezi akụkọ.",
-   "play": "Gwuo na ihe nchọgharị",
-   "soon": "N'oge na-adịghị anya na",
-   "pics": {
-    "other": "onyonyo {n}"
-   },
-   "floors": {
-    "other": "ala {n}"
-   },
-   "langs": {
-    "other": "asụsụ {n}"
-   },
-   "free": "N'efu",
-   "layer": "ỌKWA {a} / {b}",
-   "revealed": "ONYONYO APỤTALA",
-   "about": "Lewydo bụ ụlọ ọrụ egwuregwu indie nke mmadụ abụọ si Ukraine. Vlad na-ede koodu, Lilya na-emepụta. Ọnụ, anyị na-eme egwuregwu anyị onwe anyị na-enwe mmasị igwu.",
-   "thanks": "Daalụ maka igwu egwu!",
-   "site": "Websaịtị anyị",
-   "games": "Egwuregwu anyị na Google Play",
-   "fact": "Eziokwu na-atọ ụtọ",
-   "how": "Cube gị na-egosi nọmba. Pịa igbe nwere otu nọmba ahụ, ma ọ bụ dọrọ mkpịsị aka gị gafee ha n'otu ogologo agbụ: agbụ na-enye akara karịa.",
-   "demo": "Ihe osise ụlọ ngosi nka, na-apụta ọkwa na ọkwa",
-   "aboutTitle": "Banyere anyị",
-   "pixTitle": "Zute Pix",
-   "pixName": "Ọ bụ cube, aha ya bụ Pix. Jikọta ha, ị ga-enweta CubePix: egwuregwu ahụ na-eburu aha ya.",
-   "pixHi": "Ndewo! Abụ m Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Nnukwu Ebili Mmiri nke Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "ihe dị ka 1831"
-   },
-   "starry_night": {
-    "n": "Abalị Kpakpando",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Okooko Iris",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Ọdọ Mmiri Lili",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Strawberry",
-    "a": "",
-    "y": "",
-    "f": "Strawberry abụghị ezigbo berry: «mkpụrụ» obere ọ bụla dị n'akpụkpọ ya bụ mkpụrụ osisi dị iche nwere mkpụrụ n'ime."
-   }
-  }
  }
 }

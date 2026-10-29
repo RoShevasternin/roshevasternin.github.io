@@ -29,14 +29,14 @@
   "gp.get": "Lortu hemen:",
   "cp.try": "Probatu zuk",
   "cp.back": "Itzuli margolanetara",
-  "cp.next": "Gustatu zaizu? Margolanez betetako museo oso bat zain duzu doako demoan.",
+  "cp.next": "Gustatu zaizu? Museo osoa zain duzu — joko osoa, doan, zuzenean nabigatzailean.",
   "cp.pix.more": "Pixi buruz gehiago",
   "cp.aria": "CubePix-en minipuzzlea: bete gelaxkak zure kuboaren zenbakiarekin",
   "cp.picPrev": "Aurreko margolana",
   "cp.picNext": "Hurrengo margolana",
   "od.tag": "Bi orbita. Sakatze bat. Jauzi bakoitza erritmoan.",
-  "od.lead": "Erritmo-joko bat espazio sakonean: sakatze batek orbita aldatzen du, eta jauzi bakoitza gure musikaren erritmoan erortzen da. Bost maila, modu amaigabea, Orbit III eta munduko sailkapena.",
-  "od.new": "Orain **82 hizkuntzatan**. Jokoak berak hartzen du zure telefonoaren hizkuntza. Aldatu nahi duzunean ezarpenetako globoarekin.",
+  "od.lead": "Erritmo-joko bat espazio sakonean: sakatze batek orbita aldatzen du, eta jauzi bakoitza gure musikaren erritmoan erortzen da. Bost maila, modu amaigabea, bolaren hamaika arrasto eta RANKINGA — zure herrialdeko eta munduko sailkapena.",
+  "od.new": "**RANKINGA**: igo zure herrialdeko eta munduko sailkapenean, asteko 4 txapelketarekin eta astelehen guztietan harribitxi sariekin. Egokitu zure orbita — bola, arrastoa, orbitaren forma eta ereserkia — eta irabazi STARDUST bola eta FLARE arrastoa, esklusiboak. Laster iPhonerako, eta joko osoa jada nabigatzailean jokatzen da.",
   "od.free": "Doan",
   "od.offline": "Konexiorik gabe jokatzen da",
   "od.aria": "Orbit Dash — benetako jokoa, zuzenean",
@@ -126,6 +126,11 @@
   "story.live.tip": "0:46tik aurrera: emozio onenak!",
   "story.live.thanks": "Eskerrik asko, Andrii, nire jokoan jokatuz zuzenekoa egin duen nire lehen streamerra izateagatik. Mila esker!",
   "story.live.sign": "— Veldan, Lewydoren sortzailea",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Weba benetako plataforma bihurtzen da",
+  "story.web.d": "Zuzeneko hura ostean, Vladek weba serio hartzen hasten da. Ordura arte telefonoentzako jokoak bakarrik egiten genituen — Android eta iOS — eta Orbit Dash jokoaren web bertsioa jokoa dastatzeko demo bat besterik ez zen. Baina streamerrek eta jokalariek ordenagailuan ere jokatu nahi dutela argi dago, eta Vladek nabigatzailerako portatze oso bati ekiten dio.",
+  "story.web.d2": "Orain beste plataforma bat dugu: Orbit Dash eta CubePix joko osoak dira webean ere — ezer instalatu beharrik ez, ireki eta jokatu.",
+  "story.web.photo": "Orbit Dash eta CubePix nabigatzailean — telefonoetan bezalako joko oso berberak.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Lehen erosketa",
   "story.sale.d": "Italiako norbaitek Orbit Dash-en IRAGARKI GABE erosten du $3.99-an — eta guregana $3.03 iristen dira. Gure jokoek inoiz irabazi dituzten lehen dolarrak. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Berri guztia prototipoan hasten da.** Pantaila bat, mekanika bat, testu bat edo zenbaki bat lehenik jokoaren web prototipoan egin eta probatzen da — azkarra da nabigatzailean probatzea.",
   "work.2": "**Jokoa handik eramaten da.** Jokoak (LibGDX: Android, gero iOS) dena hartzen du prototipotik, zenbakiak eta hitzak berdin-berdin: prototipoa da erreferentzia.",
   "work.3": "**Inoiz ez alderantziz.** Jokoaren barruan bakarrik egindako zerbait berri ez du prototipoak ezagutzen, eta biak bereizi egiten dira. Konponketa bat ere bai: lehenik prototipoan, gero jokoan."
- },
- "cubepix": {
-  "S": {
-   "tagline": "AGERTU IRUDIA KUBOZ KUBO",
-   "lead": "Puzzle lasaigarri bat artearen zaleentzat. Bete kuboak geruzaz geruza, eta margolan ospetsuak, munduko mirariak eta pixel-altxor txikiak bizia hartzen dute. Irudi bakoitza museoko txartel batekin eta benetako istorio batekin amaitzen da.",
-   "play": "Jokatu nabigatzailean",
-   "soon": "Laster hemen:",
-   "pics": {
-    "one": "{n} irudi",
-    "other": "{n} irudi"
-   },
-   "floors": {
-    "one": "{n} solairu",
-    "other": "{n} solairu"
-   },
-   "langs": {
-    "one": "{n} hizkuntza",
-    "other": "{n} hizkuntza"
-   },
-   "free": "Doan",
-   "layer": "GERUZA {a} / {b}",
-   "revealed": "IRUDIA AGERIAN",
-   "about": "Lewydo Ukrainako indie joko-estudio bat da, bi lagunek osatua. Vlad programatzailea da, eta Lilya diseinatzailea. Elkarrekin, guk geuk jokatzea maite ditugun jokoak egiten ditugu.",
-   "thanks": "Eskerrik asko jokatzeagatik!",
-   "site": "Gure webgunea",
-   "games": "Gure jokoak Google Play-n",
-   "fact": "Datu bitxia",
-   "how": "Zure kuboak zenbaki bat erakusten du. Sakatu zenbaki bera duten gelaxkak, edo irristatu hatza haien gainetik kate luze batean: kateek puntu gehiago ematen dituzte.",
-   "demo": "Museoko margolan bat, geruzaz geruza agertzen",
-   "aboutTitle": "Guri buruz",
-   "pixTitle": "Ezagutu Pix",
-   "pixName": "Kubo bat da (cube), eta Pix du izena. Elkartu itzazu eta CubePix duzu: jokoak bere izena darama.",
-   "pixHi": "Kaixo! Pix naiz."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Kanagawako olatu handia",
-    "a": "Katsushika Hokusai",
-    "y": "1831 inguru"
-   },
-   "starry_night": {
-    "n": "Gau izarratua",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Lirioak",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Nenufarren urmaela",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Marrubia",
-    "a": "",
-    "y": "",
-    "f": "Marrubia ez da benetako baia: bere azaleko «hazi» txiki bakoitza fruitu bereizi bat da, barruan hazi bat duena."
-   }
-  }
  }
 }

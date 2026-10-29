@@ -29,14 +29,14 @@
   "gp.get": "Shkarkoje në",
   "cp.try": "Provoje vetë",
   "cp.back": "Kthehu te pikturat",
-  "cp.next": "Të pëlqeu? Një muze i tërë pikturash të pret në demon falas.",
+  "cp.next": "Të pëlqeu? Një muze i tërë të pret — loja e plotë, falas, drejtpërdrejt në shfletues.",
   "cp.pix.more": "Më shumë për Pix-in",
   "cp.aria": "Mini enigmë CubePix: mbush qelizat me numrin e kubit tënd",
   "cp.picPrev": "Piktura e mëparshme",
   "cp.picNext": "Piktura e radhës",
   "od.tag": "Dy orbita. Një trokitje. Çdo kërcim në ritëm.",
-  "od.lead": "Një lojë ritmi në hapësirën e thellë: një trokitje ndërron orbitën, dhe çdo kërcim bie në ritmin e muzikës sonë. Pesë nivele, modalitet pa fund, Orbit III dhe renditje botërore.",
-  "od.new": "Tani në **82 gjuhë**. Loja e merr vetë gjuhën e telefonit tënd. Ndryshoje kur të duash me globin në cilësime.",
+  "od.lead": "Një lojë ritmi në hapësirën e thellë: një trokitje ndërron orbitën, dhe çdo kërcim bie në ritmin e muzikës sonë. Pesë nivele, modalitet pa fund, njëmbëdhjetë gjurmë topi dhe RENDITJA — tabela e vendit tënd dhe e botës.",
+  "od.new": "**RENDITJA**: ngjitu në tabelën e vendit tënd dhe të botës, me 4 turne javore dhe çmime gurësh të çmuar çdo të hënë. Stilo orbitën tënde — topin, gjurmën, formën e orbitës dhe himnin — dhe fito topin STARDUST dhe gjurmën FLARE, ekskluzive. Së shpejti në iPhone, ndërsa gjithë loja luhet tashmë në shfletues.",
   "od.free": "Falas",
   "od.offline": "Luhet pa internet",
   "od.aria": "Orbit Dash — loja e vërtetë, drejtpërdrejt",
@@ -126,6 +126,11 @@
   "story.live.tip": "Nga 0:46 — emocionet më të mira!",
   "story.live.thanks": "Faleminderit, Andrii, që je streameri im i parë që bëri transmetim të drejtpërdrejtë duke luajtur lojën time. Të faleminderit shumë!",
   "story.live.sign": "— Veldan, themelues i Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Webi bëhet një platformë e vërtetë",
+  "story.web.d": "Pas atij transmetimi, Vlad fillon ta marrë webin seriozisht. Deri atëherë bënim lojëra vetëm për telefona — Android dhe iOS — dhe versioni web i Orbit Dash ishte thjesht një demo për të shijuar lojën. Por transmetuesit dhe lojtarët qartazi duan të luajnë edhe në kompjuter, ndaj Vlad merr përsipër një port të plotë në shfletues.",
+  "story.web.d2": "Tani kemi edhe një platformë tjetër: Orbit Dash dhe CubePix janë lojëra të plota edhe në web — asgjë për t’u instaluar, thjesht hape dhe luaj.",
+  "story.web.photo": "Orbit Dash dhe CubePix në shfletues — të njëjtat lojëra të plota si në telefona.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Blerja e parë",
   "story.sale.d": "Dikush nga Italia blen PA REKLAMA në Orbit Dash për $3.99 — dhe te ne arrijnë $3.03. Dollarët e parë që kanë fituar ndonjëherë lojërat tona. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Gjithçka e re fillon te prototipi.** Një ekran, një mekanikë, një tekst ose një numër bëhet dhe provohet fillimisht te prototipi web i lojës — provohet shpejt në shfletues.",
   "work.2": "**Loja transferohet prej tij.** Loja (LibGDX: Android, më vonë iOS) merr gjithçka nga prototipi, numrat dhe fjalët njësoj: prototipi është referenca.",
   "work.3": "**Kurrë anasjelltas.** Diçka e re e bërë vetëm brenda lojës, prototipi nuk e njeh, dhe të dyja ndahen. Edhe një rregullim: fillimisht te prototipi, pastaj te loja."
- },
- "cubepix": {
-  "S": {
-   "tagline": "ZBULO PIKTURËN KUB PAS KUBI",
-   "lead": "Një enigmë qetësuese për adhuruesit e artit. Mbush kubat shtresë pas shtrese, dhe piktura të famshme, mrekulli të botës dhe thesare të vogla pikselësh marrin jetë. Çdo pikturë mbyllet me një etiketë muzeu dhe një histori të vërtetë.",
-   "play": "Luaj në shfletues",
-   "soon": "Së shpejti në",
-   "pics": {
-    "one": "{n} pikturë",
-    "other": "{n} piktura"
-   },
-   "floors": {
-    "one": "{n} kat",
-    "other": "{n} kate"
-   },
-   "langs": {
-    "one": "{n} gjuhë",
-    "other": "{n} gjuhë"
-   },
-   "free": "Falas",
-   "layer": "SHTRESA {a} / {b}",
-   "revealed": "PIKTURA U ZBULUA",
-   "about": "Lewydo është një studio indie lojërash me dy veta nga Ukraina. Vlad shkruan kodin, Lilya bën dizajnin. Bashkë bëjmë lojërat që na pëlqen t'i luajmë.",
-   "thanks": "Faleminderit që luani!",
-   "site": "Faqja jonë",
-   "games": "Lojërat tona në Google Play",
-   "fact": "Fakt interesant",
-   "how": "Kubi yt tregon një numër. Trokit qelizat me të njëjtin numër, ose kalo gishtin mbi to në një zinxhir të gjatë: zinxhirët japin më shumë pikë.",
-   "demo": "Një pikturë muzeu, që zbulohet shtresë pas shtrese",
-   "aboutTitle": "Rreth nesh",
-   "pixTitle": "Njihu me Pix-in",
-   "pixName": "Ai është një kub (cube), dhe quhet Pix. Bashkoji dhe ke CubePix: loja mban emrin e tij.",
-   "pixHi": "Përshëndetje! Unë jam Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Vala e madhe e Kanagavës",
-    "a": "Katsushika Hokusai",
-    "y": "rreth 1831"
-   },
-   "starry_night": {
-    "n": "Nata me yje",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Irise",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Pellgu me zambakë uji",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Luleshtrydhe",
-    "a": "",
-    "y": "",
-    "f": "Luleshtrydhja nuk është kokrrë e vërtetë: çdo «farë» e vogël në lëkurën e saj është një frut më vete me një farë brenda."
-   }
-  }
  }
 }

@@ -29,14 +29,14 @@
   "gp.get": "Irraa argadhu",
   "cp.try": "Ofii kee yaali",
   "cp.back": "Gara fakkiiwwaniitti deebi'i",
-  "cp.next": "Si gammachiseeraa? Mana kuusaa fakkiiwwanii guutuun demo bilisaa keessatti si eegaa jira.",
+  "cp.next": "Si gammachiseeraa? Mana kuusaa fakkii guutuun si eegaa jira — taphni guutuun, bilisaan, kallattiin barbaadduu keessatti.",
   "cp.pix.more": "Waa'ee Pix dabalataan",
   "cp.aria": "Hiikkaa xiqqaa CubePix: kutaalee lakkoofsa kuubii keetiin guuti",
   "cp.picPrev": "Fakkii duraa",
   "cp.picNext": "Fakkii itti aanu",
   "od.tag": "Marsaa lama. Tuqa tokko. Utaalchi hundi rukuttaa irratti.",
-  "od.lead": "Tapha rukuttaa samii gadi fagoo keessaa: tuqni tokko marsaa jijjiira, utaalchi hundis rukuttaa muuziqaa keenyaa irratti kufa. Sadarkaa shan, haala dhuma hin qabne, Orbit III fi sadarkaa addunyaa.",
-  "od.new": "Amma **afaanota 82**n. Taphichi afaan bilbila keetii ofumaan filata. Yeroo kamiyyuu lafa qindaa'ina keessaatiin jijjiiri.",
+  "od.lead": "Tapha rukuttaa samii gadi fagoo keessaa: tuqni tokko marsaa jijjiira, utaalchi hundis rukuttaa muuziqaa keenyaa irratti kufa. Sadarkaa shan, haala dhuma hin qabne, faana kubbaa kudha tokko fi TARREE — tarree biyya kee fi kan addunyaa.",
+  "od.new": "**TARREE**: tarree biyya kee fi kan addunyaa irratti ba'i; dorgommii torbanitti 4 fi badhaasa dhagaa gati-qabeessaa Wiixata hunda qabda. Marsaa kee miidhagsi — kubbaa, faana, bifa marsaa fi weedduu — kubbaa STARDUST fi faana FLARE kan addaa moo'adhu. Dhiyeenyatti iPhone irratti ni dhufa, taphni guutuun immoo amma iyyuu barbaadduu keessatti ni taphatama.",
   "od.free": "Bilisaan",
   "od.offline": "Interneetii malee ni taphatama",
   "od.aria": "Orbit Dash — tapha dhugaa, kallattiin",
@@ -126,6 +126,11 @@
   "story.live.tip": "0:46 irraa — miira hundarra gaarii!",
   "story.live.thanks": "Galatoomi, Andrii, streamer koo isa jalqabaa tapha koo taphachaa kallattiin dabarse waan taateef. Baay'ee baay'ee galatoomi!",
   "story.live.sign": "— Veldan, hundeessaa Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Weebiin pilaatfoormii dhugaa ta'a",
+  "story.web.d": "Sagantaa kana booda Vlad weebii cimsee ilaaluu eegala. Hanga sanaatti taphoota bilbilaaf qofa hojjetaa turre — Android fi iOS — gosti weebii Orbit Dash immoo tapha sana dhandhamsiisuuf demo qofa ture. Garuu daawwattoonnii fi taphattoonni kompiitara irrattis taphachuu akka barbaadan ifaadha, kanaaf Vlad gara barbaadduutti geessuu guutuu fudhata.",
+  "story.web.d2": "Amma pilaatfoormii tokko dabalataan qabna: Orbit Dash fi CubePix weeb irrattis taphoota guutuu dha — homaa ijaaruun hin barbaachisu, banuudhaan taphadhu.",
+  "story.web.photo": "Orbit Dash fi CubePix barbaadduu keessatti — taphoota guutuu kanneen bilbila irra jiran wal fakkaatan.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Bittaa jalqabaa",
   "story.sale.d": "Nama tokko Itaaliyaa irraa Orbit Dash keessatti BEEKSISA MALEE $3.99'n bite — nutti $3.03 dhufe. Doolaara taphoonni keenya yeroo jalqabaaf argatan. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Wanti haaraan hundi prototaayippii keessatti jalqaba.** Iskiriinii, mekaanikii, barreeffama yookaan lakkoofsi jalqaba prototaayippii weebii taphichaa keessatti hojjetamee qoratama — barbaadduu keessatti qoruun saffisaadha.",
   "work.2": "**Taphichi isa irraa ce'a.** Taphichi (LibGDX: Android, booda iOS) waan hunda prototaayippii irraa fudhata, lakkoofsotaa fi jechoonni sirriitti tokkuma: prototaayippiin madaallii dha.",
   "work.3": "**Gonkumaa faallaa miti.** Waan haaraa tapha keessatti qofa hojjetame prototaayippiin hin beeku, lamaan isaanii ni adda bahu. Sirreeffamni iyyuu: jalqaba prototaayippii keessatti, itti aansee tapha keessatti."
- },
- "cubepix": {
-  "S": {
-   "tagline": "FAKKII KUUBII KUUBIIN MUL'ISI",
-   "lead": "Hiikkaa tasgabbeessu jaallattoota aartiitiif. Kuubii gosa gosaan guuti, fakkiiwwan beekamoo, dinqiiwwan addunyaa fi qabeenyi piksela xixiqqoon lubbuu horatu. Fakkiin hundi mallattoo mana kuusaa fi seenaa dhugaa tokkoon xumurama.",
-   "play": "Barbaadduu keessatti taphadhu",
-   "soon": "Dhiyootti",
-   "pics": {
-    "one": "fakkii {n}",
-    "other": "fakkiiwwan {n}"
-   },
-   "floors": {
-    "one": "darbii {n}",
-    "other": "darbiiwwan {n}"
-   },
-   "langs": {
-    "one": "afaan {n}",
-    "other": "afaanota {n}"
-   },
-   "free": "Bilisaan",
-   "layer": "GOSA {a} / {b}",
-   "revealed": "FAKKIIN MUL'ATE",
-   "about": "Lewydo istuudiyoo taphaa walabaa nama lamaa kan Yukireen irraati. Vlad koodii barreessa, Lilya dizaayinii hojjetti. Waliin taphoota nuti taphachuu jaallannu hojjenna.",
-   "thanks": "Taphachuu keetiif galatoomi!",
-   "site": "Weebsaayitii keenya",
-   "games": "Taphoota keenya Google Play irratti",
-   "fact": "Dhugaa nama hawwatu",
-   "how": "Kuubiin kee lakkoofsa agarsiisa. Kutaalee lakkoofsa wal fakkaatu qaban tuqi, yookaan quba kee isaan irra sansalata dheeraa tokkoon harkisi: sansalanni qabxii dabalataa kenna.",
-   "demo": "Fakkii mana kuusaa, gosa gosaan mul'atu",
-   "aboutTitle": "Eenyu nuti",
-   "pixTitle": "Pix wajjin wal baradhu",
-   "pixName": "Inni kuubii (cube) dha, maqaan isaa Pix. Walitti makii CubePix argatta: taphichi maqaa isaa baata.",
-   "pixHi": "Akkam! Ani Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Dambalii Guddaa Kanagawaa",
-    "a": "Katsushika Hokusai",
-    "y": "gara 1831"
-   },
-   "starry_night": {
-    "n": "Halkan Urjii",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Abaaboo Iris",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Haroo Abaaboo Bishaanii",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Isturoobarii",
-    "a": "",
-    "y": "",
-    "f": "Isturoobariin dhugaatti firii berii miti: «sanyiin» xiqqaan gogaa isaa irra jiru hundi firii addaa sanyii keessaa qabuudha."
-   }
-  }
  }
 }

@@ -29,14 +29,14 @@
   "gp.get": "Sæktu á",
   "cp.try": "Prófaðu sjálf(ur)",
   "cp.back": "Aftur að málverkunum",
-  "cp.next": "Líkaði þér? Heilt listasafn af málverkum bíður þín í ókeypis prufuútgáfunni.",
+  "cp.next": "Líkaði þér? Allt safnið bíður þín — fulli leikurinn, ókeypis, beint í vafranum.",
   "cp.pix.more": "Meira um Pix",
   "cp.aria": "Lítil CubePix-þraut: fylltu reitina með tölu kubbsins þíns",
   "cp.picPrev": "Fyrra málverk",
   "cp.picNext": "Næsta málverk",
   "od.tag": "Tvær brautir. Ein snerting. Hvert stökk í takt.",
-  "od.lead": "Taktleikur úti í geimnum: ein snerting skiptir um braut og hvert stökk lendir í takti við okkar eigin tónlist. Fimm borð, endalaus hamur, Orbit III og alþjóðlegur stigalisti.",
-  "od.new": "Nú á **82 tungumálum**. Leikurinn velur sjálfur tungumál símans þíns. Skiptu hvenær sem er með hnettinum í stillingunum.",
+  "od.lead": "Taktleikur úti í geimnum: ein snerting skiptir um braut og hvert stökk lendir í takti við okkar eigin tónlist. Fimm borð, endalaus hamur, ellefu boltaslóðir og STAÐA — listi lands þíns og heimslistinn.",
+  "od.new": "**STAÐA**: klifraðu upp lista lands þíns og heimslistann, með 4 vikulegum mótum og gimsteinaverðlaunum hvern mánudag. Skreyttu brautina þína — bolta, slóð, lögun brautar og þjóðsöng — og vinndu einkarétta STARDUST-boltann og FLARE-slóðina. Væntanlegt á iPhone, og allur leikurinn er þegar spilanlegur í vafranum.",
   "od.free": "Ókeypis",
   "od.offline": "Spilast án nettengingar",
   "od.aria": "Orbit Dash — alvöru leikurinn, í beinni",
@@ -126,6 +126,11 @@
   "story.live.tip": "Frá 0:46 — bestu tilfinningarnar!",
   "story.live.thanks": "Takk, Andrii, fyrir að vera fyrsti streymarinn minn sem fór í beina útsendingu og spilaði leikinn minn. Kærar þakkir!",
   "story.live.sign": "— Veldan, stofnandi Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Vefurinn verður að alvöru vettvangi",
+  "story.web.d": "Eftir þessa útsendingu byrjar Vlad að taka vefinn alvarlega. Fram að því gerðum við leiki bara fyrir síma — Android og iOS — og vefútgáfan af Orbit Dash var aðeins prufa til að bragða á leiknum. En streymarar og spilarar vilja greinilega líka spila í tölvu, svo Vlad tekur að sér fulla færslu yfir í vafrann.",
+  "story.web.d2": "Nú höfum við einn vettvang í viðbót: Orbit Dash og CubePix eru fullir leikir líka á vefnum — ekkert til að setja upp, bara opna og spila.",
+  "story.web.photo": "Orbit Dash og CubePix í vafranum — sömu fullu leikirnir og í símum.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Fyrstu kaupin",
   "story.sale.d": "Einhver frá Ítalíu kaupir ÁN AUGLÝSINGA í Orbit Dash fyrir $3.99 — og $3.03 berast til okkar. Fyrstu dollararnir sem leikirnir okkar hafa nokkurn tíma aflað. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Allt nýtt byrjar í frumgerðinni.** Skjár, leikvirkni, texti eða tala er fyrst gerð og prófuð í vef-frumgerð leiksins — fljótlegt að prófa í vafranum.",
   "work.2": "**Leikurinn er fluttur úr henni.** Leikurinn (LibGDX: Android, síðar iOS) tekur allt úr frumgerðinni, tölur og orð nákvæmlega eins: frumgerðin er viðmiðið.",
   "work.3": "**Aldrei öfugt.** Eitthvað nýtt sem er aðeins gert inni í leiknum þekkir frumgerðin ekki, og þau fjarlægjast hvort annað. Jafnvel lagfæring: fyrst í frumgerðinni, svo í leiknum."
- },
- "cubepix": {
-  "S": {
-   "tagline": "AFHJÚPAÐU MYNDINA KUBB FYRIR KUBB",
-   "lead": "Afslappandi þraut fyrir listunnendur. Fylltu kubbana lag fyrir lag og fræg málverk, undur veraldar og litlir pixlafjársjóðir lifna við. Hverri mynd lýkur með safnaskilti og sannri sögu.",
-   "play": "Spilaðu í vafranum",
-   "soon": "Væntanlegt á",
-   "pics": {
-    "one": "{n} mynd",
-    "other": "{n} myndir"
-   },
-   "floors": {
-    "one": "{n} hæð",
-    "other": "{n} hæðir"
-   },
-   "langs": {
-    "one": "{n} tungumál",
-    "other": "{n} tungumál"
-   },
-   "free": "Ókeypis",
-   "layer": "LAG {a} / {b}",
-   "revealed": "MYNDIN AFHJÚPUÐ",
-   "about": "Lewydo er tveggja manna indie-leikjastúdíó frá Úkraínu. Vlad forritar, Lilya hannar. Saman gerum við leikina sem við elskum að spila.",
-   "thanks": "Takk fyrir að spila!",
-   "site": "Vefsíðan okkar",
-   "games": "Leikirnir okkar á Google Play",
-   "fact": "Skemmtileg staðreynd",
-   "how": "Kubburinn þinn sýnir tölu. Ýttu á reitina með sömu tölu, eða strjúktu yfir þá í einni langri keðju: keðjur gefa fleiri stig.",
-   "demo": "Málverk úr safninu, afhjúpað lag fyrir lag",
-   "aboutTitle": "Um okkur",
-   "pixTitle": "Kynnstu Pix",
-   "pixName": "Hann er kubbur (cube) og heitir Pix. Settu þau saman og þú færð CubePix: leikurinn ber nafn hans.",
-   "pixHi": "Hæ! Ég er Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Stóra aldan við Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "um 1831"
-   },
-   "starry_night": {
-    "n": "Stjörnubjört nótt",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Sverðliljur",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Vatnaliljutjörnin",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Jarðarber",
-    "a": "",
-    "y": "",
-    "f": "Jarðarber er ekki alvöru ber: hvert lítið «fræ» á yfirborðinu er sérstakur ávöxtur með fræi inni í."
-   }
-  }
  }
 }

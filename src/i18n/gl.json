@@ -29,14 +29,14 @@
   "gp.get": "Descárgao en",
   "cp.try": "Próbao ti",
   "cp.back": "Volver aos cadros",
-  "cp.next": "Gustouche? Todo un museo de cadros agárdate na demo gratuíta.",
+  "cp.next": "Gustouche? Todo o museo agárdate — o xogo completo, gratis, directamente no navegador.",
   "cp.pix.more": "Máis sobre Pix",
   "cp.aria": "Minicrebacabezas de CubePix: enche as celas co número do teu cubo",
   "cp.picPrev": "Cadro anterior",
   "cp.picNext": "Cadro seguinte",
   "od.tag": "Dúas órbitas. Un toque. Cada salto ao ritmo.",
-  "od.lead": "Un xogo de ritmo no espazo profundo: un toque cambia de órbita, e cada salto cae ao ritmo da nosa propia música. Cinco niveis, modo infinito, Orbit III e unha clasificación mundial.",
-  "od.new": "Agora en **82 idiomas**. O xogo colle só o idioma do teu teléfono. Cámbiao cando queiras co globo dos axustes.",
+  "od.lead": "Un xogo de ritmo no espazo profundo: un toque cambia de órbita, e cada salto cae ao ritmo da nosa propia música. Cinco niveis, modo infinito, once estelas para a bola e RANKING — a clasificación do teu país e a mundial.",
+  "od.new": "**RANKING**: sobe na clasificación do teu país e na mundial, con 4 torneos semanais e premios de xemas cada luns. Personaliza a túa órbita — bola, estela, forma da órbita e himno — e gaña a bola STARDUST e a estela FLARE, exclusivas. Moi pronto no iPhone, e todo o xogo xa se xoga no navegador.",
   "od.free": "Gratuíto",
   "od.offline": "Xógase sen conexión",
   "od.aria": "Orbit Dash — o xogo de verdade, en directo",
@@ -126,6 +126,11 @@
   "story.live.tip": "Desde o 0:46: as mellores emocións!",
   "story.live.thanks": "Grazas, Andrii, por seres o meu primeiro streamer en facer un directo xogando ao meu xogo. Moitísimas grazas!",
   "story.live.sign": "— Veldan, fundador de Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "A web convértese nunha plataforma de verdade",
+  "story.web.d": "Despois daquel directo, Vlad comeza a tomarse a web en serio. Ata entón facíamos xogos só para móbiles — Android e iOS — e a versión web de Orbit Dash era só unha demo para probar o xogo. Pero os streamers e os xogadores queren xogar tamén no ordenador, así que Vlad pon mans a un port completo ao navegador.",
+  "story.web.d2": "Agora temos unha plataforma máis: Orbit Dash e CubePix tamén son xogos completos na web — nada que instalar, só abre e xoga.",
+  "story.web.photo": "Orbit Dash e CubePix no navegador — os mesmos xogos completos que no móbil.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "A primeira compra",
   "story.sale.d": "Alguén de Italia compra SEN ANUNCIOS en Orbit Dash por $3.99, e a nós chéganos $3.03. Os primeiros dólares que gañaron os nosos xogos. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Todo o novo comeza no prototipo.** Unha pantalla, unha mecánica, un texto ou un número faise e próbase primeiro no prototipo web do xogo — é rápido de probar no navegador.",
   "work.2": "**O xogo trasládase desde el.** O xogo (LibGDX: Android, máis adiante iOS) colle todo do prototipo, números e palabras exactamente iguais: o prototipo é a referencia.",
   "work.3": "**Nunca ao revés.** Algo novo feito só dentro do xogo, o prototipo non o coñece, e os dous sepáranse. Mesmo unha corrección: primeiro no prototipo, despois no xogo."
- },
- "cubepix": {
-  "S": {
-   "tagline": "REVELA O CADRO CUBO A CUBO",
-   "lead": "Un crebacabezas relaxante para amantes da arte. Enche os cubos capa a capa, e cadros famosos, marabillas do mundo e pequenos tesouros de píxeles cobran vida. Cada cadro remata cunha cartela de museo e unha historia real.",
-   "play": "Xoga no navegador",
-   "soon": "Proximamente en",
-   "pics": {
-    "one": "{n} cadro",
-    "other": "{n} cadros"
-   },
-   "floors": {
-    "one": "{n} andar",
-    "other": "{n} andares"
-   },
-   "langs": {
-    "one": "{n} idioma",
-    "other": "{n} idiomas"
-   },
-   "free": "Gratuíto",
-   "layer": "CAPA {a} / {b}",
-   "revealed": "CADRO REVELADO",
-   "about": "Lewydo é un estudio indie de dúas persoas de Ucraína. Vlad programa, Lilya deseña. Xuntos facemos os xogos aos que nos encanta xogar.",
-   "thanks": "Grazas por xogar!",
-   "site": "O noso sitio web",
-   "games": "Os nosos xogos en Google Play",
-   "fact": "Curiosidade",
-   "how": "O teu cubo amosa un número. Toca as celas co mesmo número, ou pasa o dedo por riba delas nunha cadea longa: as cadeas dan máis puntos.",
-   "demo": "Un cadro de museo, revelado capa a capa",
-   "aboutTitle": "Quen somos",
-   "pixTitle": "Coñece a Pix",
-   "pixName": "É un cubo (cube), e chámase Pix. Xúntaos e tes CubePix: o xogo leva o seu nome.",
-   "pixHi": "Ola! Son Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "A gran onda de Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "c. 1831"
-   },
-   "starry_night": {
-    "n": "A noite estrelada",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Lirios",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "O estanque dos nenúfares",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Amorodo",
-    "a": "",
-    "y": "",
-    "f": "O amorodo non é unha baga de verdade: cada «semente» pequena da súa pel é un froito á parte cunha semente dentro."
-   }
-  }
  }
 }

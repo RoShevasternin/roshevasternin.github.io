@@ -29,14 +29,14 @@
   "gp.get": "Preuzmi na",
   "cp.try": "Probaj sam",
   "cp.back": "Nazad na slike",
-  "cp.next": "Svidjelo ti se? Cijeli muzej slika čeka te u besplatnom demu.",
+  "cp.next": "Svidjelo ti se? Cijeli muzej te čeka — puna igra, besplatno, direktno u pretraživaču.",
   "cp.pix.more": "Više o Pixu",
   "cp.aria": "CubePix mini-zagonetka: ispuni polja s brojem svoje kocke",
   "cp.picPrev": "Prethodna slika",
   "cp.picNext": "Sljedeća slika",
   "od.tag": "Dvije orbite. Jedan dodir. Svaki skok u ritmu.",
-  "od.lead": "Ritmička arkada u dubokom svemiru: jedan dodir mijenja orbitu, a svaki skok pada u ritam naše vlastite muzike. Pet nivoa, beskonačni mod, Orbit III i svjetska rang-lista.",
-  "od.new": "Sada na **82 jezika**. Igra sama preuzima jezik tvog telefona. Promijeni ga kad god hoćeš globusom u postavkama.",
+  "od.lead": "Ritmička arkada u dubokom svemiru: jedan dodir mijenja orbitu, a svaki skok pada u ritam naše vlastite muzike. Pet nivoa, beskonačni mod, jedanaest tragova za loptu i POREDAK — ljestvica tvoje zemlje i svjetska.",
+  "od.new": "**POREDAK**: penji se na ljestvici svoje zemlje i na svjetskoj, uz 4 turnira sedmično i nagrade u draguljima svakog ponedjeljka. Uredi svoju orbitu — loptu, trag, oblik orbite i himnu — i osvoji ekskluzivnu loptu STARDUST i trag FLARE. Uskoro i na iPhoneu, a cijela igra se već igra u pretraživaču.",
   "od.free": "Besplatno",
   "od.offline": "Radi i offline",
   "od.aria": "Orbit Dash — prava igra, uživo",
@@ -129,6 +129,11 @@
   "story.live.tip": "Od 0:46 — najbolje emocije!",
   "story.live.thanks": "Hvala ti, Andrii, što si moj prvi streamer koji je vodio prijenos uživo igrajući moju igru. Puno ti hvala!",
   "story.live.sign": "— Veldan, osnivač studija Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Web postaje prava platforma",
+  "story.web.d": "Nakon tog streama Vlad počinje ozbiljno shvatati web. Do tada smo igre pravili samo za telefone — Android i iOS — a web verzija igre Orbit Dash bila je samo demo da probaš igru. Ali streameri i igrači očito žele igrati i na računaru, pa se Vlad prihvata punog porta na pretraživač.",
+  "story.web.d2": "Sada imamo još jednu platformu: Orbit Dash i CubePix su pune igre i na webu — ništa se ne instalira, samo otvori i igraj.",
+  "story.web.photo": "Orbit Dash i CubePix u pretraživaču — iste pune igre kao na telefonima.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Prva kupovina",
   "story.sale.d": "Neko iz Italije kupuje UKLONI REKLAME u igri Orbit Dash za $3.99 — a do nas stiže $3.03. Prvi dolari koje su naše igre ikad zaradile. Grazie mille! 🇮🇹",
@@ -358,70 +363,5 @@
   "work.1": "**Nove stvari počinju u prototipu.** Ekran, mehanika, tekst ili broj prvo se rade i isprobavaju u web prototipu igre — u pretraživaču se brzo testira.",
   "work.2": "**Igra se prenosi iz njega.** Igra (LibGDX: Android, kasnije iOS) uzima sve iz prototipa, brojeve i riječi jedan na jedan: prototip je referenca.",
   "work.3": "**Nikad obrnuto.** Nešto novo napravljeno samo u igri prototip ne poznaje, i njih se dvoje razilaze. Čak i ispravak: prvo u prototipu, zatim u igri."
- },
- "cubepix": {
-  "S": {
-   "tagline": "OTKRIJ SLIKU KOCKU PO KOCKU",
-   "lead": "Opuštajuća zagonetka za ljubitelje umjetnosti. Ispunjavaj kocke sloj po sloj i oživi slavne slike, čuda svijeta i male pikselne dragocjenosti. Svaka slika završava muzejskom legendom i istinitom pričom.",
-   "play": "Igraj u pretraživaču",
-   "soon": "Uskoro na",
-   "pics": {
-    "one": "{n} slika",
-    "few": "{n} slike",
-    "other": "{n} slika"
-   },
-   "floors": {
-    "one": "{n} sprat",
-    "few": "{n} sprata",
-    "other": "{n} spratova"
-   },
-   "langs": {
-    "one": "{n} jezik",
-    "few": "{n} jezika",
-    "other": "{n} jezika"
-   },
-   "free": "Besplatno",
-   "layer": "SLOJ {a} / {b}",
-   "revealed": "SLIKA OTKRIVENA",
-   "about": "Lewydo je indie studio od dvoje ljudi iz Ukrajine. Vlad programira, Lilya dizajnira. Zajedno pravimo igre koje i sami volimo igrati.",
-   "thanks": "Hvala što igraš!",
-   "site": "Naša stranica",
-   "games": "Naše igre na Google Playu",
-   "fact": "Zanimljivost",
-   "how": "Tvoja kocka pokazuje broj. Dodiruj polja s istim brojem ili povuci prstom preko njih u jednom dugom lancu: lanci donose više bodova.",
-   "demo": "Slika iz muzeja, otkrivena sloj po sloj",
-   "aboutTitle": "O nama",
-   "pixTitle": "Upoznaj Pixa",
-   "pixName": "On je kocka, na engleskom cube, a ime mu je Pix. Spoji to dvoje i dobiješ CubePix: igra nosi njegovo ime.",
-   "pixHi": "Zdravo! Ja sam Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Veliki talas kod Kanagawe",
-    "a": "Katsushika Hokusai",
-    "y": "oko 1831."
-   },
-   "starry_night": {
-    "n": "Zvjezdana noć",
-    "a": "Vincent van Gogh",
-    "y": "1889."
-   },
-   "irises": {
-    "n": "Perunike",
-    "a": "Vincent van Gogh",
-    "y": "1889."
-   },
-   "water_lilies": {
-    "n": "Jezerce s lopočima",
-    "a": "Claude Monet",
-    "y": "1899."
-   },
-   "strawberry": {
-    "n": "Jagoda",
-    "a": "",
-    "y": "",
-    "f": "Jagoda nije prava bobica: svaka sitna «sjemenka» na njoj je zaseban plod sa sjemenkom unutra."
-   }
-  }
  }
 }

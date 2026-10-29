@@ -29,14 +29,14 @@
   "gp.get": "Ka hel",
   "cp.try": "Adigu isku day",
   "cp.back": "Ku noqo sawirada",
-  "cp.next": "Ma ku jeclaatay? Matxaf dhan oo sawiro ah ayaa kugu sugaya demo-ga bilaashka ah.",
+  "cp.next": "Ma ku jeclaatay? Matxaf dhan ayaa kugu sugaya — ciyaarta oo buuxda, bilaash, si toos ah daalacaha.",
   "cp.pix.more": "Wax badan oo ku saabsan Pix",
   "cp.aria": "Hal-xiraale yar oo CubePix ah: buuxi qolalka lambarka kuubkaaga",
   "cp.picPrev": "Sawirkii hore",
   "cp.picNext": "Sawirka xiga",
   "od.tag": "Laba wareeg. Hal taabasho. Bood kasta waa garaac sax.",
-  "od.lead": "Ciyaar garaac oo ka dhacda hawada sare ee qoto dheer: hal taabasho ayaa beddesha wareegga, bood kastaana wuxuu ku dhacaa garaaca muusiggayaga. Shan heer, qaab aan dhammaad lahayn, Orbit III iyo kala sarraynta adduunka.",
-  "od.new": "Hadda **82 luqadood**. Ciyaartu waxay iskeed u doorataa luqadda taleefankaaga. Beddel goor kasta adigoo isticmaalaya goobaabinta adduunka ee dejinta.",
+  "od.lead": "Ciyaar garaac oo ka dhacda hawada sare ee qoto dheer: hal taabasho ayaa beddesha wareegga, bood kastaana wuxuu ku dhacaa garaaca muusiggayaga. Shan heer, qaab aan dhammaad lahayn, kow iyo toban raad oo kubadda ah iyo KAALIMAHA — jadwalka dalkaaga iyo kan adduunka.",
+  "od.new": "**KAALIMAHA**: kor u kac jadwalka dalkaaga iyo kan adduunka, ku jira 4 tartan todobaadle ah iyo abaalmarin dhagax qaali ah Isniin kasta. Qurxi wareeggaaga — kubadda, raad, qaabka wareegga iyo heesta — oo ku guuleyso kubadda STARDUST iyo raadka FLARE ee gaarka ah. Dhawaan iPhone-ka ayay ku imaanaysaa, ciyaarta oo dhanna hadda waxaa lagu ciyaari karaa daalacaha.",
   "od.free": "Bilaash",
   "od.offline": "Waa lagu ciyaari karaa internet la'aan",
   "od.aria": "Orbit Dash — ciyaarta dhabta ah, toos",
@@ -126,6 +126,11 @@
   "story.live.tip": "Laga bilaabo 0:46 — dareennada ugu fiican!",
   "story.live.thanks": "Mahadsanid, Andrii, inaad tahay streamer-kaygii ugu horreeyay ee si toos ah u baahiyay isagoo ciyaaraya ciyaartayda. Aad iyo aad baad u mahadsan tahay!",
   "story.live.sign": "— Veldan, aasaasaha Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Webku wuxuu noqdaa madal dhab ah",
+  "story.web.d": "Kadib stream-kaas, Vlad wuxuu bilaabaa inuu webka si dhab ah u qaato. Ilaa markaas waxaan ciyaaro u samayn jirnay oo keliya telefoonnada — Android iyo iOS — nooca web-ka ee Orbit Dash wuxuu ahaa demo kaliya si loo dhadhamiyo ciyaarta. Laakiin streamer-yada iyo ciyaartoydu waxay si cad u rabaan inay kombuyuutar ku ciyaaraan, sidaas darteed Vlad wuxuu qaadaa u wareejin buuxda oo loo yeelayo daalacaha.",
+  "story.web.d2": "Hadda waxaan haynaa madal kale: Orbit Dash iyo CubePix waa ciyaaro buuxa oo web-ka ah — waxba lama rakibo, kaliya fur oo ciyaar.",
+  "story.web.photo": "Orbit Dash iyo CubePix daalacaha ku jira — isla ciyaaraha buuxa ee telefoonnada.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Iibsigii ugu horreeyay",
   "story.sale.d": "Qof ka yimid Talyaaniga ayaa Orbit Dash ku iibsaday JOOJI XAYEYSIIS $3.99 — $3.03 ayaana noo soo gaadhay. Doolarkii ugu horreeyay ee ciyaarahayagu waligood helaan. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Wax kasta oo cusub wuxuu ka bilaabmaa tusaalaha.** Shaashad, farsamo, qoraal ama lambar marka hore waxaa lagu sameeyaa laguna tijaabiyaa tusaalaha web ee ciyaarta — tijaabinta daalacaha waa degdeg.",
   "work.2": "**Ciyaarta waxaa laga soo guuriyaa.** Ciyaarta (LibGDX: Android, kadib iOS) waxay wax walba ka qaadataa tusaalaha, lambarrada iyo ereyada si sax ah: tusaaluhu waa tixraaca.",
   "work.3": "**Marnaba lid ku ah.** Wax cusub oo kaliya ciyaarta dhexdeeda lagu sameeyay, tusaaluhu ma yaqaan, labaduna way kala tagaan. Xitaa sixitaan: marka hore tusaalaha, kadib ciyaarta."
- },
- "cubepix": {
-  "S": {
-   "tagline": "SAWIRKA KUUB KUUB U SOO SAAR",
-   "lead": "Hal-xiraale deggan oo loogu talagalay kuwa jecel farshaxanka. Buuxi kuubyada lakab lakab, sawirro caan ah, yaababka adduunka iyo khasnado pixel yaryar ayaa nooloobanaya. Sawir kastaa wuxuu ku dhammaadaa calaamad matxaf iyo sheeko run ah.",
-   "play": "Ku ciyaar daalacaha",
-   "soon": "Dhawaan",
-   "pics": {
-    "one": "{n} sawir",
-    "other": "{n} sawir"
-   },
-   "floors": {
-    "one": "{n} dabaq",
-    "other": "{n} dabaq"
-   },
-   "langs": {
-    "one": "{n} luqad",
-    "other": "{n} luqadood"
-   },
-   "free": "Bilaash",
-   "layer": "LAKAB {a} / {b}",
-   "revealed": "SAWIRKA WAA LA SOO SAARAY",
-   "about": "Lewydo waa istuudiyo ciyaaro madax-bannaan oo laba qof ah oo ka yimid Yukreeyn. Vlad wuxuu qoraa koodhka, Lilya waxay sameysaa naqshadda. Waxaan wada samaynaa ciyaaraha aan jecel nahay inaan annagu ciyaarno.",
-   "thanks": "Mahadsanid inaad ciyaartay!",
-   "site": "Websaydkayaga",
-   "games": "Ciyaarahayaga Google Play",
-   "fact": "Xaqiiq xiiso leh",
-   "how": "Kuubkaagu wuxuu muujinayaa lambar. Taabo qolalka leh isla lambarkaas, ama faraha ku mari iyaga hal silsilad dheer: silsiladuhu dhibcaha badan bay bixiyaan.",
-   "demo": "Sawir matxaf, oo lakab lakab u soo baxaya",
-   "aboutTitle": "Naga saabsan",
-   "pixTitle": "La kulan Pix",
-   "pixName": "Isagu waa kuub (cube), magaciisuna waa Pix. Isku dar waxaad helaysaa CubePix: ciyaartu waxay sidataa magaciisa.",
-   "pixHi": "Haye! Waxaan ahay Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Mowjadda Weyn ee Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "qiyaastii 1831"
-   },
-   "starry_night": {
-    "n": "Habeenka Xiddigaha",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Ubaxa Iris",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Balliga Ubaxa Biyaha",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Istaroobari",
-    "a": "",
-    "y": "",
-    "f": "Istaroobarigu dhab ahaantii ma aha beri: «iniin» kasta oo yar oo ku taal maqaarkiisa waa miro gooni ah oo iniin ku jirto."
-   }
-  }
  }
 }

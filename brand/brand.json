@@ -506,7 +506,7 @@
     "text": "Lewydo — Ukraynadan iki nəfərlik müstəqil oyun studiyasıdır. Vlad kod yazır, Lilya dizayn edir. Birlikdə özümüzün oynamağı sevdiyimiz oyunları yaradırıq.",
     "thanks": "Oynadığın üçün sağ ol!",
     "site": "Saytımız",
-    "games": "Google Play-dəki oyunlarımız"
+    "games": "Google Play mağazasındakı oyunlarımız"
    },
    "id": {
     "title": "Tentang kami",
@@ -527,7 +527,7 @@
     "text": "Lewydo je indie studio od dvoje ljudi iz Ukrajine. Vlad programira, Lilya dizajnira. Zajedno pravimo igre koje i sami volimo igrati.",
     "thanks": "Hvala što igraš!",
     "site": "Naša stranica",
-    "games": "Naše igre na Google Playu"
+    "games": "Naše igre u trgovini Google Play"
    },
    "ca": {
     "title": "Qui som",
@@ -541,7 +541,7 @@
     "text": "Lewydo je dvoučlenné nezávislé herní studio z Ukrajiny. Vlad programuje, Lilya se stará o design. Společně tvoříme hry, které sami rádi hrajeme.",
     "thanks": "Děkujeme, že hraješ!",
     "site": "Náš web",
-    "games": "Naše hry v Google Play"
+    "games": "Naše hry v obchodě Google Play"
    },
    "da": {
     "title": "Om os",
@@ -583,7 +583,7 @@
     "text": "Lewydo Ukrainako indie joko-estudio bat da, bi lagunek osatua. Vlad programatzailea da, eta Lilya diseinatzailea. Elkarrekin, guk geuk gustura jokatzen ditugun jokoak egiten ditugu.",
     "thanks": "Eskerrik asko jokatzeagatik!",
     "site": "Gure webgunea",
-    "games": "Gure jokoak Google Play-n"
+    "games": "Gure jokoak Google Play dendan"
    },
    "fil": {
     "title": "Tungkol sa amin",
@@ -618,7 +618,7 @@
     "text": "Lewydo je dvočlani indie studio za igre iz Ukrajine. Vlad programira, Lilya dizajnira. Zajedno radimo igre koje i sami volimo igrati.",
     "thanks": "Hvala što igraš!",
     "site": "Naša web-stranica",
-    "games": "Naše igre na Google Playu"
+    "games": "Naše igre u trgovini Google Play"
    },
    "ig": {
     "title": "Banyere anyị",
@@ -674,7 +674,7 @@
     "text": "A Lewydo egy kétfős független játékstúdió Ukrajnából. Vlad programoz, Lilya tervez. Együtt olyan játékokat készítünk, amelyekkel mi magunk is szeretünk játszani.",
     "thanks": "Köszönjük, hogy játszol!",
     "site": "Weboldalunk",
-    "games": "Játékaink a Google Playen"
+    "games": "Játékaink itt: Google Play"
    },
    "nl": {
     "title": "Over ons",
@@ -709,7 +709,7 @@
     "text": "Lewydo é um estúdio indie de duas pessoas da Ucrânia. Vlad programa, Lilya faz o design. Juntos fazemos os jogos que adoramos jogar.",
     "thanks": "Obrigado por jogar!",
     "site": "Nosso site",
-    "games": "Nossos jogos no Google Play"
+    "games": "Nossos jogos na loja Google Play"
    },
    "ro": {
     "title": "Despre noi",
@@ -730,7 +730,7 @@
     "text": "Lewydo je nezávislé herné štúdio z Ukrajiny, ktoré tvoria dvaja ľudia. Vlad programuje, Lilya robí dizajn. Spolu tvoríme hry, ktoré sami radi hráme.",
     "thanks": "Ďakujeme, že hráte!",
     "site": "Naša webová stránka",
-    "games": "Naše hry v Google Play"
+    "games": "Naše hry v obchode Google Play"
    },
    "sl": {
     "title": "O nas",
@@ -751,7 +751,7 @@
     "text": "Lewydo on kahden hengen indiepelistudio Ukrainasta. Vlad koodaa, Lilya suunnittelee. Yhdessä teemme pelejä, joita itse rakastamme pelata.",
     "thanks": "Kiitos, että pelaat!",
     "site": "Verkkosivumme",
-    "games": "Pelimme Google Playssa"
+    "games": "Pelimme kaupassa Google Play"
    },
    "sv": {
     "title": "Om oss",
@@ -772,14 +772,14 @@
     "text": "Lewydo, Ukrayna’dan iki kişilik bağımsız bir oyun stüdyosu. Vlad kodluyor, Lilya tasarlıyor. Birlikte oynamayı sevdiğimiz oyunları yapıyoruz.",
     "thanks": "Oynadığın için teşekkürler!",
     "site": "Web sitemiz",
-    "games": "Google Play’deki oyunlarımız"
+    "games": "Google Play mağazasındaki oyunlarımız"
    },
    "tk": {
     "title": "Biz barada",
     "text": "Lewydo — Ukrainadan iki adamlyk garaşsyz oýun studiýasy. Vlad kod ýazýar, Lilya dizaýn edýär. Biz özümiziň oýnamagy halaýan oýunlarymyzy bile döredýäris.",
     "thanks": "Oýnaýanyň üçin sag bol!",
     "site": "Saýtymyz",
-    "games": "Google Play-däki oýunlarymyz"
+    "games": "Google Play dükanyndaky oýunlarymyz"
    },
    "yo": {
     "title": "Nípa wa",
@@ -793,7 +793,7 @@
     "text": "Lewydo — інды-студыя з двух чалавек з Украіны. Улад піша код, Ліля робіць дызайн. Разам мы робім гульні, у якія самі любім гуляць.",
     "thanks": "Дзякуй, што гуляеш!",
     "site": "Наш сайт",
-    "games": "Нашы гульні ў Google Play"
+    "games": "Нашы гульні ў краме Google Play"
    },
    "bg": {
     "title": "За нас",
@@ -807,7 +807,7 @@
     "text": "Lewydo — Украинадагы эки кишилик инди оюн студиясы. Влад код жазат, Лиля дизайн жасайт. Өзүбүз ойногонду жакшы көргөн оюндарды чогуу жасайбыз.",
     "thanks": "Ойногонуң үчүн рахмат!",
     "site": "Биздин сайт",
-    "games": "Google Play'деги оюндарыбыз"
+    "games": "Google Play дүкөнүндөгү оюндарыбыз"
    },
    "mk": {
     "title": "За нас",
@@ -821,14 +821,14 @@
     "text": "Lewydo бол Украины хоёр хүний бие даасан тоглоомын студи. Влад код бичдэг, Лиля дизайн хийдэг. Бид хамтдаа өөрсдийн тоглох дуртай тоглоомуудаа бүтээдэг.",
     "thanks": "Тоглосонд баярлалаа!",
     "site": "Манай сайт",
-    "games": "Манай тоглоомууд Google Play-д"
+    "games": "Манай тоглоомууд Google Play дэлгүүрт"
    },
    "sr": {
     "title": "О нама",
     "text": "Lewydo је инди студио од двоје људи из Украјине. Влад програмира, Лиља дизајнира. Заједно правимо игре које и сами волимо да играмо.",
     "thanks": "Хвала што играш!",
     "site": "Наш сајт",
-    "games": "Наше игре на Google Play-у"
+    "games": "Наше игре у продавници Google Play"
    },
    "tg": {
     "title": "Дар бораи мо",

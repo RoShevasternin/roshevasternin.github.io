@@ -29,14 +29,14 @@
   "gp.get": "Gbà á lórí",
   "cp.try": "Gbìyànjú rẹ̀ fúnra rẹ",
   "cp.back": "Padà sí àwọn àwòrán",
-  "cp.next": "Ṣé o fẹ́ràn rẹ̀? Gbogbo ilé àkójọ àwòrán kan ń dúró dè ọ́ nínú demo ọ̀fẹ́.",
+  "cp.next": "Ṣé o fẹ́ràn rẹ̀? Gbogbo ilé àkójọ àwòrán ń dúró dè ọ́ — eré kíkún, ọ̀fẹ́, tààrà nínú aṣàwákiri rẹ.",
   "cp.pix.more": "Síwájú sí i nípa Pix",
   "cp.aria": "Àdìtú kékeré CubePix: kún àwọn àpótí pẹ̀lú nọ́mbà kúbù rẹ",
   "cp.picPrev": "Àwòrán tó ṣáájú",
   "cp.picNext": "Àwòrán tó kàn",
   "od.tag": "Ìyípo méjì. Ìtẹ̀ kan. Gbogbo fífò ní ìlù.",
-  "od.lead": "Eré ìlù nínú òfuurufú jíjìn: ìtẹ̀ kan yí ìyípo padà, gbogbo fífò sì ń bọ́ sí ìlù orin tiwa fúnra wa. Ìpele márùn-ún, ipò àìlópin, Orbit III àti ìpò àgbáyé.",
-  "od.new": "Ní báyìí ní **èdè 82**. Eré náà máa ń yan èdè fóònù rẹ fúnra rẹ̀. Yí i padà nígbàkígbà pẹ̀lú àgbáyé nínú ètò.",
+  "od.lead": "Eré ìlù nínú òfuurufú jíjìn: ìtẹ̀ kan yí ìyípo padà, gbogbo fífò sì ń bọ́ sí ìlù orin tiwa fúnra wa. Ìpele márùn-ún, ipò àìlópin, ipa bọ́ọ̀lù mọ́kànlá àti IPÒ — àtẹ orílẹ̀-èdè rẹ àti ti àgbáyé.",
+  "od.new": "**IPÒ**: gun àtẹ orílẹ̀-èdè rẹ àti ti àgbáyé, pẹ̀lú ìdíje 4 ní ọ̀sẹ̀ kọ̀ọ̀kan àti ẹ̀bùn òkúta iyebíye ní gbogbo Ọjọ́ Ajé. Ṣe ìyípo rẹ ní ọ̀ṣọ́ — bọ́ọ̀lù, ipa, àwòrán ìyípo àti orin ọ̀wọ̀ — kí o sì borí bọ́ọ̀lù STARDUST àti ipa FLARE àrà-ọ̀tọ̀. Láìpẹ́ lórí iPhone, gbogbo eré náà sì ti ń ṣeré nínú aṣàwákiri rẹ báyìí.",
   "od.free": "Ọ̀fẹ́",
   "od.offline": "Ó ń ṣiṣẹ́ láìsí íńtánẹ́ẹ̀tì",
   "od.aria": "Orbit Dash — eré gidi, ní tààrà",
@@ -123,6 +123,11 @@
   "story.live.tip": "Láti 0:46 — àwọn ìmọ̀lára tó dára jù lọ!",
   "story.live.thanks": "O ṣeun, Andrii, pé o jẹ́ streamer àkọ́kọ́ mi tí ó ṣe àfihàn tààràtà nígbà tí o ń ṣe eré mi. O ṣeun púpọ̀púpọ̀!",
   "story.live.sign": "— Veldan, olùdásílẹ̀ Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Wẹ́ẹ̀bù di pèpéle tòótọ́",
+  "story.web.d": "Lẹ́yìn ìgbóhùnsáfẹ́fẹ́ yẹn, Vlad bẹ̀rẹ̀ sí í mú wẹ́ẹ̀bù ní pàtàkì. Títí di àkókò yẹn, a ń ṣe eré fún fóònù nìkan — Android àti iOS — ẹ̀yà wẹ́ẹ̀bù ti Orbit Dash sì jẹ́ demo láti tọ́ eré náà wò nìkan. Ṣùgbọ́n àwọn tó ń gbé eré jáde lórí ayélujára àti àwọn olùṣeré fẹ́ ṣeré lórí kọ̀ǹpútà pẹ̀lú, nítorí náà Vlad gba iṣẹ́ gbígbé eré náà pátápátá lọ sínú aṣàwákiri.",
+  "story.web.d2": "Báyìí a ní pèpéle mìíràn: Orbit Dash àti CubePix jẹ́ eré kíkún lórí wẹ́ẹ̀bù pẹ̀lú — kò sí ohun tí o máa fi sórí ẹ̀rọ, ṣí i kí o sì ṣeré.",
+  "story.web.photo": "Orbit Dash àti CubePix nínú aṣàwákiri — àwọn eré kíkún kan náà bí ti fóònù.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Ríra àkọ́kọ́",
   "story.sale.d": "Ẹnìkan láti Italy ra YỌ ÌPOLÓWÓ KÚRÒ nínú Orbit Dash ní $3.99 — $3.03 sì dé ọ̀dọ̀ wa. Àwọn dọ́là àkọ́kọ́ tí àwọn eré wa ti rí gbà rí. Grazie mille! 🇮🇹",
@@ -352,64 +357,5 @@
   "work.1": "**Gbogbo ohun tuntun ń bẹ̀rẹ̀ nínú àpẹẹrẹ.** Ojú-ìbòjú, ọ̀nà ìṣeré, ọ̀rọ̀ tàbí nọ́mbà ni a kọ́kọ́ ṣe tí a sì dán wò nínú àpẹẹrẹ wẹ́ẹ̀bù eré náà — ìdánwò nínú aṣàwákiri yára.",
   "work.2": "**A ń gbé eré náà láti inú rẹ̀.** Eré náà (LibGDX: Android, lẹ́yìn náà iOS) ń mú ohun gbogbo láti inú àpẹẹrẹ, àwọn nọ́mbà àti ọ̀rọ̀ bákan náà gẹ́lẹ́: àpẹẹrẹ ni ìtọ́kasí.",
   "work.3": "**Kì í ṣe ní ìdàkejì láé.** Ohun tuntun tí a ṣe nínú eré nìkan, àpẹẹrẹ kò mọ̀ ọ́n, àwọn méjèèjì á sì yàtọ̀ síra. Àtúnṣe pàápàá: ní àkọ́kọ́ nínú àpẹẹrẹ, lẹ́yìn náà nínú eré."
- },
- "cubepix": {
-  "S": {
-   "tagline": "ṢÍ ÀWÒRÁN NÁÀ KÚBÙ LẸ́YÌN KÚBÙ",
-   "lead": "Àdìtú tó ń tuni lára fún àwọn olùfẹ́ iṣẹ́ ọnà. Kún àwọn kúbù ní ìpele-ìpele, àwọn àwòrán olókìkí, àwọn ìyanu ayé àti àwọn ìṣúra píkísẹ́lì kékeré á sì wá sí ìyè. Àwòrán kọ̀ọ̀kan ń parí pẹ̀lú àmì ilé àkójọ àti ìtàn òtítọ́ kan.",
-   "play": "Ṣeré nínú aṣàwákiri",
-   "soon": "Láìpẹ́ lórí",
-   "pics": {
-    "other": "àwòrán {n}"
-   },
-   "floors": {
-    "other": "àjà {n}"
-   },
-   "langs": {
-    "other": "èdè {n}"
-   },
-   "free": "Ọ̀fẹ́",
-   "layer": "ÌPELE {a} / {b}",
-   "revealed": "ÀWÒRÁN TI HÀN",
-   "about": "Lewydo jẹ́ ilé-iṣẹ́ eré indie ti ènìyàn méjì láti Ukraine. Vlad ń kọ kóòdù, Lilya ń ṣe àwòrán. Papọ̀, à ń ṣe àwọn eré tí àwa náà fẹ́ràn láti ṣe.",
-   "thanks": "O ṣeun fún ṣíṣeré!",
-   "site": "Ojú-òpó wẹ́ẹ̀bù wa",
-   "games": "Àwọn eré wa lórí Google Play",
-   "fact": "Òtítọ́ tó dùn",
-   "how": "Kúbù rẹ ń fi nọ́mbà kan hàn. Tẹ àwọn àpótí tó ní nọ́mbà kan náà, tàbí fa ìka rẹ kọjá lórí wọn ní ẹ̀wọ̀n gígùn kan: ẹ̀wọ̀n ń fúnni ní àmì púpọ̀ síi.",
-   "demo": "Àwòrán ilé àkójọ, tó ń hàn ní ìpele-ìpele",
-   "aboutTitle": "Nípa wa",
-   "pixTitle": "Mọ Pix",
-   "pixName": "Kúbù (cube) ni, orúkọ rẹ̀ sì ni Pix. Dà wọ́n pọ̀, o ó rí CubePix: eré náà ń jẹ́ orúkọ rẹ̀.",
-   "pixHi": "Báwo! Èmi ni Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Ìgbì Ńlá ti Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "ní nǹkan bí 1831"
-   },
-   "starry_night": {
-    "n": "Òru Oníràwọ̀",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Àwọn Òdòdó Iris",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Adágún Òdòdó Omi",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Sítírọ́bẹ́rì",
-    "a": "",
-    "y": "",
-    "f": "Sítírọ́bẹ́rì kì í ṣe èso berry gidi: «irúgbìn» kékeré kọ̀ọ̀kan lórí awọ rẹ̀ jẹ́ èso ọ̀tọ̀ tí ó ní irúgbìn nínú."
-   }
-  }
  }
 }

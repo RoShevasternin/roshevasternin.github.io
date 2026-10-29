@@ -29,14 +29,14 @@
   "gp.get": "Pakua kwenye",
   "cp.try": "Jaribu mwenyewe",
   "cp.back": "Rudi kwenye michoro",
-  "cp.next": "Umeipenda? Jumba zima la makumbusho ya picha linakusubiri kwenye demo ya bure.",
+  "cp.next": "Umeipenda? Jumba zima la makumbusho linakusubiri — mchezo kamili, bure, moja kwa moja kwenye kivinjari.",
   "cp.pix.more": "Zaidi kuhusu Pix",
   "cp.aria": "Fumbo dogo la CubePix: jaza visanduku vyenye namba ya mchemraba wako",
   "cp.picPrev": "Mchoro uliopita",
   "cp.picNext": "Mchoro unaofuata",
   "od.tag": "Obiti mbili. Mguso mmoja. Kila mruko kwenye mdundo.",
-  "od.lead": "Mchezo wa midundo katika anga za mbali: mguso mmoja unabadilisha obiti, na kila mruko unatua kwenye mdundo wa muziki wetu wenyewe. Ngazi tano, hali isiyo na mwisho, Orbit III na ubao wa viongozi wa dunia.",
-  "od.new": "Sasa kwa **lugha 82**. Mchezo huchagua lugha ya simu yako wenyewe. Ibadilishe wakati wowote kwa tufe katika mipangilio.",
+  "od.lead": "Mchezo wa midundo katika anga za mbali: mguso mmoja unabadilisha obiti, na kila mruko unatua kwenye mdundo wa muziki wetu wenyewe. Ngazi tano, hali isiyo na mwisho, michirizi kumi na moja ya mpira na VIWANGO — ubao wa nchi yako na wa dunia.",
+  "od.new": "**VIWANGO**: panda juu kwenye ubao wa nchi yako na wa dunia, kukiwa na mashindano 4 kila wiki na zawadi za vito kila Jumatatu. Pamba obiti yako — mpira, mchirizi, umbo la obiti na wimbo mkuu — na ushinde mpira wa kipekee wa STARDUST na mchirizi wa FLARE. Hivi karibuni kwenye iPhone, na mchezo mzima tayari unachezwa kwenye kivinjari chako.",
   "od.free": "Bure",
   "od.offline": "Inachezwa bila mtandao",
   "od.aria": "Orbit Dash — mchezo halisi, moja kwa moja",
@@ -126,6 +126,11 @@
   "story.live.tip": "Kuanzia 0:46 — hisia bora kabisa!",
   "story.live.thanks": "Asante, Andrii, kwa kuwa mtiririshaji wangu wa kwanza aliyerusha mubashara akicheza mchezo wangu. Asante sana!",
   "story.live.sign": "— Veldan, mwanzilishi wa Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Wavuti inakuwa jukwaa halisi",
+  "story.web.d": "Baada ya mtiririko huo wa moja kwa moja, Vlad anaanza kuichukulia wavuti kwa uzito. Hadi hapo tulitengeneza michezo kwa ajili ya simu pekee — Android na iOS — na toleo la wavuti la Orbit Dash lilikuwa demo tu ya kuonja mchezo. Lakini watiririshaji na wachezaji wazi wanataka kucheza kwenye kompyuta pia, kwa hiyo Vlad anachukua uhamishaji kamili kwenda kivinjarini.",
+  "story.web.d2": "Sasa tuna jukwaa moja zaidi: Orbit Dash na CubePix ni michezo kamili kwenye wavuti pia — hakuna cha kusakinisha, fungua tu na ucheze.",
+  "story.web.photo": "Orbit Dash na CubePix kwenye kivinjari — michezo kamili ile ile kama kwenye simu.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Ununuzi wa kwanza",
   "story.sale.d": "Mtu fulani kutoka Italia ananunua ONDOA MATANGAZO ndani ya Orbit Dash kwa $3.99 — na $3.03 zinatufikia. Dola za kwanza kabisa ambazo michezo yetu imewahi kupata. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Vitu vipya vinaanza kwenye mfano.** Skrini, mbinu, maandishi au namba vinatengenezwa na kujaribiwa kwanza kwenye mfano wa wavuti wa mchezo — ni haraka kujaribu kwenye kivinjari.",
   "work.2": "**Mchezo unahamishwa kutoka kwake.** Mchezo (LibGDX: Android, baadaye iOS) unachukua kila kitu kutoka kwenye mfano, namba na maneno sawasawa: mfano ndio rejea.",
   "work.3": "**Kamwe si kinyume chake.** Kitu kipya kilichotengenezwa ndani ya mchezo pekee mfano haukijui, na viwili hivyo vinatengana. Hata marekebisho: kwanza kwenye mfano, kisha kwenye mchezo."
- },
- "cubepix": {
-  "S": {
-   "tagline": "FUNUA PICHA MCHEMRABA KWA MCHEMRABA",
-   "lead": "Fumbo tulivu kwa wapenzi wa sanaa. Jaza michemraba tabaka kwa tabaka, na michoro maarufu, maajabu ya dunia na hazina ndogo za pikseli vinapata uhai. Kila picha inaishia na kibao cha makumbusho na hadithi ya kweli.",
-   "play": "Cheza kwenye kivinjari",
-   "soon": "Inakuja hivi karibuni kwenye",
-   "pics": {
-    "one": "picha {n}",
-    "other": "picha {n}"
-   },
-   "floors": {
-    "one": "ghorofa {n}",
-    "other": "ghorofa {n}"
-   },
-   "langs": {
-    "one": "lugha {n}",
-    "other": "lugha {n}"
-   },
-   "free": "Bure",
-   "layer": "TABAKA {a} / {b}",
-   "revealed": "PICHA IMEFUNULIWA",
-   "about": "Lewydo ni studio ndogo ya michezo ya watu wawili kutoka Ukraine. Vlad anaandika msimbo, Lilya anabuni. Pamoja tunatengeneza michezo tunayopenda kucheza wenyewe.",
-   "thanks": "Asante kwa kucheza!",
-   "site": "Tovuti yetu",
-   "games": "Michezo yetu kwenye Google Play",
-   "fact": "Jambo la kuvutia",
-   "how": "Mchemraba wako unaonyesha namba. Gusa visanduku vyenye namba hiyo hiyo, au telezesha kidole juu yake kwa mnyororo mmoja mrefu: minyororo inaleta alama zaidi.",
-   "demo": "Mchoro wa makumbusho, ukifunuliwa tabaka kwa tabaka",
-   "aboutTitle": "Kuhusu sisi",
-   "pixTitle": "Mfahamu Pix",
-   "pixName": "Yeye ni mchemraba (cube), na jina lake ni Pix. Viweke pamoja upate CubePix: mchezo unabeba jina lake.",
-   "pixHi": "Habari! Mimi ni Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Wimbi Kubwa la Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "karibu 1831"
-   },
-   "starry_night": {
-    "n": "Usiku wenye Nyota",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Maua ya Irisi",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Bwawa la Yungiyungi",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Stroberi",
-    "a": "",
-    "y": "",
-    "f": "Stroberi si beri halisi: kila «mbegu» ndogo juu yake ni tunda tofauti lenye mbegu ndani."
-   }
-  }
  }
 }

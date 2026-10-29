@@ -29,14 +29,14 @@
   "gp.get": "Kry dit op",
   "cp.try": "Probeer self",
   "cp.back": "Terug na die skilderye",
-  "cp.next": "Het jy daarvan gehou? ’n Hele museum vol skilderye wag in die gratis demo.",
+  "cp.next": "Het jy daarvan gehou? Die hele museum wag — die volle speletjie, gratis, reg in jou blaaier.",
   "cp.pix.more": "Meer oor Pix",
   "cp.aria": "Mini-CubePix-legkaart: vul die selle met jou blokkie se nommer",
   "cp.picPrev": "Vorige skildery",
   "cp.picNext": "Volgende skildery",
   "od.tag": "Twee bane. Een tik. Elke sprong op die maat.",
-  "od.lead": "’n Ritmespeletjie in die diep ruimte: een tik ruil die baan, en elke sprong land op die maat van ons eie musiek. Vyf vlakke, eindelose modus, Orbit III en ’n wêreldwye ranglys.",
-  "od.new": "Nou in **82 tale**. Die speletjie kies self jou foon se taal. Verander dit enige tyd met die aardbol in die instellings.",
+  "od.lead": "’n Ritmespeletjie in die diep ruimte: een tik ruil die baan, en elke sprong land op die maat van ons eie musiek. Vyf vlakke, eindelose modus, elf balspore en RANGLYS — jou land se ranglys en dié van die wêreld.",
+  "od.new": "**RANGLYS**: klim op jou land se ranglys en dié van die wêreld, met 4 weeklikse toernooie en edelsteenpryse elke Maandag. Stileer jou baan — bal, spoor, baanvorm en temalied — en wen die eksklusiewe STARDUST-bal en FLARE-spoor. Binnekort op iPhone, en die hele speletjie speel reeds in jou blaaier.",
   "od.free": "Gratis",
   "od.offline": "Speel vanlyn",
   "od.aria": "Orbit Dash — die regte speletjie, regstreeks",
@@ -126,6 +126,11 @@
   "story.live.tip": "Vanaf 0:46 — die beste emosies!",
   "story.live.thanks": "Dankie, Andrii, dat jy my eerste streamer is wat regstreeks uitgesaai het terwyl jy my speletjie speel. Baie, baie dankie!",
   "story.live.sign": "— Veldan, stigter van Lewydo",
+  "story.web.when": "23 · 10 · 2026",
+  "story.web.t": "Die web word ’n ware platform",
+  "story.web.d": "Ná daardie stroom begin Vlad die web ernstig opneem. Tot toe het ons speletjies net vir foonne gemaak — Android en iOS — en die webweergawe van Orbit Dash was net ’n demo om die speletjie te proe. Maar stromers en spelers wil duidelik ook op ’n rekenaar speel, so Vlad pak ’n volledige oorplasing na die blaaier aan.",
+  "story.web.d2": "Nou het ons nog ’n platform: Orbit Dash en CubePix is ook op die web die volledige speletjies — niks om te installeer nie, maak net oop en speel.",
+  "story.web.photo": "Orbit Dash en CubePix in die blaaier — dieselfde volledige speletjies as op foonne.",
   "story.sale.when": "23 · 10 · 2026",
   "story.sale.t": "Die eerste aankoop",
   "story.sale.d": "Iemand uit Italië koop ADVERTENSIEVRY in Orbit Dash vir $3.99 — en $3.03 bereik ons. Die eerste dollars wat ons speletjies ooit verdien het. Grazie mille! 🇮🇹",
@@ -355,67 +360,5 @@
   "work.1": "**Alles nuut begin in die prototipe.** ’n Skerm, ’n meganika, ’n teks of ’n getal word eers in die speletjie se webprototipe gemaak en getoets — vinnig om in die blaaier te probeer.",
   "work.2": "**Die speletjie word daaruit oorgedra.** Die speletjie (LibGDX: Android, later iOS) neem alles uit die prototipe, getalle en woorde presies dieselfde: die prototipe is die verwysing.",
   "work.3": "**Nooit andersom nie.** Iets nuuts wat net in die speletjie gemaak is, ken die prototipe nie, en die twee dryf uitmekaar. Selfs ’n regstelling: eers in die prototipe, dan in die speletjie."
- },
- "cubepix": {
-  "S": {
-   "tagline": "ONTHUL DIE PRENT BLOKKIE VIR BLOKKIE",
-   "lead": "’n Ontspannende legkaart vir kunsliefhebbers. Vul die blokkies laag vir laag, en bekende skilderye, wêreldwonders en klein pixelskatte kom lewe. Elke prent eindig met ’n museumbordjie en ’n ware storie.",
-   "play": "Speel in die blaaier",
-   "soon": "Binnekort op",
-   "pics": {
-    "one": "{n} prent",
-    "other": "{n} prente"
-   },
-   "floors": {
-    "one": "{n} verdieping",
-    "other": "{n} verdiepings"
-   },
-   "langs": {
-    "one": "{n} taal",
-    "other": "{n} tale"
-   },
-   "free": "Gratis",
-   "layer": "LAAG {a} / {b}",
-   "revealed": "PRENT ONTHUL",
-   "about": "Lewydo is 'n indie-speletjiesateljee van twee mense uit Oekraïne. Vlad kodeer, Lilya ontwerp. Saam maak ons die speletjies wat ons self graag speel.",
-   "thanks": "Dankie dat jy speel!",
-   "site": "Ons webwerf",
-   "games": "Ons speletjies op Google Play",
-   "fact": "Prettige feit",
-   "how": "Jou blokkie wys ’n nommer. Tik die selle met dieselfde nommer, of swiep oor hulle in een lang ketting: kettings gee meer punte.",
-   "demo": "’n Museumskildery, laag vir laag onthul",
-   "aboutTitle": "Oor ons",
-   "pixTitle": "Ontmoet Pix",
-   "pixName": "Hy is ’n blokkie (cube), en sy naam is Pix. Sit hulle saam en jy kry CubePix: die speletjie dra sy naam.",
-   "pixHi": "Hallo! Ek is Pix."
-  },
-  "pics": {
-   "great_wave": {
-    "n": "Die groot golf by Kanagawa",
-    "a": "Katsushika Hokusai",
-    "y": "ongeveer 1831"
-   },
-   "starry_night": {
-    "n": "Die sterrenag",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "irises": {
-    "n": "Irisse",
-    "a": "Vincent van Gogh",
-    "y": "1889"
-   },
-   "water_lilies": {
-    "n": "Die waterleliedam",
-    "a": "Claude Monet",
-    "y": "1899"
-   },
-   "strawberry": {
-    "n": "Aarbei",
-    "a": "",
-    "y": "",
-    "f": "’n Aarbei is nie eintlik ’n bessie nie: elke klein «saadjie» op sy vel is ’n aparte vruggie met ’n saad binne-in."
-   }
-  }
  }
 }
