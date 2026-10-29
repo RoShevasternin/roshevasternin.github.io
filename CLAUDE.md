@@ -111,6 +111,10 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
      Під кнопками — картка **«Знайомся: Pix»** (маскот — кубик на ім'я Pix, Cube + Pix = CubePix; власник 03.10.2026): Pix
      (`assets/games/cubepix-pix.webp` — намальований кодом гри, як на її сайті) вітається мовою відвідувача; заголовок, текст і привіт —
      слова сайту гри (`cp:pixTitle`, `cp:pixName`, `cp:pixHi` зі снапшота), посилання «Більше про Pix» → `/Game-CubePix/?lang=xx#pix`.
+     **Свято CubePix** (власник 29.10.2026, Хелловін): над карткою Pix — помаранчева картка свята (`.cp-ev`), **лише поки свято йде** —
+     дати й слова з сайту гри (`src/cubepix.json` → `events`, `cp:ev_<свято>`, `cp:evText_<свято>`, `cp:evLeft` «ще N днів»; дати —
+     `LIVE` гри, годинник відвідувача — після останнього дня картка зникає сама) → `/Game-CubePix/?lang=xx#event`. Картинка —
+     `assets/games/cubepix-<свято>.webp` (картка події з Google Play гри, 480 px). Нове свято в грі → `npm run cubepix` + картинка.
    - **Orbit Dash** (уже в Google Play): у рамці телефона — **сама гра**, не імітація (власник 04.10.2026: «та міні-гра не
      така як у прототипі… мєрзка»): `/Game-Orbit-Dash/play/embed.html` — прототип гри з її сайту (збирається в
      Game-Orbit-Dash-PRIVATE, `site/src/embed.js`). Сама грає найкращі шматки рівнів, тап — рівень твій, з музикою; поки гра
@@ -194,7 +198,7 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 ```bash
 npm install            # один раз (лише Playwright для тестів)
 npm run build          # src/ → сторінки в корені
-npm test               # збірка --strict (жодного пропущеного перекладу) + тести: мови, 320 px, серце, обидві гри, 404, app-ads.txt, сторінка бренду й усі її файли
+npm test               # (SITE_PORT=5197 — інший порт) збірка --strict (жодного пропущеного перекладу) + тести: мови, 320 px, серце, обидві гри, 404, app-ads.txt, сторінка бренду й усі її файли
 npm run look           # сторінка картинками (телефон і ПК) → shots/ — ПОДИВИСЬ і покажи власнику (LANGS=uk,en; PAGE=brand — сторінка бренду)
 npm run kit            # картинки сайту з кіта (іконки, OG, logo/banner/brand.png)
 npm run serve          # http://localhost:5190/

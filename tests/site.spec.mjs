@@ -188,6 +188,26 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   expect(w.errs).toEqual([]);
 });
 
+// owner 29.10.2026: CubePix's Halloween on the studio site too — a card in its world while the holiday is on (the CubePix site's dates
+// and words), leading to the holiday on the CubePix site; the day after it ends, the card is gone by itself
+test('a CubePix holiday: its card shows only while it is on, in the visitor’s language, and leads to it on the CubePix site', async ({ page }) => {
+  const w = watch(page);
+  await page.clock.setFixedTime(new Date('2026-10-29T12:00:00'));
+  await page.goto('./?lang=uk');
+  const card = page.locator('.cp-ev[data-ev="halloween"]');
+  await expect(card).toBeVisible();
+  await expect(card.locator('b')).toHaveText('Хелловін у музеї!');
+  await expect(card).toContainText('30 листопада');
+  await expect(card.locator('.cp-ev-left')).toHaveText('ще 33 дні');
+  await expect(card).toHaveAttribute('href', '/Game-CubePix/?lang=uk#event');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await page.clock.setFixedTime(new Date('2026-12-01T00:00:01'));
+  await page.reload();
+  await expect(card).toBeHidden();
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+});
+
 test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async ({ page, request }) => {
   const r404 = await request.get('./no-such-room');
   expect(r404.status()).toBe(404);

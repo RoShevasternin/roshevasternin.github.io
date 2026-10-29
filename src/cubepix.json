@@ -2270,6 +2270,13 @@
    }
   }
  },
+ "events": {
+  "halloween": {
+   "from": "2026-09-28",
+   "to": "2026-11-30",
+   "on": true
+  }
+ },
  "S": {
   "om": {
    "tagline": "SUURAA KUUBII KUUBIIN MUL'ISI",
@@ -2301,7 +2308,13 @@
    "aboutTitle": "Eenyu nuti",
    "pixTitle": "Pix waliin wal barradhu",
    "pixName": "Inni kuubii (cube) dha, maqaan isaa Pix. Lamaan walitti yoo makte CubePix argatta: taphichi maqaa isaa baata.",
-   "pixHi": "Akkam! Ani Pix."
+   "pixHi": "Akkam! Ani Pix.",
+   "evLeft": {
+    "one": "Guyyaa {n} hafe",
+    "other": "Guyyaa {n} hafe"
+   },
+   "ev_halloween": "Halloween muuziyeemii keessatti!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "af": {
    "tagline": "ONTHUL DIE PRENT KUBUS VIR KUBUS",
@@ -2333,7 +2346,13 @@
    "aboutTitle": "Oor ons",
    "pixTitle": "Ontmoet Pix",
    "pixName": "Hy is ’n kubus, en sy naam is Pix. Sit die twee saam en jy kry CubePix: die speletjie dra sy naam.",
-   "pixHi": "Hallo! Ek is Pix."
+   "pixHi": "Hallo! Ek is Pix.",
+   "evLeft": {
+    "one": "Nog {n} dag",
+    "other": "Nog {n} dae"
+   },
+   "ev_halloween": "Halloween in die museum!",
+   "evText_halloween": "Tot 30 November is 'n Halloween-vlak oop: 8 grillerige prente, van 'n swart kat en 'n heksehoed tot 'n spookhuis en Kuniyoshi se reuse-skelet. Die hele museum trek vir die fees aan, 'n Halloween-wals sluit by die plate aan, en as jy die vlak voltooi, trek Pix aan soos 'n pampoenlantern."
   },
   "az": {
    "tagline": "ŞƏKLİ KUB-KUB AÇ",
@@ -2365,7 +2384,13 @@
    "aboutTitle": "Haqqımızda",
    "pixTitle": "Pix ilə tanış ol",
    "pixName": "O, kubdur (Cube), adı isə Pix-dir. İkisini birləşdir — CubePix alınır: oyun onun adını daşıyır.",
-   "pixHi": "Salam! Mən Pix-əm."
+   "pixHi": "Salam! Mən Pix-əm.",
+   "evLeft": {
+    "one": "{n} gün qalıb",
+    "other": "{n} gün qalıb"
+   },
+   "ev_halloween": "Muzeydə Hellouin!",
+   "evText_halloween": "30 noyabradək Hellouin mərtəbəsi açıqdır: qara pişik və cadugər papağından tutmuş kabuslu evə və Kuniyoşinin nəhəng skeletinə qədər 8 qorxulu şəkil. Bütün muzey bayrama bəzənir, plastinkalara Hellouin valsı qoşulur, mərtəbəni bitirdikdə isə Pix balqabaq fənərinə çevrilir."
   },
   "id": {
    "tagline": "UNGKAP GAMBAR KUBUS DEMI KUBUS",
@@ -2394,7 +2419,12 @@
    "aboutTitle": "Tentang kami",
    "pixTitle": "Kenalan dengan Pix",
    "pixName": "Dia sebuah kubus, bahasa Inggrisnya Cube, dan namanya Pix. Gabungkan keduanya, jadilah CubePix: game ini memakai namanya.",
-   "pixHi": "Halo! Aku Pix."
+   "pixHi": "Halo! Aku Pix.",
+   "evLeft": {
+    "other": "{n} hari lagi"
+   },
+   "ev_halloween": "Halloween di museum!",
+   "evText_halloween": "Hingga 30 November, lantai Halloween dibuka: 8 gambar seram, dari kucing hitam dan topi penyihir hingga rumah berhantu dan kerangka raksasa karya Kuniyoshi. Seluruh museum berdandan menyambut perayaan, waltz Halloween bergabung di antara piringan hitam, dan setelah lantai diselesaikan, Pix berdandan sebagai lentera labu."
   },
   "ms": {
    "tagline": "DEDAHKAN GAMBAR KIUB DEMI KIUB",
@@ -2423,7 +2453,12 @@
    "aboutTitle": "Tentang kami",
    "pixTitle": "Kenali Pix",
    "pixName": "Dia sebiji kiub (cube), dan namanya Pix. Gabungkan kedua-duanya dan jadilah CubePix: permainan ini membawa namanya.",
-   "pixHi": "Hai! Aku Pix."
+   "pixHi": "Hai! Aku Pix.",
+   "evLeft": {
+    "other": "tinggal {n} hari"
+   },
+   "ev_halloween": "Halloween di muzium!",
+   "evText_halloween": "Sehingga 30 November, tingkat Halloween dibuka: 8 gambar seram, daripada kucing hitam dan topi ahli sihir hingga rumah berhantu dan rangka gergasi Kuniyoshi. Seluruh muzium berhias untuk perayaan, waltz Halloween menyertai rekod muzik, dan apabila tingkat itu siap, Pix berpakaian sebagai tanglung labu."
   },
   "bs": {
    "tagline": "OTKRIJ SLIKU KOCKU PO KOCKU",
@@ -2458,7 +2493,14 @@
    "aboutTitle": "O nama",
    "pixTitle": "Upoznaj Pixa",
    "pixName": "On je kocka (engl. cube), a ime mu je Pix. Spoji to dvoje i dobiješ CubePix: igra nosi njegovo ime.",
-   "pixHi": "Zdravo! Ja sam Pix."
+   "pixHi": "Zdravo! Ja sam Pix.",
+   "evLeft": {
+    "one": "Još {n} dan",
+    "few": "Još {n} dana",
+    "other": "Još {n} dana"
+   },
+   "ev_halloween": "Noć vještica u muzeju!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "ca": {
    "tagline": "DESCOBREIX LA IMATGE CUB A CUB",
@@ -2493,7 +2535,14 @@
    "aboutTitle": "Qui som",
    "pixTitle": "Coneix Pix",
    "pixName": "És un cub i es diu Pix. Ajunta les dues coses i tens CubePix: el joc porta el seu nom.",
-   "pixHi": "Hola! Soc Pix."
+   "pixHi": "Hola! Soc Pix.",
+   "evLeft": {
+    "one": "Queda {n} dia",
+    "many": "Queden {n} dies",
+    "other": "Queden {n} dies"
+   },
+   "ev_halloween": "Halloween al museu!",
+   "evText_halloween": "Fins al 30 de novembre hi ha una planta d'Halloween oberta: 8 quadres esfereïdors, del gat negre i el barret de bruixa a la casa encantada i l'esquelet gegant de Kuniyoshi. Tot el museu es vesteix de festa, un vals d'Halloween s'afegeix als discos i, en acabar la planta, Pix es disfressa de carabassa d'Halloween."
   },
   "cs": {
    "tagline": "ODHAL OBRAZ KOSTKU PO KOSTCE",
@@ -2531,7 +2580,15 @@
    "aboutTitle": "O nás",
    "pixTitle": "Seznam se s Pixem",
    "pixName": "Je to kostka, anglicky cube, a jmenuje se Pix. Dej to dohromady a vyjde ti CubePix: hra nese jeho jméno.",
-   "pixHi": "Ahoj! Já jsem Pix."
+   "pixHi": "Ahoj! Já jsem Pix.",
+   "evLeft": {
+    "one": "ještě {n} den",
+    "few": "ještě {n} dny",
+    "many": "ještě {n} dne",
+    "other": "ještě {n} dní"
+   },
+   "ev_halloween": "Halloween v muzeu!",
+   "evText_halloween": "Do 30. listopadu je otevřené halloweenské patro: 8 strašidelných obrázků, od černé kočky a čarodějnického klobouku po strašidelný dům a obří kostru od Kunijošiho. Celé muzeum se oblékne do svátečního, k deskám se přidá halloweenský valčík a po dokončení patra se Pix převlékne za dýňovou lucernu."
   },
   "da": {
    "tagline": "AFSLØR BILLEDET KUBE FOR KUBE",
@@ -2563,7 +2620,13 @@
    "aboutTitle": "Om os",
    "pixTitle": "Mød Pix",
    "pixName": "Han er en kube, på engelsk cube, og han hedder Pix. Sæt de to sammen, så får du CubePix: Spillet bærer hans navn.",
-   "pixHi": "Hej! Jeg er Pix."
+   "pixHi": "Hej! Jeg er Pix.",
+   "evLeft": {
+    "one": "{n} dag tilbage",
+    "other": "{n} dage tilbage"
+   },
+   "ev_halloween": "Halloween på museet!",
+   "evText_halloween": "Til og med den 30. november er en Halloween-etage åben: 8 uhyggelige billeder, fra en sort kat og en heksehat til et spøgelseshus og Kuniyoshis kæmpestore skelet. Hele museet pynter sig til festen, en Halloween-vals slutter sig til pladerne, og når du fuldfører etagen, klæder Pix sig ud som en græskarlygte."
   },
   "de": {
    "tagline": "DECK DAS BILD MIT WÜRFELN AUF",
@@ -2595,7 +2658,13 @@
    "aboutTitle": "Über uns",
    "pixTitle": "Das ist Pix",
    "pixName": "Er ist ein Würfel, auf Englisch Cube, und er heißt Pix. Zusammen ergibt das CubePix: Das Spiel trägt seinen Namen.",
-   "pixHi": "Hallo! Ich bin Pix."
+   "pixHi": "Hallo! Ich bin Pix.",
+   "evLeft": {
+    "one": "noch {n} Tag",
+    "other": "noch {n} Tage"
+   },
+   "ev_halloween": "Halloween im Museum!",
+   "evText_halloween": "Bis zum 30. November ist die Halloween-Etage geöffnet: 8 schaurige Bilder, von der Schwarzen Katze und dem Hexenhut bis zum Spukhaus und Kuniyoshis riesigem Skelett. Das ganze Museum verkleidet sich für das Fest, ein Halloween-Walzer gesellt sich zu den Schallplatten, und wer die Etage abschließt, verkleidet Pix als Kürbislaterne."
   },
   "et": {
    "tagline": "MAALI PILT KUUBIK KUUBIKU HAAVAL",
@@ -2627,7 +2696,13 @@
    "aboutTitle": "Meist",
    "pixTitle": "Tutvu Pixiga",
    "pixName": "Ta on kuubik (inglise keeles cube) ja tema nimi on Pix. Pane need kokku ja saad CubePix: mäng kannab tema nime.",
-   "pixHi": "Tere! Mina olen Pix."
+   "pixHi": "Tere! Mina olen Pix.",
+   "evLeft": {
+    "one": "veel {n} päev",
+    "other": "veel {n} päeva"
+   },
+   "ev_halloween": "Halloween muuseumis!",
+   "evText_halloween": "Kuni 30. novembrini on avatud Halloweeni korrus: 8 õudset pilti, mustast kassist ja nõiamütsist kummitusmajani ja Kuniyoshi hiigelsuure luukereni. Kogu muuseum riietub pühadeks, plaatidele lisandub Halloweeni valss ja korruse lõpetades riietub Pix kõrvitsalaternaks."
   },
   "en": {
    "tagline": "REVEAL THE PICTURE CUBE BY CUBE",
@@ -2659,7 +2734,13 @@
    "aboutTitle": "About us",
    "pixTitle": "Meet Pix",
    "pixName": "He’s a cube, and his name is Pix. Put the two together and you get CubePix: the game carries his name.",
-   "pixHi": "Hi! I’m Pix."
+   "pixHi": "Hi! I’m Pix.",
+   "evLeft": {
+    "one": "{n} day left",
+    "other": "{n} days left"
+   },
+   "ev_halloween": "Halloween at the museum!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "es": {
    "tagline": "DESCUBRE LA IMAGEN CUBO A CUBO",
@@ -2691,7 +2772,14 @@
    "aboutTitle": "Sobre nosotros",
    "pixTitle": "Te presentamos a Pix",
    "pixName": "Es un cubo, Cube en inglés, y se llama Pix. Junta las dos palabras y tendrás CubePix: el juego lleva su nombre.",
-   "pixHi": "¡Hola! Soy Pix."
+   "pixHi": "¡Hola! Soy Pix.",
+   "evLeft": {
+    "one": "queda {n} día",
+    "many": "quedan {n} días",
+    "other": "quedan {n} días"
+   },
+   "ev_halloween": "Halloween en el museo!",
+   "evText_halloween": "Hasta el 30 de noviembre hay una planta de Halloween abierta: 8 cuadros de miedo, desde un gato negro y un sombrero de bruja hasta una casa encantada y el esqueleto gigante de Kuniyoshi. Todo el museo se disfraza para la fiesta, un vals de Halloween se suma a los discos y, al terminar la planta, Pix se disfraza de calabaza de Halloween."
   },
   "eu": {
    "tagline": "AGERRARAZI IRUDIA KUBOZ KUBO",
@@ -2723,7 +2811,13 @@
    "aboutTitle": "Guri buruz",
    "pixTitle": "Ezagutu Pix",
    "pixName": "Kubo bat da (ingelesez, cube), eta bere izena Pix da. Biak elkartuz gero, CubePix: jokoak bere izena darama.",
-   "pixHi": "Kaixo! Pix naiz."
+   "pixHi": "Kaixo! Pix naiz.",
+   "evLeft": {
+    "one": "{n} egun geratzen da",
+    "other": "{n} egun geratzen dira"
+   },
+   "ev_halloween": "Halloween museoan!",
+   "evText_halloween": "Azaroaren 30era arte Halloween solairua zabalik dago: 8 irudi beldurgarri, katu beltzetik eta sorgin-kapelatik etxe sorgindura eta Kuniyoshiren eskeleto erraldoira arte. Museo osoa jaiarako janzten da, Halloweeneko balsa diskoetara gehitzen da, eta solairua amaitzean Pix kalabaza-linterna bihurtzen da."
   },
   "fil": {
    "tagline": "ILITAW ANG OBRA, CUBE KADA CUBE",
@@ -2755,7 +2849,13 @@
    "aboutTitle": "Tungkol sa amin",
    "pixTitle": "Kilalanin si Pix",
    "pixName": "Isa siyang cube, at Pix ang pangalan niya. Pagsamahin ang dalawa at CubePix ang lalabas: dala ng laro ang pangalan niya.",
-   "pixHi": "Hi! Ako si Pix."
+   "pixHi": "Hi! Ako si Pix.",
+   "evLeft": {
+    "one": "{n} araw pa",
+    "other": "{n} araw pa"
+   },
+   "ev_halloween": "Halloween sa museo!",
+   "evText_halloween": "Hanggang Nobyembre 30, bukas ang palapag ng Halloween: 8 nakakatakot na larawan, mula sa itim na pusa at sumbrero ng bruha hanggang sa bahay na pinagmumultuhan at higanteng kalansay ni Kuniyoshi. Nagbibihis para sa pista ang buong museo, may Halloween waltz na dumadagdag sa mga record, at kapag natapos ang palapag, magbibihis si Pix bilang jack-o’-lantern."
   },
   "fr": {
    "tagline": "RÉVÈLE L'IMAGE CUBE PAR CUBE",
@@ -2787,7 +2887,14 @@
    "aboutTitle": "À propos",
    "pixTitle": "Voici Pix",
    "pixName": "C’est un cube, et il s’appelle Pix. Assemble Cube et Pix, et tu obtiens CubePix : le jeu porte son nom.",
-   "pixHi": "Coucou ! Moi, c’est Pix."
+   "pixHi": "Coucou ! Moi, c’est Pix.",
+   "evLeft": {
+    "one": "encore {n} jour",
+    "many": "encore {n} jours",
+    "other": "encore {n} jours"
+   },
+   "ev_halloween": "Halloween au musée !",
+   "evText_halloween": "Jusqu’au 30 novembre, un étage Halloween est ouvert : 8 tableaux à faire frissonner, du chat noir et du chapeau de sorcière à la maison hantée et au squelette géant de Kuniyoshi. Tout le musée se déguise pour la fête, une valse d’Halloween rejoint les disques, et terminer l’étage déguise Pix en citrouille d’Halloween."
   },
   "gl": {
    "tagline": "DESCOBRE A IMAXE CUBO A CUBO",
@@ -2819,7 +2926,13 @@
    "aboutTitle": "Quen somos",
    "pixTitle": "Coñece a Pix",
    "pixName": "É un cubo e chámase Pix. Xunta os dous e tes CubePix: o xogo leva o seu nome.",
-   "pixHi": "Ola! Son Pix."
+   "pixHi": "Ola! Son Pix.",
+   "evLeft": {
+    "one": "queda {n} día",
+    "other": "quedan {n} días"
+   },
+   "ev_halloween": "Halloween no museo!",
+   "evText_halloween": "Ata o 30 de novembro hai unha planta de Halloween aberta: 8 cadros arrepiantes, desde o gato negro e o chapeu de bruxa ata a casa encantada e o esqueleto xigante de Kuniyoshi. Todo o museo se disfraza para a festa, un vals de Halloween únese aos discos e, ao rematar a planta, Pix disfrázase de cabaza de Halloween."
   },
   "ha": {
    "tagline": "BAYYANA HOTO KUBI BAYAN KUBI",
@@ -2851,7 +2964,13 @@
    "aboutTitle": "Game da mu",
    "pixTitle": "Haɗu da Pix",
    "pixName": "Shi kubi ne (cube), sunansa kuma Pix. Haɗa su biyu za ka sami CubePix: wasan yana ɗauke da sunansa.",
-   "pixHi": "Sannu! Ni ne Pix."
+   "pixHi": "Sannu! Ni ne Pix.",
+   "evLeft": {
+    "one": "Saura kwana {n}",
+    "other": "Saura kwanaki {n}"
+   },
+   "ev_halloween": "Halloween a gidan tarihi!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "hr": {
    "tagline": "OTKRIJ SLIKU KOCKICU PO KOCKICU",
@@ -2886,7 +3005,14 @@
    "aboutTitle": "O nama",
    "pixTitle": "Upoznaj Pixa",
    "pixName": "On je kockica, na engleskom cube, a ime mu je Pix. Spoji to dvoje i dobiješ CubePix: igra nosi njegovo ime.",
-   "pixHi": "Bok! Ja sam Pix."
+   "pixHi": "Bok! Ja sam Pix.",
+   "evLeft": {
+    "one": "još {n} dan",
+    "few": "još {n} dana",
+    "other": "još {n} dana"
+   },
+   "ev_halloween": "Noć vještica u muzeju!",
+   "evText_halloween": "Do 30. studenoga otvoren je kat Noć vještica: 8 jezivih slika, od crne mačke i vještičjeg šešira do uklete kuće i golemog kostura Kuniyoshija. Cijeli se muzej oblači za blagdan, valcer Noći vještica pridružuje se pločama, a kad dovršiš kat, Pix se preodijeva u svjetiljku od bundeve."
   },
   "ig": {
    "tagline": "KPUGHEE IHE OSISE CUBE NA CUBE",
@@ -2915,7 +3041,12 @@
    "aboutTitle": "Banyere anyị",
    "pixTitle": "Mata Pix",
    "pixName": "Ọ bụ cube, aha ya bụ Pix. Jikọta ha abụọ, ị ga-enweta CubePix: egwuregwu ahụ na-ebu aha ya.",
-   "pixHi": "Ndewo! Abụ m Pix."
+   "pixHi": "Ndewo! Abụ m Pix.",
+   "evLeft": {
+    "other": "Ụbọchị {n} fọdụrụ"
+   },
+   "ev_halloween": "Halloween n'ụlọ ngosi!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "zu": {
    "tagline": "VEZA ISITHOMBE NGAMAKHYUBHU",
@@ -2947,7 +3078,13 @@
    "aboutTitle": "Ngathi",
    "pixTitle": "Hlangana no-Pix",
    "pixName": "Uyikhyubhu, futhi igama lakhe ngu-Pix. Kuhlanganise kokubili uthole i-CubePix: umdlalo uthwala igama lakhe.",
-   "pixHi": "Sawubona! Ngingu-Pix."
+   "pixHi": "Sawubona! Ngingu-Pix.",
+   "evLeft": {
+    "one": "Kusele usuku olu-{n}",
+    "other": "Kusele izinsuku ezingu-{n}"
+   },
+   "ev_halloween": "I-Halloween emnyuziyamu!",
+   "evText_halloween": "Kuze kube yizi-30 kuNovemba isitezi i-Halloween sivulekile: imidwebo eyisi-8 esabekayo, kusukela ekatini elimnyama nasesigqokweni somthakathi kuya endlini enezipoki nasethanjeni elikhulu likaKuniyoshi. Yonke imnyuziyamu iyagqoka ngomkhosi, i-waltz ye-Halloween ijoyina amarekhodi, futhi uma uqeda isitezi, uPix uguquka abe yisibani sethanga."
   },
   "is": {
    "tagline": "AFHJÚPAÐU MYND KUBB FYRIR KUBB",
@@ -2979,7 +3116,13 @@
    "aboutTitle": "Um okkur",
    "pixTitle": "Hittu Pix",
    "pixName": "Hann er kubbur og heitir Pix. Settu þetta tvennt saman og þú færð CubePix: leikurinn ber nafnið hans.",
-   "pixHi": "Hæ! Ég er Pix."
+   "pixHi": "Hæ! Ég er Pix.",
+   "evLeft": {
+    "one": "{n} dagur eftir",
+    "other": "{n} dagar eftir"
+   },
+   "ev_halloween": "Hrekkjavaka í safninu!",
+   "evText_halloween": "Til 30. nóvember er Hrekkjavökuhæðin opin: 8 hryllilegar myndir, frá svörtum ketti og nornahatti að draugahúsi og risavaxinni beinagrind Kuniyoshis. Allt safnið klæðir sig upp fyrir hátíðina, hrekkjavökuvals bætist við plöturnar og þegar þú klárar hæðina klæðist Pix graskerslukt."
   },
   "it": {
    "tagline": "SCOPRI IL QUADRO CUBO PER CUBO",
@@ -3011,7 +3154,14 @@
    "aboutTitle": "Chi siamo",
    "pixTitle": "Ecco Pix",
    "pixName": "È un cubo, in inglese Cube, e si chiama Pix. Metti insieme le due parole e ottieni CubePix: il gioco porta il suo nome.",
-   "pixHi": "Ciao! Sono Pix."
+   "pixHi": "Ciao! Sono Pix.",
+   "evLeft": {
+    "one": "ancora {n} giorno",
+    "many": "ancora {n} giorni",
+    "other": "ancora {n} giorni"
+   },
+   "ev_halloween": "Halloween al museo!",
+   "evText_halloween": "Fino al 30 novembre è aperto un piano di Halloween: 8 dipinti da brivido, dal gatto nero e dal cappello da strega alla casa stregata e al gigantesco scheletro di Kuniyoshi. Tutto il museo si veste a festa, un valzer di Halloween si aggiunge ai dischi e, completando il piano, Pix si trasforma in una zucca di Halloween."
   },
   "sw": {
    "tagline": "FUNUA PICHA TABAKA KWA TABAKA",
@@ -3043,7 +3193,13 @@
    "aboutTitle": "Kuhusu sisi",
    "pixTitle": "Mfahamu Pix",
    "pixName": "Yeye ni mchemraba — kwa Kiingereza “cube” — na jina lake ni Pix. Ukiyaunganisha mawili hayo unapata CubePix: mchezo unabeba jina lake.",
-   "pixHi": "Jambo! Mimi ni Pix."
+   "pixHi": "Jambo! Mimi ni Pix.",
+   "evLeft": {
+    "one": "Siku {n} imebaki",
+    "other": "Siku {n} zimebaki"
+   },
+   "ev_halloween": "Halloween kwenye makumbusho!",
+   "evText_halloween": "Hadi Novemba 30, ghorofa ya Halloween imefunguliwa: picha 8 za kutisha, kuanzia paka mweusi na kofia ya mchawi hadi nyumba ya mizimu na kiunzi kikubwa cha Kuniyoshi. Makumbusho yote yanavaa kwa sherehe, waltz ya Halloween inaungana na rekodi, na ukikamilisha ghorofa, Pix anavaa kama taa ya boga."
   },
   "lv": {
    "tagline": "ATKLĀJ ATTĒLU KUBIŅU PA KUBIŅAM",
@@ -3078,7 +3234,14 @@
    "aboutTitle": "Par mums",
    "pixTitle": "Iepazīsties ar Pix",
    "pixName": "Viņš ir kubiņš (angliski — cube), un viņu sauc Pix. Saliec abus kopā, un sanāk CubePix: spēle nes viņa vārdu.",
-   "pixHi": "Sveiki! Es esmu Pix."
+   "pixHi": "Sveiki! Es esmu Pix.",
+   "evLeft": {
+    "zero": "vēl {n} dienas",
+    "one": "vēl {n} diena",
+    "other": "vēl {n} dienas"
+   },
+   "ev_halloween": "Helovīns muzejā!",
+   "evText_halloween": "Līdz 30. novembrim ir atvērts Helovīna stāvs: 8 baisi attēli – no melnā kaķa un raganas cepures līdz spoku mājai un Kunijoši milzu skeletam. Viss muzejs tērpjas svētkiem, ierakstiem pievienojas Helovīna valsis, bet, pabeidzot stāvu, Pix pārģērbjas par ķirbja laternu."
   },
   "lt": {
    "tagline": "ATIDENK PAVEIKSLĄ PO KUBELĮ",
@@ -3116,7 +3279,15 @@
    "aboutTitle": "Apie mus",
    "pixTitle": "Susipažink: Pix",
    "pixName": "Jis — kubelis, angliškai Cube, o jo vardas Pix. Sudėk juos kartu ir gausi CubePix: žaidimas vadinasi jo vardu.",
-   "pixHi": "Labas! Aš Pix."
+   "pixHi": "Labas! Aš Pix.",
+   "evLeft": {
+    "one": "dar {n} diena",
+    "few": "dar {n} dienos",
+    "many": "dar {n} dienos",
+    "other": "dar {n} dienų"
+   },
+   "ev_halloween": "Helovinas muziejuje!",
+   "evText_halloween": "Iki lapkričio 30 d. atidarytas Helovino aukštas: 8 baisingi paveikslai – nuo juodojo katino ir raganos skrybėlės iki namo su vaiduokliais ir milžiniško Kunijoši skeleto. Visas muziejus puošiasi šventei, prie plokštelių prisijungia Helovino valsas, o užbaigus aukštą Pix persirengia moliūgo žibintu."
   },
   "hu": {
    "tagline": "KOCKÁNKÉNT TÁRD FEL A KÉPET",
@@ -3148,7 +3319,13 @@
    "aboutTitle": "Rólunk",
    "pixTitle": "Ismerd meg Pixet!",
    "pixName": "Ő egy kocka, angolul cube, a neve pedig Pix. Tedd össze a kettőt, és kész a CubePix: a játék az ő nevét viseli.",
-   "pixHi": "Szia! Pix vagyok."
+   "pixHi": "Szia! Pix vagyok.",
+   "evLeft": {
+    "one": "még {n} nap",
+    "other": "még {n} nap"
+   },
+   "ev_halloween": "Halloween a múzeumban!",
+   "evText_halloween": "November 30-ig nyitva áll a Halloween-emelet: 8 hátborzongató kép, a fekete macskától és a boszorkánykalaptól a kísértetházig és Kunijosi hatalmas csontvázáig. Az egész múzeum ünneplőbe öltözik, egy halloweeni keringő csatlakozik a lemezekhez, az emelet befejezésével pedig Pix töklámpásnak öltözik."
   },
   "nl": {
    "tagline": "ONTHUL HET PLAATJE MET BLOKJES",
@@ -3180,7 +3357,13 @@
    "aboutTitle": "Over ons",
    "pixTitle": "Maak kennis met Pix",
    "pixName": "Hij is een blokje, in het Engels Cube, en hij heet Pix. Zet die twee samen en je krijgt CubePix: het spel draagt zijn naam.",
-   "pixHi": "Hoi! Ik ben Pix."
+   "pixHi": "Hoi! Ik ben Pix.",
+   "evLeft": {
+    "one": "nog {n} dag",
+    "other": "nog {n} dagen"
+   },
+   "ev_halloween": "Halloween in het museum!",
+   "evText_halloween": "Tot 30 november is er een Halloween-verdieping open: 8 griezelige plaatjes, van een zwarte kat en een heksenhoed tot een spookhuis en het gigantische skelet van Kuniyoshi. Het hele museum verkleedt zich voor het feest, een Halloween-wals voegt zich bij de platen, en als je de verdieping afrondt, verkleedt Pix zich als pompoenlantaarn."
   },
   "nb": {
    "tagline": "AVDEKK BILDET KUBE FOR KUBE",
@@ -3212,7 +3395,13 @@
    "aboutTitle": "Om oss",
    "pixTitle": "Møt Pix",
    "pixName": "Han er en kube, og han heter Pix. Sett dem sammen, så får du CubePix: spillet bærer navnet hans.",
-   "pixHi": "Hei! Jeg er Pix."
+   "pixHi": "Hei! Jeg er Pix.",
+   "evLeft": {
+    "one": "{n} dag igjen",
+    "other": "{n} dager igjen"
+   },
+   "ev_halloween": "Halloween på museet!",
+   "evText_halloween": "Til og med 30. november er en Halloween-etasje åpen: 8 uhyggelige bilder, fra en svart katt og en heksehatt til et hjemsøkt hus og Kuniyoshis kjempestore skjelett. Hele museet kler seg ut til feiringen, en Halloween-vals blir med blant platene, og når du fullfører etasjen, kler Pix seg ut som en gresskarlykt."
   },
   "uz": {
    "tagline": "RASMNI KUBMA-KUB OCH",
@@ -3244,7 +3433,13 @@
    "aboutTitle": "Biz haqimizda",
    "pixTitle": "Pix bilan tanish",
    "pixName": "U kub, ismi esa Pix. Ikkalasini qoʻshsang, CubePix chiqadi: oʻyin uning ismi bilan atalgan.",
-   "pixHi": "Salom! Men Pixman."
+   "pixHi": "Salom! Men Pixman.",
+   "evLeft": {
+    "one": "{n} kun qoldi",
+    "other": "{n} kun qoldi"
+   },
+   "ev_halloween": "Muzeyda Xellouin!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "pl": {
    "tagline": "ODKRYJ OBRAZ KOSTKA PO KOSTCE",
@@ -3282,7 +3477,15 @@
    "aboutTitle": "O nas",
    "pixTitle": "Poznaj Pixa",
    "pixName": "Jest kostką, po angielsku Cube, a na imię ma Pix. Połącz jedno z drugim, a wyjdzie CubePix: gra nosi jego imię.",
-   "pixHi": "Cześć! Jestem Pix."
+   "pixHi": "Cześć! Jestem Pix.",
+   "evLeft": {
+    "one": "jeszcze {n} dzień",
+    "few": "jeszcze {n} dni",
+    "many": "jeszcze {n} dni",
+    "other": "jeszcze {n} dnia"
+   },
+   "ev_halloween": "Halloween w muzeum!",
+   "evText_halloween": "Do 30 listopada otwarte jest piętro Halloween: 8 upiornych obrazów, od czarnego kota i kapelusza czarownicy po nawiedzony dom i ogromny szkielet Kuniyoshiego. Całe muzeum przebiera się na święto, do płyt dołącza halloweenowy walc, a po ukończeniu piętra Pix przebiera się za dyniową latarnię."
   },
   "pt": {
    "tagline": "REVELE A IMAGEM CUBO A CUBO",
@@ -3314,7 +3517,14 @@
    "aboutTitle": "Sobre nós",
    "pixTitle": "Conheça o Pix",
    "pixName": "Ele é um cubo, Cube em inglês, e se chama Pix. Junte os dois e você tem CubePix: o jogo leva o nome dele.",
-   "pixHi": "Oi! Eu sou o Pix."
+   "pixHi": "Oi! Eu sou o Pix.",
+   "evLeft": {
+    "one": "falta {n} dia",
+    "many": "faltam {n} dias",
+    "other": "faltam {n} dias"
+   },
+   "ev_halloween": "Halloween no museu!",
+   "evText_halloween": "Até 30 de novembro, o andar de Halloween está aberto: 8 quadros assustadores, do gato preto e do chapéu de bruxa à casa assombrada e ao esqueleto gigante de Kuniyoshi. O museu inteiro se fantasia para a festa, uma valsa de Halloween entra nos discos e, ao terminar o andar, Pix vira uma abóbora de Halloween."
   },
   "ro": {
    "tagline": "DEZVĂLUIE TABLOUL CUB CU CUB",
@@ -3349,7 +3559,14 @@
    "aboutTitle": "Despre noi",
    "pixTitle": "Fă cunoștință cu Pix",
    "pixName": "E un cub (în engleză, cube) și se numește Pix. Pune-le împreună și obții CubePix: jocul îi poartă numele.",
-   "pixHi": "Salut! Eu sunt Pix."
+   "pixHi": "Salut! Eu sunt Pix.",
+   "evLeft": {
+    "one": "încă {n} zi",
+    "few": "încă {n} zile",
+    "other": "încă {n} de zile"
+   },
+   "ev_halloween": "Halloween la muzeu!",
+   "evText_halloween": "Până pe 30 noiembrie e deschis etajul Halloween: 8 imagini înfricoșătoare, de la pisica neagră și pălăria de vrăjitoare până la casa bântuită și scheletul uriaș al lui Kuniyoshi. Tot muzeul se costumează pentru sărbătoare, un vals de Halloween se alătură discurilor, iar când termini etajul, Pix se costumează în felinar de dovleac."
   },
   "sq": {
    "tagline": "ZBULO FIGURËN KUB PAS KUBI",
@@ -3381,7 +3598,13 @@
    "aboutTitle": "Rreth nesh",
    "pixTitle": "Njihu me Pix",
    "pixName": "Ai është një kub dhe quhet Pix. Bashkoji të dyja dhe del CubePix: loja mban emrin e tij.",
-   "pixHi": "Përshëndetje! Unë jam Pix."
+   "pixHi": "Përshëndetje! Unë jam Pix.",
+   "evLeft": {
+    "one": "Mbetet {n} ditë",
+    "other": "Mbeten {n} ditë"
+   },
+   "ev_halloween": "Halloween në muze!",
+   "evText_halloween": "Deri më 30 nëntor është i hapur kati i Halloween-it: 8 piktura të frikshme, nga macja e zezë dhe kapela e shtrigës te shtëpia me fantazma dhe skeleti gjigant i Kuniyoshit. I gjithë muzeu vishet për festën, një vals Halloween i bashkohet pllakave dhe kur e përfundon katin, Pix vishet si kungull fenerik."
   },
   "sk": {
    "tagline": "ODKRY OBRAZ KOCKU PO KOCKE",
@@ -3419,7 +3642,15 @@
    "aboutTitle": "O nás",
    "pixTitle": "Zoznám sa s Pixom",
    "pixName": "Je to kocka, po anglicky cube, a volá sa Pix. Spoj to dokopy a vznikne CubePix: hra nesie jeho meno.",
-   "pixHi": "Ahoj! Ja som Pix."
+   "pixHi": "Ahoj! Ja som Pix.",
+   "evLeft": {
+    "one": "ešte {n} deň",
+    "few": "ešte {n} dni",
+    "many": "ešte {n} dňa",
+    "other": "ešte {n} dní"
+   },
+   "ev_halloween": "Halloween v múzeu!",
+   "evText_halloween": "Do 30. novembra je otvorené halloweensko poschodie: 8 strašidelných obrazov, od čiernej mačky a klobúka čarodejnice po strašidelný dom a obrovskú kostru od Kunijošiho. Celé múzeum sa oblečie do sviatočného, k platniam pribudne halloweenský valčík a po dokončení poschodia sa Pix prezlečie za tekvicový lampión."
   },
   "sl": {
    "tagline": "RAZKRIJ SLIKO KOCKO ZA KOCKO",
@@ -3457,7 +3688,15 @@
    "aboutTitle": "O nas",
    "pixTitle": "Spoznaj Pixa",
    "pixName": "Je kocka, po angleško »cube«, in ime mu je Pix. Ko oboje združiš, dobiš CubePix: igra nosi njegovo ime.",
-   "pixHi": "Živjo! Jaz sem Pix."
+   "pixHi": "Živjo! Jaz sem Pix.",
+   "evLeft": {
+    "one": "še {n} dan",
+    "two": "še {n} dneva",
+    "few": "še {n} dni",
+    "other": "še {n} dni"
+   },
+   "ev_halloween": "Noč čarovnic v muzeju!",
+   "evText_halloween": "Do 30. novembra je odprto nadstropje Noč čarovnic: 8 srhljivih slik, od črne mačke in čarovniškega klobuka do hiše strahov in orjaškega okostnjaka izpod Kuniyoshijeve roke. Cel muzej se našemi za praznik, valček noči čarovnic se pridruži ploščam, ko dokončaš nadstropje, pa se Pix našemi v bučno svetilko."
   },
   "so": {
    "tagline": "MUUJI SAWIRKA KUUB-KUUB",
@@ -3489,7 +3728,13 @@
    "aboutTitle": "Naga saabsan",
    "pixTitle": "Baro Pix",
    "pixName": "Waa kuub (cube), magaciisuna waa Pix. Labada isku dar oo waxaad helaysaa CubePix: ciyaartu magaciisa ayay wadataa.",
-   "pixHi": "Haye! Anigu waxaan ahay Pix."
+   "pixHi": "Haye! Anigu waxaan ahay Pix.",
+   "evLeft": {
+    "one": "{n} maalin ayaa dhiman",
+    "other": "{n} maalmood ayaa dhiman"
+   },
+   "ev_halloween": "Halloween wuxuu yimid matxafka!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "fi": {
    "tagline": "PALJASTA KUVA KUUTIO KERRALLAAN",
@@ -3521,7 +3766,13 @@
    "aboutTitle": "Tietoa meistä",
    "pixTitle": "Tässä on Pix",
    "pixName": "Hän on kuutio, englanniksi cube, ja hänen nimensä on Pix. Yhdessä niistä tulee CubePix: peli kantaa hänen nimeään.",
-   "pixHi": "Hei! Minä olen Pix."
+   "pixHi": "Hei! Minä olen Pix.",
+   "evLeft": {
+    "one": "vielä {n} päivä",
+    "other": "vielä {n} päivää"
+   },
+   "ev_halloween": "Halloween museossa!",
+   "evText_halloween": "Marraskuun 30. päivään asti on avoinna Halloween-kerros: 8 karmivaa kuvaa mustasta kissasta ja noidan hatusta kummitustaloon ja Kuniyoshin jättimäiseen luurankoon. Koko museo pukeutuu juhlaan, Halloween-valssi liittyy levyihin, ja kun saat kerroksen valmiiksi, Pix pukeutuu kurpitsalyhdyksi."
   },
   "sv": {
    "tagline": "AVSLÖJA BILDEN KUB FÖR KUB",
@@ -3553,7 +3804,13 @@
    "aboutTitle": "Om oss",
    "pixTitle": "Hälsa på Pix",
    "pixName": "Han är en kub, cube på engelska, och han heter Pix. Sätt ihop orden så får du CubePix: spelet bär hans namn.",
-   "pixHi": "Hej! Jag är Pix."
+   "pixHi": "Hej! Jag är Pix.",
+   "evLeft": {
+    "one": "{n} dag kvar",
+    "other": "{n} dagar kvar"
+   },
+   "ev_halloween": "Halloween på museet!",
+   "evText_halloween": "Till och med den 30 november är en Halloween-våning öppen: 8 kusliga bilder, från en svart katt och en häxhatt till ett spökhus och Kuniyoshis jättelika skelett. Hela museet klär upp sig för högtiden, en Halloween-vals ansluter till skivorna, och när du klarar våningen klär sig Pix som en pumpalykta."
   },
   "vi": {
    "tagline": "HÉ LỘ BỨC TRANH TỪNG KHỐI MỘT",
@@ -3582,7 +3839,12 @@
    "aboutTitle": "Về chúng tôi",
    "pixTitle": "Làm quen với Pix",
    "pixName": "Pix là một khối, mà khối trong tiếng Anh là Cube. Ghép Cube với Pix, ta có CubePix: trò chơi mang chính tên của Pix.",
-   "pixHi": "Chào bạn! Mình là Pix."
+   "pixHi": "Chào bạn! Mình là Pix.",
+   "evLeft": {
+    "other": "còn {n} ngày"
+   },
+   "ev_halloween": "Halloween ở bảo tàng!",
+   "evText_halloween": "Đến hết ngày 30 tháng 11, tầng Halloween mở cửa: 8 bức tranh rùng rợn, từ chú mèo đen và chiếc mũ phù thủy đến ngôi nhà ma ám và bộ xương khổng lồ của Kuniyoshi. Cả bảo tàng hóa trang đón lễ, một điệu valse Halloween gia nhập các đĩa nhạc, và khi hoàn thành tầng này, Pix sẽ hóa trang thành đèn lồng bí ngô."
   },
   "tr": {
    "tagline": "RESMİ KÜP KÜP ORTAYA ÇIKAR",
@@ -3614,7 +3876,13 @@
    "aboutTitle": "Hakkımızda",
    "pixTitle": "Pix’le tanış",
    "pixName": "O bir küp, İngilizcesiyle Cube; adı da Pix. İkisini birleştirince CubePix çıkıyor: oyun onun adını taşıyor.",
-   "pixHi": "Merhaba! Ben Pix."
+   "pixHi": "Merhaba! Ben Pix.",
+   "evLeft": {
+    "one": "{n} gün kaldı",
+    "other": "{n} gün kaldı"
+   },
+   "ev_halloween": "Müzede Cadılar Bayramı!",
+   "evText_halloween": "30 Kasım’a kadar Cadılar Bayramı katı açık: kara kediden ve cadı şapkasından perili eve ve Kuniyoshi’nin dev iskeletine kadar 8 ürkütücü resim. Bütün müze bayram havasına bürünüyor, plaklara bir Cadılar Bayramı valsi katılıyor ve katı bitirince Pix cadılar bayramı balkabağı fenerine dönüşüyor."
   },
   "tk": {
    "tagline": "SURATY KUBMA-KUB AÇ",
@@ -3646,7 +3914,13 @@
    "aboutTitle": "Biz barada",
    "pixTitle": "Pix bilen tanyş bol",
    "pixName": "Ol kub, ady bolsa Pix. Ikisini birleşdir — CubePix bolar: oýun onuň adyny göterýär.",
-   "pixHi": "Salam! Men Pix."
+   "pixHi": "Salam! Men Pix.",
+   "evLeft": {
+    "one": "{n} gün galdy",
+    "other": "{n} gün galdy"
+   },
+   "ev_halloween": "Muzeýde Hellowin!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "yo": {
    "tagline": "ṢÍ ÀWÒRÁN PAYÁ KÚBÙ LẸ́YÌN KÚBÙ",
@@ -3675,7 +3949,12 @@
    "aboutTitle": "Nípa wa",
    "pixTitle": "Mọ Pix",
    "pixName": "Kúbù ni, orúkọ rẹ̀ sì ni Pix. Pa méjèèjì pọ̀, wàá rí CubePix: eré náà ń jẹ́ orúkọ rẹ̀.",
-   "pixHi": "Báwo! Èmi ni Pix."
+   "pixHi": "Báwo! Èmi ni Pix.",
+   "evLeft": {
+    "other": "Ọjọ́ {n} ló kù"
+   },
+   "ev_halloween": "Halloween ní ilé ọnà!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "el": {
    "tagline": "ΑΠΟΚΑΛΥΨΕ ΤΗΝ ΕΙΚΟΝΑ ΚΥΒΟ-ΚΥΒΟ",
@@ -3707,7 +3986,13 @@
    "aboutTitle": "Σχετικά με εμάς",
    "pixTitle": "Γνώρισε τον Pix",
    "pixName": "Είναι κύβος (cube) και τον λένε Pix. Βάλε τα δύο μαζί και έχεις CubePix: το παιχνίδι έχει το όνομά του.",
-   "pixHi": "Γεια! Είμαι ο Pix."
+   "pixHi": "Γεια! Είμαι ο Pix.",
+   "evLeft": {
+    "one": "απομένει {n} μέρα",
+    "other": "απομένουν {n} μέρες"
+   },
+   "ev_halloween": "Halloween στο μουσείο!",
+   "evText_halloween": "Μέχρι τις 30 Νοεμβρίου είναι ανοιχτός ένας όροφος Halloween: 8 τρομακτικές εικόνες, από μια μαύρη γάτα και ένα καπέλο μάγισσας μέχρι ένα στοιχειωμένο σπίτι και τον γιγάντιο σκελετό του Κουνιγιόσι. Ολόκληρο το μουσείο ντύνεται για τη γιορτή, ένα βαλς του Halloween προστίθεται στους δίσκους, και όταν ολοκληρώσεις τον όροφο, ο Pix ντύνεται κολοκύθα-φανάρι."
   },
   "be": {
    "tagline": "РАСКРЫЙ КАРЦІНУ КУБІКАМІ",
@@ -3745,7 +4030,15 @@
    "aboutTitle": "Пра нас",
    "pixTitle": "Знаёмся: Pix",
    "pixName": "Ён кубік, гэта значыць Cube, а завуць яго Pix. Разам атрымліваецца CubePix — гульня носіць яго імя.",
-   "pixHi": "Прывітанне! Я Pix."
+   "pixHi": "Прывітанне! Я Pix.",
+   "evLeft": {
+    "one": "яшчэ {n} дзень",
+    "few": "яшчэ {n} дні",
+    "many": "яшчэ {n} дзён",
+    "other": "яшчэ {n} дня"
+   },
+   "ev_halloween": "Хэлоўін у музеі!",
+   "evText_halloween": "Да 30 лістапада адкрыты паверх Хэлоўін: 8 жахлівых карцін, ад чорнага ката і капелюша ведзьмы да дома з прывідамі і велізарнага шкілета Куніёсі. Увесь музей апранаецца да свята, да кружэлак далучаецца хэлоўінскі вальс, а калі завершыш паверх, Pix ператвараецца ў гарбузовы ліхтар."
   },
   "bg": {
    "tagline": "РАЗКРИЙ КАРТИНА КУБЧЕ ПО КУБЧЕ",
@@ -3777,7 +4070,13 @@
    "aboutTitle": "За нас",
    "pixTitle": "Запознай се с Pix",
    "pixName": "Той е кубче (на английски cube), а името му е Pix. Сложи ги заедно и ще получиш CubePix: играта носи неговото име.",
-   "pixHi": "Здрасти! Аз съм Pix."
+   "pixHi": "Здрасти! Аз съм Pix.",
+   "evLeft": {
+    "one": "още {n} ден",
+    "other": "още {n} дни"
+   },
+   "ev_halloween": "Хелоуин в музея!",
+   "evText_halloween": "До 30 ноември е отворен етажът Хелоуин: 8 зловещи картини – от черната котка и шапката на вещица до къщата с духове и гигантския скелет на Кунийоши. Целият музей се облича за празника, към плочите се присъединява хелоуински валс, а когато завършиш етажа, Pix се превръща в тиква-фенер."
   },
   "ky": {
    "tagline": "СҮРӨТТҮ КУБ-КУБ МЕНЕН АЧ",
@@ -3809,7 +4108,13 @@
    "aboutTitle": "Биз жөнүндө",
    "pixTitle": "Pix менен тааныш",
    "pixName": "Ал — куб, анын аты Pix. Экөөнү бириктирсең, CubePix болот: оюн анын атын алып жүрөт.",
-   "pixHi": "Салам! Мен Pix."
+   "pixHi": "Салам! Мен Pix.",
+   "evLeft": {
+    "one": "{n} күн калды",
+    "other": "{n} күн калды"
+   },
+   "ev_halloween": "Музейде Хэллоуин!",
+   "evText_halloween": "30-ноябрга чейин Хэллоуин кабаты ачык: кара мышык менен жез кемпирдин калпагынан баштап арбактуу үйгө жана Куниёсинин алп скелетине чейин 8 коркунучтуу сүрөт. Бүт музей майрамга кийинет, пластинкаларга Хэллоуин вальсы кошулат, ал эми кабатты бүтүрсөңүз, Pix ашкабак чырагына айланат."
   },
   "kk": {
    "tagline": "СУРЕТТІ ТЕКШЕЛЕП АШ",
@@ -3841,7 +4146,13 @@
    "aboutTitle": "Біз туралы",
    "pixTitle": "Танысып ал: Pix",
    "pixName": "Ол — текше, яғни Cube, ал аты — Pix. Екеуін қоссаң, CubePix шығады: ойын оның атын алып жүр.",
-   "pixHi": "Сәлем! Мен — Pix."
+   "pixHi": "Сәлем! Мен — Pix.",
+   "evLeft": {
+    "one": "{n} күн қалды",
+    "other": "{n} күн қалды"
+   },
+   "ev_halloween": "Музейде Хэллоуин!",
+   "evText_halloween": "30 қарашаға дейін Хэллоуин қабаты ашық: қара мысық пен мыстанның қалпағынан бастап елесті үй мен Куниёсидің алып қаңқасына дейін — 8 қорқынышты сурет. Бүкіл мұражай мерекеге киінеді, пластинкаларға Хэллоуин вальсі қосылады, ал қабатты аяқтағанда Pix асқабақ шамына айналады."
   },
   "mk": {
    "tagline": "ОТКРИЈ ЈА СЛИКАТА КОЦКА ПО КОЦКА",
@@ -3873,7 +4184,13 @@
    "aboutTitle": "За нас",
    "pixTitle": "Запознај го Pix",
    "pixName": "Тој е коцка (на англиски cube), а името му е Pix. Спој ги двете и добиваш CubePix: играта го носи неговото име.",
-   "pixHi": "Здраво! Јас сум Pix."
+   "pixHi": "Здраво! Јас сум Pix.",
+   "evLeft": {
+    "one": "Уште {n} ден",
+    "other": "Уште {n} дена"
+   },
+   "ev_halloween": "Ноќ на вештерките во музејот!",
+   "evText_halloween": "До 30 ноември е отворен катот Ноќ на вештерките: 8 страшни слики, од црната мачка и шапката на вештерка до куќата на духови и огромниот скелет на Кунијоши. Целиот музеј се облекува за празникот, валсот за Ноќта на вештерките им се придружува на плочите, а кога ќе го завршиш катот, Pix се претвора во тиква-фенер."
   },
   "mn": {
    "tagline": "ЗУРГИЙГ КУБ КУБААР НЭЭ",
@@ -3905,7 +4222,13 @@
    "aboutTitle": "Бидний тухай",
    "pixTitle": "Pix-тэй танилц",
    "pixName": "Тэр бол куб, нэр нь Pix. Хоёуланг нь нийлүүлбэл CubePix болно: тоглоом түүний нэрээр нэрлэгдсэн.",
-   "pixHi": "Сайн уу! Би Pix."
+   "pixHi": "Сайн уу! Би Pix.",
+   "evLeft": {
+    "one": "{n} өдөр үлдлээ",
+    "other": "{n} өдөр үлдлээ"
+   },
+   "ev_halloween": "Музейд Хэллоуин боллоо!",
+   "evText_halloween": "11-р сарын 30 хүртэл Хэллоуины давхар нээлттэй: хар муур, шуламын малгайгаас эхлээд сүнстэй байшин, Кунийошийн аварга араг яс хүртэл 8 аймшигт зураг. Музей бүхэлдээ баярт зориулан гоёж, пянзнуудад Хэллоуины вальс нэмэгдэж, давхрыг дуусгахад Pix хулуун дэнлүү болон хувирна."
   },
   "sr": {
    "tagline": "ОТКРИЈ СЛИКУ КОЦКУ ПО КОЦКУ",
@@ -3940,7 +4263,14 @@
    "aboutTitle": "О нама",
    "pixTitle": "Упознај Pix-а",
    "pixName": "Он је коцка (на енглеском cube), а име му је Pix. Споји то двоје и добијаш CubePix: игра носи његово име.",
-   "pixHi": "Здраво! Ја сам Pix."
+   "pixHi": "Здраво! Ја сам Pix.",
+   "evLeft": {
+    "one": "Још {n} дан",
+    "few": "Још {n} дана",
+    "other": "Још {n} дана"
+   },
+   "ev_halloween": "Ноћ вештица у музеју!",
+   "evText_halloween": "До 30. новембра отворен је спрат Ноћ вештица: 8 језивих слика, од црне мачке и вештичјег шешира до уклете куће и огромног костура Кунијошија. Цео музеј се облачи за празник, валцер Ноћи вештица придружује се плочама, а када завршиш спрат, Pix се претвара у бундеву-фењер."
   },
   "tg": {
    "tagline": "РАСМРО КУБИК БА КУБИК КУШО",
@@ -3972,7 +4302,13 @@
    "aboutTitle": "Дар бораи мо",
    "pixTitle": "Бо Pix шинос шав",
    "pixName": "Ӯ кубик аст, ва номаш Pix. Ҳардуро якҷоя кун — CubePix мешавад: бозӣ номи ӯро дорад.",
-   "pixHi": "Салом! Ман Pix ҳастам."
+   "pixHi": "Салом! Ман Pix ҳастам.",
+   "evLeft": {
+    "one": "боз {n} рӯз",
+    "other": "боз {n} рӯз"
+   },
+   "ev_halloween": "Ҳеллоуин дар музей!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "uk": {
    "tagline": "РОЗКРИЙ КАРТИНУ КУБИКАМИ",
@@ -4010,7 +4346,15 @@
    "aboutTitle": "Про нас",
    "pixTitle": "Знайомся: Pix",
    "pixName": "Він кубик, тобто Cube, а звати його Pix. Разом виходить CubePix — гра носить його ім’я.",
-   "pixHi": "Привіт! Я Pix."
+   "pixHi": "Привіт! Я Pix.",
+   "evLeft": {
+    "one": "ще {n} день",
+    "few": "ще {n} дні",
+    "many": "ще {n} днів",
+    "other": "ще {n} дня"
+   },
+   "ev_halloween": "Хелловін у музеї!",
+   "evText_halloween": "До 30 листопада відкритий поверх Хелловін: 8 моторошних картин — від чорного кота й капелюха відьми до будинку із привидами та велетенського скелета Кунійосі. Увесь музей наряджається до свята, до платівок долучається хелловінський вальс, а завершений поверх перевдягає Pix у гарбуз-ліхтар."
   },
   "ka": {
    "tagline": "გამოაჩინე სურათი კუბ-კუბად",
@@ -4042,7 +4386,13 @@
    "aboutTitle": "ჩვენ შესახებ",
    "pixTitle": "გაიცანი Pix",
    "pixName": "ის კუბია და მისი სახელია Pix. ერთად — CubePix: თამაში მის სახელს ატარებს.",
-   "pixHi": "გამარჯობა! მე Pix ვარ."
+   "pixHi": "გამარჯობა! მე Pix ვარ.",
+   "evLeft": {
+    "one": "დარჩა {n} დღე",
+    "other": "დარჩა {n} დღე"
+   },
+   "ev_halloween": "ჰელოუინი მუზეუმში!",
+   "evText_halloween": "30 ნოემბრამდე ღიაა ჰელოუინის სართული: 8 საშიში სურათი, შავი კატიდან და ჯადოქრის ქუდიდან მოჩვენებებიან სახლამდე და კუნიიოშის უზარმაზარ ჩონჩხამდე. მთელი მუზეუმი დღესასწაულისთვის იმოსება, ფირფიტებს ჰელოუინის ვალსი ემატება, სართულის დასრულებისას კი Pix გოგრის ფარნად გადაიქცევა."
   },
   "hy": {
    "tagline": "ՆԿԱՐԸ՝ ԽՈՐԱՆԱՐԴ ԱՌ ԽՈՐԱՆԱՐԴ",
@@ -4074,7 +4424,13 @@
    "aboutTitle": "Մեր մասին",
    "pixTitle": "Ծանոթացիր Pix-ի հետ",
    "pixName": "Նա խորանարդ է (cube), և նրա անունը Pix է։ Միացրու երկուսը, և կստանաս CubePix․ խաղը կրում է նրա անունը։",
-   "pixHi": "Բարև! Ես Pix-ն եմ։"
+   "pixHi": "Բարև! Ես Pix-ն եմ։",
+   "evLeft": {
+    "one": "{n} օր է մնացել",
+    "other": "{n} օր է մնացել"
+   },
+   "ev_halloween": "Հելոուին թանգարանում!",
+   "evText_halloween": "Մինչև նոյեմբերի 30-ը բաց է Հելոուինի հարկը՝ 8 սարսափազդու նկար՝ սև կատվից ու կախարդի գլխարկից մինչև ուրվականների տունն ու Կունիյոշիի հսկա կմախքը։ Ամբողջ թանգարանը զարդարվում է տոնի համար, ձայնապնակներին միանում է Հելոուինի վալսը, իսկ հարկն ավարտելիս Pix-ը վերածվում է դդմի լապտերի։"
   },
   "he": {
    "tagline": "חשפו את התמונה קובייה אחר קובייה",
@@ -4109,7 +4465,14 @@
    "aboutTitle": "עלינו",
    "pixTitle": "הכירו את Pix",
    "pixName": "הוא קובייה — Cube, ושמו Pix. מחברים את השניים ומקבלים CubePix: המשחק נושא את שמו.",
-   "pixHi": "היי! אני Pix."
+   "pixHi": "היי! אני Pix.",
+   "evLeft": {
+    "one": "נותר יום אחד",
+    "two": "נותרו יומיים",
+    "other": "נותרו {n} ימים"
+   },
+   "ev_halloween": "הלואין במוזיאון!",
+   "evText_halloween": "עד 30 בנובמבר פתוחה קומת הלואין: 8 תמונות מצמררות, מחתול שחור וכובע מכשפה ועד בית רדוף רוחות והשלד הענק של קוניושי. כל המוזיאון מתחפש לכבוד החג, ואל התקליטים מצטרף ואלס הלואין, ובסיום הקומה Pix מתחפש לפנס דלעת."
   },
   "ur": {
    "tagline": "کیوب بہ کیوب تصویر ظاہر کرو",
@@ -4141,7 +4504,13 @@
    "aboutTitle": "ہمارا تعارف",
    "pixTitle": "Pix سے ملو",
    "pixName": "وہ ایک کیوب ہے، اور اس کا نام Pix ہے۔ دونوں کو ملاؤ تو بنتا ہے CubePix: گیم اسی کے نام پر ہے۔",
-   "pixHi": "ہیلو! میں Pix ہوں۔"
+   "pixHi": "ہیلو! میں Pix ہوں۔",
+   "evLeft": {
+    "one": "{n} دن باقی",
+    "other": "{n} دن باقی"
+   },
+   "ev_halloween": "میوزیم میں ہیلووین!",
+   "evText_halloween": "30 نومبر تک ہیلووین منزل کھلی ہے: کالی بلی اور چڑیل کی ٹوپی سے لے کر آسیب زدہ گھر اور کونییوشی کے دیوقامت ڈھانچے تک 8 ڈراؤنی تصویریں۔ پورا میوزیم تہوار کے لیے سج جاتا ہے، ریکارڈز میں ہیلووین والٹز شامل ہو جاتا ہے، اور منزل مکمل کرنے پر Pix جیک او لینٹرن بن جاتا ہے۔"
   },
   "ar": {
    "tagline": "اكشف اللوحة مكعبًا بعد مكعب",
@@ -4185,7 +4554,17 @@
    "aboutTitle": "من نحن",
    "pixTitle": "تعرّف إلى Pix",
    "pixName": "إنه مكعّب (Cube)، واسمه Pix. اجمعهما معًا تحصل على CubePix: اللعبة تحمل اسمه.",
-   "pixHi": "مرحبًا! أنا Pix."
+   "pixHi": "مرحبًا! أنا Pix.",
+   "evLeft": {
+    "zero": "بقي {n} يوم",
+    "one": "بقي يوم واحد",
+    "two": "بقي يومان",
+    "few": "بقيت {n} أيام",
+    "many": "بقي {n} يومًا",
+    "other": "بقي {n} يوم"
+   },
+   "ev_halloween": "هالوين في المتحف!",
+   "evText_halloween": "حتى 30 نوفمبر يظل طابق هالوين مفتوحًا: 8 لوحات مخيفة، من القطة السوداء وقبعة الساحرة إلى البيت المسكون وهيكل كونييوشي العظمي العملاق. يرتدي المتحف كله ثوب الاحتفال، وينضم فالس هالوين إلى الأسطوانات، وعند إكمال الطابق يتنكّر Pix في هيئة فانوس يقطين."
   },
   "ps": {
    "tagline": "انځور مکعب په مکعب څرګند کړه",
@@ -4217,7 +4596,13 @@
    "aboutTitle": "زموږ په اړه",
    "pixTitle": "له Pix سره وپېژنه",
    "pixName": "هغه یو مکعب دی — په انګرېزي Cube — او نوم یې Pix دی. دواړه یوځای کړه، CubePix جوړېږي: لوبه د هغه نوم لري.",
-   "pixHi": "سلام! زه Pix یم."
+   "pixHi": "سلام! زه Pix یم.",
+   "evLeft": {
+    "one": "{n} ورځ پاتې ده",
+    "other": "{n} ورځې پاتې دي"
+   },
+   "ev_halloween": "په موزیم کې هالووین!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "fa": {
    "tagline": "تصویر را مکعب به مکعب آشکار کن",
@@ -4249,7 +4634,13 @@
    "aboutTitle": "درباره ما",
    "pixTitle": "با Pix آشنا شو",
    "pixName": "او یک مکعب (Cube) است و اسمش Pix. این دو را کنار هم بگذار تا CubePix شود: بازی اسم او را دارد.",
-   "pixHi": "سلام! من Pix هستم."
+   "pixHi": "سلام! من Pix هستم.",
+   "evLeft": {
+    "one": "{n} روز مانده",
+    "other": "{n} روز مانده"
+   },
+   "ev_halloween": "هالووین در موزه!",
+   "evText_halloween": "تا ۳۰ نوامبر طبقهٔ هالووین باز است: ۸ تصویر ترسناک، از گربه سیاه و کلاه جادوگر تا خانه جن‌زده و اسکلت غول‌پیکر کونیوشی. تمام موزه برای جشن لباس عوض می‌کند، والس هالووین به صفحه‌های موسیقی اضافه می‌شود و با تمام کردن طبقه، Pix به فانوس کدو تبدیل می‌شود."
   },
   "am": {
    "tagline": "ሥዕሉን ኪዩብ በኪዩብ ግለጥ",
@@ -4281,7 +4672,13 @@
    "aboutTitle": "ስለ እኛ",
    "pixTitle": "Pixን ተዋወቅ",
    "pixName": "እሱ ኪዩብ ነው፣ ስሙም Pix ነው። ሁለቱን አንድ ላይ አድርግ፣ CubePix ይሆናል፦ ጨዋታው የእሱን ስም ይዟል።",
-   "pixHi": "ሰላም! እኔ Pix ነኝ።"
+   "pixHi": "ሰላም! እኔ Pix ነኝ።",
+   "evLeft": {
+    "one": "{n} ቀን ቀርቷል",
+    "other": "{n} ቀናት ቀርተዋል"
+   },
+   "ev_halloween": "ሃሎዊን በሙዚየሙ!",
+   "evText_halloween": "እስከ ኖቬምበር 30 ድረስ የሃሎዊን ፎቅ ክፍት ነው፦ ከጥቁር ድመትና ከጠንቋይ ኮፍያ እስከ መናፍስት ያሉበት ቤትና የኩኒዮሺ ግዙፍ አጽም ድረስ 8 አስፈሪ ሥዕሎች። መላው ሙዚየም ለበዓሉ ይዋባል፣ የሃሎዊን ዋልትዝ ከሙዚቃ ዲስኮች ጋር ይቀላቀላል፣ ፎቁን ሲጨርሱ ደግሞ Pix የዱባ መብራት ይሆናል።"
   },
   "ne": {
    "tagline": "क्युब-क्युब गर्दै चित्र खोल",
@@ -4313,7 +4710,13 @@
    "aboutTitle": "हाम्रोबारे",
    "pixTitle": "Pix लाई चिन",
    "pixName": "ऊ क्युब (Cube) हो, र उसको नाम Pix हो। दुवै जोड्दा CubePix बन्छ: गेमले उसकै नाम बोकेको छ।",
-   "pixHi": "नमस्ते! म Pix हुँ।"
+   "pixHi": "नमस्ते! म Pix हुँ।",
+   "evLeft": {
+    "one": "{n} दिन बाँकी",
+    "other": "{n} दिन बाँकी"
+   },
+   "ev_halloween": "संग्रहालयमा ह्यालोविन!",
+   "evText_halloween": "नोभेम्बर ३० सम्म ह्यालोविन तला खुला छ: कालो बिरालो र बोक्सीको टोपीदेखि भुतहा घर र कुनियोशीको विशाल कंकालसम्म ८ वटा डरलाग्दा चित्र। सिङ्गो संग्रहालय चाडका लागि सजिन्छ, रेकर्डहरूमा ह्यालोविन वाल्ट्ज थपिन्छ, र तला पूरा गर्दा Pix ज्याक-ओ-ल्यान्टर्न बन्छ।"
   },
   "mr": {
    "tagline": "क्यूब-क्यूबने चित्र उलगड",
@@ -4345,7 +4748,13 @@
    "aboutTitle": "आमच्याबद्दल",
    "pixTitle": "Pix ला भेट",
    "pixName": "तो एक क्यूब आहे, आणि त्याचे नाव Pix. दोन्ही जोडले की होते CubePix: गेमला त्याचेच नाव आहे.",
-   "pixHi": "नमस्कार! मी Pix."
+   "pixHi": "नमस्कार! मी Pix.",
+   "evLeft": {
+    "one": "{n} दिवस बाकी",
+    "other": "{n} दिवस बाकी"
+   },
+   "ev_halloween": "संग्रहालयात हॅलोवीन!",
+   "evText_halloween": "३० नोव्हेंबरपर्यंत हॅलोवीन मजला खुला आहे: काळी मांजर आणि चेटकिणीची टोपी ते झपाटलेले घर आणि कुनियोशीचा अवाढव्य सांगाडा अशी ८ भीतीदायक चित्रे. संपूर्ण संग्रहालय सणासाठी सजते, रेकॉर्ड्समध्ये हॅलोवीन वॉल्ट्झ सामील होतो आणि मजला पूर्ण केल्यावर Pix जॅक-ओ-लँटर्न बनतो."
   },
   "hi": {
    "tagline": "क्यूब-दर-क्यूब तस्वीर खोलो",
@@ -4377,7 +4786,13 @@
    "aboutTitle": "हमारे बारे में",
    "pixTitle": "Pix से मिलो",
    "pixName": "वह एक क्यूब है, और उसका नाम Pix है। दोनों को मिलाओ तो बनता है CubePix: गेम उसी के नाम पर है।",
-   "pixHi": "नमस्ते! मैं Pix हूँ।"
+   "pixHi": "नमस्ते! मैं Pix हूँ।",
+   "evLeft": {
+    "one": "{n} दिन बाकी",
+    "other": "{n} दिन बाकी"
+   },
+   "ev_halloween": "म्यूज़ियम में हैलोवीन!",
+   "evText_halloween": "30 नवंबर तक हैलोवीन मंज़िल खुली है: काली बिल्ली और चुड़ैल की टोपी से लेकर भुतहा घर और कुनियोशी के विशाल कंकाल तक 8 डरावनी तस्वीरें। पूरा म्यूज़ियम त्योहार के लिए सज जाता है, रिकॉर्ड्स में हैलोवीन वाल्ट्ज़ जुड़ जाता है, और मंज़िल पूरी करने पर Pix जैक-ओ-लैंटर्न बन जाता है।"
   },
   "as": {
    "tagline": "কিউবে কিউবে ছবিখন প্ৰকাশ কৰা",
@@ -4409,7 +4824,13 @@
    "aboutTitle": "আমাৰ বিষয়ে",
    "pixTitle": "Pix-ৰ সৈতে চিনাকি হোৱা",
    "pixName": "সি এটা কিউব, আৰু তাৰ নাম Pix। দুয়োটা একেলগ কৰিলে হয় CubePix: গেমটোৱে তাৰেই নাম বহন কৰে।",
-   "pixHi": "নমস্কাৰ! মই Pix।"
+   "pixHi": "নমস্কাৰ! মই Pix।",
+   "evLeft": {
+    "one": "আৰু {n} দিন বাকী",
+    "other": "আৰু {n} দিন বাকী"
+   },
+   "ev_halloween": "সংগ্ৰহালয়ত হেল'ৱিন!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "bn": {
    "tagline": "কিউবে কিউবে ছবি ফুটিয়ে তোলো",
@@ -4441,7 +4862,13 @@
    "aboutTitle": "আমাদের কথা",
    "pixTitle": "Pix-এর সঙ্গে পরিচয়",
    "pixName": "ও একটা কিউব, আর ওর নাম Pix। দুটো জুড়ে দিলেই CubePix: গেমটার নাম ওরই নামে।",
-   "pixHi": "হাই! আমি Pix।"
+   "pixHi": "হাই! আমি Pix।",
+   "evLeft": {
+    "one": "আর {n} দিন বাকি",
+    "other": "আর {n} দিন বাকি"
+   },
+   "ev_halloween": "জাদুঘরে হ্যালোইন!",
+   "evText_halloween": "৩০ নভেম্বর পর্যন্ত হ্যালোইন তলা খোলা: কালো বিড়াল আর ডাইনির টুপি থেকে ভূতুড়ে বাড়ি এবং কুনিয়োশির বিশাল কঙ্কাল পর্যন্ত ৮টি গা-ছমছমে ছবি। পুরো জাদুঘর উৎসবের সাজে সেজে ওঠে, রেকর্ডে যোগ হয় হ্যালোইন ওয়াল্টজ, আর তলাটি শেষ করলে Pix সেজে ওঠে জ্যাক-ও-ল্যান্টার্ন।"
   },
   "pa": {
    "tagline": "ਕਿਊਬ-ਦਰ-ਕਿਊਬ ਤਸਵੀਰ ਉਭਾਰੋ",
@@ -4473,7 +4900,13 @@
    "aboutTitle": "ਸਾਡੇ ਬਾਰੇ",
    "pixTitle": "Pix ਨੂੰ ਮਿਲੋ",
    "pixName": "ਉਹ ਇੱਕ ਕਿਊਬ ਹੈ, ਅਤੇ ਉਸਦਾ ਨਾਂ Pix ਹੈ। ਦੋਵਾਂ ਨੂੰ ਜੋੜੋ ਤਾਂ ਬਣਦਾ ਹੈ CubePix: ਗੇਮ ਦਾ ਨਾਂ ਉਸੇ ਦੇ ਨਾਂ 'ਤੇ ਹੈ।",
-   "pixHi": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ Pix ਹਾਂ।"
+   "pixHi": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ Pix ਹਾਂ।",
+   "evLeft": {
+    "one": "{n} ਦਿਨ ਬਾਕੀ",
+    "other": "{n} ਦਿਨ ਬਾਕੀ"
+   },
+   "ev_halloween": "ਅਜਾਇਬਘਰ ਵਿੱਚ ਹੈਲੋਵੀਨ!",
+   "evText_halloween": "30 ਨਵੰਬਰ ਤੱਕ ਹੈਲੋਵੀਨ ਮੰਜ਼ਿਲ ਖੁੱਲ੍ਹੀ ਹੈ: ਕਾਲੀ ਬਿੱਲੀ ਅਤੇ ਡੈਣ ਦੀ ਟੋਪੀ ਤੋਂ ਲੈ ਕੇ ਭੂਤੀਆ ਘਰ ਅਤੇ ਕੁਨੀਯੋਸ਼ੀ ਦੇ ਵਿਸ਼ਾਲ ਪਿੰਜਰ ਤੱਕ 8 ਡਰਾਉਣੀਆਂ ਤਸਵੀਰਾਂ। ਸਾਰਾ ਮਿਊਜ਼ੀਅਮ ਤਿਉਹਾਰ ਲਈ ਸਜ ਜਾਂਦਾ ਹੈ, ਰਿਕਾਰਡਾਂ ਵਿੱਚ ਹੈਲੋਵੀਨ ਵਾਲਟਜ਼ ਜੁੜ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਮੰਜ਼ਿਲ ਪੂਰੀ ਕਰਨ ’ਤੇ Pix ਜੈਕ-ਓ-ਲੈਂਟਰਨ ਬਣ ਜਾਂਦਾ ਹੈ।"
   },
   "gu": {
    "tagline": "ક્યુબે ક્યુબે ચિત્ર ખોલ",
@@ -4505,7 +4938,13 @@
    "aboutTitle": "અમારા વિશે",
    "pixTitle": "Pix ને મળ",
    "pixName": "તે ક્યુબ છે, અને તેનું નામ Pix છે. બંનેને જોડ તો મળે CubePix: ગેમ તેનું નામ ધરાવે છે.",
-   "pixHi": "હાય! હું Pix છું."
+   "pixHi": "હાય! હું Pix છું.",
+   "evLeft": {
+    "one": "{n} દિવસ બાકી",
+    "other": "{n} દિવસ બાકી"
+   },
+   "ev_halloween": "મ્યુઝિયમમાં હેલોવીન!",
+   "evText_halloween": "30 નવેમ્બર સુધી હેલોવીન માળ ખુલ્લો છે: કાળી બિલાડી અને ડાકણની ટોપીથી લઈને ભૂતિયું ઘર અને કુનિયોશીના વિશાળ હાડપિંજર સુધી 8 બિહામણાં ચિત્રો. આખું મ્યુઝિયમ તહેવાર માટે સજી જાય છે, રેકોર્ડ્સમાં હેલોવીન વોલ્ટ્ઝ ઉમેરાય છે, અને માળ પૂરો કરતાં Pix જેક-ઓ-લેન્ટર્ન બની જાય છે."
   },
   "or": {
    "tagline": "କ୍ୟୁବ୍ ପରେ କ୍ୟୁବ୍, ଛବି ଫୁଟାଅ",
@@ -4537,7 +4976,13 @@
    "aboutTitle": "ଆମ ବିଷୟରେ",
    "pixTitle": "Pix ସହ ପରିଚିତ ହୁଅ",
    "pixName": "ସେ ଗୋଟେ କ୍ୟୁବ୍, ଆଉ ତା'ର ନାମ Pix। ଦୁଇଟିକୁ ଯୋଡ଼ିଲେ ହୁଏ CubePix: ଗେମଟି ତା'ର ନାମ ବହନ କରେ।",
-   "pixHi": "ନମସ୍କାର! ମୁଁ Pix।"
+   "pixHi": "ନମସ୍କାର! ମୁଁ Pix।",
+   "evLeft": {
+    "one": "{n} ଦିନ ବାକି",
+    "other": "{n} ଦିନ ବାକି"
+   },
+   "ev_halloween": "ସଂଗ୍ରହାଳୟରେ ହାଲୋଇନ୍!",
+   "evText_halloween": "Until November 30, a Halloween floor is open: 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. The whole museum dresses up for the holiday, a Halloween waltz joins the records, and finishing the floor dresses Pix as a jack-o’-lantern."
   },
   "ta": {
    "tagline": "க்யூப் க்யூபாகப் படத்தை வெளிப்படுத்து",
@@ -4569,7 +5014,13 @@
    "aboutTitle": "எங்களைப் பற்றி",
    "pixTitle": "Pix-ஐச் சந்தி",
    "pixName": "அவன் ஒரு க்யூப், அவன் பெயர் Pix. இரண்டையும் சேர்த்தால் CubePix: கேம் அவன் பெயரையே சுமக்கிறது.",
-   "pixHi": "ஹாய்! நான் Pix."
+   "pixHi": "ஹாய்! நான் Pix.",
+   "evLeft": {
+    "one": "இன்னும் {n} நாள்",
+    "other": "இன்னும் {n} நாட்கள்"
+   },
+   "ev_halloween": "அருங்காட்சியகத்தில் ஹாலோவீன்!",
+   "evText_halloween": "நவம்பர் 30 வரை ஹாலோவீன் தளம் திறந்திருக்கிறது: கருப்புப் பூனை, சூனியக்காரியின் தொப்பி முதல் பேய் வீடு, குனியோஷியின் பிரம்மாண்ட எலும்புக்கூடு வரை 8 திகில் படங்கள். அருங்காட்சியகம் முழுவதும் விழாக்கோலம் பூண்டிருக்கும், இசைத்தட்டுகளில் ஹாலோவீன் வால்ட்ஸ் சேரும், தளத்தை முடித்தால் Pix பூசணி விளக்காக மாறிவிடும்."
   },
   "te": {
    "tagline": "క్యూబ్ క్యూబ్‌గా చిత్రాన్ని బయటపెట్టు",
@@ -4601,7 +5052,13 @@
    "aboutTitle": "మా గురించి",
    "pixTitle": "Pixని కలువు",
    "pixName": "అతను ఒక క్యూబ్ (Cube), అతని పేరు Pix. రెండూ కలిపితే CubePix: గేమ్‌కి అతని పేరే పెట్టారు.",
-   "pixHi": "హాయ్! నేను Pix."
+   "pixHi": "హాయ్! నేను Pix.",
+   "evLeft": {
+    "one": "{n} రోజు మిగిలింది",
+    "other": "{n} రోజులు మిగిలాయి"
+   },
+   "ev_halloween": "మ్యూజియంలో హాలోవీన్!",
+   "evText_halloween": "నవంబర్ 30 వరకు హాలోవీన్ అంతస్తు తెరిచి ఉంది: నల్ల పిల్లి, మంత్రగత్తె టోపీ నుంచి దెయ్యాల ఇల్లు, కునియోషి గీసిన భారీ అస్థిపంజరం వరకు 8 భయపెట్టే చిత్రాలు. మ్యూజియం మొత్తం పండుగకు ముస్తాబవుతుంది, రికార్డులకు హాలోవీన్ వాల్ట్జ్ జతవుతుంది, అంతస్తును పూర్తి చేస్తే Pix గుమ్మడికాయ దీపంగా మారిపోతుంది."
   },
   "kn": {
    "tagline": "ಒಂದೊಂದೇ ಕ್ಯೂಬ್‌ನಿಂದ ಚಿತ್ರ ಮೂಡಿಸು",
@@ -4633,7 +5090,13 @@
    "aboutTitle": "ನಮ್ಮ ಬಗ್ಗೆ",
    "pixTitle": "Pix ಅನ್ನು ಭೇಟಿಯಾಗು",
    "pixName": "ಅವನು ಕ್ಯೂಬ್, ಅವನ ಹೆಸರು Pix. ಎರಡನ್ನೂ ಸೇರಿಸಿದರೆ CubePix: ಗೇಮ್‌ಗೆ ಅವನದೇ ಹೆಸರು.",
-   "pixHi": "ಹಾಯ್! ನಾನು Pix."
+   "pixHi": "ಹಾಯ್! ನಾನು Pix.",
+   "evLeft": {
+    "one": "{n} ದಿನ ಬಾಕಿ",
+    "other": "{n} ದಿನಗಳು ಬಾಕಿ"
+   },
+   "ev_halloween": "ಮ್ಯೂಸಿಯಂನಲ್ಲಿ ಹ್ಯಾಲೋವೀನ್!",
+   "evText_halloween": "ನವೆಂಬರ್ 30ರವರೆಗೆ ಹ್ಯಾಲೋವೀನ್ ಮಹಡಿ ತೆರೆದಿದೆ: ಕಪ್ಪು ಬೆಕ್ಕು, ಮಾಟಗಾತಿಯ ಟೋಪಿಯಿಂದ ಭೂತದ ಮನೆ ಮತ್ತು ಕುನಿಯೋಶಿಯ ದೈತ್ಯ ಅಸ್ಥಿಪಂಜರದವರೆಗೆ 8 ಭಯಾನಕ ಚಿತ್ರಗಳು. ಇಡೀ ಮ್ಯೂಸಿಯಂ ಹಬ್ಬಕ್ಕೆ ಸಿಂಗಾರಗೊಳ್ಳುತ್ತದೆ, ರೆಕಾರ್ಡ್‌ಗಳಿಗೆ ಹ್ಯಾಲೋವೀನ್ ವಾಲ್ಟ್ಜ್ ಸೇರುತ್ತದೆ, ಮತ್ತು ಮಹಡಿ ಮುಗಿಸಿದರೆ Pix ಕುಂಬಳಕಾಯಿ ದೀಪದ ವೇಷ ತೊಡುತ್ತದೆ."
   },
   "ml": {
    "tagline": "ക്യൂബ് ക്യൂബായി ചിത്രം തെളിയിക്കൂ",
@@ -4665,7 +5128,13 @@
    "aboutTitle": "ഞങ്ങളെപ്പറ്റി",
    "pixTitle": "Pix-നെ പരിചയപ്പെടൂ",
    "pixName": "അവൻ ഒരു ക്യൂബാണ്, ഇംഗ്ലീഷിൽ Cube, അവന്റെ പേര് Pix. രണ്ടും ചേർത്താൽ CubePix: ഗെയിമിന് അവന്റെ പേരാണ്.",
-   "pixHi": "ഹായ്! ഞാൻ Pix."
+   "pixHi": "ഹായ്! ഞാൻ Pix.",
+   "evLeft": {
+    "one": "{n} ദിവസം ബാക്കി",
+    "other": "{n} ദിവസം ബാക്കി"
+   },
+   "ev_halloween": "മ്യൂസിയത്തിൽ ഹാലോവീൻ!",
+   "evText_halloween": "നവംബർ 30 വരെ ഹാലോവീൻ നില തുറന്നിരിക്കുന്നു: കറുത്ത പൂച്ചയും മന്ത്രവാദിനിയുടെ തൊപ്പിയും മുതൽ പ്രേതഭവനവും കുനിയോഷിയുടെ ഭീമൻ അസ്ഥികൂടവും വരെ 8 പേടിപ്പെടുത്തുന്ന ചിത്രങ്ങൾ. മ്യൂസിയം മുഴുവൻ ആഘോഷത്തിനായി അണിഞ്ഞൊരുങ്ങുന്നു, റെക്കോർഡുകളിൽ ഹാലോവീൻ വാൾട്സ് ചേരുന്നു, നില പൂർത്തിയാക്കുമ്പോൾ Pix മത്തങ്ങാ വിളക്കായി വേഷം മാറുന്നു."
   },
   "si": {
    "tagline": "කියුබෙන් කියුබ පින්තූරය මතු කරන්න",
@@ -4697,7 +5166,13 @@
    "aboutTitle": "අප ගැන",
    "pixTitle": "Pix හඳුනාගන්න",
    "pixName": "එයා කියුබ් එකක් (ඉංග්‍රීසියෙන් Cube), එයාගේ නම Pix. දෙක එකතු කළාම CubePix: ගේම් එකට තියෙන්නේ එයාගේ නම.",
-   "pixHi": "හායි! මම Pix."
+   "pixHi": "හායි! මම Pix.",
+   "evLeft": {
+    "one": "තව දින {n}යි",
+    "other": "තව දින {n}යි"
+   },
+   "ev_halloween": "කෞතුකාගාරයේ හැලොවීන්!",
+   "evText_halloween": "නොවැම්බර් 30 දක්වා හැලොවීන් මහල විවෘතයි: කළු පූසා සහ මායාකාරියගේ තොප්පියේ සිට හොල්මන් ගෙදර සහ කුනියොෂිගේ දැවැන්ත ඇටසැකිල්ල දක්වා බිය උපදවන සිතුවම් 8ක්. මුළු කෞතුකාගාරයම උත්සවයට සැරසෙයි, තැටිවලට හැලොවීන් වෝල්ට්ස් එකතු වෙයි, මහල අවසන් කළ විට Pix වට්ටක්කා පහනක් බවට පත් වෙයි."
   },
   "th": {
    "tagline": "เผยภาพทีละคิวบ์",
@@ -4726,7 +5201,12 @@
    "aboutTitle": "เกี่ยวกับเรา",
    "pixTitle": "มารู้จัก Pix กัน",
    "pixName": "เขาเป็นคิวบ์ (Cube) และชื่อของเขาคือ Pix เอาสองคำมารวมกันก็ได้ CubePix: เกมนี้ใช้ชื่อของเขา",
-   "pixHi": "สวัสดี! เราชื่อ Pix นะ"
+   "pixHi": "สวัสดี! เราชื่อ Pix นะ",
+   "evLeft": {
+    "other": "เหลืออีก {n} วัน"
+   },
+   "ev_halloween": "ฮาโลวีนที่พิพิธภัณฑ์!",
+   "evText_halloween": "ถึงวันที่ 30 พฤศจิกายน ชั้นฮาโลวีนเปิดให้เข้าชม: ภาพสยองขวัญ 8 ภาพ ตั้งแต่แมวดำและหมวกแม่มดไปจนถึงบ้านผีสิงและโครงกระดูกยักษ์ของคูนิโยชิ พิพิธภัณฑ์ทั้งหลังแต่งตัวต้อนรับเทศกาล วอลทซ์ฮาโลวีนเข้ามาอยู่ในแผ่นเสียง และเมื่อจบชั้นนี้ Pix จะแปลงร่างเป็นโคมฟักทอง"
   },
   "lo": {
    "tagline": "ເປີດເຜີຍຮູບ ເທື່ອລະລູກບາດ",
@@ -4755,7 +5235,12 @@
    "aboutTitle": "ກ່ຽວກັບເຮົາ",
    "pixTitle": "ມາຮູ້ຈັກ Pix",
    "pixName": "ລາວເປັນລູກບາດ (Cube) ແລະ ຊື່ຂອງລາວແມ່ນ Pix ເອົາສອງຄຳມາລວມກັນ ກໍ່ໄດ້ CubePix: ເກມນີ້ໃຊ້ຊື່ຂອງລາວ",
-   "pixHi": "ສະບາຍດີ! ຂ້ອຍແມ່ນ Pix"
+   "pixHi": "ສະບາຍດີ! ຂ້ອຍແມ່ນ Pix",
+   "evLeft": {
+    "other": "ເຫຼືອ {n} ມື້"
+   },
+   "ev_halloween": "ຮາໂລວີນທີ່ຫໍພິພິທະພັນ!",
+   "evText_halloween": "ເຖິງວັນທີ 30 ພະຈິກ ຊັ້ນຮາໂລວີນເປີດແລ້ວ: ຮູບໜ້າຢ້ານ 8 ຮູບ ຕັ້ງແຕ່ແມວດຳ ແລະ ໝວກແມ່ມົດ ຈົນເຖິງເຮືອນຜີສິງ ແລະ ໂຄງກະດູກຍັກຂອງຄຸນິໂຢຊິ. ພິພິທະພັນທັງຫຼັງແຕ່ງຕົວຕ້ອນຮັບບຸນ, ວອລຊ໌ຮາໂລວີນເຂົ້າມາຢູ່ໃນແຜ່ນສຽງ, ແລະ ເມື່ອຈົບຊັ້ນນີ້ Pix ຈະກາຍເປັນໂຄມໝາກອຶ."
   },
   "my": {
    "tagline": "ပုံကို ကုဗတစ်တုံးချင်း ဖော်ပါ",
@@ -4784,7 +5269,12 @@
    "aboutTitle": "ကျွန်ုပ်တို့အကြောင်း",
    "pixTitle": "Pix နဲ့ တွေ့ပါ",
    "pixName": "သူက ကုဗ (Cube) ဖြစ်ပြီး နာမည်က Pix။ နှစ်ခု ပေါင်းလိုက်ရင် CubePix: ဂိမ်းက သူ့နာမည်ကို ဆောင်ထားတယ်။",
-   "pixHi": "ဟိုင်း! ကျွန်တော် Pix ပါ။"
+   "pixHi": "ဟိုင်း! ကျွန်တော် Pix ပါ။",
+   "evLeft": {
+    "other": "{n} ရက် ကျန်တယ်"
+   },
+   "ev_halloween": "ပြတိုက်မှာ ဟယ်လိုဝင်း!",
+   "evText_halloween": "နိုဝင်ဘာ ၃၀ ရက်အထိ ဟယ်လိုဝင်းထပ် ဖွင့်ထားသည်- ကြောင်မည်းနှင့် စုန်းမ ဦးထုပ်မှ သရဲခြောက်တဲ့ အိမ်နှင့် ခုနိယိုရှိ၏ ကြီးမားသော အရိုးစုအထိ ကြောက်စရာပန်းချီကား ၈ ကား။ ပြတိုက်တစ်ခုလုံး ပွဲတော်အတွက် အလှဆင်ထားပြီး ဓာတ်ပြားများထဲသို့ ဟယ်လိုဝင်း ဝေါ့လ်ဇ်သီချင်း ပါဝင်လာကာ ထပ်ကို ပြီးအောင်လုပ်လျှင် Pix သည် ဖရုံသီးမီးအိမ်အဖြစ် ဝတ်စားမည်။"
   },
   "km": {
    "tagline": "បង្ហាញរូបភាពម្ដងមួយគូបៗ",
@@ -4813,7 +5303,12 @@
    "aboutTitle": "អំពីយើង",
    "pixTitle": "ស្គាល់ Pix",
    "pixName": "គេជាគូប ហើយឈ្មោះគេគឺ Pix។ ដាក់ទាំងពីរបញ្ចូលគ្នា អ្នកនឹងបាន CubePix៖ ហ្គេមនេះមានឈ្មោះរបស់គេ។",
-   "pixHi": "សួស្ដី! ខ្ញុំគឺ Pix។"
+   "pixHi": "សួស្ដី! ខ្ញុំគឺ Pix។",
+   "evLeft": {
+    "other": "នៅសល់ {n} ថ្ងៃ"
+   },
+   "ev_halloween": "ហាឡូវីននៅសារមន្ទីរ!",
+   "evText_halloween": "រហូតដល់ថ្ងៃទី ៣០ ខែវិច្ឆិកា ជាន់ហាឡូវីនបើកហើយ៖ ពីឆ្មាខ្មៅ និងមួកមេធ្មប់ ដល់ផ្ទះខ្មោចលង និងគ្រោងឆ្អឹងយក្សរបស់គុនីយ៉ូស៊ី មានរូបភាពរន្ធត់ ៨។ សារមន្ទីរទាំងមូលតុបតែងខ្លួនទទួលពិធី ចង្វាក់វ៉ាល់ហាឡូវីនចូលរួមក្នុងថាសចម្រៀង ហើយពេលបញ្ចប់ជាន់នេះ Pix នឹងប្ដូរទៅជាចង្កៀងល្ពៅ។"
   },
   "ko": {
    "tagline": "큐브 하나씩 그림을 드러내요",
@@ -4842,7 +5337,12 @@
    "aboutTitle": "소개",
    "pixTitle": "Pix를 소개해요",
    "pixName": "Pix는 큐브, 영어로 Cube예요. 그리고 이름은 Pix죠. 둘을 합치면 CubePix! 게임 이름에 Pix의 이름이 담겨 있어요.",
-   "pixHi": "안녕하세요! 저는 Pix예요."
+   "pixHi": "안녕하세요! 저는 Pix예요.",
+   "evLeft": {
+    "other": "{n}일 남음"
+   },
+   "ev_halloween": "박물관의 핼러윈!",
+   "evText_halloween": "11월 30일까지 핼러윈 층이 열려 있어요. 검은 고양이와 마녀 모자부터 유령의 집, 구니요시의 거대한 해골까지 오싹한 그림 8점이 기다립니다. 미술관 전체가 축제 분위기로 단장하고, 레코드에는 핼러윈 왈츠가 더해지며, 층을 완성하면 Pix가 잭오랜턴으로 변신해요."
   },
   "ja": {
    "tagline": "キューブで絵を描き出そう",
@@ -4871,7 +5371,12 @@
    "aboutTitle": "私たちについて",
    "pixTitle": "Pixを紹介します",
    "pixName": "Pixはキューブ、英語でCube。そして名前はPix。ふたつを合わせるとCubePix。ゲームの名前は、Pixの名前でもあるんです。",
-   "pixHi": "こんにちは！ぼくはPixだよ。"
+   "pixHi": "こんにちは！ぼくはPixだよ。",
+   "evLeft": {
+    "other": "あと{n}日"
+   },
+   "ev_halloween": "美術館のハロウィン！",
+   "evText_halloween": "11月30日まで、ハロウィンのフロアがオープン中。黒猫や魔女の帽子から、おばけ屋敷、国芳の巨大な骸骨まで、ぞくぞくする絵が8枚そろっています。美術館全体がお祝いの装いに変わり、レコードにはハロウィンのワルツが仲間入り。フロアを完成させると、Pixがジャック・オー・ランタンに変身します。"
   },
   "zh-CN": {
    "tagline": "用方块一块块揭开画作",
@@ -4900,7 +5405,12 @@
    "aboutTitle": "关于我们",
    "pixTitle": "认识一下 Pix",
    "pixName": "他是一个方块（Cube），名字叫 Pix。两者合在一起就是 CubePix：游戏用的正是他的名字。",
-   "pixHi": "你好！我是 Pix。"
+   "pixHi": "你好！我是 Pix。",
+   "evLeft": {
+    "other": "还剩 {n} 天"
+   },
+   "ev_halloween": "博物馆里的万圣节！",
+   "evText_halloween": "11 月 30 日前，万圣节楼层开放：8 幅诡异画作，从黑猫、女巫帽到鬼屋，再到歌川国芳笔下的巨大骷髅。整座博物馆换上节日装扮，万圣节华尔兹加入唱片集，完成这一层后，Pix 还会变身南瓜灯。"
   },
   "zh-TW": {
    "tagline": "用方塊一塊塊揭開畫作",
@@ -4929,7 +5439,12 @@
    "aboutTitle": "關於我們",
    "pixTitle": "認識 Pix",
    "pixName": "他是一顆方塊，英文叫 Cube，名字叫 Pix。兩個合在一起就是 CubePix：遊戲的名字裡，就有他的名字。",
-   "pixHi": "嗨！我是 Pix。"
+   "pixHi": "嗨！我是 Pix。",
+   "evLeft": {
+    "other": "剩 {n} 天"
+   },
+   "ev_halloween": "博物館過萬聖節！",
+   "evText_halloween": "11 月 30 日前，萬聖節樓層開放：8 幅詭異畫作，從黑貓、女巫帽到鬼屋，再到歌川國芳筆下的巨大骷髏。整座博物館換上節慶裝扮，萬聖節華爾滋加入唱片收藏，完成這一層後，Pix 還會變身南瓜燈。"
   }
  },
  "logo": "<div class=\"plogo\" role=\"img\" aria-label=\"CubePix\"><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.00s\"><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.00s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.05s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.10s\"></i><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.15s\"></i><b></b><b></b><b></b><b></b><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i><i style=\"--c:#FF3CAC;--ex:#6b1948;--pd:0.20s\"></i></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.16s\"><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.07s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.12s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.17s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.22s\"></i><b></b><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><i style=\"--c:#FFD60A;--ex:#6b5a04;--pd:0.27s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.32s\"><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.14s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.19s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.24s\"></i><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><b></b><b></b><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.29s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><i style=\"--c:#00F5D4;--ex:#006759;--pd:0.34s\"></i><b></b></div><div class=\"pl-l\" style=\"--cols:4;--dl:0.48s\"><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.21s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.26s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.31s\"></i><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.36s\"></i><b></b><b></b><b></b><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i><i style=\"--c:#B07CFF;--ex:#4a346b;--pd:0.41s\"></i></div></div><div class=\"pl-row\"><div class=\"pl-l\" style=\"--cols:4;--dl:0.64s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.28s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.33s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.38s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.43s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.48s\"></i><b></b><b></b><b></b></div><div class=\"pl-l\" style=\"--cols:3;--dl:0.80s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.35s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.40s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.45s\"></i><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.50s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.55s\"></i></div><div class=\"pl-l\" style=\"--cols:5;--dl:0.96s\"><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.42s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.47s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.52s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.57s\"></i><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i><b></b><b></b><b></b><i style=\"--c:#ffffff;--ex:#ff3cac;--pd:0.62s\"></i></div></div></div>"

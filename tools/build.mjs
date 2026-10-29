@@ -5,7 +5,7 @@
 // (no dates, no randomness): the same sources → the same files.
 //   npm run build            warns about missing translations (English is shown there)
 //   npm run build -- --strict   fails on them instead (what npm test runs)
-import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { brandJson, zip, kitFiles, beatGraph, codeParts, dlCards } from './brand.mjs';
 
 const ROOT = new URL('../', import.meta.url);
@@ -44,7 +44,8 @@ for (const L of IDS) {
   for (const [k, en] of Object.entries(CP.S.en)) {
     const v = snap?.[k] ?? sup.S?.[k];
     if (v == null) { problems.push(`${L}: CubePix «${k}» is neither on the CubePix site nor in the supplement (src/i18n/${L}.json → cubepix.S)`); S[L]['cp:' + k] = en; continue; }
-    if ((typeof en === 'object') !== (typeof v === 'object') || (typeof v === 'object' && (v.other == null || forms(v).some((f) => !f.includes('{n}'))))) problems.push(`${L}: CubePix «${k}» must be plural forms {one, …, other}, each with {n}`);
+    // the game's words may say a small number as a word (ar «يوم واحد», he «יומיים» — «one day», «two days»): {n} is a must in «other» only
+    if ((typeof en === 'object') !== (typeof v === 'object') || (typeof v === 'object' && (v.other == null || !String(v.other).includes('{n}')))) problems.push(`${L}: CubePix «${k}» must be plural forms {one, …, other}, «other» with {n}`);
     if (forms(v).some((f) => !String(f).trim())) problems.push(`${L}: CubePix «${k}» is empty`);
     S[L]['cp:' + k] = v;
   }
@@ -131,7 +132,13 @@ const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: C
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
 const enPics = Object.fromEntries(Object.keys(CP.pics).map((p) => [p, CP.pics[p].en]));
 const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cpLangs: Object.keys(CP.S), counts,
-  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics }, od: OD.levels };
+  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels };
+// a CubePix holiday (its site's own dates and words, src/cubepix.json → events): a card in the CubePix world, shown by the page only
+// while the holiday is on (the visitor's clock, like the game) → the holiday on the CubePix site; its picture — assets/games/cubepix-<event>.webp
+const cpEvents = Object.keys(CP.events || {}).map((ev) => { const pic = `assets/games/cubepix-${ev}.webp`;
+  return `<a class="cp-ev" href="${G.cubepix.site}#event" data-lang-link="cp" data-ev="${ev}" hidden>` +
+    (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
+    `<span class="cp-ev-tx"><b data-t="cp:ev_${ev}"></b><span data-t="cp:evText_${ev}"></span><em><span class="cp-ev-left"></span> →</em></span></a>`; }).join('\n');
 // one words file per language and page — the page fetches the visitor's (English rides in the page itself)
 const langFiles = (dir, make) => { mkdirSync(new URL(dir, ROOT), { recursive: true });
   for (const f of readdirSync(new URL(dir, ROOT))) if (!IDS.includes(f.replace(/\.json$/, ''))) rmSync(new URL(dir + f, ROOT));
@@ -154,7 +161,7 @@ const fill = (html) => {
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
-    .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo)
+    .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
       url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon,
