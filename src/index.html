@@ -147,6 +147,20 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 
 /* CubePix — its own pixel world: the game's logo, pixel chips and buttons, the museum's gold frame */
 .cp .badge{background:#FFD60A;color:#1a1300;box-shadow:0 0 24px rgba(255,214,10,.4);}
+/* CubePix is out: «Out now» with a live dot + the version, pixel-style (as the Orbit Dash world shows its own) */
+.cp-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+.cp .badge::before{content:"";width:8px;height:8px;background:#1a1300;animation:live 1.6s ease-in-out infinite;}
+.cp-ver{display:inline-flex;align-items:center;padding:6px 11px;margin:3px;font:900 13px/1 var(--f);letter-spacing:.12em;color:#9df5c2;background:#15123a;
+  box-shadow:0 -3px 0 0 #2f6b52,0 3px 0 0 #2f6b52,-3px 0 0 0 #2f6b52,3px 0 0 0 #2f6b52;}
+/* the Google Play button of a released game: Android green, a soft pulse and a light sweeping across */
+.px-gp{position:relative;overflow:hidden;background:linear-gradient(180deg,#1d1846,#0b0a18);color:#fff;
+  box-shadow:0 -4px 0 0 #3ddc84,0 4px 0 0 #3ddc84,-4px 0 0 0 #3ddc84,4px 0 0 0 #3ddc84,0 0 22px rgba(61,220,132,.4);animation:gpGlow 2.6s ease-in-out infinite;}
+.px-gp::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.2) 46%,transparent 62%);
+  transform:translateX(-130%);animation:gpShine 4.2s ease-in-out 1s infinite;}
+@keyframes gpGlow{0%,100%{box-shadow:0 -4px 0 0 #3ddc84,0 4px 0 0 #3ddc84,-4px 0 0 0 #3ddc84,4px 0 0 0 #3ddc84,0 0 12px rgba(61,220,132,.25);}
+  50%{box-shadow:0 -4px 0 0 #3ddc84,0 4px 0 0 #3ddc84,-4px 0 0 0 #3ddc84,4px 0 0 0 #3ddc84,0 0 30px rgba(61,220,132,.55);}}
+@keyframes gpShine{0%,60%{transform:translateX(-130%);}90%,100%{transform:translateX(130%);}}
+@media (prefers-reduced-motion:reduce){.px-gp,.px-gp::after,.cp .badge::before{animation:none;}}
 .plogo{--cell:10px;position:relative;display:inline-flex;flex-direction:column;gap:calc(var(--cell) + 4px);margin:22px 0 4px;}
 .plogo::before{content:"";position:absolute;inset:-30px -40px;background:radial-gradient(closest-side,rgba(255,60,172,.28),transparent);pointer-events:none;}
 .pl-row{display:flex;gap:var(--cell);}
@@ -625,7 +639,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <h2 class="h2 rv" data-t="worlds.title"></h2>
       <p class="sub rv" data-t="worlds.lead"></p>
       <ul class="jump rv">
-        <li><a href="#cubepix"><img src="{{cp.icon}}" alt="" width="30" height="30">CubePix <small data-t="badge.new"></small></a></li>
+        <li><a href="#cubepix"><img src="{{cp.icon}}" alt="" width="30" height="30">CubePix <small data-t="badge.live"></small></a></li>
         <li><a href="#orbitdash"><img src="{{od.icon}}" alt="" width="30" height="30">Orbit Dash <small data-t="badge.live"></small></a></li>
         <li><a href="#more"><img src="/assets/games/imc-icon.webp" alt="" width="30" height="30" loading="lazy"><span data-t="more.eyebrow"></span></a></li>
       </ul>
@@ -635,7 +649,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
   <section class="chap cp" id="cubepix" data-world="cubepix" data-sec="games" aria-labelledby="cpTitle">
     <div class="wrap chap-in">
       <div class="chap-txt rv">
-        <span class="badge" data-t="badge.new"></span>
+        <div class="cp-tags"><span class="badge" data-t="badge.live"></span><span class="cp-ver" lang="en">{{cp.version}}</span></div>
         <h2 class="sr-only" id="cpTitle">CubePix</h2>
         <div>{{cp.logo}}</div>
         <p class="cp-tagline" data-t="cp:tagline"></p>
@@ -645,7 +659,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         </ul>
         <div class="ctas">
           <a class="btn px-btn px-pink" href="{{cp.demo}}">▶ <span data-t="cp:play"></span></a>
-          <a class="btn px-btn px-dark" href="{{cp.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
+          <a class="btn px-btn px-gp" href="{{cp.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
           <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link="cp" data-t="game.site"></a>
         </div>
         {{cp.events}}
