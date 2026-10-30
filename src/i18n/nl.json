@@ -39,6 +39,12 @@
   "od.new": "**RANGLIJST**: klim in de lijst van jouw land en van de wereld, met 4 wekelijkse toernooien en edelsteenprijzen elke maandag. Stijl je baan — bal, trail, baanvorm en hymne — en win de exclusieve STARDUST-bal en FLARE-trail. Binnenkort op iPhone, en het hele spel speel je nu al in je browser.",
   "od.free": "Gratis",
   "od.offline": "Offline speelbaar",
+  "od.ev_halloween": "Halloween in de baan!",
+  "od.evText_halloween": "Tot en met 30 november verkleedt Orbit Dash zich voor Halloween: het menu wordt een maanverlichte nacht met heksen, vleermuizen, spinnenwebben en pompoenen bij kaarslicht, je bal verandert in een pompoen met een spookachtige WISP-trail — allebei gratis voor Halloween — en drie griezelige nummers komen bij de muziek. Op 1 december verdwijnt alles vanzelf.",
+  "od.evLeft": {
+   "one": "nog {n} dag",
+   "other": "nog {n} dagen"
+  },
   "od.aria": "Orbit Dash — de echte game, live",
   "more.eyebrow": "Meer games",
   "more.title": "Meer van Lewydo",

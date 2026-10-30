@@ -132,9 +132,19 @@ const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: C
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
 const enPics = Object.fromEntries(Object.keys(CP.pics).map((p) => [p, CP.pics[p].en]));
 const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cpLangs: Object.keys(CP.S), counts,
-  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels };
+  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels, odEvents: OD.events || {} };
 // a CubePix holiday (its site's own dates and words, src/cubepix.json → events): a card in the CubePix world, shown by the page only
 // while the holiday is on (the visitor's clock, like the game) → the holiday on the CubePix site; its picture — assets/games/cubepix-<event>.webp
+// an Orbit Dash holiday (the window its site builds in from the game's prototype, src/orbitdash.json → events; words — od.ev_<event>,
+// od.evText_<event>, od.evLeft): a card in the Orbit Dash world, shown only while the holiday is on (the visitor's clock, like the game)
+// → the whole game in the browser, where the holiday already is; its picture — assets/games/orbitdash-<event>.webp (the game's Play event art)
+for (const ev of Object.keys(OD.events || {})) for (const k of ['od.ev_' + ev, 'od.evText_' + ev, 'od.evLeft'])
+  if (!(k in SS.en)) problems.push(`en: the Orbit Dash holiday «${ev}» needs the words «${k}» (src/i18n/*.json → site)`);
+const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/games/orbitdash-${ev}.webp`;
+  return `<a class="od-ev" href="${G.orbitdash.demo}" data-lang-link="od" data-ev="${ev}" hidden>` +
+    (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
+    `<span class="od-ev-tx"><b data-t="od.ev_${ev}"></b><span data-t="od.evText_${ev}"></span>` +
+    `<em><span class="od-ev-left"></span> · <span data-t="od.browser"></span> →</em></span></a>`; }).join('\n');
 const cpEvents = Object.keys(CP.events || {}).map((ev) => { const pic = `assets/games/cubepix-${ev}.webp`;
   return `<a class="cp-ev" href="${G.cubepix.site}#event" data-lang-link="cp" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
@@ -162,7 +172,7 @@ const fill = (html) => {
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
-    .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents)
+    .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
       url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon,

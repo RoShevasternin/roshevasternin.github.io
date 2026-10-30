@@ -39,6 +39,11 @@
   "od.new": "**PERINGKAT**: panjat papan negaramu dan papan dunia, dengan 4 turnamen mingguan dan hadiah permata setiap Senin. Tata orbitmu sesukamu — bola, jejak, bentuk orbit, dan lagu tema — dan menangkan bola STARDUST dan jejak FLARE yang eksklusif. Segera hadir di iPhone, dan seluruh gamenya sudah bisa dimainkan di browser.",
   "od.free": "Gratis",
   "od.offline": "Bisa main offline",
+  "od.ev_halloween": "Halloween di orbit!",
+  "od.evText_halloween": "Sampai 30 November, Orbit Dash berdandan untuk Halloween: menu berubah menjadi malam bulan purnama dengan penyihir, kelelawar, sarang laba-laba, dan labu bercahaya lilin, bolamu berubah menjadi labu dengan jejak WISP yang seram — keduanya gratis selama Halloween — dan tiga lagu menyeramkan bergabung dengan musiknya. Pada 1 Desember semuanya hilang dengan sendirinya.",
+  "od.evLeft": {
+   "other": "{n} hari lagi"
+  },
   "od.aria": "Orbit Dash — game sungguhan, langsung",
   "more.eyebrow": "Game lainnya",
   "more.title": "Lainnya dari Lewydo",

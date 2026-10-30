@@ -39,6 +39,12 @@
   "od.new": "**REÝTING**: ýurduňyň we dünýäniň tablisasynda ýokary çyk, her hepde 4 ýaryş we her duşenbe gymmatbaha daş baýraklary bilen. Orbitaňy bezäp goý — top, yz, orbitanyň şekili we gimn — we aýratyn STARDUST topy bilen FLARE yzyny ýeň. Ýakynda iPhone-da, tutuş oýun bolsa eýýäm brauzerde oýnalýar.",
   "od.free": "Mugt",
   "od.offline": "Internetsiz oýnalýar",
+  "od.ev_halloween": "Orbitada Hellowin!",
+  "od.evText_halloween": "30-njy noýabra çenli Orbit Dash Hellowin üçin bezelýär: menýu jadygöýler, ýarganatlar, möjek torlary we şem yşygyndaky kädiler bilen aýly gijä öwrülýär, topuň arwah ýaly WISP yzy bilen kädä öwrülýär — ikisi hem Hellowin üçin mugt — saza bolsa üç gorkunç aýdym goşulýar. 1-nji dekabrda hemme zat öz-özünden ýitýär.",
+  "od.evLeft": {
+   "one": "{n} gün galdy",
+   "other": "{n} gün galdy"
+  },
   "od.aria": "Orbit Dash — hakyky oýun, göni ýaýlymda",
   "more.eyebrow": "Başga oýunlar",
   "more.title": "Lewydo-dan ýene",

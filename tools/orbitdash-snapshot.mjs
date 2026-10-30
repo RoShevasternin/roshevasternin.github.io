@@ -19,6 +19,17 @@ for (const L of levels) {
   }
 }
 
+// Свята гри (власник 29.10.2026: HALLOWEEN 29.10–30.11, 1 грудня тема гасне сама): вікно — те саме, що сайт гри вшиває зі
+// prototype/haunt.mjs (`"haunt":{"season":{on, from, to}}`; `on: false` — сайт гри тему вимкнув, тоді й картки не буде).
+// Сайт студії показує картку свята лише в ці дні за годинником відвідувача; слова картки — od.ev_<свято>, od.evText_<свято>.
+const events = {};
+const hs = html.match(/"haunt":\{"season":(\{[^}]*\})/);
+if (hs) {
+  const e = JSON.parse(hs[1]), D = /^\d{4}-\d{2}-\d{2}$/;
+  if (!D.test(e.from || '') || !D.test(e.to || '')) throw new Error('вікно HALLOWEEN без дат yyyy-mm-dd: ' + hs[1]);
+  events.halloween = { from: e.from, to: e.to, on: e.on !== false };
+}
+
 // Беремо лише те, що потрібно вітрині на сайті студії: без адрес на звук — його тут не граємо.
 const out = levels.map((L) => ({
   id: L.id, name: L.name, genre: L.genre, dots: L.dots, bpm: L.bpm,
@@ -28,5 +39,7 @@ const out = levels.map((L) => ({
 writeFileSync('src/orbitdash.json', JSON.stringify({
   _about: 'Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs). Руками не правити.',
   levels: out,
+  events,
 }, null, 1) + '\n');
-console.log(`✓ src/orbitdash.json — ${out.length} рівнів: ${out.map((L) => L.name).join(', ')}`);
+console.log(`✓ src/orbitdash.json — ${out.length} рівнів: ${out.map((L) => L.name).join(', ')}` +
+  (Object.keys(events).length ? `; свята: ${Object.entries(events).map(([k, e]) => `${k} ${e.from}…${e.to}${e.on ? '' : ' (вимкнено)'}`).join(', ')}` : ''));

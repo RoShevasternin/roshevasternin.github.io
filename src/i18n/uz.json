@@ -39,6 +39,12 @@
   "od.new": "**REYTING**: mamlakating va dunyo jadvalida yuksal, har hafta 4 ta turnir va har dushanba qimmatbaho tosh sovrinlari bilan. Orbitangni bezat — top, iz, orbita shakli va madhiya — va eksklyuziv STARDUST topi hamda FLARE izini yutib ol. Tez orada iPhone’da ham, butun oʻyin esa hozirdayoq brauzerda oʻynaladi.",
   "od.free": "Bepul",
   "od.offline": "Internetsiz oʻynaladi",
+  "od.ev_halloween": "Orbitada Xellouin!",
+  "od.evText_halloween": "30-noyabrgacha Orbit Dash Xellouinga bezanadi: menyu jodugarlar, koʻrshapalaklar, oʻrgimchak toʻrlari va sham yorugʻidagi qovoqlar bilan oydin tunga aylanadi, toping arvohnamo WISP izi bilan qovoqqa aylanadi — ikkalasi ham Xellouin uchun bepul — musiqaga esa uchta qoʻrqinchli trek qoʻshiladi. 1-dekabrda hammasi oʻz-oʻzidan yoʻqoladi.",
+  "od.evLeft": {
+   "one": "{n} kun qoldi",
+   "other": "{n} kun qoldi"
+  },
   "od.aria": "Orbit Dash — haqiqiy oʻyin, jonli",
   "more.eyebrow": "Yana oʻyinlar",
   "more.title": "Lewydo’dan yana",

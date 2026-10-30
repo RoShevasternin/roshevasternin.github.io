@@ -39,6 +39,11 @@
   "od.new": "**ỌNỌDỤ**: rịgoro na ndepụta mba gị na nke ụwa, ya na asọmpi 4 kwa izu na ihe nrite nkume dị oke ọnụ ahịa kwa Mọnde. Chọọ okirikiri gị mma — bọọlụ, ụzọ, ọdịdị okirikiri na ukwe — meriekwa bọọlụ STARDUST na ụzọ FLARE pụrụ iche. N'oge na-adịghị anya na iPhone, egwuregwu ahụ niile na-agbakwa ugbu a n'ihe nchọgharị gị.",
   "od.free": "N'efu",
   "od.offline": "A na-egwu ya na-enweghị ịntanetị",
+  "od.ev_halloween": "Halloween n'okirikiri!",
+  "od.evText_halloween": "Ruo 30 Nọvemba, Orbit Dash na-eyi ihe maka Halloween: menu na-aghọ abalị ọnwa nwere ndị amoosu, ụsụ, ntanetị ududo na ugu ndị kandụl na-enye ìhè, bọọlụ gị na-aghọ ugu nwere ụzọ WISP dị ka mmụọ — ha abụọ bụ n'efu maka Halloween — na egwu atọ na-atụ egwu na-abanye n'egwu ahụ. Na 1 Disemba, ihe niile ga-apụ n'onwe ha.",
+  "od.evLeft": {
+   "other": "Ụbọchị {n} fọdụrụ"
+  },
   "od.aria": "Orbit Dash — ezigbo egwuregwu, ozugbo",
   "more.eyebrow": "Egwuregwu ndị ọzọ",
   "more.title": "Ihe ndị ọzọ sitere na Lewydo",

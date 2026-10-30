@@ -39,6 +39,13 @@
   "od.new": "**CLASAMENT**: urcă în clasamentul țării tale și în cel mondial, cu 4 turnee săptămânale și premii în nestemate în fiecare luni. Personalizează-ți orbita — minge, urmă, forma orbitei și imn — și câștigă mingea STARDUST și urma FLARE, exclusive. În curând pe iPhone, iar tot jocul poate fi jucat deja în browser.",
   "od.free": "Gratuit",
   "od.offline": "Merge offline",
+  "od.ev_halloween": "Halloween pe orbită!",
+  "od.evText_halloween": "Până pe 30 noiembrie, Orbit Dash se costumează de Halloween: meniul devine o noapte cu lună plină, cu vrăjitoare, lilieci, pânze de păianjen și dovleci la lumina lumânărilor, mingea ta se transformă într-un dovleac cu o urmă fantomatică WISP — amândouă gratuite de Halloween — iar muzicii i se alătură trei piese înfiorătoare. Pe 1 decembrie totul dispare de la sine.",
+  "od.evLeft": {
+   "one": "încă {n} zi",
+   "few": "încă {n} zile",
+   "other": "încă {n} de zile"
+  },
   "od.aria": "Orbit Dash — jocul adevărat, în direct",
   "more.eyebrow": "Alte jocuri",
   "more.title": "Mai multe de la Lewydo",

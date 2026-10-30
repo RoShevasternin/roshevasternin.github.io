@@ -39,6 +39,12 @@
   "od.new": "**RENDITJA**: ngjitu në tabelën e vendit tënd dhe të botës, me 4 turne javore dhe çmime gurësh të çmuar çdo të hënë. Stilo orbitën tënde — topin, gjurmën, formën e orbitës dhe himnin — dhe fito topin STARDUST dhe gjurmën FLARE, ekskluzive. Së shpejti në iPhone, ndërsa gjithë loja luhet tashmë në shfletues.",
   "od.free": "Falas",
   "od.offline": "Luhet pa internet",
+  "od.ev_halloween": "Halloween në orbitë!",
+  "od.evText_halloween": "Deri më 30 nëntor, Orbit Dash vishet për Halloween: menyja bëhet një natë me hënë me shtriga, lakuriqë nate, rrjeta merimangash dhe kunguj nën dritën e qirinjve, topi yt shndërrohet në kungull me një gjurmë fantazmë WISP — të dyja falas për Halloween — dhe muzikës i shtohen tri këngë rrëqethëse. Më 1 dhjetor gjithçka zhduket vetvetiu.",
+  "od.evLeft": {
+   "one": "Mbetet {n} ditë",
+   "other": "Mbeten {n} ditë"
+  },
   "od.aria": "Orbit Dash — loja e vërtetë, drejtpërdrejt",
   "more.eyebrow": "Më shumë lojëra",
   "more.title": "Më shumë nga Lewydo",

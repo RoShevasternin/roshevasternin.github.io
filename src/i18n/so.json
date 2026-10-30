@@ -39,6 +39,12 @@
   "od.new": "**KAALIMAHA**: kor u kac jadwalka dalkaaga iyo kan adduunka, ku jira 4 tartan todobaadle ah iyo abaalmarin dhagax qaali ah Isniin kasta. Qurxi wareeggaaga — kubadda, raad, qaabka wareegga iyo heesta — oo ku guuleyso kubadda STARDUST iyo raadka FLARE ee gaarka ah. Dhawaan iPhone-ka ayay ku imaanaysaa, ciyaarta oo dhanna hadda waxaa lagu ciyaari karaa daalacaha.",
   "od.free": "Bilaash",
   "od.offline": "Waa lagu ciyaari karaa internet la'aan",
+  "od.ev_halloween": "Halloween wareegga ku jira!",
+  "od.evText_halloween": "Ilaa 30 Noofembar, Orbit Dash waxay u labbistaa Halloween: menu-gu wuxuu noqdaa habeen dayax leh oo ay ku jiraan saaxirado, fiidmeerro, shabagga caarada iyo bocorro iftiinka shumaca leh, kubaddaaduna waxay noqotaa bocor leh raad WISP ah oo jinni u eg — labaduba waa bilaash Halloween-ka — muusiggana waxaa ku biira saddex hees oo cabsi leh. 1 Diseembar wax walba si iskood ah ayay u baaba'aan.",
+  "od.evLeft": {
+   "one": "{n} maalin ayaa dhiman",
+   "other": "{n} maalmood ayaa dhiman"
+  },
   "od.aria": "Orbit Dash — ciyaarta dhabta ah, toos",
   "more.eyebrow": "Ciyaaro kale",
   "more.title": "Wax badan oo Lewydo ah",

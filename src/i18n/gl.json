@@ -39,6 +39,12 @@
   "od.new": "**RANKING**: sobe na clasificación do teu país e na mundial, con 4 torneos semanais e premios de xemas cada luns. Personaliza a túa órbita — bola, estela, forma da órbita e himno — e gaña a bola STARDUST e a estela FLARE, exclusivas. Moi pronto no iPhone, e todo o xogo xa se xoga no navegador.",
   "od.free": "Gratuíto",
   "od.offline": "Xógase sen conexión",
+  "od.ev_halloween": "Halloween en órbita!",
+  "od.evText_halloween": "Ata o 30 de novembro, Orbit Dash disfrázase para Halloween: o menú convértese nunha noite de lúa con meigas, morcegos, arañeiras e cabazas á luz das velas, a túa bola transfórmase nunha cabaza cunha estela fantasmal WISP —as dúas de balde por Halloween— e tres temas arrepiantes súmanse á música. O 1 de decembro todo desaparece só.",
+  "od.evLeft": {
+   "one": "queda {n} día",
+   "other": "quedan {n} días"
+  },
   "od.aria": "Orbit Dash — o xogo de verdade, en directo",
   "more.eyebrow": "Máis xogos",
   "more.title": "Máis de Lewydo",

@@ -39,6 +39,12 @@
   "od.new": "**EDETABEL**: tõuse oma riigi ja maailma tabelis, 4 iganädalase turniiri ja iga esmaspäeva kalliskivide auhindadega. Kujunda oma orbiit — pall, jälg, orbiidi kuju ja hümn — ja võida ainulaadne STARDUST-pall ja FLARE-jälg. Varsti ka iPhone'is ning kogu mäng töötab juba brauseris.",
   "od.free": "Tasuta",
   "od.offline": "Töötab ka võrguta",
+  "od.ev_halloween": "Halloween orbiidil!",
+  "od.evText_halloween": "Kuni 30. novembrini paneb Orbit Dash selga halloweeni rõivad: menüüst saab kuuvalgel öö nõidade, nahkhiirte, ämblikuvõrkude ja küünlavalgel kõrvitsatega, sinu pall muutub kõrvitsaks kummitusliku WISP-jäljega — mõlemad halloweeniks tasuta — ja muusikaga liitub kolm õudset lugu. 1. detsembril kaob kõik iseenesest.",
+  "od.evLeft": {
+   "one": "veel {n} päev",
+   "other": "veel {n} päeva"
+  },
   "od.aria": "Orbit Dash — päris mäng, otse",
   "more.eyebrow": "Veel mänge",
   "more.title": "Veel Lewydolt",

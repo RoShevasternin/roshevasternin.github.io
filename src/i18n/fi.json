@@ -39,6 +39,12 @@
   "od.new": "**TULOKSET**: nouse oman maasi ja maailman taulukossa, 4 viikoittaista turnausta ja jalokivipalkintoja joka maanantai. Tyylittele ratasi — pallo, jälki, radan muoto ja hymni — ja voita ainutlaatuinen STARDUST-pallo ja FLARE-jälki. Pian myös iPhonella, ja koko peli on jo pelattavissa selaimessa.",
   "od.free": "Ilmainen",
   "od.offline": "Toimii offline",
+  "od.ev_halloween": "Halloween kiertoradalla!",
+  "od.evText_halloween": "30. marraskuuta asti Orbit Dash pukeutuu halloweeniin: valikosta tulee kuutamoyö noitineen, lepakkoineen, hämähäkinseittineen ja kynttiläkurpitsoineen, pallosi muuttuu kurpitsaksi, jolla on aavemainen WISP-jälki — molemmat ilmaisia halloweenina — ja musiikkiin liittyy kolme karmivaa kappaletta. 1. joulukuuta kaikki katoaa itsestään.",
+  "od.evLeft": {
+   "one": "vielä {n} päivä",
+   "other": "vielä {n} päivää"
+  },
   "od.aria": "Orbit Dash — oikea peli, livenä",
   "more.eyebrow": "Lisää pelejä",
   "more.title": "Lisää Lewydolta",

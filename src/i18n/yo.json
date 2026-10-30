@@ -39,6 +39,11 @@
   "od.new": "**IPÒ**: gun àtẹ orílẹ̀-èdè rẹ àti ti àgbáyé, pẹ̀lú ìdíje 4 ní ọ̀sẹ̀ kọ̀ọ̀kan àti ẹ̀bùn òkúta iyebíye ní gbogbo Ọjọ́ Ajé. Ṣe ìyípo rẹ ní ọ̀ṣọ́ — bọ́ọ̀lù, ipa, àwòrán ìyípo àti orin ọ̀wọ̀ — kí o sì borí bọ́ọ̀lù STARDUST àti ipa FLARE àrà-ọ̀tọ̀. Láìpẹ́ lórí iPhone, gbogbo eré náà sì ti ń ṣeré nínú aṣàwákiri rẹ báyìí.",
   "od.free": "Ọ̀fẹ́",
   "od.offline": "Ó ń ṣiṣẹ́ láìsí íńtánẹ́ẹ̀tì",
+  "od.ev_halloween": "Halloween nínú ìyípo!",
+  "od.evText_halloween": "Títí di 30 Oṣù Kọkànlá, Orbit Dash ń múra fún Halloween: àtòjọ àṣàyàn di alẹ́ òṣùpá tí ó kún fún àwọn àjẹ́, àdán, òwú aláǹtakùn àti elégédé lábẹ́ ìmọ́lẹ̀ àbẹ́là, bọ́ọ̀lù rẹ di elégédé pẹ̀lú ipa WISP bí iwin — méjèèjì lọ́fẹ̀ẹ́ fún Halloween — orin mẹ́ta tó ń dẹ́rù bani sì darapọ̀ mọ́ orin náà. Ní 1 Oṣù Kejìlá, gbogbo rẹ̀ yóò pòórá fúnra rẹ̀.",
+  "od.evLeft": {
+   "other": "Ọjọ́ {n} ló kù"
+  },
   "od.aria": "Orbit Dash — eré gidi, ní tààrà",
   "more.eyebrow": "Àwọn eré míì",
   "more.title": "Síwájú sí i láti Lewydo",

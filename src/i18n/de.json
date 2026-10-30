@@ -39,6 +39,12 @@
   "od.new": "**RANGLISTE**: Steig in der Bestenliste deines Landes und der Welt auf, mit 4 Wochenturnieren und Edelsteinpreisen jeden Montag. Gestalte deinen Orbit — Ball, Spur, Orbitform und Hymne — und gewinne den exklusiven STARDUST-Ball und die FLARE-Spur. Bald auch auf dem iPhone, und das ganze Spiel läuft schon im Browser.",
   "od.free": "Kostenlos",
   "od.offline": "Offline spielbar",
+  "od.ev_halloween": "Halloween im Orbit!",
+  "od.evText_halloween": "Bis zum 30. November verkleidet sich Orbit Dash für Halloween: Das Menü wird zu einer Mondnacht mit Hexen, Fledermäusen, Spinnweben und Kürbissen im Kerzenschein, dein Ball verwandelt sich in einen Kürbis mit einer geisterhaften WISP-Spur — beides gratis zu Halloween — und drei schaurige Tracks kommen zur Musik dazu. Am 1. Dezember verschwindet alles von selbst.",
+  "od.evLeft": {
+   "one": "noch {n} Tag",
+   "other": "noch {n} Tage"
+  },
   "od.aria": "Orbit Dash — das echte Spiel, live",
   "more.eyebrow": "Mehr Spiele",
   "more.title": "Mehr von Lewydo",

@@ -39,6 +39,14 @@
   "od.new": "**ŽEBŘÍČEK**: šplhej v tabulce své země i světové, se 4 týdenními turnaji a cenami v drahokamech každé pondělí. Přizpůsob si svou orbitu — míček, stopu, tvar orbity a hymnu — a vyhraj exkluzivní míček STARDUST a stopu FLARE. Brzy i na iPhonu a celá hra už jde hrát v prohlížeči.",
   "od.free": "Zdarma",
   "od.offline": "Hraje i offline",
+  "od.ev_halloween": "Halloween na orbitě!",
+  "od.evText_halloween": "Do 30. listopadu se Orbit Dash převléká na Halloween: menu se mění v měsíční noc s čarodějnicemi, netopýry, pavučinami a dýněmi při svíčkách, tvůj míček se promění v dýni se strašidelnou stopou WISP — obojí zdarma na Halloween — a k hudbě se přidají tři strašidelné skladby. 1. prosince všechno samo zmizí.",
+  "od.evLeft": {
+   "one": "ještě {n} den",
+   "few": "ještě {n} dny",
+   "many": "ještě {n} dne",
+   "other": "ještě {n} dní"
+  },
   "od.aria": "Orbit Dash — skutečná hra, naživo",
   "more.eyebrow": "Další hry",
   "more.title": "Další od Lewydo",

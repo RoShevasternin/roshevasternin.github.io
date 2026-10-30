@@ -39,6 +39,12 @@
   "od.new": "**TARREE**: tarree biyya kee fi kan addunyaa irratti ba'i; dorgommii torbanitti 4 fi badhaasa dhagaa gati-qabeessaa Wiixata hunda qabda. Marsaa kee miidhagsi — kubbaa, faana, bifa marsaa fi weedduu — kubbaa STARDUST fi faana FLARE kan addaa moo'adhu. Dhiyeenyatti iPhone irratti ni dhufa, taphni guutuun immoo amma iyyuu barbaadduu keessatti ni taphatama.",
   "od.free": "Bilisaan",
   "od.offline": "Interneetii malee ni taphatama",
+  "od.ev_halloween": "Halloween marsaa keessatti!",
+  "od.evText_halloween": "Hanga Sadaasa 30tti, Orbit Dash Halloween'f of miidhagsa: menu'n halkan ji'a ifaa falfaltoota, simbirroo halkanii, hidhaa hanqaaquu fi buqqee ifa shaamaa qabu ta'a, kubbaan kee buqqee faana WISP kan akka ekeraa qabu ta'a — lamaanuu Halloween'f bilisaan — muuziqaa irrattis sirboonni sodaachisoo sadii itti dabalamu. Muddee 1 wanti hundi ofumaan bada.",
+  "od.evLeft": {
+   "one": "Guyyaa {n} hafe",
+   "other": "Guyyaa {n} hafe"
+  },
   "od.aria": "Orbit Dash — tapha dhugaa, kallattiin",
   "more.eyebrow": "Taphoota biroo",
   "more.title": "Dabalata Lewydo irraa",

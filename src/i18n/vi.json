@@ -39,6 +39,11 @@
   "od.new": "**XẾP HẠNG**: leo lên bảng của quốc gia bạn và bảng thế giới, với 4 giải đấu mỗi tuần và quà ngọc mỗi thứ Hai. Tùy biến quỹ đạo của bạn — bóng, vệt, hình dạng quỹ đạo và bài ca — rồi giành quả bóng STARDUST và vệt FLARE độc quyền. Sắp có trên iPhone, và toàn bộ game đã chơi được ngay trên trình duyệt.",
   "od.free": "Miễn phí",
   "od.offline": "Chơi không cần mạng",
+  "od.ev_halloween": "Halloween trên quỹ đạo!",
+  "od.evText_halloween": "Đến hết 30 tháng 11, Orbit Dash khoác áo Halloween: menu thành một đêm trăng với phù thủy, dơi, mạng nhện và bí ngô dưới ánh nến, quả bóng của bạn hóa thành bí ngô với vệt WISP ma quái — cả hai đều miễn phí dịp Halloween — và ba bản nhạc rùng rợn góp mặt trong phần âm nhạc. Ngày 1 tháng 12, mọi thứ sẽ tự biến mất.",
+  "od.evLeft": {
+   "other": "còn {n} ngày"
+  },
   "od.aria": "Orbit Dash — trò chơi thật, trực tiếp",
   "more.eyebrow": "Game khác",
   "more.title": "Thêm nhiều game từ Lewydo",
