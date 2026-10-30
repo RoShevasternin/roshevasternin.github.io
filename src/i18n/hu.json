@@ -39,6 +39,12 @@
   "od.new": "**RANGSOR**: kapaszkodj fel hazád és a világ listáján, heti 4 versennyel és minden hétfőn drágakő-jutalmakkal. Alakítsd a pályádat a saját képedre — labda, nyom, pályaforma és himnusz — és nyerd el az exkluzív STARDUST labdát és FLARE nyomot. Hamarosan iPhone-on is, a teljes játék pedig már most játszható a böngészőben.",
   "od.free": "Ingyenes",
   "od.offline": "Offline is megy",
+  "od.ev_halloween": "Halloween a pályán!",
+  "od.evText_halloween": "November 30-ig az Orbit Dash halloweeni jelmezt ölt: a menü holdfényes éjszakává válik boszorkányokkal, denevérekkel, pókhálókkal és gyertyafényes tökökkel, a labdád tökké változik kísérteties WISP nyommal — mindkettő ingyen Halloweenre —, a zenéhez pedig három hátborzongató szám csatlakozik. December 1-jén minden magától eltűnik.",
+  "od.evLeft": {
+   "one": "még {n} nap",
+   "other": "még {n} nap"
+  },
   "od.aria": "Orbit Dash — maga a játék, élőben",
   "more.eyebrow": "További játékok",
   "more.title": "Még több a Lewydótól",

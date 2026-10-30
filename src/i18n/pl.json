@@ -39,6 +39,14 @@
   "od.new": "**RANKING**: wspinaj się w tabeli swojego kraju i świata, z 4 cotygodniowymi turniejami i nagrodami w klejnotach w każdy poniedziałek. Wystylizuj swoją orbitę — piłkę, ślad, kształt orbity i hymn — i wygraj ekskluzywną piłkę STARDUST oraz ślad FLARE. Wkrótce także na iPhone'a, a cała gra już działa w przeglądarce.",
   "od.free": "Za darmo",
   "od.offline": "Działa offline",
+  "od.ev_halloween": "Halloween na orbicie!",
+  "od.evText_halloween": "Do 30 listopada Orbit Dash przebiera się na Halloween: menu zmienia się w księżycową noc z czarownicami, nietoperzami, pajęczynami i dyniami przy świecach, twoja piłka zamienia się w dynię z upiornym śladem WISP — oba za darmo na Halloween — a do muzyki dołączają trzy straszne utwory. 1 grudnia wszystko zniknie samo.",
+  "od.evLeft": {
+   "one": "jeszcze {n} dzień",
+   "few": "jeszcze {n} dni",
+   "many": "jeszcze {n} dni",
+   "other": "jeszcze {n} dnia"
+  },
   "od.aria": "Orbit Dash — prawdziwa gra na żywo",
   "more.eyebrow": "Inne gry",
   "more.title": "Więcej od Lewydo",

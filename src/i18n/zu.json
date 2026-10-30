@@ -39,6 +39,12 @@
   "od.new": "**ABAHOLAYO**: khuphuka ebhodini lezwe lakho nelomhlaba, ngemincintiswano emine yesonto ngalinye nemiklomelo yamatshe ayigugu njalo ngoMsombuluko. Hlobisa umzila wakho — ibhola, umkhondo, isimo somzila nengoma yesizwe — bese unqoba ibhola elikhethekile le-STARDUST nomkhondo we-FLARE. Maduze ku-iPhone, futhi umdlalo wonke usudlalwa kakade kusiphequluli sakho.",
   "od.free": "Mahhala",
   "od.offline": "Kudlalwa ngaphandle kwe-inthanethi",
+  "od.ev_halloween": "I-Halloween emzileni!",
+  "od.evText_halloween": "Kuze kube ngumhla ka-30 Novemba, i-Orbit Dash igqokela i-Halloween: imenyu iba ubusuku bokukhanya kwenyanga obunabathakathi, amalulwane, izintambo zesicabucabu namathanga akhanyiswe ngamakhandlela, ibhola lakho liphenduka ithanga elinomkhondo we-WISP onjengesipoki — kokubili mahhala nge-Halloween — futhi amaculo amathathu esabekayo ajoyina umculo. NgoDisemba 1 konke kuyanyamalala ngokwako.",
+  "od.evLeft": {
+   "one": "Kusele usuku olu-{n}",
+   "other": "Kusele izinsuku ezingu-{n}"
+  },
   "od.aria": "I-Orbit Dash — umdlalo wangempela, bukhoma",
   "more.eyebrow": "Eminye imidlalo",
   "more.title": "Okwengeziwe kwa-Lewydo",

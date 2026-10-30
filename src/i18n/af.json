@@ -39,6 +39,12 @@
   "od.new": "**RANGLYS**: klim op jou land se ranglys en dié van die wêreld, met 4 weeklikse toernooie en edelsteenpryse elke Maandag. Stileer jou baan — bal, spoor, baanvorm en temalied — en wen die eksklusiewe STARDUST-bal en FLARE-spoor. Binnekort op iPhone, en die hele speletjie speel reeds in jou blaaier.",
   "od.free": "Gratis",
   "od.offline": "Speel vanlyn",
+  "od.ev_halloween": "Halloween in die wentelbaan!",
+  "od.evText_halloween": "Tot 30 November trek Orbit Dash vir Halloween aan: die spyskaart word ’n maanlignag met hekse, vlermuise, spinnerakke en pampoene by kerslig, jou bal verander in ’n pampoen met ’n spookagtige WISP-spoor — albei gratis vir Halloween — en drie grillerige snitte sluit by die musiek aan. Op 1 Desember verdwyn alles vanself.",
+  "od.evLeft": {
+   "one": "Nog {n} dag",
+   "other": "Nog {n} dae"
+  },
   "od.aria": "Orbit Dash — die regte speletjie, regstreeks",
   "more.eyebrow": "Meer speletjies",
   "more.title": "Meer van Lewydo",

@@ -39,6 +39,14 @@
   "od.new": "**LESTVICA**: plezaj po lestvici svoje države in po svetovni, s 4 tedenskimi turnirji in nagradami v draguljih vsak ponedeljek. Opremi svojo orbito — žogico, sled, obliko orbite in himno — in osvoji ekskluzivno žogico STARDUST ter sled FLARE. Kmalu tudi na iPhonu, vsa igra pa se že igra v brskalniku.",
   "od.free": "Brezplačno",
   "od.offline": "Deluje brez povezave",
+  "od.ev_halloween": "Noč čarovnic v orbiti!",
+  "od.evText_halloween": "Do 30. novembra se Orbit Dash preobleče za noč čarovnic: meni postane mesečna noč s čarovnicami, netopirji, pajčevinami in bučami ob svečah, tvoja žogica se spremeni v bučo s strašljivim sledom WISP — oboje brezplačno za noč čarovnic — h glasbi pa se pridružijo tri srhljive skladbe. 1. decembra vse izgine samo od sebe.",
+  "od.evLeft": {
+   "one": "še {n} dan",
+   "two": "še {n} dneva",
+   "few": "še {n} dni",
+   "other": "še {n} dni"
+  },
   "od.aria": "Orbit Dash — prava igra, v živo",
   "more.eyebrow": "Več iger",
   "more.title": "Več od Lewydo",

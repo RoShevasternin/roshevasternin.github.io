@@ -39,6 +39,13 @@
   "od.new": "**CLASSIFICA**: scala la classifica del tuo paese e quella del mondo, con 4 tornei settimanali e premi in gemme ogni lunedì. Personalizza la tua orbita — palla, scia, forma dell'orbita e inno — e vinci la palla STARDUST e la scia FLARE, esclusive. Presto su iPhone, e tutto il gioco si gioca già nel browser.",
   "od.free": "Gratis",
   "od.offline": "Gioca offline",
+  "od.ev_halloween": "Halloween in orbita!",
+  "od.evText_halloween": "Fino al 30 novembre Orbit Dash si traveste per Halloween: il menu diventa una notte di luna con streghe, pipistrelli, ragnatele e zucche a lume di candela, la tua palla si trasforma in una zucca con una scia spettrale WISP — entrambe gratis per Halloween — e tre brani da brivido si aggiungono alla musica. Il 1° dicembre tutto sparisce da solo.",
+  "od.evLeft": {
+   "one": "ancora {n} giorno",
+   "many": "ancora {n} giorni",
+   "other": "ancora {n} giorni"
+  },
   "od.aria": "Orbit Dash — il gioco vero, dal vivo",
   "more.eyebrow": "Altri giochi",
   "more.title": "Altro da Lewydo",

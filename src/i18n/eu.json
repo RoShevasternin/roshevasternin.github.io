@@ -39,6 +39,12 @@
   "od.new": "**RANKINGA**: igo zure herrialdeko eta munduko sailkapenean, asteko 4 txapelketarekin eta astelehen guztietan harribitxi sariekin. Egokitu zure orbita — bola, arrastoa, orbitaren forma eta ereserkia — eta irabazi STARDUST bola eta FLARE arrastoa, esklusiboak. Laster iPhonerako, eta joko osoa jada nabigatzailean jokatzen da.",
   "od.free": "Doan",
   "od.offline": "Konexiorik gabe jokatzen da",
+  "od.ev_halloween": "Halloween orbitan!",
+  "od.evText_halloween": "Azaroaren 30era arte, Orbit Dash Halloweenerako mozorrotzen da: menua ilargi-gau bihurtzen da, sorgin, saguzar, armiarma-sare eta kandela-argiko kalabazekin, zure bola kalabaza bihurtzen da WISP arrasto mamutsu batekin —biak doan Halloweenerako— eta hiru abesti beldurgarri gehitzen zaizkio musikari. Abenduaren 1ean dena bere kabuz desagertzen da.",
+  "od.evLeft": {
+   "one": "{n} egun geratzen da",
+   "other": "{n} egun geratzen dira"
+  },
   "od.aria": "Orbit Dash — benetako jokoa, zuzenean",
   "more.eyebrow": "Joko gehiago",
   "more.title": "Lewydoren gehiago",

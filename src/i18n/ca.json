@@ -39,6 +39,13 @@
   "od.new": "**RÀNQUING**: puja a la classificació del teu país i a la mundial, amb 4 tornejos setmanals i premis de gemmes cada dilluns. Personalitza la teva òrbita — bola, rastre, forma d’òrbita i himne — i guanya la bola STARDUST i el rastre FLARE, exclusius. Aviat a l’iPhone, i tot el joc ja funciona al navegador.",
   "od.free": "Gratuït",
   "od.offline": "Es juga sense connexió",
+  "od.ev_halloween": "Halloween en òrbita!",
+  "od.evText_halloween": "Fins al 30 de novembre, Orbit Dash es disfressa per Halloween: el menú es converteix en una nit de lluna amb bruixes, ratpenats, teranyines i carabasses a la llum de les espelmes, la teva bola es transforma en una carabassa amb un rastre fantasmal WISP —totes dues coses gratis per Halloween— i tres temes esgarrifosos s’afegeixen a la música. L’1 de desembre tot desapareix sol.",
+  "od.evLeft": {
+   "one": "Queda {n} dia",
+   "many": "Queden {n} dies",
+   "other": "Queden {n} dies"
+  },
   "od.aria": "Orbit Dash — el joc de veritat, en directe",
   "more.eyebrow": "Més jocs",
   "more.title": "Més de Lewydo",

@@ -39,6 +39,12 @@
   "od.new": "**TOPPLISTA**: klättra på ditt lands lista och världens, med 4 veckoturneringar och ädelstenspriser varje måndag. Styla din bana — boll, spår, banans form och hymn — och vinn den exklusiva STARDUST-bollen och FLARE-spåret. Snart på iPhone, och hela spelet går redan att spela i webbläsaren.",
   "od.free": "Gratis",
   "od.offline": "Funkar offline",
+  "od.ev_halloween": "Halloween i omloppsbana!",
+  "od.evText_halloween": "Fram till 30 november klär Orbit Dash ut sig till halloween: menyn blir en månljus natt med häxor, fladdermöss, spindelnät och pumpor i levande ljus, din boll förvandlas till en pumpa med ett spöklikt WISP-spår — båda gratis under halloween — och tre läskiga låtar ansluter till musiken. Den 1 december försvinner allt av sig självt.",
+  "od.evLeft": {
+   "one": "{n} dag kvar",
+   "other": "{n} dagar kvar"
+  },
   "od.aria": "Orbit Dash — det riktiga spelet, live",
   "more.eyebrow": "Fler spel",
   "more.title": "Mer från Lewydo",

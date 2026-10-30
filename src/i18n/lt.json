@@ -39,6 +39,14 @@
   "od.new": "**REITINGAS**: kopk savo šalies ir pasaulio lentelėje, su 4 savaitiniais turnyrais ir brangakmenių prizais kiekvieną pirmadienį. Pritaikyk savo orbitą — kamuolį, pėdsaką, orbitos formą ir himną — ir laimėk išskirtinį STARDUST kamuolį bei FLARE pėdsaką. Netrukus ir iPhone, o visas žaidimas jau žaidžiamas naršyklėje.",
   "od.free": "Nemokamai",
   "od.offline": "Veikia ir be interneto",
+  "od.ev_halloween": "Helovinas orbitoje!",
+  "od.evText_halloween": "Iki lapkričio 30 d. Orbit Dash persirengia Helovinui: meniu virsta mėnesienos naktimi su raganomis, šikšnosparniais, voratinkliais ir moliūgais prie žvakių, tavo kamuolys virsta moliūgu su vaiduoklišku WISP pėdsaku — abu nemokamai Helovinui — o prie muzikos prisijungia trys šiurpūs kūriniai. Gruodžio 1 d. viskas išnyksta savaime.",
+  "od.evLeft": {
+   "one": "dar {n} diena",
+   "few": "dar {n} dienos",
+   "many": "dar {n} dienos",
+   "other": "dar {n} dienų"
+  },
   "od.aria": "Orbit Dash — tikras žaidimas, gyvai",
   "more.eyebrow": "Daugiau žaidimų",
   "more.title": "Daugiau iš Lewydo",

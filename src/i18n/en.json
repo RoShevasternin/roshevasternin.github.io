@@ -40,6 +40,12 @@
   "od.new": "**RANKS**: climb your country’s board and the world’s, with 4 weekly tournaments and gem prizes every Monday. Style your orbit — ball, trail, orbit shape and anthem — and win the exclusive STARDUST ball and FLARE trail. Coming soon to iPhone, and the whole game already plays in your browser.",
   "od.free": "Free",
   "od.offline": "Plays offline",
+  "od.ev_halloween": "Halloween in orbit!",
+  "od.evText_halloween": "Until November 30, Orbit Dash dresses up for Halloween: the menu becomes a moonlit night with witches, bats, cobwebs and candlelit pumpkins, your ball turns into a pumpkin with a ghostly WISP trail — both free for Halloween — and three spooky tracks join the music. On December 1 it all goes away on its own.",
+  "od.evLeft": {
+   "one": "{n} day left",
+   "other": "{n} days left"
+  },
   "od.aria": "Orbit Dash — the real game, live",
   "more.eyebrow": "More games",
   "more.title": "More from Lewydo",

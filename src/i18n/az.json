@@ -39,6 +39,12 @@
   "od.new": "**REYTİNQ**: ölkənin və dünyanın cədvəlində yüksəl, həftədə 4 turnir və hər bazar ertəsi qiymətli daş mükafatları ilə. Orbitini bəzə — top, iz, orbit forması və himn — və eksklüziv STARDUST topunu və FLARE izini qazan. Tezliklə iPhone-da, bütün oyun isə artıq brauzerdə oynanılır.",
   "od.free": "Pulsuz",
   "od.offline": "Oflayn da işləyir",
+  "od.ev_halloween": "Orbitdə Hellouin!",
+  "od.evText_halloween": "30 noyabradək Orbit Dash Hellouin üçün bəzənir: menyu cadugərlər, yarasalar, hörümçək toru və şam işığında balqabaqlarla aylı gecəyə çevrilir, topun xəyalvari WISP izi ilə balqabağa dönür — hər ikisi Hellouin üçün pulsuz — musiqiyə isə üç qorxulu trek qoşulur. 1 dekabrda hər şey öz-özünə yox olur.",
+  "od.evLeft": {
+   "one": "{n} gün qalıb",
+   "other": "{n} gün qalıb"
+  },
   "od.aria": "Orbit Dash — əsl oyun, canlı",
   "more.eyebrow": "Daha çox oyun",
   "more.title": "Lewydo-dan daha çox",

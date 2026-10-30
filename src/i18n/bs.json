@@ -39,6 +39,13 @@
   "od.new": "**POREDAK**: penji se na ljestvici svoje zemlje i na svjetskoj, uz 4 turnira sedmično i nagrade u draguljima svakog ponedjeljka. Uredi svoju orbitu — loptu, trag, oblik orbite i himnu — i osvoji ekskluzivnu loptu STARDUST i trag FLARE. Uskoro i na iPhoneu, a cijela igra se već igra u pretraživaču.",
   "od.free": "Besplatno",
   "od.offline": "Radi i offline",
+  "od.ev_halloween": "Noć vještica u orbiti!",
+  "od.evText_halloween": "Do 30. novembra Orbit Dash se oblači za Noć vještica: meni postaje mjesečeva noć s vješticama, šišmišima, paučinom i bundevama uz svijeće, tvoja lopta pretvara se u bundevu sa sablasnim tragom WISP — oboje besplatno za Noć vještica — a muzici se pridružuju tri jezive pjesme. 1. decembra sve nestaje samo od sebe.",
+  "od.evLeft": {
+   "one": "Još {n} dan",
+   "few": "Još {n} dana",
+   "other": "Još {n} dana"
+  },
   "od.aria": "Orbit Dash — prava igra, uživo",
   "more.eyebrow": "Još igara",
   "more.title": "Još od Lewydo",

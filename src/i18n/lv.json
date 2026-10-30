@@ -39,6 +39,13 @@
   "od.new": "**REITINGS**: kāp savas valsts un pasaules tabulā, ar 4 iknedēļas turnīriem un dārgakmeņu balvām katru pirmdienu. Pielāgo savu orbītu — bumbu, pēdu, orbītas formu un himnu — un laimē ekskluzīvo STARDUST bumbu un FLARE pēdu. Drīz arī iPhone, un visa spēle jau ir spēlējama pārlūkā.",
   "od.free": "Bez maksas",
   "od.offline": "Darbojas bezsaistē",
+  "od.ev_halloween": "Helovīns orbītā!",
+  "od.evText_halloween": "Līdz 30. novembrim Orbit Dash pārģērbjas Helovīnam: izvēlne kļūst par mēnessgaismas nakti ar raganām, sikspārņiem, zirnekļu tīkliem un ķirbjiem sveču gaismā, tava bumba pārvēršas ķirbī ar spokainu WISP pēdu — abi bez maksas Helovīnā —, un mūzikai pievienojas trīs baisi skaņdarbi. 1. decembrī viss pazūd pats no sevis.",
+  "od.evLeft": {
+   "zero": "vēl {n} dienas",
+   "one": "vēl {n} diena",
+   "other": "vēl {n} dienas"
+  },
   "od.aria": "Orbit Dash — īstā spēle, tiešraidē",
   "more.eyebrow": "Vairāk spēļu",
   "more.title": "Vēl no Lewydo",

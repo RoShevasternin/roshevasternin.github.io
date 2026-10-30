@@ -39,6 +39,12 @@
   "od.new": "**SIRALAMA**: ülkenin ve dünyanın tablosunda yüksel, haftalık 4 turnuva ve her pazartesi mücevher ödülleriyle. Yörüngeni şekillendir — top, iz, yörünge biçimi ve marş — ve özel STARDUST topunu ve FLARE izini kazan. Yakında iPhone’da, oyunun tamamı ise şimdiden tarayıcıda oynanıyor.",
   "od.free": "Ücretsiz",
   "od.offline": "Çevrimdışı oynanır",
+  "od.ev_halloween": "Yörüngede Cadılar Bayramı!",
+  "od.evText_halloween": "30 Kasım’a kadar Orbit Dash, Cadılar Bayramı için kılık değiştiriyor: menü cadılar, yarasalar, örümcek ağları ve mum ışığında balkabaklarıyla mehtaplı bir geceye dönüşüyor, topun hayaletimsi bir WISP iziyle balkabağına dönüşüyor — ikisi de Cadılar Bayramı’na özel ücretsiz — ve müziğe üç ürkütücü parça katılıyor. 1 Aralık’ta her şey kendiliğinden kayboluyor.",
+  "od.evLeft": {
+   "one": "{n} gün kaldı",
+   "other": "{n} gün kaldı"
+  },
   "od.aria": "Orbit Dash — gerçek oyun, canlı",
   "more.eyebrow": "Diğer oyunlar",
   "more.title": "Lewydo’dan daha fazlası",

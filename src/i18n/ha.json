@@ -39,6 +39,12 @@
   "od.new": "**MATSAYI**: hau jerin ƙasarka da na duniya, tare da gasa 4 a kowane mako da kyautar duwatsu masu daraja kowace Litinin. Kawata da'irarka — ƙwallo, hanya, siffar da'ira da waƙar yabo — ka kuma lashe ƙwallon STARDUST da hanyar FLARE na musamman. Nan ba da jimawa ba a iPhone, kuma duk wasan yana wasa a burauzarka yanzu.",
   "od.free": "Kyauta",
   "od.offline": "Ana yi ba tare da intanet ba",
+  "od.ev_halloween": "Halloween a da'ira!",
+  "od.evText_halloween": "Har zuwa 30 ga Nuwamba, Orbit Dash yana ado don Halloween: menu ya zama daren wata mai mayu, jemagu, yanar gizo-gizo da kabewa masu hasken kyandir, ƙwallonka ya zama kabewa mai hanyar WISP kamar fatalwa — duka biyun kyauta a lokacin Halloween — kuma waƙoƙi uku masu ban tsoro sun shiga cikin kiɗan. A ranar 1 ga Disamba komai zai ɓace da kansa.",
+  "od.evLeft": {
+   "one": "Saura kwana {n}",
+   "other": "Saura kwanaki {n}"
+  },
   "od.aria": "Orbit Dash — ainihin wasan, kai tsaye",
   "more.eyebrow": "Ƙarin wasanni",
   "more.title": "Ƙari daga Lewydo",

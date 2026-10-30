@@ -39,6 +39,12 @@
   "od.new": "**STAÐA**: klifraðu upp lista lands þíns og heimslistann, með 4 vikulegum mótum og gimsteinaverðlaunum hvern mánudag. Skreyttu brautina þína — bolta, slóð, lögun brautar og þjóðsöng — og vinndu einkarétta STARDUST-boltann og FLARE-slóðina. Væntanlegt á iPhone, og allur leikurinn er þegar spilanlegur í vafranum.",
   "od.free": "Ókeypis",
   "od.offline": "Spilast án nettengingar",
+  "od.ev_halloween": "Hrekkjavaka á sporbraut!",
+  "od.evText_halloween": "Til 30. nóvember klæðir Orbit Dash sig upp fyrir hrekkjavöku: valmyndin verður tunglskinsnótt með nornum, leðurblökum, köngulóarvefjum og graskerjum við kertaljós, boltinn þinn breytist í grasker með draugalegri WISP-slóð — hvort tveggja ókeypis á hrekkjavöku — og þrjú hrollvekjandi lög bætast við tónlistina. 1. desember hverfur allt af sjálfu sér.",
+  "od.evLeft": {
+   "one": "{n} dagur eftir",
+   "other": "{n} dagar eftir"
+  },
   "od.aria": "Orbit Dash — alvöru leikurinn, í beinni",
   "more.eyebrow": "Fleiri leikir",
   "more.title": "Meira frá Lewydo",

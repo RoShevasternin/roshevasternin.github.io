@@ -39,6 +39,12 @@
   "od.new": "**RANKING**: umakyat sa board ng bansa mo at ng buong mundo, may 4 na lingguhang paligsahan at gem na premyo tuwing Lunes. I-style ang orbit mo — bola, trail, hugis ng orbit at anthem — at manalo ng eksklusibong STARDUST na bola at FLARE na trail. Malapit na sa iPhone, at ang buong laro ay puwede nang laruin sa browser mo.",
   "od.free": "Libre",
   "od.offline": "Puwedeng offline",
+  "od.ev_halloween": "Halloween sa orbit!",
+  "od.evText_halloween": "Hanggang Nobyembre 30, nakabihis pang-Halloween ang Orbit Dash: nagiging gabing maliwanag ang buwan ang menu, may mga bruha, paniki, sapot ng gagamba at kalabasang may kandila, nagiging kalabasa ang bola mo na may multong WISP na trail — parehong libre ngayong Halloween — at may tatlong nakakakilabot na kanta na sumasali sa musika. Sa Disyembre 1, kusang mawawala ang lahat.",
+  "od.evLeft": {
+   "one": "{n} araw pa",
+   "other": "{n} araw pa"
+  },
   "od.aria": "Orbit Dash — ang totoong laro, live",
   "more.eyebrow": "Iba pang laro",
   "more.title": "Iba pa mula sa Lewydo",

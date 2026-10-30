@@ -39,6 +39,14 @@
   "od.new": "**REBRÍČEK**: šplhaj v tabuľke svojej krajiny aj svetovej, so 4 týždennými turnajmi a cenami v drahokamoch každý pondelok. Prispôsob si svoju orbitu — loptu, stopu, tvar orbity a hymnu — a vyhraj exkluzívnu loptu STARDUST a stopu FLARE. Čoskoro aj na iPhone a celá hra sa už dá hrať v prehliadači.",
   "od.free": "Zadarmo",
   "od.offline": "Hrá aj offline",
+  "od.ev_halloween": "Halloween na orbite!",
+  "od.evText_halloween": "Do 30. novembra sa Orbit Dash prezlieka na Halloween: menu sa mení na mesačnú noc s čarodejnicami, netopiermi, pavučinami a tekvicami pri sviečkach, tvoja lopta sa premení na tekvicu so strašidelnou stopou WISP — oboje zadarmo na Halloween — a k hudbe pribudnú tri strašidelné skladby. 1. decembra všetko samo zmizne.",
+  "od.evLeft": {
+   "one": "ešte {n} deň",
+   "few": "ešte {n} dni",
+   "many": "ešte {n} dňa",
+   "other": "ešte {n} dní"
+  },
   "od.aria": "Orbit Dash — skutočná hra, naživo",
   "more.eyebrow": "Ďalšie hry",
   "more.title": "Ďalšie od Lewydo",

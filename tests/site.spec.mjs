@@ -208,6 +208,34 @@ test('a CubePix holiday: its card shows only while it is on, in the visitor’s 
   expect([...w.ext]).toEqual([]);
 });
 
+// owner 29.10.2026: Orbit Dash's Halloween too (29.10–30.11, the window its site builds in from the game) — a card in its world while the
+// season is on, in the visitor's language, leading to the whole game in the browser where Halloween already is; gone by itself on 1.12
+test('an Orbit Dash holiday: its card shows only while it is on, in the visitor’s language, and leads to the game in the browser', async ({ page }) => {
+  const w = watch(page);
+  await page.clock.setFixedTime(new Date('2026-10-29T12:00:00'));
+  await page.goto('./?lang=uk');
+  const card = page.locator('.od-ev[data-ev="halloween"]');
+  await expect(card).toBeVisible();
+  await expect(card.locator('b')).toHaveText('Хелловін на орбіті!');
+  await expect(card).toContainText('30 листопада');
+  await expect(card).toContainText('WISP');
+  await expect(card.locator('.od-ev-left')).toHaveText('ще 33 дні');
+  await expect(card.locator('em')).toContainText('Грати в браузері');
+  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/?lang=uk');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await page.goto('./?lang=en');
+  await expect(card.locator('em')).toHaveText('33 days left · Play in your browser →');
+  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/');
+  await page.clock.setFixedTime(new Date('2026-11-30T23:00:00'));                                  // the last evening — still on
+  await page.reload();
+  await expect(card.locator('.od-ev-left')).toHaveText('1 day left');
+  await page.clock.setFixedTime(new Date('2026-12-01T00:00:01'));
+  await page.reload();
+  await expect(card).toBeHidden();
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+});
+
 test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async ({ page, request }) => {
   const r404 = await request.get('./no-such-room');
   expect(r404.status()).toBe(404);
