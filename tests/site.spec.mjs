@@ -307,6 +307,39 @@ test('Halloween on the studio page: only in season, one festive line in the visi
   await rm.close();
 });
 
+// [HALLOWEEN] the festive line stays a pill on the narrowest phones (two lines at most, in every language — three made it a slab that pushed
+// the word Lewydo under the music bubble on a 320×568 phone), and on a short screen the sign stands exactly where it does out of season
+test('Halloween’s festive line: two lines at most in all our languages at 320 and 390 px, and the word Lewydo stays put on a short phone', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } }); await odStub(ctx);
+  const page = await ctx.newPage(), w = watch(page), html = page.locator('html');
+  await page.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
+  const name = async (q) => { await page.goto('./?' + q); await expect(page.locator('#top')).toHaveClass(/\bs3\b/, { timeout: 8000 }); await page.waitForTimeout(700);
+    return page.evaluate(() => { const r = document.querySelector('#lock .lw-name').getBoundingClientRect(); return [Math.round(r.top), Math.round(r.bottom)]; }); };
+  for (const L of ['uk', 'en', 'hy', 'mn']) {                                                       // a short phone: the pill comes after the sign
+    const off = await name(`lang=${L}&halloween=0`), on = await name(`lang=${L}`);
+    await expect(html).toHaveClass(/\bhalloween\b/);
+    expect(Math.abs(on[0] - off[0]), `${L}: the word Lewydo ${off} → ${on}`).toBeLessThanOrEqual(4);
+    expect(on[1], L).toBeLessThan(568);
+  }
+  const lines = () => page.evaluate(() => { const s = document.querySelector('.hero .hw-pill span');
+    return [Math.round(s.getBoundingClientRect().height / parseFloat(getComputedStyle(s).lineHeight)), document.documentElement.scrollWidth]; });
+  const bad = [];
+  for (const vw of [320, 390]) {                                                                    // a tall phone: the pill above the eyebrow
+    await page.setViewportSize({ width: vw, height: 844 });
+    await page.goto('./?lang=en'); await expect(html).toHaveClass(/\bhalloween\b/);
+    for (const L of LANGS) {
+      if (await html.getAttribute('data-words') !== L) { await page.locator('#langBtn').click(); await page.locator(`#langMenu button[data-lang="${L}"]`).click(); }
+      await expect(html).toHaveAttribute('data-words', L);
+      const [n, sw] = await lines();
+      if (n > 2 || sw > vw) bad.push(`${vw} ${L}: ${n} lines, page ${sw} px wide`);
+    }
+  }
+  expect(bad).toEqual([]);
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+  await ctx.close();
+});
+
 test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async ({ page, request }) => {
   const r404 = await request.get('./no-such-room');
   expect(r404.status()).toBe(404);

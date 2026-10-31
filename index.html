@@ -999,6 +999,14 @@ body:not([data-world="lewydo"]) .hw-sky{opacity:0;}                             
 .js .hero.s3 .hw-pill{opacity:1;transform:none;}
 .safe .hero:not(.s3) .hw-pill{opacity:1;transform:none;}
 @media (max-width:420px){.halloween .hw-pill{font-size:13.5px;gap:7px;padding-inline-end:12px;} .hw-pill .hw-ico{width:24px;}}
+@media (max-width:360px){.halloween .hw-pill{font-size:12.5px;gap:5px;padding:4px 10px 4px 5px;} .hw-pill .hw-ico{width:20px;}}   /* the narrowest phones: two lines at most, every language */
+/* a short screen (an old small phone, a landscape one): the pill would push the word Lewydo under the fold (and under the music bubble) —
+   there it comes after the sign, between the sign's line and the hero's words, and the sign stands exactly where it does out of season */
+@media (max-height:640px){
+  .halloween .hero{padding-top:26px;}
+  .halloween .hero-in>.hw-pill{order:1;margin:14px 0 6px;}
+  .halloween .hero-in>:is(.hero-lead,.ctas,.hint){order:2;}
+}
 
 /* the contact card: candles and a pumpkin in its bottom corner (inside the card's padding, under the buttons' row) */
 .hw-porch{position:absolute;inset-inline-end:clamp(14px,4vw,46px);bottom:0;display:flex;align-items:flex-end;gap:4px;}
