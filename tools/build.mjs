@@ -193,7 +193,11 @@ const fill = (html) => {
   return html;
 };
 const out = (p, s) => writeFileSync(new URL(p, ROOT), s);
-out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => langBoot('/lang/'))));
+out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => langBoot('/lang/'))
+  // [HALLOWEEN] the season on the main page: Orbit Dash's window (its site's, src/orbitdash.json → events.halloween) for the <head> switch,
+  // the look (src/halloween.css) and the decor (src/halloween.js). The /brand/ page is the standard — never dressed up. Remove in December.
+  .replace('{{hw.season}}', () => JSON.stringify((OD.events || {}).halloween || null))
+  .replace('{{halloweenCss}}', () => read('src/halloween.css')).replace('{{halloweenJs}}', () => read('src/halloween.js'))));
 const NF = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(['nf.title', 'nf.text', 'nf.home'].map((k) => [k, S[L][k]]))]));
 out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).replace('{{DATA404}}', JSON.stringify({ S: NF, rtl: RTL }).replace(/</g, '\\u003c'))));
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)

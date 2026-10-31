@@ -26,6 +26,12 @@
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <script type="application/ld+json">{{ldjson}}</script>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('safe')},5000);if(/[?&]og\b/.test(location.search))document.documentElement.classList.add('og');if(/[?&]kit\b/.test(location.search))document.documentElement.classList.add('kit');</script>
+<script>/* [HALLOWEEN] the season, decided before the first paint: Orbit Dash's Halloween window (src/orbitdash.json → events.halloween, built in;
+   on: false — never), by the visitor's LOCAL date, both days inclusive — on December 1 it is gone by itself. To check: ?halloween=1 | 0,
+   ?today=yyyy-mm-dd. Never on the brand pictures (?og, ?kit). The look — src/halloween.css, the decor — src/halloween.js. */
+(function(){try{var W={{hw.season}},Q=new URLSearchParams(location.search),q=Q.get('halloween'),t=Q.get('today')||'',n=new Date(),z=function(v){return(v<10?'0':'')+v},
+day=/^\d{4}-\d{2}-\d{2}$/.test(t)?t:n.getFullYear()+'-'+z(n.getMonth()+1)+'-'+z(n.getDate());
+if(!Q.has('og')&&!Q.has('kit')&&(q==='1'||(q!=='0'&&W&&W.on!==false&&W.from<=day&&day<=W.to)))document.documentElement.classList.add('halloween');}catch(e){}})();</script>
 {{langBoot}}
 <style>
 /* Lewydo™ — the studio site. The brand is the standard of docs/brand (Figma «00 Brand», «Lewydo / Lockup», «Lewydo / Signature»):
@@ -588,6 +594,8 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
   .js .rv{transform:none;transition:opacity .3s ease;}
   .gcard{transform:none !important;}
 }
+/* [HALLOWEEN] the season's look — src/halloween.css (the build puts it here) */
+{{halloweenCss}}
 </style>
 </head>
 <body data-world="lewydo">
@@ -621,6 +629,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
     <canvas id="px" aria-hidden="true" width="1" height="1"></canvas>
     <div class="hero-in">
       <h1 class="sr-only" data-t="hero.h1"></h1>
+      <a class="hw-pill" href="#worlds"><span data-t="hw.pill"></span></a><!-- [HALLOWEEN] shown only in season (src/halloween.css) -->
       <p class="eyebrow" data-t="hero.eyebrow"></p>
       <div class="lock" id="lock">{{lockup}}<button class="heart-btn" id="heartBtn" type="button" data-ta="aria-label:hero.replay"></button></div>
       <p class="hero-lead" data-t="hero.lead"></p>
@@ -1256,6 +1265,8 @@ if (!RM && matchMedia('(hover: hover)').matches) { const h = $('#top');
     const end = new Date(e.to + 'T23:59:59').getTime(); if (now < new Date(e.from + 'T00:00:00').getTime() || now > end) continue;
     a.hidden = false; const n = Math.max(1, Math.ceil((end - now) / 864e5)), left = $('.cp-ev-left', a);
     onLang.push(() => { left.textContent = T('cp:evLeft', n); }); break; } })();
+// [HALLOWEEN] the season's decor — src/halloween.js (the build puts it here)
+{{halloweenJs}}
 startLang();
 if (OG || document.documentElement.classList.contains('kit')) { hero.start(); return; }
 sky.start(); hero.start(); cubepix.start(); orbit.start(); codeDesign(); storyCards(); story();
