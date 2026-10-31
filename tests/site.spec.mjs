@@ -236,6 +236,110 @@ test('an Orbit Dash holiday: its card shows only while it is on, in the visitor�
   expect([...w.ext]).toEqual([]);
 });
 
+// [HALLOWEEN] owner 31.10.2026 («треба ж і сайт студії зробити в хеловінській тематиці»): the studio page dresses up while Orbit Dash's Halloween
+// is on (its window, src/orbitdash.json → events.halloween, the visitor's own date; src/halloween.css, src/halloween.js): a night sky, cobwebs,
+// pumpkins and candles, one festive line → the worlds. The Lewydo sign is never touched; the decor takes no tap and is hidden from readers;
+// ?halloween=0 / 1 and ?today= switch it; on December 1 it is gone by itself. Remove with the rest of [HALLOWEEN] in December.
+test('Halloween on the studio page: only in season, one festive line in the visitor’s language, decor that takes no tap, the sign untouched', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } }); await odStub(ctx);
+  const page = await ctx.newPage(), w = watch(page), html = page.locator('html'), pill = page.locator('.hero .hw-pill');
+  const decor = () => page.locator('.hw').count();
+  // the Lewydo sign — the hero's Lockup, the header's signature, the footer's pill, the contact card's heart: its markup and its look
+  const sign = async () => { await expect(page.locator('#top')).toHaveClass(/\blit\b/, { timeout: 8000 }); await page.waitForTimeout(1000);   // the one beat is over
+    return page.evaluate(() => [...document.querySelectorAll('#lock .lw-lockup, .top .home, .foot .lw-pill, .contact-mark')].map((e) => [e.outerHTML.replace(/ lw-beating/g, ''),
+      ...[e, ...e.querySelectorAll('*')].map((x) => { const s = getComputedStyle(x); return [s.filter, s.transform, s.mixBlendMode, s.opacity, getComputedStyle(x, '::before').content, getComputedStyle(x, '::after').content].join(' | '); })])); };
+  await page.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
+  await page.goto('./?lang=uk');
+  await expect(html).toHaveClass(/\bhalloween\b/);
+  await expect(pill).toBeVisible();
+  await expect(pill).toHaveText('Щасливого Хелловіну! Наші ігри до 30 листопада в костюмах');
+  await expect(pill).toHaveAttribute('href', '#worlds');
+  for (const k of ['.hw-sky', '.hw-hmoon', '.top .hw-web', '#top .hw-ground', '#top .ctas .hw-flank', '.contact-card .hw-porch', '.foot .hw-hang']) expect(await page.locator(k).count(), k).toBeGreaterThan(0);
+  const bad = await page.evaluate(() => [...document.querySelectorAll('.hw')].filter((e) => e.getAttribute('aria-hidden') !== 'true' || getComputedStyle(e).pointerEvents !== 'none').map((e) => e.className.baseVal ?? e.className));
+  expect(bad).toEqual([]);                                                                         // hidden from readers, takes no tap
+  expect(await page.locator('#lock .hw, .top .home .hw, .foot .lw-pill .hw, .contact-mark .hw').count()).toBe(0);   // nothing on the sign
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  const inSeason = await sign();
+  for (const L of ['ar', 'he']) {                                                                  // right to left: no sideways scroll either
+    await page.goto(`./?lang=${L}`); await expect(html).toHaveAttribute('data-words', L);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), L).toBeLessThanOrEqual(390);
+  }
+  await page.goto('./?lang=uk&halloween=0');                                                      // the switches
+  await expect(html).not.toHaveClass(/\bhalloween\b/); await expect(pill).toBeHidden(); expect(await decor()).toBe(0);
+  await page.goto('./?lang=uk&today=2026-12-01');
+  await expect(html).not.toHaveClass(/\bhalloween\b/);
+  await page.goto('./?og');                                                                       // never on the brand pictures (npm run kit)
+  await expect(html).not.toHaveClass(/\bhalloween\b/);
+  await page.clock.setFixedTime(new Date('2026-11-30T23:00:00'));                                  // the last evening — still on
+  await page.goto('./?lang=uk');
+  await expect(html).toHaveClass(/\bhalloween\b/);
+  await page.clock.setFixedTime(new Date('2026-12-01T00:00:01'));                                  // December 1 — gone by itself
+  await page.reload();
+  await expect(html).not.toHaveClass(/\bhalloween\b/); await expect(pill).toBeHidden(); expect(await decor()).toBe(0);
+  expect(await sign()).toEqual(inSeason);                                                          // the sign is the same in season and out of it
+  await page.goto('./?lang=uk&halloween=1');
+  await expect(html).toHaveClass(/\bhalloween\b/); expect(await decor()).toBeGreaterThan(0);
+  // a wide screen: the moon, the cobwebs and the pumpkins keep off the hero's words, buttons, the heart and the language button
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
+  await page.goto('./?lang=de');
+  await expect(page.locator('#top')).toHaveClass(/\bs3\b/, { timeout: 8000 }); await page.waitForTimeout(800);
+  const hits = await page.evaluate(() => { const box = (e) => e.getBoundingClientRect(), hit = (a, b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+    const content = [...document.querySelectorAll('.hero .hw-pill, .hero .eyebrow, #lock, .hero-lead, .hero .ctas .btn, .hero .hint, #langBtn, .top .home, .nav')];
+    const deco = [...document.querySelectorAll('.hw-sky .hw-moon, .hw-flank .hw-side, .hw-web')].filter((d) => getComputedStyle(d).display !== 'none' && box(d).width);
+    return deco.flatMap((d) => content.filter((c) => hit(box(d), box(c))).map((c) => `${d.className.baseVal ?? d.className} × ${c.id || c.className}`)); });
+  expect(hits).toEqual([]);
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+  await ctx.close();
+  // less motion: everything stands still — no decor animation runs, nothing flies
+  const rm = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' }); await odStub(rm);
+  const p2 = await rm.newPage();
+  await p2.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
+  await p2.goto('./?lang=en');
+  await expect(p2.locator('html')).toHaveClass(/\bhalloween\b/);
+  await expect(p2.locator('.hero .hw-pill')).toHaveText('Happy Halloween! Our games are in costume until November 30');
+  expect(await p2.locator('.hw').count()).toBeGreaterThan(0);
+  await expect(p2.locator('.hw-witch')).toBeHidden();
+  const running = await p2.evaluate(() => document.getAnimations().filter((a) => { const t = a.effect && a.effect.target; return t && t.closest && t.closest('.hw') && a.playState !== 'paused'; })
+    .map((a) => a.animationName || a.transitionProperty || 'animation'));
+  expect(running).toEqual([]);
+  await rm.close();
+});
+
+// [HALLOWEEN] the festive line stays a pill on the narrowest phones (two lines at most, in every language — three made it a slab that pushed
+// the word Lewydo under the music bubble on a 320×568 phone), and on a short screen the sign stands exactly where it does out of season
+test('Halloween’s festive line: two lines at most in all our languages at 320 and 390 px, and the word Lewydo stays put on a short phone', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } }); await odStub(ctx);
+  const page = await ctx.newPage(), w = watch(page), html = page.locator('html');
+  await page.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
+  const name = async (q) => { await page.goto('./?' + q); await expect(page.locator('#top')).toHaveClass(/\bs3\b/, { timeout: 8000 }); await page.waitForTimeout(700);
+    return page.evaluate(() => { const r = document.querySelector('#lock .lw-name').getBoundingClientRect(); return [Math.round(r.top), Math.round(r.bottom)]; }); };
+  for (const L of ['uk', 'en', 'hy', 'mn']) {                                                       // a short phone: the pill comes after the sign
+    const off = await name(`lang=${L}&halloween=0`), on = await name(`lang=${L}`);
+    await expect(html).toHaveClass(/\bhalloween\b/);
+    expect(Math.abs(on[0] - off[0]), `${L}: the word Lewydo ${off} → ${on}`).toBeLessThanOrEqual(4);
+    expect(on[1], L).toBeLessThan(568);
+  }
+  const lines = () => page.evaluate(() => { const s = document.querySelector('.hero .hw-pill span');
+    return [Math.round(s.getBoundingClientRect().height / parseFloat(getComputedStyle(s).lineHeight)), document.documentElement.scrollWidth]; });
+  const bad = [];
+  for (const vw of [320, 390]) {                                                                    // a tall phone: the pill above the eyebrow
+    await page.setViewportSize({ width: vw, height: 844 });
+    await page.goto('./?lang=en'); await expect(html).toHaveClass(/\bhalloween\b/);
+    for (const L of LANGS) {
+      if (await html.getAttribute('data-words') !== L) { await page.locator('#langBtn').click(); await page.locator(`#langMenu button[data-lang="${L}"]`).click(); }
+      await expect(html).toHaveAttribute('data-words', L);
+      const [n, sw] = await lines();
+      if (n > 2 || sw > vw) bad.push(`${vw} ${L}: ${n} lines, page ${sw} px wide`);
+    }
+  }
+  expect(bad).toEqual([]);
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+  await ctx.close();
+});
+
 test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async ({ page, request }) => {
   const r404 = await request.get('./no-such-room');
   expect(r404.status()).toBe(404);
