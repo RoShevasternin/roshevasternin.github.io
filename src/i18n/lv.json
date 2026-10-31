@@ -95,6 +95,12 @@
   "story.title": "Mūsu stāsts līdz šim",
   "story.all.open": "Rādīt visu stāstu",
   "story.all.close": "Sakļaut stāstu",
+  "story.one": "Rādīt vēl vienu",
+  "story.left": {
+   "zero": "vēl {n}",
+   "one": "vēl {n}",
+   "other": "vēl {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Pirmā Java rinda",
   "story.1.d": "Vlads uzraksta savu pirmo kodu. Gadu vēlāk viņš pāriet uz Kotlin un paliek pie tā uz visiem laikiem.",

@@ -91,6 +91,11 @@
   "story.title": "Indaba yethu kuze kube manje",
   "story.all.open": "Bonisa indaba yonke",
   "story.all.close": "Goqa indaba",
+  "story.one": "Bonisa enye futhi",
+  "story.left": {
+   "one": "{n} ngaphezulu",
+   "other": "{n} ngaphezulu"
+  },
   "story.1.when": "2017",
   "story.1.t": "Umugqa wokuqala we-Java",
   "story.1.d": "U-Vlad ubhala ikhodi yakhe yokuqala. Ngemva konyaka uya ku-Kotlin futhi uhlala kuyo unomphela.",

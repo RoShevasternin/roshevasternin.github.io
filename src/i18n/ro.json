@@ -95,6 +95,12 @@
   "story.title": "Povestea noastră de până acum",
   "story.all.open": "Arată toată povestea",
   "story.all.close": "Restrânge povestea",
+  "story.one": "Arată încă una",
+  "story.left": {
+   "one": "încă {n}",
+   "few": "încă {n}",
+   "other": "încă {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Prima linie de Java",
   "story.1.d": "Vlad scrie primul lui cod. Un an mai târziu trece la Kotlin și rămâne cu el pentru totdeauna.",

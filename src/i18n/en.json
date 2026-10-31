@@ -92,6 +92,11 @@
   "story.title": "Our story so far",
   "story.all.open": "Show the whole story",
   "story.all.close": "Collapse the story",
+  "story.one": "Show one more",
+  "story.left": {
+   "one": "{n} more",
+   "other": "{n} more"
+  },
   "story.1.when": "2017",
   "story.1.t": "The first line of Java",
   "story.1.d": "Vlad writes his first code. A year later he switches to Kotlin and stays with it for good.",

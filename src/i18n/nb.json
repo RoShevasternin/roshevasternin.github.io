@@ -91,6 +91,11 @@
   "story.title": "Historien vår så langt",
   "story.all.open": "Vis hele historien",
   "story.all.close": "Skjul historien",
+  "story.one": "Vis én til",
+  "story.left": {
+   "one": "{n} til",
+   "other": "{n} til"
+  },
   "story.1.when": "2017",
   "story.1.t": "Den første linjen Java",
   "story.1.d": "Vlad skriver sin første kode. Et år senere bytter han til Kotlin og blir der for godt.",

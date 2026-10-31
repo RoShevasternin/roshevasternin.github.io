@@ -87,6 +87,10 @@
   "story.title": "Hành trình đến hôm nay",
   "story.all.open": "Hiện toàn bộ câu chuyện",
   "story.all.close": "Thu gọn câu chuyện",
+  "story.one": "Hiện thêm một mục",
+  "story.left": {
+   "other": "còn {n} mục"
+  },
   "story.1.when": "2017",
   "story.1.t": "Dòng code Java đầu tiên",
   "story.1.d": "Vlad viết những dòng code đầu đời. Một năm sau, anh chuyển sang Kotlin và gắn bó với nó đến tận bây giờ.",

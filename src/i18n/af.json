@@ -91,6 +91,11 @@
   "story.title": "Ons storie tot dusver",
   "story.all.open": "Wys die hele storie",
   "story.all.close": "Vou die storie toe",
+  "story.one": "Wys nog een",
+  "story.left": {
+   "one": "nog {n}",
+   "other": "nog {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Die eerste reël Java",
   "story.1.d": "Vlad skryf sy eerste kode. ’n Jaar later skuif hy na Kotlin en bly vir altyd daar.",

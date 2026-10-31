@@ -91,6 +91,11 @@
   "story.title": "Unsere Geschichte bis heute",
   "story.all.open": "Ganze Geschichte anzeigen",
   "story.all.close": "Geschichte einklappen",
+  "story.one": "Eine weitere anzeigen",
+  "story.left": {
+   "one": "noch {n}",
+   "other": "noch {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Die erste Zeile Java",
   "story.1.d": "Vlad schreibt seinen ersten Code. Ein Jahr später wechselt er zu Kotlin und bleibt ihm für immer treu.",

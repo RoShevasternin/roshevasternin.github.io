@@ -91,6 +91,11 @@
   "story.title": "İndiyədək hekayəmiz",
   "story.all.open": "Bütün hekayəni göstər",
   "story.all.close": "Hekayəni yığ",
+  "story.one": "Bir dənə də göstər",
+  "story.left": {
+   "one": "daha {n}",
+   "other": "daha {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Java-da ilk sətir",
   "story.1.d": "Vlad ilk kodunu yazır. Bir il sonra Kotlin-ə keçir və həmişəlik onunla qalır.",

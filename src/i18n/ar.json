@@ -107,6 +107,15 @@
   "story.title": "قصتنا حتى الآن",
   "story.all.open": "عرض القصة كاملة",
   "story.all.close": "طيّ القصة",
+  "story.one": "عرض جزء آخر",
+  "story.left": {
+   "zero": "{n} أخرى",
+   "one": "{n} أخرى",
+   "two": "{n} أخرى",
+   "few": "{n} أخرى",
+   "many": "{n} أخرى",
+   "other": "{n} أخرى"
+  },
   "story.1.when": "2017",
   "story.1.t": "أول سطر بلغة Java",
   "story.1.d": "يكتب Vlad أول كود له. وبعد عام ينتقل إلى Kotlin ويبقى معها إلى الأبد.",

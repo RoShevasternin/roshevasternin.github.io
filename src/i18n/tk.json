@@ -91,6 +91,11 @@
   "story.title": "Häzire çenli taryhymyz",
   "story.all.open": "Ähli taryhy görkez",
   "story.all.close": "Taryhy ýygna",
+  "story.one": "Ýene birini görkez",
+  "story.left": {
+   "one": "ýene {n}",
+   "other": "ýene {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Java-da ilkinji setir",
   "story.1.d": "Vlad ilkinji koduny ýazýar. Bir ýyldan soň Kotlin-e geçýär we ebedilik şonda galýar.",

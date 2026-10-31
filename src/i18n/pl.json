@@ -99,6 +99,13 @@
   "story.title": "Nasza droga do dziś",
   "story.all.open": "Pokaż całą historię",
   "story.all.close": "Zwiń historię",
+  "story.one": "Pokaż jeszcze jedną",
+  "story.left": {
+   "one": "jeszcze {n}",
+   "few": "jeszcze {n}",
+   "many": "jeszcze {n}",
+   "other": "jeszcze {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Pierwsza linijka w Javie",
   "story.1.d": "Vlad pisze swój pierwszy kod. Rok później przesiada się na Kotlina i zostaje z nim na dobre.",

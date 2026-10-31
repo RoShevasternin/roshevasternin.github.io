@@ -91,6 +91,11 @@
   "story.title": "እስካሁን ያለው ታሪካችን",
   "story.all.open": "ሙሉውን ታሪክ አሳይ",
   "story.all.close": "ታሪኩን ሰብስብ",
+  "story.one": "አንድ ተጨማሪ አሳይ",
+  "story.left": {
+   "one": "{n} ተጨማሪ",
+   "other": "{n} ተጨማሪ"
+  },
   "story.1.when": "2017",
   "story.1.t": "የመጀመሪያው የJava መስመር",
   "story.1.d": "ቭላድ የመጀመሪያ ኮዱን ይጽፋል። ከአንድ ዓመት በኋላ ወደ Kotlin ይሸጋገራል — ለዘላለምም እዚያው ይቀራል።",

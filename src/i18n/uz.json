@@ -91,6 +91,11 @@
   "story.title": "Bizning hozirgacha tariximiz",
   "story.all.open": "Butun tarixni ko‘rsatish",
   "story.all.close": "Tarixni yig‘ish",
+  "story.one": "Yana bittasini ko‘rsatish",
+  "story.left": {
+   "one": "yana {n} ta",
+   "other": "yana {n} ta"
+  },
   "story.1.when": "2017",
   "story.1.t": "Java’dagi birinchi qator",
   "story.1.d": "Vlad birinchi kodini yozadi. Bir yildan keyin Kotlin’ga oʻtadi va umrbod unda qoladi.",

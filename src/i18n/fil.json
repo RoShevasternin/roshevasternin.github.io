@@ -91,6 +91,11 @@
   "story.title": "Ang kuwento namin hanggang ngayon",
   "story.all.open": "Ipakita ang buong kuwento",
   "story.all.close": "Itiklop ang kuwento",
+  "story.one": "Magpakita pa ng isa",
+  "story.left": {
+   "one": "{n} pa",
+   "other": "{n} pa"
+  },
   "story.1.when": "2017",
   "story.1.t": "Ang unang linya ng Java",
   "story.1.d": "Isinulat ni Vlad ang una niyang code. Pagkalipas ng isang taon, lumipat siya sa Kotlin at hindi na umalis.",

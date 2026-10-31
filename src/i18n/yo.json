@@ -87,6 +87,10 @@
   "story.title": "Ìtàn wa títí di báyìí",
   "story.all.open": "Fi gbogbo ìtàn hàn",
   "story.all.close": "Pa ìtàn mọ́",
+  "story.one": "Fi òmíràn hàn",
+  "story.left": {
+   "other": "{n} síi"
+  },
   "story.1.when": "2017",
   "story.1.t": "Ìlà àkọ́kọ́ ní Java",
   "story.1.d": "Vlad kọ kóòdù àkọ́kọ́ rẹ̀. Lẹ́yìn ọdún kan ó yí sí Kotlin, ó sì dúró tì í títí láé.",

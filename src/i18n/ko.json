@@ -87,6 +87,10 @@
   "story.title": "지금까지의 이야기",
   "story.all.open": "전체 이야기 보기",
   "story.all.close": "이야기 접기",
+  "story.one": "하나 더 보기",
+  "story.left": {
+   "other": "{n}개 더"
+  },
   "story.1.when": "2017",
   "story.1.t": "첫 Java 코드 한 줄",
   "story.1.d": "Vlad가 첫 코드를 작성해요. 1년 뒤 Kotlin으로 갈아타고, 그 뒤로 쭉 Kotlin과 함께해요.",

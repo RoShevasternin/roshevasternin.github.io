@@ -99,6 +99,13 @@
   "story.title": "Najina zgodba do zdaj",
   "story.all.open": "Pokaži celotno zgodbo",
   "story.all.close": "Skrči zgodbo",
+  "story.one": "Pokaži še eno",
+  "story.left": {
+   "one": "še {n}",
+   "two": "še {n}",
+   "few": "še {n}",
+   "other": "še {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Prva vrstica v Javi",
   "story.1.d": "Vlad napiše svojo prvo kodo. Leto pozneje preide na Kotlin in pri njem ostane za vedno.",

@@ -95,6 +95,12 @@
   "story.title": "Nuestra historia hasta ahora",
   "story.all.open": "Mostrar toda la historia",
   "story.all.close": "Contraer la historia",
+  "story.one": "Mostrar uno más",
+  "story.left": {
+   "one": "{n} más",
+   "many": "{n} más",
+   "other": "{n} más"
+  },
   "story.1.when": "2017",
   "story.1.t": "La primera línea en Java",
   "story.1.d": "Vlad escribe su primer código. Un año después se pasa a Kotlin y ya nunca lo deja.",

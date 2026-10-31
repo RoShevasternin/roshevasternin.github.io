@@ -91,6 +91,11 @@
   "story.title": "Hadithi yetu hadi sasa",
   "story.all.open": "Onyesha hadithi nzima",
   "story.all.close": "Funga hadithi",
+  "story.one": "Onyesha moja zaidi",
+  "story.left": {
+   "one": "{n} zaidi",
+   "other": "{n} zaidi"
+  },
   "story.1.when": "2017",
   "story.1.t": "Mstari wa kwanza wa Java",
   "story.1.d": "Vlad anaandika msimbo wake wa kwanza. Mwaka mmoja baadaye anahamia Kotlin na kubaki nayo milele.",

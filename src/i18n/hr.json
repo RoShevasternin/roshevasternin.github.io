@@ -95,6 +95,12 @@
   "story.title": "Naša priča do sada",
   "story.all.open": "Prikaži cijelu priču",
   "story.all.close": "Sažmi priču",
+  "story.one": "Prikaži još jednu",
+  "story.left": {
+   "one": "još {n}",
+   "few": "još {n}",
+   "other": "još {n}"
+  },
   "story.1.when": "2017.",
   "story.1.t": "Prvi redak Jave",
   "story.1.d": "Vlad piše svoj prvi kod. Godinu dana poslije prelazi na Kotlin i ostaje s njim zauvijek.",
