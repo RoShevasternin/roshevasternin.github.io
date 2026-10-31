@@ -91,6 +91,11 @@
   "story.title": "Historia jonë deri tani",
   "story.all.open": "Shfaq gjithë historinë",
   "story.all.close": "Palos historinë",
+  "story.one": "Shfaq edhe një",
+  "story.left": {
+   "one": "edhe {n}",
+   "other": "edhe {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Rreshti i parë në Java",
   "story.1.d": "Vladi shkruan kodin e tij të parë. Një vit më vonë kalon te Kotlin dhe mbetet aty përgjithmonë.",

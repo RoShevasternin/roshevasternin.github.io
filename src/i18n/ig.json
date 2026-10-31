@@ -87,6 +87,10 @@
   "story.title": "Akụkọ anyị ruo ugbu a",
   "story.all.open": "Gosi akụkọ niile",
   "story.all.close": "Mikpọọ akụkọ ahụ",
+  "story.one": "Gosi otu ọzọ",
+  "story.left": {
+   "other": "{n} ọzọ"
+  },
   "story.1.when": "2017",
   "story.1.t": "Ahịrị mbụ na Java",
   "story.1.d": "Vlad na-ede koodu mbụ ya. Otu afọ ka e mesịrị ọ gafere na Kotlin ma nọrọ ya ruo mgbe ebighi ebi.",

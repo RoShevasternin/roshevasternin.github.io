@@ -91,6 +91,11 @@
   "story.title": "Labarinmu zuwa yanzu",
   "story.all.open": "Nuna cikakken labarin",
   "story.all.close": "Naɗe labarin",
+  "story.one": "Nuna ɗaya kuma",
+  "story.left": {
+   "one": "{n} kuma",
+   "other": "{n} kuma"
+  },
   "story.1.when": "2017",
   "story.1.t": "Layin farko na Java",
   "story.1.d": "Vlad ya rubuta code ɗinsa na farko. Bayan shekara ɗaya ya koma Kotlin kuma ya zauna da ita har abada.",

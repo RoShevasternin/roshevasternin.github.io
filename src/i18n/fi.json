@@ -91,6 +91,11 @@
   "story.title": "Tarinamme tähän asti",
   "story.all.open": "Näytä koko tarina",
   "story.all.close": "Tiivistä tarina",
+  "story.one": "Näytä vielä yksi",
+  "story.left": {
+   "one": "vielä {n}",
+   "other": "vielä {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Ensimmäinen Java-rivi",
   "story.1.d": "Vlad kirjoittaa ensimmäisen koodinsa. Vuotta myöhemmin hän vaihtaa Kotliniin ja pysyy siinä lopullisesti.",

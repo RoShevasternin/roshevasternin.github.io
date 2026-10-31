@@ -87,6 +87,10 @@
   "story.title": "我们一路走来",
   "story.all.open": "展开完整故事",
   "story.all.close": "收起故事",
+  "story.one": "再展开一段",
+  "story.left": {
+   "other": "还有 {n} 段"
+  },
   "story.1.when": "2017",
   "story.1.t": "第一行 Java",
   "story.1.d": "弗拉德写下人生第一行代码。一年后改用 Kotlin，从此再也没换过。",

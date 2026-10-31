@@ -91,6 +91,11 @@
   "story.title": "Gure historia orain arte",
   "story.all.open": "Erakutsi istorio osoa",
   "story.all.close": "Tolestu istorioa",
+  "story.one": "Erakutsi beste bat",
+  "story.left": {
+   "one": "{n} gehiago",
+   "other": "{n} gehiago"
+  },
   "story.1.when": "2017",
   "story.1.t": "Javako lehen lerroa",
   "story.1.d": "Vladek bere lehen kodea idazten du. Urtebete geroago Kotlinera pasatzen da, eta betiko geratzen da bertan.",

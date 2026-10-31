@@ -87,6 +87,10 @@
   "story.title": "これまでの歩み",
   "story.all.open": "ストーリーをすべて表示",
   "story.all.close": "ストーリーを折りたたむ",
+  "story.one": "もう1つ表示",
+  "story.left": {
+   "other": "あと{n}件"
+  },
   "story.1.when": "2017",
   "story.1.t": "最初の1行は Java",
   "story.1.d": "Vlad が初めてのコードを書く。1年後に Kotlin へ乗り換え、それ以来ずっと Kotlin ひとすじ。",

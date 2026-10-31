@@ -91,6 +91,11 @@
   "story.title": "A történetünk eddig",
   "story.all.open": "Teljes történet megjelenítése",
   "story.all.close": "Történet összecsukása",
+  "story.one": "Még egy megjelenítése",
+  "story.left": {
+   "one": "még {n}",
+   "other": "még {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Az első Java-sor",
   "story.1.d": "Vlad megírja az első kódját. Egy évvel később átvált Kotlinra, és végleg mellette marad.",

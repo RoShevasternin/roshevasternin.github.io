@@ -91,6 +91,11 @@
   "story.title": "Sagan okkar hingað til",
   "story.all.open": "Sýna alla söguna",
   "story.all.close": "Fella söguna saman",
+  "story.one": "Sýna einn í viðbót",
+  "story.left": {
+   "one": "{n} í viðbót",
+   "other": "{n} í viðbót"
+  },
   "story.1.when": "2017",
   "story.1.t": "Fyrsta línan í Java",
   "story.1.d": "Vlad skrifar sinn fyrsta kóða. Ári síðar skiptir hann yfir í Kotlin og heldur sig við það fyrir lífstíð.",

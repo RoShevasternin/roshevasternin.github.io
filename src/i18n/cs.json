@@ -99,6 +99,13 @@
   "story.title": "Náš dosavadní příběh",
   "story.all.open": "Zobrazit celý příběh",
   "story.all.close": "Sbalit příběh",
+  "story.one": "Zobrazit ještě jednu",
+  "story.left": {
+   "one": "ještě {n}",
+   "few": "ještě {n}",
+   "many": "ještě {n}",
+   "other": "ještě {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "První řádek v Javě",
   "story.1.d": "Vlad píše svůj první kód. O rok později přechází na Kotlin a zůstává u něj nastálo.",

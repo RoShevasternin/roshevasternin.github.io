@@ -87,6 +87,10 @@
   "story.title": "Kisah kami setakat ini",
   "story.all.open": "Tunjukkan seluruh kisah",
   "story.all.close": "Runtuhkan kisah",
+  "story.one": "Tunjukkan satu lagi",
+  "story.left": {
+   "other": "{n} lagi"
+  },
   "story.1.when": "2017",
   "story.1.t": "Baris pertama Java",
   "story.1.d": "Vlad menulis kod pertamanya. Setahun kemudian dia beralih ke Kotlin dan kekal dengannya sejak itu.",

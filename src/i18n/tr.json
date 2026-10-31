@@ -91,6 +91,11 @@
   "story.title": "Bugüne kadarki hikâyemiz",
   "story.all.open": "Hikâyenin tamamını göster",
   "story.all.close": "Hikâyeyi daralt",
+  "story.one": "Bir tane daha göster",
+  "story.left": {
+   "one": "{n} tane daha",
+   "other": "{n} tane daha"
+  },
   "story.1.when": "2017",
   "story.1.t": "İlk Java satırı",
   "story.1.d": "Vlad ilk kodunu yazıyor. Bir yıl sonra Kotlin’e geçiyor ve bir daha da bırakmıyor.",

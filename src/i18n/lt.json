@@ -99,6 +99,13 @@
   "story.title": "Mūsų istorija iki šiol",
   "story.all.open": "Rodyti visą istoriją",
   "story.all.close": "Suskleisti istoriją",
+  "story.one": "Rodyti dar vieną",
+  "story.left": {
+   "one": "dar {n}",
+   "few": "dar {n}",
+   "many": "dar {n}",
+   "other": "dar {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Pirmoji Java eilutė",
   "story.1.d": "Vladas parašo savo pirmąjį kodą. Po metų jis pereina prie Kotlin ir lieka su juo visam laikui.",

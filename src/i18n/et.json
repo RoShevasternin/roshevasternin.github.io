@@ -91,6 +91,11 @@
   "story.title": "Meie lugu siiani",
   "story.all.open": "Näita kogu lugu",
   "story.all.close": "Ahenda lugu",
+  "story.one": "Näita veel üht",
+  "story.left": {
+   "one": "veel {n}",
+   "other": "veel {n}"
+  },
   "story.1.when": "2017",
   "story.1.t": "Esimene Java rida",
   "story.1.d": "Vlad kirjutab oma esimese koodi. Aasta hiljem läheb ta üle Kotlinile ja jääb selle juurde jäädavalt.",

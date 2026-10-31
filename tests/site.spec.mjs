@@ -546,6 +546,7 @@ test('the story: the first streamer to play our game live (22.10.2026) — our o
   await expect(v.locator('source')).toHaveAttribute('src', '/assets/story/first-live.mp4');         // our own file, no embed
   await expect(v).toHaveAttribute('aria-label', /Андрій грає в Orbit Dash/);
   expect(media).toEqual([]);                                                                         // nothing of it on the first screen
+  await page.click('#tlAll');                                                                       // 31.10: the story folds after 3 — show it all
   await li.scrollIntoViewIfNeeded();
   await li.locator('.tl-tog').click();                                                              // 29.10: the story is cards — open this one
   await expect.poll(() => v.evaluate((e) => e.getAttribute('poster'))).toBe('/assets/story/first-live.jpg');
@@ -557,6 +558,119 @@ test('the story: the first streamer to play our game live (22.10.2026) — our o
   expect(await v.evaluate((e) => { const r = e.getBoundingClientRect(); return Math.round(r.height / r.width * 100); })).toBe(178);
   expect([...w.ext]).toEqual([]);
   expect(w.errs).toEqual([]);
+});
+
+// 31.10.2026 (owner): «спочатку перші 3 частини, а потім по 1… або одразу все» — the story folds, and still scales as it grows
+test('the story folds: the first 3, then one more at a time (under the finger) or all of it; collapse; links open their entry; RTL; 320 px; reduced motion', async ({ browser }) => {
+  test.setTimeout(240_000);
+  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store'];
+  const vis = (page) => page.evaluate(() => [...document.querySelectorAll('#tl .tl-i')].filter((l) => !l.hidden).length);
+  const focused = (page, i) => page.evaluate((i) => document.activeElement === document.querySelectorAll('#tl .tl-i')[i].querySelector('.tl-tog'), i);
+  // the reveal's own animations (scripted; CSS transitions such as a dot lighting up don't count)
+  const moving = (page) => page.evaluate(() => document.getAnimations().filter((a) => !(a instanceof CSSTransition) && !(a instanceof CSSAnimation) && a.playState === 'running' && a.effect?.target?.closest?.('#story')).length);
+  for (const [width, height, rm] of [[390, 844], [1440, 900], [390, 844, 'reduce']]) {
+    const tag = `${width}${rm ? ' reduce' : ''}`;
+    const ctx = await browser.newContext({ viewport: { width, height }, reducedMotion: rm || 'no-preference' }); await odStub(ctx);
+    const page = await ctx.newPage(), w = watch(page);
+    await page.goto('./?lang=uk');
+    await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
+    const items = page.locator('#tl .tl-i'), N = await items.count(), one = page.locator('#tlOne'), all = page.locator('#tlAll');
+    expect(N, tag).toBeGreaterThanOrEqual(16);
+    // folded: the first 3 entries, the rest in the HTML (search engines) but hidden; the slot shows the next one's title
+    expect(await vis(page), tag).toBe(3);
+    expect(await page.locator('#tl .tl-i[hidden]').count(), tag).toBe(N - 3);
+    await expect(all).toHaveText(`Показати всю історію · ще ${N - 3}`); await expect(all).toHaveAttribute('aria-expanded', 'false');
+    await expect(one).toContainText('Показати ще одну'); await expect(one.locator('.tl-pt')).toHaveText(await items.nth(3).locator('h3').textContent());
+    await expect(page.locator('#tlFold')).toBeHidden();
+    // one more: exactly one appears, takes the focus, and the button stays under the finger
+    await one.scrollIntoViewIfNeeded(); await page.evaluate(() => document.querySelector('#tlOne').scrollIntoView({ block: 'center', behavior: 'instant' }));
+    const y0 = (await one.boundingBox()).y;
+    await one.click();
+    expect(await moving(page) > 0, tag).toBe(!rm);                                                      // reduced motion: nothing moves
+    expect(await vis(page), tag).toBe(4);
+    expect(await focused(page, 3), tag).toBe(true);
+    await page.waitForTimeout(700);
+    expect(Math.abs((await one.boundingBox()).y - y0), tag).toBeLessThanOrEqual(2);
+    await expect(page.locator('#tlSay')).toHaveText(`ще ${N - 4}`);
+    await expect(all).toHaveText(`Показати всю історію · ще ${N - 4}`);
+    await expect(page.locator('#tlFold')).toBeVisible();
+    await page.keyboard.press('Tab'); await expect(one).toBeFocused();                                  // one Tab back to «Show one more»
+    // the whole story: every entry (the newest too), still closed cards; «Collapse the story» floats
+    await all.click();
+    expect(await vis(page), tag).toBe(N);
+    await expect(items.last()).toBeVisible();
+    await expect(all).toHaveAttribute('aria-expanded', 'true'); await expect(all).toHaveText('Згорнути історію');
+    await expect(page.locator('#tlSay')).toHaveText('ще 0');                                            // words, not a bare «+12»
+    expect(await page.locator('.tl-tog[aria-expanded="true"]').count(), tag).toBe(0);
+    expect(await page.locator('#tlMore').evaluate((e) => getComputedStyle(e).position), tag).toBe('sticky');
+    await expect(one).toBeHidden(); await expect(page.locator('#tlFold')).toBeHidden();
+    // fold back
+    await page.waitForTimeout(500); await all.click();
+    expect(await vis(page), tag).toBe(3);
+    await expect(all).toBeFocused(); await expect(page.locator('#tlSay')).toHaveText(`ще ${N - 3}`);
+    // a link to an entry, on a cold load: everything up to it shows, it opens, and it stands under the header
+    for (const id of LINKS) {
+      await page.goto('about:blank'); await page.goto(`./?lang=uk#${id}`);
+      await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
+      const li = page.locator('#' + id), i = await li.evaluate((e) => [...e.parentNode.children].indexOf(e));
+      await expect(li).toHaveClass(/\bopen\b/);
+      expect(await vis(page), `${tag} #${id}`).toBe(i + 1);
+      await expect.poll(async () => Math.abs((await li.boundingBox()).y - 72), `${tag} #${id}`).toBeLessThanOrEqual(2);   // scroll-padding-top
+    }
+    // and a link followed on the page itself, to an entry that is still folded: everything up to it shows, it opens, under the header.
+    // Without hidden="until-found" (Safari, Firefox) — Chrome's own find-and-reveal would otherwise do half the work for the script
+    await page.addInitScript(() => { for (const o of [HTMLElement.prototype, Element.prototype, Node.prototype]) delete o.onbeforematch; });
+    await page.goto('about:blank'); await page.goto('./?lang=uk');
+    await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
+    expect(await page.evaluate(() => 'onbeforematch' in document.body), tag).toBe(false);
+    expect(await vis(page), tag).toBe(3);
+    expect(await page.locator('#tl .tl-i[hidden="until-found"]').count(), tag).toBe(0);
+    const sale = page.locator('#first-sale'), si = await sale.evaluate((e) => [...e.parentNode.children].indexOf(e));
+    await page.evaluate(() => { location.hash = 'first-sale'; });
+    await expect(sale).toHaveClass(/\bopen\b/);
+    expect(await vis(page), tag).toBe(si + 1);
+    await expect.poll(async () => Math.abs((await sale.boundingBox()).y - 72), tag).toBeLessThanOrEqual(2);
+    // tapping «Show one more» in a steady rhythm to the very end never lands on «Collapse the story»: the last card takes the slot's place
+    await page.evaluate(() => document.querySelector('#tlOne').scrollIntoView({ block: 'center', behavior: 'instant' }));
+    const ob = await one.boundingBox(), fx = ob.x + ob.width / 2, fy = ob.y + ob.height / 2;
+    for (let k = si + 1; k < N - 1; k++) { await page.mouse.click(fx, fy); await page.waitForTimeout(500); expect(await vis(page), `${tag} tap ${k}`).toBe(k + 1); }
+    await page.mouse.click(fx, fy); await page.evaluate(() => document.querySelector('#tlAll').click());   // the last one, and at once «Collapse»:
+    expect(await vis(page), `${tag} guard`).toBe(N);                                                    // it waits a moment
+    await page.waitForTimeout(500);
+    await expect(page.locator('#tlSay')).toHaveText('ще 0');
+    expect(await page.evaluate(([x, y]) => !!document.elementFromPoint(x, y)?.closest('#tlMore'), [fx, fy]), tag).toBe(false);
+    await page.mouse.click(fx, fy); await page.waitForTimeout(500); await page.mouse.click(fx, fy);
+    expect(await vis(page), tag).toBe(N);
+    expect([...w.ext], tag).toEqual([]);
+    expect(w.errs, tag).toEqual([]);
+    await ctx.close();
+  }
+  // right to left: the line, the slot and the ring mirror; the count speaks Arabic
+  { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } }); await odStub(ctx);
+    const page = await ctx.newPage(), w = watch(page);
+    await page.goto('./?lang=ar');
+    await expect(page.locator('html')).toHaveAttribute('data-words', 'ar'); await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+    expect(await vis(page)).toBe(3);
+    await page.locator('#tlOne').scrollIntoViewIfNeeded();
+    const ring = await page.locator('.tl-ring').boundingBox(), slot = await page.locator('#tlOne').boundingBox();
+    expect(ring.x).toBeGreaterThan(slot.x + slot.width);                                                 // the line is on the right
+    await page.click('#tlOne');
+    expect(await vis(page)).toBe(4);
+    const N = await page.locator('#tl .tl-i').count();
+    await expect(page.locator('#tlSay')).toHaveText(`${N - 4} أخرى`);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+    expect(w.errs).toEqual([]);
+    await ctx.close(); }
+  // a small phone: nothing scrolls sideways — folded, after one more, all of it
+  { const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } }); await odStub(ctx);
+    const page = await ctx.newPage(), w = watch(page), sw = () => page.evaluate(() => document.documentElement.scrollWidth);
+    await page.goto('./?lang=uk');
+    await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
+    await page.locator('#tlOne').scrollIntoViewIfNeeded(); expect(await sw()).toBeLessThanOrEqual(320);
+    await page.click('#tlOne'); await page.waitForTimeout(500); expect(await sw()).toBeLessThanOrEqual(320);
+    await page.click('#tlAll'); expect(await sw()).toBeLessThanOrEqual(320);
+    expect(w.errs).toEqual([]);
+    await ctx.close(); }
 });
 
 test('the loader credits — the Lewydo standard: a fourth phone on the brand page, its numbers, brand.json and the text for Claude', async ({ page, request }) => {

@@ -91,6 +91,11 @@
   "story.title": "Seenaa keenya hanga ammaatti",
   "story.all.open": "Seenaa guutuu agarsiisi",
   "story.all.close": "Seenaa gabaabsi",
+  "story.one": "Isa tokko dabali agarsiisi",
+  "story.left": {
+   "one": "{n} dabalataa",
+   "other": "{n} dabalataa"
+  },
   "story.1.when": "2017",
   "story.1.t": "Sarara jalqabaa Java",
   "story.1.d": "Vlad koodii isaa isa jalqabaa barreessa. Waggaa tokko booda gara Kotlin ce'ee bara baraan achuma hafa.",
