@@ -600,6 +600,7 @@ test('the story folds: the first 3, then one more at a time (under the finger) o
     expect(await vis(page), tag).toBe(N);
     await expect(items.last()).toBeVisible();
     await expect(all).toHaveAttribute('aria-expanded', 'true'); await expect(all).toHaveText('Згорнути історію');
+    await expect(page.locator('#tlSay')).toHaveText('ще 0');                                            // words, not a bare «+12»
     expect(await page.locator('.tl-tog[aria-expanded="true"]').count(), tag).toBe(0);
     expect(await page.locator('#tlMore').evaluate((e) => getComputedStyle(e).position), tag).toBe('sticky');
     await expect(one).toBeHidden(); await expect(page.locator('#tlFold')).toBeHidden();
@@ -616,9 +617,30 @@ test('the story folds: the first 3, then one more at a time (under the finger) o
       expect(await vis(page), `${tag} #${id}`).toBe(i + 1);
       await expect.poll(async () => Math.abs((await li.boundingBox()).y - 72), `${tag} #${id}`).toBeLessThanOrEqual(2);   // scroll-padding-top
     }
-    // and a link followed on the page itself
+    // and a link followed on the page itself, to an entry that is still folded: everything up to it shows, it opens, under the header.
+    // Without hidden="until-found" (Safari, Firefox) — Chrome's own find-and-reveal would otherwise do half the work for the script
+    await page.addInitScript(() => { for (const o of [HTMLElement.prototype, Element.prototype, Node.prototype]) delete o.onbeforematch; });
+    await page.goto('about:blank'); await page.goto('./?lang=uk');
+    await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
+    expect(await page.evaluate(() => 'onbeforematch' in document.body), tag).toBe(false);
+    expect(await vis(page), tag).toBe(3);
+    expect(await page.locator('#tl .tl-i[hidden="until-found"]').count(), tag).toBe(0);
+    const sale = page.locator('#first-sale'), si = await sale.evaluate((e) => [...e.parentNode.children].indexOf(e));
     await page.evaluate(() => { location.hash = 'first-sale'; });
-    await expect(page.locator('#first-sale')).toHaveClass(/\bopen\b/);
+    await expect(sale).toHaveClass(/\bopen\b/);
+    expect(await vis(page), tag).toBe(si + 1);
+    await expect.poll(async () => Math.abs((await sale.boundingBox()).y - 72), tag).toBeLessThanOrEqual(2);
+    // tapping «Show one more» in a steady rhythm to the very end never lands on «Collapse the story»: the last card takes the slot's place
+    await page.evaluate(() => document.querySelector('#tlOne').scrollIntoView({ block: 'center', behavior: 'instant' }));
+    const ob = await one.boundingBox(), fx = ob.x + ob.width / 2, fy = ob.y + ob.height / 2;
+    for (let k = si + 1; k < N - 1; k++) { await page.mouse.click(fx, fy); await page.waitForTimeout(500); expect(await vis(page), `${tag} tap ${k}`).toBe(k + 1); }
+    await page.mouse.click(fx, fy); await page.evaluate(() => document.querySelector('#tlAll').click());   // the last one, and at once «Collapse»:
+    expect(await vis(page), `${tag} guard`).toBe(N);                                                    // it waits a moment
+    await page.waitForTimeout(500);
+    await expect(page.locator('#tlSay')).toHaveText('ще 0');
+    expect(await page.evaluate(([x, y]) => !!document.elementFromPoint(x, y)?.closest('#tlMore'), [fx, fy]), tag).toBe(false);
+    await page.mouse.click(fx, fy); await page.waitForTimeout(500); await page.mouse.click(fx, fy);
+    expect(await vis(page), tag).toBe(N);
     expect([...w.ext], tag).toEqual([]);
     expect(w.errs, tag).toEqual([]);
     await ctx.close();

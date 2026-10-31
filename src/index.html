@@ -1305,15 +1305,19 @@ const storyCards = () => {
   const fx = (el, kf, o) => { if (!RM) try { el.animate(kf, o); } catch (e) {} };
 
   // «Show one more»: the next entry grows in just above the button, and the page scrolls by the same amount in the same frame —
-  // the button stays under the finger (the last one: «Collapse the story» takes its place); the new card's top never goes under the header
+  // the button stays under the finger; the new card's top never goes under the header. The last one: the slot is gone, so the new card
+  // itself takes the slot's place (under the finger lands a card, never «Collapse the story» — a steady tapper can't fold it all back),
+  // and for a moment the collapse ignores taps
+  let guard = 0;
   const showOne = () => {
     finish(); if (shown >= N) return;
     const li = items[shown], y0 = one.getBoundingClientRect().top;
     shown++; apply(); render();
-    const anchor = shown < N ? one : all, h = li.offsetHeight, D = anchor.getBoundingClientRect().top - li.getBoundingClientRect().top;
-    const target = y0 - D < HEAD + 12 ? HEAD + 12 + D : y0;
+    const last = shown >= N, anchor = last ? li : one, h = li.offsetHeight, D = anchor.getBoundingClientRect().top - li.getBoundingClientRect().top;
+    const target = y0 - D < HEAD + 12 ? HEAD + 12 + D : y0, a0 = last ? li.getBoundingClientRect().top : y0;   // a0 — where the anchor starts: it glides, never jumps
+    if (last) guard = performance.now() + 900;
     $('.tl-tog', li).focus({ preventScroll: true });
-    announce(shown < N ? T('story.left', N - shown) : '');
+    announce(T('story.left', N - shown));   // the last one: «0 more» — nothing is left
     if (RM) { scrollByNow(anchor.getBoundingClientRect().top - target); return; }
     fx($('.tl-card', li), [{ opacity: 0, transform: 'translateY(-14px) scale(.97)' }, { opacity: 1, transform: 'none' }], { duration: 380, delay: 70, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' });
     fx(li, [{ transform: 'scale(.2)', opacity: 0 }, { transform: 'scale(1.18)', opacity: 1, offset: .7 }, { transform: 'none', opacity: 1 }], { pseudoElement: '::before', duration: 420, delay: 140, easing: 'ease-out', fill: 'backwards' });
@@ -1323,7 +1327,7 @@ const storyCards = () => {
     const end = () => { cancelAnimationFrame(raf); li.style.height = ''; li.style.clipPath = ''; measure(); scrollByNow(anchor.getBoundingClientRect().top - target); };
     const step = (now) => { const p = clamp((now - t0) / 320), e = easeO(p);
       li.style.height = (h * e).toFixed(2) + 'px'; measure();
-      scrollByNow(anchor.getBoundingClientRect().top - (y0 + (target - y0) * e));
+      scrollByNow(anchor.getBoundingClientRect().top - (a0 + (target - a0) * e));
       if (p < 1) raf = requestAnimationFrame(step); else { end(); anim = null; } };
     anim = end; step(t0);
   };
@@ -1331,7 +1335,7 @@ const storyCards = () => {
   const showAll = () => {
     finish(); const from = shown; shown = N; apply(); render();
     $('.tl-tog', items[from]).focus({ preventScroll: true });
-    announce('⁦+' + (N - from) + '⁩');
+    announce(T('story.left', 0));   // the count, as after «one more»: nothing is left (the focus is on the first new entry)
     let k = 0; for (const li of items.slice(from)) { if (li.getBoundingClientRect().top > innerHeight) break;
       fx($('.tl-card', li), [{ opacity: 0, transform: 'translateY(-10px)' }, { opacity: 1, transform: 'none' }], { duration: 360, delay: 40 + k++ * 45, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' }); }
   };
@@ -1368,7 +1372,7 @@ const storyCards = () => {
     items.slice(FIRST).forEach((li) => li.classList.remove('rv'));   // they have their own entrance; the scroll fade would run on top of it
     more.hidden = false; apply(); render();
     one.addEventListener('click', showOne);
-    all.addEventListener('click', () => (shown >= N ? collapse(all) : showAll()));
+    all.addEventListener('click', () => (shown < N ? showAll() : performance.now() > guard && collapse(all)));
     back.addEventListener('click', () => collapse(back));
     items.forEach((li, i) => li.addEventListener('beforematch', () => reveal(i)));
     onLang.push(render);
