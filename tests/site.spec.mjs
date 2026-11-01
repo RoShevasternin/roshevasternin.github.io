@@ -563,7 +563,7 @@ test('the story: the first streamer to play our game live (22.10.2026) — our o
 // 31.10.2026 (owner): «спочатку перші 3 частини, а потім по 1… або одразу все» — the story folds, and still scales as it grows
 test('the story folds: the first 3, then one more at a time (under the finger) or all of it; collapse; links open their entry; RTL; 320 px; reduced motion', async ({ browser }) => {
   test.setTimeout(240_000);
-  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store'];
+  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan'];
   const vis = (page) => page.evaluate(() => [...document.querySelectorAll('#tl .tl-i')].filter((l) => !l.hidden).length);
   const focused = (page, i) => page.evaluate((i) => document.activeElement === document.querySelectorAll('#tl .tl-i')[i].querySelector('.tl-tog'), i);
   // the reveal's own animations (scripted; CSS transitions such as a dot lighting up don't count)
