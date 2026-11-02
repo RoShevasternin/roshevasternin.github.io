@@ -26,7 +26,8 @@ const PIXEL = Buffer.from('UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/
 // the game's own site isn't in this repo (on Pages it is the next door): every page gets the stand-in, unless OD_SITE gives the real one
 const odStub = async (ctx) => { if (REAL_OD) return;
   await ctx.route('**/Game-Orbit-Dash/play/embed.html*', (r) => r.fulfill({ contentType: 'text/html', body: OD_STUB }));
-  await ctx.route('**/Game-Orbit-Dash/assets/media/poster.webp', (r) => r.fulfill({ contentType: 'image/webp', body: PIXEL })); };
+  await ctx.route('**/Game-Orbit-Dash/assets/media/poster.webp', (r) => r.fulfill({ contentType: 'image/webp', body: PIXEL }));
+  await ctx.route('**/Game-Orbit-Dash/assets/media/cover-*.webp', (r) => r.fulfill({ contentType: 'image/webp', body: PIXEL })); };   // [HALLOWEEN-LEVEL] .od-hol covers
 test.beforeEach(async ({ context }) => { await odStub(context); });
 
 test('speaks the visitor’s language, switches to any of ours, remembers it, and asks no third party for anything', async ({ browser }) => {
@@ -181,6 +182,17 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await page.locator('#odNext').click();                                                           // the arrows walk through the levels too
   await expect(pills.nth(4)).toHaveAttribute('aria-pressed', 'true');
   await expect.poll(level, { timeout: 15_000 }).toBe(L[3].id);
+  // [HALLOWEEN-LEVEL] the holiday levels (02.11.2026): pills with 🎃, and a card — the game's word, three covers that play that level, where
+  const hol = L.filter((l) => l.col === 'halloween');
+  expect(hol.map((l) => l.id)).toEqual(['blood-moon', 'midnight-parade', 'witchs-brew']);
+  await expect(pills.filter({ hasText: '🎃' })).toHaveCount(hol.length);
+  const holBtn = page.locator('.od-hol [data-od-level]');
+  await expect(holBtn).toHaveCount(hol.length);
+  await expect(page.locator('.od-hol [data-t="od.hol"]')).toHaveText('HALLOWEEN');
+  await expect(page.locator('.od-hol [data-t="od.holWhere"]')).toHaveText('In the browser now · in the app with the next update');
+  await holBtn.nth(2).click();                                                                     // a cover → that level in the phone
+  await expect(holBtn.nth(2)).toHaveAttribute('aria-pressed', 'true');
+  await expect.poll(level, { timeout: 15_000 }).toBe(hol[2].id);
   await pills.nth(0).click();                                                                      // «All levels» — the trailer again
   await expect(pills.nth(0)).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', '/Game-Orbit-Dash/play/');   // the whole game in the browser comes first, as with CubePix
