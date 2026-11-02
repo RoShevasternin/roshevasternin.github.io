@@ -52,7 +52,7 @@ Play Маркет чи App Store залежно від платформи, у в
 
 Аналітика: `share_game {source: settings, method: system | copy}`. Система не каже, чи гравець насправді надіслав, тож це тап, не «поширення».
 
-Тексти: ключі `set.share`, `set.shareMsg`, `set.shareCopied` — спершу англійською, мовний прохід перед релізом. Напис кнопки — коротко,
+Тексти: ключі `set.share`, `set.shareMsg`, `set.shareCopied` — спершу англійською, мовний прохід перед релізом. **Повідомлення — обов'язково мовою гравця, усіма мовами гри** (власник 02.11.2026: «щоб повідомлення теж було мовою гравця»): без нього фіча не готова. Новий напис кнопки може принести нові знаки шрифтів (CJK) — перегенерувати атласи. Напис кнопки — коротко,
 щоб кожною мовою влазив в ОДИН рядок (довге — коротший точний переклад, кегль не зменшувати; перевірити рендером кожної мови, справа наліво теж).
 
 Порядок: спершу веб-прототип (системне вікно — симуляцією: текст, посилання, платформа; DEV-перемикач Android ↔ iPhone), власник
@@ -73,7 +73,7 @@ Play Маркет чи App Store залежно від платформи, у в
 ### CubePix
 - Прототип: `ShareButton`, `shareLink`, `shareWeb`, `ShareSheetSim` у `cubepix-prototype/src/CubePix.jsx` (`btn-primary set-share`; значок `share` —
   `tools/icons/pixelarticons/share.svg`, DEBUG → iPHONE показує посилання iPhone). Тести — `tests/meta.spec.js`.
-- Гра: патч 71 — `ASettingsDialog`, `Platform.shareGame`, `Platform.shareUrl`; Android `Intent.ACTION_SEND`, iOS `UIActivityViewController`.
+- Гра: патч 71 — `ASettingsDialog`, `Platform.shareGame`; Android `Intent.ACTION_SEND`, iOS `UIActivityViewController`. Патч 72 — усі 82 мови й шрифти CJK. Перевірено на Redmi 10C (uk, id, ja): текст і посилання доходять, налаштування лишаються відкритими, app open на поверненні немає.
 
 ### Orbit Dash
 - Переносить своя сесія за цим правилом (прототип → гра), з власним повідомленням і у власному вигляді кнопки.
