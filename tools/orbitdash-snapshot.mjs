@@ -31,9 +31,10 @@ if (hs) {
 }
 
 // Беремо лише те, що потрібно вітрині на сайті студії: без адрес на звук — його тут не граємо.
+// col — колекція рівня в грі (з 02.11.2026): main — головні, halloween — святкові з вкладки 🎃 HOLIDAYS (лишаються й після свята)
 const out = levels.map((L) => ({
   id: L.id, name: L.name, genre: L.genre, dots: L.dots, bpm: L.bpm,
-  palette: L.palette, sky: L.sky || {},
+  palette: L.palette, sky: L.sky || {}, col: L.col || 'main',
 }));
 
 writeFileSync('src/orbitdash.json', JSON.stringify({

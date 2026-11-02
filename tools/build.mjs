@@ -145,6 +145,17 @@ const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
     `<span class="od-ev-tx"><b data-t="od.ev_${ev}"></b><span data-t="od.evText_${ev}"></span>` +
     `<em><span class="od-ev-left"></span> · <span data-t="od.browser"></span> →</em></span></a>`; }).join('\n');
+// [HALLOWEEN-LEVEL] Orbit Dash's holiday levels (02.11.2026: BLOOD MOON, MIDNIGHT PARADE, WITCH'S BREW — the game's 🎃 HOLIDAYS tab; they stay
+// after the holiday, so this card is not seasonal): the collection name — the game's own word (od.hol), the three levels — buttons that play
+// that level in the phone above (the same `level` message as the pills), their covers — from the game's site (same origin), and honestly
+// where they are: in the browser now, in the app with the next update (od.holWhere). Words — src/i18n/*.json → site
+const odHolLv = (OD.levels || []).filter((l) => l.col === 'halloween');
+if (odHolLv.length) for (const k of ['od.hol', 'od.holWhere'])
+  if (!(k in SS.en)) problems.push(`en: Orbit Dash's holiday levels need the words «${k}» (src/i18n/*.json → site)`);
+const odHol = !odHolLv.length ? '' : `<div class="od-hol"><p class="od-hol-h"><span aria-hidden="true">🎃</span> <b data-t="od.hol"></b></p>` +
+  `<ul class="od-hol-lv" lang="en">` + odHolLv.map((l) => `<li><button type="button" data-od-level="${l.id}" style="--a:#${l.palette.player}">` +
+    `<img src="${G.orbitdash.site}assets/media/cover-${l.id}.webp" alt="" width="720" height="720" loading="lazy" decoding="async"><span>${l.name.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</span></button></li>`).join('') +
+  `</ul><p class="od-hol-where" data-t="od.holWhere"></p></div>`;
 const cpEvents = Object.keys(CP.events || {}).map((ev) => { const pic = `assets/games/cubepix-${ev}.webp`;
   return `<a class="cp-ev" href="${G.cubepix.site}#event" data-lang-link="cp" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
@@ -172,7 +183,7 @@ const fill = (html) => {
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
-    .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents)
+    .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
       url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.version': G.cubepix.version,
