@@ -6,7 +6,7 @@
   "demo": "/Game-CubePix/play/",
   "privacy": "/Game-CubePix/privacy.html",
   "released": true,
-  "play": "https://play.google.com/store/apps/details?id=com.lewydo.cubepix",
+  "play": "https://play.google.com/store/apps/details?id=com.lewydo.cubepix&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site",
   "version": "1.0.1",
   "icon": "/assets/games/cubepix-icon.webp"
  },
@@ -65,7 +65,7 @@
     "x"
    ]
   ],
-  "play": "https://play.google.com/store/apps/details?id=com.lewydo.orbitdash",
+  "play": "https://play.google.com/store/apps/details?id=com.lewydo.orbitdash&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site",
   "icon": "/assets/games/orbitdash-icon.webp"
  },
  "more": [
