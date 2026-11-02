@@ -1226,7 +1226,7 @@ const orbit = (() => {
     box.classList.remove('idle');
     fr = document.createElement('iframe');
     fr.src = SRC + (want ? '?level=' + encodeURIComponent(want) : '');
-    fr.title = T('od.aria'); fr.setAttribute('allow', 'autoplay');
+    fr.title = T('od.aria'); fr.setAttribute('allow', 'autoplay; web-share; clipboard-write');   // the game's SHARE button: the browser's sheet and the clipboard inside the frame
     box.appendChild(fr);
   }
   function pick(id) { want = id || null; mark(); if (!fr) load(); else send({ od: 'level', id: want }); }

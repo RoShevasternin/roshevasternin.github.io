@@ -169,6 +169,7 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   const pills = page.locator('.od-pill');
   await expect(pills).toHaveCount(L.length + 1);                                                   // «All levels» + every level
   await expect(page.locator('#odScreen iframe')).toHaveAttribute('src', '/Game-Orbit-Dash/play/embed.html');
+  await expect(page.locator('#odScreen iframe')).toHaveAttribute('allow', 'autoplay; web-share; clipboard-write');   // the game's SHARE button inside the frame
   await expect(page.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });
   const game = () => page.frame({ url: /embed\.html/ });
   const level = () => REAL_OD ? game().evaluate(() => { const i = window.__orbitDev.current.beatInfo(); return i && i.id; })
