@@ -27,6 +27,7 @@
 | звідки | utm_source | utm_medium | utm_campaign / ct |
 |---|---|---|---|
 | кнопка «Поділитися грою» | `share` | `player` | `share_android`, `share_ios`, `share_web` — де натиснули |
+| кнопка «Поділитися картиною» | `share` | `player` | `share_picture_android`, `share_picture_ios`, `share_picture_web` |
 | сайт гри | `site` | `game_site` | |
 | сайт студії Lewydo | `lewydo` | `studio_site` | |
 | мережі студії | `instagram`, `facebook`, `x`, `discord`, `tiktok`… | `bio`, `page`, `post`, `video` | назва допису чи свята |
