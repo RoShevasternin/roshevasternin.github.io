@@ -140,8 +140,10 @@ const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cp
 // → the whole game in the browser, where the holiday already is; its picture — assets/games/orbitdash-<event>.webp (the game's Play event art)
 for (const ev of Object.keys(OD.events || {})) for (const k of ['od.ev_' + ev, 'od.evText_' + ev, 'od.evLeft'])
   if (!(k in SS.en)) problems.push(`en: the Orbit Dash holiday «${ev}» needs the words «${k}» (src/i18n/*.json → site)`);
+// every link to the game carries its mark (docs/process/install-source.md); only hrefs: `site` also builds picture paths
+const odLink = (path) => `${path}?${G.orbitdash.mark.replace(/&/g, '&amp;')}`;
 const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/games/orbitdash-${ev}.webp`;
-  return `<a class="od-ev" href="${G.orbitdash.demo}" data-lang-link="od" data-ev="${ev}" hidden>` +
+  return `<a class="od-ev" href="${odLink(G.orbitdash.demo)}" data-lang-link="od" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
     `<span class="od-ev-tx"><b data-t="od.ev_${ev}"></b><span data-t="od.evText_${ev}"></span>` +
     `<em><span class="od-ev-left"></span> · <span data-t="od.browser"></span> →</em></span></a>`; }).join('\n');
@@ -187,7 +189,7 @@ const fill = (html) => {
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
       url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.version': G.cubepix.version,
-      'od.site': G.orbitdash.site, 'od.web': G.orbitdash.demo, 'od.embed': G.orbitdash.embed, 'od.poster': G.orbitdash.poster,
+      'od.site': odLink(G.orbitdash.site), 'od.web': odLink(G.orbitdash.demo), 'od.embed': G.orbitdash.embed, 'od.poster': G.orbitdash.poster,
       'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon, 'od.version': G.orbitdash.version }[k]))
     .replace(/\{\{langCss\}\}/g, () => langCss).replace('{{langFonts}}', () => langFonts).replace('{{langJs}}', () => langJs)
     .replace('{{hreflang}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}">`].join('\n'))
