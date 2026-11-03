@@ -288,6 +288,8 @@ npm run orbitdash -- <клон RoShevasternin/Game-Orbit-Dash>/index.html  # о�
 - **Гра оновилася — її блоки на сайті студії оновлюються в тій самій задачі** (власник 14.10.2026): нова версія, іконка, вигляд,
   механіки чи тексти гри → її світ тут (`src/index.html`, `src/games.json`, тексти `od.*`/`cp.*`/`game.<id>.*` усіма мовами, іконка,
   `npm run cubepix` / `npm run orbitdash` зі свіжого сайту гри, `npm run kit` для картки соцмереж) — не «колись потім».
+- **Посилання на гру — лише з міткою** (власник 03.11.2026): кожне посилання зі сторінки студії на гру (сайт, веб-гра, картка свята, магазин) несе
+  `utm_source=lewydo&utm_medium=studio_site`, у кожній грі й кожній новій кнопці. Як — `docs/process/install-source.md`, «Сторінка студії».
 - **Нова гра:**
   1. іконка 192 px і банер 800 px → `python3 tools/webp.py <файл> assets/games/<id>-icon.webp 192`;
   2. запис у `src/games.json`;
