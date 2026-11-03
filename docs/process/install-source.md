@@ -58,6 +58,6 @@ Connect → Analytics → Campaigns; без нього `ct` не додаємо.
 
 ## Як це зроблено в іграх
 - **CubePix:** `shareLink`, `shareUtm`, `APPSTORE_PT` у `cubepix-prototype/src/CubePix.jsx`; кнопка сайту — `scripts/build-site.mjs`, передача міток — `site/index.html`; гра — патч 73; звіт — `cubepix-libgdx/tools/firebase/ga4.py sources`.
-- **Orbit Dash:** переносить своя сесія, разом із кнопкою «Поділитися» (`docs/ux/share-button.md`).
+- **Orbit Dash:** патч 302. Логіка міток і білий список чужого вводу — `prototype/marks.mjs` (той самий файл бере веб-гра, а `site/build.py` вшиває його в `site/src/page.js`); посилання кнопки — `prototype/share.mjs` (`shareUtm`, `APPSTORE_PT`) і `ShareRules.kt`; перевірка в Chrome — `site/tools/sharecheck.cjs`; звіт — `Orbit Dash/docs/lab/analytics/ga4.py sources`.
 - **Нова гра:** Firebase Analytics, бібліотека, мітки й звіт `ga4.py sources` — з першого релізу.
 - **Старі ігри без Firebase (02.11.2026):** Uxo Monaxa, Physical Light, Joints Tutorials: у файлах збірки Firebase Analytics і бібліотеки немає; Idle Merge Cubes — вони є, але в теці немає `google-services.json`. Додаємо, коли власник скаже; до того там лише звіт Play Console.

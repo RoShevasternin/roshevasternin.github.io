@@ -1443,7 +1443,7 @@ function applyLang() {
   // links to our other sites carry the language — CubePix's only when it speaks it (D.cpLangs), else it picks the visitor's own
   $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); const [b, hh] = a.dataset.base.split('#');
     const ok = lang !== 'en' && (a.dataset.langLink !== 'cp' || (D.cpLangs || []).includes(lang));
-    a.setAttribute('href', b + (ok ? '?lang=' + lang : '') + (hh ? '#' + hh : '')); });
+    a.setAttribute('href', b + (ok ? (b.includes('?') ? '&' : '?') + 'lang=' + lang : '') + (hh ? '#' + hh : '')); });
   $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag;
   $('#langCode').textContent = { 'zh-TW': '繁中', 'zh-CN': '简中' }[lang] || lang.toUpperCase();
   $$('#langList button').forEach((b) => { const L = D.langs.find((x) => x.id === b.dataset.lang), nm = langName(L), sm = $('small', b);

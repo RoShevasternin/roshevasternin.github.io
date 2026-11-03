@@ -169,6 +169,7 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   const pills = page.locator('.od-pill');
   await expect(pills).toHaveCount(L.length + 1);                                                   // «All levels» + every level
   await expect(page.locator('#odScreen iframe')).toHaveAttribute('src', '/Game-Orbit-Dash/play/embed.html');
+  await expect(page.locator('#odScreen iframe')).toHaveAttribute('allow', 'autoplay; web-share; clipboard-write');   // the game's SHARE button inside the frame
   await expect(page.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });
   const game = () => page.frame({ url: /embed\.html/ });
   const level = () => REAL_OD ? game().evaluate(() => { const i = window.__orbitDev.current.beatInfo(); return i && i.id; })
@@ -195,7 +196,7 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await expect.poll(level, { timeout: 15_000 }).toBe(hol[2].id);
   await pills.nth(0).click();                                                                      // «All levels» — the trailer again
   await expect(pills.nth(0)).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', '/Game-Orbit-Dash/play/');   // the whole game in the browser comes first, as with CubePix
+  await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', '/Game-Orbit-Dash/play/?utm_source=lewydo&utm_medium=studio_site');   // the whole game in the browser comes first, as with CubePix
   await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
   expect(w.errs).toEqual([]);
 });
@@ -233,11 +234,11 @@ test('an Orbit Dash holiday: its card shows only while it is on, in the visitor�
   await expect(card).toContainText('WISP');
   await expect(card.locator('.od-ev-left')).toHaveText('ще 33 дні');
   await expect(card.locator('em')).toContainText('Грати в браузері');
-  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/?lang=uk');
+  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/?utm_source=lewydo&utm_medium=studio_site&lang=uk');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.goto('./?lang=en');
   await expect(card.locator('em')).toHaveText('33 days left · Play in your browser →');
-  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/');
+  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/?utm_source=lewydo&utm_medium=studio_site');
   await page.clock.setFixedTime(new Date('2026-11-30T23:00:00'));                                  // the last evening — still on
   await page.reload();
   await expect(card.locator('.od-ev-left')).toHaveText('1 day left');

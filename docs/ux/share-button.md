@@ -81,4 +81,5 @@ Play Маркет чи App Store залежно від платформи, у в
 - Гра: патч 71 — `ASettingsDialog`, `Platform.shareGame`; Android `Intent.ACTION_SEND`, iOS `UIActivityViewController`. Патч 72 — усі 82 мови й шрифти CJK. Перевірено на Redmi 10C (uk, id, ja): текст і посилання доходять, налаштування лишаються відкритими, app open на поверненні немає.
 
 ### Orbit Dash
-- Переносить своя сесія за цим правилом (прототип → гра), з власним повідомленням і у власному вигляді кнопки.
+- Прототип v135: `prototype/share.mjs`, `sharewalk.cjs`. Гра: патч 301 — `APanelSettings`, `ShareRules`, `Platform.shareGame` (Android `MainActivity`, iOS `IOSShare`), усі 82 мови; патч 302 — мітки й кнопка на сайті гри (`SHARE_ON_SITE`), кадр живої гри з `allow="autoplay; web-share; clipboard-write"`.
+- Посилання на кнопці, коли буфер заблоковано, — з міткою, у три рядки, висота кнопки та сама; відпускання миші не запускає нової спроби копіювання, тож його можна виділити.
