@@ -545,7 +545,7 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
 
 test('the story: the first streamer to play our game live (22.10.2026) — our own clip, loaded only when needed; the thank-you; his links', async ({ page, request }) => {
   const w = watch(page), media = [];
-  page.on('request', (r) => { if (/\/assets\/story\//.test(r.url())) media.push(new URL(r.url()).pathname); });
+  page.on('request', (r) => { if (/\/assets\/story\/(?!twitch\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg — the dot of the 03.11 entry (a 1 KB vector, like the other dots), not media
   await page.goto('./?lang=uk');
   const li = page.locator('#first-live');
   await expect(li.locator('h3')).toHaveText('Orbit Dash у прямому ефірі TikTok');
@@ -573,10 +573,49 @@ test('the story: the first streamer to play our game live (22.10.2026) — our o
   expect(w.errs).toEqual([]);
 });
 
+// 03.11.2026 — Vlad’s first day on Twitch (viewers 6yJ7b and morghet_vlr played Orbit Dash): Twitch’s emblem (our own SVG) is the dot on the line and the thumbnail,
+// the thank-you carries the founder’s sign, two channel buttons; the nicks stay Latin (isolated in RTL); nothing scrolls sideways; no third party
+test('the story: first time on Twitch (03.11.2026) — the emblem on the line, the thank-you, two channel links; nicks stay Latin; RTL; 320 px', async ({ browser, request }) => {
+  const svg = await request.get('./assets/story/twitch.svg'); expect(svg.status()).toBe(200);
+  const src = await svg.text(); expect(src).toContain('#9146FF'); expect(src).not.toMatch(/https?:\/\/(?!www\.w3\.org)/);      // Twitch purple; no outside reference
+  for (const [lang, width, title] of [['uk', 390, 'Вперше на Twitch'], ['en', 1440, 'First time on Twitch'], ['ar', 390, 'للمرة الأولى على Twitch'], ['uk', 320, 'Вперше на Twitch']]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 844 } }); await odStub(ctx);
+    const page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
+    await page.goto(`./?lang=${lang}#first-twitch`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    const li = page.locator('#first-twitch');
+    await expect(li).toHaveClass(/\bopen\b/); await expect(li).toHaveClass(/\btwitch\b/);
+    await expect(li.locator('h3')).toHaveText(title);
+    await expect(li.locator('.tl-when')).toHaveText('03 · 11 · 2026');
+    expect(await li.locator('.tl-pad > p').innerText(), tag).toContain('Orbit Dash');
+    for (const n of ['6yJ7b', 'morghet_vlr']) { expect(await li.locator('.tl-pad > p').innerText(), tag).toContain(n); expect(await li.locator('.tl-thanks p').innerText(), tag).toContain(n); }
+    await expect(li.locator('.tl-thanks footer')).toHaveText(await page.locator('#first-live .tl-thanks footer').innerText());   // the same sign as the other thank-yous
+    const links = li.locator('.tl-links a');
+    await expect(links).toHaveCount(2);
+    await expect(links.nth(0)).toHaveAttribute('href', 'https://www.twitch.tv/6yj7b'); await expect(links.nth(0)).toHaveText('6yJ7b');
+    await expect(links.nth(1)).toHaveAttribute('href', 'https://www.twitch.tv/morghet_vlr'); await expect(links.nth(1)).toHaveText('morghet_vlr');
+    for (let i = 0; i < 2; i++) { await expect(links.nth(i).locator('span')).toHaveAttribute('dir', 'ltr'); await expect(links.nth(i).locator('svg')).toHaveCount(1); }
+    if (RTL.includes(lang)) {                                                                             // Latin nicks inside right-to-left text are isolated (LRI … PDI)
+      for (const n of ['6yJ7b', 'morghet_vlr']) expect(await li.locator('.tl-thanks p').innerText(), tag).toContain(`\u2066${n}\u2069`);
+    }
+    // the emblem is the dot (a background of ::before, no circle) and the card’s thumbnail
+    expect(await li.evaluate((e) => getComputedStyle(e, '::before').backgroundImage), tag).toContain('/assets/story/twitch.svg');
+    const th = li.locator('.tl-thumb'); await expect(th).toHaveAttribute('src', '/assets/story/twitch.svg');
+    await expect.poll(() => th.evaluate((e) => e.complete && e.naturalWidth > 0), tag).toBe(true);
+    // the dot is 32 px and its centre is where the others’ are (37.5 px under the entry’s top — the fold’s DOT)
+    const dot = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'); return { w: parseFloat(c.width), h: parseFloat(c.height), top: parseFloat(c.top) }; });
+    expect(dot.w, tag).toBe(32); expect(Math.abs(dot.top + dot.h / 2 - 37.5), tag).toBeLessThanOrEqual(.5);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), tag).toBeLessThanOrEqual(width);
+    expect([...w.ext], tag).toEqual([]);
+    expect(w.errs, tag).toEqual([]);
+    await ctx.close();
+  }
+});
+
 // 31.10.2026 (owner): «спочатку перші 3 частини, а потім по 1… або одразу все» — the story folds, and still scales as it grows
 test('the story folds: the first 3, then one more at a time (under the finger) or all of it; collapse; links open their entry; RTL; 320 px; reduced motion', async ({ browser }) => {
   test.setTimeout(240_000);
-  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan'];
+  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan', 'first-twitch'];
   const vis = (page) => page.evaluate(() => [...document.querySelectorAll('#tl .tl-i')].filter((l) => !l.hidden).length);
   const focused = (page, i) => page.evaluate((i) => document.activeElement === document.querySelectorAll('#tl .tl-i')[i].querySelector('.tl-tog'), i);
   // the reveal's own animations (scripted; CSS transitions such as a dot lighting up don't count)
