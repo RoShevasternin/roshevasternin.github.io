@@ -142,6 +142,7 @@ for (const ev of Object.keys(OD.events || {})) for (const k of ['od.ev_' + ev, '
   if (!(k in SS.en)) problems.push(`en: the Orbit Dash holiday «${ev}» needs the words «${k}» (src/i18n/*.json → site)`);
 // every link to the game carries its mark (docs/process/install-source.md); only hrefs: `site` also builds picture paths
 const odLink = (path) => `${path}?${G.orbitdash.mark.replace(/&/g, '&amp;')}`;
+const cpLink = (path) => `${path}?${G.cubepix.mark.replace(/&/g, '&amp;')}`;
 const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/games/orbitdash-${ev}.webp`;
   return `<a class="od-ev" href="${odLink(G.orbitdash.demo)}" data-lang-link="od" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
@@ -159,7 +160,7 @@ const odHol = !odHolLv.length ? '' : `<div class="od-hol"><p class="od-hol-h"><s
     `<img src="${G.orbitdash.site}assets/media/cover-${l.id}.webp" alt="" width="720" height="720" loading="lazy" decoding="async"><span>${l.name.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</span></button></li>`).join('') +
   `</ul><p class="od-hol-where" data-t="od.holWhere"></p></div>`;
 const cpEvents = Object.keys(CP.events || {}).map((ev) => { const pic = `assets/games/cubepix-${ev}.webp`;
-  return `<a class="cp-ev" href="${G.cubepix.site}#event" data-lang-link="cp" data-ev="${ev}" hidden>` +
+  return `<a class="cp-ev" href="${cpLink(G.cubepix.site)}#event" data-lang-link="cp" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
     `<span class="cp-ev-tx"><b data-t="cp:ev_${ev}"></b><span data-t="cp:evText_${ev}"></span>` +
     (CP.S.en && CP.S.en['evDress_' + ev] ? `<span class="cp-ev-dress" data-t="cp:evDress_${ev}"></span>` : '') + `<em><span class="cp-ev-left"></span> →</em></span></a>`; }).join('\n');
@@ -188,7 +189,7 @@ const fill = (html) => {
     .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
-      url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': G.cubepix.site, 'cp.demo': G.cubepix.demo, 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.version': G.cubepix.version,
+      url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': cpLink(G.cubepix.site), 'cp.demo': cpLink(G.cubepix.demo), 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.version': G.cubepix.version,
       'od.site': odLink(G.orbitdash.site), 'od.web': odLink(G.orbitdash.demo), 'od.embed': G.orbitdash.embed, 'od.poster': G.orbitdash.poster,
       'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon, 'od.version': G.orbitdash.version }[k]))
     .replace(/\{\{langCss\}\}/g, () => langCss).replace('{{langFonts}}', () => langFonts).replace('{{langJs}}', () => langJs)
