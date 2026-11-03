@@ -42,8 +42,8 @@ test('speaks the visitor’s language, switches to any of ours, remembers it, an
   await expect(page.locator('html')).toHaveAttribute('lang', 'uk');
   expect(page.url()).toContain('lang=uk');
   await expect(page.locator('.stats li').first()).toHaveText(/^2\s*людини$/);                         // a plural form, never «{n}»
-  await expect(page.locator('.chap.cp .ctas a[data-lang-link]')).toHaveAttribute('href', '/Game-CubePix/?lang=uk');   // CubePix opens in the same language
-  await expect(page.locator('.pix-meet')).toHaveAttribute('href', '/Game-CubePix/?lang=uk#pix');                // …and «Meet Pix» at his section
+  await expect(page.locator('.chap.cp .ctas a[data-lang-link]')).toHaveAttribute('href', '/Game-CubePix/?utm_source=lewydo&utm_medium=studio_site&lang=uk');   // CubePix opens in the same language
+  await expect(page.locator('.pix-meet')).toHaveAttribute('href', '/Game-CubePix/?utm_source=lewydo&utm_medium=studio_site&lang=uk#pix');                // …and «Meet Pix» at his section
   await expect(page.locator('.pix-meet .pix-hi')).toHaveText('Привіт! Я Pix.');                                 // the mascot says hi in the visitor's language
   await expect(page.locator('.tl-i.pix h3')).toHaveText('Народився Pix');                                       // the day he was invented, in the story
   await page.goto('./');                                                                              // remembered
@@ -212,7 +212,7 @@ test('a CubePix holiday: its card shows only while it is on, in the visitor’s 
   await expect(card.locator('b')).toHaveText('Хелловін у музеї!');
   await expect(card).toContainText('30 листопада');
   await expect(card.locator('.cp-ev-left')).toHaveText('ще 33 дні');
-  await expect(card).toHaveAttribute('href', '/Game-CubePix/?lang=uk#event');
+  await expect(card).toHaveAttribute('href', '/Game-CubePix/?utm_source=lewydo&utm_medium=studio_site&lang=uk#event');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.clock.setFixedTime(new Date('2026-12-01T00:00:01'));
   await page.reload();
@@ -704,4 +704,13 @@ test('the loader credits — the Lewydo standard: a fourth phone on the brand pa
   expect(B.loader.credits.box).toMatchObject({ width: 360, height: 36, bottom: 28 });
   expect(B.loader.credits.opacity).toBe(0.25);
   expect(w.errs).toEqual([]);
+});
+
+// docs/process/install-source.md: every link from the studio page to a game says where it came from, or Firebase shows (direct)
+test('every link to a game carries the studio mark', async ({ page }) => {
+  await page.goto('./?lang=en');
+  const bad = await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.getAttribute('href'))
+    .filter((h) => /^\/Game-(CubePix|Orbit-Dash)\/(play\/)?([?#]|$)/.test(h) || /details\?id=com\.lewydo\.(cubepix|orbitdash)(?!.*referrer=)/.test(h))
+    .filter((h) => !h.includes('utm_source') && !h.includes('utm_source%3D')));
+  expect(bad).toEqual([]);
 });
