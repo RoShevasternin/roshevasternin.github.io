@@ -36,7 +36,7 @@ config   { "tiktok": { …копія android.tiktok… }, "live": { …копі�
 - **`tiktok`** — TikTok Business SDK (Events Manager): `app_id` (кілька — через кому) і `secret`, **лише рядки** (19-значний App ID числом
   JSON спотворюється). Порожньо / немає — SDK на цій платформі не стартує, тихо. Стартує **лише зі згодою** гравця. Як саме — `tiktok.md`.
 - **`live`** — вікна сезонів (`on`, `from`, `to` — місцева дата гравця, включно); вшиті дати в грі — запас без мережі; `on: false` — вимикач.
-- **`update`** — оновлення на iPhone (`docs/ux/ios-updates.md`): `latest` пише Claude лише після «вже в App Store» від власника; `app_id` — Apple ID.
+- **`update`** — оновлення на iPhone (`docs/ux/ios-updates.md`): `latest` пише Claude лише після «вже в App Store» від власника (ці слова — його «так») і одразу каже йому «Remote Config оновлено: …» (05.11.2026); `app_id` — Apple ID.
 
 ## Як читає гра
 
