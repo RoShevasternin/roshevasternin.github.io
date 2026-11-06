@@ -1,4 +1,4 @@
-// Lewydo™ brand kit — https://roshevasternin.github.io/brand/
+// Lewydo™ brand kit — https://lewydo.com/brand/
 // The Lockup (208×322): the heart in its glow, «Lewydo», «Love What You Do», the line — and its intro (the splash).
 // Everything arrives first, top to bottom; then the heart beats as the finale, with the Lewydo sound:
 //   0.15 → 0.85 s  the heart and its glow arrive (fade in, scale 0.94 → 1)

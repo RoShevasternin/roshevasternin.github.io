@@ -1,12 +1,17 @@
-# Lewydo™ — сайт студії (https://roshevasternin.github.io/)
+# Lewydo™ — сайт студії (https://lewydo.com/)
 
 Спілкуйся з власником українською, дружньо й просто (він звертається «бро»). Це публічний репозиторій, GitHub Pages
-публікує його корінь (гілка `main`). Сайти ігор — окремі репозиторії за адресами цього ж домену:
-- `/Game-CubePix/` — RoShevasternin/Game-CubePix (збирається з приватного Game-CubePix-PRIVATE);
-- `/Game-Orbit-Dash/` — RoShevasternin/Game-Orbit-Dash.
+публікує його корінь (гілка `main`) на **власному домені https://lewydo.com/** (куплено 06.11.2026; файл `CNAME` у корені — не чіпати й не
+видаляти: без нього Pages знову віддає сайт за старою адресою https://roshevasternin.github.io/, яка з ним переадресовує сюди). Сайти ігор —
+окремі репозиторії, **кожен на своєму піддомені** (інше походження, ніж ця сторінка — див. Orbit Dash у «Що на сторінці» і «Мова» нижче):
+- https://cubepix.lewydo.com/ — RoShevasternin/Game-CubePix (збирається з приватного Game-CubePix-PRIVATE; колись `/Game-CubePix/`);
+- https://orbitdash.lewydo.com/ — RoShevasternin/Game-Orbit-Dash (збирається з `site/` приватного Game-Orbit-Dash-PRIVATE; колись `/Game-Orbit-Dash/`).
+
+**Переїзд на домен — спершу сайт Orbit Dash, потім ця сторінка, і перевірка HTTPS після.** Порядок і перевірки — «Git і публікація» →
+«Переїзд на lewydo.com».
 
 ## Бренд — лише стандарт (рішення власника: «щоб це був стандарт всюди»)
-**Джерело бренду для всіх проєктів Lewydo — сторінка https://roshevasternin.github.io/brand/ і тека `brand/` цього репозиторію.**
+**Джерело бренду для всіх проєктів Lewydo — сторінка https://lewydo.com/brand/ і тека `brand/` цього репозиторію.**
 Власник дає новим проєктам лінк на неї замість Figma: звідти беруть лого, назву, слоган, пігулку для меню, BrandScreen, About us і серцебиття.
 Сторінка — усіма **82 мовами наших ігор**, як увесь сайт (за замовчуванням — мова відвідувача, інакше англійська); тексти — `src/i18n/<мова>.json` → `brand`. Інформація публічна.
 
@@ -76,19 +81,20 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
 | `src/i18n/<мова>.json` | **усі слова сайту, по файлу на мову** (82; англійська `en.json` — еталон): `site` — головна, `brand` — сторінка бренду (ключі без `b.`), `cubepix` — доповнення CubePix для мов, яких сайт гри ще не знає (див. «Мови») |
 | `src/langnames.json` | назви мов мовою сторінки (другий рядок у списку мов) |
 | `src/lang-boot.js`, `src/lang.js`, `src/lang.css` | вибір мови до першого кадру; список мов (пошук, 82 рядки, рядок Росії); підвантаження слів `/lang/<мова>.json` і `/brand/lang/<мова>.json`; шрифти писемностей (системні, без сторонніх запитів), справа наліво — однаково на обох сторінках |
-| `src/games.json` | ігри: адреси, Google Play, кольори, іконки, `released` |
+| `src/games.json` | ігри: адреси (повні, на піддоменах `*.lewydo.com`), Google Play, кольори, іконки, `released` |
 | `src/cubepix.json` | CubePix: картини, назви, слова гри (зокрема текст «Про нас» — однаковий у всіх іграх), лого. **Генерує** `npm run cubepix` |
 | `src/orbitdash.json` | Orbit Dash: рівні (назва, жанр, BPM, палітра) для пігулок під телефоном — **генерує** `npm run orbitdash` (знімок із сайту гри) |
 | `src/langs.json` | 82 мови (як у грі Orbit Dash: `Orbit Dash/assets/i18n/` приватного репо); `dir: rtl` — ar, he, fa, ur, ps; прапорці — векторні `assets/flags/<мова>.svg` (flag-icons, MIT; `zh-TW` — нейтральна плитка «繁», `zh-CN` — «简», як в іграх; `ru-stained.svg` — лише для рядка Росії) |
 | `src/heart.kt` | код, з якого «складається» серце в картці «Він кодить. Вона малює» |
 | `src/halloween.css`, `src/halloween.js` | **`[HALLOWEEN]` свято на головній** (див. «Свято на сайті студії» нижче): вигляд і декор сезону; збірка вставляє їх у `src/index.html` (`{{halloweenCss}}`, `{{halloweenJs}}`), вікно — `{{hw.season}}`. У грудні — видалити |
 | `src/music.html` | платівка й «Улюблена пісня Влада» (плеєр YouTube лише після тапу) — вставка `{{music}}` на обох сторінках; платівка `{{vinyl}}` — у `tools/build.mjs` |
-| `src/404.html` | сторінка «кімнати немає» для **всього** домену (тому всі шляхи абсолютні) |
+| `src/404.html` | сторінка «кімнати немає» для **всього** lewydo.com (тому всі шляхи абсолютні; у піддоменів ігор — своя) |
 | `src/brand.html` | шаблон сторінки бренду `/brand/`; тексти — `src/i18n/<мова>.json` → `brand` (у шаблоні ключі `b.…`); `tools/brand.mjs` — її частини, `brand.json` і zip |
 | `brand/` | **бренд-кіт** (див. вище): `kit/` і `README.md` — джерело, решта генерується |
-| `tools/build.mjs` | збірка → `index.html`, `brand/…`, `404.html`, `robots.txt`, `sitemap.xml` |
+| `tools/build.mjs` | збірка → `index.html`, `brand/…`, `404.html`, `robots.txt`, `sitemap.xml` (лише сторінки lewydo.com: сторінки ігор — у мапах їхніх сайтів); `SITE` — адреса сайту, `MAIL` — пошта |
 | `tools/webp.py`, `tools/fetch-fonts.py`, `tools/cubepix-snapshot.mjs`, `tools/orbitdash-snapshot.mjs` | картинки → WebP; шрифти (Nunito; підмножина Inter — підпис творців і слово ORBIT DASH, як у грі 2.0); дані CubePix і Orbit Dash |
-| `tests/` | `npm test` (`site.spec`), `npm run look`, `npm run kit`; `serve.mjs` — сервер як GitHub Pages |
+| `tests/` | `npm test` (`site.spec`), `npm run look`, `npm run kit`; `serve.mjs` — сервер як GitHub Pages: сайт студії на порту N, сайт Orbit Dash — **окремим походженням** на N+1 (див. «Тести» в Orbit Dash) |
+| `CNAME` | **`lewydo.com` — власний домен сайту (GitHub Pages з гілки читає його звідси); не чіпати й не видаляти.** DNS — у Cloudflare власника |
 | `app-ads.txt` | **для AdMob і Unity Ads — не чіпати й не видаляти** (без нього реклама в іграх заробляє менше). Один файл на всі ігри Lewydo: AdMob `pub-4052300465234748` + Unity (організація `157539800`, з 19.10.2026 — медіація через AdMob) і її RESELLER-рядки з кабінету Unity (Settings → Organization → App-ads.txt); нова мережа — її рядки сюди ж, лише ASCII |
 | `googlea91a80ac974455de.html` | **підтвердження сайту в Google Search Console — не чіпати й не видаляти** (19.10.2026: через нього Play Console підтверджує сайт розробника; видалиш — підтвердження злетить); запасний спосіб — мета-тег `google-site-verification` у `src/index.html`, теж не чіпати |
 | `assets/` | шрифти, іконки й банери ігор, `og.png`, іконки сайту |
@@ -121,33 +127,38 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
      «перемикати квадратиками дуже незручно»; так само на сайті гри).
      Під кнопками — картка **«Знайомся: Pix»** (маскот — кубик на ім'я Pix, Cube + Pix = CubePix; власник 03.10.2026): Pix
      (`assets/games/cubepix-pix.webp` — намальований кодом гри, як на її сайті) вітається мовою відвідувача; заголовок, текст і привіт —
-     слова сайту гри (`cp:pixTitle`, `cp:pixName`, `cp:pixHi` зі снапшота), посилання «Більше про Pix» → `/Game-CubePix/?lang=xx#pix`.
+     слова сайту гри (`cp:pixTitle`, `cp:pixName`, `cp:pixHi` зі снапшота), посилання «Більше про Pix» → `https://cubepix.lewydo.com/?…&lang=xx#pix`.
      **Свято CubePix** (власник 29.10.2026, Хелловін): над карткою Pix — помаранчева картка свята (`.cp-ev`), **лише поки свято йде** —
      дати й слова з сайту гри (`src/cubepix.json` → `events`, `cp:ev_<свято>`, `cp:evText_<свято>`, `cp:evLeft` «ще N днів»; дати —
-     `LIVE` гри, годинник відвідувача — після останнього дня картка зникає сама) → `/Game-CubePix/?lang=xx#event`. Картинка —
+     `LIVE` гри, годинник відвідувача — після останнього дня картка зникає сама) → `https://cubepix.lewydo.com/?…&lang=xx#event`. Картинка —
      `assets/games/cubepix-<свято>.webp` (картка події з Google Play гри, 480 px). Нове свято в грі → `npm run cubepix` + картинка.
    - **Orbit Dash** (уже в Google Play): у рамці телефона — **сама гра**, не імітація (власник 04.10.2026: «та міні-гра не
-     така як у прототипі… мєрзка»): `/Game-Orbit-Dash/play/embed.html` — прототип гри з її сайту (збирається в
+     така як у прототипі… мєрзка»): `https://orbitdash.lewydo.com/play/embed.html` — прототип гри з її сайту (збирається в
      Game-Orbit-Dash-PRIVATE, `site/src/embed.js`). Сама грає найкращі шматки рівнів, тап — рівень твій, з музикою; поки гра
-     вантажиться — постер `/Game-Orbit-Dash/assets/media/poster.webp` (той самий кадр). Вантажиться, коли до блоку догорнули;
+     вантажиться — постер `https://orbitdash.lewydo.com/assets/media/poster.webp` (той самий кадр). Вантажиться, коли до блоку догорнули;
      поза екраном стоїть. Пігулки «Усі рівні» + 5 рівнів і стрілки — повідомлення `level`; підписи в кадрі — мовою сторінки
-     (`labels`: `od.tap/sound/watch/loading`); сяйво — барва м'яча рівня на екрані. Оновився прототип → сайт гри перезібрався
-     (сам, після злиття в приватному репо) → і тут уже нова гра. Протокол — `site/README.md` приватного репо, «Жива гра».
+     (`labels`: `od.tap/sound/watch/loading`), сама гра в кадрі — теж (`?lang=` в адресі кадру); сяйво — барва м'яча рівня на екрані.
+     Оновився прототип → сайт гри перезібрався (сам, після злиття в приватному репо) → і тут уже нова гра. Протокол — `site/README.md`
+     приватного репо, «Жива гра».
+     **Гра — інше походження (з 06.11.2026):** сторінка шле в кадр лише `postMessage(m, GAME)`, де `GAME` — походження адреси кадру
+     (`new URL(embed, location.href).origin`; ніколи `"*"` і не `location.origin`), і слухає лише свій кадр **і** лише з `GAME`. Гра слухає
+     лише батька з https://lewydo.com, свого походження чи `http://localhost|127.0.0.1` (тести, перегляд); звідти — `ready`/`state`/`tick`
+     з `"*"` (нічого приватного). Обидва боки міняються лише разом (приватний репо гри, `site/src/embed.js`). Тест «the live game…wrong origin».
      Рівні для пігулок — `src/orbitdash.json` (`node tools/orbitdash-snapshot.mjs <клон Game-Orbit-Dash>/index.html`, потім `npm run build`).
      **Святкові рівні Orbit Dash** (02.11.2026, `[HALLOWEEN-LEVEL]`): BLOOD MOON, MIDNIGHT PARADE, WITCH'S BREW — колекція HALLOWEEN з вкладки
      🎃 HOLIDAYS гри; **лишаються й після свята** (це рівні, не декор — у грудні не прибирати). У знімку — поле `col` (`main` / `halloween`);
      пігулки святкових — з 🎃; під «що нового» — картка `.od-hol` (не сезонна): назва колекції — слово гри (`od.hol`), три обкладинки з сайту гри
-     (`/Game-Orbit-Dash/assets/media/cover-<id>.webp`, те саме походження) — тап грає цей рівень у телефоні (повідомлення `level`, як пігулка), і чесно
+     (`https://orbitdash.lewydo.com/assets/media/cover-<id>.webp`) — тап грає цей рівень у телефоні (повідомлення `level`, як пігулка), і чесно
      `od.holWhere` — «у браузері — вже · у застосунку — з наступним оновленням» (той самий рядок, що на сайті гри; вийде оновлення в Play /
      App Store — другу половину прибрати усіма мовами). Тест — «both games…» (без `OD_SITE` обкладинки — заглушка `PIXEL`).
      **Свято Orbit Dash** (власник 29.10.2026, Хелловін 29.10–30.11): під «що нового» — картка свята в стилі гри (`.od-ev`, помаранчева
      рамка), **лише поки свято йде** — вікно з сайту гри (той самий знімок: `"haunt":{"season":{…}}` → `src/orbitdash.json` → `events`; сайт гри
      тему вимкнув — `on: false`, картки немає), годинник відвідувача — 1 грудня зникає сама. Слова — наші, 82 мовами (`od.ev_<свято>`,
      `od.evText_<свято>`, `od.evLeft`; правда гри: меню — місячна ніч з відьмами, кажанами, павутинням, гарбузами; м'ячик-гарбуз і хвіст WISP
-     безкоштовно на свято; три моторошні треки; 1 грудня все зникає саме) + «Грати в браузері» → `/Game-Orbit-Dash/play/?lang=xx` (свято вже там;
+     безкоштовно на свято; три моторошні треки; 1 грудня все зникає саме) + «Грати в браузері» → `https://orbitdash.lewydo.com/play/?…&lang=xx` (свято вже там;
      у Google Play — з оновленням 2.2.1, тож про застосунок картка не обіцяє). Картинка — `assets/games/orbitdash-<свято>.webp` (івент Google Play
      гри, `market/results/2026-10-29-halloween-play/event/event-1920x1080.jpg` приватного репо → 480 px). Нове свято в грі → слова + картинка.
-     Кнопки: **«Грати в браузері»** → `/Game-Orbit-Dash/play/` (уся гра у вебі, з 04.10.2026),
+     Кнопки: **«Грати в браузері»** → `https://orbitdash.lewydo.com/play/` (уся гра у вебі, з 04.10.2026),
      далі Google Play і сайт гри — тим самим порядком, що в CubePix.
      **Світ Orbit Dash — у стилі гри 2.0, «D1 Clean Neon»** (UI v2 гри, 14.10.2026): небо гри (сяйво м'яча, фіолетовий бік, віньєтка),
      слово ORBIT DASH — Inter Display, як у грі; бейдж версії (`src/games.json` → `orbitdash.version`, зараз **2.3**) і **11 слідів м'яча** — назви
@@ -158,8 +169,11 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
      уся гра в браузері; RANKS — словом гри цією мовою; у 2.2 було: RANKS — таблиці країни й світу, 4 тижневі турніри, «Налаштуй свою орбіту»;
      у 2.1 — 82 мови; у 2.0 — сліди, магазин, відродження, тренування). Вийде на iPhone — у `od.new` «скоро» → «уже», кнопка App Store поруч із Google Play. Іконка — нова з гри 2.0 (`assets/games/orbitdash-icon.webp`).
      **Тести:** гра — сусідній репозиторій, тож `npm test` говорить із заглушкою тим самим протоколом; щоб перевірити зі справжньою
-     грою — `OD_SITE=<Game-Orbit-Dash-PRIVATE/site/dist чи клон Game-Orbit-Dash> npm test` (`tests/serve.mjs` віддає її за `/Game-Orbit-Dash/`,
-     як Pages; так само `npm run look`).
+     грою — `OD_SITE=<Game-Orbit-Dash-PRIVATE/site/dist чи клон Game-Orbit-Dash> npm test` (так само `npm run look`). Як у справжньому житті —
+     **два походження:** `tests/serve.mjs` віддає сайт студії на `localhost:N` (5190; `SITE_PORT`), а сайт гри (заглушку чи `OD_SITE`) — від
+     кореня на `localhost:N+1` (`OD_PORT`), і в сторінках, які віддає, міняє https://orbitdash.lewydo.com на цю адресу (файли на диску —
+     з бойовими адресами, їх перевіряє тест «the built pages name the games by their own addresses»). Тож рукостискання — справжнє, між
+     різними походженнями.
 3. **Більше від Lewydo:** картки інших ігор, що нахиляються за курсором.
 4. **Студія:** текст «Про нас» (як у іграх) і окремим рядком «Дякуємо, що граєте!» (`cp:thanks`), цифри, картка «код ↔ дизайн» з повзунком і картки Влада та Лілі.
    **Лише імена, без прізвищ** (власник 06.10.2026: «не треба прізвища, лиши просто Лілія»): «Влад», «Лілія» / «Liliia» — у картках
@@ -225,8 +239,10 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    https://discord.gg/PvUA3DwSP — `SOCIAL` у `tools/build.mjs` (і `sameAs` у JSON-LD, `brand.json` → `socials`). Сайти ігор ведуть
    у свій канал того ж сервера: CubePix https://discord.gg/qD87CA9Q8, Orbit Dash https://discord.gg/aYJzP2vSt. **X** (14.10.2026)
    https://x.com/lewydo_game — там само (`SOCIAL`, `sameAs`, `socials.x`); сайти ігор — посилання в підвалі.
-   **Пошта Lewydo — roshevasternin@gmail.com** (власник 03.10.2026): на неї — «Написати нам» (`contact.mail`), картка Влада,
-   `brand.json` → `socials.email`; veldan1202@… — особиста, на сайті й у кіті не показувати.
+   **Пошта Lewydo — hello@lewydo.com** (з 06.11.2026, пошта домену → скринька власника; до того — roshevasternin@gmail.com, більше не
+   показувати): на неї — «Написати нам» (`contact.mail`), картка Влада, JSON-LD `email`, `brand.json` → `socials.email` (`MAIL` у
+   `tools/build.mjs`, у шаблоні — `{{mail}}`). **support@lewydo.com** — гравцям наших ігор і щодо приватності (сторінки ігор, політика
+   `lilya/privacy.html`); **dev@lewydo.com** — акаунти розробника й API, на сайті не показувати. veldan1202@… — особиста, на сайті й у кіті не показувати.
 8. **`/brand/` — вкладка «Бренд»** (у меню й підвалі; посилання й під карткою «код ↔ дизайн»): як упізнати Lewydo, правила,
    кольори, чотири телефони (BrandScreen з перемикачем фонів ігор, LoaderScreen з підписом творців, About us усіма мовами, меню з
    пігулкою), серцебиття з графіком і кодом,
@@ -253,6 +269,10 @@ page…», картинки — `npm run look` (у сезоні — тема; `Q
 усі `[HALLOWEEN]`, ключ `hw.pill`; наступне свято — так само, вікном зі знімка гри.
 
 Мова: `?lang=xx` → вибір відвідувача (localStorage `lewydo:lang`, а також `cubepix-site:lang` — ключ сайту CubePix; пишемо обидва, читаємо обидва) → мова пристрою (старі коди теж: `iw`→he, `no`→nb, `zh-Hans`→zh-CN…) → англійська. Усе про мови — розділ «Мови» нижче.
+**Сховище мови — лише цього сайту** (з 06.11.2026 сайти ігор — інші походження, localStorage у кожного свій), тож **кожне посилання на сайт гри
+несе `?lang=<мова сторінки>`**, і англійською теж, після мітки студії: атрибут `data-lang-link="od"` / `"cp"` (збірка пише `lang=en`,
+`src/lang.js` ставить мову відвідувача й оновлює посилання разом із перемикачем; CubePix — лише мовою, яку знає). Нове посилання на гру —
+з цим атрибутом, інакше `npm test` («every link to a game carries the studio mark and the page's language») не пропустить.
 
 ## Мови (власник 13–14.10.2026: «усі наші мови»)
 - **82 мови — ті самі, що в грі Orbit Dash** (`src/langs.json`; додати мову → запис там + `src/i18n/<мова>.json` + прапорець + назва в
@@ -279,13 +299,14 @@ npm run build          # src/ → сторінки в корені
 npm test               # (SITE_PORT=5197 — інший порт) збірка --strict (жодного пропущеного перекладу) + тести: мови, 320 px, серце, обидві гри, 404, app-ads.txt, сторінка бренду й усі її файли
 npm run look           # сторінка картинками (телефон і ПК) → shots/ — ПОДИВИСЬ і покажи власнику (LANGS=uk,en; PAGE=brand — сторінка бренду; Q=halloween=0 — додати до адреси)
 npm run kit            # картинки сайту з кіта (іконки, OG, logo/banner/brand.png)
-npm run serve          # http://localhost:5190/
+npm run serve          # http://localhost:5190/ (і сайт Orbit Dash на http://localhost:5191/ — заглушка чи OD_SITE)
 npm run cubepix -- <клон RoShevasternin/Game-CubePix>/index.html   # оновити дані CubePix з його сайту
 npm run orbitdash -- <клон RoShevasternin/Game-Orbit-Dash>/index.html  # оновити рівні Orbit Dash з його сайту
 ```
 
 ## Правила
-- **Жодних сторонніх запитів:** шрифти, картинки, скрипти — лише з цього сайту (це перевіряє `npm test`). Посилання — можна.
+- **Жодних сторонніх запитів:** шрифти, картинки, скрипти — лише з цього сайту й сайтів наших ігор на `*.lewydo.com` (жива гра Orbit Dash,
+  її постер і обкладинки; це перевіряє `npm test`). Посилання — можна.
   Єдиний виняток (рішення власника 03.10.2026) — плеєр YouTube «Улюбленої пісні Влада», і **лише після тапу по платівці**.
 - **Сторінка бренду — теж усіма 82 мовами** (`src/i18n/<мова>.json` → `brand`; `npm test` не пропустить незаповнений переклад). Тексти About us на ній беруться з гри (`src/cubepix.json`). Не перекладаються: Lewydo, «Love What You Do», назви ігор і файлів, код у `…`.
 - **Вирівнювання:** блок із `max-width` у центрованій секції — з `margin-left/right:auto`; групи кнопок на телефоні — однакової ширини. Перевір `npm run look` кількома мовами.
@@ -309,6 +330,31 @@ npm run orbitdash -- <клон RoShevasternin/Game-Orbit-Dash>/index.html  # о�
 Власник працює у веб-сесіях і localhost не відкриє. Великі зміни спершу покажи йому картинками з `npm run look`.
 З будь-якого акаунта Claude — так само: потрібен лише підключений GitHub з доступом до цього репозиторію.
 На Mac власника — `git pull` перед роботою.
+Комітити — лише названі файли (`git add CNAME src/ tools/ tests/ …` і згенеровані сторінки), не `git add -A`: у worktree `node_modules` —
+посилання на чужу теку (у `.gitignore` воно ігнорується, але перевір `git status`, що його немає серед доданого).
+
+### Переїзд на lewydo.com (06.11.2026): порядок злиття й перевірка після
+Ця сторінка після зміни — на https://lewydo.com/ (`CNAME`), а все Orbit Dash у ній — абсолютні адреси https://orbitdash.lewydo.com/…
+(кадр живої гри, постер, обкладинки святкових рівнів, посилання). Тож **одна сторона без другої ламає блок Orbit Dash:**
+- студія раніше за гру → кадр, постер, три обкладинки й усі посилання Orbit Dash ведуть на хост без сайту (404 / чужий сертифікат);
+- гра раніше за студію → стара студія на `main` шле `postMessage(m, location.origin)` з https://roshevasternin.github.io у кадр, який
+  GitHub уже перекинув на orbitdash.lewydo.com, браузер такі повідомлення викидає — пігулки й підписи в телефоні мертві до злиття студії.
+
+Тому — **в одному підході, саме так:**
+1. Злити зміну `site/` у Game-Orbit-Dash-PRIVATE; CI викладає в Game-Orbit-Dash `CNAME` (`orbitdash.lewydo.com`) і `play/embed.html`
+   з `PARENT_ORIGINS`.
+2. Чекати, поки сайт гри справді живий на новій адресі:
+   `curl -sI https://orbitdash.lewydo.com/play/embed.html` → `200` **без** `-k` (сертифікат саме на `orbitdash.lewydo.com`, а не
+   `*.github.io`), і `curl -s https://orbitdash.lewydo.com/play/embed.html | grep -c PARENT_ORIGINS` → не `0`.
+3. Одразу — злити PR цієї сторінки (пігулки мертві лише ці кілька хвилин між кроками 1 і 3).
+4. Чекати сертифіката для lewydo.com (`curl -sI https://lewydo.com/` → `200` без `-k`), тоді в **Settings → Pages обох репо**
+   (`roshevasternin.github.io` і `Game-Orbit-Dash`) увімкнути **«Enforce HTTPS»** (галочка стає доступною, коли GitHub видав сертифікат).
+   Перевірка: `curl -sI http://lewydo.com/` і `curl -sI http://orbitdash.lewydo.com/` → `301` на `https://…`.
+   Поки галочки немає, хто прийшов на `http://lewydo.com` (і через перенаправлення зі старої адреси — GitHub на час переїзду може
+   слати на `http://`), бачить у телефоні лише заставку: гра слухає лише `https://lewydo.com`. **`PARENT_ORIGINS` на `http://` не
+   розширювати** — лікується лише «Enforce HTTPS».
+5. Відкрити https://lewydo.com/ (кілька мов): пігулка рівня й обкладинка святкового рівня рухають гру, підписи в кадрі — мовою сторінки,
+   постер і обкладинки вантажаться; посилання на ігри — з `?lang=` і міткою студії.
 
 ## Відкриті питання й наступні кроки (онови, коли власник вирішить)
 - **Висота пігулки меню:** у стандарті й CSS — **28** (раніше вирішив власник), а `pill.png` з Figma, який він дав останнім, — **36** (118×36).

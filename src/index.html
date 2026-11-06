@@ -318,7 +318,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-line{background:linear-gradient(180deg,rgba(46,50,95,.58),rgba(30,34,69,.40));color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);}
 @media (hover:hover){.od-line:hover{background:linear-gradient(180deg,rgba(56,60,106,.7),rgba(35,40,80,.5));transform:translateY(-2px);}}
 .od-box{--odc:#00E5FF;position:relative;width:min(100%,430px);margin:0 auto;}
-/* Сама гра в рамці телефона — прототип із сайту гри (/Game-Orbit-Dash/play/embed.html): сама грає найкращі шматки
+/* Сама гра в рамці телефона — прототип із сайту гри (https://orbitdash.lewydo.com/play/embed.html): сама грає найкращі шматки
    рівнів, тап — рівень твій. Стрілки й пігулки під телефоном вибирають рівень; сяйво — барва м'яча рівня на екрані. */
 .od-spot{position:absolute;left:50%;top:40%;width:100%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;
   background:radial-gradient(closest-side,color-mix(in srgb,var(--odc) 24%,transparent),color-mix(in srgb,var(--odc) 7%,transparent) 52%,transparent 78%);transition:background 1s;}
@@ -713,7 +713,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <p class="hero-lead" data-t="hero.lead"></p>
       <div class="ctas">
         <a class="btn btn-green" href="#worlds" data-t="hero.cta"></a>
-        <a class="btn btn-line" href="{{cp.demo}}" data-t="hero.cta2"></a>
+        <a class="btn btn-line" href="{{cp.demo}}" data-lang-link="cp" data-t="hero.cta2"></a>
       </div>
       <p class="hint" data-t="hero.hint"></p>
     </div>
@@ -745,7 +745,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <li data-t="cp:pics" data-n="pics"></li><li data-t="cp:floors" data-n="floors"></li><li data-t="cp:langs" data-n="cpLangs"></li><li data-t="cp:free"></li>
         </ul>
         <div class="ctas">
-          <a class="btn px-btn px-pink" href="{{cp.demo}}">▶ <span data-t="cp:play"></span></a>
+          <a class="btn px-btn px-pink" href="{{cp.demo}}" data-lang-link="cp">▶ <span data-t="cp:play"></span></a>
           <a class="btn px-btn px-gp" href="{{cp.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
           <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link="cp" data-t="game.site"></a>
         </div>
@@ -772,7 +772,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <div class="pz-done" id="pzDone" hidden>
           <span class="tag" data-t="cp:fact"></span><p id="pzFact"></p>
           <p class="next" data-t="cp.next"></p>
-          <a class="btn px-btn px-pink" href="{{cp.demo}}">▶ <span data-t="cp:play"></span></a>
+          <a class="btn px-btn px-pink" href="{{cp.demo}}" data-lang-link="cp">▶ <span data-t="cp:play"></span></a>
         </div>
       </div>
     </div>
@@ -810,9 +810,9 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         {{od.events}}
         <ul class="od-chips"><li data-t="od.music"></li><li data-t="od.free"></li><li data-t="od.offline"></li></ul>
         <div class="ctas">
-          <a class="btn btn-cyan" href="{{od.web}}" data-t="od.browser"></a>
+          <a class="btn btn-cyan" href="{{od.web}}" data-lang-link="od" data-t="od.browser"></a>
           <a class="btn od-line" href="{{od.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
-          <a class="btn od-line" href="{{od.site}}" data-t="game.site"></a>
+          <a class="btn od-line" href="{{od.site}}" data-lang-link="od" data-t="game.site"></a>
         </div>
       </div>
     </div>
@@ -862,7 +862,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <div class="contacts">
           <a href="https://instagram.com/___vel__dan___" rel="noopener">{{ico:insta}}<span>___vel__dan___</span></a>
           <a href="https://t.me/vlad_libgdx" rel="noopener">{{ico:tg}}<span>vlad_libgdx</span></a>
-          <a href="mailto:roshevasternin@gmail.com">{{ico:mail}}<span>roshevasternin@gmail.com</span></a>
+          <a href="mailto:{{mail}}">{{ico:mail}}<span>{{mail}}</span></a>
         </div>
       </article>
       <article class="person rv">
@@ -903,7 +903,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <div class="tl-links"><a href="https://www.tiktok.com/@malcev_ua" rel="noopener">{{ico:tiktok}}<span dir="ltr">@malcev_ua</span></a><a href="https://choko.link/abbie" rel="noopener">{{ico:link}}<span dir="ltr">choko.link/abbie</span></a></div></li>
         <li class="tl-i web rv" id="web" data-thumb="/assets/story/web-2026-10.webp"><p class="tl-when" data-t="story.web.when"></p><h3 data-t="story.web.t"></h3><p data-t="story.web.d"></p><p data-t="story.web.d2"></p>
           <figure class="tl-photo"><img src="/assets/story/web-2026-10.webp" width="1200" height="900" loading="lazy" decoding="async" data-ta="alt:story.web.photo"><figcaption data-t="story.web.photo"></figcaption></figure>
-          <div class="tl-links"><a href="{{od.web}}"><img src="{{od.icon}}" alt="" width="22" height="22"><span>Orbit Dash</span></a><a href="{{cp.demo}}"><img src="{{cp.icon}}" alt="" width="22" height="22"><span>CubePix</span></a></div></li>
+          <div class="tl-links"><a href="{{od.web}}" data-lang-link="od"><img src="{{od.icon}}" alt="" width="22" height="22"><span>Orbit Dash</span></a><a href="{{cp.demo}}" data-lang-link="cp"><img src="{{cp.icon}}" alt="" width="22" height="22"><span>CubePix</span></a></div></li>
         <li class="tl-i sale rv" id="first-sale" data-thumb="/assets/games/orbitdash-icon.webp"><p class="tl-when" data-t="story.sale.when"></p><h3 data-t="story.sale.t"></h3><p data-t="story.sale.d"></p></li>
         <li class="tl-i ios rv" id="app-store" data-thumb="/assets/games/orbitdash-icon.webp"><p class="tl-when" data-t="story.ios.when"></p><h3 data-t="story.ios.t"></h3><p data-t="story.ios.d"></p></li>
         <li class="tl-i rv" data-thumb="/assets/games/cubepix-icon-halloween.webp"><p class="tl-when" data-t="story.next.when"></p><h3 data-t="story.next.t"></h3><p data-t="story.next.d"></p></li>
@@ -941,7 +941,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <h2 class="h2" data-t="contact.title"></h2>
         <p class="sub" data-t="contact.text"></p>
         <div class="ctas">
-          <a class="btn btn-green" href="mailto:roshevasternin@gmail.com">{{ico:mail}}<span data-t="contact.mail"></span></a>
+          <a class="btn btn-green" href="mailto:{{mail}}">{{ico:mail}}<span data-t="contact.mail"></span></a>
           <a class="btn btn-line" href="https://t.me/vlad_libgdx" rel="noopener">{{ico:tg}}<span>Telegram</span></a>
           <a class="btn btn-line" href="{{devPage}}" rel="noopener">{{gpIcon}}<span data-t="cp:games"></span></a>
         </div>
@@ -958,8 +958,8 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
     <p class="foot-made" data-t="foot.made"></p>
     <nav class="foot-social" aria-label="Lewydo">{{social:fs}}</nav>
     <nav class="foot-links" aria-label="Lewydo">
-      <a href="{{cp.site}}" data-lang-link="cp">CubePix</a><a href="{{od.site}}">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a>
-      <a href="{{cp.privacy}}"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}"><span data-t="foot.privacy"></span> · Orbit Dash</a>
+      <a href="{{cp.site}}" data-lang-link="cp">CubePix</a><a href="{{od.site}}" data-lang-link="od">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a>
+      <a href="{{cp.privacy}}" data-lang-link="cp"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}" data-lang-link="od"><span data-t="foot.privacy"></span> · Orbit Dash</a>
     </nav>
     <p class="foot-c">© {{year}} Lewydo™ · Love What You Do · <span data-t="foot.rights"></span></p>
     <p class="foot-music">♪ <a href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener" data-t="music.label"></a></p>
@@ -1219,14 +1219,19 @@ const cubepix = (() => {
 })();
 
 // ── Orbit Dash: сама гра, а не вітрина ─────────────────────────────────────────
-// Телефон показує прототип гри з її сайту (/Game-Orbit-Dash/play/embed.html, src/embed.js у Game-Orbit-Dash-PRIVATE):
+// Телефон показує прототип гри з її сайту (https://orbitdash.lewydo.com/play/embed.html, src/embed.js у Game-Orbit-Dash-PRIVATE):
 // сам грає найкращі шматки рівнів, тап — рівень твій. Оновився прототип — тут уже нова гра, нічого не перемальовуємо.
 // Гра вантажиться, лише коли до неї догорнули; поза екраном стоїть. Пігулки й стрілки — повідомлення level,
 // підписи в кадрі — мовою сторінки (labels); звідти — ready, state і tick (який рівень на екрані).
+// Гра — ІНШЕ походження (з 06.11.2026 кожен сайт на своєму піддомені: студія lewydo.com, гра orbitdash.lewydo.com), тож протокол
+// (site/README.md приватного репо, «Жива гра»): сюди шлемо лише з ціллю GAME — походженням адреси кадру (ніколи "*" і не location.origin:
+// кадр, переведений на чужу адресу, нічого не почує); звідти слухаємо лише наш кадр І лише з походження GAME (інакше — тиша).
+// Гра зі свого боку слухає лише батька з https://lewydo.com, свого походження чи localhost (тести), а шле ready / state / tick з "*" —
+// нічого приватного. Мова гри в кадрі — мова сторінки, через ?lang= в адресі кадру (сховище мови в кожного сайту тепер своє).
 const orbit = (() => {
-  const box = $('#odScreen'), pills = $('#odPills'), L = (D.od || []), SRC = '{{od.embed}}';
+  const box = $('#odScreen'), pills = $('#odPills'), L = (D.od || []), SRC = '{{od.embed}}', GAME = new URL(SRC, location.href).origin;
   let fr = null, ready = false, want = null, cur = null, vis = false;
-  const send = (m) => { if (fr && ready && fr.contentWindow) fr.contentWindow.postMessage(m, location.origin); };
+  const send = (m) => { if (fr && ready && fr.contentWindow) fr.contentWindow.postMessage(m, GAME); };
   const labels = () => send({ od: 'labels', tap: T('od.tap'), sound: T('od.sound'), watch: T('od.watch'), loading: T('od.loading') });
   const visible = () => send({ od: 'visible', on: vis && !document.hidden });
   const mark = () => { [...pills.children].forEach((b) => { const id = b.dataset.id || null;
@@ -1237,7 +1242,7 @@ const orbit = (() => {
     if (fr || !box) return;
     box.classList.remove('idle');
     fr = document.createElement('iframe');
-    fr.src = SRC + (want ? '?level=' + encodeURIComponent(want) : '');
+    fr.src = SRC + '?' + new URLSearchParams(want ? { level: want, lang } : { lang });   // the game in the frame speaks the page's language
     fr.title = T('od.aria'); fr.setAttribute('allow', 'autoplay; web-share; clipboard-write');   // the game's SHARE button: the browser's sheet and the clipboard inside the frame
     box.appendChild(fr);
   }
@@ -1259,7 +1264,7 @@ const orbit = (() => {
     $('#odPrev').addEventListener('click', () => step(-1));
     $('#odNext').addEventListener('click', () => step(1));
     addEventListener('message', (e) => {
-      if (!fr || e.source !== fr.contentWindow) return;
+      if (!fr || e.source !== fr.contentWindow || e.origin !== GAME) return;                     // our frame, from the game's own origin only
       const m = e.data; if (!m || typeof m !== 'object' || typeof m.od !== 'string') return;
       if (m.od === 'ready') { ready = true; box.classList.add('ready'); labels(); visible(); if (want) send({ od: 'level', id: want }); }
       else if ((m.od === 'state' || m.od === 'tick') && m.level && m.level !== cur) { cur = m.level; mark(); tint(cur); }

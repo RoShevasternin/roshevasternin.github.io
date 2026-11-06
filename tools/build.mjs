@@ -1,5 +1,7 @@
 // npm run build — src/ → index.html, brand/ (the brand page, brand.json, the kit zip), 404.html, robots.txt, sitemap.xml, and one small
-// words file per language for each page (lang/<id>.json, brand/lang/<id>.json): what GitHub Pages serves at https://roshevasternin.github.io/
+// words file per language for each page (lang/<id>.json, brand/lang/<id>.json): what GitHub Pages serves at https://lewydo.com/ (our own domain
+// since 06.11.2026, the CNAME file; the old https://roshevasternin.github.io/ answers with a redirect here). The games live next door, each on
+// its own subdomain — https://orbitdash.lewydo.com/, https://cubepix.lewydo.com/ (src/games.json): other origins than this page.
 // English is written into the pages themselves (search engines, no JavaScript); every other language (src/langs.json — our games'
 // languages) is fetched by the page when the visitor needs it (src/lang-boot.js, src/lang.js). The build is deterministic
 // (no dates, no randomness): the same sources → the same files.
@@ -10,7 +12,11 @@ import { brandJson, zip, kitFiles, beatGraph, codeParts, dlCards } from './brand
 
 const ROOT = new URL('../', import.meta.url);
 const read = (p) => readFileSync(new URL(p, ROOT), 'utf8'), json = (p) => JSON.parse(read(p));
-const SITE = 'https://roshevasternin.github.io/', YEAR = 2026;
+const SITE = 'https://lewydo.com/', HOST = new URL(SITE).host, YEAR = 2026;
+// the studio's mail (owner 06.11.2026, the domain's own, forwarded to the owner's inbox): hello@ — partnerships, licensing, press, anything,
+// shown here ({{mail}}, JSON-LD, brand.json); support@lewydo.com — the players of our games and privacy (the games' own pages and policies);
+// dev@lewydo.com — developer accounts and APIs, never shown
+const MAIL = 'hello@lewydo.com';
 const G = json('src/games.json'), CP = json('src/cubepix.json'), LANGS = json('src/langs.json'), NAMES = json('src/langnames.json');
 const OD = json('src/orbitdash.json');   // рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs)
 const IDS = LANGS.map((L) => L.id), RTL = LANGS.filter((L) => L.dir === 'rtl').map((L) => L.id);
@@ -141,9 +147,12 @@ const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cp
 // → the whole game in the browser, where the holiday already is; its picture — assets/games/orbitdash-<event>.webp (the game's Play event art)
 for (const ev of Object.keys(OD.events || {})) for (const k of ['od.ev_' + ev, 'od.evText_' + ev, 'od.evLeft'])
   if (!(k in SS.en)) problems.push(`en: the Orbit Dash holiday «${ev}» needs the words «${k}» (src/i18n/*.json → site)`);
-// every link to the game carries its mark (docs/process/install-source.md); only hrefs: `site` also builds picture paths
-const odLink = (path) => `${path}?${G.orbitdash.mark.replace(/&/g, '&amp;')}`;
-const cpLink = (path) => `${path}?${G.cubepix.mark.replace(/&/g, '&amp;')}`;
+// every link to a game carries its mark (docs/process/install-source.md) and the page's language: each game is its own origin
+// (orbitdash.lewydo.com, cubepix.lewydo.com), so the visitor's choice here (localStorage lewydo:lang) is not theirs to read — the link says it.
+// Written here as English (the page before its script runs); src/lang.js sets the visitor's language on every [data-lang-link="od|cp"].
+// Only hrefs: `site` also builds picture addresses. The privacy pages: the language, no mark
+const gameLink = (path, mark) => path + '?' + [mark, 'lang=en'].filter(Boolean).join('&').replace(/&/g, '&amp;');
+const odLink = (path) => gameLink(path, G.orbitdash.mark), cpLink = (path) => gameLink(path, G.cubepix.mark);
 const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/games/orbitdash-${ev}.webp`;
   return `<a class="od-ev" href="${odLink(G.orbitdash.demo)}" data-lang-link="od" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
@@ -151,7 +160,7 @@ const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/
     `<em><span class="od-ev-left"></span> · <span data-t="od.browser"></span> →</em></span></a>`; }).join('\n');
 // [HALLOWEEN-LEVEL] Orbit Dash's holiday levels (02.11.2026: BLOOD MOON, MIDNIGHT PARADE, WITCH'S BREW — the game's 🎃 HOLIDAYS tab; they stay
 // after the holiday, so this card is not seasonal): the collection name — the game's own word (od.hol), the three levels — buttons that play
-// that level in the phone above (the same `level` message as the pills), their covers — from the game's site (same origin), and honestly
+// that level in the phone above (the same `level` message as the pills), their covers — from the game's site (orbitdash.lewydo.com), and honestly
 // where they are: in the browser now, in the app with the next update (od.holWhere). Words — src/i18n/*.json → site
 const odHolLv = (OD.levels || []).filter((l) => l.col === 'halloween');
 if (odHolLv.length) for (const k of ['od.hol', 'od.holWhere'])
@@ -170,7 +179,7 @@ const langFiles = (dir, make) => { mkdirSync(new URL(dir, ROOT), { recursive: tr
   for (const f of readdirSync(new URL(dir, ROOT))) if (!IDS.includes(f.replace(/\.json$/, ''))) rmSync(new URL(dir + f, ROOT));
   for (const L of IDS) writeFileSync(new URL(`${dir}${L}.json`, ROOT), JSON.stringify(make(L))); };
 langFiles('lang/', (L) => ({ S: SMAIN[L], pics: PICS[L], names: NAMES[L] }));
-const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Lewydo', slogan: 'Love What You Do', url: SITE, logo: SITE + 'assets/icon-512.png',
+const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Lewydo', slogan: 'Love What You Do', url: SITE, logo: SITE + 'assets/icon-512.png', email: MAIL,
   founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia' }], foundingLocation: 'Poltava region, Ukraine',
   sameAs: [G.devPage, ...SOCIAL.map(([, , u]) => u)] };
 
@@ -189,10 +198,10 @@ const fill = (html) => {
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
-    .replace(/\{\{(url|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
-      url: SITE, year: YEAR, devPage: G.devPage, 'cp.site': cpLink(G.cubepix.site), 'cp.demo': cpLink(G.cubepix.demo), 'cp.privacy': G.cubepix.privacy, 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.version': G.cubepix.version,
+    .replace(/\{\{(url|host|mail|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
+      url: SITE, host: HOST, mail: MAIL, year: YEAR, devPage: G.devPage, 'cp.site': cpLink(G.cubepix.site), 'cp.demo': cpLink(G.cubepix.demo), 'cp.privacy': gameLink(G.cubepix.privacy), 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.version': G.cubepix.version,
       'od.site': odLink(G.orbitdash.site), 'od.web': odLink(G.orbitdash.demo), 'od.embed': G.orbitdash.embed, 'od.poster': G.orbitdash.poster,
-      'od.play': G.orbitdash.play, 'od.privacy': G.orbitdash.privacy, 'od.icon': G.orbitdash.icon, 'od.version': G.orbitdash.version }[k]))
+      'od.play': G.orbitdash.play, 'od.privacy': gameLink(G.orbitdash.privacy), 'od.icon': G.orbitdash.icon, 'od.version': G.orbitdash.version }[k]))
     .replace(/\{\{langCss\}\}/g, () => langCss).replace('{{langFonts}}', () => langFonts).replace('{{langJs}}', () => langJs)
     .replace('{{hreflang}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}">`].join('\n'))
     .replace('{{ldjson}}', () => JSON.stringify(ld).replace(/</g, '\\u003c'))
@@ -216,7 +225,7 @@ out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => lang
 const NF = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(['nf.title', 'nf.text', 'nf.home'].map((k) => [k, S[L][k]]))]));
 out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).replace('{{DATA404}}', JSON.stringify({ S: NF, rtl: RTL }).replace(/</g, '\\u003c'))));
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
-const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, S, IDS }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
+const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, S, IDS, MAIL }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
 out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
 const BKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', ...Object.keys(BS.en).map((k) => 'b.' + k)];
 const bWords = (L) => Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]));
@@ -231,7 +240,9 @@ out('brand/index.html', fill(read('src/brand.html').replace('{{langBoot}}', () =
   .replace('{{DATA}}', () => JSON.stringify(BDATA).replace(/</g, '\\u003c'))
   .replace('{{hreflangBrand}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}brand/?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}brand/">`].join('\n'))));
 out('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
-const pages = ['', 'brand/', 'Game-CubePix/', 'Game-CubePix/play/', 'Game-CubePix/privacy.html', 'Game-Orbit-Dash/', 'Game-Orbit-Dash/privacy.html'];
+// this host's pages only: a sitemap lists the URLs of its own host — the games' pages are in their own sites' sitemaps (orbitdash.lewydo.com,
+// cubepix.lewydo.com), since 06.11.2026 they are other hosts
+const pages = ['', 'brand/'];
 out('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   pages.map((p) => `  <url><loc>${SITE}${p}</loc></url>`).join('\n') + '\n</urlset>\n');
 const kb = (p) => Math.round(read(p).length / 1024);

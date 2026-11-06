@@ -1,10 +1,10 @@
 {
- "_about": "The studio's games. CubePix and Orbit Dash have their own worlds on the page (src/index.html); «more» are the cards under «More from Lewydo», in this order. Texts: game.<id>.genre and game.<id>.d in src/i18n/<lang>.json → site. A new game: its icon (192 px) and banner (800 px wide) → python3 tools/webp.py … assets/games/, an entry here, its two strings in every language, npm run build. A game updated (version, design, features, languages, icon) → its world here and its words, in the same task (CLAUDE.md, «Гра оновилась»).",
+ "_about": "The studio's games. CubePix and Orbit Dash have their own worlds on the page (src/index.html); «more» are the cards under «More from Lewydo», in this order. Texts: game.<id>.genre and game.<id>.d in src/i18n/<lang>.json → site. Addresses: each game lives on its own subdomain of lewydo.com (since 06.11.2026: cubepix.lewydo.com, orbitdash.lewydo.com) — another origin than the studio page, so every address here is absolute, and every link to a game carries the studio mark and ?lang= (tools/build.mjs, src/lang.js). A new game: its icon (192 px) and banner (800 px wide) → python3 tools/webp.py … assets/games/, an entry here, its two strings in every language, npm run build. A game updated (version, design, features, languages, icon) → its world here and its words, in the same task (CLAUDE.md, «Гра оновилась»).",
  "devPage": "https://play.google.com/store/apps/dev?id=5953840215091948966",
  "cubepix": {
-  "site": "/Game-CubePix/",
-  "demo": "/Game-CubePix/play/",
-  "privacy": "/Game-CubePix/privacy.html",
+  "site": "https://cubepix.lewydo.com/",
+  "demo": "https://cubepix.lewydo.com/play/",
+  "privacy": "https://cubepix.lewydo.com/privacy.html",
   "released": true,
   "play": "https://play.google.com/store/apps/details?id=com.lewydo.cubepix&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site",
   "mark": "utm_source=lewydo&utm_medium=studio_site",
@@ -12,12 +12,12 @@
   "icon": "/assets/games/cubepix-icon.webp"
  },
  "orbitdash": {
-  "site": "/Game-Orbit-Dash/",
+  "site": "https://orbitdash.lewydo.com/",
   "mark": "utm_source=lewydo&utm_medium=studio_site",
-  "demo": "/Game-Orbit-Dash/play/",
-  "embed": "/Game-Orbit-Dash/play/embed.html",
-  "poster": "/Game-Orbit-Dash/assets/media/poster.webp",
-  "privacy": "/Game-Orbit-Dash/privacy.html",
+  "demo": "https://orbitdash.lewydo.com/play/",
+  "embed": "https://orbitdash.lewydo.com/play/embed.html",
+  "poster": "https://orbitdash.lewydo.com/assets/media/poster.webp",
+  "privacy": "https://orbitdash.lewydo.com/privacy.html",
   "released": true,
   "version": "2.3",
   "_trails": "The eleven ball trails of Orbit Dash 2.2, the game's order (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level, x — won on RANKS only (FLARE, 2.2).",

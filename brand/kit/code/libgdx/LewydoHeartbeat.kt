@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.utils.Align
 
 /**
- * Lewydo™ heartbeat — the studio standard for every Lewydo game — https://roshevasternin.github.io/brand/.
+ * Lewydo™ heartbeat — the studio standard for every Lewydo game — https://lewydo.com/brand/.
  *
  * The heart (BRAND_FRONT) and its green glow (BRAND_BACK) beat SEPARATELY, ONCE,
  * at the moment the brand appears:

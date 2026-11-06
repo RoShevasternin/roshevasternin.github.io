@@ -1,4 +1,4 @@
-// Lewydo™ brand kit — https://roshevasternin.github.io/brand/
+// Lewydo™ brand kit — https://lewydo.com/brand/
 // The first screen of every Lewydo game: the Lewydo Lockup appears, the heart beats with the Lewydo sound (≈ 4 s), then the game's LoaderScreen.
 // The sound: kit/sound/lewydo-heartbeat.wav → assets/sound/ as is — the one file for every Lewydo game, web prototype and site, byte for byte
 // (lossless 16-bit PCM, so every platform plays the very same samples; never convert it to .ogg or .mp3). Load it with

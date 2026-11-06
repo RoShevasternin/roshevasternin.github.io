@@ -1,12 +1,12 @@
 {
- "_about": "The Lewydo™ brand standard in numbers — for game code and for Claude. The same as the page https://roshevasternin.github.io/brand/ (rules, live previews). Take the pictures and the code as they are; never redraw the mark. Sizes are dp (the design size, 360×800 screens); the PNGs are @3x of them.",
+ "_about": "The Lewydo™ brand standard in numbers — for game code and for Claude. The same as the page https://lewydo.com/brand/ (rules, live previews). Take the pictures and the code as they are; never redraw the mark. Sizes are dp (the design size, 360×800 screens); the PNGs are @3x of them.",
  "name": "Lewydo",
  "trademark": "Lewydo™",
  "slogan": "Love What You Do",
  "sloganNote": "Always in English — a trademark. Its bold letters (L, e, W, Y, Do) spell the name: Lewydo.",
- "page": "https://roshevasternin.github.io/brand/",
- "json": "https://roshevasternin.github.io/brand/brand.json",
- "zip": "https://roshevasternin.github.io/brand/lewydo-brand-kit.zip",
+ "page": "https://lewydo.com/brand/",
+ "json": "https://lewydo.com/brand/brand.json",
+ "zip": "https://lewydo.com/brand/lewydo-brand-kit.zip",
  "repo": {
   "url": "https://github.com/RoShevasternin/roshevasternin.github.io",
   "folder": "brand/",
@@ -37,12 +37,12 @@
     208,
     208
    ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/brand_back.png",
+   "png": "https://lewydo.com/brand/kit/png/brand_back.png",
    "px": [
     624,
     624
    ],
-   "webp": "https://roshevasternin.github.io/brand/kit/webp/brand_back.webp"
+   "webp": "https://lewydo.com/brand/kit/webp/brand_back.webp"
   },
   "brand_front": {
    "what": "The heart — 140×140 in the middle of the logo box",
@@ -50,12 +50,12 @@
     140,
     140
    ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/brand_front.png",
+   "png": "https://lewydo.com/brand/kit/png/brand_front.png",
    "px": [
     420,
     420
    ],
-   "webp": "https://roshevasternin.github.io/brand/kit/webp/brand_front.webp"
+   "webp": "https://lewydo.com/brand/kit/webp/brand_front.webp"
   },
   "lewydo": {
    "what": "The name «Lewydo» (Nunito Black, white, soft shadow)",
@@ -63,12 +63,12 @@
     208,
     74
    ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/lewydo.png",
+   "png": "https://lewydo.com/brand/kit/png/lewydo.png",
    "px": [
     624,
     222
    ],
-   "webp": "https://roshevasternin.github.io/brand/kit/webp/lewydo.webp"
+   "webp": "https://lewydo.com/brand/kit/webp/lewydo.webp"
   },
   "slogan": {
    "what": "The slogan «Love What You Do» — never translated",
@@ -76,12 +76,12 @@
     208,
     19
    ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/slogan.png",
+   "png": "https://lewydo.com/brand/kit/png/slogan.png",
    "px": [
     624,
     57
    ],
-   "webp": "https://roshevasternin.github.io/brand/kit/webp/slogan.webp"
+   "webp": "https://lewydo.com/brand/kit/webp/slogan.webp"
   },
   "brand_line": {
    "what": "The line under the slogan, 20 below it",
@@ -89,12 +89,12 @@
     146,
     1
    ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/brand_line.png",
+   "png": "https://lewydo.com/brand/kit/png/brand_line.png",
    "px": [
     438,
     3
    ],
-   "webp": "https://roshevasternin.github.io/brand/kit/webp/brand_line.webp"
+   "webp": "https://lewydo.com/brand/kit/webp/brand_line.webp"
   }
  },
  "renders": {
@@ -104,7 +104,7 @@
     208,
     322
    ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/lockup.png",
+   "png": "https://lewydo.com/brand/kit/png/lockup.png",
    "px": [
     624,
     966
@@ -116,7 +116,7 @@
     118,
     36
    ],
-   "png": "https://roshevasternin.github.io/brand/kit/png/pill.png",
+   "png": "https://lewydo.com/brand/kit/png/pill.png",
    "px": [
     354,
     108
@@ -124,8 +124,8 @@
   }
  },
  "atlas": {
-  "atlas": "https://roshevasternin.github.io/brand/kit/atlas/brand.atlas",
-  "png": "https://roshevasternin.github.io/brand/kit/atlas/brand.png",
+  "atlas": "https://lewydo.com/brand/kit/atlas/brand.atlas",
+  "png": "https://lewydo.com/brand/kit/atlas/brand.png",
   "px": [
    628,
    1338
@@ -303,7 +303,7 @@
   "what": "The heart only: two soft, round tuned heartbeats (A2 → E2, a felt mallet), lub and dub, on the heart's two beats — with their own overtones, so a phone speaker plays them too.",
   "everywhere": "One file everywhere (owner 08.10.2026: «it must sound the same everywhere»; 14.10.2026: «WAV, so it is high quality — the same everywhere»): every game, its web prototype and its site play this very .wav, byte for byte (check the sha256). Lossless, so every platform plays the very same samples. There are no .ogg or .mp3 copies: each decoder (Android, iOS, browsers) would make them sound a little different.",
   "files": {
-   "wav": "https://roshevasternin.github.io/brand/kit/sound/lewydo-heartbeat.wav"
+   "wav": "https://lewydo.com/brand/kit/sound/lewydo-heartbeat.wav"
   },
   "file": {
    "name": "lewydo-heartbeat.wav",
@@ -461,7 +461,7 @@
    "address": {
     "below": "siteButton",
     "gap": 12,
-    "text": "roshevasternin.github.io"
+    "text": "lewydo.com"
    },
    "gamesButton": {
     "below": "address",
@@ -483,7 +483,7 @@
    }
   },
   "links": {
-   "site": "https://roshevasternin.github.io/",
+   "site": "https://lewydo.com/",
    "games": "https://play.google.com/store/apps/dev?id=5953840215091948966"
   },
   "texts": {
@@ -1103,7 +1103,7 @@
   "discord": "https://discord.gg/PvUA3DwSP",
   "x": "https://x.com/lewydo_game",
   "telegram": "https://t.me/vlad_libgdx",
-  "email": "roshevasternin@gmail.com"
+  "email": "hello@lewydo.com"
  },
  "rules": {
   "do": [
@@ -1122,27 +1122,27 @@
  },
  "code": {
   "LewydoHeartbeat.kt": {
-   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/LewydoHeartbeat.kt",
+   "url": "https://lewydo.com/brand/kit/code/libgdx/LewydoHeartbeat.kt",
    "what": "The one heartbeat (package com.lewydo.brand) — the same in every game"
   },
   "ABrandLogo.kt": {
-   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/ABrandLogo.kt",
+   "url": "https://lewydo.com/brand/kit/code/libgdx/ABrandLogo.kt",
    "what": "The heart in its glow (208×208) + beat()"
   },
   "ABrandGroup.kt": {
-   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/ABrandGroup.kt",
+   "url": "https://lewydo.com/brand/kit/code/libgdx/ABrandGroup.kt",
    "what": "The Lockup 208×322 + the splash animation"
   },
   "BrandScreen.kt": {
-   "url": "https://roshevasternin.github.io/brand/kit/code/libgdx/BrandScreen.kt",
+   "url": "https://lewydo.com/brand/kit/code/libgdx/BrandScreen.kt",
    "what": "The first screen of every game → LoaderScreen"
   },
   "lewydo-brand.css": {
-   "url": "https://roshevasternin.github.io/brand/kit/code/web/lewydo-brand.css",
+   "url": "https://lewydo.com/brand/kit/code/web/lewydo-brand.css",
    "what": "The mark, the pill, the heartbeat and the splash for the web"
   },
   "example.html": {
-   "url": "https://roshevasternin.github.io/brand/kit/code/web/example.html",
+   "url": "https://lewydo.com/brand/kit/code/web/example.html",
    "what": "A working web example"
   }
  }

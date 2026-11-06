@@ -1,5 +1,6 @@
 // ── languages (src/lang.js — the same on both pages; tools/build.mjs puts it into each page's script) ──
-// ?lang= → the visitor's choice (lewydo:lang, shared with the game sites) → the device → English — decided before the page
+// ?lang= → the visitor's choice (lewydo:lang — this site's own; the game sites are other origins and keep theirs, so every link to
+// them says the language, see applyLang) → the device → English — decided before the page
 // draws (the boot script in <head>, src/lang-boot.js). English rides in the page; every other language is one small file,
 // D.base + <id>.json (the site: /lang/, the brand page: /brand/lang/), fetched when it is needed. No Russian, ever: a Russian
 // device gets English, and the list ends with the row of Russia — not a language, not chosen, not a link (owner 14.10.2026).
@@ -25,10 +26,13 @@ function applyLang() {
   $$('[data-t]').forEach((el) => { const n = el.dataset.n ? D.counts[el.dataset.n] : undefined, v = T(el.dataset.t, n);
     if (el.tagName === 'TITLE') document.title = v; else el.innerHTML = rich(v); });
   $$('[data-ta]').forEach((el) => { const [a, k] = el.dataset.ta.split(/:(.+)/); el.setAttribute(a, T(k)); });
-  // links to our other sites carry the language — CubePix's only when it speaks it (D.cpLangs), else it picks the visitor's own
-  $$('[data-lang-link]').forEach((a) => { a.dataset.base ??= a.getAttribute('href'); const [b, hh] = a.dataset.base.split('#');
-    const ok = lang !== 'en' && (a.dataset.langLink !== 'cp' || (D.cpLangs || []).includes(lang));
-    a.setAttribute('href', b + (ok ? (b.includes('?') ? '&' : '?') + 'lang=' + lang : '') + (hh ? '#' + hh : '')); });
+  // links carry the language. A game's site (data-lang-link="od" | "cp": orbitdash.lewydo.com, cubepix.lewydo.com — another origin with
+  // its own memory of the language) — always, English too, after the studio mark the link already has; CubePix's only when it speaks it
+  // (D.cpLangs), else it picks the visitor's own. Our own pages (data-lang-link with no value: the same origin, the same memory) — only
+  // when it is not English. The anchor stays at the end.
+  $$('[data-lang-link]').forEach((a) => { const u = new URL(a.dataset.base ??= a.getAttribute('href'), location.href), game = a.dataset.langLink;
+    if (game ? game !== 'cp' || (D.cpLangs || []).includes(lang) : lang !== 'en') u.searchParams.set('lang', lang); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.origin === location.origin ? u.pathname + u.search + u.hash : u.href); });
   $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag;
   $('#langCode').textContent = { 'zh-TW': '繁中', 'zh-CN': '简中' }[lang] || lang.toUpperCase();
   $$('#langList button').forEach((b) => { const L = D.langs.find((x) => x.id === b.dataset.lang), nm = langName(L), sm = $('small', b);
@@ -38,7 +42,7 @@ function applyLang() {
 }
 function setLang(id) {
   if (!IDS.includes(id) || id === lang) return;
-  store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);
+  store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);   // this origin's own memory; the game sites hear it from ?lang= on our links
   try { const u = new URL(location.href); u.searchParams.set('lang', id); history.replaceState(null, '', u); } catch (e) {}
   langBtn.setAttribute('aria-busy', 'true');
   loadLang(id).then(() => { lang = id; applyLang(); }, () => {}).finally(() => langBtn.removeAttribute('aria-busy'));

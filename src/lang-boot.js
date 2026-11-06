@@ -1,5 +1,6 @@
 // the visitor's language, decided before the page draws (src/lang-boot.js; both pages, in <head>): ?lang= → the visitor's choice
-// (lewydo:lang — shared with the game sites; CubePix's own key too) → the device → English. Russian is not ours: a Russian device
+// (lewydo:lang, and CubePix's key cubepix-site:lang, written together — this site's own memory: since 06.11.2026 the game sites are other
+// origins, so they hear the language from ?lang= on our links) → the device → English. Russian is not ours: a Russian device
 // gets the next language it lists, or English. The language's file starts loading at once (src/lang.js picks it up).
 (() => {
   const B = __BOOT__, has = (l) => B.ids.includes(l), get = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };

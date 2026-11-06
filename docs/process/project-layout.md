@@ -42,4 +42,4 @@ market/
 ## Як застосувати в новій грі
 
 Створити `release/` (з README кожної теки) і `market/{results,claude/{tools,need}}` з README як вище, рядки `.gitignore`, і рядок у
-`CLAUDE.md` гри: «Структура `release/` і `market/` — правило студії `docs/process/project-layout.md` (roshevasternin.github.io)».
+`CLAUDE.md` гри: «Структура `release/` і `market/` — правило студії `docs/process/project-layout.md` (репо RoShevasternin/roshevasternin.github.io)».

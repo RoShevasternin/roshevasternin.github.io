@@ -3,9 +3,9 @@
 The one source of the Lewydo brand for every Lewydo project: the pictures, the LibGDX atlas, the code of the splash screen
 and the heartbeat, the menu signature and About us.
 
-- **The page** (every language of our games; rules, live previews, the splash, About us): https://roshevasternin.github.io/brand/
-- **The numbers** (every size, colour, timing, text and file address — for code and for Claude): https://roshevasternin.github.io/brand/brand.json
-- **Everything in one file:** https://roshevasternin.github.io/brand/lewydo-brand-kit.zip
+- **The page** (every language of our games; rules, live previews, the splash, About us): https://lewydo.com/brand/
+- **The numbers** (every size, colour, timing, text and file address — for code and for Claude): https://lewydo.com/brand/brand.json
+- **Everything in one file:** https://lewydo.com/brand/lewydo-brand-kit.zip
 - **If the web is blocked** (a sandbox): `git clone --depth 1 https://github.com/RoShevasternin/roshevasternin.github.io` → the `brand/` folder.
 
 ## What is inside
@@ -36,7 +36,7 @@ and the heartbeat, the menu signature and About us.
   Tap → About us. It beats once when the menu appears.
 - **About us** — the Lockup at top 108, the studio text (every language of our games in `brand.json`), then **«Thank you for playing!» as its own
   last line**: centred, one line in every language (a long one gets smaller, it never wraps; never the end of the paragraph —
-  `brand.json` → `about.texts.<lang>.thanks`). «Our website» → https://roshevasternin.github.io/, «Our games on Google Play» → our
+  `brand.json` → `about.texts.<lang>.thanks`). «Our website» → https://lewydo.com/ (the address under it: `lewydo.com`), «Our games on Google Play» → our
   developer page, «© 2026 Lewydo™». The heart beats every time it opens.
 - **The heartbeat** — the heart 1.13 → 1 → 1.07 → 1 (0.10 / 0.12 / 0.10 / 0.12 s, sineOut / sineIn); the glow waits 0.05, then
   1.15 → 1.05 (0.12 / 0.28 s) and stays at 1.05. **Once**, when the brand appears — never in a loop. No beat with «reduce motion».
