@@ -118,7 +118,7 @@ const ICONS = {
 // Lewydo's own pages (owner 03.10.2026: «the brand's networks»; Discord — 09.10.2026; YouTube is Vlad's channel @veldan1202, where he posts about Lewydo's games)
 const SOCIAL = [['tiktok', 'TikTok', 'https://www.tiktok.com/@lewydo_game'], ['insta', 'Instagram', 'https://www.instagram.com/lewydo_game/'],
   ['youtube', 'YouTube', 'https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw'], ['facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=61594804110096'],
-  ['discord', 'Discord', 'https://discord.gg/PvUA3DwSP'],   // the studio's server, «general» (owner 09.10.2026); each game's site links its own channel
+  ['discord', 'Discord', 'https://discord.gg/Krkk8bAqDF'],   // the studio's server, «general» — one permanent invite for every site (owner 06.11.2026)
   ['x', 'X', 'https://x.com/lewydo_game']];   // the studio's X (owner 14.10.2026)
 const social = (cls) => SOCIAL.map(([i, n, u]) => `<a class="${cls}" href="${u}" target="_blank" rel="noopener" aria-label="Lewydo — ${n}">${ico(i)}<span>${n}</span></a>`).join('');
 const ico = (n) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[n]}"/></svg>`;

@@ -237,8 +237,8 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    Telegram прибрано; «Lewydo в соцмережах» у контактах і значками в підвалі: TikTok https://www.tiktok.com/@lewydo_game,
    Instagram https://www.instagram.com/lewydo_game/, YouTube https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw (канал Влада
    @veldan1202, де він пише про ігри Lewydo), Facebook https://www.facebook.com/profile.php?id=61594804110096, **Discord** (09.10.2026, сервер Lewydo, канал general)
-   https://discord.gg/PvUA3DwSP — `SOCIAL` у `tools/build.mjs` (і `sameAs` у JSON-LD, `brand.json` → `socials`). Сайти ігор ведуть
-   у свій канал того ж сервера: CubePix https://discord.gg/qD87CA9Q8, Orbit Dash https://discord.gg/aYJzP2vSt. **X** (14.10.2026)
+   https://discord.gg/Krkk8bAqDF (постійне, #general; з 06.11.2026 — на всіх сайтах) — `SOCIAL` у `tools/build.mjs` (і `sameAs` у JSON-LD, `brand.json` → `socials`). Сайти ігор ведуть
+   туди ж — одне постійне запрошення в #general на всіх трьох сайтах (власник 06.11.2026: «кому треба, самі знайдуть»; канальні запрошення були на 7 днів). **X** (14.10.2026)
    https://x.com/lewydo_game — там само (`SOCIAL`, `sameAs`, `socials.x`); сайти ігор — посилання в підвалі.
    **Пошта Lewydo — hello@lewydo.com** (з 06.11.2026, пошта домену → скринька власника; до того — roshevasternin@gmail.com, більше не
    показувати): на неї — «Написати нам» (`contact.mail`), картка Влада, JSON-LD `email`, `brand.json` → `socials.email` (`MAIL` у
