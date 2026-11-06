@@ -35,7 +35,7 @@ Play Маркет чи App Store залежно від платформи, у в
 |---|---|
 | Android | `https://play.google.com/store/apps/details?id=<пакет гри>` |
 | iPhone / iPad | `https://apps.apple.com/app/id<Apple ID гри>`. **Поки гри немає в App Store (Apple ID порожній) — сайт гри**, ніколи мертве посилання |
-| веб | сайт гри (`https://roshevasternin.github.io/<репо гри>/`) |
+| веб | сайт гри (`https://<гра>.lewydo.com/`: `orbitdash.lewydo.com`, `cubepix.lewydo.com`) |
 
 Лише `https://` — посилання відкриватиме інша людина на іншому пристрої (`itms-apps://` чи `market://` там не працюють). Кожне посилання несе мітку `share` (`docs/process/install-source.md`): так у Firebase видно, скільки гравців привела кнопка.
 

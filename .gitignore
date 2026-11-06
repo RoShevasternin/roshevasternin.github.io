@@ -1,4 +1,5 @@
-node_modules/
+# no trailing slash: in a git worktree node_modules is a symlink, and "node_modules/" matches only a directory
+node_modules
 test-results/
 playwright-report/
 # npm run look → shots/ (pictures of the page to look at, not part of the site)

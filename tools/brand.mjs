@@ -37,7 +37,7 @@ export const CODE = [
 const HEART = [[1.13, 0.10, 'sineOut'], [1.0, 0.12, 'sineIn'], [1.07, 0.10, 'sineOut'], [1.0, 0.12, 'sineIn']];
 const GLOW = { delay: 0.05, steps: [[1.15, 0.12, 'sineOut'], [1.05, 0.28, 'sineIn']] };
 
-export function brandJson({ SITE, YEAR, G, S, IDS }) {
+export function brandJson({ SITE, YEAR, G, S, IDS, MAIL }) {
   const B = SITE + 'brand/', K = B + 'kit/';
   const part = (p) => ({ what: p.what, dp: p.dp, png: K + 'png/' + p.id + '.png', px: pngSize(`brand/kit/png/${p.id}.png`), webp: K + 'webp/' + p.id + '.webp' });
   // About us in every language of ours: the games' own words (the CubePix site's, or the studio's supplement where it has none yet)
@@ -97,7 +97,7 @@ export function brandJson({ SITE, YEAR, G, S, IDS }) {
         text: { at: [24, 452], width: 312, font: 'Nunito Medium 15 / 23, centred' },
         thanks: { below: 'text', gap: 8, width: 312, font: 'Nunito ExtraBold 15 / 23, white, centred',
           rule: '«Thank you for playing!» is the text\'s own last line: centred, one line in every language — a long one gets smaller, it never wraps; never the end of the paragraph' },
-        siteButton: { below: 'thanks', gap: 14, size: [296, 52], radius: 16, style: 'green #3DDC84, text #04120A' }, address: { below: 'siteButton', gap: 12, text: 'roshevasternin.github.io' },
+        siteButton: { below: 'thanks', gap: 14, size: [296, 52], radius: 16, style: 'green #3DDC84, text #04120A' }, address: { below: 'siteButton', gap: 12, text: new URL(SITE).host },
         gamesButton: { below: 'address', gap: 16, size: [296, 52], radius: 16, style: 'outlined' },
         copyright: { at: [32, 764], text: `© ${YEAR} Lewydo™`, note: 'at least 18 below the games button' } },
       links: { site: SITE, games: G.devPage }, texts: about },
@@ -112,7 +112,7 @@ export function brandJson({ SITE, YEAR, G, S, IDS }) {
         'The game (LibGDX: Android, later iOS) is ported from it — numbers and words one to one: the prototype is the reference.',
         'Never the other way round: something new made only in the game is unknown to the prototype. Even a fix: first the prototype, then the game.'] },
     socials: { tiktok: 'https://www.tiktok.com/@lewydo_game', instagram: 'https://www.instagram.com/lewydo_game/', youtube: 'https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw',
-      facebook: 'https://www.facebook.com/profile.php?id=61594804110096', discord: 'https://discord.gg/PvUA3DwSP', x: 'https://x.com/lewydo_game', telegram: 'https://t.me/vlad_libgdx', email: 'roshevasternin@gmail.com' },
+      facebook: 'https://www.facebook.com/profile.php?id=61594804110096', discord: 'https://discord.gg/PvUA3DwSP', x: 'https://x.com/lewydo_game', telegram: 'https://t.me/vlad_libgdx', email: MAIL },
     rules: {
       do: ['Use the pictures and the code of the kit as they are.', 'Keep the colours, the font and the proportions.',
         'Let the heart beat once when the brand appears.', 'Theme the background and the ambient light to your game.', 'Keep the mark on a dark background.'],

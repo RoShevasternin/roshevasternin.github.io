@@ -1,7 +1,7 @@
 {
   "name": "lewydo-site",
   "private": true,
-  "description": "Lewydo™ — the studio site (https://roshevasternin.github.io/). See CLAUDE.md.",
+  "description": "Lewydo™ — the studio site (https://lewydo.com/). See CLAUDE.md.",
   "scripts": {
     "build": "node tools/build.mjs",
     "serve": "node tests/serve.mjs 5190",

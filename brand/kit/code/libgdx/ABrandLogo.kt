@@ -1,4 +1,4 @@
-// Lewydo™ brand kit — https://roshevasternin.github.io/brand/
+// Lewydo™ brand kit — https://lewydo.com/brand/
 // The heart in its glow: brand_back (the mint glow, fills 208×208) under brand_front (the heart, 140×140 in the middle).
 // beat()   — the short heartbeat (About us, the menu pill): the heart and its glow beat separately, once.
 // finale() — the splash's heartbeat (BrandScreen): a breath in, a big «lub», a «dub», the glow blooms, two waves of light leave the heart.

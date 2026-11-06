@@ -13,25 +13,17 @@ const watch = (page) => { const errs = [], ext = new Set();
   page.on('request', (r) => { const u = new URL(r.url()); if (u.protocol.startsWith('http') && u.hostname !== 'localhost') ext.add(u.origin); });
   return { errs, ext }; };
 
-// Orbit Dash's block shows the game itself: its site's play/embed.html (the prototype + a director). npm test speaks to a stand-in
-// that answers the same messages; with OD_SITE=<a build of the Orbit Dash site> (tests/serve.mjs) the real game answers.
+// Orbit Dash's block shows the game itself: its site's play/embed.html (the prototype + a director) — since 06.11.2026 on its own origin,
+// https://orbitdash.lewydo.com/, not under the studio's. tests/serve.mjs mirrors that: the studio on SITE_PORT, the game's site on the next
+// port (OD_PORT), and the pages it serves name the game by that local address (OD below; the files on disk keep the real one — tested too).
+// npm test speaks to a stand-in that answers the same messages by the same rules; with OD_SITE=<a build of the Orbit Dash site> the real game answers.
 const REAL_OD = !!process.env.OD_SITE;
-const OD_STUB = `<!doctype html><meta charset="utf-8"><body style="margin:0;background:#04050f"><script>
-var got = []; addEventListener('message', function (e) { var m = e.data; if (!m || !m.od) return; got.push(m);
-  if (m.od === 'level') parent.postMessage({ od: 'state', mode: 'watch', level: m.id || 'first-light', trailer: !m.id }, '*'); });
-parent.postMessage({ od: 'ready' }, '*');
-setTimeout(function () { parent.postMessage({ od: 'tick', t: 56, end: 72, bg: '#06071a', level: 'first-light' }, '*'); }, 60);
-</script>`;
-const PIXEL = Buffer.from('UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=', 'base64');
-// the game's own site isn't in this repo (on Pages it is the next door): every page gets the stand-in, unless OD_SITE gives the real one
-const odStub = async (ctx) => { if (REAL_OD) return;
-  await ctx.route('**/Game-Orbit-Dash/play/embed.html*', (r) => r.fulfill({ contentType: 'text/html', body: OD_STUB }));
-  await ctx.route('**/Game-Orbit-Dash/assets/media/poster.webp', (r) => r.fulfill({ contentType: 'image/webp', body: PIXEL }));
-  await ctx.route('**/Game-Orbit-Dash/assets/media/cover-*.webp', (r) => r.fulfill({ contentType: 'image/webp', body: PIXEL })); };   // [HALLOWEEN-LEVEL] .od-hol covers
-test.beforeEach(async ({ context }) => { await odStub(context); });
+const SITE_PORT = +(process.env.SITE_PORT || 5190), OD = `http://localhost:${+(process.env.OD_PORT || SITE_PORT + 1)}`;
+const OD_REAL = 'https://orbitdash.lewydo.com', CP = 'https://cubepix.lewydo.com', MARK = 'utm_source=lewydo&utm_medium=studio_site';
+const ROOT = new URL('../', import.meta.url), disk = (p) => readFileSync(new URL(p, ROOT), 'utf8');
 
 test('speaks the visitor’s language, switches to any of ours, remembers it, and asks no third party for anything', async ({ browser }) => {
-  const ctx = await browser.newContext({ locale: 'pt-BR' }); await odStub(ctx);
+  const ctx = await browser.newContext({ locale: 'pt-BR' });
   const page = await ctx.newPage(), w = watch(page);
   await page.goto('./');
   await expect(page.locator('html')).toHaveAttribute('lang', 'pt');                                   // the device's language
@@ -42,8 +34,8 @@ test('speaks the visitor’s language, switches to any of ours, remembers it, an
   await expect(page.locator('html')).toHaveAttribute('lang', 'uk');
   expect(page.url()).toContain('lang=uk');
   await expect(page.locator('.stats li').first()).toHaveText(/^2\s*людини$/);                         // a plural form, never «{n}»
-  await expect(page.locator('.chap.cp .ctas a[data-lang-link]')).toHaveAttribute('href', '/Game-CubePix/?utm_source=lewydo&utm_medium=studio_site&lang=uk');   // CubePix opens in the same language
-  await expect(page.locator('.pix-meet')).toHaveAttribute('href', '/Game-CubePix/?utm_source=lewydo&utm_medium=studio_site&lang=uk#pix');                // …and «Meet Pix» at his section
+  await expect(page.locator('.chap.cp .ctas a.px-dark')).toHaveAttribute('href', `${CP}/?${MARK}&lang=uk`);   // CubePix opens in the same language (its own origin: the link says it)
+  await expect(page.locator('.pix-meet')).toHaveAttribute('href', `${CP}/?${MARK}&lang=uk#pix`);                // …and «Meet Pix» at his section
   await expect(page.locator('.pix-meet .pix-hi')).toHaveText('Привіт! Я Pix.');                                 // the mascot says hi in the visitor's language
   await expect(page.locator('.tl-i.pix h3')).toHaveText('Народився Pix');                                       // the day he was invented, in the story
   await page.goto('./');                                                                              // remembered
@@ -65,7 +57,7 @@ test('speaks the visitor’s language, switches to any of ours, remembers it, an
 // no Russian, anywhere (owner 13–14.10.2026): not a language of ours; every language list ends with the row of Russia — the flag
 // stained with blood, «Россия, останови войну в Украине» and, under it, the same in the visitor's language; not chosen, not a link
 test('no Russian: a Russian device gets English, and every list ends with «Россия, останови войну в Украине» — not a language', async ({ browser, request }) => {
-  const ctx = await browser.newContext({ locale: 'ru-RU' }); await odStub(ctx);
+  const ctx = await browser.newContext({ locale: 'ru-RU' });
   const page = await ctx.newPage(), w = watch(page);
   await page.goto('./');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -168,7 +160,7 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await page.locator('#orbitdash').scrollIntoViewIfNeeded();                                        // the game loads when you get to it
   const pills = page.locator('.od-pill');
   await expect(pills).toHaveCount(L.length + 1);                                                   // «All levels» + every level
-  await expect(page.locator('#odScreen iframe')).toHaveAttribute('src', '/Game-Orbit-Dash/play/embed.html');
+  await expect(page.locator('#odScreen iframe')).toHaveAttribute('src', `${OD}/play/embed.html?lang=en`);   // the game's own origin; the page's language
   await expect(page.locator('#odScreen iframe')).toHaveAttribute('allow', 'autoplay; web-share; clipboard-write');   // the game's SHARE button inside the frame
   await expect(page.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });
   const game = () => page.frame({ url: /embed\.html/ });
@@ -196,7 +188,7 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await expect.poll(level, { timeout: 15_000 }).toBe(hol[2].id);
   await pills.nth(0).click();                                                                      // «All levels» — the trailer again
   await expect(pills.nth(0)).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', '/Game-Orbit-Dash/play/?utm_source=lewydo&utm_medium=studio_site');   // the whole game in the browser comes first, as with CubePix
+  await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', `${OD}/play/?${MARK}&lang=en`);   // the whole game in the browser comes first, as with CubePix
   await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
   expect(w.errs).toEqual([]);
 });
@@ -212,7 +204,7 @@ test('a CubePix holiday: its card shows only while it is on, in the visitor’s 
   await expect(card.locator('b')).toHaveText('Хелловін у музеї!');
   await expect(card).toContainText('30 листопада');
   await expect(card.locator('.cp-ev-left')).toHaveText('ще 33 дні');
-  await expect(card).toHaveAttribute('href', '/Game-CubePix/?utm_source=lewydo&utm_medium=studio_site&lang=uk#event');
+  await expect(card).toHaveAttribute('href', `${CP}/?${MARK}&lang=uk#event`);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.clock.setFixedTime(new Date('2026-12-01T00:00:01'));
   await page.reload();
@@ -234,11 +226,11 @@ test('an Orbit Dash holiday: its card shows only while it is on, in the visitor�
   await expect(card).toContainText('WISP');
   await expect(card.locator('.od-ev-left')).toHaveText('ще 33 дні');
   await expect(card.locator('em')).toContainText('Грати в браузері');
-  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/?utm_source=lewydo&utm_medium=studio_site&lang=uk');
+  await expect(card).toHaveAttribute('href', `${OD}/play/?${MARK}&lang=uk`);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.goto('./?lang=en');
   await expect(card.locator('em')).toHaveText('33 days left · Play in your browser →');
-  await expect(card).toHaveAttribute('href', '/Game-Orbit-Dash/play/?utm_source=lewydo&utm_medium=studio_site');
+  await expect(card).toHaveAttribute('href', `${OD}/play/?${MARK}&lang=en`);                    // English too: the game's site can't read our choice
   await page.clock.setFixedTime(new Date('2026-11-30T23:00:00'));                                  // the last evening — still on
   await page.reload();
   await expect(card.locator('.od-ev-left')).toHaveText('1 day left');
@@ -254,7 +246,7 @@ test('an Orbit Dash holiday: its card shows only while it is on, in the visitor�
 // pumpkins and candles, one festive line → the worlds. The Lewydo sign is never touched; the decor takes no tap and is hidden from readers;
 // ?halloween=0 / 1 and ?today= switch it; on December 1 it is gone by itself. Remove with the rest of [HALLOWEEN] in December.
 test('Halloween on the studio page: only in season, one festive line in the visitor’s language, decor that takes no tap, the sign untouched', async ({ browser }) => {
-  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } }); await odStub(ctx);
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
   const page = await ctx.newPage(), w = watch(page), html = page.locator('html'), pill = page.locator('.hero .hw-pill');
   const decor = () => page.locator('.hw').count();
   // the Lewydo sign — the hero's Lockup, the header's signature, the footer's pill, the contact card's heart: its markup and its look
@@ -306,7 +298,7 @@ test('Halloween on the studio page: only in season, one festive line in the visi
   expect([...w.ext]).toEqual([]);
   await ctx.close();
   // less motion: everything stands still — no decor animation runs, nothing flies
-  const rm = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' }); await odStub(rm);
+  const rm = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
   const p2 = await rm.newPage();
   await p2.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
   await p2.goto('./?lang=en');
@@ -323,7 +315,7 @@ test('Halloween on the studio page: only in season, one festive line in the visi
 // [HALLOWEEN] the festive line stays a pill on the narrowest phones (two lines at most, in every language — three made it a slab that pushed
 // the word Lewydo under the music bubble on a 320×568 phone), and on a short screen the sign stands exactly where it does out of season
 test('Halloween’s festive line: two lines at most in all our languages at 320 and 390 px, and the word Lewydo stays put on a short phone', async ({ browser }) => {
-  const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } }); await odStub(ctx);
+  const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } });
   const page = await ctx.newPage(), w = watch(page), html = page.locator('html');
   await page.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
   const name = async (q) => { await page.goto('./?' + q); await expect(page.locator('#top')).toHaveClass(/\bs3\b/, { timeout: 8000 }); await page.waitForTimeout(700);
@@ -364,8 +356,10 @@ test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async (
   expect(await (await request.get('./googlea91a80ac974455de.html')).text()).toContain('google-site-verification');  // Search Console → Play Console: never lose it
   expect(await (await request.get('./')).text()).toContain('FbnCfBUOkfR84lwfaDQwOJiyQXAwnK5tVhmtCYK-Seo');               // the backup: meta tag on the home page
   expect(await (await request.get('./robots.txt')).text()).toContain('sitemap.xml');
-  expect(await (await request.get('./sitemap.xml')).text()).toContain('Game-CubePix/');
-  expect(await (await request.get('./sitemap.xml')).text()).toContain('/brand/');
+  const map = [...(await (await request.get('./sitemap.xml')).text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  expect(map).toEqual(['https://lewydo.com/', 'https://lewydo.com/brand/']);                       // this host only: the games' pages are in their own sites' maps
+  expect(await (await request.get('./robots.txt')).text()).toContain('Sitemap: https://lewydo.com/sitemap.xml');
+  expect(await (await request.get('./CNAME')).text()).toBe('lewydo.com\n');                        // the domain: GitHub Pages reads it from the branch
   for (const f of ['assets/og.png', 'assets/favicon.png', 'assets/icon-180.png', 'logo.png', 'banner.png', 'brand.png'])
     expect((await request.get('./' + f)).status(), f).toBe(200);
 });
@@ -395,11 +389,11 @@ test('the brand page: the splash, About us in every language, every download, br
   for (const [L, A] of Object.entries(B.about.texts)) { expect(A.thanks, L).toBeTruthy(); expect(A.text, L).not.toContain(A.thanks); }
   expect(B.about.layout.thanks.rule).toMatch(/own last line/);
   for (const u of [...Object.values(B.images).flatMap((i) => [i.png, i.webp]), B.atlas.atlas, B.atlas.png, ...Object.values(B.code).map((c) => c.url)])
-    expect((await request.get(u.replace('https://roshevasternin.github.io/', './'))).status(), u).toBe(200);
+    expect((await request.get(u.replace('https://lewydo.com/', './'))).status(), u).toBe(200);
   expect(B.pronunciation.ipa).toBe('/lɛv.waɪ.doʊ/');                                                 // how to say it
   expect(Object.keys(B.sound.files)).toEqual(['wav']);                                                // the Lewydo sound: one WAV, nothing else
   for (const u of Object.values(B.sound.files)) {
-    const r = await request.get(u.replace('https://roshevasternin.github.io/', './'));
+    const r = await request.get(u.replace('https://lewydo.com/', './'));
     expect(r.status(), u).toBe(200); const wav = await r.body();
     expect(wav.length, u).toBe(B.sound.file.bytes); expect(createHash('sha256').update(wav).digest('hex'), u).toBe(B.sound.file.sha256);
     expect(wav.subarray(0, 4).toString() + wav.subarray(8, 16).toString(), u).toBe('RIFFWAVEfmt ');
@@ -579,7 +573,7 @@ test('the story: first time on Twitch (03.11.2026) — the emblem on the line, t
   const svg = await request.get('./assets/story/twitch.svg'); expect(svg.status()).toBe(200);
   const src = await svg.text(); expect(src).toContain('#9146FF'); expect(src).not.toMatch(/https?:\/\/(?!www\.w3\.org)/);      // Twitch purple; no outside reference
   for (const [lang, width, title] of [['uk', 390, 'Вперше на Twitch'], ['en', 1440, 'First time on Twitch'], ['ar', 390, 'للمرة الأولى على Twitch'], ['uk', 320, 'Вперше на Twitch']]) {
-    const ctx = await browser.newContext({ viewport: { width, height: 844 } }); await odStub(ctx);
+    const ctx = await browser.newContext({ viewport: { width, height: 844 } });
     const page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
     await page.goto(`./?lang=${lang}#first-twitch`);
     await expect(page.locator('html')).toHaveAttribute('data-words', lang);
@@ -622,7 +616,7 @@ test('the story folds: the first 3, then one more at a time (under the finger) o
   const moving = (page) => page.evaluate(() => document.getAnimations().filter((a) => !(a instanceof CSSTransition) && !(a instanceof CSSAnimation) && a.playState === 'running' && a.effect?.target?.closest?.('#story')).length);
   for (const [width, height, rm] of [[390, 844], [1440, 900], [390, 844, 'reduce']]) {
     const tag = `${width}${rm ? ' reduce' : ''}`;
-    const ctx = await browser.newContext({ viewport: { width, height }, reducedMotion: rm || 'no-preference' }); await odStub(ctx);
+    const ctx = await browser.newContext({ viewport: { width, height }, reducedMotion: rm || 'no-preference' });
     const page = await ctx.newPage(), w = watch(page);
     await page.goto('./?lang=uk');
     await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
@@ -698,7 +692,7 @@ test('the story folds: the first 3, then one more at a time (under the finger) o
     await ctx.close();
   }
   // right to left: the line, the slot and the ring mirror; the count speaks Arabic
-  { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } }); await odStub(ctx);
+  { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const page = await ctx.newPage(), w = watch(page);
     await page.goto('./?lang=ar');
     await expect(page.locator('html')).toHaveAttribute('data-words', 'ar'); await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
@@ -714,7 +708,7 @@ test('the story folds: the first 3, then one more at a time (under the finger) o
     expect(w.errs).toEqual([]);
     await ctx.close(); }
   // a small phone: nothing scrolls sideways — folded, after one more, all of it
-  { const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } }); await odStub(ctx);
+  { const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } });
     const page = await ctx.newPage(), w = watch(page), sw = () => page.evaluate(() => document.documentElement.scrollWidth);
     await page.goto('./?lang=uk');
     await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
@@ -745,11 +739,119 @@ test('the loader credits — the Lewydo standard: a fourth phone on the brand pa
   expect(w.errs).toEqual([]);
 });
 
-// docs/process/install-source.md: every link from the studio page to a game says where it came from, or Firebase shows (direct)
-test('every link to a game carries the studio mark', async ({ page }) => {
-  await page.goto('./?lang=en');
-  const bad = await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.getAttribute('href'))
-    .filter((h) => /^\/Game-(CubePix|Orbit-Dash)\/(play\/)?([?#]|$)/.test(h) || /details\?id=com\.lewydo\.(cubepix|orbitdash)(?!.*referrer=)/.test(h))
-    .filter((h) => !h.includes('utm_source') && !h.includes('utm_source%3D')));
-  expect(bad).toEqual([]);
+// docs/process/install-source.md: every link from the studio page to a game says where it came from, or Firebase shows (direct). And since
+// 06.11.2026 each game is its own origin with its own memory of the language — so the link says that too: ?lang= of the page, English as well,
+// after the mark, the anchor last; the language switcher keeps every one of them current
+test('every link to a game carries the studio mark and the page\'s language', async ({ page }) => {
+  const w = watch(page);
+  const links = () => page.evaluate(([od, cp]) => [...document.querySelectorAll('a[href]')].map((a) => a.href)
+    .filter((h) => h.startsWith(od + '/') || h.startsWith(cp + '/') || /details\?id=com\.lewydo\.(cubepix|orbitdash)\b/.test(h)), [OD, CP]);
+  const check = async (L) => { const hs = await links(); expect(hs.length).toBeGreaterThan(14);
+    for (const h of hs) { const u = new URL(h);
+      if (u.hostname === 'play.google.com') { expect(h, h).toContain('referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site'); continue; }   // the store: its own mark
+      expect(u.searchParams.get('lang'), h).toBe(L);
+      if (!u.pathname.endsWith('/privacy.html')) expect(u.search, h).toMatch(new RegExp(`^\\?${MARK}&lang=`)); } };   // the site, the web game, the holiday cards; privacy — the language only
+  await page.goto('./?lang=en'); await check('en');
+  await page.locator('#langBtn').click(); await page.locator('#langMenu button[data-lang="uk"]').click();
+  await expect(page.locator('html')).toHaveAttribute('data-words', 'uk'); await check('uk');
+  await page.goto('./?lang=ar'); await expect(page.locator('html')).toHaveAttribute('data-words', 'ar'); await check('ar');
+  await expect(page.locator('.pix-meet')).toHaveAttribute('href', `${CP}/?${MARK}&lang=ar#pix`);
+  await expect(page.locator('.foot-links a[href="/brand/"]')).toHaveCount(1);                           // our own pages: plain paths, as before
+  expect(w.errs).toEqual([]);
+});
+
+// What Pages serves is the build on disk (tests/serve.mjs swaps the game's origin for the local one only on the way out): the studio at
+// https://lewydo.com/, each game at its own subdomain, nothing left of the old shared address (only the repository keeps its name), the mail —
+// the domain's own
+test('the built pages name the games by their own addresses: lewydo.com, orbitdash.lewydo.com, cubepix.lewydo.com', () => {
+  const html = disk('index.html'), brand = disk('brand/index.html'), nf = disk('404.html');
+  expect(disk('CNAME')).toBe('lewydo.com\n');
+  for (const [f, s] of [['index.html', html], ['brand/index.html', brand], ['404.html', nf], ['brand/brand.json', disk('brand/brand.json')]]) {
+    expect(s, f).not.toMatch(/\/Game-(Orbit-Dash|CubePix)\//);
+    expect(s, f).not.toContain('roshevasternin@gmail.com');
+    expect(s.replaceAll('github.com/RoShevasternin/roshevasternin.github.io', ''), f).not.toContain('roshevasternin.github.io'); }
+  expect(html).toContain('<link rel="canonical" href="https://lewydo.com/">');
+  expect(html).toContain('<meta property="og:url" content="https://lewydo.com/">');
+  expect(html).toContain('<meta property="og:image" content="https://lewydo.com/assets/og.png">');
+  expect(html).toContain('<link rel="alternate" hreflang="uk" href="https://lewydo.com/?lang=uk">');
+  expect(brand).toContain('<link rel="canonical" href="https://lewydo.com/brand/">');
+  expect(brand).toContain('<span class="ab-url">lewydo.com</span>');                                 // About us: the address under «Our website»
+  expect(brand).toContain('<span data-t="b.where.4.d"><a href="/">lewydo.com</a>');                  // «On our site» — the site's own address
+  expect(brand).toContain('https://lewydo.com/brand/brand.json — every number');                     // the text for Claude in another project
+  const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/)[1]);
+  expect([ld.url, ld.logo, ld.email]).toEqual(['https://lewydo.com/', 'https://lewydo.com/assets/icon-512.png', 'hello@lewydo.com']);
+  expect(html.match(/mailto:[^"]+/g)).toEqual(['mailto:hello@lewydo.com', 'mailto:Lilyadesign05@gmail.com', 'mailto:hello@lewydo.com']);   // Vlad's card, Lilya's, «Write to us»
+  expect(html).toContain(`SRC = '${OD_REAL}/play/embed.html'`);                                      // the live game, from its own site
+  expect(html).toContain(`src="${OD_REAL}/assets/media/poster.webp"`);
+  // every link to a game, before any script runs: the game's own address, the studio mark (not on the privacy pages), the page's language
+  // (English) and data-lang-link, so src/lang.js keeps the language current
+  const links = [...html.matchAll(/<a\b[^>]*\bhref="(https:\/\/(?:orbitdash|cubepix)\.lewydo\.com\/[^"]*)"[^>]*>/g)];
+  expect(links.length).toBeGreaterThan(14);
+  for (const [a, href] of links) { const h = href.replace(/&amp;/g, '&');
+    expect(a, h).toMatch(new RegExp(`\\sdata-lang-link="${h.includes('cubepix') ? 'cp' : 'od'}"`));
+    expect(new URL(h).searchParams.get('lang'), h).toBe('en');
+    if (!h.includes('/privacy.html')) expect(h, h).toContain(`?${MARK}&lang=en`); }
+  const B = JSON.parse(disk('brand/brand.json'));
+  expect([B.page, B.about.links.site, B.about.layout.address.text, B.socials.email]).toEqual(['https://lewydo.com/brand/', 'https://lewydo.com/', 'lewydo.com', 'hello@lewydo.com']);
+});
+
+// Orbit Dash's live game is another origin (since 06.11.2026; the page's side — src/index.html, «Orbit Dash: сама гра»; the game's —
+// Game-Orbit-Dash-PRIVATE site/src/embed.js). The page sends only to the game's origin and hears only its own frame from that origin; the
+// game hears only its parent from the studio, its own origin or localhost. So: a frame that ends up on another origin is neither told nor
+// heard, and a page on an origin the game doesn't know is not heard by the game (the stand-in here, the real game with OD_SITE).
+test('the live game is its own origin: the page talks only to it, hears only it, and a wrong origin is ignored both ways', async ({ page, browser }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  const w = watch(page);
+  const L = JSON.parse(disk('src/orbitdash.json')).levels, uk = JSON.parse(disk('src/i18n/uk.json')).site;
+  const odd = L.find((l) => l.col === 'halloween');                                                  // a level the trailer never shows by itself
+  await page.goto('./?lang=uk');
+  await page.locator('#orbitdash').scrollIntoViewIfNeeded();
+  await expect(page.locator('#odScreen iframe')).toHaveAttribute('src', `${OD}/play/embed.html?lang=uk`);   // the game's own origin, the page's language
+  await expect(page.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });            // the handshake — across origins
+  const game = () => page.frame({ url: /embed\.html/ });
+  expect(await game().evaluate(() => location.origin)).toBe(OD);
+  expect(new URL(page.url()).origin).not.toBe(OD);
+  const tap = () => game().evaluate((real) => real ? (document.querySelector('#odx .tap span') || {}).textContent
+    : (got.filter((m) => m.od === 'labels').pop() || {}).tap, REAL_OD).catch(() => null);
+  await expect.poll(tap, { timeout: 15_000 }).toBe(uk['od.tap']);                                  // the page's words reached the game
+  const level = () => (REAL_OD ? game().evaluate(() => { const i = window.__orbitDev.current.beatInfo(); return i && i.id; })
+    : game().evaluate(() => (got.filter((m) => m.od === 'level').pop() || {}).id)).catch(() => null);
+  await page.locator(`.od-pill[data-id="${L[1].id}"]`).click();                                        // a pill → that level in the game: the channel works
+  await expect.poll(level, { timeout: 15_000 }).toBe(L[1].id);
+  if (!REAL_OD) expect(await game().evaluate(() => refused)).toEqual([]);                            // …and the game heard the page (localhost)
+  // the frame is taken to another origin (a link inside it, a redirect): what it says from there is not heard, and the page's messages,
+  // addressed to the game's origin only, never reach it (the browser drops them)
+  const ELSE = 'https://elsewhere.example';
+  await page.route(`${ELSE}/**`, (r) => r.fulfill({ contentType: 'text/html', body: `<!doctype html><script>var got = [];
+    addEventListener('message', function (e) { got.push(e.data); });
+    parent.postMessage({ od: 'ready' }, '*'); parent.postMessage({ od: 'state', mode: 'watch', level: '${odd.id}' }, '*');
+    setInterval(function () { parent.postMessage({ od: 'tick', t: 1, end: 9, level: '${odd.id}' }, '*'); }, 50);</script>` }));
+  await game().goto(`${ELSE}/frame.html`);
+  const other = page.frame({ url: /elsewhere\.example/ });
+  await page.waitForTimeout(500);
+  await expect(page.locator(`.od-pill[data-id="${odd.id}"]`)).not.toHaveClass(/\bnow\b/);            // its «state» and «tick» changed nothing
+  await page.locator(`.od-pill[data-id="${L[2].id}"]`).click();                                        // a pill → a «level» message for the game
+  await expect(page.locator(`.od-pill[data-id="${L[2].id}"]`)).toHaveAttribute('aria-pressed', 'true');
+  await page.waitForTimeout(500);
+  expect(await other.evaluate(() => got)).toEqual([]);                                               // …which the other origin never got
+  expect(w.errs.filter((e) => !/target origin provided .* does not match the recipient window's origin/.test(e))).toEqual([]);
+  expect([...w.ext]).toEqual([ELSE]);                                                                 // nothing else left our own origins
+  // the game's side: the studio page on an origin the game doesn't know (http://[::1] — not lewydo.com, not localhost / 127.0.0.1).
+  // It still says ready (nothing private), but hears nothing: no words, no level
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } }), p2 = await ctx.newPage();
+  const STRANGER = `http://[::1]:${SITE_PORT}`;
+  await p2.goto(`${STRANGER}/?lang=uk`);
+  await p2.locator('#orbitdash').scrollIntoViewIfNeeded();
+  await expect(p2.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });
+  await p2.locator(`.od-pill[data-id="${odd.id}"]`).click();
+  await p2.waitForTimeout(1500);
+  const g2 = p2.frame({ url: /embed\.html/ });
+  if (REAL_OD) {
+    expect(await g2.evaluate(() => (document.querySelector('#odx .tap span') || {}).textContent)).toBe('TAP TO PLAY');   // its own words, not the page's
+    expect(await g2.evaluate(() => { const i = window.__orbitDev.current.beatInfo(); return i && i.id; })).not.toBe(odd.id);
+  } else {
+    expect(await g2.evaluate(() => got)).toEqual([]);
+    expect(await g2.evaluate(() => refused)).toContain(STRANGER);
+  }
+  await ctx.close();
 });
