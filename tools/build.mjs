@@ -161,7 +161,7 @@ const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/
 // [HALLOWEEN-LEVEL] Orbit Dash's holiday levels (02.11.2026: BLOOD MOON, MIDNIGHT PARADE, WITCH'S BREW — the game's 🎃 HOLIDAYS tab; they stay
 // after the holiday, so this card is not seasonal): the collection name — the game's own word (od.hol), the three levels — buttons that play
 // that level in the phone above (the same `level` message as the pills), their covers — from the game's site (orbitdash.lewydo.com), and honestly
-// where they are: in the browser now, in the app with the next update (od.holWhere). Words — src/i18n/*.json → site
+// where they are: in the browser and on Android (od.holWhere; since 3.0.0). Words — src/i18n/*.json → site
 const odHolLv = (OD.levels || []).filter((l) => l.col === 'halloween');
 if (odHolLv.length) for (const k of ['od.hol', 'od.holWhere'])
   if (!(k in SS.en)) problems.push(`en: Orbit Dash's holiday levels need the words «${k}» (src/i18n/*.json → site)`);

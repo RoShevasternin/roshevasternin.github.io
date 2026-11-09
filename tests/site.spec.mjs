@@ -182,7 +182,7 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   const holBtn = page.locator('.od-hol [data-od-level]');
   await expect(holBtn).toHaveCount(hol.length);
   await expect(page.locator('.od-hol [data-t="od.hol"]')).toHaveText('HALLOWEEN');
-  await expect(page.locator('.od-hol [data-t="od.holWhere"]')).toHaveText('In the browser now · in the app with the next update');
+  await expect(page.locator('.od-hol [data-t="od.holWhere"]')).toHaveText('In the browser and on Android');
   await holBtn.nth(2).click();                                                                     // a cover → that level in the phone
   await expect(holBtn.nth(2)).toHaveAttribute('aria-pressed', 'true');
   await expect.poll(level, { timeout: 15_000 }).toBe(hol[2].id);
