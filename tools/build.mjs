@@ -212,11 +212,12 @@ const fill = (html) => {
     .replace(/\{\{brandCss\}\}/g, () => brandCss).replace(/\{\{lockup\}\}/g, lockup).replace(/\{\{mark\}\}/g, mark).replace(/\{\{mark:(\w+)\}\}/g, (m, id) => logo(id))
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
+    .replace(/<!--cp-as-->([\s\S]*?)<!--\/cp-as-->/g, (m, b) => (G.cubepix.appStore ? b : ''))   // CubePix's App Store badge only once it is there
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{asIcon\}\}/g, asIcon).replace(/\{\{gpIn\}\}/g, gpIn).replace(/\{\{asIn\}\}/g, asIn).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
-    .replace(/\{\{(url|host|mail|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.appstore|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
-      url: SITE, host: HOST, mail: MAIL, year: YEAR, devPage: G.devPage, 'cp.site': cpLink(G.cubepix.site), 'cp.demo': cpLink(G.cubepix.demo), 'cp.privacy': gameLink(G.cubepix.privacy), 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.version': G.cubepix.version,
+    .replace(/\{\{(url|host|mail|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.appstore|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.appstore|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
+      url: SITE, host: HOST, mail: MAIL, year: YEAR, devPage: G.devPage, 'cp.site': cpLink(G.cubepix.site), 'cp.demo': cpLink(G.cubepix.demo), 'cp.privacy': gameLink(G.cubepix.privacy), 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.appstore': G.cubepix.appStore || '', 'cp.version': G.cubepix.version,
       'od.site': odLink(G.orbitdash.site), 'od.web': odLink(G.orbitdash.demo), 'od.embed': G.orbitdash.embed, 'od.poster': G.orbitdash.poster,
       'od.play': G.orbitdash.play, 'od.appstore': G.orbitdash.appStore, 'od.privacy': gameLink(G.orbitdash.privacy), 'od.icon': G.orbitdash.icon, 'od.version': G.orbitdash.version }[k]))
     .replace(/\{\{langCss\}\}/g, () => langCss).replace('{{langFonts}}', () => langFonts).replace('{{langJs}}', () => langJs)
