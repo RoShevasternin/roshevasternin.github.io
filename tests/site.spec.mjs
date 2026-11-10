@@ -190,6 +190,10 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await expect(pills.nth(0)).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', `${OD}/play/?${MARK}&lang=en`);   // the whole game in the browser comes first, as with CubePix
   await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
+  const as = page.locator('.od .ctas a.od-as');                                                    // …and the App Store next to it (since 10.11.2026)
+  await expect(as).toHaveAttribute('href', 'https://apps.apple.com/app/id6824944395');              // bare: no ct/pt without the provider token
+  await expect(as).toHaveText('Download on the App Store');
+  expect(await page.locator('.od .ctas a').evaluateAll((a) => a.map((e) => e.getAttribute('href').includes('apps.apple.com')))).toEqual([false, false, true, false]);
   expect(w.errs).toEqual([]);
 });
 
@@ -539,7 +543,7 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
 
 test('the story: the first streamer to play our game live (22.10.2026) — our own clip, loaded only when needed; the thank-you; his links', async ({ page, request }) => {
   const w = watch(page), media = [];
-  page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
+  page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus|ios)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
   await page.goto('./?lang=uk');
   const li = page.locator('#first-live');
   await expect(li.locator('h3')).toHaveText('Orbit Dash у прямому ефірі TikTok');
@@ -611,6 +615,57 @@ test('the story: first time on Twitch (03.11.2026) — the emblem on the line, t
   }
 });
 
+// 10.11.2026 — Orbit Dash is out on the App Store: the studio's first game on iPhone (13 days after #app-store, 28.10). Our own emblem (a silver
+// phone with the game's orbit and a gold «first» star; no Apple logo, no store name) is the dot and the thumbnail — on the line, centred, at 390
+// and at 1440 (the wide layout needs its own rule: the online dot sat 4.5 px off there); the card glows silver, the date carries an iOS badge;
+// the App Store (bare, no ct/pt) and the browser game; it stands before #first-online (the same day, earlier); RTL; 320 px; no third party
+test('the story: our first game on iPhone (10.11.2026) — the emblem on the line, the iOS badge, the App Store and the browser game; RTL; 320 px', async ({ browser, request }) => {
+  const svg = await request.get('./assets/story/ios.svg'); expect(svg.status()).toBe(200);
+  const src = await svg.text(); expect(src).toContain('viewBox="0 0 32 32"'); expect(src).toContain('#FFD36B'); expect(src).not.toMatch(/https?:\/\/(?!www\.w3\.org)/);
+  for (const [lang, width, title] of [['uk', 390, 'Наша перша гра на iPhone'], ['en', 1440, 'Our first game on iPhone'], ['uk', 1440, 'Наша перша гра на iPhone'], ['ar', 390, 'أول لعبة لنا على iPhone'], ['he', 1440, 'המשחק הראשון שלנו ל-iPhone'], ['ta', 320, 'iPhone-இல் எங்கள் முதல் கேம்'], ['uk', 320, 'Наша перша гра на iPhone']]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 844 } });
+    const page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
+    await page.goto(`./?lang=${lang}#first-ios`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    const li = page.locator('#first-ios');
+    await expect(li).toHaveClass(/\bopen\b/); await expect(li).toHaveClass(/\biosfirst\b/);
+    expect(await li.evaluate((e) => e.nextElementSibling?.id), tag).toBe('first-online');                // the same day, earlier
+    await expect(li.locator('h3')).toHaveText(title);
+    await expect(li.locator('.tl-when')).toHaveText('10 · 11 · 2026');
+    expect(await li.locator('.tl-when').evaluate((e) => getComputedStyle(e, '::after').content), tag).toBe('"iOS"');
+    const d = await li.locator('.tl-pad > p').innerText();
+    for (const k of ['Orbit Dash', 'App Store', 'iPhone', 'iPad', '82', '13']) expect(d, tag).toContain(k);
+    expect(d, tag).not.toMatch(/VERSUS|3\.0/);                                                           // online on iPhone comes with an update — no promises, no dates
+    const links = li.locator('.tl-links a');
+    await expect(links).toHaveCount(2);
+    expect(await links.nth(0).getAttribute('href'), tag).toBe('https://apps.apple.com/app/id6824944395');  // bare: no ct/pt without the provider token
+    expect((await links.nth(0).textContent()).trim(), tag).toBe((await page.locator('#orbitdash .ctas a.od-as').textContent()).trim());   // the world's App Store words
+    expect(await links.nth(1).getAttribute('href'), tag).toMatch(new RegExp(`/play/\\?utm_source=lewydo&utm_medium=studio_site.*lang=${lang}`));
+    expect((await links.nth(1).textContent()).trim(), tag).toBe((await page.locator('#orbitdash .ctas .btn-cyan').textContent()).trim());
+    // the emblem is the dot (32 px, centred like the others) and the thumbnail
+    expect(await li.evaluate((e) => getComputedStyle(e, '::before').backgroundImage), tag).toContain('/assets/story/ios.svg');
+    const th = li.locator('.tl-thumb'); await expect(th).toHaveAttribute('src', '/assets/story/ios.svg');
+    await expect.poll(() => th.evaluate((e) => e.complete && e.naturalWidth > 0), tag).toBe(true);
+    const dot = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'); return { w: parseFloat(c.width), h: parseFloat(c.height), top: parseFloat(c.top) }; });
+    expect(dot.w, tag).toBe(32); expect(Math.abs(dot.top + dot.h / 2 - 37.5), tag).toBeLessThanOrEqual(.5);
+    // …and on the line itself, across it — measured on screen, so RTL and either side at ≥ 900 px count too
+    const off = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'), tl = e.closest('.tl'), l = getComputedStyle(tl, '::before');
+      const r = e.getBoundingClientRect(), lr = tl.getBoundingClientRect();
+      const dx = (c.left !== 'auto' ? r.left + parseFloat(c.left) : r.right - parseFloat(c.right) - parseFloat(c.width)) + parseFloat(c.marginLeft) + parseFloat(c.width) / 2;
+      const lx = (l.left !== 'auto' ? lr.left + parseFloat(l.left) : lr.right - parseFloat(l.right) - parseFloat(l.width)) + parseFloat(l.marginLeft) + parseFloat(l.width) / 2; return dx - lx; });
+    expect(Math.abs(off), tag).toBeLessThanOrEqual(.5);
+    expect(await li.locator('.tl-card').evaluate((e) => getComputedStyle(e).boxShadow), tag).toContain('214, 228, 255');   // the open card's silver edge
+    for (const el of await li.locator('.tl-head, .tl-pad > p, .tl-links a').all()) {                      // nothing spills out of the card
+      const [r, c] = await Promise.all([el.boundingBox(), li.locator('.tl-card').boundingBox()]);
+      expect(r.x >= c.x - 1 && r.x + r.width <= c.x + c.width + 1, tag).toBe(true);
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), tag).toBeLessThanOrEqual(width);
+    expect([...w.ext], tag).toEqual([]);
+    expect(w.errs, tag).toEqual([]);
+    await ctx.close();
+  }
+});
+
 // 10.11.2026 — a milestone: Orbit Dash 3.0, the studio's first game with an online mode (VERSUS LIVE). Our own emblem (two linked orbits and a live
 // signal) is the dot and the thumbnail; the card glows cyan, the date carries an ONLINE badge; Google Play and the browser game, marked and in the page's language;
 // nothing on Apple (no iPhone version yet); the nick stays Latin (isolated in RTL); nothing scrolls sideways; no third party
@@ -662,7 +717,7 @@ test('the story: Orbit Dash goes online (10.11.2026) — the milestone emblem, t
 // 31.10.2026 (owner): «спочатку перші 3 частини, а потім по 1… або одразу все» — the story folds, and still scales as it grows
 test('the story folds: the first 3, then one more at a time (under the finger) or all of it; collapse; links open their entry; RTL; 320 px; reduced motion', async ({ browser }) => {
   test.setTimeout(240_000);
-  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan', 'first-twitch', 'first-online'];
+  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan', 'first-twitch', 'first-ios', 'first-online'];
   const vis = (page) => page.evaluate(() => [...document.querySelectorAll('#tl .tl-i')].filter((l) => !l.hidden).length);
   const focused = (page, i) => page.evaluate((i) => document.activeElement === document.querySelectorAll('#tl .tl-i')[i].querySelector('.tl-tog'), i);
   // the reveal's own animations (scripted; CSS transitions such as a dot lighting up don't count)
