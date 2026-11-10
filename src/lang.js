@@ -7,7 +7,7 @@
 const LB = window.__lang || { id: 'en', load: {} }, IDS = D.langs.map((L) => L.id), RTL = D.langs.filter((L) => L.dir === 'rtl').map((L) => L.id);
 let lang = IDS.includes(LB.id) ? LB.id : 'en';
 const DICT = { en: { S: D.S.en } };
-const loadLang = (id) => (DICT[id] ? Promise.resolve(DICT[id]) : (LB.load[id] ??= fetch(D.base + id + '.json').then((r) => { if (!r.ok) throw new Error(id + ' ' + r.status); return r.json(); }))
+const loadLang = (id) => (DICT[id] ? Promise.resolve(DICT[id]) : (LB.load[id] ??= fetch(D.base + id + '.json?v=' + D.v).then((r) => { if (!r.ok) throw new Error(id + ' ' + r.status); return r.json(); }))
   .then((d) => (DICT[id] = d)));
 const words = () => (DICT[lang] || DICT.en).S;
 const PR = {}; const plural = (n) => { try { return (PR[lang] ??= new Intl.PluralRules(lang)).select(n); } catch (e) { return 'other'; } };

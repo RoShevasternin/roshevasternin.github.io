@@ -13,5 +13,5 @@
   const id = (has(url) && url) || [get('lewydo:lang'), get('cubepix-site:lang')].find(has) || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
   const h = document.documentElement; h.lang = id; h.dir = B.rtl.includes(id) ? 'rtl' : 'ltr';
   window.__lang = { id, load: {} };
-  if (id !== 'en') (window.__lang.load[id] = fetch(B.base + id + '.json').then((r) => { if (!r.ok) throw new Error(id + ' ' + r.status); return r.json(); })).catch(() => {});
+  if (id !== 'en') (window.__lang.load[id] = fetch(B.base + id + '.json?v=' + B.v).then((r) => { if (!r.ok) throw new Error(id + ' ' + r.status); return r.json(); })).catch(() => {});
 })();

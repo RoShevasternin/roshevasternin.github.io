@@ -8,6 +8,7 @@
 //   npm run build            warns about missing translations (English is shown there)
 //   npm run build -- --strict   fails on them instead (what npm test runs)
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { brandJson, zip, kitFiles, beatGraph, codeParts, dlCards } from './brand.mjs';
 
 const ROOT = new URL('../', import.meta.url);
@@ -99,7 +100,7 @@ const go = '<svg class="lw-go" viewBox="0 0 5 8" aria-hidden="true"><path d="M1 
 const brandCss = read('brand/kit/code/web/lewydo-brand.css');
 // languages, the same on both pages: the boot script (<head>), the picker and the words (src/lang.js), the CSS (src/lang.css)
 const langCss = read('src/lang.css'), langFonts = langCss.slice(langCss.indexOf("/* the scripts' own fonts"));
-const langBoot = (base) => '<script>' + read('src/lang-boot.js').replace(/^\/\/.*\n/gm, '').replace('__BOOT__', () => JSON.stringify({ ids: IDS, rtl: RTL, base })) + '</script>';
+const langBoot = (base, v) => '<script>' + read('src/lang-boot.js').replace(/^\/\/.*\n/gm, '').replace('__BOOT__', () => JSON.stringify({ ids: IDS, rtl: RTL, base, v })) + '</script>';
 const langJs = read('src/lang.js');
 const gpIcon = '<svg class="gp" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.6 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/>' +
   '<path fill="#FFCE00" d="m17 8.6 3.3 1.9c.9.5.9 1.8 0 2.4L17 15.4 13.6 12z"/><path fill="#FF3A44" d="M17 15.4 5 22.3c-.5.3-1 .2-1.4 0L13.6 12z"/><path fill="#00F076" d="M3.6 1.8c.4-.2.9-.3 1.4 0l12 6.8L13.6 12z"/></svg>';
@@ -177,8 +178,11 @@ const cpEvents = Object.keys(CP.events || {}).map((ev) => { const pic = `assets/
 // one words file per language and page — the page fetches the visitor's (English rides in the page itself)
 const langFiles = (dir, make) => { mkdirSync(new URL(dir, ROOT), { recursive: true });
   for (const f of readdirSync(new URL(dir, ROOT))) if (!IDS.includes(f.replace(/\.json$/, ''))) rmSync(new URL(dir + f, ROOT));
-  for (const L of IDS) writeFileSync(new URL(`${dir}${L}.json`, ROOT), JSON.stringify(make(L))); };
-langFiles('lang/', (L) => ({ S: SMAIN[L], pics: PICS[L], names: NAMES[L] }));
+  // returns the files' version (?v= on every fetch): Pages keeps a words file for 10 minutes, so a new entry would show in English
+  // to whoever had the old file (10.11.2026, the «online» story card on ?lang=uk) — a new version is a new URL
+  const h = createHash('sha1'); for (const L of IDS) { const j = JSON.stringify(make(L)); h.update(j); writeFileSync(new URL(`${dir}${L}.json`, ROOT), j); }
+  return h.digest('hex').slice(0, 10); };
+DATA.v = langFiles('lang/', (L) => ({ S: SMAIN[L], pics: PICS[L], names: NAMES[L] }));
 const ld = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Lewydo', slogan: 'Love What You Do', url: SITE, logo: SITE + 'assets/icon-512.png', email: MAIL,
   founder: [{ '@type': 'Person', name: 'Vlad' }, { '@type': 'Person', name: 'Liliia' }], foundingLocation: 'Poltava region, Ukraine',
   sameAs: [G.devPage, ...SOCIAL.map(([, , u]) => u)] };
@@ -217,7 +221,7 @@ const fill = (html) => {
   return html;
 };
 const out = (p, s) => writeFileSync(new URL(p, ROOT), s);
-out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => langBoot('/lang/'))
+out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => langBoot('/lang/', DATA.v))
   // [HALLOWEEN] the season on the main page: Orbit Dash's window (its site's, src/orbitdash.json → events.halloween) for the <head> switch,
   // the look (src/halloween.css) and the decor (src/halloween.js). The /brand/ page is the standard — never dressed up. Remove in December.
   .replace('{{hw.season}}', () => JSON.stringify((OD.events || {}).halloween || null))
@@ -232,8 +236,8 @@ const bWords = (L) => Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]));
 // About us in every language rides in the page (its own language picker shows any of them): the games' own words
 const BDATA = { langs: LANGS, base: '/brand/lang/', S: { en: bWords('en') }, stop: STOP,
   about: Object.fromEntries(IDS.map((L) => [L, { title: S[L]['cp:aboutTitle'], text: S[L]['cp:about'], thanks: S[L]['cp:thanks'], site: S[L]['cp:site'], games: S[L]['cp:games'] }])) };
-langFiles('brand/lang/', (L) => ({ S: bWords(L), names: NAMES[L] }));
-out('brand/index.html', fill(read('src/brand.html').replace('{{langBoot}}', () => langBoot('/brand/lang/'))
+BDATA.v = langFiles('brand/lang/', (L) => ({ S: bWords(L), names: NAMES[L] }));
+out('brand/index.html', fill(read('src/brand.html').replace('{{langBoot}}', () => langBoot('/brand/lang/', BDATA.v))
   .replace('{{langOptions}}', () => LANGS.map((L) => `<option value="${L.id}"${L.id === 'en' ? ' selected' : ''}>${esc(L.name)}</option>`).join(''))
   .replace('{{beatGraph}}', () => beatGraph()).replace('{{codeTabs}}', () => bcode.tabs).replace('{{codePanes}}', () => bcode.panes)
   .replace('{{dlCards}}', () => dlCards({ W })).replace(/\{\{zipMb\}\}/g, () => (ZIP.length / 1048576).toFixed(1))
