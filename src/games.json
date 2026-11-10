@@ -84,6 +84,8 @@
    ]
   ],
   "play": "https://play.google.com/store/apps/details?id=com.lewydo.orbitdash&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site",
+  "_appStore": "On the App Store since 10.11.2026 (iOS 2.2.0, Apple ID 6824944395). The bare address, no ct/pt: Apple's campaign links need the provider token, which we don't have yet (docs/process/install-source.md) — add ct=studio_site&pt=… only with it.",
+  "appStore": "https://apps.apple.com/app/id6824944395",
   "icon": "/assets/games/orbitdash-icon.webp"
  },
  "more": [
