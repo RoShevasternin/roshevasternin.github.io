@@ -599,6 +599,11 @@ test('the story: first time on Twitch (03.11.2026) — the emblem on the line, t
     // the dot is 32 px and its centre is where the others’ are (37.5 px under the entry’s top — the fold’s DOT)
     const dot = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'); return { w: parseFloat(c.width), h: parseFloat(c.height), top: parseFloat(c.top) }; });
     expect(dot.w, tag).toBe(32); expect(Math.abs(dot.top + dot.h / 2 - 37.5), tag).toBeLessThanOrEqual(.5);
+    // …and on the line itself, across it (10.11.2026, owner: at ≥ 900 px the online dot sat 4.5 px off — the wide layout had no rule for it)
+    const off = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'), tl = e.closest('.tl'), l = getComputedStyle(tl, '::before');
+      const dx = e.getBoundingClientRect().left + parseFloat(c.left) + parseFloat(c.marginLeft) + parseFloat(c.width) / 2;
+      const lx = tl.getBoundingClientRect().left + parseFloat(l.left) + parseFloat(l.marginLeft) + parseFloat(l.width) / 2; return dx - lx; });
+    expect(Math.abs(off), tag).toBeLessThanOrEqual(.5);
     expect(await page.evaluate(() => document.documentElement.scrollWidth), tag).toBeLessThanOrEqual(width);
     expect([...w.ext], tag).toEqual([]);
     expect(w.errs, tag).toEqual([]);
@@ -637,6 +642,11 @@ test('the story: Orbit Dash goes online (10.11.2026) — the milestone emblem, t
     await expect.poll(() => th.evaluate((e) => e.complete && e.naturalWidth > 0), tag).toBe(true);
     const dot = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'); return { w: parseFloat(c.width), h: parseFloat(c.height), top: parseFloat(c.top) }; });
     expect(dot.w, tag).toBe(32); expect(Math.abs(dot.top + dot.h / 2 - 37.5), tag).toBeLessThanOrEqual(.5);
+    // …and on the line itself, across it (10.11.2026, owner: at ≥ 900 px the online dot sat 4.5 px off — the wide layout had no rule for it)
+    const off = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'), tl = e.closest('.tl'), l = getComputedStyle(tl, '::before');
+      const dx = e.getBoundingClientRect().left + parseFloat(c.left) + parseFloat(c.marginLeft) + parseFloat(c.width) / 2;
+      const lx = tl.getBoundingClientRect().left + parseFloat(l.left) + parseFloat(l.marginLeft) + parseFloat(l.width) / 2; return dx - lx; });
+    expect(Math.abs(off), tag).toBeLessThanOrEqual(.5);
     expect(await li.locator('.tl-card').evaluate((e) => getComputedStyle(e).boxShadow), tag).toContain('0, 229, 255');
     for (const el of await li.locator('.tl-head, .tl-pad > p, .tl-links a').all()) {                      // nothing spills out of the card
       const [r, c] = await Promise.all([el.boundingBox(), li.locator('.tl-card').boundingBox()]);
