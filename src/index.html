@@ -25,6 +25,8 @@
 <link rel="preload" href="/brand/kit/webp/brand_front.webp" as="image">
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <script type="application/ld+json">{{ldjson}}</script>
+<script>/* the device, for the store buttons' order (docs/ux/store-badges.md): iPhone / iPad (iPadOS says «Macintosh» — its touch gives it away) → ios, Android → android, else desktop */
+(function(){try{var u=navigator.userAgent||'',t=navigator.maxTouchPoints||0;document.documentElement.setAttribute('data-os',/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&t>1)?'ios':/Android/.test(u)?'android':'desktop')}catch(e){}})();</script>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('safe')},5000);if(/[?&]og\b/.test(location.search))document.documentElement.classList.add('og');if(/[?&]kit\b/.test(location.search))document.documentElement.classList.add('kit');</script>
 <script>/* [HALLOWEEN] the season, decided before the first paint: Orbit Dash's Halloween window (src/orbitdash.json → events.halloween, built in;
    on: false — never), by the visitor's LOCAL date, both days inclusive — on December 1 it is gone by itself. To check: ?halloween=1 | 0,
@@ -317,8 +319,22 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 @media (hover:hover){.btn-cyan:hover{box-shadow:0 0 46px rgba(0,229,255,.62);transform:translateY(-2px);}}
 .od-line{background:linear-gradient(180deg,rgba(46,50,95,.58),rgba(30,34,69,.40));color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);}
 /* a phone: the world's buttons (the browser game, Google Play, the App Store since 10.11.2026, the site) stack at one width */
-@media (max-width:600px){.od .ctas{flex-direction:column;} .od .ctas .btn{max-width:360px;}}
+@media (max-width:600px){.od .ctas{flex-direction:column;} .od .ctas .btn{max-width:360px;} .od .ctas .stores{display:grid;grid-template-columns:1fr;width:100%;max-width:360px;}}
 @media (hover:hover){.od-line:hover{background:linear-gradient(180deg,rgba(56,60,106,.7),rgba(35,40,80,.5));transform:translateY(-2px);}}
+/* the store buttons (owner 10.11.2026; the studio rule docs/ux/store-badges.md): the stores' official marks and names, two lines — the small one translated,
+   the store's name never; a pair of one width (the wider decides) and one height; Google Play → App Store, on iPhone / iPad the App Store first (data-os);
+   in Orbit Dash's world — its glass with the game's cyan rim; on a phone a column at the world's one width */
+.stores{display:inline-grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:100%;}
+:root[data-os=ios] .stores .od-as{order:-1;}
+.btn.store{gap:12px;padding:0 20px 0 15px;text-align:start;box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.38),0 8px 22px -12px rgba(0,229,255,.5);}
+@media (hover:hover){.btn.store:hover{box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.7),0 0 24px -6px rgba(0,229,255,.55);}}
+.btn.store svg,.tl-links .tl-store svg{width:26px;height:26px;}
+.btn.store svg.apple,.tl-links .tl-store svg.apple{width:25px;height:28px;margin-top:-3px;}
+.sb{display:flex;flex-direction:column;align-items:flex-start;min-width:0;line-height:1.1;}
+.sb small{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.85;line-height:1.25;}
+.sb small[data-t="as.top"]{font-size:12px;letter-spacing:0;text-transform:none;line-height:1.15;}
+.sb b{font-size:19px;font-weight:900;letter-spacing:0;white-space:nowrap;}
+.tl-links a.tl-store{min-height:52px;padding:0 18px 0 14px;gap:11px;} .tl-links a.tl-store ~ a{min-height:52px;}   /* its neighbour — the same height */
 .od-box{--odc:#00E5FF;position:relative;width:min(100%,430px);margin:0 auto;}
 /* Сама гра в рамці телефона — прототип із сайту гри (https://orbitdash.lewydo.com/play/embed.html): сама грає найкращі шматки
    рівнів, тап — рівень твій. Стрілки й пігулки під телефоном вибирають рівень; сяйво — барва м'яча рівня на екрані. */
@@ -837,8 +853,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <ul class="od-chips"><li data-t="od.music"></li><li data-t="od.free"></li><li data-t="od.offline"></li></ul>
         <div class="ctas">
           <a class="btn btn-cyan" href="{{od.web}}" data-lang-link="od" data-t="od.browser"></a>
-          <a class="btn od-line" href="{{od.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a>
-          <a class="btn od-line od-as" href="{{od.appstore}}" rel="noopener">{{asIcon}}<span data-t="as.get"></span></a>
+          <div class="stores"><a class="btn od-line store od-gp" href="{{od.play}}" rel="noopener">{{gpIn}}</a><a class="btn od-line store od-as" href="{{od.appstore}}" rel="noopener">{{asIn}}</a></div>
           <a class="btn od-line" href="{{od.site}}" data-lang-link="od" data-t="game.site"></a>
         </div>
       </div>
@@ -942,9 +957,9 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <blockquote class="tl-thanks"><p data-t="story.twitch.thanks"></p><footer data-t="story.live.sign"></footer></blockquote>
           <div class="tl-links"><a href="https://www.twitch.tv/6yj7b" rel="noopener">{{ico:twitch}}<span dir="ltr">6yJ7b</span></a><a href="https://www.twitch.tv/morghet_vlr" rel="noopener">{{ico:twitch}}<span dir="ltr">morghet_vlr</span></a></div></li>
         <li class="tl-i iosfirst rv" id="first-ios" data-thumb="/assets/story/ios.svg" data-fit="contain"><p class="tl-when" data-t="story.iosfirst.when"></p><h3 data-t="story.iosfirst.t"></h3><p data-t="story.iosfirst.d"></p>
-          <div class="tl-links"><a href="{{od.appstore}}" rel="noopener">{{asIcon}}<span data-t="as.get"></span></a><a href="{{od.web}}" data-lang-link="od"><img src="{{od.icon}}" alt="" width="22" height="22"><span data-t="od.browser"></span></a></div></li>
+          <div class="tl-links"><a class="tl-store" href="{{od.appstore}}" rel="noopener">{{asIn}}</a><a href="{{od.web}}" data-lang-link="od"><img src="{{od.icon}}" alt="" width="22" height="22"><span data-t="od.browser"></span></a></div></li>
         <li class="tl-i versus rv" id="first-online" data-thumb="/assets/story/versus.svg" data-fit="contain"><p class="tl-when" data-t="story.online.when"></p><h3 data-t="story.online.t"></h3><p data-t="story.online.d"></p>
-          <div class="tl-links"><a href="{{od.play}}" rel="noopener">{{gpIcon}}<span><span data-t="gp.get"></span> Google Play</span></a><a href="{{od.web}}" data-lang-link="od"><img src="{{od.icon}}" alt="" width="22" height="22"><span data-t="od.browser"></span></a></div></li>
+          <div class="tl-links"><a class="tl-store" href="{{od.play}}" rel="noopener">{{gpIn}}</a><a href="{{od.web}}" data-lang-link="od"><img src="{{od.icon}}" alt="" width="22" height="22"><span data-t="od.browser"></span></a></div></li>
       </ol>
       <!-- the fold (31.10.2026): only with JS (the script shows it when there are more than 4 entries); without it every entry simply shows -->
       <div class="tl-more" id="tlMore" hidden>
