@@ -197,6 +197,61 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   expect(w.errs).toEqual([]);
 });
 
+// owner 10.11.2026 (the studio rule docs/ux/store-badges.md): «quality buttons that tell at a glance which is the App Store and which is Google Play» —
+// the stores' official marks and names, two lines (the small one translated), a pair of one width and height (≥ 48), Google Play → App Store,
+// on iPhone / iPad the App Store first, a column on a phone, 320 px without sideways scroll; the story's store links — the same buttons
+test('the store buttons: official marks, «GET IT ON Google Play» / «Download on the App Store», one size, ordered by the device, a column on a phone', async ({ browser }) => {
+  const UA = { iphone: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Mobile/15E148 Safari/604.1',
+    ipad: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Safari/605.1.15',
+    android: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36' };
+  const html = disk('index.html');
+  const pair = html.match(/<div class="stores">([\s\S]*?)<\/div>/);
+  expect(pair, 'the built page has the pair').not.toBeNull();
+  expect(pair[1].indexOf('od-gp')).toBeLessThan(pair[1].indexOf('od-as'));                                      // without JS: Google Play, then the App Store
+  expect(pair[1]).toContain('<path fill="#fff" d="M12.152 6.896c');                                               // Apple's apple, white
+  expect(pair[1]).toContain('<path fill="#00d7fe" d="M1.2.6C');                                                  // Google Play's four-colour triangle
+  expect(html).not.toContain('<rect x="5" y="1" width="14" height="22"');                                       // the old made-up phone glyph is gone
+  const boxes = (page, sel) => page.locator(sel).evaluateAll((a) => a.map((e) => { const r = e.getBoundingClientRect();
+    return { cls: e.className, x: r.x, y: r.y, w: r.width, h: r.height, r: r.right, over: e.scrollWidth > e.clientWidth + 1, text: e.textContent.replace(/\s+/g, ' ').trim() }; }));
+  for (const [who, ua, width, touch, os] of [['desktop', null, 1440, false, 'desktop'], ['iPhone', UA.iphone, 390, true, 'ios'], ['iPad', UA.ipad, 820, true, 'ios'],
+    ['Android', UA.android, 390, true, 'android'], ['Android 320', UA.android, 320, true, 'android']]) {
+    for (const lang of who === 'Android 320' ? ['uk', 'de', 'ar', 'ta'] : ['en']) {
+      const ctx = await browser.newContext({ viewport: { width, height: 900 }, ...(ua ? { userAgent: ua } : {}), hasTouch: touch, isMobile: touch && width < 600 });
+      if (who === 'iPad') await ctx.addInitScript(() => Object.defineProperty(navigator, 'maxTouchPoints', { get: () => 5 }));
+      const page = await ctx.newPage(), w = watch(page), tag = `${who} ${lang}`;
+      await page.goto(`./?lang=${lang}`);
+      await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+      await expect(page.locator('html')).toHaveAttribute('data-os', os);
+      const b = await boxes(page, '#orbitdash .stores a');
+      expect(b.length, tag).toBe(2);
+      const [gp, as] = [b.find((x) => /od-gp/.test(x.cls)), b.find((x) => /od-as/.test(x.cls))];
+      if (lang === 'en') { expect(gp.text, tag).toBe('Get it on Google Play'); expect(as.text, tag).toBe('Download on the App Store'); }   // on screen «GET IT ON» (CSS caps)
+      expect(Math.abs(gp.w - as.w), tag).toBeLessThan(1); expect(Math.abs(gp.h - as.h), tag).toBeLessThan(1); expect(gp.h, tag).toBeGreaterThanOrEqual(48);
+      const first = os === 'ios' ? as : gp, second = os === 'ios' ? gp : as;
+      if (width >= 600) { expect(Math.abs(first.y - second.y), tag).toBeLessThan(1); expect(second.x, tag).toBeGreaterThan(first.x); }   // one row (en, ltr)
+      else {
+        expect(second.y, tag).toBeGreaterThanOrEqual(first.y + first.h - 1);                                     // a column, the device's store on top
+        const play = (await boxes(page, '#orbitdash .ctas .btn-cyan'))[0];
+        expect(gp.w, tag).toBeGreaterThanOrEqual(play.w - 1);                                                     // never smaller than «Play in your browser»
+      }
+      expect(b.every((x) => !x.over && x.x >= 0 && x.r <= width + .5), tag).toBe(true);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), tag).toBe(true);
+      expect(w.errs, tag).toEqual([]);
+      await ctx.close();
+    }
+  }
+  // the story's store links: the same official buttons (the App Store on «our first game on iPhone», Google Play on «Orbit Dash goes online»)
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await ctx.newPage();
+  await page.goto('./?lang=en#first-ios');
+  await expect(page.locator('html')).toHaveAttribute('data-words', 'en');
+  await expect(page.locator('#first-ios .tl-links a.tl-store')).toHaveText('Download on the App Store');
+  await expect(page.locator('#first-ios .tl-links a.tl-store svg.apple')).toHaveCount(1);
+  await expect(page.locator('#first-online .tl-links a.tl-store')).toHaveText('Get it on Google Play');
+  await expect(page.locator('#first-online .tl-links a.tl-store')).toHaveAttribute('href', /^https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.lewydo\.orbitdash&referrer=/);
+  await ctx.close();
+});
+
 // owner 29.10.2026: CubePix's Halloween on the studio site too — a card in its world while the holiday is on (the CubePix site's dates
 // and words), leading to the holiday on the CubePix site; the day after it ends, the card is gone by itself
 test('a CubePix holiday: its card shows only while it is on, in the visitor’s language, and leads to it on the CubePix site', async ({ page }) => {
