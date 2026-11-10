@@ -539,7 +539,7 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
 
 test('the story: the first streamer to play our game live (22.10.2026) — our own clip, loaded only when needed; the thank-you; his links', async ({ page, request }) => {
   const w = watch(page), media = [];
-  page.on('request', (r) => { if (/\/assets\/story\/(?!twitch\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg — the dot of the 03.11 entry (a 1 KB vector, like the other dots), not media
+  page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
   await page.goto('./?lang=uk');
   const li = page.locator('#first-live');
   await expect(li.locator('h3')).toHaveText('Orbit Dash у прямому ефірі TikTok');
@@ -606,10 +606,53 @@ test('the story: first time on Twitch (03.11.2026) — the emblem on the line, t
   }
 });
 
+// 10.11.2026 — a milestone: Orbit Dash 3.0, the studio's first game with an online mode (VERSUS LIVE). Our own emblem (two linked orbits and a live
+// signal) is the dot and the thumbnail; the card glows cyan, the date carries an ONLINE badge; Google Play and the browser game, marked and in the page's language;
+// nothing on Apple (no iPhone version yet); the nick stays Latin (isolated in RTL); nothing scrolls sideways; no third party
+test('the story: Orbit Dash goes online (10.11.2026) — the milestone emblem, the glowing card, Google Play and the browser game; RTL; 320 px', async ({ browser, request }) => {
+  const svg = await request.get('./assets/story/versus.svg'); expect(svg.status()).toBe(200);
+  const src = await svg.text(); expect(src).toContain('#00E5FF'); expect(src).toContain('#FF4FD8'); expect(src).not.toMatch(/https?:\/\/(?!www\.w3\.org)/);
+  for (const [lang, width, title] of [['uk', 390, 'Orbit Dash виходить в онлайн'], ['en', 1440, 'Orbit Dash goes online'], ['ar', 390, 'Orbit Dash يدخل عالم الأونلاين'], ['ta', 320, 'Orbit Dash இப்போது ஆன்லைனில்'], ['uk', 320, 'Orbit Dash виходить в онлайн']]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 844 } });
+    const page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
+    await page.goto(`./?lang=${lang}#first-online`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    const li = page.locator('#first-online');
+    await expect(li).toHaveClass(/\bopen\b/); await expect(li).toHaveClass(/\bversus\b/);
+    await expect(li.locator('h3')).toHaveText(title);
+    await expect(li.locator('.tl-when')).toHaveText('10 · 11 · 2026');
+    expect(await li.locator('.tl-when').evaluate((e) => getComputedStyle(e, '::after').content), tag).toBe('"ONLINE"');
+    const d = await li.locator('.tl-pad > p').innerText();
+    for (const k of ['Orbit Dash 3.0', 'VERSUS LIVE', 'Google Play', '6yJ7b']) expect(d, tag).toContain(k);
+    expect(d, tag).not.toMatch(/App Store|iPhone|iOS/);                                                   // no iPhone version yet — never promised
+    if (RTL.includes(lang)) expect(d, tag).toContain('\u20666yJ7b\u2069');
+    const links = li.locator('.tl-links a');
+    await expect(links).toHaveCount(2);
+    expect(await links.nth(0).getAttribute('href'), tag).toMatch(/^https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.lewydo\.orbitdash.*utm_source%3Dlewydo/);
+    expect(await links.nth(1).getAttribute('href'), tag).toMatch(new RegExp(`/play/\\?utm_source=lewydo&utm_medium=studio_site.*lang=${lang}`));
+    expect((await links.nth(1).textContent()).trim(), tag).toBe((await page.locator('#orbitdash .ctas .btn-cyan').textContent()).trim());   // «Play in browser» — the same words as the world's button
+    // the emblem is the dot (32 px, centred like the others) and the thumbnail; the card has the only glowing edge on the line
+    expect(await li.evaluate((e) => getComputedStyle(e, '::before').backgroundImage), tag).toContain('/assets/story/versus.svg');
+    const th = li.locator('.tl-thumb'); await expect(th).toHaveAttribute('src', '/assets/story/versus.svg');
+    await expect.poll(() => th.evaluate((e) => e.complete && e.naturalWidth > 0), tag).toBe(true);
+    const dot = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'); return { w: parseFloat(c.width), h: parseFloat(c.height), top: parseFloat(c.top) }; });
+    expect(dot.w, tag).toBe(32); expect(Math.abs(dot.top + dot.h / 2 - 37.5), tag).toBeLessThanOrEqual(.5);
+    expect(await li.locator('.tl-card').evaluate((e) => getComputedStyle(e).boxShadow), tag).toContain('0, 229, 255');
+    for (const el of await li.locator('.tl-head, .tl-pad > p, .tl-links a').all()) {                      // nothing spills out of the card
+      const [r, c] = await Promise.all([el.boundingBox(), li.locator('.tl-card').boundingBox()]);
+      expect(r.x >= c.x - 1 && r.x + r.width <= c.x + c.width + 1, tag).toBe(true);
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), tag).toBeLessThanOrEqual(width);
+    expect([...w.ext], tag).toEqual([]);
+    expect(w.errs, tag).toEqual([]);
+    await ctx.close();
+  }
+});
+
 // 31.10.2026 (owner): «спочатку перші 3 частини, а потім по 1… або одразу все» — the story folds, and still scales as it grows
 test('the story folds: the first 3, then one more at a time (under the finger) or all of it; collapse; links open their entry; RTL; 320 px; reduced motion', async ({ browser }) => {
   test.setTimeout(240_000);
-  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan', 'first-twitch'];
+  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan', 'first-twitch', 'first-online'];
   const vis = (page) => page.evaluate(() => [...document.querySelectorAll('#tl .tl-i')].filter((l) => !l.hidden).length);
   const focused = (page, i) => page.evaluate((i) => document.activeElement === document.querySelectorAll('#tl .tl-i')[i].querySelector('.tl-tog'), i);
   // the reveal's own animations (scripted; CSS transitions such as a dot lighting up don't count)
