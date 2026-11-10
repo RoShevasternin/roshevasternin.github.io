@@ -205,7 +205,12 @@ test('the store buttons: official marks, «GET IT ON Google Play» / «Download 
     ipad: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7 Safari/605.1.15',
     android: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36' };
   const html = disk('index.html');
-  const pair = html.match(/<div class="stores">([\s\S]*?)<\/div>/);
+  const pair = html.match(/<div class="stores">(<a class="btn od-line[\s\S]*?)<\/div>/);   // Orbit Dash's pair (CubePix's world has its own, below)
+  // CubePix's world (10.11.2026): the same official marks in its pixel frame; its App Store badge only once src/games.json → cubepix.appStore is set
+  const cpPair = html.match(/<div class="stores">(<a class="btn store cp-store[\s\S]*?)<\/div>/);
+  expect(cpPair, 'CubePix has its pair').not.toBeNull();
+  expect(cpPair[1]).toContain('<path fill="#00d7fe" d="M1.2.6C');
+  expect(cpPair[1].includes('cp-as')).toBe(!!JSON.parse(readFileSync('src/games.json', 'utf8')).cubepix.appStore);
   expect(pair, 'the built page has the pair').not.toBeNull();
   expect(pair[1].indexOf('od-gp')).toBeLessThan(pair[1].indexOf('od-as'));                                      // without JS: Google Play, then the App Store
   expect(pair[1]).toContain('<path fill="#fff" d="M12.152 6.896c');                                               // Apple's apple, white

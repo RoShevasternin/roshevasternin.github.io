@@ -406,15 +406,7 @@ h1,h2,h3,p,li,dd,dt,figcaption{overflow-wrap:break-word;}
 .cp .badge::before{content:"";width:8px;height:8px;background:#1a1300;animation:live 1.6s ease-in-out infinite;}
 .cp-ver{display:inline-flex;align-items:center;padding:6px 11px;margin:3px;font:900 13px/1 var(--f);letter-spacing:.12em;color:#9df5c2;background:#15123a;
   box-shadow:0 -3px 0 0 #2f6b52,0 3px 0 0 #2f6b52,-3px 0 0 0 #2f6b52,3px 0 0 0 #2f6b52;}
-/* the Google Play button of a released game: Android green, a soft pulse and a light sweeping across */
-.px-gp{position:relative;overflow:hidden;background:linear-gradient(180deg,#1d1846,#0b0a18);color:#fff;
-  box-shadow:0 -4px 0 0 #3ddc84,0 4px 0 0 #3ddc84,-4px 0 0 0 #3ddc84,4px 0 0 0 #3ddc84,0 0 22px rgba(61,220,132,.4);animation:gpGlow 2.6s ease-in-out infinite;}
-.px-gp::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.2) 46%,transparent 62%);
-  transform:translateX(-130%);animation:gpShine 4.2s ease-in-out 1s infinite;}
-@keyframes gpGlow{0%,100%{box-shadow:0 -4px 0 0 #3ddc84,0 4px 0 0 #3ddc84,-4px 0 0 0 #3ddc84,4px 0 0 0 #3ddc84,0 0 12px rgba(61,220,132,.25);}
-  50%{box-shadow:0 -4px 0 0 #3ddc84,0 4px 0 0 #3ddc84,-4px 0 0 0 #3ddc84,4px 0 0 0 #3ddc84,0 0 30px rgba(61,220,132,.55);}}
-@keyframes gpShine{0%,60%{transform:translateX(-130%);}90%,100%{transform:translateX(130%);}}
-@media (prefers-reduced-motion:reduce){.px-gp,.px-gp::after,.cp .badge::before{animation:none;}}
+@media (prefers-reduced-motion:reduce){.cp .badge::before{animation:none;}}
 .plogo{--cell:10px;position:relative;display:inline-flex;flex-direction:column;gap:calc(var(--cell) + 4px);margin:22px 0 4px;}
 .plogo::before{content:"";position:absolute;inset:-30px -40px;background:radial-gradient(closest-side,rgba(255,60,172,.28),transparent);pointer-events:none;}
 .pl-row{display:flex;gap:var(--cell);}
@@ -570,7 +562,12 @@ h1,h2,h3,p,li,dd,dt,figcaption{overflow-wrap:break-word;}
    the store's name never; a pair of one width (the wider decides) and one height; Google Play → App Store, on iPhone / iPad the App Store first (data-os);
    in Orbit Dash's world — its glass with the game's cyan rim; on a phone a column at the world's one width */
 .stores{display:inline-grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:100%;}
-:root[data-os=ios] .stores .od-as{order:-1;}
+:root[data-os=ios] .stores .od-as,:root[data-os=ios] .stores .cp-as{order:-1;}
+/* in CubePix's world — its pixel frame (cut corners, a 3D foot, as on cubepix.lewydo.com) around a black badge with the official marks */
+.btn.store.cp-store{border-radius:0;min-height:58px;margin:4px;background:#000;color:#fff;
+  box-shadow:0 -3px 0 0 #d9d6ff,0 3px 0 0 #d9d6ff,-3px 0 0 0 #d9d6ff,3px 0 0 0 #d9d6ff,0 8px 0 0 rgba(0,0,0,.55);}
+@media (hover:hover){.btn.store.cp-store:hover{filter:none;transform:translateY(-2px);box-shadow:0 -3px 0 0 #fff,0 3px 0 0 #fff,-3px 0 0 0 #fff,3px 0 0 0 #fff,0 10px 0 0 rgba(0,0,0,.55);}}
+@media (max-width:600px){.cp .ctas{flex-direction:column;align-items:stretch;} .cp .ctas .btn{max-width:360px;} .cp .ctas .stores{display:grid;grid-template-columns:1fr;width:100%;max-width:368px;}}
 .btn.store{gap:12px;padding:0 20px 0 15px;text-align:start;box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.38),0 8px 22px -12px rgba(0,229,255,.5);}
 @media (hover:hover){.btn.store:hover{box-shadow:inset 0 0 0 1.5px rgba(0,229,255,.7),0 0 24px -6px rgba(0,229,255,.55);}}
 .btn.store svg,.tl-links .tl-store svg{width:26px;height:26px;}
@@ -1223,7 +1220,7 @@ body:not([data-world="lewydo"]) .hw-sky{opacity:0;}                             
         </ul>
         <div class="ctas">
           <a class="btn px-btn px-pink" href="https://cubepix.lewydo.com/play/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="cp">▶ <span data-t="cp:play">Play in the browser</span></a>
-          <a class="btn px-btn px-gp" href="https://play.google.com/store/apps/details?id=com.lewydo.cubepix&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site" rel="noopener"><svg class="gp" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.6 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFCE00" d="m17 8.6 3.3 1.9c.9.5.9 1.8 0 2.4L17 15.4 13.6 12z"/><path fill="#FF3A44" d="M17 15.4 5 22.3c-.5.3-1 .2-1.4 0L13.6 12z"/><path fill="#00F076" d="M3.6 1.8c.4-.2.9-.3 1.4 0l12 6.8L13.6 12z"/></svg><span><span data-t="gp.get">Get it on</span> Google Play</span></a>
+          <div class="stores"><a class="btn store cp-store cp-gp" href="https://play.google.com/store/apps/details?id=com.lewydo.cubepix&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site" rel="noopener"><svg class="gp" viewBox="0 0 28 30" aria-hidden="true"><path fill="#00d7fe" d="M1.2.6C.9.9.7 1.4.7 2v26c0 .6.2 1.1.5 1.4l.1.1L15.9 15v-.3L1.3.5z"/><path fill="#ffce00" d="M20.8 19.9 15.9 15v-.3l4.9-4.9.1.1 5.8 3.3c1.7.9 1.7 2.5 0 3.4l-5.8 3.3z"/><path fill="#ff3a44" d="M20.9 19.8 15.9 14.8 1.2 29.5c.5.6 1.4.6 2.4.1l17.3-9.8"/><path fill="#00f076" d="M20.9 9.9 3.6.1C2.6-.5 1.7-.4 1.2.2l14.7 14.6z"/></svg><span class="sb"><small data-t="gp.get">Get it on</small> <b>Google Play</b></span></a></div>
           <a class="btn px-btn px-dark" href="https://cubepix.lewydo.com/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="cp" data-t="game.site">Game website</a>
         </div>
         <a class="cp-ev" href="https://cubepix.lewydo.com/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en#event" data-lang-link="cp" data-ev="halloween" hidden><img src="/assets/games/cubepix-halloween.webp" alt="" width="480" height="270" loading="lazy" decoding="async"><span class="cp-ev-tx"><b data-t="cp:ev_halloween">Halloween at the museum!</b><span data-t="cp:evText_halloween">Until November 30, the whole museum celebrates: witches brew potions in bubbling cauldrons, bats and ghosts fly past the moon, and autumn leaves drift across every screen. The Halloween floor holds 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. Five Halloween records play on the music shelf, and finishing the floor dresses Pix as a jack-o’-lantern.</span><span class="cp-ev-dress" data-t="cp:evDress_halloween">The whole game dresses up for Halloween: every screen gets its own pumpkins, bats and cobwebs, witches brew potions by the menu and fly across the moon, and autumn leaves drift down.</span><em><span class="cp-ev-left"></span> →</em></span></a>
