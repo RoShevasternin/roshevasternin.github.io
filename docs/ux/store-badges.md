@@ -27,9 +27,10 @@ App Store і Play Market, щоб юзеру все було ясно». **Ста
 - **Телефон (≤ 600 px):** стовпчиком, однакова ширина з рештою кнопок блоку («Грати в браузері»), на 320 px — без прокрутки вбік.
 - **Кнопка App Store — лише коли гра справді в App Store** (на сайті гри — `site.json → ios.latest` і `app_id`, як Remote Config гри; на сайті
   студії — поле `appStore` гри в `src/games.json`; порожнє — кнопку прибрати з шаблону). Немає гри — немає кнопки (не «скоро», не сірої).
-- **Мітки** (`docs/process/install-source.md`): Google Play — `&referrer=utm_source%3D…%26utm_medium%3D…`; App Store —
-  `https://apps.apple.com/app/id<Apple ID>` **без `ct` / `pt`, доки власник не дасть provider token**. Відвідувач прийшов зі своїми utm —
-  на Google Play вони йдуть у `referrer`.
+- **Мітки** (`docs/process/install-source.md`): Google Play — `&referrer=utm_source%3D…%26utm_medium%3D…`; App Store — **з 12.11.2026 кампанія
+  App Store Connect** (власник: «так, додати»): `https://apps.apple.com/app/apple-store/id<Apple ID>?pt=129589688&ct=<кампанія>&mt=8`, `ct` — `game_site`
+  на сайті гри, `studio_site` на сайті студії. Відвідувач прийшов зі своїми utm — на Google Play вони йдуть у `referrer`, на App Store — `ct` його
+  кампанії (`utm_campaign`, без неї — `utm_source`; ≤ 40 знаків).
 - **Аналітика:** клік — подія `store_click {place, store: google_play | app_store}` (за хостом посилання: `play.google.com` / `apps.apple.com`),
   лише після згоди (`docs/ux/analytics-consent.md`). Нове місце з кнопками — перевірити, що подія йде для обох магазинів.
 - `target="_blank" rel="noopener"` (сайт лишається відкритим), фокус клавіатури видно.
@@ -39,7 +40,7 @@ App Store і Play Market, щоб юзеру все було ясно». **Ста
   Orbit Dash — темне скло з неоновою обвідкою барви рівня; світ Orbit Dash на сайті студії — скло з блакитною обвідкою гри; CubePix — у стилі CubePix.
 - Контраст значків і тексту з тлом — не нижче WCAG AA; яскравість кнопок магазинів — не вища за головну дію блоку («Грати»), але й не тьмяна.
 
-ПЕРЕВІРКА (автотест сайту): адреса кожної кнопки (App Store — без міток), текст «GET IT ON Google Play» / «Download on the App Store», пара
+ПЕРЕВІРКА (автотест сайту): адреса кожної кнопки (App Store — кампанія сайту з provider token), текст «GET IT ON Google Play» / «Download on the App Store», пара
 поруч і однакова (ширина, висота ≥ 48), порядок на iPhone / iPad / Android / ПК, стовпчик на телефоні, 320 px кількома мовами (довга, RTL,
 індійське письмо) без прокрутки вбік і без вилазіння тексту, `store_click` для обох магазинів у кожному місці.
 ```

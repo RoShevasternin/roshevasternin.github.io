@@ -18,7 +18,7 @@
 | де гравець відкриває | формат посилання | де видно |
 |---|---|---|
 | Google Play | `https://play.google.com/store/apps/details?id=<пакет>&referrer=utm_source%3D<джерело>%26utm_medium%3D<тип>%26utm_campaign%3D<кампанія>` | Firebase: `firstUserSource`, `firstUserMedium`, `firstUserCampaignName`; Play Console: Acquisition |
-| App Store | `https://apps.apple.com/app/id<Apple ID>?ct=<кампанія>&pt=<provider token>` | **лише App Store Connect** → Analytics → Campaigns (від 5 перших завантажень, через ≥ 24 год) |
+| App Store | `https://apps.apple.com/app/apple-store/id<Apple ID>?pt=<provider token>&ct=<кампанія>&mt=8` — дослівно формат App Store Connect (Analytics → Acquisition → Campaigns → Generate a Campaign Link); `ct` ≤ 40 знаків. Provider token студії — **`129589688`** (один на акаунт розробника, публічний; власник, 12.11.2026) | **лише App Store Connect** → Analytics → Campaigns (від 5 перших завантажень, через ≥ 24 год) |
 | сайт гри, веб-гра | `<сайт>?utm_source=<джерело>&utm_medium=<тип>&utm_campaign=<кампанія>` | Firebase, веб-потік, лише після «Дозволити» в банері згоди |
 
 Значення `referrer` закодоване: `=` → `%3D`, `&` → `%26`. Лише прямі посилання `play.google.com`: скорочувачі й редиректи можуть загубити мітку.
@@ -28,8 +28,8 @@
 |---|---|---|---|
 | кнопка «Поділитися грою» | `share` | `player` | `share_android`, `share_ios`, `share_web` — де натиснули |
 | кнопка «Поділитися картиною» | `share` | `player` | `share_picture_android`, `share_picture_ios`, `share_picture_web` |
-| сайт гри | `site` | `game_site` | |
-| сайт студії Lewydo | `lewydo` | `studio_site` | |
+| сайт гри | `site` | `game_site` | App Store — `game_site` |
+| сайт студії Lewydo | `lewydo` | `studio_site` | App Store — `studio_site` |
 | мережі студії | `instagram`, `facebook`, `x`, `discord`, `tiktok`… | `bio`, `page`, `post`, `video` | назва допису чи свята |
 | відео: опис, закріплений коментар, картка, біо під відео | `youtube`, `tiktok`, `instagram`, `facebook`… | `video` | назва відео, наприклад `halloween_shorts` |
 | реклама | мережа | `paid` | назва кампанії |
@@ -39,11 +39,13 @@
 **Сторінка студії (власник 03.11.2026, завжди):** кожне посилання зі сторінки студії на гру несе `utm_source=lewydo&utm_medium=studio_site`: сайт гри, веб-гра, картка свята, кнопка магазину. Це стосується кожної гри й кожної нової кнопки чи картки, у тій самій задачі, що й сама кнопка. Без мітки ці гравці у звіті виглядають як `(direct)`, і внесок студії не видно. Як зроблено для Orbit Dash: `mark` у `src/games.json`, посилання — через `odLink` у `tools/build.mjs`; `site` і `demo` лишаються чистими адресами, бо з них будуються адреси картинок. **Мова — теж у посиланні** (з 06.11.2026 кожна гра на своєму піддомені: `orbitdash.lewydo.com`, `cubepix.lewydo.com` — інше походження, вибір мови зі сторінки студії вона не бачить): після мітки — `lang` мовою сторінки, і англійською теж (збірка пише `lang=en`, `src/lang.js` ставить мову відвідувача й міняє її разом із перемикачем; атрибут `data-lang-link="od|cp"`). Без мітки лишаються політика приватності (мова — так), картинки й кадр живої гри (`embed`): у кадрі аналітики немає.
 
 Сайт гри передає мітки далі: хто прийшов на сайт із `utm_*`, у того кнопка Google Play несе ті самі мітки в `referrer`; без них — мітка самого сайту.
+Кнопка App Store (з 12.11.2026) — так само: `ct` = `utm_campaign` відвідувача, без неї — `utm_source`, без міток — кампанія сайту (`game_site`; сторінка
+запрошення VERSUS `/vs/` — `versus`). У Orbit Dash логіка одна на сайт і веб-гру — `prototype/marks.mjs` (`visitorCt`, `siteAppStoreUrl`).
 
 **Android:** бібліотека `com.android.installreferrer:installreferrer` уже потрібна TikTok, Firebase читає реферер сам. Свого коду немає.
 **iOS:** App Store не передає застосунку жодного реферера, тож перше джерело в Firebase на iOS майже завжди `(direct)`. Це не помилка, і лагодити її
-не треба. Міряємо кампаніями Apple (`ct` + `pt`, пише App Store Connect). Provider token один на акаунт розробника, власник бере його в App Store
-Connect → Analytics → Campaigns; без нього `ct` не додаємо. Поки гри немає в App Store, з iPhone ведемо на сайт гри з міткою `share_ios`.
+не треба. Міряємо кампаніями Apple (`ct` + `pt`, пише App Store Connect). Provider token один на акаунт розробника — `129589688` (12.11.2026;
+той самий для всіх ігор студії); без токена `ct` не додаємо. Поки гри немає в App Store, з iPhone ведемо на сайт гри з міткою `share_ios`.
 **Не робимо:** відбитки пристрою, буфер обміну для відкладеного посилання, платні SDK (AppsFlyer, Adjust) — поки немає платної реклами в обсягах, де вони окупаються.
 
 Аналіз: `ga4.py sources [період]` (нові гравці за платформою, джерелом і кампанією; залученість за джерелом; сесії сайту; тапи `share_game`).
