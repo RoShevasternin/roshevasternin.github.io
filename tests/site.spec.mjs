@@ -610,7 +610,7 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
 
 test('the story: the first streamer to play our game live (22.10.2026) — our own clip, loaded only when needed; the thank-you; his links', async ({ page, request }) => {
   const w = watch(page), media = [];
-  page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus|ios)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
+  page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus|ios|twitch-review)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
   await page.goto('./?lang=uk');
   const li = page.locator('#first-live');
   await expect(li.locator('h3')).toHaveText('Orbit Dash у прямому ефірі TikTok');
@@ -1064,4 +1064,26 @@ test('the visit counter: one anonymous message per page — five fields, a coars
   expect(pol).toContain('id="visit-counter"');
   expect(pol).toContain('stats.lewydo.com');
   expect(disk('index.html')).toContain('href="/privacy.html"');                                              // the footer leads to it
+});
+
+// our first game review on a stream (owner 12.11.2026): atoozan's 20 minutes on Twitch in the story — Twitch's own player, only after a tap
+test('the story: atoozan’s stream on Twitch — nothing from Twitch until «Watch the stream», then Twitch’s own player for this page', async ({ page }) => {
+  const w = watch(page);
+  await page.route(/twitch\.tv/, (r) => r.abort());                                                      // offline here: what matters is what the page asks for
+  await page.goto('./?lang=uk');
+  const it = page.locator('#first-review');
+  await expect(it.locator('h3')).toHaveText('Наш перший огляд гри на стрімі — 20 хвилин');
+  await expect(it.locator('.tl-thanks p')).toContainText('atoozan');
+  await expect(it.locator('.tl-links a').last()).toHaveAttribute('href', 'https://www.twitch.tv/atoozan');
+  await page.click('#tlAll');                                                                             // the story folds — show it all
+  await it.scrollIntoViewIfNeeded();
+  if (await it.locator('.tl-tog').count()) await it.locator('.tl-tog').click();                          // the entry is a card — open it
+  await page.waitForTimeout(500);
+  expect([...w.ext].filter((o) => /twitch/.test(o))).toEqual([]);                                         // nothing from Twitch yet
+  const btn = it.locator('.tl-tw button');
+  await expect(btn).toBeVisible();
+  await btn.click();
+  const src = await it.locator('.tl-tw iframe').getAttribute('src');
+  expect(src).toBe('https://player.twitch.tv/?video=2926629558&parent=localhost&autoplay=true');         // his video, this page as the parent
+  expect(disk('privacy.html')).toContain('player.twitch.tv');                                            // the policy says so
 });
