@@ -85,8 +85,8 @@
    ]
   ],
   "play": "https://play.google.com/store/apps/details?id=com.lewydo.orbitdash&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site",
-  "_appStore": "On the App Store since 10.11.2026 (iOS 2.2.0, Apple ID 6824944395). The bare address, no ct/pt: Apple's campaign links need the provider token, which we don't have yet (docs/process/install-source.md) — add ct=studio_site&pt=… only with it.",
-  "appStore": "https://apps.apple.com/app/id6824944395",
+  "_appStore": "On the App Store since 10.11.2026 (iOS 2.2.0, Apple ID 6824944395). Since 12.11.2026 an App Store Connect campaign link (owner: \"yes, add it\"): provider token pt=129589688 (one per developer account, public), ct=studio_site, exactly the format of App Store Connect → Analytics → Campaigns → Generate a Campaign Link (docs/process/install-source.md).",
+  "appStore": "https://apps.apple.com/app/apple-store/id6824944395?pt=129589688&ct=studio_site&mt=8",
   "icon": "/assets/games/orbitdash-icon.webp"
  },
  "more": [

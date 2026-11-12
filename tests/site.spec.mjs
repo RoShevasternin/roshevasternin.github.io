@@ -198,7 +198,7 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', `${OD}/play/?${MARK}&lang=en`);   // the whole game in the browser comes first, as with CubePix
   await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
   const as = page.locator('.od .ctas a.od-as');                                                    // …and the App Store next to it (since 10.11.2026)
-  await expect(as).toHaveAttribute('href', 'https://apps.apple.com/app/id6824944395');              // bare: no ct/pt without the provider token
+  await expect(as).toHaveAttribute('href', 'https://apps.apple.com/app/apple-store/id6824944395?pt=129589688&ct=studio_site&mt=8');  // App Store Connect campaign: studio_site + provider token (12.11.2026)
   await expect(as).toHaveText('Download on the App Store');
   expect(await page.locator('.od .ctas a').evaluateAll((a) => a.map((e) => e.getAttribute('href').includes('apps.apple.com')))).toEqual([false, false, true, false]);
   expect(w.errs).toEqual([]);
@@ -705,7 +705,7 @@ test('the story: our first game on iPhone (10.11.2026) — the emblem on the lin
     expect(d, tag).not.toMatch(/VERSUS|3\.0/);                                                           // online on iPhone comes with an update — no promises, no dates
     const links = li.locator('.tl-links a');
     await expect(links).toHaveCount(2);
-    expect(await links.nth(0).getAttribute('href'), tag).toBe('https://apps.apple.com/app/id6824944395');  // bare: no ct/pt without the provider token
+    expect(await links.nth(0).getAttribute('href'), tag).toBe('https://apps.apple.com/app/apple-store/id6824944395?pt=129589688&ct=studio_site&mt=8');  // campaign studio_site + provider token (12.11.2026)
     expect((await links.nth(0).textContent()).trim(), tag).toBe((await page.locator('#orbitdash .ctas a.od-as').textContent()).trim());   // the world's App Store words
     expect(await links.nth(1).getAttribute('href'), tag).toMatch(new RegExp(`/play/\\?utm_source=lewydo&utm_medium=studio_site.*lang=${lang}`));
     expect((await links.nth(1).textContent()).trim(), tag).toBe((await page.locator('#orbitdash .ctas .btn-cyan').textContent()).trim());
