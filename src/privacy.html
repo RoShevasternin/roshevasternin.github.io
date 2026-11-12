@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lewydo™ · Privacy</title>
+<meta name="description" content="What lewydo.com does with your visit: no ads, no cookies, no analytics — only an anonymous visit counter that stores nothing about you.">
+<meta name="theme-color" content="#0E1024">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+/* The studio site's own policy (English, like the games' policies). Each game has its own: CubePix and Orbit Dash, linked below. */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{min-height:100vh;padding:40px 20px 56px;color:#fff;font:500 17px/1.65 var(--f,"Nunito",system-ui,sans-serif);
+  background:radial-gradient(60% 40% at 50% 0%,rgba(61,220,132,.16),transparent 72%),#0E1024;}
+main{max-width:680px;margin:0 auto;}
+.top{display:inline-block;color:#9DF5C2;font-weight:800;text-decoration:none;margin-bottom:22px;}
+h1{font-weight:900;font-size:clamp(30px,6vw,40px);line-height:1.15;}
+.date{color:rgba(242,255,247,.6);font-size:14px;margin-top:6px;}
+h2{font-weight:900;font-size:22px;margin-top:34px;}
+p,li{color:rgba(242,255,247,.86);margin-top:12px;}
+ul{padding-left:22px;}
+a{color:#9DF5C2;}
+code{font:600 .9em ui-monospace,Menlo,monospace;color:#9DF5C2;}
+.foot{margin-top:44px;color:rgba(242,255,247,.55);font-size:14px;}
+</style>
+</head>
+<body>
+<main>
+<a class="top" href="/">← lewydo.com</a>
+<h1>Privacy · lewydo.com</h1>
+<p class="date">Updated 12 November 2026</p>
+
+<p><b>The short version.</b> This website (lewydo.com, the studio's page and its brand page) shows no ads, sets no cookies and runs no
+analytics. The only thing it sends anywhere is one small anonymous message to our own visit counter, which stores nothing that identifies
+you. Your browser keeps only your own choices for this site (see “On your device” below); they never leave it. Our games have their own policies: <a href="https://cubepix.lewydo.com/privacy.html">CubePix</a> and
+<a href="https://orbitdash.lewydo.com/privacy.html">Orbit Dash</a>.</p>
+
+<h2 id="visit-counter">Visit counter</h2>
+<p>To know roughly how many people visit this site and where they come from, each page (the main page, the brand page, this page and the
+“page not found” page) sends one small anonymous message to our own counter at <code>stats.lewydo.com</code>, which Cloudflare runs for us
+(Cloudflare Workers). The same counter serves our games' websites.</p>
+<ul>
+<li><b>What is counted:</b> that a page was opened (which kind of page); the country, as the two-letter code that Cloudflare derives from
+your connection; and a coarse source label: the campaign tag in the link (<code>utm_source</code>) if the address has one; otherwise only the
+kind of site you came from, such as “google”, “tiktok”, one of our own sites or “other”; or — when the page is opened inside the TikTok,
+Instagram or Facebook app — that app's name, worked out on your device. The browser's name itself is never part of the message. Never the
+page address, the full referring address, your name or anything you type.</li>
+<li><b>What is not used:</b> no cookies and no storage on your device, no random or device ID, no fingerprinting. Cloudflare sees your IP
+address to deliver the message, as any server does; the counter does not store it, and its server keeps no logs. Your browser's user agent
+is checked on the server only to skip search-engine robots and is not stored.</li>
+<li><b>Retention:</b> each count is stored as one anonymous row (the fields above and the time), which we only ever read as totals, such as
+visits per day and per country; Cloudflare deletes these rows after about 3 months.</li>
+<li><b>Legal basis:</b> our legitimate interest in knowing, in aggregate, whether people find the site (GDPR Art. 6(1)(f)); the data cannot
+be linked to you.</li>
+</ul>
+
+<h2 id="device">On your device</h2>
+<p>The site remembers the language you picked and that it has already shown the hint by the song's record, in your browser's <code>localStorage</code>
+(<code>lewydo:lang</code>, <code>cubepix-site:lang</code> — so CubePix's site opens in the same language — and <code>lewydo:music</code>).
+These stay in your browser, are not sent to us or anyone, and you can clear them with your browser's site data. The visit counter does not
+read or write any of them.</p>
+
+<h2>Things that load from other sites</h2>
+<p>The Orbit Dash block on the main page shows the real game from its own site, <code>orbitdash.lewydo.com</code>, which has its own
+policy. A song on the main page opens YouTube's own player (from <code>youtube-nocookie.com</code>) only when you tap it.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy: <a href="mailto:{{mail}}">{{mail}}</a>.</p>
+
+<p class="foot">© {{year}} Lewydo™ · Love What You Do</p>
+</main>
+{{stats:privacy}}
+</body>
+</html>

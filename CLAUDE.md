@@ -308,6 +308,17 @@ page…», картинки — `npm run look` (у сезоні — тема; `Q
   доповнення → помилка; заговорить сайт гри — збірка скаже прибрати доповнення.
 - **`brand.json` → `about.texts`** — усіма 82 мовами (та сама схема: `text`, `thanks`, `site`, `games`); «Дякуємо, що граєте!» — окремим рядком.
 
+## Лічильник відвідин і політика (власник 12.11.2026)
+- **`src/stats.js`** — наш анонімний лічильник (той самий, що на orbitdash.lewydo.com і cubepix.lewydo.com): одна відмітка
+  `navigator.sendBeacon("https://stats.lewydo.com/h", {s:"st", p, e:"view", c:"none", src})` на сторінку. Вставляє `{{stats:home|privacy|other}}`
+  (`tools/build.mjs` → `fill`) у головну, `/brand/`, 404 і `privacy.html`. `src` — мітка кампанії → категорія хоста реферера → вбудований
+  браузер TikTok / Instagram / Facebook (біо TikTok — коротке `lewydo.com/`, власник не хоче його міняти) → `none`. Без cookie, сховища, id.
+  Сервер і контракт — `Game-Orbit-Dash-PRIVATE/server/site-stats/README.md`; числа — розділ «🌐 Сайти» ранкового звіту Orbit Dash.
+- **`src/privacy.html` → `/privacy.html`** — політика самого сайту (англійською, як у ігор): лічильник (`#visit-counter`), що сайт тримає в
+  `localStorage` (`lewydo:lang`, `cubepix-site:lang`, `lewydo:music`), що вантажиться з інших сайтів. Посилання — у підвалі «Privacy · Lewydo».
+  Нове сховище, запит назовні чи аналітика → спершу ця сторінка. Стереже `npm test` («the visit counter…»): рівно одна відмітка на сторінку,
+  5 полів, решта сторінки — як і раніше без сторонніх запитів.
+
 ## Команди
 ```bash
 npm install            # один раз (лише Playwright для тестів)

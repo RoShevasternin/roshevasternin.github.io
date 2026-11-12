@@ -7,11 +7,18 @@ import { createHash } from 'node:crypto';
 const LANGS = JSON.parse(readFileSync(new URL('../src/langs.json', import.meta.url), 'utf8')).map((L) => L.id);
 const RTL = ['ar', 'he', 'fa', 'ur', 'ps'];
 const STOP_RU = 'Россия, останови войну в Украине';
-const watch = (page) => { const errs = [], ext = new Set();
+// our visit counter (owner 12.11.2026, src/stats.js): the one message that may leave the page — a POST to stats.lewydo.com/h; it is
+// answered here (never reaches the real counter) and collected in `hits`, so «asks no third party for anything» still holds for the rest
+const STATS = 'https://stats.lewydo.com/h';
+const watch = (page) => { const errs = [], ext = new Set(), hits = [];
+  page.route(STATS, (r) => r.fulfill({ status: 204 })).catch(() => {});
   page.on('pageerror', (e) => errs.push(e.message));
   page.on('console', (m) => { if (m.type() === 'error') errs.push(m.text()); });
-  page.on('request', (r) => { const u = new URL(r.url()); if (u.protocol.startsWith('http') && u.hostname !== 'localhost') ext.add(u.origin); });
-  return { errs, ext }; };
+  page.on('request', (r) => {
+    const u = new URL(r.url());
+    if (r.url() === STATS && r.method() === 'POST') { hits.push(JSON.parse(r.postData() || 'null')); return; }
+    if (u.protocol.startsWith('http') && u.hostname !== 'localhost') ext.add(u.origin); });
+  return { errs, ext, hits }; };
 
 // Orbit Dash's block shows the game itself: its site's play/embed.html (the prototype + a director) — since 06.11.2026 on its own origin,
 // https://orbitdash.lewydo.com/, not under the studio's. tests/serve.mjs mirrors that: the studio on SITE_PORT, the game's site on the next
@@ -1022,4 +1029,39 @@ test('the live game is its own origin: the page talks only to it, hears only it,
     expect(await g2.evaluate(() => refused)).toContain(STRANGER);
   }
   await ctx.close();
+});
+
+// the visit counter (owner 12.11.2026): every page sends exactly one anonymous message — five fields, a coarse source, nothing else;
+// the TikTok bio links to the bare lewydo.com/, so the TikTok in-app browser (no referrer) must still say «tiktok»
+test('the visit counter: one anonymous message per page — five fields, a coarse source label, nothing that points at a person', async ({ browser }) => {
+  const open = async (url, { ua, referer } = {}) => {
+    const ctx = await browser.newContext(ua ? { userAgent: ua } : {}), page = await ctx.newPage(), w = watch(page);
+    await page.goto(url, referer ? { referer } : {});
+    await expect.poll(() => w.hits.length).toBeGreaterThan(0);
+    await page.waitForTimeout(300);
+    const res = { hits: [...w.hits], ext: [...w.ext], errs: w.errs };
+    await ctx.close(); return res;
+  };
+  const one = (r) => { expect(r.hits).toHaveLength(1); expect(r.ext).toEqual([]); expect(r.errs.filter((e) => !/status of 404/.test(e))).toEqual([]);   // the 404 page's own status is not an error of ours
+    const h = r.hits[0]; expect(Object.keys(h).sort()).toEqual(['c', 'e', 'p', 's', 'src']); return h; };
+  expect(one(await open('./'))).toEqual({ s: 'st', p: 'home', e: 'view', c: 'none', src: 'none' });            // straight in
+  expect(one(await open('./brand/')).p).toBe('other');
+  expect(one(await open('./privacy.html')).p).toBe('privacy');
+  expect(one(await open('./no-such-room')).p).toBe('other');
+  const TT = 'Mozilla/5.0 (Linux; Android 13; CUBOT X30 Build/TP1A) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0 Mobile Safari/537.36 musical_ly_2023109030 BytedanceWebview/d8a21c6';
+  expect(one(await open('./', { ua: TT })).src).toBe('tiktok');                                               // the TikTok bio, no referrer
+  expect(one(await open('./', { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) Mobile/15E148 Instagram 300.0' })).src).toBe('instagram');
+  expect(one(await open('./', { referer: 'https://www.google.com/search?q=lewydo' })).src).toBe('google');    // only the kind of site
+  expect(one(await open('./', { referer: 'https://orbitdash.lewydo.com/play/' })).src).toBe('orbitdash');
+  expect(one(await open('./?utm_source=TikTok&utm_medium=bio')).src).toBe('tiktok');                         // a campaign tag, lower case
+  expect(one(await open('./?utm_source=4f9a2b7c1d8e3f60')).src).toBe('none');                                // looks like an id: never taken
+  for (const f of ['index.html', 'brand/index.html', '404.html', 'privacy.html']) {                         // the files on disk say the same
+    const js = (disk(f).match(/<script>\/\* Lewydo — our anonymous visit counter[\s\S]*?<\/script>/) || [''])[0];
+    expect(js, f).toContain('navigator.sendBeacon(STATS');
+    expect(js, f).not.toMatch(/document\.cookie|localStorage|sessionStorage|fetch\(|XMLHttpRequest/);   // the counter keeps and reads nothing
+  }
+  const pol = disk('privacy.html');
+  expect(pol).toContain('id="visit-counter"');
+  expect(pol).toContain('stats.lewydo.com');
+  expect(disk('index.html')).toContain('href="/privacy.html"');                                              // the footer leads to it
 });

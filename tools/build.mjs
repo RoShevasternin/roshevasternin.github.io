@@ -208,6 +208,8 @@ const VINYL = (() => { const pal = { d: '#151833', g: '#2b3061', s: '#525a9c', l
   return `<svg class="vinyl" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`; })();
 const fill = (html) => {
   html = html
+    // our anonymous visit counter (owner 12.11.2026, src/stats.js): one beacon to stats.lewydo.com per page — {{stats:<page kind>}}
+    .replace(/\{\{stats:(home|privacy|other)\}\}/g, (m, p) => '<script>' + read('src/stats.js').replace(/\{\{page\}\}/g, p) + '</script>')
     .replace('{{music}}', () => read('src/music.html')).replace(/\{\{vinyl\}\}/g, () => VINYL)
     .replace(/\{\{brandCss\}\}/g, () => brandCss).replace(/\{\{lockup\}\}/g, lockup).replace(/\{\{mark\}\}/g, mark).replace(/\{\{mark:(\w+)\}\}/g, (m, id) => logo(id))
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
@@ -240,6 +242,8 @@ out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => lang
   // the look (src/halloween.css) and the decor (src/halloween.js). The /brand/ page is the standard — never dressed up. Remove in December.
   .replace('{{hw.season}}', () => JSON.stringify((OD.events || {}).halloween || null))
   .replace('{{halloweenCss}}', () => read('src/halloween.css')).replace('{{halloweenJs}}', () => read('src/halloween.js'))));
+// the privacy page (English, like the games' policies): what lewydo.com itself does — only the visit counter
+out('privacy.html', fill(read('src/privacy.html')));
 const NF = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(['nf.title', 'nf.text', 'nf.home'].map((k) => [k, S[L][k]]))]));
 out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).replace('{{DATA404}}', JSON.stringify({ S: NF, rtl: RTL }).replace(/</g, '\\u003c'))));
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
