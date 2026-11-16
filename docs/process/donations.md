@@ -19,7 +19,7 @@
 |---|---|---|---|
 | **Банка monobank** | ✅ | одразу на картку Mono (гривні); іноземні картки здебільшого проходять (комісія для них ≈ 2 %) | основна; лінк — від власника |
 | **Patreon** (щомісячно) | ✅ | **Payoneer** (PayPal для України Patreon не виплачує); податкова форма W-8BEN — власник | у роботі |
-| **itch.io** | ✅ | Payoneer / PayPal, «collected by itch.io» | потім: сторінка веб-гри + донат |
+| **itch.io** | ✅ | Payoneer / PayPal, «collected by itch.io» | сторінка веб-гри Orbit Dash з донатом (16.11); веб-гра там — та сама, що на сайті (заморожена до релізу); RANKS / VERSUS там офлайн — сервер пускає лише orbitdash.lewydo.com (CORS) |
 | **Ko-fi** | ⚠️ сторінка є (ko-fi.com/lewydo), **донати не працюють** | Ko-fi приймає лише PayPal або Stripe: Stripe не працює з Україною, а **особистий PayPal з України не може приймати платежі** (Ko-fi пише «You cannot currently receive payments…», хоч телефон і картку підтверджено). Корпоративного PayPal в Україні немає | на сайти **не ставимо** |
 | **PayPal.Me** | ❓ | лише як переказ «між друзями»; від незнайомців може блокуватись | лише після тесту (власник: $1 з другого PayPal) |
 | **Buy Me a Coffee** | ❌ | з 2024 не обслуговує українців (Stripe / Payoneer прибрано) | не робимо |
@@ -47,5 +47,14 @@
 | платформа | адреса |
 |---|---|
 | Ko-fi | https://ko-fi.com/lewydo (донати не працюють — див. вище) |
-| Patreon | patreon.com/lewydo — створюється |
-| банка monobank | https://send.monobank.ua/jar/73KdUqjNhC — на lewydo.com з 16.11.2026 (блок `#support`, пігулки в шапці й підвалі) |
+| банка monobank | https://send.monobank.ua/jar/73KdUqjNhC — «Lewydo — розробка», мета 10 000 ₴ (16.11.2026). На сайтах — **лише лінк**, номер картки банки не публікуємо; на lewydo.com з 16.11.2026 — блок `#support`, пігулки «♥ Support» у шапці й «Support Lewydo ♥» у підвалі |
+| itch.io | https://lewydo.itch.io (профіль) · https://lewydo.itch.io/orbit-dash — веб-гра Orbit Dash, «$0 or donate», пропонований донат $3; виплати — Payoneer (власник) |
+| Patreon | patreon.com/lewydo — створює власник (Patreon заблокований для браузерів Claude) |
+
+## itch.io — як оновлювати веб-гру
+
+Копія веб-гри з опублікованого сайту (`Game Orbit Dash SITE/play/`): `../assets/js/consent.js` кладемо всередину (`assets/js/consent.js`),
+решту `../` у `index.html` і `manifest.webmanifest` — на абсолютні `https://orbitdash.lewydo.com/…`; zip з `index.html` у корені.
+Перевірка — з чужого походження (не localhost: його пускає CORS RANKS), напр. `http://<IP Мака>:<порт>/…`: гра й музика працюють, RANKS — «ОФЛАЙН».
+Вбудовування: 480×854, Mobile friendly, Fullscreen button. Оновлювати разом із публікацією сайту гри (план — butler + ключ itch.io у Keychain).
+AI-розкриття на itch.io — «No» (рішення власника 16.11.2026).
