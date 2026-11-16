@@ -682,6 +682,31 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .support-goes b{color:#fff;font-size:15.5px;font-weight:900;}
 @media (max-width:600px){.support-card .ctas{flex-direction:column;align-items:center;} .support-card .ctas .btn{width:100%;max-width:340px;}}
 @media (max-width:520px){.support-goes{grid-template-columns:1fr;}}
+/* crypto (owner 16.11.2026, the studio standard — docs/process/donations.md): secondary to the monobank button — USDT on TRON (TRC-20),
+   the owner's QR on a white card (its quiet zone kept, phones scan it), the address in full (wraps, never overflows), «Copy» in one tap,
+   the warning that other coins / networks are lost. Desktop: QR left, address right; phone: stacked, QR centred */
+.crypto{width:100%;max-width:580px;margin-top:26px;padding:18px;border-radius:22px;background:rgba(8,10,26,.42);box-shadow:inset 0 0 0 1px rgba(157,245,194,.16);}
+.crypto-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 10px;margin-bottom:14px;color:var(--ink2);font-weight:800;font-size:15px;}
+.crypto .chip{display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:999px;color:var(--mint);font-size:12.5px;font-weight:900;letter-spacing:.06em;white-space:nowrap;
+  background:rgba(61,220,132,.1);box-shadow:inset 0 0 0 1px rgba(61,220,132,.4);direction:ltr;unicode-bidi:isolate;}
+.crypto-in{display:flex;align-items:center;gap:18px;}
+.crypto-qr{flex:none;padding:10px 10px 7px;border-radius:16px;background:#fff;box-shadow:0 10px 30px -12px rgba(0,0,0,.6);text-align:center;}
+.crypto-qr img{width:150px;height:150px;border-radius:2px;}
+.crypto-qr figcaption{margin-top:5px;color:#1A1C2E;font-size:11px;font-weight:900;letter-spacing:.16em;direction:ltr;}
+.crypto-side{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px;text-align:start;}
+.crypto-addr{display:flex;flex-direction:column;align-items:flex-start;gap:8px;}
+.crypto-addr code{flex:1;min-width:0;padding:10px 12px;border-radius:12px;color:#fff;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(157,245,194,.22);
+  align-self:stretch;font:600 14px/1.5 var(--mono);word-break:break-all;overflow-wrap:anywhere;user-select:all;-webkit-user-select:all;direction:ltr;unicode-bidi:isolate;text-align:left;}
+.crypto-copy{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border:0;border-radius:12px;cursor:pointer;
+  font:800 14px/1 var(--f);color:var(--mint);white-space:nowrap;background:rgba(61,220,132,.1);box-shadow:inset 0 0 0 1.5px rgba(61,220,132,.45);transition:background-color .2s,color .2s,transform .15s;}
+.crypto-copy svg{width:16px;height:16px;fill:currentColor;flex:none;}
+.crypto-copy:active{transform:scale(.97);}
+@media (hover:hover){.crypto-copy:hover{background:rgba(61,220,132,.2);}}
+.crypto-copy.done{color:#04120A;background:var(--green);box-shadow:none;}
+.crypto-warn{display:flex;gap:8px;align-items:flex-start;color:#FFD08A;font-size:13px;line-height:1.45;}
+.crypto-warn svg{width:16px;height:16px;fill:#FFB03A;flex:none;margin-top:1px;}
+@media (max-width:600px){.crypto{padding:16px 12px;} .crypto-in{flex-direction:column;} .crypto-side{width:100%;} .crypto-copy{align-self:stretch;}}
+@media (max-width:420px){.crypto-addr code{padding:10px;font-size:12.5px;text-align:center;}}   /* a 390 px phone: the address in one line (it still wraps safely below) */
 /* the footer's small pill (beside Lewydo's networks) */
 .foot-support{display:flex;justify-content:center;margin-top:16px;}
 .support-pill{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 6px;border-radius:999px;color:var(--mint);font-weight:800;font-size:15px;
@@ -1046,6 +1071,17 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <a class="btn btn-green" href="https://send.monobank.ua/jar/73KdUqjNhC" target="_blank" rel="noopener">{{ico:heart}}<span data-t="support.donate"></span></a>
         </div>
         <p class="support-note" data-t="support.note"></p>
+        <div class="crypto">
+          <p class="crypto-h"><span data-t="support.crypto"></span><span class="chip" translate="no">USDT · TRC-20</span></p>
+          <div class="crypto-in">
+            <figure class="crypto-qr"><img src="{{usdtQr}}" width="150" height="150" data-ta="alt:support.qrAlt" loading="lazy" decoding="async"><figcaption translate="no">TRON · TRC-20</figcaption></figure>
+            <div class="crypto-side">
+              <div class="crypto-addr"><code id="usdtAddr" translate="no">{{usdt}}</code><button class="crypto-copy" id="usdtCopy" type="button" data-ta="aria-label:support.copy" aria-describedby="usdtAddr">{{ico:copy}}<span data-t="support.copy"></span></button></div>
+              <p class="crypto-warn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2V9h2v4z"/></svg><span data-t="support.cryptoWarn"></span></p>
+              <p class="sr-only" id="usdtSay" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
         <ul class="support-goes">
           <li><b data-t="support.levels"></b><span data-t="support.levels.d"></span></li>
           <li><b data-t="support.updates"></b><span data-t="support.updates.d"></span></li>
@@ -1109,6 +1145,13 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
 'use strict';
 const D = JSON.parse(document.getElementById('data').textContent);
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+// the crypto address (docs/process/donations.md): «Copy» writes it inside the tap itself (the clipboard wants the gesture) → «Copied ✓» for 2 s;
+// no clipboard (old browser, http, refused) → the address gets selected, for ⌘C / long-press
+(() => { const b = $('#usdtCopy'), a = $('#usdtAddr'), say = $('#usdtSay'); if (!b || !a) return; let tm;
+  const pick = () => { try { const r = document.createRange(); r.selectNodeContents(a); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {} };
+  const done = () => { const w = $('span', b); b.classList.add('done'); w.textContent = say.textContent = T('support.copied'); clearTimeout(tm);
+    tm = setTimeout(() => { b.classList.remove('done'); w.textContent = T('support.copy'); say.textContent = ''; }, 2000); };
+  b.addEventListener('click', () => { try { navigator.clipboard.writeText(a.textContent.trim()).then(done, pick); } catch (e) { pick(); } }); })();
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches, OG = document.documentElement.classList.contains('og');
 const DPR = Math.min(2, window.devicePixelRatio || 1);
 const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };

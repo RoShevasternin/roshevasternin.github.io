@@ -256,7 +256,10 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    серцебиття), «Support the developer» / «Help the next level come sooner» / текст «Lewydo is a two-person indie studio from Ukraine…» (власник 16.11.2026:
    **не «one indie developer» / «solo»** — «Про нас» каже, що нас двоє), **одна** зелена кнопка «Donate once» → банка monobank
    https://send.monobank.ua/jar/73KdUqjNhC (`target="_blank" rel="noopener"`), рядок «Any card, any country · secure page by monobank» і дві
-   плитки (нові рівні, оновлення). **Пігулка «♥ Support»** у шапці — завжди, і на телефоні (між меню й мовою; < 360 px — лише серце, назва — для
+   плитки (нові рівні, оновлення). Між рядком і плитками — **крипта** (стандарт студії 16.11.2026, `docs/process/donations.md` → «Крипта»):
+   USDT TRC-20 `TSD5GNPX2tdAZcQYrm3yEmvQCweE6cC9jY` (`USDT` у `tools/build.mjs` — збірка перевіряє base58check і що є QR), QR власника
+   `assets/support/usdt-trc20-qr.webp` на білій картці, «Copy» → «Copied ✓», попередження про мережу; тексти `support.crypto/copy/copied/cryptoWarn/qrAlt`.
+   **Пігулка «♥ Support»** у шапці — завжди, і на телефоні (між меню й мовою; < 360 px — лише серце, назва — для
    читачів екрана); **пігулка «Support Lewydo ♥»** у підвалі під значками мереж. Обидві → `#support`. Тексти — `support.*` усіма 82 мовами.
    **Не ставити:** Patreon / Ko-fi / PayPal, поки не приймають гроші (див. правило), плитку «список підтримки», поки списку немає, номер картки.
    Стереже `npm test` («support the developer…»).
