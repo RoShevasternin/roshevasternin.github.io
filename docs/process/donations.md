@@ -47,7 +47,7 @@
 | платформа | адреса |
 |---|---|
 | Ko-fi | https://ko-fi.com/lewydo (донати не працюють — див. вище) |
-| банка monobank | https://send.monobank.ua/jar/73KdUqjNhC — «Lewydo — розробка», мета 10 000 ₴ (16.11.2026). На сайтах — **лише лінк**, номер картки банки не публікуємо |
+| банка monobank | https://send.monobank.ua/jar/73KdUqjNhC — «Lewydo — розробка», мета 10 000 ₴ (16.11.2026). На сайтах — **лише лінк**, номер картки банки не публікуємо; на lewydo.com з 16.11.2026 — блок `#support`, пігулки «♥ Support» у шапці й «Support Lewydo ♥» у підвалі |
 | itch.io | https://lewydo.itch.io (профіль) · https://lewydo.itch.io/orbit-dash — веб-гра Orbit Dash, «$0 or donate», пропонований донат $3; виплати — Payoneer (власник) |
 | Patreon | patreon.com/lewydo — створює власник (Patreon заблокований для браузерів Claude) |
 

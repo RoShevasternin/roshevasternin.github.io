@@ -251,6 +251,14 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    - **Правила YouTube:** плеєр видно, поки грає, не менше 200 × 200 (тільки звук чи схований плеєр — заборонено), YouTube ніхто не
      питає, поки не тапнули платівку. Зміниш картку — перевір `npm test` («Vlad’s favourite song»).
    - Захоче іншу пісню — лише офіційне відео з YouTube, де дозволено вбудовування (перевірка: `https://www.youtube.com/oembed?url=…` → 200).
+7а. **Підтримати розробника — `#support`** (власник 16.11.2026, правило студії `docs/process/donations.md`, прототип — `docs/process/donations/block-prototype.html`,
+   текст **A**): секція одразу перед контактами — серце-аватар студії (`assets/support-heart.webp` з `brand/kit/png/avatar.png`, легке
+   серцебиття), «Support the developer» / «Help the next level come sooner» / текст, **одна** зелена кнопка «Donate once» → банка monobank
+   https://send.monobank.ua/jar/73KdUqjNhC (`target="_blank" rel="noopener"`), рядок «Any card, any country · secure page by monobank» і дві
+   плитки (нові рівні, оновлення). **Пігулка «♥ Support»** у шапці — завжди, і на телефоні (між меню й мовою; < 360 px — лише серце, назва — для
+   читачів екрана); **пігулка «Support Lewydo ♥»** у підвалі під значками мереж. Обидві → `#support`. Тексти — `support.*` усіма 82 мовами.
+   **Не ставити:** Patreon / Ko-fi / PayPal, поки не приймають гроші (див. правило), плитку «список підтримки», поки списку немає, номер картки.
+   Стереже `npm test` («support the developer…»).
 7. **Контакти й мережі** (власник 03.10.2026): Telegram — робочий **@vlad_libgdx** (картка Влада й кнопка в контактах), у Лілі
    Telegram прибрано; «Lewydo в соцмережах» у контактах і значками в підвалі: TikTok https://www.tiktok.com/@lewydo_game,
    Instagram https://www.instagram.com/lewydo_game/, YouTube https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw (канал Влада

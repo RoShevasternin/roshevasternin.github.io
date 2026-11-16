@@ -578,6 +578,38 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
   expect(w.errs.filter((e) => !/Failed to load resource|ERR_FAILED/.test(e))).toEqual([]);
 });
 
+// support the developer (owner 16.11.2026, docs/process/donations.md — text A): the block right before the contacts, one button — the monobank jar
+// in a new tab; nothing that does not take money yet (Patreon, Ko-fi, PayPal), no card number; «♥ Support» in the header on every phone
+// (the heart alone under 360 px) and a pill in the footer, both to #support; nothing sideways, RTL too
+test('support the developer: the block before the contacts, the monobank jar in a new tab, the header and footer pills; 320 px; RTL', async ({ browser }) => {
+  const JAR = 'https://send.monobank.ua/jar/73KdUqjNhC';
+  for (const [lang, width] of [['en', 1440], ['uk', 390], ['de', 360], ['ar', 390], ['ta', 320]]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 800 } }), page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
+    await page.goto(`./?lang=${lang}`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    expect(await page.evaluate(() => document.querySelector('#support').nextElementSibling?.id), tag).toBe('contact');
+    const give = page.locator('#support .ctas a');
+    await expect(give, tag).toHaveCount(1);
+    await expect(give).toHaveAttribute('href', JAR); await expect(give).toHaveAttribute('target', '_blank'); await expect(give).toHaveAttribute('rel', 'noopener');
+    expect(await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.href).filter((h) => /patreon|ko-fi|paypal|buymeacoffee/i.test(h))), tag).toEqual([]);
+    expect(await page.locator('#support').textContent(), tag).not.toMatch(/\d{4}\s?\d{4}\s?\d{4}\s?\d{4}/);   // never a card number
+    await expect(page.locator('#support .support-goes li'), tag).toHaveCount(2);
+    for (const k of ['.top .top-support', '.foot .support-pill']) await expect(page.locator(k), tag).toHaveAttribute('href', '#support');
+    await page.evaluate(() => window.scrollTo(0, 3000)); await page.waitForTimeout(200);    // the header's signature is in: pill, sign and language button side by side
+    const r = await page.evaluate(() => { const b = (s) => document.querySelector(s).getBoundingClientRect(), p = b('.top-support'), l = b('#langBtn'), h = b('.top .home');
+      const hit = (a, c) => a.left < c.right - .5 && c.left < a.right - .5;
+      return { vis: p.width > 0 && getComputedStyle(document.querySelector('.top-support')).visibility === 'visible', hit: hit(p, l) || hit(p, h), in: p.left >= 0 && p.right <= innerWidth,
+        word: getComputedStyle(document.querySelector('.top-support span')).display !== 'none', sw: document.documentElement.scrollWidth }; });
+    expect(r, tag).toEqual({ vis: true, hit: false, in: true, word: width >= 360, sw: width });
+    await expect(page.locator('.top-support'), tag).toHaveAttribute('aria-label', /Lewydo/);
+    await page.locator('.top-support').click();
+    await expect.poll(() => page.evaluate(() => Math.round(document.querySelector('#support').getBoundingClientRect().top)), tag).toBeLessThan(140);
+    expect(w.errs, tag).toEqual([]);
+    expect([...w.ext], tag).toEqual([]);
+    await ctx.close();
+  }
+});
+
 // the contacts (owner 03.10.2026): the work Telegram, Lewydo's own pages; and the brand page says how every Lewydo game is made
 test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the brand page and brand.json say «prototype first»', async ({ page, request }) => {
   const w = watch(page);
