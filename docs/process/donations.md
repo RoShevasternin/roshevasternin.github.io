@@ -48,4 +48,4 @@
 |---|---|
 | Ko-fi | https://ko-fi.com/lewydo (донати не працюють — див. вище) |
 | Patreon | patreon.com/lewydo — створюється |
-| банка monobank | — чекає лінк |
+| банка monobank | https://send.monobank.ua/jar/73KdUqjNhC — на lewydo.com з 16.11.2026 (блок `#support`, пігулки в шапці й підвалі) |
