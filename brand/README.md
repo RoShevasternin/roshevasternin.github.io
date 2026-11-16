@@ -13,6 +13,7 @@ and the heartbeat, the menu signature and About us.
 | | |
 |---|---|
 | `kit/png/` | The originals, **@3x** of the design sizes: `brand_back` 624×624 (the glow), `brand_front` 420×420 (the heart), `lewydo` 624×222 (the name), `slogan` 624×57, `brand_line` 438×3. Plus `lockup.png` (the whole Lockup, 624×966) and `pill.png` (the menu Signature pill, 354×108) — all exported from Figma, the same files the games use. |
+| `kit/png/avatar.png` | **The studio avatar, 512×512** (owner 16.11.2026): the heart with its glow on a dark-green grid. The profile picture everywhere the studio has a page — Ko-fi, Patreon, itch.io, socials. |
 | `kit/webp/` | The same five pictures, lighter, for websites. |
 | `kit/atlas/` | `brand.atlas` + `brand.png` — the LibGDX atlas of the five pictures (`assets/atlas/`, `EnumAtlas.BRAND`). |
 | `kit/code/libgdx/` | `LewydoHeartbeat.kt` (package `com.lewydo.brand`), `ABrandLogo.kt`, `ABrandGroup.kt`, `BrandScreen.kt` — replace `yourgame` with your game's package. They use the Lewydo LibGDX base (AdvancedScreen, AConstraintLayout, AAutoLayout). |
