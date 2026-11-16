@@ -9,9 +9,9 @@
 **About:**
 
 ```
-Hi! I'm a solo indie developer from Ukraine making games as Lewydo — Orbit Dash (a rhythm game where every track and level is original) and CubePix.
+Hi! We're a two-person indie studio from Ukraine making games as Lewydo — Orbit Dash (a rhythm game where every track and level is original) and CubePix.
 
-Your support lets me spend more time on new levels, new music and updates instead of a day job. Every member helps the next level come out sooner.
+Your support lets us spend more time on new levels, new music and updates instead of a day job. Every member helps the next level come out sooner.
 
 Thank you for playing — and for being here! 💚
 ```
@@ -24,5 +24,5 @@ Thank you for playing — and for being here! 💚
 | Insider | $5 / міс | усе з Supporter + щомісячний девлог і голосування за стиль музики наступного рівня |
 | Level Maker | $10 / міс | усе з Insider + першим слухає нові треки до виходу рівня |
 
-Банка monobank — назва `Lewydo — розробка ігор`, опис: `Підтримка інді-розробника з України: Orbit Dash і CubePix. Кожен донат — це час на нові рівні, музику й оновлення. Дякую! 💚`
+Банка monobank — назва `Lewydo — розробка ігор`, опис: `Підтримка інді-студії з двох людей з України: Orbit Dash і CubePix. Кожен донат — це час на нові рівні, музику й оновлення. Дякуємо! 💚`
 (застосунок Mono → «Накопичення» → Банки → Створити).

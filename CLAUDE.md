@@ -253,7 +253,8 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    - Захоче іншу пісню — лише офіційне відео з YouTube, де дозволено вбудовування (перевірка: `https://www.youtube.com/oembed?url=…` → 200).
 7а. **Підтримати розробника — `#support`** (власник 16.11.2026, правило студії `docs/process/donations.md`, прототип — `docs/process/donations/block-prototype.html`,
    текст **A**): секція одразу перед контактами — серце-аватар студії (`assets/support-heart.webp` з `brand/kit/png/avatar.png`, легке
-   серцебиття), «Support the developer» / «Help the next level come sooner» / текст, **одна** зелена кнопка «Donate once» → банка monobank
+   серцебиття), «Support the developer» / «Help the next level come sooner» / текст «Lewydo is a two-person indie studio from Ukraine…» (власник 16.11.2026:
+   **не «one indie developer» / «solo»** — «Про нас» каже, що нас двоє), **одна** зелена кнопка «Donate once» → банка monobank
    https://send.monobank.ua/jar/73KdUqjNhC (`target="_blank" rel="noopener"`), рядок «Any card, any country · secure page by monobank» і дві
    плитки (нові рівні, оновлення). **Пігулка «♥ Support»** у шапці — завжди, і на телефоні (між меню й мовою; < 360 px — лише серце, назва — для
    читачів екрана); **пігулка «Support Lewydo ♥»** у підвалі під значками мереж. Обидві → `#support`. Тексти — `support.*` усіма 82 мовами.
