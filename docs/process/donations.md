@@ -30,7 +30,7 @@
 ## Як виглядає
 
 - **Аватар усюди** — `brand/kit/png/avatar.png` (іконка власника 16.11.2026); обкладинка — `banner.png`.
-- **Опис** (англійською, для сторінок платформ): соло-розробник з України, Lewydo — Orbit Dash і CubePix, уся музика й рівні свої,
+- **Опис** (англійською, для сторінок платформ): інді-студія з двох людей з України (власник 16.11.2026: не «соло» й не «один розробник» — «Про нас» каже, що нас двоє), Lewydo — Orbit Dash і CubePix, уся музика й рівні свої,
   підтримка = більше часу на нові рівні й оновлення. Без обіцянок, яких не можемо дати.
 - **Рівні Patreon** — лише те, що реально даємо: ім'я в списку підтримки на сайті, роль у Discord, девлог, голос за стиль музики наступного рівня,
   ранні треки.
@@ -39,7 +39,7 @@
 
 ## Прототип і тексти
 
-- **Прототип блоку** — `docs/process/donations/block-prototype.html` (https://claude.ai/artifact/13fD2RdsKj6ZUeQqiBgZZx): повний блок + компактна пігулка в підвалі, 3 варіанти тексту. **Власник 16.11.2026 обрав A:** «Help the next level come sooner» / «Lewydo is one indie developer from Ukraine. Every track and every level in Orbit Dash and CubePix is made by hand. Your support buys time for new levels, new music and updates.» / кнопка «Donate once». Кнопка Patreon — лише коли сторінка опублікована; плашку «your name on our supporters list» — лише коли список є на сайті.
+- **Прототип блоку** — `docs/process/donations/block-prototype.html` (https://claude.ai/artifact/13fD2RdsKj6ZUeQqiBgZZx): повний блок + компактна пігулка в підвалі, 3 варіанти тексту. **Власник 16.11.2026 обрав A:** «Help the next level come sooner» / «Lewydo is a two-person indie studio from Ukraine. Every track and every level in Orbit Dash and CubePix is made by hand. Your support buys time for new levels, new music and updates.» / кнопка «Donate once». Кнопка Patreon — лише коли сторінка опублікована; плашку «your name on our supporters list» — лише коли список є на сайті.
 - **Тексти Patreon і банки** — `docs/process/donations/patreon.md`.
 
 ## Сторінки студії
