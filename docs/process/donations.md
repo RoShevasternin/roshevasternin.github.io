@@ -39,7 +39,7 @@
 
 ## Прототип і тексти
 
-- **Прототип блоку** — `docs/process/donations/block-prototype.html` (https://claude.ai/artifact/13fD2RdsKj6ZUeQqiBgZZx): повний блок + компактна пігулка в підвалі, 3 варіанти тексту; чекає вибору власника.
+- **Прототип блоку** — `docs/process/donations/block-prototype.html` (https://claude.ai/artifact/13fD2RdsKj6ZUeQqiBgZZx): повний блок + компактна пігулка в підвалі, 3 варіанти тексту. **Власник 16.11.2026 обрав A:** «Help the next level come sooner» / «Lewydo is one indie developer from Ukraine. Every track and every level in Orbit Dash and CubePix is made by hand. Your support buys time for new levels, new music and updates.» / кнопка «Donate once». Кнопка Patreon — лише коли сторінка опублікована; плашку «your name on our supporters list» — лише коли список є на сайті.
 - **Тексти Patreon і банки** — `docs/process/donations/patreon.md`.
 
 ## Сторінки студії
