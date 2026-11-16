@@ -581,8 +581,10 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
 // support the developer (owner 16.11.2026, docs/process/donations.md — text A): the block right before the contacts, one button — the monobank jar
 // in a new tab; nothing that does not take money yet (Patreon, Ko-fi, PayPal), no card number; «♥ Support» in the header on every phone
 // (the heart alone under 360 px) and a pill in the footer, both to #support; nothing sideways, RTL too
-test('support the developer: the block before the contacts, the monobank jar in a new tab, the header and footer pills; 320 px; RTL', async ({ browser }) => {
+test('support the developer: the block before the contacts, the monobank jar in a new tab, crypto (USDT TRC-20, copy, QR), the header and footer pills; 320 px; RTL', async ({ browser }) => {
   const JAR = 'https://send.monobank.ua/jar/73KdUqjNhC';
+  const USDT = 'TSD5GNPX2tdAZcQYrm3yEmvQCweE6cC9jY';                                 // the studio's USDT (TRC-20) wallet — identical on every site
+  expect(createHash('md5').update(readFileSync(new URL('assets/support/usdt-trc20-qr.webp', ROOT))).digest('hex').length).toBe(32);   // the QR is there
   for (const [lang, width] of [['en', 1440], ['uk', 390], ['de', 360], ['ar', 390], ['ta', 320]]) {
     const ctx = await browser.newContext({ viewport: { width, height: 800 } }), page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
     await page.goto(`./?lang=${lang}`);
@@ -594,6 +596,18 @@ test('support the developer: the block before the contacts, the monobank jar in 
     expect(await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.href).filter((h) => /patreon|ko-fi|paypal|buymeacoffee/i.test(h))), tag).toEqual([]);
     expect(await page.locator('#support').textContent(), tag).not.toMatch(/\d{4}\s?\d{4}\s?\d{4}\s?\d{4}/);   // never a card number
     await expect(page.locator('#support .support-goes li'), tag).toHaveCount(2);
+    // crypto (owner 16.11.2026, docs/process/donations.md): the one address, byte for byte; «Copy»; the owner's QR; nothing overflows
+    await expect(page.locator('#usdtAddr'), tag).toHaveText(USDT);
+    await expect(page.locator('#support .crypto .chip'), tag).toHaveText('USDT · TRC-20');
+    await expect(page.locator('#usdtCopy'), tag).toHaveAttribute('aria-label', /\S/);
+    await expect(page.locator('#support .crypto-qr img'), tag).toHaveAttribute('src', '/assets/support/usdt-trc20-qr.webp');
+    await expect(page.locator('#support .crypto-warn'), tag).toContainText('TRC-20');
+    await page.locator('#support .crypto').scrollIntoViewIfNeeded();
+    await expect.poll(() => page.locator('#support .crypto-qr img').evaluate((i) => i.complete && i.naturalWidth), tag).toBe(480);   // the owner's QR, whole
+    expect(await page.evaluate(() => { const c = document.querySelector('.support-card').getBoundingClientRect(), bad = [];
+      for (const e of document.querySelectorAll('.crypto, .crypto *')) { const r = e.getBoundingClientRect(); if (r.width && (r.left < c.left - .5 || r.right > c.right + .5)) bad.push(e.className || e.tagName); }
+      const code = document.querySelector('#usdtAddr'); if (code.scrollWidth > code.clientWidth + 1) bad.push('address scrolls');
+      return bad; }), tag).toEqual([]);
     for (const k of ['.top .top-support', '.foot .support-pill']) await expect(page.locator(k), tag).toHaveAttribute('href', '#support');
     await page.evaluate(() => window.scrollTo(0, 3000)); await page.waitForTimeout(200);    // the header's signature is in: pill, sign and language button side by side
     const r = await page.evaluate(() => { const b = (s) => document.querySelector(s).getBoundingClientRect(), p = b('.top-support'), l = b('#langBtn'), h = b('.top .home');
@@ -602,6 +616,13 @@ test('support the developer: the block before the contacts, the monobank jar in 
         word: getComputedStyle(document.querySelector('.top-support span')).display !== 'none', sw: document.documentElement.scrollWidth }; });
     expect(r, tag).toEqual({ vis: true, hit: false, in: true, word: width >= 360, sw: width });
     await expect(page.locator('.top-support'), tag).toHaveAttribute('aria-label', /Lewydo/);
+    if (lang === 'en') {                                                                             // «Copy» → the clipboard holds the address, «Copied ✓», then back
+      await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+      await page.locator('#usdtCopy').click();
+      await expect(page.locator('#usdtCopy')).toHaveText('Copied ✓');
+      expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(USDT);
+      await expect(page.locator('#usdtCopy')).toHaveText('Copy', { timeout: 4000 });
+    }
     await page.locator('.top-support').click();
     await expect.poll(() => page.evaluate(() => Math.round(document.querySelector('#support').getBoundingClientRect().top)), tag).toBeLessThan(140);
     expect(w.errs, tag).toEqual([]);
