@@ -41,8 +41,9 @@ you. Your browser keeps only your own choices for this site (see “On your devi
 “page not found” page) sends one small anonymous message to our own counter at <code>stats.lewydo.com</code>, which Cloudflare runs for us
 (Cloudflare Workers). The same counter serves our games' websites.</p>
 <ul>
-<li><b>What is counted:</b> that a page was opened (which kind of page); the country, as the two-letter code that Cloudflare derives from
-your connection; and a coarse source label: the campaign tag in the link (<code>utm_source</code>) if the address has one; otherwise only the
+<li><b>What is counted:</b> that a page was opened (which kind of page); on any of these pages, that you tapped one of the buttons of the
+“Support” block (the Support button that opens it, the monobank jar, copying the crypto address, itch.io or Patreon) and which one — not whether you
+donated anything; the country, as the two-letter code that Cloudflare derives from your connection; and a coarse source label: the campaign tag in the link (<code>utm_source</code>) if the address has one; otherwise only the
 kind of site you came from, such as “google”, “tiktok”, one of our own sites or “other”; or — when the page is opened inside the TikTok,
 Instagram or Facebook app — that app's name, worked out on your device. The browser's name itself is never part of the message. Never the
 page address, the full referring address, your name or anything you type.</li>
@@ -75,15 +76,20 @@ loads from Twitch.</p>
 </main>
 <script>/* Lewydo — our anonymous visit counter (owner 12.11.2026; the same as on orbitdash.lewydo.com and cubepix.lewydo.com).
    One small message to our own counter at stats.lewydo.com (Cloudflare Worker lewydo-site-stats → Workers Analytics Engine) when a page
-   opens: {s, p, e, c, src} and nothing else — no cookies, no storage, no ids; the IP address is not stored, Workers logs are off.
+   opens: {s, p, e, c, src} and nothing else (a tap in the «Support» block adds t — which button) — no cookies, no storage, no ids;
+   the IP address is not stored, Workers logs are off.
    The contract and the server: Game-Orbit-Dash-PRIVATE/server/site-stats/README.md. Privacy: /privacy.html#visit-counter.
      s   "st" — this site (lewydo.com)
      p   the page: home · privacy · press (/press/) · other (brand, 404)
-     e   "view" — this site has no analytics and no consent bar, so it never sends allow / decline
+     e   "view" — this site has no analytics and no consent bar, so it never sends allow / decline;
+         "support" [17.11.2026] — a tap on a button of the «Support» block (owner: «how many people tapped support on our sites»)
      c   "none" — no consent choice exists here
      src a coarse source label, worked out here on the device: utm_source (lower case, not an id) → the kind of site in the referrer
          (only its host) → the TikTok / Instagram / Facebook in-app browser (the TikTok bio links to the bare lewydo.com/, and that
          browser often sends no referrer; the user agent itself is never sent) → "none".
+     t   only with "support": which button, from the list SUP — open («♥ Support» in the header / footer → #support), jar (the monobank
+         jar), crypto («Copy» of the USDT address), itch (itch.io), patreon (Patreon); the button says it itself: data-sup="…".
+         Not whether anyone donated — we never learn that.
    privacy is set by tools/build.mjs for each page. */
 (function () {
   "use strict";
@@ -134,18 +140,35 @@ loads from Twitch.</p>
       return inApp();
     } catch (e) { return "none"; }
   }
+  // one message per event: {s, p, e, c, src} and, for "support" only, t
+  function hit(e, t) {
+    try {
+      if (!navigator.sendBeacon) return;
+      var o = { s: "st", p: PAGE, e: e, c: "none", src: source() };
+      if (t) o.t = t;
+      navigator.sendBeacon(STATS, JSON.stringify(o));
+    } catch (err) { /* the counter never matters more than the page */ }
+  }
   var sent = false;
   function view() {
     if (sent) return;
     sent = true;
-    try {
-      if (!navigator.sendBeacon) return;
-      navigator.sendBeacon(STATS, JSON.stringify({ s: "st", p: PAGE, e: "view", c: "none", src: source() }));
-    } catch (e) { /* the counter never matters more than the page */ }
+    hit("view");
   }
   try {
     if (document.prerendering) document.addEventListener("prerenderingchange", view, { once: true });   // counted when really opened
     else view();
+  } catch (e) { /* */ }
+  // [17.11.2026] the «Support» block: a tap on [data-sup] — "support" with t from this list only, on any page (the same as on orbitdash / cubepix)
+  var SUP = /^(open|jar|crypto|itch|patreon)$/;
+  function support(t) {
+    t = String(t);
+    if (SUP.test(t)) hit("support", t);
+  }
+  try {
+    document.addEventListener("click", function (ev) {
+      try { var a = ev.target && ev.target.closest ? ev.target.closest("[data-sup]") : null; if (a) support(a.getAttribute("data-sup")); } catch (err) { /* */ }
+    }, true);
   } catch (e) { /* */ }
 })();
 </script>

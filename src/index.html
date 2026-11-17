@@ -812,7 +812,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <a href="#contact" data-sec="contact" data-t="nav.contact"></a>
       <a href="/brand/" data-t="nav.brand"></a>
     </nav>
-    <a class="top-support" href="#support" data-ta="aria-label:support.foot">{{ico:heart}}<span data-t="support.nav"></span></a>
+    <a class="top-support" href="#support" data-sup="open" data-ta="aria-label:support.foot">{{ico:heart}}<span data-t="support.nav"></span></a>
     <div class="more"><button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreMenu" data-ta="aria-label:nav.label">{{ico:more}}</button>
       <div class="more-menu" id="moreMenu" hidden>
         <a class="more-sec" href="#worlds" data-t="nav.games"></a><a class="more-sec" href="#studio" data-t="nav.studio"></a><a class="more-sec" href="#story" data-t="nav.story"></a>
@@ -1078,7 +1078,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <h2 class="h2" data-t="support.title"></h2>
         <p class="sub" data-t="support.text"></p>
         <div class="ctas">
-          <a class="btn btn-green" href="https://send.monobank.ua/jar/73KdUqjNhC" target="_blank" rel="noopener">{{ico:heart}}<span data-t="support.donate"></span></a>
+          <a class="btn btn-green" href="https://send.monobank.ua/jar/73KdUqjNhC" target="_blank" rel="noopener" data-sup="jar">{{ico:heart}}<span data-t="support.donate"></span></a>
         </div>
         <p class="support-note" data-t="support.note"></p>
         <div class="crypto">
@@ -1086,7 +1086,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
           <div class="crypto-in">
             <figure class="crypto-qr"><img src="{{usdtQr}}" width="150" height="150" data-ta="alt:support.qrAlt" loading="lazy" decoding="async"><figcaption translate="no">TRON · TRC-20</figcaption></figure>
             <div class="crypto-side">
-              <div class="crypto-addr"><code id="usdtAddr" translate="no">{{usdt}}</code><button class="crypto-copy" id="usdtCopy" type="button" data-ta="aria-label:support.copy" aria-describedby="usdtAddr">{{ico:copy}}<span data-t="support.copy"></span></button></div>
+              <div class="crypto-addr"><code id="usdtAddr" translate="no">{{usdt}}</code><button class="crypto-copy" id="usdtCopy" type="button" data-sup="crypto" data-ta="aria-label:support.copy" aria-describedby="usdtAddr">{{ico:copy}}<span data-t="support.copy"></span></button></div>
               <p class="crypto-warn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2V9h2v4z"/></svg><span data-t="support.cryptoWarn"></span></p>
               <p class="sr-only" id="usdtSay" aria-live="polite"></p>
             </div>
@@ -1124,7 +1124,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
     <a class="lw-pill" href="#top" aria-label="Lewydo">{{sig}}{{go}}</a>
     <p class="foot-made" data-t="foot.made"></p>
     <nav class="foot-social" aria-label="Lewydo">{{social:fs}}</nav>
-    <p class="foot-support"><a class="support-pill" href="#support"><img src="/assets/support-heart.webp" alt="" width="32" height="32" loading="lazy" decoding="async"><span data-t="support.foot"></span>{{ico:heart}}</a></p>
+    <p class="foot-support"><a class="support-pill" href="#support" data-sup="open"><img src="/assets/support-heart.webp" alt="" width="32" height="32" loading="lazy" decoding="async"><span data-t="support.foot"></span>{{ico:heart}}</a></p>
     <nav class="foot-links" aria-label="Lewydo">
       <a href="{{cp.site}}" data-lang-link="cp">CubePix</a><a href="{{od.site}}" data-lang-link="od">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a><a href="/press/" data-lang-link data-t="foot.press"></a>
       <a href="/privacy.html"><span data-t="foot.privacy"></span> · Lewydo</a><a href="{{cp.privacy}}" data-lang-link="cp"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}" data-lang-link="od"><span data-t="foot.privacy"></span> · Orbit Dash</a>
