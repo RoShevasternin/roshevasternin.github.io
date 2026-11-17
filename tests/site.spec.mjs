@@ -1113,11 +1113,61 @@ test('the visit counter: one anonymous message per page — five fields, a coars
     const js = (disk(f).match(/<script>\/\* Lewydo — our anonymous visit counter[\s\S]*?<\/script>/) || [''])[0];
     expect(js, f).toContain('navigator.sendBeacon(STATS');
     expect(js, f).not.toMatch(/document\.cookie|localStorage|sessionStorage|fetch\(|XMLHttpRequest/);   // the counter keeps and reads nothing
+    expect(js, f).toContain('var SUP = /^(open|jar|crypto|itch|patreon)$/;');                             // the «Support» taps: the server's list, nothing else
   }
   const pol = disk('privacy.html');
   expect(pol).toContain('id="visit-counter"');
   expect(pol).toContain('stats.lewydo.com');
+  // the policy says what the code sends: a tap in the «Support» block and which one (each target of SUP by name), not a donation
+  const said = pol.replace(/\s+/g, ' ');
+  for (const w of ['tapped one of the buttons of the “Support” block', 'the Support button that opens it', 'the monobank jar', 'copying the crypto address',
+    'itch.io', 'Patreon', 'not whether you donated anything']) expect(said).toContain(w);
   expect(disk('index.html')).toContain('href="/privacy.html"');                                              // the footer leads to it
+});
+
+// the «Support» block (owner 17.11.2026: «how many people tapped support on our sites» — the morning report): a tap on each of its buttons sends
+// exactly one more anonymous message — the five fields of a view and t, which button (the server's list: open · jar · crypto · itch · patreon);
+// not whether anyone donated. Anything else on the page, or a data-sup that is not on the list, sends nothing
+test('the visit counter: a tap in the «Support» block — exactly one message per button, with which button it was, and nothing else', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await ctx.route(/send\.monobank\.ua/, (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>jar</title>' }));   // the jar's tab: answered here
+  const page = await ctx.newPage(), w = watch(page);
+  await page.goto('./?lang=en');
+  await expect.poll(() => w.hits.length).toBe(1);
+  expect(w.hits[0]).toEqual({ s: 'st', p: 'home', e: 'view', c: 'none', src: 'none' });
+  const tap = async (sel, t) => {
+    w.hits.length = 0;
+    const pop = t === 'jar' ? ctx.waitForEvent('page') : null;
+    await page.locator(sel).click();
+    if (pop) { const p2 = await pop; await p2.close(); }
+    await expect.poll(() => w.hits.length, sel).toBe(1);
+    await page.waitForTimeout(250);                                                                    // and not a second one
+    expect(w.hits, sel).toHaveLength(1);
+    expect(Object.keys(w.hits[0]).sort(), sel).toEqual(['c', 'e', 'p', 's', 'src', 't']);
+    expect(w.hits[0], sel).toEqual({ s: 'st', p: 'home', e: 'support', c: 'none', src: 'none', t });
+  };
+  await expect(page.locator('[data-sup]')).toHaveCount(4);                                            // the header and footer pills, the jar, «Copy»
+  await page.evaluate(() => window.scrollTo(0, 3000)); await page.waitForTimeout(200);
+  await tap('.top .top-support', 'open');
+  await tap('.foot .support-pill', 'open');
+  await tap('#support .ctas a', 'jar');
+  await tap('#usdtCopy', 'crypto');
+  await expect(page.locator('#usdtCopy')).toHaveText('Copied ✓');                                     // the button still does its job
+  w.hits.length = 0;                                                                                   // anything else — nothing
+  await page.locator('#support h2').click();
+  await page.locator('#usdtAddr').click();
+  await page.evaluate(() => { const a = document.createElement('button'); a.id = 'stray'; a.setAttribute('data-sup', 'card'); a.textContent = 'x'; document.body.append(a); });
+  await page.locator('#stray').click();                                                                // a target off the list is never sent
+  await page.waitForTimeout(400);
+  expect(w.hits).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+  expect(w.errs).toEqual([]);
+  for (const f of ['brand/', 'press/']) {                                                              // no «Support» block there: nothing to tap
+    await page.goto(`./${f}?lang=en`);
+    await expect(page.locator('[data-sup]'), f).toHaveCount(0);
+  }
+  await ctx.close();
 });
 
 // our first game review on a stream (owner 12.11.2026): atoozan's 20 minutes on Twitch in the story — Twitch's own player, only after a tap

@@ -333,6 +333,12 @@ page…», картинки — `npm run look` (у сезоні — тема; `Q
   (`tools/build.mjs` → `fill`) у головну, `/brand/`, 404 і `privacy.html`. `src` — мітка кампанії → категорія хоста реферера → вбудований
   браузер TikTok / Instagram / Facebook (біо TikTok — коротке `lewydo.com/`, власник не хоче його міняти) → `none`. Без cookie, сховища, id.
   Сервер і контракт — `Game-Orbit-Dash-PRIVATE/server/site-stats/README.md`; числа — розділ «🌐 Сайти» ранкового звіту Orbit Dash.
+- **Тапи в блоці «Підтримати»** (власник 17.11.2026: «хочу бачити в ранковому звіті по сайтах скільки юзерів натиснуло на підтримати по нашим
+  сайтам»; розділ «♥ Підтримати» звіту): кнопка з атрибутом `data-sup="…"` → `src/stats.js` (делегований `click`, capture) шле
+  `{s:"st", p, e:"support", c:"none", src, t}`, `t` — лише зі списку `SUP` (= `SUPPORT_TARGETS` сервера): `open` (пігулки «♥ Support» у шапці
+  й підвалі → `#support`), `jar` (банка monobank), `crypto` («Copy» адреси USDT), `itch`, `patreon` (коли з'являться — просто `data-sup`
+  на кнопці). Нова кнопка блоку — **з `data-sup`**; нова ціль — спершу сервер і політика (`#visit-counter`). Стереже `npm test`
+  («the visit counter: a tap in the «Support» block…»).
 - **`src/privacy.html` → `/privacy.html`** — політика самого сайту (англійською, як у ігор): лічильник (`#visit-counter`), що сайт тримає в
   `localStorage` (`lewydo:lang`, `cubepix-site:lang`, `lewydo:music`), що вантажиться з інших сайтів. Посилання — у підвалі «Privacy · Lewydo».
   Нове сховище, запит назовні чи аналітика → спершу ця сторінка. Стереже `npm test` («the visit counter…»): рівно одна відмітка на сторінку,
