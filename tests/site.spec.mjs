@@ -428,7 +428,7 @@ test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async (
   expect(await (await request.get('./')).text()).toContain('FbnCfBUOkfR84lwfaDQwOJiyQXAwnK5tVhmtCYK-Seo');               // the backup: meta tag on the home page
   expect(await (await request.get('./robots.txt')).text()).toContain('sitemap.xml');
   const map = [...(await (await request.get('./sitemap.xml')).text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  expect(map).toEqual(['https://lewydo.com/', 'https://lewydo.com/brand/']);                       // this host only: the games' pages are in their own sites' maps
+  expect(map).toEqual(['https://lewydo.com/', 'https://lewydo.com/brand/', 'https://lewydo.com/press/']);   // /press/ — English, no ?lang=                       // this host only: the games' pages are in their own sites' maps
   expect(await (await request.get('./robots.txt')).text()).toContain('Sitemap: https://lewydo.com/sitemap.xml');
   expect(await (await request.get('./CNAME')).text()).toBe('lewydo.com\n');                        // the domain: GitHub Pages reads it from the branch
   for (const f of ['assets/og.png', 'assets/favicon.png', 'assets/icon-180.png', 'logo.png', 'banner.png', 'brand.png'])
@@ -1099,6 +1099,7 @@ test('the visit counter: one anonymous message per page — five fields, a coars
     const h = r.hits[0]; expect(Object.keys(h).sort()).toEqual(['c', 'e', 'p', 's', 'src']); return h; };
   expect(one(await open('./'))).toEqual({ s: 'st', p: 'home', e: 'view', c: 'none', src: 'none' });            // straight in
   expect(one(await open('./brand/')).p).toBe('other');
+  expect(one(await open('./press/')).p).toBe('press');
   expect(one(await open('./privacy.html')).p).toBe('privacy');
   expect(one(await open('./no-such-room')).p).toBe('other');
   const TT = 'Mozilla/5.0 (Linux; Android 13; CUBOT X30 Build/TP1A) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/120.0 Mobile Safari/537.36 musical_ly_2023109030 BytedanceWebview/d8a21c6';
@@ -1108,7 +1109,7 @@ test('the visit counter: one anonymous message per page — five fields, a coars
   expect(one(await open('./', { referer: 'https://orbitdash.lewydo.com/play/' })).src).toBe('orbitdash');
   expect(one(await open('./?utm_source=TikTok&utm_medium=bio')).src).toBe('tiktok');                         // a campaign tag, lower case
   expect(one(await open('./?utm_source=4f9a2b7c1d8e3f60')).src).toBe('none');                                // looks like an id: never taken
-  for (const f of ['index.html', 'brand/index.html', '404.html', 'privacy.html']) {                         // the files on disk say the same
+  for (const f of ['index.html', 'brand/index.html', 'press/index.html', '404.html', 'privacy.html']) {      // the files on disk say the same
     const js = (disk(f).match(/<script>\/\* Lewydo — our anonymous visit counter[\s\S]*?<\/script>/) || [''])[0];
     expect(js, f).toContain('navigator.sendBeacon(STATS');
     expect(js, f).not.toMatch(/document\.cookie|localStorage|sessionStorage|fetch\(|XMLHttpRequest/);   // the counter keeps and reads nothing
@@ -1139,4 +1140,68 @@ test('the story: atoozan’s stream on Twitch — nothing from Twitch until «Wa
   const src = await it.locator('.tl-tw iframe').getAttribute('src');
   expect(src).toBe('https://player.twitch.tv/?video=2926629558&parent=localhost&autoplay=true');         // his video, this page as the parent
   expect(disk('privacy.html')).toContain('player.twitch.tv');                                            // the policy says so
+});
+
+// the press page (owner 17.11.2026, the studio rule docs/process/press-kit.md): /press/ — English body, the site's header, languages and footer;
+// the fact sheet with hello@ and «Copy», About us and the story from the site, both games with their own press kits, the logo tiles, the zip;
+// «Press kit» in every page's header menu («•••», always last) and footer, in the visitor's language; nothing from third parties; 375 px and 320 px
+test('the press page: facts, story, games, logo tiles, the zip; «Press kit» in the header menu and the footer of every page, every language', async ({ browser, request }) => {
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'] });
+  const page = await ctx.newPage(), w = watch(page);
+  await page.goto('./press/?lang=uk');
+  await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
+  await expect(page.locator('main')).toHaveAttribute('lang', 'en');                                             // the body: English, for the press
+  await expect(page.locator('h1')).toHaveText('Lewydo press kit');
+  await expect(page.locator('.home b')).toHaveText('Для преси');                                               // the header: the visitor's language
+  await expect(page.locator('.foot-links a[aria-current="page"]')).toHaveText('Для преси');
+  const facts = await page.locator('.pk-facts dl').innerText();
+  for (const s of ['A two-person indie game studio from Ukraine', '2025', 'Poltava region, Ukraine', 'Vlad (code) and Lilya (design)', 'Love What You Do', 'lewydo.com', 'hello@lewydo.com'])
+    expect(facts).toContain(s);
+  expect(facts).not.toContain('support@');
+  await page.locator('.pk-copy').click();
+  await expect(page.locator('.pk-copy')).toHaveText(/Copied/);
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('hello@lewydo.com');
+  await expect(page.locator('#about .lead')).toContainText('Lewydo is a two-person indie game studio from Ukraine');
+  await expect(page.locator('.pk-ms li')).toHaveCount(11);
+  // the games: their own press kits and sites (the studio mark + the page's language), the stores
+  for (const [id, host] of [['orbitdash', OD], ['cubepix', CP]]) {
+    const card = page.locator(`#${id}`);
+    await expect(card.locator('a', { hasText: 'Press kit' })).toHaveAttribute('href', `${host}/press/?${MARK}&lang=uk`);
+    await expect(card.locator('a.store')).toHaveCount(2);
+  }
+  // the logo tiles: one height in a row, each with a preview, its size and a download that answers
+  const tiles = page.locator('.pk-tile');
+  await expect(tiles).toHaveCount(6);
+  const hs = await tiles.evaluateAll((ts) => ts.map((t) => Math.round(t.getBoundingClientRect().height)));
+  expect(new Set(hs).size, hs.join()).toBe(1);
+  for (const a of await page.locator('.pk-tile .pk-dl').evaluateAll((as) => as.map((x) => x.getAttribute('href')))) expect((await request.get('.' + a)).status(), a).toBe(200);
+  for (const im of await page.locator('.pk-tile img').evaluateAll((is) => is.map((x) => x.getAttribute('src')))) expect((await request.get('.' + im)).status(), im).toBe(200);
+  // the zip: the fact sheet and the logo files, a fixed date
+  const zip = await (await request.get('./press/lewydo-press-kit.zip')).body();
+  for (const f of ['fact-sheet.txt', 'logo/lewydo-avatar.png', 'logo/lewydo-lockup.png', 'logo/lewydo-wordmark.png', 'logo/lewydo-heart.png', 'logo/lewydo-slogan.png', 'logo/lewydo-pill.png'])
+    expect(zip.includes(Buffer.from('lewydo-press-kit/' + f + 'PK')) || zip.includes(Buffer.from('lewydo-press-kit/' + f)), f).toBe(true);
+  expect(zip.subarray(0, 4).toString('hex')).toBe('504b0304');                                                    // a zip
+  expect(zip.readUInt16LE(12)).toBe(((2026 - 1980) << 9) | (1 << 5) | 1);                                        // its fixed date: 01.01.2026
+  expect(zip.toString('utf8')).toContain('Press contact: hello@lewydo.com');
+  await expect(page.locator('.pk-cta a[download]')).toContainText(/ZIP · \d/);
+  // a phone: nothing sideways (375, and 320 right to left)
+  for (const [vw, L] of [[375, 'en'], [320, 'ar']]) { await page.setViewportSize({ width: vw, height: 800 }); await page.goto(`./press/?lang=${L}`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', L);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(vw); }
+  expect([...w.ext]).toEqual([]); expect(w.errs).toEqual([]); expect(w.hits.map((h) => h.p)).toContain('press');   // only our own counter left the page
+  // «Press kit» in the header menu («•••» — always visible, the item always last) and in the footer, of every page, in the visitor's language
+  for (const [path, vw, L, word] of [['./', 390, 'uk', 'Для преси'], ['./', 1280, 'de', 'Pressekit'], ['./brand/', 390, 'ja', 'プレスキット'], ['./brand/', 1440, 'en', 'Press kit']]) {
+    await page.setViewportSize({ width: vw, height: 800 }); await page.goto(`${path}?lang=${L}`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', L);
+    await expect(page.locator('#moreBtn')).toBeVisible();
+    await expect(page.locator('#moreMenu')).toBeHidden();
+    await page.locator('#moreBtn').click();
+    const last = page.locator('#moreMenu a:visible').last();
+    await expect(last).toHaveText(word);
+    expect(new URL(await last.evaluate((a) => a.href)).pathname).toBe('/press/');
+    await page.keyboard.press('Escape'); await expect(page.locator('#moreMenu')).toBeHidden();
+    await expect(page.locator(`footer a[href^="/press/"]`)).toHaveText(word);
+  }
+  for (const L of LANGS) { const d = JSON.parse(disk(`press/lang/${L}.json`)); expect(d.S['foot.press'], L).toBeTruthy(); }
+  await ctx.close();
 });
