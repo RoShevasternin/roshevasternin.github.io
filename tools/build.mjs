@@ -18,6 +18,9 @@ const SITE = 'https://lewydo.com/', HOST = new URL(SITE).host, YEAR = 2026;
 // shown here ({{mail}}, JSON-LD, brand.json); support@lewydo.com — the players of our games and privacy (the games' own pages and policies);
 // dev@lewydo.com — developer accounts and APIs, never shown
 const MAIL = 'hello@lewydo.com';
+// the «Support» block's donation pages (owner 16–17.11.2026, studio standard docs/process/donations.md): the monobank jar — the main green
+// button, once; Patreon (published 17.11.2026, tiers $3 / $5 / $10) — the quieter one beside it, monthly. Only pages that really take money.
+const JAR = 'https://send.monobank.ua/jar/73KdUqjNhC', PATREON = 'https://www.patreon.com/cw/lewydo/membership';
 // crypto donations (owner 16.11.2026, studio standard docs/process/donations.md): USDT on TRON (TRC-20) — the studio's donation-only wallet,
 // the same address byte for byte on all three sites; the QR is the owner's own, from his wallet app (decodes to exactly this address).
 // The build refuses a mistyped address (TRON base58check: 25 bytes, 0x41, double-SHA-256 checksum) or a missing QR.
@@ -153,6 +156,7 @@ const ICONS = {
   more: 'M5 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',   // «•••» in the header (src/more.css)
   press: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 4h8v2H8v-2z',   // «Press kit» (/press/)
   dl: 'M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z',   // a download (/press/)
+  patreon: 'M15.39 2.3a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2zM2.6 21.7h3.6V2.3H2.6z',   // the Patreon mark — its button in the «Support» block
   copy: 'M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z',   // «Copy» of the crypto address
   mail: 'M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z',
   twitch: 'M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0 1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143-3.428 3.428h-3.43l-3 3v-3H6.857V1.714h13.714z',   // the Twitch glitch (Simple Icons, CC0) — the story's first-Twitch entry
@@ -249,7 +253,7 @@ const fill = (html) => {
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/<!--cp-as-->([\s\S]*?)<!--\/cp-as-->/g, (m, b) => (G.cubepix.appStore ? b : ''))   // CubePix's App Store badge only once it is there
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{asIcon\}\}/g, asIcon).replace(/\{\{gpIn\}\}/g, gpIn).replace(/\{\{asIn\}\}/g, asIn).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
-    .replace(/\{\{usdt\}\}/g, USDT).replace(/\{\{usdtQr\}\}/g, '/' + USDT_QR)
+    .replace(/\{\{jar\}\}/g, JAR).replace(/\{\{patreon\}\}/g, PATREON).replace(/\{\{usdt\}\}/g, USDT).replace(/\{\{usdtQr\}\}/g, '/' + USDT_QR)
     .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|host|mail|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.appstore|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.appstore|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
