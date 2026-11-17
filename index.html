@@ -273,7 +273,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
   box-shadow:0 0 12px var(--acc);pointer-events:none;}
 .home{display:inline-flex;align-items:center;height:48px;text-decoration:none;border-radius:12px;opacity:0;transform:translateY(-4px);transition:opacity .35s ease,transform .35s ease;}
 .home .lw-sig{transform:scale(1.5);transform-origin:0 50%;}
-.home{width:calc(73px * 1.5);direction:ltr;}
+.home{width:calc(73px * 1.5);direction:ltr;flex:none;}   /* the sign never shrinks under the buttons (17.11.2026: «Lewydo» went under «Підтримати» on a phone) */
 .scrolled .home,.no-hero .home{opacity:1;transform:none;}
 .nav{display:none;margin-inline-start:auto;gap:2px;}
 .nav a{padding:9px 14px;border-radius:12px;color:var(--ink2);font-weight:800;font-size:15px;text-decoration:none;transition:color .2s,background-color .2s;}
@@ -383,6 +383,10 @@ h1,h2,h3,p,li,dd,dt,figcaption{overflow-wrap:break-word;}
 .top-in .langsel{margin-inline-start:0;}
 @media (min-width:880px){.top-support{margin-inline-start:6px;}}
 @media (max-width:359px){.top-support{width:40px;padding:0;justify-content:center;} .top-support span{display:none;}}
+/* any width, any language — fitTop(): the header has no room (uk «Підтримати» at 390 px) → first the word «Lewydo» steps back (the mark stays, the
+   button keeps its word: owner 16.11 «visitors should notice the support option»), then, if still too narrow, the button — to its heart */
+.top-in.sig-ico .home{width:36px;} .top-in.sig-ico .home .lw-name{display:none;}
+.top-in.sup-ico .top-support{width:40px;padding:0;justify-content:center;} .top-in.sup-ico .top-support span{display:none;}
 @keyframes supBeat{0%,82%,100%{transform:scale(1);}86%{transform:scale(1.14);}90%{transform:scale(1);}94%{transform:scale(1.08);}}
 
 /* ── the hero: pixels of every Lewydo game fly together into the heart ── */
@@ -1869,8 +1873,11 @@ function startLang() { applyLang(); if (lang === 'en') return;
 
 const pic = (key, f) => { const own = DICT[lang] && DICT[lang].pics; return ((own && own[key]) || D.cp.pics[key])[f] || ''; };
 // one line in every language: a long one gets smaller instead of wrapping (the brand's «Thank you for playing!»)
-function fitLines() { $$('[data-fit]').forEach((el) => { el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);
+function fitLines() { fitTop(); $$('[data-fit]').forEach((el) => { el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);
   while (fs > 11 && el.scrollWidth > el.clientWidth + .5) { fs -= .5; el.style.fontSize = fs + 'px'; } }); }
+// the header too narrow for this language: «♥ Support» steps back to its heart (owner 17.11.2026, the photo of the header on a phone)
+function fitTop() { const t = document.querySelector('.top-in'); if (!t) return; t.classList.remove('sig-ico', 'sup-ico');
+  for (const c of ['sig-ico', 'sup-ico']) if (t.scrollWidth > t.clientWidth + .5) t.classList.add(c); }
 onLang.push(fitLines); addEventListener('resize', fitLines); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLines);
 
 // how to say «Lewydo»: Lev-why-do (/lɛv.waɪ.doʊ/) — the device's own voice says it
