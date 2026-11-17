@@ -18,7 +18,7 @@
 | платформа | працює? | куди гроші | стан |
 |---|---|---|---|
 | **Банка monobank** | ✅ | одразу на картку Mono (гривні); іноземні картки здебільшого проходять (комісія для них ≈ 2 %) | основна; лінк — від власника |
-| **Patreon** (щомісячно) | ✅ | **Payoneer** (PayPal для України Patreon не виплачує); податкова форма W-8BEN — власник | у роботі |
+| **Patreon** (щомісячно) | ✅ | **Payoneer** (PayPal для України Patreon не виплачує) — підключить власник після схвалення Payoneer; податкова форма W-8BEN — власник | ✅ **опубліковано 17.11.2026**, рівні $3 / $5 / $10; кнопка «Monthly on Patreon» — у блоці на всіх сайтах |
 | **itch.io** | ✅ | Payoneer / PayPal, «collected by itch.io» | сторінка веб-гри Orbit Dash з донатом (16.11); веб-гра там — та сама, що на сайті (заморожена до релізу); RANKS / VERSUS там офлайн — сервер пускає лише orbitdash.lewydo.com (CORS) |
 | **Ko-fi** | ⚠️ сторінка є (ko-fi.com/lewydo), **донати не працюють** | Ko-fi приймає лише PayPal або Stripe: Stripe не працює з Україною, а **особистий PayPal з України не може приймати платежі** (Ko-fi пише «You cannot currently receive payments…», хоч телефон і картку підтверджено). Корпоративного PayPal в Україні немає | на сайти **не ставимо** |
 | **PayPal.Me** | ❓ | лише як переказ «між друзями»; від незнайомців може блокуватись | лише після тесту (власник: $1 з другого PayPal) |
@@ -40,7 +40,7 @@
 
 ## Прототип і тексти
 
-- **Прототип блоку** — `docs/process/donations/block-prototype.html` (https://claude.ai/artifact/13fD2RdsKj6ZUeQqiBgZZx): повний блок + компактна пігулка в підвалі, 3 варіанти тексту. **Власник 16.11.2026 обрав A:** «Help the next level come sooner» / «Lewydo is a two-person indie studio from Ukraine. Every track and every level in Orbit Dash and CubePix is made by hand. Your support buys time for new levels, new music and updates.» / кнопка «Donate once». Кнопка Patreon — лише коли сторінка опублікована; плашку «your name on our supporters list» — лише коли список є на сайті.
+- **Прототип блоку** — `docs/process/donations/block-prototype.html` (https://claude.ai/artifact/13fD2RdsKj6ZUeQqiBgZZx): повний блок + компактна пігулка в підвалі, 3 варіанти тексту. **Власник 16.11.2026 обрав A:** «Help the next level come sooner» / «Lewydo is a two-person indie studio from Ukraine. Every track and every level in Orbit Dash and CubePix is made by hand. Your support buys time for new levels, new music and updates.» / кнопка «Donate once». Кнопка Patreon — лише коли сторінка опублікована (опубліковано 17.11.2026 → кнопка стоїть, див. «Кнопка Patreon» нижче); плашку «your name on our supporters list» — лише коли список є на сайті.
 - **Тексти Patreon і банки** — `docs/process/donations/patreon.md`.
 
 ## Сторінки студії
@@ -50,8 +50,22 @@
 | Ko-fi | https://ko-fi.com/lewydo (донати не працюють — див. вище) |
 | банка monobank | https://send.monobank.ua/jar/73KdUqjNhC — «Lewydo — розробка», мета 10 000 ₴ (16.11.2026). На сайтах — **лише лінк**, номер картки банки не публікуємо; на lewydo.com з 16.11.2026 — блок `#support`, пігулки «♥ Support» у шапці й «Support Lewydo ♥» у підвалі |
 | itch.io | https://lewydo.itch.io (профіль) · https://lewydo.itch.io/orbit-dash — веб-гра Orbit Dash, «$0 or donate», пропонований донат $3; виплати — Payoneer (власник) |
-| Patreon | patreon.com/lewydo — створює власник (Patreon заблокований для браузерів Claude) |
+| Patreon | **кнопка веде на сторінку підписки** https://www.patreon.com/cw/lewydo/membership (видно три рівні); сторінка автора — https://www.patreon.com/cw/lewydo. Опубліковано 17.11.2026, рівні $3 / $5 / $10; виплати — Payoneer (підключить власник після схвалення Payoneer). Акаунт веде власник (Patreon заблокований для браузерів Claude) |
 | крипта USDT (TRC-20) | `TSD5GNPX2tdAZcQYrm3yEmvQCweE6cC9jY` (мережа TRON) — див. «Крипта» |
+
+## Кнопка Patreon — частина стандартного блоку (власник 17.11.2026)
+
+Сторінку опубліковано 17.11.2026 (рівні $3 / $5 / $10) → «додати кнопку на сайти … поруч із підтримкою». **Однаково на всіх сайтах**:
+- поруч із головною зеленою кнопкою «Donate once» (банка monobank) — **друга, тихіша** кнопка: скло, тонка зелена обвідка, знак Patreon,
+  підпис **«Monthly on Patreon»** / «Щомісяця на Patreon» (ключ `support.patreon`, усіма мовами сайту; слово **Patreon не перекладається**);
+- адреса — **https://www.patreon.com/cw/lewydo/membership** (одразу підписка, три рівні), `target="_blank" rel="noopener"`;
+- `data-sup="patreon"` — лічильник «Підтримати» знає цю ціль (`SUP`);
+- телефон: якщо поруч не влазять — одна під одною на всю ширину блоку, однакові; без бокового гортання; справа наліво — дзеркально
+  (банка праворуч);
+- у шапці / підвалі — нічого не додаємо: там лише пігулки «♥ Support» → `#support`.
+
+lewydo.com (цей репо): адреса — `PATREON` у `tools/build.mjs` (поруч із `JAR`), кнопка — `src/index.html` (`.btn-pat`), тест —
+«support the developer…» і «the visit counter: a tap in the «Support» block…» у `tests/site.spec.mjs`.
 
 ## Крипта (USDT TRC-20) — частина стандартного блоку (власник 16.11.2026)
 

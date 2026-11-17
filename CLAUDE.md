@@ -258,13 +258,16 @@ lewydo, slogan, brand_line, Lewydo/Lockup → lockup.png, Lewydo/Signature → p
    текст **A**): секція одразу перед контактами — серце-аватар студії (`assets/support-heart.webp` з `brand/kit/png/avatar.png`, легке
    серцебиття), «Support the developer» / «Help the next level come sooner» / текст «Lewydo is a two-person indie studio from Ukraine…» (власник 16.11.2026:
    **не «one indie developer» / «solo»** — «Про нас» каже, що нас двоє), **одна** зелена кнопка «Donate once» → банка monobank
-   https://send.monobank.ua/jar/73KdUqjNhC (`target="_blank" rel="noopener"`), рядок «Any card, any country · secure page by monobank» і дві
+   https://send.monobank.ua/jar/73KdUqjNhC (`JAR` у `tools/build.mjs`, `target="_blank" rel="noopener"`), поруч — **тихіша кнопка Patreon** (власник 17.11.2026:
+   сторінку опубліковано, рівні $3 / $5 / $10): скло, тонка зелена обвідка, «Monthly on Patreon» (`support.patreon`, 82 мови, Patreon не
+   перекладається) → https://www.patreon.com/cw/lewydo/membership (`PATREON` у `tools/build.mjs`), нова вкладка, `data-sup="patreon"`;
+   ≤ 600 px — одна під одною на всю ширину, ≤ 360 px — вужчі поля, щоб підпис стояв одним рядком; RTL — банка праворуч. Рядок «Any card, any country · secure page by monobank» і дві
    плитки (нові рівні, оновлення). Між рядком і плитками — **крипта** (стандарт студії 16.11.2026, `docs/process/donations.md` → «Крипта»):
    USDT TRC-20 `TSD5GNPX2tdAZcQYrm3yEmvQCweE6cC9jY` (`USDT` у `tools/build.mjs` — збірка перевіряє base58check і що є QR), QR власника
    `assets/support/usdt-trc20-qr.webp` на білій картці, «Copy» → «Copied ✓», попередження про мережу; тексти `support.crypto/copy/copied/cryptoWarn/qrAlt`.
    **Пігулка «♥ Support»** у шапці — завжди, і на телефоні (між меню й мовою; < 360 px — лише серце, назва — для
    читачів екрана); **пігулка «Support Lewydo ♥»** у підвалі під значками мереж. Обидві → `#support`. Тексти — `support.*` усіма 82 мовами.
-   **Не ставити:** Patreon / Ko-fi / PayPal, поки не приймають гроші (див. правило), плитку «список підтримки», поки списку немає, номер картки.
+   **Не ставити:** Ko-fi / PayPal, поки не приймають гроші (див. правило), плитку «список підтримки», поки списку немає, номер картки.
    Стереже `npm test` («support the developer…»).
 7. **Контакти й мережі** (власник 03.10.2026): Telegram — робочий **@vlad_libgdx** (картка Влада й кнопка в контактах), у Лілі
    Telegram прибрано; «Lewydo в соцмережах» у контактах і значками в підвалі: TikTok https://www.tiktok.com/@lewydo_game,
@@ -336,7 +339,7 @@ page…», картинки — `npm run look` (у сезоні — тема; `Q
 - **Тапи в блоці «Підтримати»** (власник 17.11.2026: «хочу бачити в ранковому звіті по сайтах скільки юзерів натиснуло на підтримати по нашим
   сайтам»; розділ «♥ Підтримати» звіту): кнопка з атрибутом `data-sup="…"` → `src/stats.js` (делегований `click`, capture) шле
   `{s:"st", p, e:"support", c:"none", src, t}`, `t` — лише зі списку `SUP` (= `SUPPORT_TARGETS` сервера): `open` (пігулки «♥ Support» у шапці
-  й підвалі → `#support`), `jar` (банка monobank), `crypto` («Copy» адреси USDT), `itch`, `patreon` (коли з'являться — просто `data-sup`
+  й підвалі → `#support`), `jar` (банка monobank), `crypto` («Copy» адреси USDT), `patreon` (кнопка Patreon у блоці, з 17.11.2026), `itch` (коли з'явиться — просто `data-sup`
   на кнопці). Нова кнопка блоку — **з `data-sup`**; нова ціль — спершу сервер і політика (`#visit-counter`). Стереже `npm test`
   («the visit counter: a tap in the «Support» block…»).
 - **`src/privacy.html` → `/privacy.html`** — політика самого сайту (англійською, як у ігор): лічильник (`#visit-counter`), що сайт тримає в

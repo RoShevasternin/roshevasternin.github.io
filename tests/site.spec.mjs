@@ -578,22 +578,34 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
   expect(w.errs.filter((e) => !/Failed to load resource|ERR_FAILED/.test(e))).toEqual([]);
 });
 
-// support the developer (owner 16.11.2026, docs/process/donations.md — text A): the block right before the contacts, one button — the monobank jar
-// in a new tab; nothing that does not take money yet (Patreon, Ko-fi, PayPal), no card number; «♥ Support» in the header on every phone
+// support the developer (owner 16.11.2026, docs/process/donations.md — text A): the block right before the contacts, the monobank jar — the main
+// green button — in a new tab, and beside it Patreon, monthly (published 17.11.2026), the quieter one, in a new tab too; nothing that does not take
+// money yet (Ko-fi, PayPal), no card number; on a phone the two buttons stand one under the other, the same width, inside the card; «♥ Support» in the header on every phone
 // (the heart alone under 360 px) and a pill in the footer, both to #support; nothing sideways, RTL too
-test('support the developer: the block before the contacts, the monobank jar in a new tab, crypto (USDT TRC-20, copy, QR), the header and footer pills; 320 px; RTL', async ({ browser }) => {
-  const JAR = 'https://send.monobank.ua/jar/73KdUqjNhC';
+test('support the developer: the block before the contacts, the monobank jar and Patreon in a new tab, crypto (USDT TRC-20, copy, QR), the header and footer pills; 320 px; RTL', async ({ browser }) => {
+  const JAR = 'https://send.monobank.ua/jar/73KdUqjNhC', PATREON = 'https://www.patreon.com/cw/lewydo/membership';
   const USDT = 'TSD5GNPX2tdAZcQYrm3yEmvQCweE6cC9jY';                                 // the studio's USDT (TRC-20) wallet — identical on every site
   expect(createHash('md5').update(readFileSync(new URL('assets/support/usdt-trc20-qr.webp', ROOT))).digest('hex').length).toBe(32);   // the QR is there
-  for (const [lang, width] of [['en', 1440], ['uk', 390], ['de', 360], ['ar', 390], ['ta', 320]]) {
+  for (const [lang, width] of [['en', 1440], ['uk', 390], ['de', 360], ['ar', 390], ['ta', 320], ['es', 430], ['ar', 320], ['ar', 1280]]) {
     const ctx = await browser.newContext({ viewport: { width, height: 800 } }), page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
     await page.goto(`./?lang=${lang}`);
     await expect(page.locator('html')).toHaveAttribute('data-words', lang);
     expect(await page.evaluate(() => document.querySelector('#support').nextElementSibling?.id), tag).toBe('contact');
-    const give = page.locator('#support .ctas a');
-    await expect(give, tag).toHaveCount(1);
-    await expect(give).toHaveAttribute('href', JAR); await expect(give).toHaveAttribute('target', '_blank'); await expect(give).toHaveAttribute('rel', 'noopener');
-    expect(await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.href).filter((h) => /patreon|ko-fi|paypal|buymeacoffee/i.test(h))), tag).toEqual([]);
+    await expect(page.locator('#support .ctas a'), tag).toHaveCount(2);
+    for (const [k, u, t] of [['jar', JAR, 'support.donate'], ['patreon', PATREON, 'support.patreon']]) {
+      const a = page.locator(`#support .ctas a[data-sup="${k}"]`);
+      await expect(a, tag).toHaveAttribute('href', u); await expect(a, tag).toHaveAttribute('target', '_blank'); await expect(a, tag).toHaveAttribute('rel', 'noopener');
+      await expect(a.locator('span'), tag).toHaveAttribute('data-t', t); await expect(a, tag).toHaveText(/\S/);
+    }
+    if (lang === 'en') await expect(page.locator('#support .ctas a[data-sup="patreon"]')).toHaveText('Monthly on Patreon');
+    if (lang === 'uk') await expect(page.locator('#support .ctas a[data-sup="patreon"]')).toHaveText('Щомісяця на Patreon');
+    expect(await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.href).filter((h) => /patreon|ko-fi|paypal|buymeacoffee/i.test(h))), tag).toEqual([PATREON]);
+    await page.locator('#support .ctas').scrollIntoViewIfNeeded();
+    const cta = await page.evaluate(() => { const b = (s) => document.querySelector(s).getBoundingClientRect(), c = b('.support-card'), j = b('#support [data-sup="jar"]'), p = b('#support [data-sup="patreon"]');
+      const one = (r) => r.top === j.top ? 'row' : 'col';
+      return { in: [j, p].every((r) => r.left >= c.left - .5 && r.right <= c.right + .5), lay: one(p), same: Math.round(j.width) === Math.round(p.width),
+        first: p.top > j.top + 1 || (getComputedStyle(document.documentElement).direction === 'rtl' ? j.left > p.left : j.left < p.left) }; });
+    expect(cta, tag).toEqual(width <= 600 ? { in: true, lay: 'col', same: true, first: true } : { in: true, lay: 'row', same: cta.same, first: true });   // the jar first (RTL — on the right)
     expect(await page.locator('#support').textContent(), tag).not.toMatch(/\d{4}\s?\d{4}\s?\d{4}\s?\d{4}/);   // never a card number
     await expect(page.locator('#support .support-goes li'), tag).toHaveCount(2);
     // crypto (owner 16.11.2026, docs/process/donations.md): the one address, byte for byte; «Copy»; the owner's QR; nothing overflows
@@ -1132,26 +1144,28 @@ test('the visit counter: a tap in the «Support» block — exactly one message 
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
   await ctx.route(/send\.monobank\.ua/, (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>jar</title>' }));   // the jar's tab: answered here
+  await ctx.route(/patreon\.com/, (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>patreon</title>' }));   // Patreon's tab too
   const page = await ctx.newPage(), w = watch(page);
   await page.goto('./?lang=en');
   await expect.poll(() => w.hits.length).toBe(1);
   expect(w.hits[0]).toEqual({ s: 'st', p: 'home', e: 'view', c: 'none', src: 'none' });
   const tap = async (sel, t) => {
     w.hits.length = 0;
-    const pop = t === 'jar' ? ctx.waitForEvent('page') : null;
+    const pop = t === 'jar' || t === 'patreon' ? ctx.waitForEvent('page') : null;
     await page.locator(sel).click();
-    if (pop) { const p2 = await pop; await p2.close(); }
+    if (pop) { const p2 = await pop; await p2.waitForLoadState(); if (t === 'patreon') expect(p2.url()).toBe('https://www.patreon.com/cw/lewydo/membership'); await p2.close(); }
     await expect.poll(() => w.hits.length, sel).toBe(1);
     await page.waitForTimeout(250);                                                                    // and not a second one
     expect(w.hits, sel).toHaveLength(1);
     expect(Object.keys(w.hits[0]).sort(), sel).toEqual(['c', 'e', 'p', 's', 'src', 't']);
     expect(w.hits[0], sel).toEqual({ s: 'st', p: 'home', e: 'support', c: 'none', src: 'none', t });
   };
-  await expect(page.locator('[data-sup]')).toHaveCount(4);                                            // the header and footer pills, the jar, «Copy»
+  await expect(page.locator('[data-sup]')).toHaveCount(5);                                            // the header and footer pills, the jar, Patreon, «Copy»
   await page.evaluate(() => window.scrollTo(0, 3000)); await page.waitForTimeout(200);
   await tap('.top .top-support', 'open');
   await tap('.foot .support-pill', 'open');
-  await tap('#support .ctas a', 'jar');
+  await tap('#support .ctas a[data-sup="jar"]', 'jar');
+  await tap('#support .ctas a[data-sup="patreon"]', 'patreon');
   await tap('#usdtCopy', 'crypto');
   await expect(page.locator('#usdtCopy')).toHaveText('Copied ✓');                                     // the button still does its job
   w.hits.length = 0;                                                                                   // anything else — nothing
