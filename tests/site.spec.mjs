@@ -580,7 +580,7 @@ test('Vlad’s favourite song: the record opens YouTube’s own player only on a
 
 // support the developer (owner 16.11.2026, docs/process/donations.md — text A): the block right before the contacts, one button — the monobank jar
 // in a new tab; nothing that does not take money yet (Patreon, Ko-fi, PayPal), no card number; «♥ Support» in the header on every phone
-// (the heart alone under 360 px) and a pill in the footer, both to #support; nothing sideways, RTL too
+// (the heart alone under 480 px) and a pill in the footer, both to #support; nothing sideways, RTL too
 test('support the developer: the block before the contacts, the monobank jar in a new tab, crypto (USDT TRC-20, copy, QR), the header and footer pills; 320 px; RTL', async ({ browser }) => {
   const JAR = 'https://send.monobank.ua/jar/73KdUqjNhC';
   const USDT = 'TSD5GNPX2tdAZcQYrm3yEmvQCweE6cC9jY';                                 // the studio's USDT (TRC-20) wallet — identical on every site
@@ -610,11 +610,15 @@ test('support the developer: the block before the contacts, the monobank jar in 
       return bad; }), tag).toEqual([]);
     for (const k of ['.top .top-support', '.foot .support-pill']) await expect(page.locator(k), tag).toHaveAttribute('href', '#support');
     await page.evaluate(() => window.scrollTo(0, 3000)); await page.waitForTimeout(200);    // the header's signature is in: pill, sign and language button side by side
-    const r = await page.evaluate(() => { const b = (s) => document.querySelector(s).getBoundingClientRect(), p = b('.top-support'), l = b('#langBtn'), h = b('.top .home');
+    // [17.11.2026] власник: на телефоні «♥ Support» лягав на «Lewydo♥» — міряємо сам підпис (.lw-sig, він ширший за коробку .home, коли та стискалась),
+    // і кожну кнопку шапки: усе в межах екрана, ніщо ні на що не лягає; слово «Support» — лише від 480 px
+    const r = await page.evaluate(() => { const b = (s) => document.querySelector(s).getBoundingClientRect(), p = b('.top-support'), l = b('#langBtn'), h = b('.top .home'), g = b('.top .home .lw-sig'), m = b('.top .more-btn');
       const hit = (a, c) => a.left < c.right - .5 && c.left < a.right - .5;
-      return { vis: p.width > 0 && getComputedStyle(document.querySelector('.top-support')).visibility === 'visible', hit: hit(p, l) || hit(p, h), in: p.left >= 0 && p.right <= innerWidth,
+      const all = [g, p, m, l].sort((a, c) => a.left - c.left), over = all.some((a, i) => i && hit(all[i - 1], a));
+      return { vis: p.width > 0 && getComputedStyle(document.querySelector('.top-support')).visibility === 'visible', hit: hit(p, l) || hit(p, h) || over,
+        in: [g, p, m, l].every((a) => a.left >= -.5 && a.right <= innerWidth + .5),
         word: getComputedStyle(document.querySelector('.top-support span')).display !== 'none', sw: document.documentElement.scrollWidth }; });
-    expect(r, tag).toEqual({ vis: true, hit: false, in: true, word: width >= 360, sw: width });
+    expect(r, tag).toEqual({ vis: true, hit: false, in: true, word: width >= 480, sw: width });
     await expect(page.locator('.top-support'), tag).toHaveAttribute('aria-label', /Lewydo/);
     if (lang === 'en') {                                                                             // «Copy» → the clipboard holds the address, «Copied ✓», then back
       await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
