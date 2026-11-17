@@ -796,7 +796,7 @@ test('the contacts’ address: hello@lewydo.com with «Copy», and «Write to us
 
 test('the story: the first streamer to play our game live (22.10.2026) — our own clip, loaded only when needed; the thank-you; his links', async ({ page, request }) => {
   const w = watch(page), media = [];
-  page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus|ios|twitch-review)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
+  page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus|ios|twitch-review|film)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
   await page.goto('./?lang=uk');
   const li = page.locator('#first-live');
   await expect(li.locator('h3')).toHaveText('Orbit Dash у прямому ефірі TikTok');
@@ -967,10 +967,84 @@ test('the story: Orbit Dash goes online (10.11.2026) — the milestone emblem, t
   }
 });
 
+// 17.11.2026 — our first video from a creator: FablessBridge (X) offered to make a video for Orbit Dash for free, and made it — «Orbit Dash in 30 seconds».
+// The newest entry (after #first-review); our own film emblem is the dot and the thumbnail — on the line, centred, at 390 and 1440, either side, RTL;
+// the clip is our own 16:9 file: no poster until the story is unfolded, nothing of the video until a tap; the X post and his profile — links only
+// (nothing from x.com before a tap); the thank-you carries the founder's sign; the paper plane never sits on the card; 320 px
+test('the story: our first video from a creator (17.11.2026) — the film emblem on the line, our own 16:9 clip on a tap, the X links; RTL; 320 px', async ({ browser, request }) => {
+  test.setTimeout(180_000);
+  const svg = await request.get('./assets/story/film.svg'); expect(svg.status()).toBe(200);
+  const src = await svg.text(); expect(src).toContain('viewBox="0 0 32 32"'); expect(src).toContain('#00E5FF'); expect(src).toContain('#FF4FD8'); expect(src).not.toMatch(/https?:\/\/(?!www\.w3\.org)/);
+  const mp4 = await request.get('./assets/story/fablessbridge.mp4'), jpg = await request.get('./assets/story/fablessbridge.jpg');
+  expect(mp4.status()).toBe(200); expect(jpg.status()).toBe(200); expect((await mp4.body()).length).toBeLessThan(5 * 1024 * 1024);
+  const TITLE = { uk: 'Перше відео про нашу гру від автора', en: 'Our first video from a creator' };
+  for (const [lang, width] of [['uk', 390], ['en', 1440], ['uk', 1440], ['ar', 390], ['he', 1440], ['ta', 320], ['uk', 320]]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 844 } });
+    const page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`, media = [];
+    page.on('request', (r) => { if (/\/assets\/story\/fablessbridge\./.test(r.url())) media.push(new URL(r.url()).pathname); });
+    await page.goto(`./?lang=${lang}#first-video`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    const li = page.locator('#first-video');
+    await expect(li).toHaveClass(/\bopen\b/); await expect(li).toHaveClass(/\bfilm\b/);
+    expect(await li.evaluate((e) => [e.previousElementSibling?.id, e.nextElementSibling]), tag).toEqual(['first-review', null]);   // the newest — last
+    if (TITLE[lang]) await expect(li.locator('h3')).toHaveText(TITLE[lang]);
+    await expect(li.locator('.tl-when')).toHaveText('17 · 11 · 2026');
+    const d = await li.locator('.tl-pad > p').innerText(), thanks = await li.locator('.tl-thanks p').innerText();
+    for (const k of ['FablessBridge', 'Orbit Dash in 30 seconds', 'MOSSLIGHT', 'THE LAST TOCCATA']) expect(d, tag).toContain(k);
+    expect(thanks, tag).toContain('FablessBridge');
+    if (RTL.includes(lang)) { expect(d, tag).toContain('⁦FablessBridge⁩'); expect(thanks, tag).toContain('⁦FablessBridge⁩'); }
+    await expect(li.locator('.tl-thanks footer')).toHaveText(await page.locator('#first-live .tl-thanks footer').innerText());   // the same sign as the other thank-yous
+    const links = li.locator('.tl-links a');
+    await expect(links).toHaveCount(2);
+    await expect(links.nth(0)).toHaveAttribute('href', 'https://x.com/FablessBridge/status/2122724243242910002');
+    await expect(links.nth(1)).toHaveAttribute('href', 'https://x.com/FablessBridge'); await expect(links.nth(1)).toHaveText('@FablessBridge');
+    await expect(links.nth(1).locator('span')).toHaveAttribute('dir', 'ltr');
+    for (let i = 0; i < 2; i++) await expect(links.nth(i).locator('svg')).toHaveCount(1);
+    // the clip: ours, 16:9, never by itself; the poster once unfolded, the video only on a tap
+    const v = li.locator('video');
+    await expect(v).toHaveAttribute('preload', 'none'); await expect(v).toHaveAttribute('controls', '');
+    expect(await v.evaluate((e) => e.autoplay || e.muted), tag).toBe(false);
+    await expect(v.locator('source')).toHaveAttribute('src', '/assets/story/fablessbridge.mp4');
+    await expect(v).toHaveAttribute('aria-label', /FablessBridge/);
+    await expect.poll(() => v.evaluate((e) => e.getAttribute('poster')), tag).toBe('/assets/story/fablessbridge.jpg');
+    expect(media.filter((m) => m.endsWith('.mp4')), tag).toEqual([]);
+    expect(await v.evaluate((e) => { const r = e.getBoundingClientRect(); return Math.round(r.width / r.height * 100); }), tag).toBe(178);
+    const [vb, cb] = await Promise.all([v.boundingBox(), li.locator('.tl-card').boundingBox()]);
+    expect(vb.x >= cb.x - 1 && vb.x + vb.width <= cb.x + cb.width + 1, tag).toBe(true);
+    // the emblem is the dot (32 px, centred like the others) and the thumbnail
+    expect(await li.evaluate((e) => getComputedStyle(e, '::before').backgroundImage), tag).toContain('/assets/story/film.svg');
+    const th = li.locator('.tl-thumb'); await expect(th).toHaveAttribute('src', '/assets/story/film.svg');
+    await expect.poll(() => th.evaluate((e) => e.complete && e.naturalWidth > 0), tag).toBe(true);
+    const dot = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'); return { w: parseFloat(c.width), h: parseFloat(c.height), top: parseFloat(c.top) }; });
+    expect(dot.w, tag).toBe(32); expect(Math.abs(dot.top + dot.h / 2 - 37.5), tag).toBeLessThanOrEqual(.5);
+    const off = await li.evaluate((e) => { const c = getComputedStyle(e, '::before'), tl = e.closest('.tl'), l = getComputedStyle(tl, '::before');
+      const r = e.getBoundingClientRect(), lr = tl.getBoundingClientRect();
+      const dx = (c.left !== 'auto' ? r.left + parseFloat(c.left) : r.right - parseFloat(c.right) - parseFloat(c.width)) + parseFloat(c.marginLeft) + parseFloat(c.width) / 2;
+      const lx = (l.left !== 'auto' ? lr.left + parseFloat(l.left) : lr.right - parseFloat(l.right) - parseFloat(l.width)) + parseFloat(l.marginLeft) + parseFloat(l.width) / 2; return dx - lx; });
+    expect(Math.abs(off), tag).toBeLessThanOrEqual(.5);
+    for (const el of await li.locator('.tl-head, .tl-pad > p, .tl-links a').all()) {                      // nothing spills out of the card
+      const [r, c] = await Promise.all([el.boundingBox(), li.locator('.tl-card').boundingBox()]);
+      expect(r.x >= c.x - 1 && r.x + r.width <= c.x + c.width + 1, tag).toBe(true);
+    }
+    // the paper plane («Write to us») never sits on the card's buttons or the video's controls
+    await li.locator('.tl-links').scrollIntoViewIfNeeded(); await page.waitForTimeout(400);
+    expect(await page.evaluate(() => { const f = document.getElementById('ctPlane'); if (!f || f.classList.contains('off')) return [];
+      const r = f.getBoundingClientRect(); return [...document.querySelectorAll('#first-video .tl-links a')].filter((e) => { const b = e.getBoundingClientRect();
+        return r.left < b.right && b.left < r.right && r.top < b.bottom && b.top < r.bottom; }).map((e) => e.textContent.trim()); }), tag).toEqual([]);
+    // a tap plays our own file — and still nothing from x.com
+    await v.evaluate((e) => { e.play().catch(() => {}); });                                    // not awaited: the play() promise may wait on the file
+    await expect.poll(() => media.some((m) => m.endsWith('.mp4')), tag).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), tag).toBeLessThanOrEqual(width);
+    expect([...w.ext], tag).toEqual([]);
+    expect(w.errs.filter((e) => !/play\(\)|NotAllowedError|NotSupportedError/.test(e)), tag).toEqual([]);
+    await ctx.close();
+  }
+});
+
 // 31.10.2026 (owner): «спочатку перші 3 частини, а потім по 1… або одразу все» — the story folds, and still scales as it grows
 test('the story folds: the first 3, then one more at a time (under the finger) or all of it; collapse; links open their entry; RTL; 320 px; reduced motion', async ({ browser }) => {
   test.setTimeout(240_000);
-  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan', 'first-twitch', 'first-ios', 'first-online'];
+  const LINKS = ['languages-82', 'first-live', 'web', 'first-sale', 'app-store', 'first-fan', 'first-twitch', 'first-ios', 'first-online', 'first-review', 'first-video'];
   const vis = (page) => page.evaluate(() => [...document.querySelectorAll('#tl .tl-i')].filter((l) => !l.hidden).length);
   const focused = (page, i) => page.evaluate((i) => document.activeElement === document.querySelectorAll('#tl .tl-i')[i].querySelector('.tl-tog'), i);
   // the reveal's own animations (scripted; CSS transitions such as a dot lighting up don't count)
