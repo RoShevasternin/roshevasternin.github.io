@@ -15,3 +15,9 @@
 .more-menu a svg{width:16px;height:16px;flex:none;fill:var(--mint);}
 .more-menu hr{border:0;height:1px;margin:6px 8px;background:rgba(157,245,194,.16);}
 @media (max-width:360px){.more-btn{width:36px;}}
+/* /brand/ and /press/: the page's badge by the sign is always whole, in every language and on every width (owner 17.11.2026: «the text
+   comes out of the header») — src/more.js steps it down: the sign to its heart (sig-ico), then the badge on two lines (badge-2), then smaller */
+.top-in.sig-ico .home .lw-name{display:none;}
+.top-in.sig-ico .home .lw-sig{transform:scale(1.25);margin-right:6px;}
+.top-in.badge-2 .home{min-width:0;}
+.top-in.badge-2 .home b{min-width:0;white-space:normal;line-height:1.15;letter-spacing:.04em;text-align:center;border-radius:10px;}

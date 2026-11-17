@@ -1,0 +1,76 @@
+<!-- The paper plane to the contacts (owner 17.11.2026: «a little plane on every site that scrolls to the section with the contacts»; the same on
+     orbitdash.lewydo.com and cubepix.lewydo.com). A round button the size of the music record, right above it (the script moves it into the
+     record's column, so it also rises above the song's card when that is open); on a page without the record — in that same corner.
+     The main page: a tap glides to #contact (at once with reduced motion), the section's title takes the focus, the address says #contact.
+     Every other page (/brand/, /press/, 404): a link to the main page's contacts, /#contact (in the page's language — data-lang-link).
+     It fades away while the contacts are on screen (it has nothing to add there) and while a button of the page is under it — a call to
+     action, the footer's links, the floating «Collapse the story» — so it never covers one. Its name and tooltip — contact.mail («Write to us»), the page's language.
+     The build's «plane:here» — the main page, «plane:home» — the others (tools/build.mjs). -->
+<style>
+.ct-dock{position:fixed;right:calc(max(16px,env(safe-area-inset-right)) + 2px);bottom:max(16px,env(safe-area-inset-bottom));z-index:45;pointer-events:none;}
+.mu ~ .ct-dock{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 68px);}   /* no script: above the record all the same */
+a.ct-plane{position:relative;display:grid;place-items:center;width:52px;height:52px;min-height:0;margin:0 2px 2px 0;padding:0;border-radius:50%;pointer-events:auto;
+  color:#9DF5C2;text-decoration:none;background:radial-gradient(circle at 50% 30%,#1d3a3a,#0a0c21 72%);
+  box-shadow:0 0 0 2px rgba(61,220,132,.62),0 0 22px rgba(61,220,132,.30),0 8px 22px rgba(0,0,0,.55);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  transition:opacity .22s ease,transform .22s ease,box-shadow .2s ease,visibility 0s;}
+.ct-dock a.ct-plane{margin:0;}
+a.ct-plane svg{width:26px;height:26px;overflow:visible;filter:drop-shadow(0 0 5px rgba(61,220,132,.55));transition:transform .2s ease;}
+html[dir="rtl"] a.ct-plane svg{transform:scaleX(-1);}   /* it flies the way the page reads */
+@media (hover:hover){a.ct-plane:hover{box-shadow:0 0 0 2px #3DDC84,0 0 28px rgba(61,220,132,.45),0 8px 22px rgba(0,0,0,.55);}
+  a.ct-plane:hover svg{transform:translate(2px,-2px);} html[dir="rtl"] a.ct-plane:hover svg{transform:scaleX(-1) translate(2px,-2px);}}
+a.ct-plane:active{transform:scale(.94);}
+a.ct-plane:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+a.ct-plane.off{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility 0s linear .22s;}   /* it keeps its place: only fades */
+@media (prefers-reduced-motion: reduce){a.ct-plane,a.ct-plane svg,a.ct-plane.off{transition:none;}}
+html.og .ct-dock,html.kit .ct-dock,html.og .ct-plane,html.kit .ct-plane{display:none !important;}
+@media print{.ct-dock,.ct-plane{display:none !important;}}
+</style>
+<div class="ct-dock" id="ctDock"><a class="ct-plane" id="ctPlane" {{planeHref}} data-ct="plane" data-ta="aria-label:contact.mail"><svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M21.4 2.6 2.9 10.1c-.75.3-.72 1.37.05 1.63l6.35 2.1 2.1 6.35c.26.77 1.33.8 1.63.05z" fill="rgba(61,220,132,.2)" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+  <path d="M21.4 2.6 9.3 13.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></a></div>
+<script>
+(() => {
+  const fab = document.getElementById('ctPlane'), dock = document.getElementById('ctDock'), mu = document.getElementById('mu');
+  if (!fab) return;
+  if (mu) { mu.prepend(fab); dock.remove(); }                     // in the record's column: right above it, and above its card when it opens
+  const sec = document.getElementById('contact'), head = sec && sec.querySelector('h2');
+  const RM = matchMedia('(prefers-reduced-motion: reduce)');
+  // the tooltip says what its name says — in the page's language (the name changes with it)
+  const tip = () => { fab.title = fab.getAttribute('aria-label') || ''; };
+  tip(); new MutationObserver(tip).observe(fab, { attributes: true, attributeFilter: ['aria-label'] });
+  // away while the contacts are on screen, or while a button of the page (a call to action, the footer's links, «Collapse the story») is under it
+  const AVOID = 'main .btn, footer a, footer button, .tl-more.done .tl-allb, [data-plane-avoid]';
+  let q = 0;
+  const check = () => { q = 0;
+    const r = fab.getBoundingClientRect(), near = (b) => b.width > 0 && b.height > 0 && b.left < r.right + 6 && b.right > r.left - 6 && b.top < r.bottom + 6 && b.bottom > r.top - 6;
+    let off = !!sec && (() => { const s = sec.getBoundingClientRect(); return s.top < innerHeight && s.bottom > 0; })();
+    if (!off) off = [...document.querySelectorAll(AVOID)].some((el) => near(el.getBoundingClientRect()));
+    fab.classList.toggle('off', off); };
+  const kick = () => { if (!q) q = requestAnimationFrame(check); };
+  addEventListener('scroll', kick, { passive: true }); addEventListener('resize', kick);
+  if ('ResizeObserver' in window) { const ro = new ResizeObserver(kick); ro.observe(document.body); if (mu) ro.observe(mu); }
+  check();
+  // the record's first-visit word goes after the plane's tap (src/music.html leaves it up on the plane's pointerdown, so nothing moves under the finger)
+  const hush = () => { const h = document.getElementById('muHint'); if (h && !h.hidden) { h.hidden = true; mu.classList.remove('ask'); } };
+  fab.addEventListener('click', hush);
+  if (!sec) return;                                               // another page: the link itself goes to the main page's contacts
+  head.setAttribute('tabindex', '-1');
+  const go = (smooth) => sec.scrollIntoView({ behavior: smooth && !RM.matches ? 'smooth' : 'instant', block: 'start' });
+  fab.addEventListener('click', (e) => {
+    e.preventDefault(); go(true); head.focus({ preventScroll: true });
+    const url = location.pathname + location.search + '#contact';
+    try { if (location.hash === '#contact') history.replaceState(history.state, '', url); else history.pushState(null, '', url); } catch (_) {}
+  });
+  // came here by /#contact (the plane on another page): the words, fonts and pictures above still arrive — the contacts are held in sight
+  // until the visitor touches, scrolls or types
+  if (location.hash === '#contact') {
+    let held = true; const free = () => { held = false; };
+    for (const t of ['wheel', 'touchstart', 'pointerdown', 'keydown']) addEventListener(t, free, { passive: true, once: true });
+    // (the title takes the focus too — again while held: the browser's own jump to the anchor lets it go)
+    const hold = () => { if (!held) return; go(false); if (document.activeElement === document.body || !document.activeElement) head.focus({ preventScroll: true }); };
+    hold();
+    addEventListener('load', hold); setTimeout(hold, 400); setTimeout(() => { hold(); held = false; }, 1600);
+  }
+})();
+</script>

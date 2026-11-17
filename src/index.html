@@ -277,6 +277,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .pic-nav.prev{left:-8px;} .pic-nav.next{right:-8px;}
 @media (min-width:400px){.pic-nav.prev{left:-16px;} .pic-nav.next{right:-16px;}}
 @media (min-width:640px){.pic-nav.prev{left:-24px;} .pic-nav.next{right:-24px;}}
+@media (min-width:960px) and (max-width:1239px){.pic-nav.prev{left:-12px;} .pic-nav.next{right:-12px;}}   /* two columns, the painting by the page's edge: the arrow stays on the screen (17.11.2026: 4 px over — a sideways scroll at 980–1229 px) */
 @media (hover:hover){.pic-nav:hover{transform:scale(1.08);}}
 .pic-nav:active{transform:scale(.93);}
 .pic-nav:focus-visible{outline:3px solid #fff;outline-offset:3px;}
@@ -735,6 +736,14 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .contact-mark{--lw-s:.6;width:calc(208px * .6);margin:-6px auto 0;}
 .contact-card .ctas{justify-content:center;}
 .contact-card .sub{margin-left:auto;margin-right:auto;}
+/* the address itself under the buttons, with «Copy» (owner 17.11.2026): «Write to us» is a mail link — a computer without a mail app does nothing on it */
+.ct-mail{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:18px;}
+.ct-mail code{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;color:var(--mint);font:800 17px/1.2 var(--f);letter-spacing:.01em;
+  background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(157,245,194,.3);user-select:all;-webkit-user-select:all;direction:ltr;unicode-bidi:isolate;
+  outline:none;transition:box-shadow .35s ease,background-color .35s ease;}
+/* «Write to us» always answers (owner 17.11.2026): the address is copied, its line glows for a moment, the mail app opens if there is one */
+.ct-mail code.lit{background:rgba(61,220,132,.12);box-shadow:inset 0 0 0 2px var(--green),0 0 26px rgba(61,220,132,.45);}
+@media (prefers-reduced-motion:reduce){.ct-mail code{transition:none;}}
 /* Lewydo's own pages: TikTok, Instagram, YouTube, Facebook, Discord (in the contacts and, as icons, in the footer) */
 .social-h{margin-top:30px;font-weight:900;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);}
 .social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px;}
@@ -1118,12 +1127,14 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <h2 class="h2" data-t="contact.title"></h2>
         <p class="sub" data-t="contact.text"></p>
         <div class="ctas">
-          <a class="btn btn-green" href="mailto:{{mail}}">{{ico:mail}}<span data-t="contact.mail"></span></a>
-          <a class="btn btn-line" href="https://t.me/vlad_libgdx" rel="noopener">{{ico:tg}}<span>Telegram</span></a>
+          <a class="btn btn-green" id="ctWrite" href="mailto:{{mail}}" data-ct="mail">{{ico:mail}}<span data-t="contact.mail"></span></a>
+          <a class="btn btn-line" href="https://t.me/vlad_libgdx" rel="noopener" data-ct="telegram">{{ico:tg}}<span>Telegram</span></a>
           <a class="btn btn-line" href="{{devPage}}" rel="noopener">{{gpIcon}}<span data-t="cp:games"></span></a>
         </div>
+        <p class="ct-mail"><code id="ctMail" translate="no" dir="ltr" tabindex="-1">{{mail}}</code><button class="crypto-copy" id="ctCopy" type="button" data-ct="copy" data-ta="aria-label:support.copy" aria-describedby="ctMail">{{ico:copy}}<span data-t="support.copy"></span></button></p>
+        <p class="sr-only" id="ctSay" aria-live="polite"></p>
         <p class="social-h" data-t="contact.social"></p>
-        <div class="social">{{social:soc}}</div>
+        <div class="social">{{social:soc:ct}}</div>
       </div>
     </div>
   </section>
@@ -1144,6 +1155,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
   </div>
 </footer>
 {{music}}
+{{plane:here}}
 
 <div id="og" aria-hidden="true">
   <div class="lock">{{lockup}}</div>
@@ -1165,13 +1177,19 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
 'use strict';
 const D = JSON.parse(document.getElementById('data').textContent);
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
-// the crypto address (docs/process/donations.md): «Copy» writes it inside the tap itself (the clipboard wants the gesture) → «Copied ✓» for 2 s;
-// no clipboard (old browser, http, refused) → the address gets selected, for ⌘C / long-press
-(() => { const b = $('#usdtCopy'), a = $('#usdtAddr'), say = $('#usdtSay'); if (!b || !a) return; let tm;
+// the crypto address (docs/process/donations.md) and the mail address in the contacts: «Copy» writes it inside the tap itself (the clipboard
+// wants the gesture) → «Copied ✓» for 2 s; no clipboard (old browser, http, refused) → the address gets selected, for ⌘C / long-press
+const copier = (b, a, say) => { if (!b || !a) return () => {}; let tm;
   const pick = () => { try { const r = document.createRange(); r.selectNodeContents(a); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {} };
   const done = () => { const w = $('span', b); b.classList.add('done'); w.textContent = say.textContent = T('support.copied'); clearTimeout(tm);
     tm = setTimeout(() => { b.classList.remove('done'); w.textContent = T('support.copy'); say.textContent = ''; }, 2000); };
-  b.addEventListener('click', () => { try { navigator.clipboard.writeText(a.textContent.trim()).then(done, pick); } catch (e) { pick(); } }); })();
+  const copy = () => { try { navigator.clipboard.writeText(a.textContent.trim()).then(done, pick); } catch (e) { pick(); } };
+  b.addEventListener('click', copy); return copy; };
+copier($('#usdtCopy'), $('#usdtAddr'), $('#usdtSay'));
+// «Write to us» is a mail link — a computer without a mail app does nothing on it. So the tap always answers too (owner 17.11.2026): the address is
+// copied (the same «Copy», which says «Copied ✓»), its line glows for a moment and takes the focus; the mail app still opens wherever there is one
+(() => { const copyMail = copier($('#ctCopy'), $('#ctMail'), $('#ctSay')), w = $('#ctWrite'), m = $('#ctMail'); if (!w || !m) return; let tm;
+  w.addEventListener('click', () => { copyMail(); m.classList.add('lit'); m.focus({ preventScroll: true }); clearTimeout(tm); tm = setTimeout(() => m.classList.remove('lit'), 1600); }); })();
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches, OG = document.documentElement.classList.contains('og');
 const DPR = Math.min(2, window.devicePixelRatio || 1);
 const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };

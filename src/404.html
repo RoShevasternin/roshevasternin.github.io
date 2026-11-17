@@ -31,6 +31,7 @@ a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;
   <p data-t="nf.text"></p>
   <a href="/" data-t="nf.home"></a>
 </main>
+{{plane:home}}
 <script id="data" type="application/json">{{DATA404}}</script>
 <script>
 (() => {
@@ -44,6 +45,7 @@ a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;
   const lang = [get('lewydo:lang'), get('cubepix-site:lang')].find((l) => ids.includes(l)) || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
   document.documentElement.lang = lang; document.documentElement.dir = rtl.includes(lang) ? 'rtl' : 'ltr';
   document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = D[lang][el.dataset.t] || D.en[el.dataset.t]; });
+  document.querySelectorAll('[data-ta]').forEach((el) => { const [a, k] = el.dataset.ta.split(/:(.+)/); el.setAttribute(a, D[lang][k] || D.en[k]); });   // the plane's name
   setTimeout(() => document.querySelector('.lw-logo').classList.add('lw-beating'), 200);
 })();
 </script>
