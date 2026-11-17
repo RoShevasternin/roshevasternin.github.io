@@ -307,10 +307,11 @@ const factHtml = FACTS.map(([k, v]) => `<dt>${k}</dt><dd>` + (k === 'Website' ? 
     '<span class="sr" id="pkCopied" role="status" aria-live="polite"></span>'
   : k === 'Slogan' ? `<span translate="no">${v}</span>` : esc(v)) + '</dd>').join('');
 // the story, as the site tells it (only what is already there): its milestones, English
-const MS = ['1', '2', '3', 'brand', 'imc', 'od', 'l10n', 'web', 'next', 'iosfirst', 'online'];
+const MS = ['1', '2', '3', 'brand', 'imc', 'idea', 'od', 'l10n', 'web', 'next', 'iosfirst', 'online'];   // [17.11.2026] + idea: CubePix під час служби в ЗСУ (власник: «так, додай»)
 for (const k of MS) for (const f of ['when', 't']) if (!S.en[`story.${k}.${f}`]) pressFail(`the story has no «story.${k}.${f}» (src/i18n/en.json) — update MS`);
 const msHtml = MS.map((k) => `<li><time>${esc(S.en[`story.${k}.when`])}</time><span>${esc(S.en[`story.${k}.t`])}</span></li>`).join('');
-const aboutHtml = `<p class="lead">${esc(ABOUT_EN)}</p><p>${rich(S.en['story.brand.d'])}</p><p>${rich(S.en['story.3.d'])}</p>`;
+const aboutHtml = `<p class="lead">${esc(ABOUT_EN)}</p><p>${rich(S.en['story.brand.d'])}</p><p>${rich(S.en['story.3.d'])}</p>` +
+  `<p><b>${esc(S.en['story.idea.t'])}.</b> ${rich(S.en['story.idea.d'])}</p>`;
 const gpIn2 = `${gpMark}<span class="sb"><small>GET IT ON</small> <b>Google Play</b></span>`, asIn2 = `${asIcon}<span class="sb"><small class="as-top">Download on the</small> <b>App Store</b></span>`;
 const gamesHtml = PGAMES.map((x) => `<li class="pk-game panel" id="${x.id}" style="--c:${x.color}"><div class="pk-gt"><img src="${x.g.icon}" alt="" width="64" height="64" loading="lazy" decoding="async">` +
   `<div><h3>${x.name}</h3><small>${esc(x.tag)}</small></div></div><p>${esc(x.line)}</p><p class="pk-plat">${esc(x.plat.join(' · ').replace(/^./, (c) => c.toUpperCase()))}</p>` +
@@ -329,7 +330,7 @@ const tilesHtml = PTILES.map(([id, title, cls]) => { const p = `brand/kit/png/${
     `<div class="pk-cap"><div><b>${esc(title)}</b><small dir="ltr">${w}×${h} · ${human(n)}</small></div><a class="pk-dl" href="/${p}" download="${zipName(id)}">${ico('dl')}<span>PNG</span></a></div></li>`; }).join('');
 // the fact sheet as text — the zip's first file: the same facts, the story, the games with their links, the files, the terms
 const factTxt = ['LEWYDO — PRESS KIT', SITE + 'press/', '', 'FACT SHEET', ...FACTS.map(([k, v]) => `${k}: ${v}`), `Brand kit: ${SITE}brand/`, '',
-  'ABOUT THE STUDIO', ABOUT_EN, plain(S.en['story.brand.d']), plain(S.en['story.3.d']), '',
+  'ABOUT THE STUDIO', ABOUT_EN, plain(S.en['story.brand.d']), plain(S.en['story.3.d']), `${plain(S.en['story.idea.t'])}. ${plain(S.en['story.idea.d'])}`, '',
   'MILESTONES', ...MS.map((k) => `${plain(S.en[`story.${k}.when`])} — ${plain(S.en[`story.${k}.t`])}`), '',
   'GAMES', ...PGAMES.flatMap((x) => [`${x.name} — ${x.tag}`, `  ${x.line}`, `  Platforms: ${x.plat.join(', ')}`, `  Press kit: ${x.g.site}press/`, `  Website: ${x.g.site}`,
     `  Google Play: ${storeUrl.play(x.g.play)}`, ...(x.g.appStore ? [`  App Store: ${storeUrl.as(x.g.appStore)}`] : []), ...(x.g.demo ? [`  Play in the browser: ${x.g.demo}`] : []), '']),
