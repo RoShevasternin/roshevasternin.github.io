@@ -1162,7 +1162,8 @@ test('the press page: facts, story, games, logo tiles, the zip; «Press kit» in
   await expect(page.locator('.pk-copy')).toHaveText(/Copied/);
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('hello@lewydo.com');
   await expect(page.locator('#about .lead')).toContainText('Lewydo is a two-person indie game studio from Ukraine');
-  await expect(page.locator('.pk-ms li')).toHaveCount(11);
+  await expect(page.locator('.pk-ms li')).toHaveCount(12);                                                    // [17.11.2026] + «The idea of CubePix» (служба в ЗСУ, власник: «так, додай»)
+  await expect(page.locator('#about .pk-text')).toContainText('Vlad is serving in the Armed Forces of Ukraine');
   // the games: their own press kits and sites (the studio mark + the page's language), the stores
   for (const [id, host] of [['orbitdash', OD], ['cubepix', CP]]) {
     const card = page.locator(`#${id}`);
