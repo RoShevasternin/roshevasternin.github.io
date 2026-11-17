@@ -428,7 +428,7 @@ test('the pages around it: 404, robots, sitemap, app-ads.txt for AdMob', async (
   expect(await (await request.get('./')).text()).toContain('FbnCfBUOkfR84lwfaDQwOJiyQXAwnK5tVhmtCYK-Seo');               // the backup: meta tag on the home page
   expect(await (await request.get('./robots.txt')).text()).toContain('sitemap.xml');
   const map = [...(await (await request.get('./sitemap.xml')).text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  expect(map).toEqual(['https://lewydo.com/', 'https://lewydo.com/brand/', 'https://lewydo.com/press/']);   // /press/ — English, no ?lang=                       // this host only: the games' pages are in their own sites' maps
+  expect(map).toEqual(['https://lewydo.com/', 'https://lewydo.com/brand/', 'https://lewydo.com/press/']);   // one URL a page: their languages are hreflang links                    // this host only: the games' pages are in their own sites' maps
   expect(await (await request.get('./robots.txt')).text()).toContain('Sitemap: https://lewydo.com/sitemap.xml');
   expect(await (await request.get('./CNAME')).text()).toBe('lewydo.com\n');                        // the domain: GitHub Pages reads it from the branch
   for (const f of ['assets/og.png', 'assets/favicon.png', 'assets/icon-180.png', 'logo.png', 'banner.png', 'brand.png'])
@@ -1142,34 +1142,75 @@ test('the story: atoozan’s stream on Twitch — nothing from Twitch until «Wa
   expect(disk('privacy.html')).toContain('player.twitch.tv');                                            // the policy says so
 });
 
-// the press page (owner 17.11.2026, the studio rule docs/process/press-kit.md): /press/ — English body, the site's header, languages and footer;
-// the fact sheet with hello@ and «Copy», About us and the story from the site, both games with their own press kits, the logo tiles, the zip;
-// «Press kit» in every page's header menu («•••», always last) and footer, in the visitor's language; nothing from third parties; 375 px and 320 px
+// the press page (owner 17.11.2026, the studio rule docs/process/press-kit.md; «the press page has to be in every language too» — the same day):
+// /press/ — the whole page in the visitor's language, like /brand/ (its words — src/i18n/<id>.json → press, the rest is the site's own: About us,
+// the story, the games' lines); a language without press words yet — the body in English, marked lang="en"; the zip stays English (for the press);
+// the fact sheet with hello@ and «Copy», both games with their own press kits, the logo tiles, the zip; «Press kit» in every page's header menu
+// («•••», always last) and footer, in the visitor's language; nothing from third parties; 375 px and 320 px, right to left
 test('the press page: facts, story, games, logo tiles, the zip; «Press kit» in the header menu and the footer of every page, every language', async ({ browser, request }) => {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, permissions: ['clipboard-read', 'clipboard-write'] });
   const page = await ctx.newPage(), w = watch(page);
+  const words = (L) => JSON.parse(disk(`src/i18n/${L}.json`)), UK = words('uk'), EN = words('en');
+  const txt = (s) => String(s).replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/ ([—–]) /g, '\u00a0$1 ');   // as the page shows it
+  // Ukrainian: the body too (the owner's language — the model for the translators)
   await page.goto('./press/?lang=uk');
   await expect(page.locator('html')).toHaveAttribute('data-words', 'uk');
-  await expect(page.locator('main')).toHaveAttribute('lang', 'en');                                             // the body: English, for the press
-  await expect(page.locator('h1')).toHaveText('Lewydo press kit');
+  expect(await page.locator('main').getAttribute('lang')).toBeNull();                                          // the body: the page's language
+  await expect(page.locator('h1')).toHaveText(txt(UK.press.h1));
+  await expect(page.locator('.pk-hero .sub')).toHaveText(txt(UK.press.lead));
   await expect(page.locator('.home b')).toHaveText('Для преси');                                               // the header: the visitor's language
   await expect(page.locator('.foot-links a[aria-current="page"]')).toHaveText('Для преси');
-  const facts = await page.locator('.pk-facts dl').innerText();
-  for (const s of ['A two-person indie game studio from Ukraine', '2025', 'Poltava region, Ukraine', 'Vlad (code) and Lilya (design)', 'Love What You Do', 'lewydo.com', 'hello@lewydo.com'])
+  let facts = await page.locator('.pk-facts dl').innerText();
+  for (const s of [UK.press['fact.whoV'], txt(UK.press['fact.basedV']), UK.press['fact.teamV'], UK.press['plat.ios'], '2025', 'Love What You Do', 'lewydo.com', 'hello@lewydo.com'])
     expect(facts).toContain(s);
-  expect(facts).not.toContain('support@');
+  expect(facts).not.toContain('support@'); expect(facts).not.toContain('Poltava');
+  await expect(page.locator('.pk-facts dt').last()).toHaveText(UK.press['fact.contact'], { ignoreCase: true });
+  expect(facts).toContain(txt(UK.press['fact.langsV']).replace('{n}', LANGS.length));
   await page.locator('.pk-copy').click();
-  await expect(page.locator('.pk-copy')).toHaveText(/Copied/);
+  await expect(page.locator('.pk-copy')).toHaveText(UK.site['support.copied']);
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('hello@lewydo.com');
-  await expect(page.locator('#about .lead')).toContainText('Lewydo is a two-person indie game studio from Ukraine');
+  await expect(page.locator('.pk-copy')).toHaveText(UK.site['support.copy'], { timeout: 4000 });
+  await expect(page.locator('#about .lead')).toContainText('Lewydo');
+  await expect(page.locator('#about .lead')).not.toContainText('two-person');                                   // About us — the games' own Ukrainian
   await expect(page.locator('.pk-ms li')).toHaveCount(12);                                                    // [17.11.2026] + «The idea of CubePix» (служба в ЗСУ, власник: «так, додай»)
-  await expect(page.locator('#about .pk-text')).toContainText('Vlad is serving in the Armed Forces of Ukraine');
-  // the games: their own press kits and sites (the studio mark + the page's language), the stores
+  await expect(page.locator('.pk-ms li').first()).toContainText(txt(UK.site['story.1.t']));
+  await expect(page.locator('#about .pk-text')).toContainText(txt(UK.site['story.idea.t']));
+  await expect(page.locator('#about .pk-text a[href^="https://"]').first()).toHaveAttribute('target', '_blank');
+  await expect(page.locator('#usage h3').first()).toHaveText(UK.press['use.title']);
+  await expect(page.getByRole('link', { name: `${UK.press['tile.avatar']} ${UK.press['tile.full']}` })).toHaveCount(1);   // the preview reads its name in the page's language
+  // the games: their own press kits and sites (the studio mark + the page's language), the stores, their lines in the page's language
   for (const [id, host] of [['orbitdash', OD], ['cubepix', CP]]) {
     const card = page.locator(`#${id}`);
-    await expect(card.locator('a', { hasText: 'Press kit' })).toHaveAttribute('href', `${host}/press/?${MARK}&lang=uk`);
+    await expect(card.locator('a', { hasText: 'Для преси' })).toHaveAttribute('href', `${host}/press/?${MARK}&lang=uk`);
     await expect(card.locator('a.store')).toHaveCount(2);
   }
+  await expect(page.locator('#orbitdash > p').first()).toContainText(txt(UK.site['od.lead']).split(':')[0]);
+  // English — the page itself, the same facts the zip's fact sheet has
+  await page.goto('./press/?lang=en');
+  await expect(page.locator('html')).toHaveAttribute('data-words', 'en');
+  await expect(page.locator('h1')).toHaveText('Lewydo press kit');
+  facts = await page.locator('.pk-facts dl').innerText();
+  for (const s of ['A two-person indie game studio from Ukraine', '2025', 'Poltava region, Ukraine', 'Vlad (code) and Lilya (design)', 'Love What You Do', 'lewydo.com', 'hello@lewydo.com'])
+    expect(facts).toContain(s);
+  await page.locator('.pk-copy').click();
+  await expect(page.locator('.pk-copy')).toHaveText(/Copied/);
+  await expect(page.locator('#about .lead')).toContainText('Lewydo is a two-person indie game studio from Ukraine');
+  await expect(page.locator('#about .pk-text')).toContainText('Vlad is serving in the Armed Forces of Ukraine');
+  await expect(page.locator('#orbitdash a', { hasText: 'Press kit' })).toHaveAttribute('href', `${OD}/press/?${MARK}&lang=en`);
+  // a language whose press words are not there yet (npm run build warns; --strict fails): the header speaks it, the body is English, marked so
+  const noPress = LANGS.find((L) => L !== 'en' && !words(L).press);
+  if (noPress) {
+    await page.goto(`./press/?lang=${noPress}`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', noPress);
+    await expect(page.locator('main')).toHaveAttribute('lang', 'en');
+    await expect(page.locator('h1')).toHaveText('Lewydo press kit');
+    await expect(page.locator('.home b')).toHaveText(words(noPress).site['foot.press']);
+  }
+  // every language: its words file has the page's words, the page lists them all for search engines (hreflang, like /brand/)
+  const html = disk('press/index.html');
+  for (const L of LANGS) { const d = JSON.parse(disk(`press/lang/${L}.json`)); expect(d.S['press.h1'], L).toBeTruthy(); expect(d.S['pk.line.cubepix'], L).toBeTruthy();
+    expect(html, L).toContain(`<link rel="alternate" hreflang="${L}" href="https://lewydo.com/press/?lang=${L}">`); }
+  expect(html).toContain('<link rel="alternate" hreflang="x-default" href="https://lewydo.com/press/">');
   // the logo tiles: one height in a row, each with a preview, its size and a download that answers
   const tiles = page.locator('.pk-tile');
   await expect(tiles).toHaveCount(6);
@@ -1186,8 +1227,9 @@ test('the press page: facts, story, games, logo tiles, the zip; «Press kit» in
   expect(zip.toString('utf8')).toContain('Press contact: hello@lewydo.com');
   await expect(page.locator('.pk-cta a[download]')).toContainText(/ZIP · \d/);
   // a phone: nothing sideways (375, and 320 right to left)
-  for (const [vw, L] of [[375, 'en'], [320, 'ar']]) { await page.setViewportSize({ width: vw, height: 800 }); await page.goto(`./press/?lang=${L}`);
+  for (const [vw, L] of [[375, 'en'], [320, 'ar'], [320, 'uk']]) { await page.setViewportSize({ width: vw, height: 800 }); await page.goto(`./press/?lang=${L}`);
     await expect(page.locator('html')).toHaveAttribute('data-words', L);
+    await expect(page.locator('html')).toHaveAttribute('dir', L === 'ar' ? 'rtl' : 'ltr');
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(vw); }
   expect([...w.ext]).toEqual([]); expect(w.errs).toEqual([]); expect(w.hits.map((h) => h.p)).toContain('press');   // only our own counter left the page
   // «Press kit» in the header menu («•••» — always visible, the item always last) and in the footer, of every page, in the visitor's language

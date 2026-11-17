@@ -5,7 +5,7 @@
 // English is written into the pages themselves (search engines, no JavaScript); every other language (src/langs.json — our games'
 // languages) is fetched by the page when the visitor needs it (src/lang-boot.js, src/lang.js). The build is deterministic
 // (no dates, no randomness): the same sources → the same files.
-//   npm run build            warns about missing translations (English is shown there)
+//   npm run build            warns about missing translations (English is shown there; the press page's words — one line with the languages)
 //   npm run build -- --strict   fails on them instead (what npm test runs)
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -33,15 +33,21 @@ const IDS = LANGS.map((L) => L.id), RTL = LANGS.filter((L) => L.dir === 'rtl').m
 // no Russian, anywhere (owner 13–14.10.2026): not a language of ours — the lists end with the row «Россия, останови войну в Украине» instead
 if (IDS.includes('ru') || readdirSync(new URL('src/i18n/', ROOT)).includes('ru.json')) { console.error('✗ Russian is never a language of Lewydo (CLAUDE.md, «Мови»)'); process.exit(1); }
 for (const f of readdirSync(new URL('src/i18n/', ROOT))) if (!IDS.includes(f.replace(/\.json$/, ''))) { console.error(`✗ src/i18n/${f}: not in src/langs.json`); process.exit(1); }
-// the words, one file per language (src/i18n/<id>.json): site — the main page, brand — the brand page, cubepix — the CubePix supplement
+// the words, one file per language (src/i18n/<id>.json): site — the main page, brand — the brand page, press — the press page (/press/),
+// cubepix — the CubePix supplement
 const I18N = Object.fromEntries(IDS.map((L) => { try { return [L, json(`src/i18n/${L}.json`)]; } catch (e) { return [L, {}]; } }));
 const SS = Object.fromEntries(IDS.map((L) => [L, I18N[L].site || {}])), BS = Object.fromEntries(IDS.map((L) => [L, I18N[L].brand || {}]));
+const PS = Object.fromEntries(IDS.map((L) => [L, I18N[L].press || {}]));
 const STOP = { flag: '<img src="/assets/flags/ru-stained.svg" alt="" width="28" height="21" loading="lazy" decoding="async">', text: 'Россия, останови войну в Украине' };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 // ── words: the site's own (src/i18n/<id>.json → site, brand) + CubePix's own (src/cubepix.json, as cp:…) ──
 const problems = [], notes = [], S = {}, PICS = {};
 const forms = (v) => (typeof v === 'object' ? Object.values(v) : [v]);
+const marks = (x) => [(x.match(/`/g) || []).length, (x.match(/\]\(/g) || []).length, (x.match(/\*\*/g) || []).length].join();
+// the press page's words (→ press.…): a language may not have them yet — then its body is English (PEN[L], the page marks it lang="en"),
+// and the build says so in one line with the languages (PMISS); --strict fails on it, like on any other missing word
+const PMISS = [], PEN = {};
 for (const L of IDS) {
   S[L] = {};
   for (const [k, en] of Object.entries(SS.en)) {
@@ -74,12 +80,25 @@ for (const L of IDS) {
   for (const [k, en] of Object.entries(BS.en)) {
     const v = BS[L]?.[k];
     if (v == null || !String(v).trim()) { problems.push(`${L}: brand «${k}» is missing (English is shown)`); S[L]['b.' + k] = en; continue; }
-    const marks = (x) => [(x.match(/`/g) || []).length, (x.match(/\]\(/g) || []).length, (x.match(/\*\*/g) || []).length].join();
     if (marks(v) !== marks(en)) problems.push(`${L}: brand «${k}» lost some code marks, [link](…) or **bold**`);
     S[L]['b.' + k] = v;
   }
   for (const k of Object.keys(BS[L] || {})) if (!(k in BS.en)) problems.push(`${L}: brand «${k}» is not an English key`);
+  // the press page's own words (src/i18n/<id>.json → press) → press.…
+  const miss = [];
+  for (const [k, en] of Object.entries(PS.en)) {
+    const v = PS[L]?.[k];
+    if (v == null || !String(v).trim()) { miss.push(k); S[L]['press.' + k] = en; continue; }
+    if (marks(v) !== marks(en)) problems.push(`${L}: press «${k}» lost some code marks, [link](…) or **bold**`);
+    if (en.includes('{n}') && !v.includes('{n}')) problems.push(`${L}: press «${k}» lost its {n}`);
+    S[L]['press.' + k] = v;
+  }
+  for (const k of Object.keys(PS[L] || {})) if (!(k in PS.en)) problems.push(`${L}: press «${k}» is not an English key`);
+  PEN[L] = L !== 'en' && miss.length === Object.keys(PS.en).length;
+  if (miss.length) PMISS.push(PEN[L] ? L : `${L} (${miss.length} of ${Object.keys(PS.en).length}: ${miss.join(', ')})`);
 }
+// one line, not a line per word: the press page's words are translated after the page itself (src/i18n/<id>.json → press)
+if (PMISS.length) problems.push(`press: the press page's words (src/i18n/<id>.json → press) are missing in ${PMISS.length} languages, English is shown there: ${PMISS.join(', ')}`);
 // French typography: a no-break space before : ; ! ? » and after « (the game's own French does the same)
 const nb = (s) => s.replace(/ ([:;!?»])/g, ' $1').replace(/« /g, '« ');
 for (const [k, v] of Object.entries(S.fr)) if (!k.startsWith('cp:')) S.fr[k] = typeof v === 'string' ? nb(v) : Object.fromEntries(Object.entries(v).map(([f, s]) => [f, nb(s)]));
@@ -164,7 +183,7 @@ const card = (g) => `<article class="gcard rv" style="--c:${g.color}">` +
 const ogGames = [G.cubepix.icon, G.orbitdash.icon, ...G.more.map((g) => g.icon)].map((s) => `<img src="${s}" alt="" width="74" height="74">`).join('');
 
 const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: CP.counts.pics, floors: CP.counts.floors, cpLangs: CP.counts.langs };
-const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.')))]));   // the brand page's words stay on the brand page
+const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.') && !k.startsWith('press.')))]));   // the brand and press pages' words stay on their pages
 const enPics = Object.fromEntries(Object.keys(CP.pics).map((p) => [p, CP.pics[p].en]));
 const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cpLangs: Object.keys(CP.S), counts,
   cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels, odEvents: OD.events || {} };
@@ -277,83 +296,105 @@ out('brand/index.html', fill(read('src/brand.html').replace('{{langBoot}}', () =
   .replace('{{DATA}}', () => JSON.stringify(BDATA).replace(/</g, '\\u003c'))
   .replace('{{hreflangBrand}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}brand/?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}brand/">`].join('\n'))));
 // ── the press page (/press/; owner 17.11.2026, the studio rule docs/process/press-kit.md, like orbitdash.lewydo.com/press/) ──
-// The body is English (the press's language): every fact comes from the site itself — About us (brand.json, the games' own words), the story
-// (src/i18n/en.json → story.*), the games (src/games.json, src/cubepix.json), the mark (brand/kit/png). The header, the languages and the footer
-// speak the visitor's language (/press/lang/<id>.json). The previews are press/thumb/<id>.webp (tools/webp.py <png> press/thumb/<id>.webp <width> 90);
-// the full files are the kit's own (/brand/kit/png/…), and the zip (fact-sheet.txt + logo/) is made here, deterministic like the brand kit's.
+// Every language of the site (owner 17.11.2026: «the press page has to be in every language too»), like the brand page: English rides in the
+// page (search engines), every other language is /press/lang/<id>.json. The page's own words — src/i18n/<id>.json → press (press.…); the rest is
+// what the site already says in every language — About us (cp:about), the story (story.*), the games (od.tag / od.lead, CubePix's tagline / lead),
+// the store buttons (gp.get, as.top), «Copy» (support.copy). A language without press words shows them in English (its <main lang="en">).
+// The fact sheet in the zip (fact-sheet.txt) stays English — for the press — and is made from the same English words.
+// The previews are press/thumb/<id>.webp (tools/webp.py <png> press/thumb/<id>.webp <width> 90); the full files are the kit's own
+// (/brand/kit/png/…), and the zip (fact-sheet.txt + logo/) is made here, deterministic like the brand kit's.
 const PRESS_ZIP = 'lewydo-press-kit.zip';
 const pressFail = (m) => { console.error('✗ press: ' + m); process.exit(1); };
-const ABOUT_EN = S.en['cp:about'], WHO = 'a two-person indie game studio from Ukraine';
-if (!ABOUT_EN.includes(WHO) || !/Vlad codes, Lilya designs/.test(ABOUT_EN)) pressFail(`About us no longer says «${WHO}» / «Vlad codes, Lilya designs» — update the fact sheet (tools/build.mjs)`);
-const plain = (s) => String(s).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1').replace(/\*\*(.+?)\*\*/g, '$1').replace(/ /g, ' ');
-const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`);
-const first = (s) => String(s).match(/^.*?[.!?](?=\s|$)/)?.[0] || s;   // the first sentence
+const PE = PS.en, ABOUT_EN = S.en['cp:about'], WHO = 'a two-person indie game studio from Ukraine';
+if (!ABOUT_EN.includes(WHO) || !/Vlad codes, Lilya designs/.test(ABOUT_EN)) pressFail(`About us no longer says «${WHO}» / «Vlad codes, Lilya designs» — update the fact sheet (src/i18n/*.json → press.fact.whoV, press.fact.teamV)`);
+if (PE['fact.whoV'] !== WHO[0].toUpperCase() + WHO.slice(1)) pressFail(`press.fact.whoV (src/i18n/en.json) must say what About us says: «${WHO}»`);
+if (PE['fact.basedV'] !== ld.foundingLocation) pressFail(`press.fact.basedV (src/i18n/en.json) must be the JSON-LD's foundingLocation «${ld.foundingLocation}»`);
+const plain = (s) => String(s).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1').replace(/\*\*(.+?)\*\*/g, '$1').replace(/\u00a0/g, ' ');
+// the first sentence — of any script: . ! ? before a space or the end; 。！？ (Chinese, Japanese), । ॥ (Devanagari, Bengali), ؟ ۔ (Arabic, Urdu),
+// ። (Ethiopic), ။ (Burmese) end one wherever they are; Thai has no full stop — then the whole lead
+const first = (s) => String(s).match(/^.*?(?:[.!?](?=\s|$)|[。！？।॥؟۔።။])/)?.[0] || s;
 const storeUrl = { play: (u) => `https://play.google.com/store/apps/details?id=${new URL(u).searchParams.get('id')}`, as: (u) => { const x = new URL(u); return x.origin + x.pathname; } };
-// the games, in the order of the site: their own words, the platforms by where they are, the press kit next to the site
+// the games, in the order of the site: their own words (every language), the platforms by where they are, the press kit next to the site
 const PGAMES = [
-  { id: 'orbitdash', name: 'Orbit Dash', g: G.orbitdash, link: odLink, ll: 'od', color: '#00E5FF', tag: S.en['od.tag'], line: first(S.en['od.lead']) },
-  { id: 'cubepix', name: 'CubePix', g: G.cubepix, link: cpLink, ll: 'cp', color: '#B07CFF', tag: CP.S.en.tagline, line: first(CP.S.en.lead) },
-].map((x) => ({ ...x, plat: [x.g.play && 'Android', x.g.appStore && 'iPhone & iPad', x.g.demo && 'web browser'].filter(Boolean) }));
+  { id: 'orbitdash', name: 'Orbit Dash', g: G.orbitdash, link: odLink, ll: 'od', color: '#00E5FF', tagK: 'od.tag', leadK: 'od.lead' },
+  { id: 'cubepix', name: 'CubePix', g: G.cubepix, link: cpLink, ll: 'cp', color: '#B07CFF', tagK: 'cp:tagline', leadK: 'cp:lead' },
+].map((x) => ({ ...x, tag: S.en[x.tagK], line: first(S.en[x.leadK]), plat: [x.g.play && 'Android', x.g.appStore && 'iPhone & iPad', x.g.demo && 'web browser'].filter(Boolean) }));
 for (const x of PGAMES) for (const k of ['site', 'play', 'icon']) if (!x.g[k]) pressFail(`${x.name}: no «${k}» in src/games.json`);
+// words the page makes from the site's own, per language (not in src/i18n — nothing to translate): the description, each game's first sentence
+for (const L of IDS) { S[L]['pk.desc'] = `${S[L]['press.desc']} ${S[L]['cp:about']}`; for (const x of PGAMES) S[L]['pk.line.' + x.id] = first(S[L][x.leadK]); }
+// a platform: Android is a name; «iPhone & iPad» and «web browser» are words (press.plat.…)
+const PLAT = { 'iPhone & iPad': 'press.plat.ios', 'web browser': 'press.plat.web' };
+const platHtml = (list) => list.map((p) => (PLAT[p] ? `<span data-t="${PLAT[p]}"></span>` : `<span translate="no">${esc(p)}</span>`)).join(' · ');
 const LANG_ALL = CP.counts.langs === IDS.length;   // the games and the site speak the same languages (Orbit Dash's are src/langs.json)
+const PLATS = [...new Set(PGAMES.flatMap((x) => x.plat))];
+// the fact sheet: [key (press.fact.<key> — the label), the English value (fact-sheet.txt), the value on the page (every language)]
 const FACTS = [
-  ['Studio', 'Lewydo'], ['Who we are', WHO[0].toUpperCase() + WHO.slice(1)], ['Founded', S.en['story.brand.when']], ['Based in', ld.foundingLocation],
-  ['Team', 'Vlad (code) and Lilya (design)'], ['Games', PGAMES.map((x) => x.name).join(', ')],
-  ['Platforms', [...new Set(PGAMES.flatMap((x) => x.plat))].join(', ').replace(/^./, (c) => c.toUpperCase())],
-  ...(LANG_ALL ? [['Languages', `${IDS.length}, in every game and on this site`]] : []), ['Slogan', 'Love What You Do'], ['Website', HOST], ['Press contact', MAIL]];
-const factHtml = FACTS.map(([k, v]) => `<dt>${k}</dt><dd>` + (k === 'Website' ? `<a href="/">${v}</a>`
-  : k === 'Games' ? PGAMES.map((x) => `<a href="#${x.id}">${x.name}</a>`).join(', ')
-  : k === 'Press contact' ? `<span class="pk-mail"><code id="pkMail" translate="no">${v}</code><button class="btn btn-line btn-sm pk-copy" type="button" data-copy="${v}">${ico('copy')}<span>Copy</span></button></span>` +
-    '<span class="sr" id="pkCopied" role="status" aria-live="polite"></span>'
-  : k === 'Slogan' ? `<span translate="no">${v}</span>` : esc(v)) + '</dd>').join('');
-// the story, as the site tells it (only what is already there): its milestones, English
+  ['studio', 'Lewydo', '<span translate="no">Lewydo</span>'], ['who', PE['fact.whoV'], '@fact.whoV'], ['founded', S.en['story.brand.when'], '@story.brand.when'],
+  ['based', ld.foundingLocation, '@fact.basedV'], ['team', PE['fact.teamV'], '@fact.teamV'],
+  ['games', PGAMES.map((x) => x.name).join(', '), PGAMES.map((x) => `<a href="#${x.id}" translate="no">${x.name}</a>`).join(', ')],
+  ['platforms', PLATS.join(', ').replace(/^./, (c) => c.toUpperCase()), platHtml(PLATS)],
+  ...(LANG_ALL ? [['langs', PE['fact.langsV'].replace(/\{n\}/g, IDS.length), '@fact.langsV']] : []),
+  ['slogan', 'Love What You Do', '<span translate="no">Love What You Do</span>'], ['website', HOST, `<a href="/" data-lang-link dir="ltr">${HOST}</a>`],
+  ['contact', MAIL, `<span class="pk-mail"><code id="pkMail" translate="no" dir="ltr">${MAIL}</code><button class="btn btn-line btn-sm pk-copy" type="button" data-copy="${MAIL}">${ico('copy')}<span data-t="support.copy"></span></button></span>` +
+    '<span class="sr" id="pkCopied" role="status" aria-live="polite"></span>']];
+const factHtml = FACTS.map(([k, , h]) => `<dt data-t="press.fact.${k}"></dt>` + (h[0] === '@' ? `<dd data-t="${h.startsWith('@fact.') ? 'press.' : ''}${h.slice(1)}"${k === 'langs' ? ' data-n="langs"' : ''}></dd>`
+  : `<dd${k === 'platforms' ? ' class="pk-plats"' : ''}>${h}</dd>`)).join('');
+// the story, as the site tells it (only what is already there): its milestones
 const MS = ['1', '2', '3', 'brand', 'imc', 'idea', 'od', 'l10n', 'web', 'next', 'iosfirst', 'online'];   // [17.11.2026] + idea: CubePix під час служби в ЗСУ (власник: «так, додай»)
 for (const k of MS) for (const f of ['when', 't']) if (!S.en[`story.${k}.${f}`]) pressFail(`the story has no «story.${k}.${f}» (src/i18n/en.json) — update MS`);
-const msHtml = MS.map((k) => `<li><time>${esc(S.en[`story.${k}.when`])}</time><span>${esc(S.en[`story.${k}.t`])}</span></li>`).join('');
-const aboutHtml = `<p class="lead">${esc(ABOUT_EN)}</p><p>${rich(S.en['story.brand.d'])}</p><p>${rich(S.en['story.3.d'])}</p>` +
-  `<p><b>${esc(S.en['story.idea.t'])}.</b> ${rich(S.en['story.idea.d'])}</p>`;
-const gpIn2 = `${gpMark}<span class="sb"><small>GET IT ON</small> <b>Google Play</b></span>`, asIn2 = `${asIcon}<span class="sb"><small class="as-top">Download on the</small> <b>App Store</b></span>`;
+const msHtml = MS.map((k) => `<li><time data-t="story.${k}.when"></time><span data-t="story.${k}.t"></span></li>`).join('');
+const aboutHtml = '<p class="lead" data-t="cp:about"></p><p data-t="story.brand.d"></p><p data-t="story.3.d"></p>' +
+  '<p><b data-t="story.idea.t"></b><br><span data-t="story.idea.d"></span></p>';
+const gpIn2 = `${gpMark}<span class="sb"><small data-t="gp.get"></small> <b>Google Play</b></span>`, asIn2 = `${asIcon}<span class="sb"><small class="as-top" data-t="as.top"></small> <b>App Store</b></span>`;
 const gamesHtml = PGAMES.map((x) => `<li class="pk-game panel" id="${x.id}" style="--c:${x.color}"><div class="pk-gt"><img src="${x.g.icon}" alt="" width="64" height="64" loading="lazy" decoding="async">` +
-  `<div><h3>${x.name}</h3><small>${esc(x.tag)}</small></div></div><p>${esc(x.line)}</p><p class="pk-plat">${esc(x.plat.join(' · ').replace(/^./, (c) => c.toUpperCase()))}</p>` +
-  `<div class="pk-links"><a class="btn btn-green btn-sm" href="${x.link(x.g.site + 'press/')}" data-lang-link="${x.ll}">${ico('press')}<span>Press kit</span></a>` +
-  `<a class="btn btn-line btn-sm" href="${x.link(x.g.site)}" data-lang-link="${x.ll}"><span>${new URL(x.g.site).host}</span></a>` +
+  `<div><h3 translate="no">${x.name}</h3><small data-t="${x.tagK}"></small></div></div><p data-t="pk.line.${x.id}"></p><p class="pk-plat">${platHtml(x.plat)}</p>` +
+  `<div class="pk-links"><a class="btn btn-green btn-sm" href="${x.link(x.g.site + 'press/')}" data-lang-link="${x.ll}">${ico('press')}<span data-t="foot.press"></span></a>` +
+  `<a class="btn btn-line btn-sm" href="${x.link(x.g.site)}" data-lang-link="${x.ll}"><span dir="ltr">${new URL(x.g.site).host}</span></a>` +
   `<span class="stores"><a class="btn btn-sm store" href="${esc(x.g.play)}" rel="noopener">${gpIn2}</a>` +
   (x.g.appStore ? `<a class="btn btn-sm store as" href="${esc(x.g.appStore)}" rel="noopener">${asIn2}</a>` : '') + '</span></div></li>').join('');
-// the logo: the kit's own PNGs (the owner's exports from Figma), each a tile — preview, name, size, weight, download
-const PTILES = [['avatar', 'Studio avatar', 'cover'], ['lockup', 'Logo · full lockup'], ['lewydo', 'Wordmark'], ['brand_front', 'Heart mark'], ['slogan', 'Slogan'], ['pill', 'Signature pill']];
+// the logo: the kit's own PNGs (the owner's exports from Figma), each a tile — preview, name (press.…), size, weight, download
+const PTILES = [['avatar', 'tile.avatar', 'cover'], ['lockup', 'tile.lockup'], ['lewydo', 'tile.wordmark'], ['brand_front', 'tile.heart'], ['slogan', 'fact.slogan'], ['pill', 'tile.pill']];
 const pngWH = (p) => { const b = readFileSync(new URL(p, ROOT)); return [b.readUInt32BE(16), b.readUInt32BE(20)]; };
 const human = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB');
 const zipName = (id) => `lewydo-${{ lewydo: 'wordmark', brand_front: 'heart' }[id] || id}.png`;
 for (const [id] of PTILES) for (const f of [`brand/kit/png/${id}.png`, `press/thumb/${id}.webp`]) if (!existsSync(new URL(f, ROOT))) pressFail(`${f} is missing`);
-const tilesHtml = PTILES.map(([id, title, cls]) => { const p = `brand/kit/png/${id}.png`, [w, h] = pngWH(p), n = readFileSync(new URL(p, ROOT)).length;
-  return `<li class="pk-tile${cls ? ' ' + cls : ''}"><a class="im" href="/${p}" target="_blank" rel="noopener" aria-label="${esc(title)}, full size"><img src="/press/thumb/${id}.webp" alt="${esc(title)}" loading="lazy" decoding="async"></a>` +
-    `<div class="pk-cap"><div><b>${esc(title)}</b><small dir="ltr">${w}×${h} · ${human(n)}</small></div><a class="pk-dl" href="/${p}" download="${zipName(id)}">${ico('dl')}<span>PNG</span></a></div></li>`; }).join('');
-// the fact sheet as text — the zip's first file: the same facts, the story, the games with their links, the files, the terms
-const factTxt = ['LEWYDO — PRESS KIT', SITE + 'press/', '', 'FACT SHEET', ...FACTS.map(([k, v]) => `${k}: ${v}`), `Brand kit: ${SITE}brand/`, '',
+// the preview link reads «<name> full size», the download «<name> PNG» (aria-labelledby: the words of the page's language)
+const tilesHtml = PTILES.map(([id, key, cls]) => { const p = `brand/kit/png/${id}.png`, [w, h] = pngWH(p), n = readFileSync(new URL(p, ROOT)).length;
+  return `<li class="pk-tile${cls ? ' ' + cls : ''}"><a class="im" href="/${p}" target="_blank" rel="noopener" aria-labelledby="pkT-${id} pkFull"><img src="/press/thumb/${id}.webp" alt="" loading="lazy" decoding="async"></a>` +
+    `<div class="pk-cap"><div><b id="pkT-${id}" data-t="press.${key}"></b><small dir="ltr">${w}×${h} · ${human(n)}</small></div>` +
+    `<a class="pk-dl" href="/${p}" download="${zipName(id)}" aria-labelledby="pkT-${id} pkD-${id}">${ico('dl')}<span id="pkD-${id}">PNG</span></a></div></li>`; }).join('');
+// the fact sheet as text — the zip's first file, English (for the press): the same facts, the story, the games with their links, the files, the terms
+const factTxt = ['LEWYDO — PRESS KIT', SITE + 'press/', '', 'FACT SHEET', ...FACTS.map(([k, v]) => `${PE['fact.' + k]}: ${v}`), `Brand kit: ${SITE}brand/`, '',
   'ABOUT THE STUDIO', ABOUT_EN, plain(S.en['story.brand.d']), plain(S.en['story.3.d']), `${plain(S.en['story.idea.t'])}. ${plain(S.en['story.idea.d'])}`, '',
   'MILESTONES', ...MS.map((k) => `${plain(S.en[`story.${k}.when`])} — ${plain(S.en[`story.${k}.t`])}`), '',
   'GAMES', ...PGAMES.flatMap((x) => [`${x.name} — ${x.tag}`, `  ${x.line}`, `  Platforms: ${x.plat.join(', ')}`, `  Press kit: ${x.g.site}press/`, `  Website: ${x.g.site}`,
     `  Google Play: ${storeUrl.play(x.g.play)}`, ...(x.g.appStore ? [`  App Store: ${storeUrl.as(x.g.appStore)}`] : []), ...(x.g.demo ? [`  Play in the browser: ${x.g.demo}`] : []), '']),
-  'LOGO FILES (logo/)', ...PTILES.map(([id, title]) => `${zipName(id)} — ${title}, ${pngWH(`brand/kit/png/${id}.png`).join('×')} px, ${id === 'avatar' ? 'PNG' : 'transparent PNG'}`), '',
+  'LOGO FILES (logo/)', ...PTILES.map(([id, key]) => `${zipName(id)} — ${PE[key]}, ${pngWH(`brand/kit/png/${id}.png`).join('×')} px, ${id === 'avatar' ? 'PNG' : 'transparent PNG'}`), '',
   'USING THESE MATERIALS', 'You may use them in articles, reviews, videos, streams and social posts about Lewydo and our games, and resize the pictures to fit.',
   "Please don't redraw, recolour or stretch the logo, and don't use it to suggest an official partnership.", '',
   'FOLLOW LEWYDO', ...SOCIAL.map(([, n, u]) => `${n}: ${u}`), '', `Press contact: ${MAIL}`, ''].join('\n');
 const PZIP = zip([['fact-sheet.txt', Buffer.from(factTxt)], ...PTILES.map(([id]) => [`logo/${zipName(id)}`, readFileSync(new URL(`brand/kit/png/${id}.png`, ROOT))])]
   .map(([n, b]) => ['lewydo-press-kit/' + n, b]));
 out('press/' + PRESS_ZIP, PZIP);
-const PKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'nav.label', 'nav.brand', 'foot.press', 'foot.made', 'foot.rights', 'foot.privacy', 'b.home', 'b.foot.home'];
-const pWords = (L) => Object.fromEntries(PKEYS.map((k) => [k, S[L][k]]));
-const PDATA = { langs: LANGS, base: '/press/lang/', S: { en: pWords('en') }, stop: STOP, cpLangs: Object.keys(CP.S) };
-PDATA.v = langFiles('press/lang/', (L) => ({ S: pWords(L), names: NAMES[L] }));
-out('press/index.html', fill(read('src/press.html').replace('{{langBoot}}', () => langBoot('/press/lang/', PDATA.v))
-  .replace(/\{\{pk\.desc\}\}/g, () => esc(`Lewydo press kit: the facts, the story, the logo and our games — ${PGAMES.map((x) => x.name).join(' and ')}. ${ABOUT_EN}`))
-  .replace('{{pk.facts}}', () => factHtml).replace('{{pk.aboutTitle}}', () => esc(S.en['studio.title'])).replace('{{pk.about}}', () => aboutHtml)
+const pressHtml = read('src/press.html')
+  .replace('{{pk.facts}}', () => factHtml).replace('{{pk.about}}', () => aboutHtml)
   .replace('{{pk.milestones}}', () => msHtml).replace('{{pk.games}}', () => gamesHtml).replace('{{pk.tiles}}', () => tilesHtml)
-  .replace(/\{\{pk\.zip\}\}/g, PRESS_ZIP).replace(/\{\{pk\.zipSize\}\}/g, () => human(PZIP.length)).replace(/\{\{pk\.kitSize\}\}/g, () => human(ZIP.length))
-  .replace('{{DATA}}', () => JSON.stringify(PDATA).replace(/</g, '\\u003c'))));
+  .replace(/\{\{pk\.zip\}\}/g, PRESS_ZIP).replace(/\{\{pk\.zipSize\}\}/g, () => human(PZIP.length)).replace(/\{\{pk\.kitSize\}\}/g, () => human(ZIP.length));
+// the words file of each language: the header, the languages and the footer (the site's) + every word the page shows — read from the page itself
+// (data-t, data-ta), so a new word on the page can't be forgotten here — + the ones its script says («Copied ✓»); bodyEn — no press words yet
+const PKEYS = [...new Set(['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'support.copied',
+  ...[...pressHtml.matchAll(/\sdata-t="([^"]+)"/g)].map((m) => m[1]), ...[...pressHtml.matchAll(/\sdata-ta="[\w-]+:([^"]+)"/g)].map((m) => m[1])])];
+for (const k of PKEYS) if (S.en[k] == null) pressFail(`the page says «${k}», but no language has that word (src/i18n/en.json)`);
+const pWords = (L) => Object.fromEntries(PKEYS.map((k) => [k, S[L][k]]));
+const PDATA = { langs: LANGS, base: '/press/lang/', S: { en: pWords('en') }, stop: STOP, cpLangs: Object.keys(CP.S), counts: { langs: IDS.length } };
+PDATA.v = langFiles('press/lang/', (L) => ({ S: pWords(L), names: NAMES[L], ...(PEN[L] ? { bodyEn: true } : {}) }));
+out('press/index.html', fill(pressHtml.replace('{{langBoot}}', () => langBoot('/press/lang/', PDATA.v))
+  .replace(/\{\{pk\.ogDesc\}\}/g, () => esc(S.en['pk.desc']))
+  .replace('{{DATA}}', () => JSON.stringify(PDATA).replace(/</g, '\\u003c'))
+  .replace('{{hreflangPress}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}press/?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}press/">`].join('\n'))));
 out('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
 // this host's pages only: a sitemap lists the URLs of its own host — the games' pages are in their own sites' sitemaps (orbitdash.lewydo.com,
-// cubepix.lewydo.com), since 06.11.2026 they are other hosts. /press/ — English only, no ?lang= (docs/process/press-kit.md)
+// cubepix.lewydo.com), since 06.11.2026 they are other hosts. Like /brand/, /press/ is one URL: its languages are its hreflang links (?lang=)
 const pages = ['', 'brand/', 'press/'];
 out('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   pages.map((p) => `  <url><loc>${SITE}${p}</loc></url>`).join('\n') + '\n</urlset>\n');
