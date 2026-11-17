@@ -683,7 +683,8 @@ const planeAt = (page) => page.evaluate(() => { const f = document.getElementByI
   const head = [...document.querySelectorAll('.top a, .top button')].filter((e) => e.getClientRects().length).some((e) => hit(r, e.getBoundingClientRect()));
   const under = [...document.querySelectorAll('main a, main button, footer a, footer button')].filter((e) => !e.closest('#mu') && e.getClientRects().length && getComputedStyle(e).visibility === 'visible'
     && hit(r, e.getBoundingClientRect())).map((e) => (e.textContent || e.getAttribute('aria-label') || '').trim().slice(0, 30));
-  return { r: { l: r.left, r: r.right, t: r.top, b: r.bottom, w: r.width }, m: q && { l: q.left, r: q.right, t: q.top }, off: f.classList.contains('off'), head, under, vw: innerWidth, vh: innerHeight,
+  const ic = f.querySelector('.cp-ico').getBoundingClientRect(), lab = f.querySelector('.cp-t');
+  return { r: { l: r.left, r: r.right, t: r.top, b: r.bottom, w: r.width, h: r.height }, ic: { l: ic.left, r: ic.right, w: ic.width }, word: lab && getComputedStyle(lab).opacity !== '0' ? lab.textContent : '', m: q && { l: q.left, r: q.right, t: q.top }, off: f.classList.contains('off'), head, under, vw: innerWidth, vh: innerHeight,
     on: getComputedStyle(f).visibility === 'visible', flip: getComputedStyle(f.querySelector('svg')).transform }; });
 // scrolled until the plane is out (it steps aside while a button is under it): the place where a visitor would tap it
 const planeOut = async (page) => { for (let i = 0; i < 40; i++) { if (!(await page.locator('#ctPlane').evaluate((f) => f.classList.contains('off')))) return;
@@ -703,13 +704,14 @@ test('the paper plane: above the record, «Write to us» in the page’s languag
     if (!p.off) expect(p.under, tag).toEqual([]);                                                    // out — then over no button of the page
     await planeOut(page); p = await planeAt(page);
     expect(p.on && !p.off, tag).toBe(true); expect(p.under, tag).toEqual([]);
-    expect(p.r.w, tag).toBeGreaterThanOrEqual(48); expect(p.r.w, tag).toBeLessThanOrEqual(52);
+    // [17.11.2026] власник: кнопка з підписом (пігулка 50 px, кружок 38 px зі стандартним літачком) — не голий кружок
+    expect(p.r.h, tag).toBeGreaterThanOrEqual(48); expect(p.r.h, tag).toBeLessThanOrEqual(52); expect(p.ic.w, tag).toBeGreaterThanOrEqual(36);
     expect(p.r.l >= 0 && p.r.r <= p.vw && p.r.b <= p.vh, tag).toBe(true);                             // on the screen
     expect(p.r.b, tag).toBeLessThan(p.m.t);                                                          // above the record, never over it
-    expect(Math.abs((p.r.l + p.r.r) / 2 - (p.m.l + p.m.r) / 2), tag).toBeLessThan(1);                // centred over it
+    expect(Math.abs(p.r.r - p.m.r), tag).toBeLessThan(6);                                              // its edge in line with the record's
     expect(p.m.r, tag).toBeGreaterThan(p.vw - 80);                                                   // the record's corner — the right one, RTL too
     expect(p.head, tag).toBe(false);
-    expect(p.flip, tag).toBe(RTL.includes(lang) ? 'matrix(-1, 0, 0, 1, 0, 0)' : 'none');            // RTL: it flies the way the page reads
+    expect(Math.sign(+((p.flip.match(/matrix\(([-\d.]+)/) || [0, 1])[1])), tag).toBe(RTL.includes(lang) ? -1 : 1);   // RTL: it flies the way the page reads (дзеркально); +1 px зсуву — оптичний центр значка
     await fab.click();                                                                                // — a tap on the plane still lands (nothing moves under the finger)
     await expect(page.locator('#muHint'), tag).toBeHidden();
     await expect.poll(() => page.evaluate(() => Math.round(document.getElementById('contact').getBoundingClientRect().top)), tag).toBeLessThanOrEqual(74);
@@ -740,7 +742,7 @@ test('the paper plane: above the record, «Write to us» in the page’s languag
     await planeOut(page); p = await planeAt(page);
     expect(p.on && !p.off, tag).toBe(true); expect(p.under, tag).toEqual([]);
     expect(p.r.l >= 0 && p.r.r <= p.vw && p.r.b <= p.vh, tag).toBe(true);
-    if (p.m) { expect(p.r.b, tag).toBeLessThan(p.m.t); expect(Math.abs((p.r.l + p.r.r) / 2 - (p.m.l + p.m.r) / 2), tag).toBeLessThan(1); }
+    if (p.m) { expect(p.r.b, tag).toBeLessThan(p.m.t); expect(Math.abs(p.r.r - p.m.r), tag).toBeLessThan(6); }
     expect(p.head, tag).toBe(false);
     if (path !== 'no-such-room/') {                                                                  // the page's end: the footer's links stay free
       await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' })); await page.waitForTimeout(400);
