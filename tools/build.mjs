@@ -171,7 +171,8 @@ const SOCIAL = [['tiktok', 'TikTok', 'https://www.tiktok.com/@lewydo_game'], ['i
   ['youtube', 'YouTube', 'https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw'], ['facebook', 'Facebook', 'https://www.facebook.com/profile.php?id=61594804110096'],
   ['discord', 'Discord', 'https://discord.gg/Krkk8bAqDF'],   // the studio's server, «general» — one permanent invite for every site (owner 06.11.2026)
   ['x', 'X', 'https://x.com/lewydo_game']];   // the studio's X (owner 14.10.2026)
-const social = (cls) => SOCIAL.map(([i, n, u]) => `<a class="${cls}" href="${u}" target="_blank" rel="noopener" aria-label="Lewydo — ${n}">${ico(i)}<span>${n}</span></a>`).join('');
+// ct — the «Contact» section's row: its Discord is counted (data-ct, src/stats.js — owner 17.11.2026: «how many tapped, on which site, from which countries»)
+const social = (cls, ct) => SOCIAL.map(([i, n, u]) => `<a class="${cls}" href="${u}" target="_blank" rel="noopener" aria-label="Lewydo — ${n}"${ct && i === 'discord' ? ' data-ct="discord"' : ''}>${ico(i)}<span>${n}</span></a>`).join('');
 const ico = (n) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[n]}"/></svg>`;
 // the heart as Vlad's Kotlin (src/heart.kt), lightly coloured
 const escT = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -247,14 +248,16 @@ const fill = (html) => {
   html = html
     // our anonymous visit counter (owner 12.11.2026, src/stats.js): one beacon to stats.lewydo.com per page — {{stats:<page kind>}}
     .replace(/\{\{stats:(home|privacy|press|other)\}\}/g, (m, p) => '<script>' + read('src/stats.js').replace(/\{\{page\}\}/g, p) + '</script>')
-    .replace('{{music}}', () => read('src/music.html')).replace('{{moreCss}}', () => read('src/more.css')).replace('{{moreJs}}', () => read('src/more.js')).replace(/\{\{vinyl\}\}/g, () => VINYL)
+    .replace('{{music}}', () => read('src/music.html'))
+    // the paper plane to the contacts (owner 17.11.2026, src/plane.html): the main page glides to its #contact, the others link to /#contact
+    .replace(/\{\{plane:(here|home)\}\}/g, (m, w) => read('src/plane.html').replace('{{planeHref}}', w === 'here' ? 'href="#contact"' : 'href="/#contact" data-lang-link')).replace('{{moreCss}}', () => read('src/more.css')).replace('{{moreJs}}', () => read('src/more.js')).replace(/\{\{vinyl\}\}/g, () => VINYL)
     .replace(/\{\{brandCss\}\}/g, () => brandCss).replace(/\{\{lockup\}\}/g, lockup).replace(/\{\{mark\}\}/g, mark).replace(/\{\{mark:(\w+)\}\}/g, (m, id) => logo(id))
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
     .replace(/<!--cp-as-->([\s\S]*?)<!--\/cp-as-->/g, (m, b) => (G.cubepix.appStore ? b : ''))   // CubePix's App Store badge only once it is there
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{asIcon\}\}/g, asIcon).replace(/\{\{gpIn\}\}/g, gpIn).replace(/\{\{asIn\}\}/g, asIn).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace(/\{\{jar\}\}/g, JAR).replace(/\{\{patreon\}\}/g, PATREON).replace(/\{\{usdt\}\}/g, USDT).replace(/\{\{usdtQr\}\}/g, '/' + USDT_QR)
-    .replace(/\{\{social:(\w+)\}\}/g, (m, cls) => social(cls)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
+    .replace(/\{\{social:(\w+)(:ct)?\}\}/g, (m, cls, ct) => social(cls, !!ct)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|host|mail|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.appstore|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.appstore|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
       url: SITE, host: HOST, mail: MAIL, year: YEAR, devPage: G.devPage, 'cp.site': cpLink(G.cubepix.site), 'cp.demo': cpLink(G.cubepix.demo), 'cp.privacy': gameLink(G.cubepix.privacy), 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.appstore': G.cubepix.appStore || '', 'cp.version': G.cubepix.version,
@@ -282,12 +285,12 @@ out('index.html', fill(read('src/index.html').replace('{{langBoot}}', () => lang
   .replace('{{halloweenCss}}', () => read('src/halloween.css')).replace('{{halloweenJs}}', () => read('src/halloween.js'))));
 // the privacy page (English, like the games' policies): what lewydo.com itself does — only the visit counter
 out('privacy.html', fill(read('src/privacy.html')));
-const NF = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(['nf.title', 'nf.text', 'nf.home'].map((k) => [k, S[L][k]]))]));
+const NF = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(['nf.title', 'nf.text', 'nf.home', 'contact.mail'].map((k) => [k, S[L][k]]))]));
 out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).replace('{{DATA404}}', JSON.stringify({ S: NF, rtl: RTL }).replace(/</g, '\\u003c'))));
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
 const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, S, IDS, MAIL }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
 out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
-const BKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', 'nav.label', 'foot.press', ...Object.keys(BS.en).map((k) => 'b.' + k)];
+const BKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', 'nav.label', 'foot.press', 'contact.mail', ...Object.keys(BS.en).map((k) => 'b.' + k)];
 const bWords = (L) => Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]));
 // About us in every language rides in the page (its own language picker shows any of them): the games' own words
 const BDATA = { langs: LANGS, base: '/brand/lang/', S: { en: bWords('en') }, stop: STOP,
@@ -386,7 +389,7 @@ const pressHtml = read('src/press.html')
   .replace(/\{\{pk\.zip\}\}/g, PRESS_ZIP).replace(/\{\{pk\.zipSize\}\}/g, () => human(PZIP.length)).replace(/\{\{pk\.kitSize\}\}/g, () => human(ZIP.length));
 // the words file of each language: the header, the languages and the footer (the site's) + every word the page shows — read from the page itself
 // (data-t, data-ta), so a new word on the page can't be forgotten here — + the ones its script says («Copied ✓»); bodyEn — no press words yet
-const PKEYS = [...new Set(['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'support.copied',
+const PKEYS = [...new Set(['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'support.copied', 'contact.mail',
   ...[...pressHtml.matchAll(/\sdata-t="([^"]+)"/g)].map((m) => m[1]), ...[...pressHtml.matchAll(/\sdata-ta="[\w-]+:([^"]+)"/g)].map((m) => m[1])])];
 for (const k of PKEYS) if (S.en[k] == null) pressFail(`the page says «${k}», but no language has that word (src/i18n/en.json)`);
 const pWords = (L) => Object.fromEntries(PKEYS.map((k) => [k, S[L][k]]));

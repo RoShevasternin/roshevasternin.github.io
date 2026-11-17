@@ -7,6 +7,9 @@
 <style>
 .mu{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:45;display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none;}
 .mu>*{pointer-events:auto;}
+/* right to left the column still stands on the right edge (its cross-end would be the left one there): the record and the plane above it keep
+   their corner while the first-visit word is out; the word and the card read right to left */
+.mu{direction:ltr;} html[dir="rtl"] .mu>*{direction:rtl;}
 .mu-fab{position:relative;width:56px;height:56px;padding:0;border:0;border-radius:50%;cursor:pointer;display:grid;place-items:center;
   background:radial-gradient(circle at 50% 32%,#20244e,#0a0c21);box-shadow:0 0 0 2px rgba(157,245,194,.42),0 8px 22px rgba(0,0,0,.55);
   -webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:transform .15s ease,box-shadow .2s ease;}
@@ -68,7 +71,10 @@ html.og .mu,html.kit .mu{display:none !important;}
   let frame = null, open = false, heard = false, knock = 0;
   const send = (func) => { if (frame && frame.contentWindow) frame.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: [] }), YT); };
   const playing = (on) => box.classList.toggle('playing', on);
-  const unhint = () => { hint.hidden = true; box.classList.remove('ask'); };
+  // a tap anywhere but on the record — or on the plane above it (src/plane.html: it hides the word itself, after its tap; were the word to go
+  // on pointerdown, the plane would drop under the finger before the click) — hides the word
+  const away = (e) => { if (!fab.contains(e.target) && !(e.target.closest && e.target.closest('.ct-plane'))) unhint(); };
+  const unhint = () => { hint.hidden = true; box.classList.remove('ask'); removeEventListener('pointerdown', away); };
   function show() {                                       // the tap itself starts it (browsers let a page play sound only after a touch)
     open = true; card.hidden = false; fab.setAttribute('aria-pressed', 'true'); unhint(); mem.set('lewydo:music', '1');
     if (frame) { send('playVideo'); return; }
@@ -96,7 +102,7 @@ html.og .mu,html.kit .mu{display:none !important;}
   // the first visit: a word by the record — whose song it is (once; any tap hides it)
   if (!mem.get('lewydo:music') && !matchMedia('print').matches) setTimeout(() => {
     if (open) return; hint.hidden = false; box.classList.add('ask'); mem.set('lewydo:music', '0');
-    setTimeout(unhint, 8000); addEventListener('pointerdown', (e) => { if (!fab.contains(e.target)) unhint(); }, { once: true });
+    setTimeout(unhint, 8000); addEventListener('pointerdown', away);
   }, 2600);
 })();
 </script>

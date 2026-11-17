@@ -1,12 +1,14 @@
 /* Lewydo — our anonymous visit counter (owner 12.11.2026; the same as on orbitdash.lewydo.com and cubepix.lewydo.com).
    One small message to our own counter at stats.lewydo.com (Cloudflare Worker lewydo-site-stats → Workers Analytics Engine) when a page
-   opens: {s, p, e, c, src} and nothing else (a tap in the «Support» block adds t — which button) — no cookies, no storage, no ids;
+   opens: {s, p, e, c, src} and nothing else (a tap in the «Support» block or on a contact button adds t — which button) — no cookies, no storage, no ids;
    the IP address is not stored, Workers logs are off.
    The contract and the server: Game-Orbit-Dash-PRIVATE/server/site-stats/README.md. Privacy: /privacy.html#visit-counter.
      s   "st" — this site (lewydo.com)
      p   the page: home · privacy · press (/press/) · other (brand, 404)
      e   "view" — this site has no analytics and no consent bar, so it never sends allow / decline;
-         "support" [17.11.2026] — a tap on a button of the «Support» block (owner: «how many people tapped support on our sites»)
+         "support" [17.11.2026] — a tap on a button of the «Support» block (owner: «how many people tapped support on our sites»);
+         "contact" [17.11.2026] — a tap on the paper plane or a button of the «Contact» section (owner: «how many tapped the planes, on which
+         site and from which countries» — the country is the server's, from Cloudflare, as for every event)
      c   "none" — no consent choice exists here
      src a coarse source label, worked out here on the device: utm_source (lower case, not an id) → the kind of site in the referrer
          (only its host) → the TikTok / Instagram / Facebook in-app browser (the TikTok bio links to the bare lewydo.com/, and that
@@ -14,6 +16,8 @@
      t   only with "support": which button, from the list SUP — open («♥ Support» in the header / footer → #support), jar (the monobank
          jar), crypto («Copy» of the USDT address), itch (itch.io), patreon (Patreon); the button says it itself: data-sup="…".
          Not whether anyone donated — we never learn that.
+         With "contact": from the list CT — plane (the paper plane, every page), mail («Write to us»), copy («Copy» of the mail address),
+         telegram, discord (the section's Telegram and its Discord); the button says it itself: data-ct="…". Never what anyone wrote.
    {{page}} is set by tools/build.mjs for each page. */
 (function () {
   "use strict";
@@ -64,7 +68,7 @@
       return inApp();
     } catch (e) { return "none"; }
   }
-  // one message per event: {s, p, e, c, src} and, for "support" only, t
+  // one message per event: {s, p, e, c, src} and, for "support" / "contact" only, t
   function hit(e, t) {
     try {
       if (!navigator.sendBeacon) return;
@@ -89,9 +93,18 @@
     t = String(t);
     if (SUP.test(t)) hit("support", t);
   }
+  // [17.11.2026] the paper plane and the «Contact» section: a tap on [data-ct] — "contact" with t from this list only (as on orbitdash / cubepix)
+  var CT = /^(plane|mail|copy|telegram|discord)$/;
+  function contact(t) {
+    t = String(t);
+    if (CT.test(t)) hit("contact", t);
+  }
   try {
     document.addEventListener("click", function (ev) {
-      try { var a = ev.target && ev.target.closest ? ev.target.closest("[data-sup]") : null; if (a) support(a.getAttribute("data-sup")); } catch (err) { /* */ }
+      try {
+        var a = ev.target && ev.target.closest ? ev.target.closest("[data-sup]") : null; if (a) support(a.getAttribute("data-sup"));
+        var c = ev.target && ev.target.closest ? ev.target.closest("[data-ct]") : null; if (c) contact(c.getAttribute("data-ct"));
+      } catch (err) { /* */ }
     }, true);
   } catch (e) { /* */ }
 })();

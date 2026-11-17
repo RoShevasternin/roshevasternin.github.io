@@ -673,6 +673,125 @@ test('contacts: the work Telegram and Lewydo\'s own pages, first names only; the
   expect(w.errs).toEqual([]);
 });
 
+// the paper plane to the contacts (owner 17.11.2026: «a little plane on every site that scrolls to the section with the contacts», src/plane.html):
+// a round button right above the music record (the same corner on a page without it), named «Write to us» in the page's language; on the main
+// page a tap glides to #contact, its title takes the focus and the address says #contact; it steps aside while the contacts are on screen and
+// while the footer's links are under it; /brand/, /press/ and 404 lead to /#contact; never over the record, the header or off the screen; RTL —
+// the record's corner, the plane flying the way the page reads
+const planeAt = (page) => page.evaluate(() => { const f = document.getElementById('ctPlane'), m = document.getElementById('muFab'), r = f.getBoundingClientRect(), q = m && m.getBoundingClientRect();
+  const hit = (a, b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+  const head = [...document.querySelectorAll('.top a, .top button')].filter((e) => e.getClientRects().length).some((e) => hit(r, e.getBoundingClientRect()));
+  const under = [...document.querySelectorAll('main a, main button, footer a, footer button')].filter((e) => !e.closest('#mu') && e.getClientRects().length && getComputedStyle(e).visibility === 'visible'
+    && hit(r, e.getBoundingClientRect())).map((e) => (e.textContent || e.getAttribute('aria-label') || '').trim().slice(0, 30));
+  return { r: { l: r.left, r: r.right, t: r.top, b: r.bottom, w: r.width }, m: q && { l: q.left, r: q.right, t: q.top }, off: f.classList.contains('off'), head, under, vw: innerWidth, vh: innerHeight,
+    on: getComputedStyle(f).visibility === 'visible', flip: getComputedStyle(f.querySelector('svg')).transform }; });
+// scrolled until the plane is out (it steps aside while a button is under it): the place where a visitor would tap it
+const planeOut = async (page) => { for (let i = 0; i < 40; i++) { if (!(await page.locator('#ctPlane').evaluate((f) => f.classList.contains('off')))) return;
+  await page.evaluate(() => window.scrollBy({ top: 120, behavior: 'instant' })); await page.waitForTimeout(80); } throw new Error('the plane never came out'); };
+test('the paper plane: above the record, «Write to us» in the page’s language, glides to the contacts, steps aside; other pages lead to /#contact; 320 / 390 / 1280; RTL', async ({ browser }) => {
+  test.setTimeout(240_000);
+  const NAME = { en: 'Write to us', uk: 'Написати нам', ar: 'راسلنا' };
+  for (const [lang, width] of [['en', 1280], ['uk', 390], ['en', 320], ['ar', 390], ['ar', 320]]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 800 } }), page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
+    await page.goto(`./?lang=${lang}`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    const fab = page.locator('#ctPlane');
+    await expect(fab, tag).toHaveAttribute('aria-label', NAME[lang]); await expect(fab, tag).toHaveAttribute('title', NAME[lang]);
+    await expect(page.locator('#mu > #ctPlane'), tag).toHaveCount(1);                                  // in the record's column
+    await expect(page.locator('#muHint'), tag).toBeVisible({ timeout: 5000 });                          // the first visit: the word by the record is out —
+    let p = await planeAt(page);
+    if (!p.off) expect(p.under, tag).toEqual([]);                                                    // out — then over no button of the page
+    await planeOut(page); p = await planeAt(page);
+    expect(p.on && !p.off, tag).toBe(true); expect(p.under, tag).toEqual([]);
+    expect(p.r.w, tag).toBeGreaterThanOrEqual(48); expect(p.r.w, tag).toBeLessThanOrEqual(52);
+    expect(p.r.l >= 0 && p.r.r <= p.vw && p.r.b <= p.vh, tag).toBe(true);                             // on the screen
+    expect(p.r.b, tag).toBeLessThan(p.m.t);                                                          // above the record, never over it
+    expect(Math.abs((p.r.l + p.r.r) / 2 - (p.m.l + p.m.r) / 2), tag).toBeLessThan(1);                // centred over it
+    expect(p.m.r, tag).toBeGreaterThan(p.vw - 80);                                                   // the record's corner — the right one, RTL too
+    expect(p.head, tag).toBe(false);
+    expect(p.flip, tag).toBe(RTL.includes(lang) ? 'matrix(-1, 0, 0, 1, 0, 0)' : 'none');            // RTL: it flies the way the page reads
+    await fab.click();                                                                                // — a tap on the plane still lands (nothing moves under the finger)
+    await expect(page.locator('#muHint'), tag).toBeHidden();
+    await expect.poll(() => page.evaluate(() => Math.round(document.getElementById('contact').getBoundingClientRect().top)), tag).toBeLessThanOrEqual(74);
+    expect(new URL(page.url()).hash, tag).toBe('#contact');
+    if (lang !== 'en') expect(new URL(page.url()).searchParams.get('lang'), tag).toBe(lang);
+    expect(await page.evaluate(() => document.activeElement === document.querySelector('#contact h2')), tag).toBe(true);   // its title takes the focus
+    await expect(fab, tag).toHaveClass(/\boff\b/);                                                   // the contacts on screen: it steps aside
+    await expect.poll(async () => (await planeAt(page)).on, tag).toBe(false);                      // faded out (then not even in the tab order)
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await planeOut(page);                                                                            // and comes back
+    expect(w.errs, tag).toEqual([]); expect([...w.ext], tag).toEqual([]);
+    await ctx.close();
+  }
+  // reduced motion: at once
+  { const ctx = await browser.newContext({ viewport: { width: 390, height: 800 }, reducedMotion: 'reduce' }), page = await ctx.newPage();
+    await page.goto('./?lang=en'); await page.locator('#ctPlane').click();
+    expect(await page.evaluate(() => Math.round(document.getElementById('contact').getBoundingClientRect().top))).toBeLessThanOrEqual(74);
+    await ctx.close(); }
+  // the other pages: a link to the main page's contacts, in the page's language; the plane never sits on the footer's links
+  for (const [path, lang, width] of [['brand/', 'uk', 390], ['press/', 'en', 320], ['press/', 'ar', 1280], ['brand/', 'en', 1280], ['no-such-room/', 'en', 390]]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 800 } }), page = await ctx.newPage(), w = watch(page), tag = `${path} ${lang} ${width}`;
+    await page.goto(`./${path}?lang=${lang}`);
+    const fab = page.locator('#ctPlane');
+    await expect(fab, tag).toHaveAttribute('href', lang === 'en' || path === 'no-such-room/' ? '/#contact' : `/?lang=${lang}#contact`);
+    if (path !== 'no-such-room/') await expect(fab, tag).toHaveAttribute('aria-label', NAME[lang]);
+    let p = await planeAt(page);
+    if (!p.off) expect(p.under, tag).toEqual([]);
+    await planeOut(page); p = await planeAt(page);
+    expect(p.on && !p.off, tag).toBe(true); expect(p.under, tag).toEqual([]);
+    expect(p.r.l >= 0 && p.r.r <= p.vw && p.r.b <= p.vh, tag).toBe(true);
+    if (p.m) { expect(p.r.b, tag).toBeLessThan(p.m.t); expect(Math.abs((p.r.l + p.r.r) / 2 - (p.m.l + p.m.r) / 2), tag).toBeLessThan(1); }
+    expect(p.head, tag).toBe(false);
+    if (path !== 'no-such-room/') {                                                                  // the page's end: the footer's links stay free
+      await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' })); await page.waitForTimeout(400);
+      expect(await page.evaluate(() => { const f = document.getElementById('ctPlane'); if (f.classList.contains('off')) return [];
+        const r = f.getBoundingClientRect(); return [...document.querySelectorAll('footer a, footer button')].filter((e) => { const b = e.getBoundingClientRect();
+          return b.width && r.left < b.right && b.left < r.right && r.top < b.bottom && b.top < r.bottom; }).map((e) => e.textContent.trim()); }), tag).toEqual([]);
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' })); await planeOut(page);
+    }
+    await fab.click();
+    await page.waitForURL(/\/(\?lang=\w+)?#contact$/);
+    expect(new URL(page.url()).pathname, tag).toBe('/');
+    await expect.poll(() => page.evaluate(() => { const r = document.getElementById('contact').getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }), tag).toBe(true);   // the contacts in sight
+    expect(await page.evaluate(() => document.activeElement === document.querySelector('#contact h2')), tag).toBe(true);
+    expect(w.errs.filter((e) => !/status of 404/.test(e)), tag).toEqual([]); expect([...w.ext], tag).toEqual([]);
+    await ctx.close();
+  }
+});
+
+// «Write to us» is mailto: — on a computer without a mail app it did nothing (owner 17.11.2026: «it has to do something»). Under the buttons —
+// the address itself with «Copy»; and a tap on «Write to us» always answers: the address is copied («Copied ✓»), its line glows, the focus is on it
+test('the contacts’ address: hello@lewydo.com with «Copy», and «Write to us» always answers — copies, glows, keeps mailto; 320 / 1280; RTL', async ({ browser }) => {
+  for (const [lang, width] of [['en', 1280], ['uk', 320], ['ar', 390]]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 800 } }), page = await ctx.newPage(), w = watch(page), tag = `${lang} ${width}`;
+    await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.goto(`./?lang=${lang}`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    const code = page.locator('#contact .ct-mail code'), copy = page.locator('#ctCopy'), write = page.locator('#ctWrite');
+    await expect(code, tag).toHaveText('hello@lewydo.com'); await expect(code, tag).toHaveAttribute('dir', 'ltr');
+    await expect(write, tag).toHaveAttribute('href', 'mailto:hello@lewydo.com');                     // the mail app still opens wherever there is one
+    await page.locator('#contact .ct-mail').scrollIntoViewIfNeeded();
+    expect(await page.evaluate(() => { const c = document.querySelector('.contact-card').getBoundingClientRect();
+      return [...document.querySelectorAll('.ct-mail, .ct-mail *')].filter((e) => { const r = e.getBoundingClientRect(); return r.width && (r.left < c.left - .5 || r.right > c.right + .5); }).length; }), tag).toBe(0);
+    await copy.click();
+    await expect(copy, tag).toHaveText(/✓$/);
+    expect(await page.evaluate(() => navigator.clipboard.readText()), tag).toBe('hello@lewydo.com');
+    await expect(copy, tag).not.toHaveText(/✓$/, { timeout: 4000 });
+    await page.evaluate(() => navigator.clipboard.writeText('—'));
+    // after the page's own handlers: did they cancel mailto? (they must not) — then the test cancels it: its browser has no mail app to open
+    await page.evaluate(() => document.addEventListener('click', (e) => { if (e.target.closest('#ctWrite')) { window.__mailKept = !e.defaultPrevented; e.preventDefault(); } }));
+    await write.click();
+    expect(await page.evaluate(() => window.__mailKept), tag).toBe(true);
+    await expect(copy, tag).toHaveText(/✓$/);                                                        // «Copied ✓»
+    expect(await page.evaluate(() => navigator.clipboard.readText()), tag).toBe('hello@lewydo.com');
+    await expect(code, tag).toHaveClass(/\blit\b/);                                                   // the address glows…
+    expect(await page.evaluate(() => document.activeElement === document.getElementById('ctMail')), tag).toBe(true);   // …and has the focus
+    await expect(code, tag).not.toHaveClass(/\blit\b/, { timeout: 4000 });
+    expect(w.errs, tag).toEqual([]); expect([...w.ext], tag).toEqual([]);
+    await ctx.close();
+  }
+});
+
 test('the story: the first streamer to play our game live (22.10.2026) — our own clip, loaded only when needed; the thank-you; his links', async ({ page, request }) => {
   const w = watch(page), media = [];
   page.on('request', (r) => { if (/\/assets\/story\/(?!(?:twitch|versus|ios|twitch-review)\.svg)/.test(r.url())) media.push(new URL(r.url()).pathname); });   // twitch.svg, versus.svg — the dots of the 03.11 and 10.11 entries (1 KB vectors, like the other dots), not media
@@ -1133,7 +1252,8 @@ test('the visit counter: one anonymous message per page — five fields, a coars
   // the policy says what the code sends: a tap in the «Support» block and which one (each target of SUP by name), not a donation
   const said = pol.replace(/\s+/g, ' ');
   for (const w of ['tapped one of the buttons of the “Support” block', 'the Support button that opens it', 'the monobank jar', 'copying the crypto address',
-    'itch.io', 'Patreon', 'not whether you donated anything']) expect(said).toContain(w);
+    'itch.io', 'Patreon', 'not whether you donated anything',
+    'tapped the paper-plane button or a button of the “Contact” section (write to us, copying the email address, Telegram or Discord) and which one — never what you wrote']) expect(said).toContain(w);
   expect(disk('index.html')).toContain('href="/privacy.html"');                                              // the footer leads to it
 });
 
@@ -1181,6 +1301,54 @@ test('the visit counter: a tap in the «Support» block — exactly one message 
     await page.goto(`./${f}?lang=en`);
     await expect(page.locator('[data-sup]'), f).toHaveCount(0);
   }
+  await ctx.close();
+});
+
+// the paper plane and the «Contact» section (owner 17.11.2026: «on every site — how many tapped the planes, on which site, from which countries»):
+// each button sends exactly one {s, p, e: "contact", c, src, t} — t from the list only; the country is the server's (Cloudflare), nothing here
+test('the visit counter: a tap on the paper plane or a contact button — exactly one «contact» message, with which one, on every page', async ({ browser }) => {
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await ctx.route(/discord\.gg/, (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>tab</title>' }));   // their tabs: answered here
+  const page = await ctx.newPage(), w = watch(page);
+  // links are kept from leaving the page (mailto, Telegram in this tab, the plane's /#contact elsewhere): the count is about the tap
+  const hold = () => page.evaluate(() => document.addEventListener('click', (e) => { const a = e.target.closest('a[href^="mailto:"], a[href^="https://t.me/"], a.ct-plane[href^="/"]'); if (a) e.preventDefault(); }));
+  const tap = async (sel, t, p) => {
+    w.hits.length = 0;
+    const pop = t === 'discord' ? ctx.waitForEvent('page') : null;                                  // Discord opens a tab
+    await page.locator(sel).click();
+    if (pop) await (await pop).close();
+    await expect.poll(() => w.hits.length, sel).toBe(1);
+    await page.waitForTimeout(250);                                                                    // and not a second one
+    expect(w.hits, sel).toHaveLength(1);
+    expect(w.hits[0], sel).toEqual({ s: 'st', p, e: 'contact', c: 'none', src: 'none', t });
+  };
+  await page.goto('./?lang=en'); await hold();
+  await expect.poll(() => w.hits.length).toBe(1);
+  await expect(page.locator('[data-ct]')).toHaveCount(5);                                             // the plane, «Write to us», «Copy», Telegram, Discord
+  await page.evaluate(() => window.scrollTo(0, 1600)); await planeOut(page);
+  await tap('#ctPlane', 'plane', 'home');
+  await page.locator('#contact').scrollIntoViewIfNeeded();
+  await tap('#ctWrite', 'mail', 'home');
+  await page.waitForTimeout(2200);                                                                     // «Copied ✓» goes back
+  await tap('#ctCopy', 'copy', 'home');
+  await tap('#contact .ctas a[data-ct="telegram"]', 'telegram', 'home');
+  await tap('#contact .social a[data-ct="discord"]', 'discord', 'home');
+  await expect(page.locator('.foot [data-ct]')).toHaveCount(0);                                       // the footer's icons are not the section's
+  w.hits.length = 0;                                                                                   // anything else — nothing
+  await page.locator('#contact h2').click(); await page.locator('#ctMail').click();
+  await page.evaluate(() => { const a = document.createElement('button'); a.id = 'stray'; a.setAttribute('data-ct', 'phone'); a.textContent = 'x'; document.body.append(a); });
+  await page.locator('#stray').click();                                                                // a target off the list is never sent
+  await page.waitForTimeout(400);
+  expect(w.hits).toEqual([]);
+  for (const [f, p] of [['brand/', 'other'], ['press/', 'press']]) {                                   // the plane on the other pages too
+    await page.goto(`./${f}?lang=en`); await hold();
+    await expect(page.locator('[data-ct]'), f).toHaveCount(1);
+    await planeOut(page);
+    await tap('#ctPlane', 'plane', p);
+  }
+  expect([...w.ext]).toEqual([]);
+  expect(w.errs).toEqual([]);
   await ctx.close();
 });
 
@@ -1310,5 +1478,40 @@ test('the press page: facts, story, games, logo tiles, the zip; «Press kit» in
     await expect(page.locator(`footer a[href^="/press/"]`)).toHaveText(word);
   }
   for (const L of LANGS) { const d = JSON.parse(disk(`press/lang/${L}.json`)); expect(d.S['foot.press'], L).toBeTruthy(); }
+  await ctx.close();
+});
+
+// the header, measured by its words and icons themselves, not its boxes (owner 17.11.2026: a box shrinks, the text comes out — «so we missed it»):
+// on /brand/ and /press/ the page's badge by the sign is never cut (the sign steps back to its heart, then two lines, then smaller); nothing in the
+// header overlaps or leaves the screen; and the page never scrolls sideways (CubePix's arrows at 980–1229 px were 4 px over the edge).
+// The full sweep — 82 languages × 16 widths × 3 pages — was run by hand on 17.11.2026; this keeps the hardest of them
+test('the header: every word and icon whole, on the screen and apart — /, /brand/, /press/; long languages; 320 → 1280; RTL', async ({ browser }) => {
+  test.setTimeout(300_000);
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } }), page = await ctx.newPage(), w = watch(page);
+  for (const path of ['', 'brand/', 'press/']) for (const lang of ['ta', 'ml', 'my', 'de', 'ar', 'uk']) {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(`./${path}?lang=${lang}`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', lang);
+    await page.evaluate(() => document.fonts.ready); await page.evaluate(() => window.scrollTo(0, 1600));
+    for (const width of [320, 360, 390, 430, 600, 768, 1000, 1100]) {
+      await page.setViewportSize({ width, height: 800 }); await page.waitForTimeout(400);   // the sky's canvas follows a resize a moment later
+      const bad = await page.evaluate(() => { const vw = innerWidth, out = [];
+        const vis = (e) => getComputedStyle(e).display !== 'none' && getComputedStyle(e).visibility !== 'hidden' && e.getClientRects().length > 0;
+        const items = [...document.querySelectorAll('.top-in > a, .top-in > nav > a, .top-in .more-btn, .top-in .lang-btn')].filter(vis);
+        const parts = (el) => { const rs = [], tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+          for (let n; (n = tw.nextNode());) if (n.textContent.trim() && vis(n.parentElement)) { const r = document.createRange(); r.selectNodeContents(n); rs.push(...[...r.getClientRects()].filter((x) => x.width)); }
+          el.querySelectorAll('svg, img, .flag').forEach((e) => { if (vis(e)) rs.push(e.getBoundingClientRect()); }); return rs; };
+        const hit = (a, b) => a.left < b.right - .5 && b.left < a.right - .5 && a.top < b.bottom - .5 && b.top < a.bottom - .5;
+        const C = items.map((el) => ({ n: el.className || el.id || el.getAttribute('href'), box: el.getBoundingClientRect(), p: parts(el) }));
+        for (const c of C) for (const r of c.p) { if (r.left < -.5 || r.right > vw + .5) out.push(c.n + ' off the screen'); if (r.left < c.box.left - 1 || r.right > c.box.right + 1) out.push(c.n + ' out of its button'); }
+        for (let i = 0; i < C.length; i++) for (let j = i + 1; j < C.length; j++) if (hit(C[i].box, C[j].box) || C[i].p.some((r) => hit(r, C[j].box)) || C[j].p.some((r) => hit(r, C[i].box))) out.push(C[i].n + ' × ' + C[j].n);
+        const b = document.querySelector('.top-in .home > b'); if (b && b.scrollWidth > b.clientWidth + .5) out.push('badge cut');
+        if (document.documentElement.scrollWidth > vw + .5) out.push('sideways');
+        const pl = document.getElementById('ctPlane'), mu = document.getElementById('muFab'); if (pl && mu && hit(pl.getBoundingClientRect(), mu.getBoundingClientRect())) out.push('plane × record');
+        return [...new Set(out)]; });
+      expect(bad, `${path || '/'} ${lang} ${width}`).toEqual([]);
+    }
+  }
+  expect(w.errs).toEqual([]); expect([...w.ext]).toEqual([]);
   await ctx.close();
 });
