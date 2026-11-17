@@ -182,6 +182,46 @@
    "col": "main"
   },
   {
+   "id": "soul-acoustic",
+   "name": "SOUL ACOUSTIC",
+   "genre": "ACOUSTIC GUITAR",
+   "dots": 2,
+   "bpm": 85,
+   "palette": {
+    "bg": "120E1C",
+    "ring": "4A2E1E",
+    "player": "FFB347",
+    "gem": "7FE8FF",
+    "spike": "FF5A3C"
+   },
+   "sky": {
+    "speed": 0.2,
+    "fill": 0.8,
+    "twinkle": 0.8
+   },
+   "col": "main"
+  },
+  {
+   "id": "ludovivo",
+   "name": "LUDOVIVO",
+   "genre": "PIANO CONCERTO",
+   "dots": 5,
+   "bpm": 152,
+   "palette": {
+    "bg": "0B0806",
+    "ring": "3A2B1A",
+    "player": "FFE3A8",
+    "gem": "7FF0FF",
+    "spike": "FF3B5C"
+   },
+   "sky": {
+    "speed": 0.3,
+    "fill": 0.2,
+    "twinkle": 0.45
+   },
+   "col": "main"
+  },
+  {
    "id": "blood-moon",
    "name": "BLOOD MOON",
    "genre": "HORROR SYNTHWAVE",

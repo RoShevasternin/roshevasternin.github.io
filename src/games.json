@@ -21,7 +21,7 @@
   "privacy": "https://orbitdash.lewydo.com/privacy.html",
   "released": true,
   "version": "3.0",
-  "_trails": "The fifteen ball trails of Orbit Dash 3.0, the game's order without the seasonal WISP (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level, x — won on RANKS only (FLARE, 2.2).",
+  "_trails": "The seventeen ball trails of Orbit Dash 3.3, the game's order without the seasonal WISP (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level, x — won on RANKS only (FLARE, 2.2).",
   "trails": [
    [
     "COMET",
@@ -81,6 +81,14 @@
    ],
    [
     "MACH",
+    "m"
+   ],
+   [
+    "STRUM",
+    "m"
+   ],
+   [
+    "KEYS",
     "m"
    ]
   ],
