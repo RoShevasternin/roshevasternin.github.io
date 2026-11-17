@@ -272,6 +272,9 @@ footer p{margin-top:8px;}
 /* languages: all of the site's (src/lang.css) */
 @media (min-width:1240px){.langsel{margin-inline-start:6px;}}
 {{langCss}}
+{{moreCss}}
+.top-in .more{margin-inline-start:auto;} .top-in .langsel{margin-inline-start:6px;}
+@media (min-width:1240px){.more-menu .more-sec{display:none;} .top-in .more{margin-inline-start:6px;}}
 /* right to left (ar, he, fa, ur, ps): the page mirrors; the game screens in the phones, the timelines, graphs and code keep their sides */
 [dir="rtl"] :is(.home,.device,.tl-track,.tl-ax,.graph svg,.anat-fig,.dont,.code,.beatgraph){direction:ltr;}
 </style>
@@ -285,6 +288,13 @@ footer p{margin-top:8px;}
       <a href="#recognise" data-t="b.nav.recognise"></a><a href="#rules" data-t="b.nav.rules"></a><a href="#colours" data-t="b.nav.colours"></a><a href="#games" data-t="b.nav.games"></a>
       <a href="#heartbeat" data-t="b.nav.heartbeat"></a><a href="#downloads" data-t="b.nav.downloads"></a><a href="#dev" data-t="b.nav.dev"></a>
     </nav>
+    <div class="more"><button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreMenu" data-ta="aria-label:nav.label">{{ico:more}}</button>
+      <div class="more-menu" id="moreMenu" hidden>
+        <a class="more-sec" href="#recognise" data-t="b.nav.recognise"></a><a class="more-sec" href="#rules" data-t="b.nav.rules"></a><a class="more-sec" href="#colours" data-t="b.nav.colours"></a><a class="more-sec" href="#games" data-t="b.nav.games"></a>
+        <a class="more-sec" href="#heartbeat" data-t="b.nav.heartbeat"></a><a class="more-sec" href="#downloads" data-t="b.nav.downloads"></a><a class="more-sec" href="#dev" data-t="b.nav.dev"></a><hr class="more-sec">
+        <a href="/press/" data-lang-link>{{ico:press}}<span data-t="foot.press"></span></a>
+      </div>
+    </div>
     <div class="langsel">
       <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
       <div class="lang-menu" id="langMenu" hidden>
@@ -538,7 +548,7 @@ How we work: prototype first — everything new is made and tested in the game's
   <div class="wrap">
     <a class="lw-pill" href="/" data-lang-link aria-label="Lewydo">{{sig}}{{go}}</a>
     <p data-t="b.foot"></p>
-    <p><a href="/" data-lang-link data-t="b.foot.home"></a> · <a href="/brand/brand.json">brand.json</a> · <a href="https://github.com/RoShevasternin/roshevasternin.github.io/tree/main/brand" rel="noopener" data-t="b.foot.gh"></a></p>
+    <p><a href="/" data-lang-link data-t="b.foot.home"></a> · <a href="/brand/brand.json">brand.json</a> · <a href="/press/" data-lang-link data-t="foot.press"></a> · <a href="https://github.com/RoShevasternin/roshevasternin.github.io/tree/main/brand" rel="noopener" data-t="b.foot.gh"></a></p>
     <p class="foot-music">♪ <a href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener" data-t="music.label"></a></p>
   </div>
 </footer>
@@ -556,6 +566,7 @@ const toast = (t) => { const e = $('#toast'); e.textContent = t; e.classList.add
 const store = { get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
 
 {{langJs}}
+{{moreJs}}
 // About us follows the page's language (the games' own words: D.about — every language, in the page)
 onLang.push(() => { const A = D.about[lang] || D.about.en; $('#textAbout').textContent = A.text; $('#textThanks').textContent = A.thanks; $('#textAbout').lang = $('#textThanks').lang = lang;
   if (abLang) { abLang.value = lang; showAbout(false); } });

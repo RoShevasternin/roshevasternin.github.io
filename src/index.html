@@ -107,6 +107,9 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .nav a[aria-current="true"]{color:var(--acc);}
 @media (min-width:880px){.nav{display:flex;} .langsel{margin-inline-start:6px;}}
 {{langCss}}
+{{moreCss}}
+@media (min-width:880px){.more-menu .more-sec{display:none;}}
+@media (min-width:880px) and (max-width:1099px){.nav a{padding:9px 9px;}}   /* room for «•••» next to the sections */
 /* «♥ Support» — always in the header, phones too (owner 16.11.2026: «visitors should notice the support option»; docs/process/donations.md):
    between the menu and the language button; on the smallest phones (< 360 px) — the heart alone, its name stays for screen readers */
 .top-support{display:inline-flex;align-items:center;gap:7px;flex:none;height:40px;padding:0 15px 0 13px;border-radius:999px;margin-inline-start:auto;
@@ -810,6 +813,13 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
       <a href="/brand/" data-t="nav.brand"></a>
     </nav>
     <a class="top-support" href="#support" data-ta="aria-label:support.foot">{{ico:heart}}<span data-t="support.nav"></span></a>
+    <div class="more"><button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreMenu" data-ta="aria-label:nav.label">{{ico:more}}</button>
+      <div class="more-menu" id="moreMenu" hidden>
+        <a class="more-sec" href="#worlds" data-t="nav.games"></a><a class="more-sec" href="#studio" data-t="nav.studio"></a><a class="more-sec" href="#story" data-t="nav.story"></a>
+        <a class="more-sec" href="#contact" data-t="nav.contact"></a><a class="more-sec" href="/brand/" data-t="nav.brand"></a><hr class="more-sec">
+        <a href="/press/" data-lang-link>{{ico:press}}<span data-t="foot.press"></span></a>
+      </div>
+    </div>
     <div class="langsel">
       <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
       <div class="lang-menu" id="langMenu" hidden>
@@ -1116,7 +1126,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
     <nav class="foot-social" aria-label="Lewydo">{{social:fs}}</nav>
     <p class="foot-support"><a class="support-pill" href="#support"><img src="/assets/support-heart.webp" alt="" width="32" height="32" loading="lazy" decoding="async"><span data-t="support.foot"></span>{{ico:heart}}</a></p>
     <nav class="foot-links" aria-label="Lewydo">
-      <a href="{{cp.site}}" data-lang-link="cp">CubePix</a><a href="{{od.site}}" data-lang-link="od">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a>
+      <a href="{{cp.site}}" data-lang-link="cp">CubePix</a><a href="{{od.site}}" data-lang-link="od">Orbit Dash</a><a href="{{devPage}}" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand"></a><a href="/press/" data-lang-link data-t="foot.press"></a>
       <a href="/privacy.html"><span data-t="foot.privacy"></span> · Lewydo</a><a href="{{cp.privacy}}" data-lang-link="cp"><span data-t="foot.privacy"></span> · CubePix</a><a href="{{od.privacy}}" data-lang-link="od"><span data-t="foot.privacy"></span> · Orbit Dash</a>
     </nav>
     <p class="foot-c">© {{year}} Lewydo™ · Love What You Do · <span data-t="foot.rights"></span></p>
@@ -1162,6 +1172,7 @@ const seen = (el, margin = '0px') => { let on = false; new IntersectionObserver(
 const beat = (el) => { if (!el) return; el.classList.remove('lw-beating'); void el.offsetWidth; el.classList.add('lw-beating'); };
 
 {{langJs}}
+{{moreJs}}
 const pic = (key, f) => { const own = DICT[lang] && DICT[lang].pics; return ((own && own[key]) || D.cp.pics[key])[f] || ''; };
 // one line in every language: a long one gets smaller instead of wrapping (the brand's «Thank you for playing!»)
 function fitLines() { $$('[data-fit]').forEach((el) => { el.style.fontSize = ''; let fs = parseFloat(getComputedStyle(el).fontSize);

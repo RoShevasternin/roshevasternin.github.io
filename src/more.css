@@ -1,0 +1,17 @@
+/* ── «•••» in the header (src/more.css + src/more.js — the same on every page; owner 17.11.2026, like the Orbit Dash site): always visible;
+   its menu holds the page's sections where the header has no room for them (.more-sec — hidden once the page's own nav shows) and,
+   always last, after a thin line, «Press kit» (foot.press, the same word as in the footer) ── */
+.more{position:relative;flex:none;}
+.more-btn{display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:12px;background:rgba(255,255,255,.06);color:#fff;cursor:pointer;
+  box-shadow:inset 0 0 0 1px rgba(157,245,194,.18);}
+.more-btn:hover,.more-btn[aria-expanded="true"]{background:rgba(255,255,255,.1);}
+.more-btn svg{width:20px;height:20px;fill:currentColor;}
+.more-menu{position:absolute;inset-inline-end:0;top:calc(100% + 10px);z-index:50;display:flex;flex-direction:column;min-width:200px;max-width:calc(100vw - 32px);padding:8px;
+  border-radius:18px;background:rgba(18,21,48,.97);box-shadow:0 0 0 1px rgba(157,245,194,.18),0 20px 50px rgba(0,0,0,.6);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
+.more-menu a{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 12px;border-radius:12px;color:var(--ink2);font:800 16px/1.25 var(--f);text-decoration:none;white-space:nowrap;}
+.more-menu a:hover,.more-menu a:focus-visible{background:rgba(61,220,132,.12);color:#fff;outline:none;}
+.more-menu a[aria-current="page"]{color:var(--mint);}
+.more-menu a svg{width:16px;height:16px;flex:none;fill:var(--mint);}
+.more-menu hr{border:0;height:1px;margin:6px 8px;background:rgba(157,245,194,.16);}
+@media (max-width:360px){.more-btn{width:36px;}}

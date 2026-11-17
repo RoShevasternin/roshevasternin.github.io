@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lewydo press kit</title>
+<!-- «Для преси» /press/ (власник 17.11.2026, правило студії docs/process/press-kit.md; еталон — orbitdash.lewydo.com/press/).
+     Збирає tools/build.mjs (розділ «the press page»): факти, «Про нас», історія й ігри — з даних сайту (src/i18n/en.json, brand.json,
+     src/games.json, src/cubepix.json), плитки — з brand/kit/png + прев'ю press/thumb/*.webp, ZIP — збірка. Тіло — англійською (мова преси);
+     шапка, лист мов і підвал — мовою відвідувача (src/i18n/<мова>.json → site, /press/lang/<мова>.json). -->
+<meta name="description" content="Lewydo press kit: the facts, the story, the logo and our games — Orbit Dash and CubePix. Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play.">
+<meta name="theme-color" content="#0E1024">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://lewydo.com/press/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lewydo">
+<meta property="og:url" content="https://lewydo.com/press/">
+<meta property="og:title" content="Lewydo press kit">
+<meta property="og:description" content="Lewydo press kit: the facts, the story, the logo and our games — Orbit Dash and CubePix. Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play.">
+<meta property="og:image" content="https://lewydo.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<script>(() => {
+  const B = {"ids":["om","af","az","id","ms","bs","ca","cs","da","de","et","en","es","eu","fil","fr","gl","ha","hr","ig","zu","is","it","sw","lv","lt","hu","nl","nb","uz","pl","pt","ro","sq","sk","sl","so","fi","sv","vi","tr","tk","yo","be","bg","ky","mk","mn","sr","tg","uk","kk","el","ko","ja","zh-CN","zh-TW","hy","he","ur","ar","fa","ps","ne","mr","hi","as","bn","pa","gu","or","ta","te","kn","ml","si","th","lo","my","ka","am","km"],"rtl":["he","ur","ar","fa","ps"],"base":"/press/lang/","v":"69a26c20f8"}, has = (l) => B.ids.includes(l), get = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  // old and other codes for our languages (the same as the games): iw → he, in → id, tl → fil, no / nn → nb, prs → fa; Chinese by its script
+  const ALIAS = { iw: 'he', in: 'id', tl: 'fil', no: 'nb', nn: 'nb', prs: 'fa' };
+  const pick = (tag) => { if (!tag) return null; const p = String(tag).replace(/_/g, '-').toLowerCase().split('-');
+    if (p[0] === 'zh') return p.includes('hant') || p.some((x) => x === 'tw' || x === 'hk' || x === 'mo') ? 'zh-TW' : 'zh-CN';
+    const b = ALIAS[p[0]] || p[0]; return has(b) ? b : null; };
+  const url = new URLSearchParams(location.search).get('lang');
+  const id = (has(url) && url) || [get('lewydo:lang'), get('cubepix-site:lang')].find(has) || (navigator.languages || [navigator.language]).map(pick).find(Boolean) || 'en';
+  const h = document.documentElement; h.lang = id; h.dir = B.rtl.includes(id) ? 'rtl' : 'ltr';
+  window.__lang = { id, load: {} };
+  if (id !== 'en') (window.__lang.load[id] = fetch(B.base + id + '.json?v=' + B.v).then((r) => { if (!r.ok) throw new Error(id + ' ' + r.status); return r.json(); })).catch(() => {});
+})();
+</script>
+<style>
+/* Lewydo press kit: the studio's colours, Nunito and glass (as the brand page). The body is English; the header, the languages and the footer — every language of the site. */
+:root{--bg:#0E1024;--ink:#fff;--ink2:rgba(242,255,247,.84);--ink3:rgba(242,255,247,.6);--green:#3DDC84;--glow:#6DF593;--mint:#9DF5C2;
+  --line:rgba(157,245,194,.16);--panel:rgba(20,24,54,.72);--wrap:1180px;--gut:16px;
+  --f:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;color-scheme:dark;}
+@media (min-width:600px){:root{--gut:20px;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px;}
+body{min-height:100vh;color:var(--ink);font:500 17px/1.62 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip;
+  background:radial-gradient(60% 40% at 50% -6%,rgba(61,220,132,.2),transparent 72%),#0E1024 fixed;}
+img,svg{display:block;}
+a{color:var(--mint);}
+[hidden]{display:none !important;}
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--gut) * 2);margin:0 auto;padding:0 var(--gut);}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px;}
+.skip{position:absolute;inset-inline-start:12px;top:10px;max-width:calc(100vw - 24px);transform:translateY(-200%);z-index:100;background:var(--green);color:#04120A;padding:10px 16px;border-radius:12px;font-weight:900;}
+.skip:focus{transform:none;}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* Lewydo™ brand kit for the web — https://lewydo.com/brand/
+   The mark is built from the same pictures as in the games (../../png/*.png, @3x), in the same composition as the LibGDX code
+   (ABrandGroup / ABrandLogo): nothing is redrawn, no font is needed.
+     Lockup 208×322:  .lw-logo 208×208 (brand_back fills it, brand_front 140×140 in the middle)
+                      .lw-name 208×74 · .lw-slogan 208×19 · .lw-line 146×1, 20 below the slogan
+     Signature: the logo 24×24 + 1 + the name 46×16.4; the menu pill puts it in a 28 px capsule with a › .
+   Pictures: ../../png/*.png are the originals for apps (and the LibGDX atlas); ../../webp/*.webp — the same, lighter, for websites.
+   Sound: ../../sound/lewydo-heartbeat.wav — the one file for games, web prototypes and sites (lossless; no .ogg / .mp3 copies).
+   Scale the whole Lockup with --lw-s (1 = 208×322 CSS px). Colours: #0E1024 #6DF593 #3DDC84 #9DF5C2 #FFFFFF. */
+
+.lw-lockup{display:flex;flex-direction:column;align-items:center;width:calc(208px * var(--lw-s, 1));height:calc(322px * var(--lw-s, 1));}
+.lw-logo{position:relative;display:block;flex:none;width:calc(208px * var(--lw-s, 1));height:calc(208px * var(--lw-s, 1));}
+.lw-back,.lw-front{position:absolute;display:block;transform-origin:50% 50%;}
+.lw-back{left:0;top:0;width:100%;height:100%;}
+.lw-front{left:16.346%;top:16.346%;width:67.308%;height:67.308%;}                 /* 140 of 208, in the middle */
+.lw-name{display:block;flex:none;width:calc(208px * var(--lw-s, 1));height:calc(74px * var(--lw-s, 1));}
+.lw-slogan{display:block;flex:none;width:calc(208px * var(--lw-s, 1));height:calc(19px * var(--lw-s, 1));}
+.lw-line{display:block;flex:none;width:calc(146px * var(--lw-s, 1));height:calc(1px * var(--lw-s, 1));min-height:1px;margin-top:calc(20px * var(--lw-s, 1));}
+
+/* the Signature: the logo 24×24 + 1 + the name 46×16.4 (the Lockup's heart ×0.115, «Lewydo» at 12 px) */
+.lw-sig{display:inline-flex;align-items:center;gap:1px;}
+.lw-sig .lw-logo{width:24px;height:24px;}
+.lw-sig .lw-name{width:46.1px;height:16.4px;}
+/* the Signature pill — at the bottom of every game menu, 34 px from the bottom; tap → About us */
+.lw-pill{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 10px 0 3px;border-radius:999px;border:1px solid rgba(61,220,132,.24);
+  background:rgba(61,220,132,.04);cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .12s ease;}
+.lw-pill:active{transform:scale(.96);}
+.lw-pill .lw-go{width:5px;height:8px;opacity:.65;}
+
+/* the heartbeat — once, when the brand appears (never loop it): add .lw-beating to the .lw-logo */
+.lw-beating .lw-front{animation:lwHeart 440ms linear var(--d,0s) 1;}
+.lw-beating .lw-back{animation:lwGlow 450ms linear var(--d,0s) 1 forwards;}
+@keyframes lwHeart{0%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}22.727%{transform:scale(1.13);animation-timing-function:cubic-bezier(.12,0,.39,0)}
+  50%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}72.727%{transform:scale(1.07);animation-timing-function:cubic-bezier(.12,0,.39,0)}100%{transform:scale(1)}}
+@keyframes lwGlow{0%,11.111%{transform:scale(1);animation-timing-function:cubic-bezier(.61,1,.88,1)}37.778%{transform:scale(1.15);animation-timing-function:cubic-bezier(.12,0,.39,0)}100%{transform:scale(1.05)}}
+
+/* the splash (BrandScreen) — add .lw-splash to the .lw-lockup. Everything arrives first, top to bottom; then the heart beats as the
+   finale, with the Lewydo sound (../../sound/lewydo-heartbeat.*; start it at 2.09 s — its first beat is 0.03 s in):
+     0.15→0.85 the heart and its glow arrive · 0.55→1.10 «Lewydo» · 0.85→1.40 the slogan · 1.15→1.85 the line opens from the middle
+     2.00 a breath in · 2.17 LUB · 2.45 DUB — the glow blooms with each, two waves of light leave the heart; the sound is the heart only
+     3.80 → the game.
+   The waves are two more copies of the glow inside the logo, before .lw-back: <img class="lw-aura" src="…/brand_back…" alt=""> ×2.
+   The short beat (.lw-beating) stays for About us and the menu pill. */
+.lw-aura{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;pointer-events:none;transform-origin:50% 50%;}
+.lw-splash .lw-logo{opacity:0;transform:scale(.94);animation:lwArrive .7s cubic-bezier(.22,1,.36,1) .15s forwards;}
+.lw-splash .lw-front{animation:lwBeat 900ms linear 2s 1;}
+.lw-splash .lw-back{animation:lwBloom 1000ms linear 2s 1 forwards;}
+.lw-splash .lw-aura{animation:lwWave 1s cubic-bezier(.2,.7,.3,1) 2.12s 1;}
+.lw-splash .lw-aura+.lw-aura{animation:lwWave2 .9s cubic-bezier(.2,.7,.3,1) 2.4s 1;}
+.lw-splash .lw-name{opacity:0;transform:scale(1.06);animation:lwFocus .55s cubic-bezier(.5,0,.5,1) .55s forwards;}
+.lw-splash .lw-slogan{opacity:0;transform:scale(1.06);animation:lwFocus .55s cubic-bezier(.5,0,.5,1) .85s forwards;}
+.lw-splash .lw-line{opacity:0;transform:scaleX(0);animation:lwFadeIn .3s linear 1.15s forwards,lwOpen .7s cubic-bezier(.16,1,.3,1) 1.15s forwards;}
+@keyframes lwArrive{to{opacity:1;transform:scale(1)}}
+@keyframes lwFadeIn{to{opacity:1}}
+@keyframes lwFocus{to{opacity:1;transform:scale(1)}}
+@keyframes lwOpen{to{transform:scaleX(1)}}
+@keyframes lwBeat{
+  0%{transform:scale(1);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  11%{transform:scale(.95);animation-timing-function:cubic-bezier(.2,.9,.3,1)}
+  19%{transform:scale(1.2);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  31%{transform:scale(.97);animation-timing-function:cubic-bezier(.2,.9,.3,1)}
+  50%{transform:scale(1.12);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  63%{transform:scale(.985);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  80%{transform:scale(1.012)}
+  100%{transform:scale(1)}}
+@keyframes lwBloom{
+  0%{transform:scale(1);filter:brightness(1)}
+  12%{transform:scale(.98);filter:brightness(1);animation-timing-function:cubic-bezier(.2,.9,.3,1)}
+  22%{transform:scale(1.3);filter:brightness(1.4);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  40%{transform:scale(1.1);filter:brightness(1.1);animation-timing-function:cubic-bezier(.2,.9,.3,1)}
+  52%{transform:scale(1.2);filter:brightness(1.25);animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  100%{transform:scale(1.05);filter:brightness(1)}}
+@keyframes lwWave{0%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
+@keyframes lwWave2{0%{opacity:.32;transform:scale(1)}100%{opacity:0;transform:scale(1.55)}}
+
+@media (prefers-reduced-motion:reduce){
+  .lw-beating .lw-front,.lw-beating .lw-back,.lw-splash .lw-front,.lw-splash .lw-back,.lw-splash .lw-aura{animation:none;}
+  .lw-splash .lw-logo,.lw-splash .lw-name,.lw-splash .lw-slogan,.lw-splash .lw-line{animation:none;opacity:1;transform:none;}
+}
+
+
+/* header: the signature, «Press kit», the languages */
+.top{position:sticky;top:0;z-index:40;background:rgba(14,16,36,.7);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid rgba(157,245,194,.1);}
+.top-in{display:flex;align-items:center;gap:14px;height:64px;}
+.home{display:inline-flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:#fff;}
+.home .lw-sig{flex:none;transform:scale(1.5);transform-origin:0 50%;margin-inline-end:36px;}
+[dir="rtl"] .home .lw-sig{transform-origin:100% 50%;}
+.home b{font-weight:900;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);padding:5px 10px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(157,245,194,.35);
+  min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media (max-width:420px){.home{gap:8px;} .home .lw-sig{transform:scale(1.25);margin-inline-end:18px;} .home b{font-size:11px;letter-spacing:.08em;padding:4px 8px;}}
+@media (max-width:360px){.home .lw-sig{transform:scale(1.1);margin-inline-end:8px;} .home b{font-size:10px;letter-spacing:.04em;padding:4px 7px;}}
+
+/* shared */
+.eyebrow{font-weight:900;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);}
+.h2{font-weight:900;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.01em;margin-top:8px;text-wrap:balance;}
+.sub{color:var(--ink2);font-size:clamp(16px,1.7vw,18.5px);max-width:720px;margin-top:12px;text-wrap:pretty;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:16px;border:0;cursor:pointer;
+  font:900 16px/1.1 var(--f);color:#fff;text-decoration:none;text-align:center;transition:transform .15s ease,box-shadow .2s ease,background-color .2s ease;}
+.btn:active{transform:scale(.97);}
+.btn svg{width:20px;height:20px;flex:none;fill:currentColor;}
+.btn .pk-heart{flex:none;width:22px;height:22px;} .btn-sm .pk-heart{width:18px;height:18px;}
+.btn-green{background:#3DDC84;color:#04120A;box-shadow:0 0 30px rgba(61,220,132,.36);}
+.btn-line{background:rgba(61,220,132,.06);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(157,245,194,.45);}
+.btn-sm{min-height:40px;padding:0 14px;border-radius:12px;font-size:14px;gap:8px;}
+.btn-sm svg{width:16px;height:16px;}
+.btn small{font-weight:800;font-size:12.5px;opacity:.72;white-space:nowrap;}
+@media (hover:hover){.btn-green:hover{box-shadow:0 0 46px rgba(61,220,132,.58);transform:translateY(-2px);} .btn-line:hover{background:rgba(61,220,132,.14);}}
+.panel{border-radius:24px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);}
+.pk-sec{padding:clamp(44px,6vw,80px) 0 0;}
+
+/* hero + fact sheet */
+.pk-hero{padding:clamp(28px,5vw,72px) 0 0;}
+.pk-head{display:grid;gap:clamp(24px,3vw,40px);align-items:start;grid-template-columns:minmax(0,1fr);}
+.pk-head h1{font-weight:900;font-size:clamp(38px,5.6vw,66px);line-height:1.04;letter-spacing:-.01em;margin-top:10px;text-wrap:balance;}
+.pk-head h1 b{font-weight:900;color:var(--glow);text-shadow:0 0 26px rgba(109,245,147,.4);}
+.pk-ava{display:flex;align-items:center;gap:14px;}
+.pk-ava img{flex:none;width:56px;height:56px;border-radius:16px;box-shadow:0 0 0 1px rgba(157,245,194,.25),0 0 30px rgba(61,220,132,.3);}
+.pk-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+.pk-facts{padding:clamp(20px,2.4vw,28px);}
+.pk-facts h2{font-weight:900;font-size:clamp(19px,2vw,23px);line-height:1.25;}
+.pk-facts dl{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:11px 18px;margin-top:16px;font-size:15.5px;line-height:1.45;}
+.pk-facts dt{color:var(--ink3);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px;}
+.pk-facts dd{color:var(--ink);min-width:0;overflow-wrap:anywhere;}
+.pk-facts dd a{text-decoration:none;} .pk-facts dd a:hover{text-decoration:underline;}
+.pk-mail{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;}
+.pk-mail code{font:700 15px/1.3 var(--mono);color:#fff;-webkit-user-select:all;user-select:all;}
+.pk-copy.ok{color:#04120A;background:#3DDC84;box-shadow:none;}
+@media (min-width:1000px){.pk-head{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;}}
+@media (max-width:420px){.pk-facts dl{grid-template-columns:minmax(0,1fr);gap:2px;} .pk-facts dd{margin-bottom:10px;} .pk-cta .btn{flex:1 1 100%;}}
+
+/* about + milestones */
+.pk-text{display:grid;gap:clamp(22px,3vw,40px);margin-top:22px;grid-template-columns:minmax(0,1fr);}
+.pk-text p{color:var(--ink2);font-size:16.5px;line-height:1.65;max-width:68ch;text-wrap:pretty;}
+.pk-text p+p{margin-top:14px;}
+.pk-text .lead{font-size:clamp(18px,1.9vw,21px);color:#fff;font-weight:700;line-height:1.45;}
+.pk-ms{list-style:none;padding:clamp(18px,2.2vw,24px);}
+.pk-ms h3{font-weight:900;font-size:17px;margin-bottom:10px;}
+.pk-ms li{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);gap:4px 14px;padding:8px 0;border-top:1px solid rgba(157,245,194,.1);font-size:15px;line-height:1.4;}
+.pk-ms li:first-of-type{border-top:0;}
+.pk-ms time{color:var(--mint);font-weight:800;font-size:13px;font-variant-numeric:tabular-nums;padding-top:1px;}
+.pk-ms span{color:var(--ink2);}
+@media (min-width:1000px){.pk-text{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);}}
+@media (max-width:420px){.pk-ms li{grid-template-columns:minmax(0,1fr);gap:0;}}
+
+/* games: one card each, the same height */
+.pk-games{list-style:none;display:grid;gap:16px;margin-top:22px;grid-template-columns:minmax(0,1fr);}
+@media (min-width:860px){.pk-games{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.pk-game{display:flex;flex-direction:column;gap:14px;padding:clamp(18px,2.4vw,26px);}
+.pk-gt{display:flex;align-items:center;gap:14px;}
+.pk-gt img{flex:none;width:64px;height:64px;border-radius:16px;box-shadow:0 8px 24px -10px var(--c,#3DDC84);}
+.pk-gt h3{font-weight:900;font-size:22px;line-height:1.2;}
+.pk-gt small{display:block;color:var(--c,var(--mint));font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;line-height:1.35;margin-top:2px;}
+.pk-game>p{color:var(--ink2);font-size:16px;line-height:1.55;}
+.pk-plat{color:var(--ink3);font-size:13.5px;font-weight:700;}
+.pk-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;}
+.pk-links .stores{display:flex;flex-wrap:wrap;gap:10px;}
+:root[data-os=ios] .stores .as{order:-1;}
+.btn.store{gap:10px;padding:0 16px 0 12px;text-align:start;background:#000;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.28);}
+@media (hover:hover){.btn.store:hover{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6);}}
+.btn.store svg{width:22px;height:24px;} .btn.store svg.apple{width:21px;height:24px;margin-top:-3px;}
+.sb{display:flex;flex-direction:column;align-items:flex-start;min-width:0;line-height:1.1;}
+.sb small{font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.85;line-height:1.25;}
+.sb small.as-top{font-size:11px;letter-spacing:0;text-transform:none;}
+.sb b{font-size:16.5px;font-weight:900;white-space:nowrap;}
+@media (max-width:420px){.pk-links>.btn,.pk-links .stores{flex:1 1 100%;} .pk-links .stores .btn{flex:1 1 0;min-width:0;}}
+
+/* logo tiles: one height, the preview fits its frame (the avatar fills it), a caption with size and weight, a download button */
+.pk-gh{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:10px 18px;}
+.pk-grid{list-style:none;display:grid;gap:14px;margin-top:22px;grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (min-width:760px){.pk-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+.pk-tile{display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .25s;}
+@media (hover:hover){.pk-tile:hover{box-shadow:inset 0 0 0 1px rgba(157,245,194,.45);}}
+.pk-tile .im{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(60% 70% at 50% 45%,rgba(61,220,132,.14),transparent 72%),conic-gradient(#14173a 25%,#101330 0 50%,#14173a 0 75%,#101330 0) 0 0/20px 20px;}
+.pk-tile .im img{position:absolute;inset:12%;width:76%;height:76%;object-fit:contain;transition:transform .4s ease;}
+.pk-tile.cover .im img{inset:0;width:100%;height:100%;object-fit:cover;}
+@media (hover:hover){.pk-tile:hover .im img{transform:scale(1.03);}}
+.pk-cap{flex:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:10px;padding:12px 14px 14px;}
+.pk-cap b{display:block;font-size:15px;font-weight:900;line-height:1.3;}
+.pk-cap small{display:block;color:var(--ink3);font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px;}
+.pk-dl{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 13px;border-radius:12px;color:#fff;font-size:13px;font-weight:900;letter-spacing:.06em;text-decoration:none;
+  background:rgba(61,220,132,.08);box-shadow:inset 0 0 0 1.5px rgba(157,245,194,.4);transition:background .2s;}
+@media (hover:hover){.pk-dl:hover{background:rgba(61,220,132,.2);}}
+.pk-dl svg{width:16px;height:16px;fill:currentColor;}
+.pk-kit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 20px;margin-top:16px;padding:18px 20px;
+  background:radial-gradient(80% 140% at 0% 0%,rgba(61,220,132,.16),transparent 70%),var(--panel);}
+.pk-kit p{color:var(--ink2);font-size:15.5px;max-width:62ch;} .pk-kit p b{color:#fff;}
+.pk-kit .ctas{display:flex;flex-wrap:wrap;gap:10px;}
+@media (max-width:420px){.pk-cap{padding:10px 11px 12px;} .pk-cap b{font-size:14px;} .pk-kit .ctas,.pk-kit .ctas .btn{flex:1 1 100%;}}
+
+/* usage + social */
+.pk-two{display:grid;gap:16px;margin-top:22px;grid-template-columns:minmax(0,1fr);}
+@media (min-width:860px){.pk-two{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.pk-card{padding:clamp(20px,2.4vw,28px);}
+.pk-card h3{font-weight:900;font-size:20px;line-height:1.3;}
+.pk-card p{color:var(--ink2);font-size:15.5px;line-height:1.6;margin-top:12px;}
+.pk-card ul{list-style:none;display:grid;gap:10px;margin-top:14px;}
+.pk-card li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;color:var(--ink2);font-size:15.5px;line-height:1.5;}
+.pk-card li>i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;margin-top:1px;font-style:normal;font-weight:900;font-size:13px;color:#04120A;background:#3DDC84;}
+.pk-card li.no>i{color:#fff;background:#ff4d6d;}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.soc{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 16px;border-radius:12px;color:#fff;font-weight:800;font-size:15px;text-decoration:none;
+  background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(157,245,194,.25);transition:background .15s ease;}
+.soc svg{width:18px;height:18px;fill:#9DF5C2;flex:none;}
+@media (hover:hover){.soc:hover{background:rgba(61,220,132,.14);}}
+
+/* footer — the site's, in the visitor's language */
+footer{margin-top:clamp(70px,9vw,110px);padding:40px 0 56px;border-top:1px solid rgba(157,245,194,.12);text-align:center;color:var(--ink3);font-size:14px;background:rgba(8,10,26,.5);}
+footer .lw-pill{transform:scale(1.25);}
+.foot-made{margin-top:22px;color:var(--ink2);font-weight:700;}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-top:14px;}
+.foot-links a{color:var(--ink3);font-weight:700;font-size:15px;text-decoration:none;}
+.foot-links a:hover,.foot-links a[aria-current]{color:#fff;}
+.foot-c{margin-top:18px;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} .pk-tile .im img{transition:none;}}
+
+/* languages: all of the site's (src/lang.css) */
+/* ── languages (src/lang.css — the same on both pages, tools/build.mjs puts it into each): the picker, the scripts' own fonts, right to left ── */
+/* the picker: a search field, all our languages (flag, the language's own name and, smaller, its name in the page's language),
+   and last — the row of Russia (never a language of ours: not chosen, not a link; owner 14.10.2026) */
+.langsel{position:relative;margin-inline-start:auto;}
+.lang-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border-radius:12px;border:0;background:rgba(255,255,255,.06);color:#fff;
+  font:900 14px var(--f);letter-spacing:.06em;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(157,245,194,.18);}
+.lang-btn:hover{background:rgba(255,255,255,.1);}
+.lang-btn[aria-busy="true"] #langCode{opacity:.5;}
+#langCode{direction:ltr;}
+.flag{display:inline-flex;flex:none;}
+.flag img,.flag svg{display:block;width:24px;height:16px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.18);}
+.lang-menu{position:absolute;inset-inline-end:0;top:calc(100% + 10px);z-index:50;display:flex;flex-direction:column;width:min(320px,calc(100vw - 32px));
+  max-height:min(74vh,620px);padding:8px;border-radius:18px;background:rgba(18,21,48,.97);
+  box-shadow:0 0 0 1px rgba(157,245,194,.18),0 20px 50px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
+.lang-find{flex:none;width:100%;min-height:42px;margin-bottom:6px;padding-block:0;padding-inline:38px 12px;border:0;border-radius:12px;color:#fff;font:700 15px var(--f);
+  background:rgba(255,255,255,.07) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5' fill='none' stroke='%239DF5C2' stroke-width='2.4'/%3E%3Cpath d='m15.5 15.5 5 5' stroke='%239DF5C2' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 12px 50%/16px 16px;
+  box-shadow:inset 0 0 0 1px rgba(157,245,194,.2);-webkit-appearance:none;appearance:none;}
+[dir="rtl"] .lang-find{background-position:right 12px center;}
+.lang-find::placeholder{color:rgba(242,255,247,.5);}
+.lang-find::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;}
+.lang-find:focus-visible{outline:2px solid var(--mint);outline-offset:0;}
+.lang-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(157,245,194,.3) transparent;}
+.lang-list button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:6px 12px;border:0;border-radius:12px;background:none;color:var(--ink2);
+  font:700 16px/1.25 var(--f);text-align:start;cursor:pointer;}
+.lang-list button:hover,.lang-list button:focus-visible{background:rgba(61,220,132,.12);color:#fff;outline:none;}
+.lang-list button[aria-selected="true"]{color:var(--mint);}
+.lang-list button[aria-selected="true"]::after{content:"✓";margin-inline-start:auto;font-weight:900;}
+.lang-nm{display:flex;flex-direction:column;min-width:0;}
+.lang-nm small{font-weight:600;font-size:12.5px;color:var(--ink3);letter-spacing:0;}
+.lang-nm small:empty{display:none;}
+.lang-none{padding:10px 12px;color:var(--ink3);font-weight:700;font-size:14px;}
+.lang-stop{display:flex;align-items:center;gap:12px;margin-top:6px;padding:12px 12px 6px;border-top:1px solid rgba(157,245,194,.14);color:var(--ink3);cursor:default;}
+.lang-stop .flag img{width:28px;height:19px;}
+.lang-stop b{display:block;font-weight:800;font-size:14px;line-height:1.3;color:#fff;}
+.lang-stop small{display:block;margin-top:2px;font-weight:700;font-size:12.5px;line-height:1.35;}
+
+/* long words (Tamil, Malayalam, Armenian, German…) break rather than push a phone page sideways */
+h1,h2,h3,p,li,dd,dt,figcaption{overflow-wrap:break-word;}
+
+/* the scripts' own fonts: Nunito (Latin, Cyrillic, Vietnamese) stays first for our names; the rest — the device's own fonts (no third party) */
+:lang(ja){--f:"Nunito","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;}
+:lang(ko){--f:"Nunito","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;}
+:lang(zh-TW){--f:"Nunito","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;}
+:lang(zh-CN){--f:"Nunito","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;}
+:lang(el){--f:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;}
+:lang(ar),:lang(fa),:lang(ur),:lang(ps){--f:"Nunito","Noto Sans Arabic","SF Arabic","Geeza Pro","Segoe UI","Tahoma",sans-serif;}
+:lang(he){--f:"Nunito","Noto Sans Hebrew","SF Hebrew","Arial Hebrew","Segoe UI",Arial,sans-serif;}
+:lang(hi),:lang(mr),:lang(ne){--f:"Nunito","Noto Sans Devanagari","Kohinoor Devanagari","Nirmala UI","Mangal",sans-serif;}
+:lang(bn),:lang(as){--f:"Nunito","Noto Sans Bengali","Kohinoor Bangla","Nirmala UI","Vrinda",sans-serif;}
+:lang(pa){--f:"Nunito","Noto Sans Gurmukhi","Gurmukhi Sangam MN","Nirmala UI","Raavi",sans-serif;}
+:lang(gu){--f:"Nunito","Noto Sans Gujarati","Kohinoor Gujarati","Gujarati Sangam MN","Nirmala UI","Shruti",sans-serif;}
+:lang(or){--f:"Nunito","Noto Sans Oriya","Oriya Sangam MN","Nirmala UI","Kalinga",sans-serif;}
+:lang(ta){--f:"Nunito","Noto Sans Tamil","Tamil Sangam MN","Nirmala UI","Latha",sans-serif;}
+:lang(te){--f:"Nunito","Noto Sans Telugu","Kohinoor Telugu","Telugu Sangam MN","Nirmala UI","Gautami",sans-serif;}
+:lang(kn){--f:"Nunito","Noto Sans Kannada","Kannada Sangam MN","Nirmala UI","Tunga",sans-serif;}
+:lang(ml){--f:"Nunito","Noto Sans Malayalam","Malayalam Sangam MN","Nirmala UI","Kartika",sans-serif;}
+:lang(si){--f:"Nunito","Noto Sans Sinhala","Sinhala Sangam MN","Nirmala UI","Iskoola Pota",sans-serif;}
+:lang(th){--f:"Nunito","Noto Sans Thai","Thonburi","Leelawadee UI","Tahoma",sans-serif;}
+:lang(lo){--f:"Nunito","Noto Sans Lao","Lao Sangam MN","Leelawadee UI","Lao UI",sans-serif;}
+:lang(my){--f:"Nunito","Noto Sans Myanmar","Myanmar Sangam MN","Myanmar Text","Padauk",sans-serif;}
+:lang(km){--f:"Nunito","Noto Sans Khmer","Khmer Sangam MN","Leelawadee UI","Khmer UI",sans-serif;}
+:lang(ka){--f:"Nunito","Noto Sans Georgian","Helvetica Neue","Sylfaen",sans-serif;}
+:lang(hy){--f:"Nunito","Noto Sans Armenian","Mshtakan","Sylfaen",sans-serif;}
+:lang(am){--f:"Nunito","Noto Sans Ethiopic","Kefa","Nyala","Ebrima",sans-serif;}
+/* lines break between phrases, not inside words: Japanese by phrase (where the browser can), Korean between words */
+:lang(ja){word-break:auto-phrase;line-break:strict;} :lang(ko){word-break:keep-all;} :lang(zh-TW),:lang(zh-CN){line-break:strict;}
+/* scripts whose letters join or stack: no letter-spacing (it would tear Arabic apart and break Indic clusters), and room for the marks above and below */
+:is(:lang(ar),:lang(fa),:lang(ur),:lang(ps),:lang(hi),:lang(mr),:lang(ne),:lang(bn),:lang(as),:lang(pa),:lang(gu),:lang(or),:lang(ta),:lang(te),:lang(kn),:lang(ml),:lang(si),:lang(th),:lang(lo),:lang(my),:lang(km)){letter-spacing:0 !important;}
+:is(h1,h2,h3,.h2):is(:lang(ar),:lang(fa),:lang(ur),:lang(ps),:lang(hi),:lang(mr),:lang(ne),:lang(bn),:lang(as),:lang(pa),:lang(gu),:lang(or),:lang(ta),:lang(te),:lang(kn),:lang(ml),:lang(si),:lang(th),:lang(lo),:lang(my),:lang(km)){line-height:1.4;}
+/* right to left (ar, he, fa, ur, ps): the page mirrors; the Lewydo mark, code, numbers and the games' own pictures keep their sides */
+[dir="rtl"] :is(.lw-sig,.lw-pill,.lw-lockup,code,pre,.say-ipa,.ipa){direction:ltr;}
+
+/* ── «•••» in the header (src/more.css + src/more.js — the same on every page; owner 17.11.2026, like the Orbit Dash site): always visible;
+   its menu holds the page's sections where the header has no room for them (.more-sec — hidden once the page's own nav shows) and,
+   always last, after a thin line, «Press kit» (foot.press, the same word as in the footer) ── */
+.more{position:relative;flex:none;}
+.more-btn{display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:12px;background:rgba(255,255,255,.06);color:#fff;cursor:pointer;
+  box-shadow:inset 0 0 0 1px rgba(157,245,194,.18);}
+.more-btn:hover,.more-btn[aria-expanded="true"]{background:rgba(255,255,255,.1);}
+.more-btn svg{width:20px;height:20px;fill:currentColor;}
+.more-menu{position:absolute;inset-inline-end:0;top:calc(100% + 10px);z-index:50;display:flex;flex-direction:column;min-width:200px;max-width:calc(100vw - 32px);padding:8px;
+  border-radius:18px;background:rgba(18,21,48,.97);box-shadow:0 0 0 1px rgba(157,245,194,.18),0 20px 50px rgba(0,0,0,.6);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
+.more-menu a{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 12px;border-radius:12px;color:var(--ink2);font:800 16px/1.25 var(--f);text-decoration:none;white-space:nowrap;}
+.more-menu a:hover,.more-menu a:focus-visible{background:rgba(61,220,132,.12);color:#fff;outline:none;}
+.more-menu a[aria-current="page"]{color:var(--mint);}
+.more-menu a svg{width:16px;height:16px;flex:none;fill:var(--mint);}
+.more-menu hr{border:0;height:1px;margin:6px 8px;background:rgba(157,245,194,.16);}
+@media (max-width:360px){.more-btn{width:36px;}}
+
+.top-in .more{margin-inline-start:auto;} .top-in .langsel{margin-inline-start:6px;}
+[dir="rtl"] .home{direction:ltr;}
+</style>
+<script>
+/* the device, for the order of the store buttons (as on the main page): iPhone / iPad — the App Store first */
+(function(){try{var u=navigator.userAgent||"",t=navigator.maxTouchPoints||0;document.documentElement.setAttribute("data-os",/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&t>1)?"ios":/Android/.test(u)?"android":"desktop")}catch(e){}})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main" data-t="skip">Skip to content</a>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="home" href="/" data-lang-link aria-label="Lewydo — home" data-ta="aria-label:b.home"><span class="lw-sig"><span class="lw-logo"><img class="lw-back" src="/brand/kit/webp/brand_back.webp" alt="" width="208" height="208"><img class="lw-front" src="/brand/kit/webp/brand_front.webp" alt="" width="140" height="140"></span><img class="lw-name" src="/brand/kit/webp/lewydo.webp" alt="" width="208" height="74"></span><b data-t="foot.press">Press kit</b></a>
+    <div class="more"><button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="moreMenu" aria-label="Main menu" data-ta="aria-label:nav.label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></button>
+      <div class="more-menu" id="moreMenu" hidden>
+        <a href="/" data-lang-link data-t="b.foot.home">Home</a><a href="/brand/" data-lang-link data-t="nav.brand">Brand</a><hr>
+        <a href="/press/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 4h8v2H8v-2z"/></svg><span data-t="foot.press">Press kit</span></a>
+      </div>
+    </div>
+    <div class="langsel">
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" aria-label="Language" data-ta="aria-label:lang.title"><span class="flag" id="langFlag"></span><span id="langCode">EN</span></button>
+      <div class="lang-menu" id="langMenu" hidden>
+        <input class="lang-find" id="langFind" type="search" autocomplete="off" spellcheck="false" enterkeyhint="go">
+        <div class="lang-scroll"><div class="lang-list" id="langList" role="listbox" aria-label="Language" data-ta="aria-label:lang.title"></div>
+          <p class="lang-none" id="langNone" hidden data-t="lang.none">We don’t speak that one yet.</p><p class="lang-stop" id="langStop"></p></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main" lang="en" dir="ltr">
+  <section class="pk-hero" aria-labelledby="h1">
+    <div class="wrap pk-head">
+      <div>
+        <div class="pk-ava"><img src="/press/thumb/avatar.webp" alt="" width="56" height="56" decoding="async"><p class="eyebrow">Press kit</p></div>
+        <h1 id="h1">Lewydo <b>press kit</b></h1>
+        <p class="sub">Everything you need to write about Lewydo or make a video about our games: the facts, our story, the logo and our games’ own press kits. Free to use for coverage.</p>
+        <div class="pk-cta">
+          <a class="btn btn-green" href="/press/lewydo-press-kit.zip" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>Download everything <small>ZIP · 1.2 MB</small></span></a>
+          <a class="btn btn-line" href="/brand/"><img class="pk-heart" src="/brand/kit/webp/brand_front.webp" alt="" width="22" height="22"><span>Brand kit</span></a>
+          <a class="btn btn-line" href="mailto:hello@lewydo.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><span>Contact</span></a>
+        </div>
+      </div>
+      <aside class="pk-facts panel" aria-labelledby="factsT">
+        <h2 id="factsT">Fact sheet</h2>
+        <dl><dt>Studio</dt><dd>Lewydo</dd><dt>Who we are</dt><dd>A two-person indie game studio from Ukraine</dd><dt>Founded</dt><dd>2025</dd><dt>Based in</dt><dd>Poltava region, Ukraine</dd><dt>Team</dt><dd>Vlad (code) and Lilya (design)</dd><dt>Games</dt><dd><a href="#orbitdash">Orbit Dash</a>, <a href="#cubepix">CubePix</a></dd><dt>Platforms</dt><dd>Android, iPhone &amp; iPad, web browser</dd><dt>Languages</dt><dd>82, in every game and on this site</dd><dt>Slogan</dt><dd><span translate="no">Love What You Do</span></dd><dt>Website</dt><dd><a href="/">lewydo.com</a></dd><dt>Press contact</dt><dd><span class="pk-mail"><code id="pkMail" translate="no">hello@lewydo.com</code><button class="btn btn-line btn-sm pk-copy" type="button" data-copy="hello@lewydo.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg><span>Copy</span></button></span><span class="sr" id="pkCopied" role="status" aria-live="polite"></span></dd></dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="pk-sec" id="about" aria-labelledby="aboutT">
+    <div class="wrap">
+      <p class="eyebrow">About the studio</p>
+      <h2 class="h2" id="aboutT">Two people, one heart</h2>
+      <div class="pk-text">
+        <div><p class="lead">Lewydo is a two-person indie game studio from Ukraine. Vlad codes, Lilya designs. Together we make the games we love to play.</p><p>Vlad always ended his <a href="https://veldan1202.medium.com/" target="_blank" rel="noopener">Medium</a> articles on LibGDX, Android and Kotlin the same way: «Love what you do» and a green heart 💚. That sign-off became our brand.</p><p>A developer meets a designer. The studio doesn't know it exists yet.</p></div>
+        <ol class="pk-ms panel" aria-labelledby="msT"><h3 id="msT">Milestones</h3><li><time>2017</time><span>The first line of Java</span></li><li><time>Spring 2021</time><span>All in on game development</span></li><li><time>14 · 10 · 2022</time><span>Vlad ❤ Lilya</span></li><li><time>2025</time><span>Lewydo is born</span></li><li><time>21 · 04 · 2026</time><span>IMC is out</span></li><li><time>30 · 08 · 2026</time><span>Orbit Dash takes off</span></li><li><time>14 · 10 → 25 · 10 · 2026</time><span>82 languages in 12 days</span></li><li><time>23 · 10 · 2026</time><span>The web becomes a real platform</span></li><li><time>30 · 10 · 2026</time><span>CubePix on Google Play</span></li><li><time>10 · 11 · 2026</time><span>Our first game on iPhone</span></li><li><time>10 · 11 · 2026</time><span>Orbit Dash goes online</span></li></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="pk-sec" id="games" aria-labelledby="gamesT">
+    <div class="wrap">
+      <p class="eyebrow">Games</p>
+      <h2 class="h2" id="gamesT">Our games</h2>
+      <p class="sub">Each game has its own press kit with screenshots, the trailer and its facts.</p>
+      <ul class="pk-games"><li class="pk-game panel" id="orbitdash" style="--c:#00E5FF"><div class="pk-gt"><img src="/assets/games/orbitdash-icon.webp" alt="" width="64" height="64" loading="lazy" decoding="async"><div><h3>Orbit Dash</h3><small>Two orbits. One tap. Every jump on the beat.</small></div></div><p>A rhythm arcade in deep space: one tap switches orbits, and every jump lands on the beat of our own music.</p><p class="pk-plat">Android · iPhone &amp; iPad · web browser</p><div class="pk-links"><a class="btn btn-green btn-sm" href="https://orbitdash.lewydo.com/press/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="od"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 4h8v2H8v-2z"/></svg><span>Press kit</span></a><a class="btn btn-line btn-sm" href="https://orbitdash.lewydo.com/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="od"><span>orbitdash.lewydo.com</span></a><span class="stores"><a class="btn btn-sm store" href="https://play.google.com/store/apps/details?id=com.lewydo.orbitdash&amp;referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site" rel="noopener"><svg class="gp" viewBox="0 0 28 30" aria-hidden="true"><path fill="#00d7fe" d="M1.2.6C.9.9.7 1.4.7 2v26c0 .6.2 1.1.5 1.4l.1.1L15.9 15v-.3L1.3.5z"/><path fill="#ffce00" d="M20.8 19.9 15.9 15v-.3l4.9-4.9.1.1 5.8 3.3c1.7.9 1.7 2.5 0 3.4l-5.8 3.3z"/><path fill="#ff3a44" d="M20.9 19.8 15.9 14.8 1.2 29.5c.5.6 1.4.6 2.4.1l17.3-9.8"/><path fill="#00f076" d="M20.9 9.9 3.6.1C2.6-.5 1.7-.4 1.2.2l14.7 14.6z"/></svg><span class="sb"><small>GET IT ON</small> <b>Google Play</b></span></a><a class="btn btn-sm store as" href="https://apps.apple.com/app/apple-store/id6824944395?pt=129589688&amp;ct=studio_site&amp;mt=8" rel="noopener"><svg class="gp apple" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="sb"><small class="as-top">Download on the</small> <b>App Store</b></span></a></span></div></li><li class="pk-game panel" id="cubepix" style="--c:#B07CFF"><div class="pk-gt"><img src="/assets/games/cubepix-icon.webp" alt="" width="64" height="64" loading="lazy" decoding="async"><div><h3>CubePix</h3><small>REVEAL THE PICTURE CUBE BY CUBE</small></div></div><p>A calm puzzle for art lovers.</p><p class="pk-plat">Android · iPhone &amp; iPad · web browser</p><div class="pk-links"><a class="btn btn-green btn-sm" href="https://cubepix.lewydo.com/press/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="cp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 4h8v2H8v-2z"/></svg><span>Press kit</span></a><a class="btn btn-line btn-sm" href="https://cubepix.lewydo.com/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="cp"><span>cubepix.lewydo.com</span></a><span class="stores"><a class="btn btn-sm store" href="https://play.google.com/store/apps/details?id=com.lewydo.cubepix&amp;referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site" rel="noopener"><svg class="gp" viewBox="0 0 28 30" aria-hidden="true"><path fill="#00d7fe" d="M1.2.6C.9.9.7 1.4.7 2v26c0 .6.2 1.1.5 1.4l.1.1L15.9 15v-.3L1.3.5z"/><path fill="#ffce00" d="M20.8 19.9 15.9 15v-.3l4.9-4.9.1.1 5.8 3.3c1.7.9 1.7 2.5 0 3.4l-5.8 3.3z"/><path fill="#ff3a44" d="M20.9 19.8 15.9 14.8 1.2 29.5c.5.6 1.4.6 2.4.1l17.3-9.8"/><path fill="#00f076" d="M20.9 9.9 3.6.1C2.6-.5 1.7-.4 1.2.2l14.7 14.6z"/></svg><span class="sb"><small>GET IT ON</small> <b>Google Play</b></span></a><a class="btn btn-sm store as" href="https://apps.apple.com/app/apple-store/id6831133655?pt=129589688&amp;ct=studio_site&amp;mt=8" rel="noopener"><svg class="gp apple" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="sb"><small class="as-top">Download on the</small> <b>App Store</b></span></a></span></div></li></ul>
+    </div>
+  </section>
+
+  <section class="pk-sec" id="logo" aria-labelledby="logoT">
+    <div class="wrap">
+      <p class="eyebrow">Logo and assets</p>
+      <h2 class="h2" id="logoT">The Lewydo logo</h2>
+      <p class="sub">Transparent PNGs, straight from our games. Please keep the mark on a dark background and don’t change its colours or proportions.</p>
+      <ul class="pk-grid"><li class="pk-tile cover"><a class="im" href="/brand/kit/png/avatar.png" target="_blank" rel="noopener" aria-label="Studio avatar, full size"><img src="/press/thumb/avatar.webp" alt="Studio avatar" loading="lazy" decoding="async"></a><div class="pk-cap"><div><b>Studio avatar</b><small dir="ltr">512×512 · 285 KB</small></div><a class="pk-dl" href="/brand/kit/png/avatar.png" download="lewydo-avatar.png"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>PNG</span></a></div></li><li class="pk-tile"><a class="im" href="/brand/kit/png/lockup.png" target="_blank" rel="noopener" aria-label="Logo · full lockup, full size"><img src="/press/thumb/lockup.webp" alt="Logo · full lockup" loading="lazy" decoding="async"></a><div class="pk-cap"><div><b>Logo · full lockup</b><small dir="ltr">624×966 · 607 KB</small></div><a class="pk-dl" href="/brand/kit/png/lockup.png" download="lewydo-lockup.png"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>PNG</span></a></div></li><li class="pk-tile"><a class="im" href="/brand/kit/png/lewydo.png" target="_blank" rel="noopener" aria-label="Wordmark, full size"><img src="/press/thumb/lewydo.webp" alt="Wordmark" loading="lazy" decoding="async"></a><div class="pk-cap"><div><b>Wordmark</b><small dir="ltr">624×222 · 39 KB</small></div><a class="pk-dl" href="/brand/kit/png/lewydo.png" download="lewydo-wordmark.png"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>PNG</span></a></div></li><li class="pk-tile"><a class="im" href="/brand/kit/png/brand_front.png" target="_blank" rel="noopener" aria-label="Heart mark, full size"><img src="/press/thumb/brand_front.webp" alt="Heart mark" loading="lazy" decoding="async"></a><div class="pk-cap"><div><b>Heart mark</b><small dir="ltr">420×420 · 288 KB</small></div><a class="pk-dl" href="/brand/kit/png/brand_front.png" download="lewydo-heart.png"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>PNG</span></a></div></li><li class="pk-tile"><a class="im" href="/brand/kit/png/slogan.png" target="_blank" rel="noopener" aria-label="Slogan, full size"><img src="/press/thumb/slogan.webp" alt="Slogan" loading="lazy" decoding="async"></a><div class="pk-cap"><div><b>Slogan</b><small dir="ltr">624×57 · 4 KB</small></div><a class="pk-dl" href="/brand/kit/png/slogan.png" download="lewydo-slogan.png"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>PNG</span></a></div></li><li class="pk-tile"><a class="im" href="/brand/kit/png/pill.png" target="_blank" rel="noopener" aria-label="Signature pill, full size"><img src="/press/thumb/pill.webp" alt="Signature pill" loading="lazy" decoding="async"></a><div class="pk-cap"><div><b>Signature pill</b><small dir="ltr">354×108 · 30 KB</small></div><a class="pk-dl" href="/brand/kit/png/pill.png" download="lewydo-pill.png"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>PNG</span></a></div></li></ul>
+      <div class="pk-kit panel"><p><b>The whole brand kit</b>: the rules, colours, fonts, the Lewydo sound and code for our games.</p>
+        <div class="ctas"><a class="btn btn-line btn-sm" href="/brand/"><img class="pk-heart" src="/brand/kit/webp/brand_front.webp" alt="" width="18" height="18"><span>/brand/</span></a>
+          <a class="btn btn-line btn-sm" href="/brand/lewydo-brand-kit.zip" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg><span>lewydo-brand-kit.zip <small>3.2 MB</small></span></a></div></div>
+    </div>
+  </section>
+
+  <section class="pk-sec" id="usage" aria-labelledby="useT">
+    <div class="wrap pk-two">
+      <div class="pk-card panel">
+        <h3 id="useT">Using these materials</h3>
+        <ul>
+          <li><i aria-hidden="true">✓</i><span>Use them in articles, reviews, videos, streams and social posts about Lewydo and our games.</span></li>
+          <li><i aria-hidden="true">✓</i><span>Resize the pictures to fit your layout.</span></li>
+          <li class="no"><i aria-hidden="true">✕</i><span>Don’t redraw, recolour or stretch the logo, and don’t use it to suggest an official partnership.</span></li>
+        </ul>
+        <p>Need something else, like an interview or more about a game? Write to <a href="mailto:hello@lewydo.com">hello@lewydo.com</a>.</p>
+      </div>
+      <div class="pk-card panel">
+        <h3>Follow Lewydo</h3>
+        <p>New games, updates and the story behind them.</p>
+        <div class="social"><a class="soc" href="https://www.tiktok.com/@lewydo_game" target="_blank" rel="noopener" aria-label="Lewydo — TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span>TikTok</span></a><a class="soc" href="https://www.instagram.com/lewydo_game/" target="_blank" rel="noopener" aria-label="Lewydo — Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.5.2-1.8.3-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.1.3-.3.7-.3 1.8-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.5.3 1.8.2.5.4.8.7 1.1.3.3.6.5 1.1.7.3.1.7.3 1.8.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.5-.2 1.8-.3.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.1-.3.3-.7.3-1.8.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.5-.3-1.8-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.3-.1-.7-.3-1.8-.3-1.3-.1-1.7-.1-4.8-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2.9a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg><span>Instagram</span></a><a class="soc" href="https://www.youtube.com/channel/UCn2SbibS30OyiUPHBFhvFpw" target="_blank" rel="noopener" aria-label="Lewydo — YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>YouTube</span></a><a class="soc" href="https://www.facebook.com/profile.php?id=61594804110096" target="_blank" rel="noopener" aria-label="Lewydo — Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span>Facebook</span></a><a class="soc" href="https://discord.gg/Krkk8bAqDF" target="_blank" rel="noopener" aria-label="Lewydo — Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg><span>Discord</span></a><a class="soc" href="https://x.com/lewydo_game" target="_blank" rel="noopener" aria-label="Lewydo — X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg><span>X</span></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="lw-pill" href="/" data-lang-link aria-label="Lewydo"><span class="lw-sig"><span class="lw-logo"><img class="lw-back" src="/brand/kit/webp/brand_back.webp" alt="" width="208" height="208"><img class="lw-front" src="/brand/kit/webp/brand_front.webp" alt="" width="140" height="140"></span><img class="lw-name" src="/brand/kit/webp/lewydo.webp" alt="" width="208" height="74"></span><svg class="lw-go" viewBox="0 0 5 8" aria-hidden="true"><path d="M1 1l3 3-3 3" fill="none" stroke="#9DF5C2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="foot-made" data-t="foot.made">Made with 💚 in the Poltava region, Ukraine 🇺🇦</p>
+    <nav class="foot-links" aria-label="Lewydo">
+      <a href="/" data-lang-link data-t="b.foot.home">Home</a><a href="/brand/" data-lang-link data-t="nav.brand">Brand</a><a href="/press/" aria-current="page" data-t="foot.press">Press kit</a>
+      <a href="/privacy.html"><span data-t="foot.privacy">Privacy</span> · Lewydo</a>
+    </nav>
+    <p class="foot-c">© 2026 Lewydo™ · Love What You Do · <span data-t="foot.rights">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<script id="data" type="application/json">{"langs":[{"id":"om","name":"Afaan Oromoo","en":"Oromo","flag":"\u003cimg src=\"/assets/flags/om.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"af","name":"Afrikaans","en":"Afrikaans","flag":"\u003cimg src=\"/assets/flags/af.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"az","name":"Azərbaycanca","en":"Azerbaijani","flag":"\u003cimg src=\"/assets/flags/az.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"id","name":"Bahasa Indonesia","en":"Indonesian","flag":"\u003cimg src=\"/assets/flags/id.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ms","name":"Bahasa Melayu","en":"Malay","flag":"\u003cimg src=\"/assets/flags/ms.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"bs","name":"Bosanski","en":"Bosnian","flag":"\u003cimg src=\"/assets/flags/bs.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ca","name":"Català","en":"Catalan","flag":"\u003cimg src=\"/assets/flags/ca.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"cs","name":"Čeština","en":"Czech","flag":"\u003cimg src=\"/assets/flags/cs.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"da","name":"Dansk","en":"Danish","flag":"\u003cimg src=\"/assets/flags/da.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"de","name":"Deutsch","en":"German","flag":"\u003cimg src=\"/assets/flags/de.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"et","name":"Eesti","en":"Estonian","flag":"\u003cimg src=\"/assets/flags/et.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"en","name":"English","en":"English","flag":"\u003cimg src=\"/assets/flags/en.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"es","name":"Español","en":"Spanish","flag":"\u003cimg src=\"/assets/flags/es.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"eu","name":"Euskara","en":"Basque","flag":"\u003cimg src=\"/assets/flags/eu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"fil","name":"Filipino","en":"Filipino","flag":"\u003cimg src=\"/assets/flags/fil.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"fr","name":"Français","en":"French","flag":"\u003cimg src=\"/assets/flags/fr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"gl","name":"Galego","en":"Galician","flag":"\u003cimg src=\"/assets/flags/gl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ha","name":"Hausa","en":"Hausa","flag":"\u003cimg src=\"/assets/flags/ha.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"hr","name":"Hrvatski","en":"Croatian","flag":"\u003cimg src=\"/assets/flags/hr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ig","name":"Igbo","en":"Igbo","flag":"\u003cimg src=\"/assets/flags/ig.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"zu","name":"isiZulu","en":"Zulu","flag":"\u003cimg src=\"/assets/flags/zu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"is","name":"Íslenska","en":"Icelandic","flag":"\u003cimg src=\"/assets/flags/is.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"it","name":"Italiano","en":"Italian","flag":"\u003cimg src=\"/assets/flags/it.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"sw","name":"Kiswahili","en":"Swahili","flag":"\u003cimg src=\"/assets/flags/sw.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"lv","name":"Latviešu","en":"Latvian","flag":"\u003cimg src=\"/assets/flags/lv.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"lt","name":"Lietuvių","en":"Lithuanian","flag":"\u003cimg src=\"/assets/flags/lt.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"hu","name":"Magyar","en":"Hungarian","flag":"\u003cimg src=\"/assets/flags/hu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"nl","name":"Nederlands","en":"Dutch","flag":"\u003cimg src=\"/assets/flags/nl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"nb","name":"Norsk","en":"Norwegian Bokmål","flag":"\u003cimg src=\"/assets/flags/nb.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"uz","name":"Oʻzbekcha","en":"Uzbek","flag":"\u003cimg src=\"/assets/flags/uz.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"pl","name":"Polski","en":"Polish","flag":"\u003cimg src=\"/assets/flags/pl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"pt","name":"Português","en":"Portuguese","flag":"\u003cimg src=\"/assets/flags/pt.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ro","name":"Română","en":"Romanian","flag":"\u003cimg src=\"/assets/flags/ro.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"sq","name":"Shqip","en":"Albanian","flag":"\u003cimg src=\"/assets/flags/sq.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"sk","name":"Slovenčina","en":"Slovak","flag":"\u003cimg src=\"/assets/flags/sk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"sl","name":"Slovenščina","en":"Slovenian","flag":"\u003cimg src=\"/assets/flags/sl.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"so","name":"Soomaali","en":"Somali","flag":"\u003cimg src=\"/assets/flags/so.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"fi","name":"Suomi","en":"Finnish","flag":"\u003cimg src=\"/assets/flags/fi.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"sv","name":"Svenska","en":"Swedish","flag":"\u003cimg src=\"/assets/flags/sv.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"vi","name":"Tiếng Việt","en":"Vietnamese","flag":"\u003cimg src=\"/assets/flags/vi.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"tr","name":"Türkçe","en":"Turkish","flag":"\u003cimg src=\"/assets/flags/tr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"tk","name":"Türkmençe","en":"Turkmen","flag":"\u003cimg src=\"/assets/flags/tk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"yo","name":"Yorùbá","en":"Yoruba","flag":"\u003cimg src=\"/assets/flags/yo.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"be","name":"Беларуская","en":"Belarusian","flag":"\u003cimg src=\"/assets/flags/be.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"bg","name":"Български","en":"Bulgarian","flag":"\u003cimg src=\"/assets/flags/bg.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ky","name":"Кыргызча","en":"Kyrgyz","flag":"\u003cimg src=\"/assets/flags/ky.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"mk","name":"Македонски","en":"Macedonian","flag":"\u003cimg src=\"/assets/flags/mk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"mn","name":"Монгол","en":"Mongolian","flag":"\u003cimg src=\"/assets/flags/mn.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"sr","name":"Српски","en":"Serbian","flag":"\u003cimg src=\"/assets/flags/sr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"tg","name":"Тоҷикӣ","en":"Tajik","flag":"\u003cimg src=\"/assets/flags/tg.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"uk","name":"Українська","en":"Ukrainian","flag":"\u003cimg src=\"/assets/flags/uk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"kk","name":"Қазақ тілі","en":"Kazakh","flag":"\u003cimg src=\"/assets/flags/kk.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"el","name":"Ελληνικά","en":"Greek","flag":"\u003cimg src=\"/assets/flags/el.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ko","name":"한국어","en":"Korean","flag":"\u003cimg src=\"/assets/flags/ko.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ja","name":"日本語","en":"Japanese","flag":"\u003cimg src=\"/assets/flags/ja.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"zh-CN","name":"简体中文","en":"Chinese (China)","flag":"\u003cimg src=\"/assets/flags/zh-CN.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"zh-TW","name":"繁體中文","en":"Traditional Chinese","flag":"\u003cimg src=\"/assets/flags/zh-TW.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"hy","name":"Հայերեն","en":"Armenian","flag":"\u003cimg src=\"/assets/flags/hy.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"he","name":"עברית","en":"Hebrew","dir":"rtl","flag":"\u003cimg src=\"/assets/flags/he.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ur","name":"اردو","en":"Urdu","dir":"rtl","flag":"\u003cimg src=\"/assets/flags/ur.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ar","name":"العربية","en":"Arabic","dir":"rtl","flag":"\u003cimg src=\"/assets/flags/ar.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"fa","name":"فارسی","en":"Persian","dir":"rtl","flag":"\u003cimg src=\"/assets/flags/fa.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ps","name":"پښتو","en":"Pashto","dir":"rtl","flag":"\u003cimg src=\"/assets/flags/ps.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ne","name":"नेपाली","en":"Nepali","flag":"\u003cimg src=\"/assets/flags/ne.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"mr","name":"मराठी","en":"Marathi","flag":"\u003cimg src=\"/assets/flags/mr.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"hi","name":"हिन्दी","en":"Hindi","flag":"\u003cimg src=\"/assets/flags/hi.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"as","name":"অসমীয়া","en":"Assamese","flag":"\u003cimg src=\"/assets/flags/as.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"bn","name":"বাংলা","en":"Bangla","flag":"\u003cimg src=\"/assets/flags/bn.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"pa","name":"ਪੰਜਾਬੀ","en":"Punjabi","flag":"\u003cimg src=\"/assets/flags/pa.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"gu","name":"ગુજરાતી","en":"Gujarati","flag":"\u003cimg src=\"/assets/flags/gu.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"or","name":"ଓଡ଼ିଆ","en":"Odia","flag":"\u003cimg src=\"/assets/flags/or.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ta","name":"தமிழ்","en":"Tamil","flag":"\u003cimg src=\"/assets/flags/ta.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"te","name":"తెలుగు","en":"Telugu","flag":"\u003cimg src=\"/assets/flags/te.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"kn","name":"ಕನ್ನಡ","en":"Kannada","flag":"\u003cimg src=\"/assets/flags/kn.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ml","name":"മലയാളം","en":"Malayalam","flag":"\u003cimg src=\"/assets/flags/ml.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"si","name":"සිංහල","en":"Sinhala","flag":"\u003cimg src=\"/assets/flags/si.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"th","name":"ไทย","en":"Thai","flag":"\u003cimg src=\"/assets/flags/th.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"lo","name":"ລາວ","en":"Lao","flag":"\u003cimg src=\"/assets/flags/lo.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"my","name":"မြန်မာ","en":"Burmese","flag":"\u003cimg src=\"/assets/flags/my.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"ka","name":"ქართული","en":"Georgian","flag":"\u003cimg src=\"/assets/flags/ka.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"am","name":"አማርኛ","en":"Amharic","flag":"\u003cimg src=\"/assets/flags/am.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"},{"id":"km","name":"ខ្មែរ","en":"Khmer","flag":"\u003cimg src=\"/assets/flags/km.svg\" alt=\"\" width=\"24\" height=\"18\" loading=\"lazy\" decoding=\"async\">"}],"base":"/press/lang/","S":{"en":{"skip":"Skip to content","lang.title":"Language","lang.search":"Find a language","lang.none":"We don’t speak that one yet.","lang.stop":"Russia, stop the war in Ukraine","nav.label":"Main menu","nav.brand":"Brand","foot.press":"Press kit","foot.made":"Made with 💚 in the Poltava region, Ukraine 🇺🇦","foot.rights":"All rights reserved.","foot.privacy":"Privacy","b.home":"Lewydo — home","b.foot.home":"Home"}},"stop":{"flag":"\u003cimg src=\"/assets/flags/ru-stained.svg\" alt=\"\" width=\"28\" height=\"21\" loading=\"lazy\" decoding=\"async\">","text":"Россия, останови войну в Украине"},"cpLangs":["om","af","az","id","ms","bs","ca","cs","da","de","et","en","es","eu","fil","fr","gl","ha","hr","ig","zu","is","it","sw","lv","lt","hu","nl","nb","uz","pl","pt","ro","sq","sk","sl","so","fi","sv","vi","tr","tk","yo","el","be","bg","ky","kk","mk","mn","sr","tg","uk","ka","hy","he","ur","ar","ps","fa","am","ne","mr","hi","as","bn","pa","gu","or","ta","te","kn","ml","si","th","lo","my","km","ko","ja","zh-CN","zh-TW"],"v":"69a26c20f8"}</script>
+<script>
+(() => {
+'use strict';
+const D = JSON.parse(document.getElementById('data').textContent);
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const store = { get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+// ── languages (src/lang.js — the same on both pages; tools/build.mjs puts it into each page's script) ──
+// ?lang= → the visitor's choice (lewydo:lang — this site's own; the game sites are other origins and keep theirs, so every link to
+// them says the language, see applyLang) → the device → English — decided before the page
+// draws (the boot script in <head>, src/lang-boot.js). English rides in the page; every other language is one small file,
+// D.base + <id>.json (the site: /lang/, the brand page: /brand/lang/), fetched when it is needed. No Russian, ever: a Russian
+// device gets English, and the list ends with the row of Russia — not a language, not chosen, not a link (owner 14.10.2026).
+const LB = window.__lang || { id: 'en', load: {} }, IDS = D.langs.map((L) => L.id), RTL = D.langs.filter((L) => L.dir === 'rtl').map((L) => L.id);
+let lang = IDS.includes(LB.id) ? LB.id : 'en';
+const DICT = { en: { S: D.S.en } };
+const loadLang = (id) => (DICT[id] ? Promise.resolve(DICT[id]) : (LB.load[id] ??= fetch(D.base + id + '.json?v=' + D.v).then((r) => { if (!r.ok) throw new Error(id + ' ' + r.status); return r.json(); }))
+  .then((d) => (DICT[id] = d)));
+const words = () => (DICT[lang] || DICT.en).S;
+const PR = {}; const plural = (n) => { try { return (PR[lang] ??= new Intl.PluralRules(lang)).select(n); } catch (e) { return 'other'; } };
+const T = (k, n) => { let v = words()[k] ?? D.S.en[k] ?? ''; if (typeof v === 'object') v = v[plural(n ?? 0)] ?? v.other; return String(v).replace(/\{n\}/g, n ?? ''); };
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// names stay English even in CAPS: Turkish and Azerbaijani casing would give «KOTLİN»
+const NAMES = /(<[^>]*>)|\b(Kotlin|LibGDX|Java|Box2D|Android|Lewydo|CubePix|Orbit Dash|Orbit III|Google Play|Telegram|UX\/UI|Team Lead|Idle|Nunito|Figma|Claude)\b/g;
+const rich = (s) => { const h = esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>')
+  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' rel="noopener"' : ''}>${t}</a>`);
+  return lang === 'tr' || lang === 'az' ? h.replace(NAMES, (m, tag, n) => tag || `<span lang="en">${n}</span>`) : h; };
+const onLang = [];
+const langName = (L) => (lang === 'en' ? L.en : (DICT[lang] && DICT[lang].names || {})[L.id]) || '';
+const fold = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+function applyLang() {
+  const h = document.documentElement; h.lang = lang; h.dir = RTL.includes(lang) ? 'rtl' : 'ltr'; h.dataset.words = DICT[lang] ? lang : 'en';
+  $$('[data-t]').forEach((el) => { const n = el.dataset.n ? D.counts[el.dataset.n] : undefined, v = T(el.dataset.t, n);
+    if (el.tagName === 'TITLE') document.title = v; else el.innerHTML = rich(v); });
+  $$('[data-ta]').forEach((el) => { const [a, k] = el.dataset.ta.split(/:(.+)/); el.setAttribute(a, T(k)); });
+  // links carry the language. A game's site (data-lang-link="od" | "cp": orbitdash.lewydo.com, cubepix.lewydo.com — another origin with
+  // its own memory of the language) — always, English too, after the studio mark the link already has; CubePix's only when it speaks it
+  // (D.cpLangs), else it picks the visitor's own. Our own pages (data-lang-link with no value: the same origin, the same memory) — only
+  // when it is not English. The anchor stays at the end.
+  $$('[data-lang-link]').forEach((a) => { const u = new URL(a.dataset.base ??= a.getAttribute('href'), location.href), game = a.dataset.langLink;
+    if (game ? game !== 'cp' || (D.cpLangs || []).includes(lang) : lang !== 'en') u.searchParams.set('lang', lang); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.origin === location.origin ? u.pathname + u.search + u.hash : u.href); });
+  $('#langFlag').innerHTML = D.langs.find((L) => L.id === lang).flag;
+  $('#langCode').textContent = { 'zh-TW': '繁中', 'zh-CN': '简中' }[lang] || lang.toUpperCase();
+  $$('#langList button').forEach((b) => { const L = D.langs.find((x) => x.id === b.dataset.lang), nm = langName(L), sm = $('small', b);
+    b.setAttribute('aria-selected', String(L.id === lang)); sm.textContent = nm && fold(nm) !== fold(L.name) && L.id !== lang ? nm : ''; sm.lang = lang; });
+  $('#langStop small').lang = lang; find.placeholder = T('lang.search'); find.setAttribute('aria-label', T('lang.search'));
+  onLang.forEach((f) => f());
+}
+function setLang(id) {
+  if (!IDS.includes(id) || id === lang) return;
+  store.set('lewydo:lang', id); store.set('cubepix-site:lang', id);   // this origin's own memory; the game sites hear it from ?lang= on our links
+  try { const u = new URL(location.href); u.searchParams.set('lang', id); history.replaceState(null, '', u); } catch (e) {}
+  langBtn.setAttribute('aria-busy', 'true');
+  loadLang(id).then(() => { lang = id; applyLang(); }, () => {}).finally(() => langBtn.removeAttribute('aria-busy'));
+}
+// the picker: type to find (the language's own name, its name in the page's language, in English, or its code); arrows, Enter, Esc
+const menu = $('#langMenu'), list = $('#langList'), find = $('#langFind'), langBtn = $('#langBtn');
+list.innerHTML = D.langs.map((L) => `<button type="button" role="option" data-lang="${L.id}"><span class="flag">${L.flag}</span>` +
+  `<span class="lang-nm"><span lang="${L.id}" dir="auto">${esc(L.name)}</span><small></small></span></button>`).join('');
+$('#langStop').innerHTML = `<span class="flag">${D.stop.flag}</span><span><b lang="ru">${esc(D.stop.text)}</b><small data-t="lang.stop">Russia, stop the war in Ukraine</small></span>`;
+const shown = () => $$('button', list).filter((b) => !b.hidden);
+function filter() { const q = fold(find.value.trim());
+  $$('button', list).forEach((b) => { const L = D.langs.find((x) => x.id === b.dataset.lang);
+    b.hidden = !!q && ![L.name, L.en, langName(L), L.id].some((s) => fold(s).includes(q)); });
+  $('#langNone').hidden = !q || shown().length > 0; }
+find.addEventListener('input', filter);
+const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const openMenu = (on) => { menu.hidden = !on; langBtn.setAttribute('aria-expanded', String(on)); if (!on) return;
+  find.value = ''; filter(); const cur = list.querySelector('[aria-selected="true"]') || list.firstChild;
+  cur.scrollIntoView({ block: 'center' }); (fine ? find : cur).focus({ preventScroll: true }); };
+langBtn.addEventListener('click', () => openMenu(menu.hidden));
+list.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; setLang(b.dataset.lang); openMenu(false); langBtn.focus(); });
+menu.addEventListener('keydown', (e) => { const bs = shown(), i = bs.indexOf(document.activeElement);
+  if (e.key === 'Escape') { openMenu(false); langBtn.focus(); return; }
+  if (!bs.length) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); (i < 0 ? bs[bs.length - 1] : i === 0 ? find : bs[i - 1]).focus(); }
+  else if (e.key === 'Enter' && document.activeElement === find) { e.preventDefault(); setLang(bs[0].dataset.lang); openMenu(false); langBtn.focus(); }
+  else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey && document.activeElement !== find) find.focus(); });   // typing goes to the search
+document.addEventListener('click', (e) => { if (!menu.hidden && !e.target.closest('.langsel')) openMenu(false); });
+// the first paint is English (the page itself); the visitor's language arrives with its file — or English stays if it can't
+function startLang() { applyLang(); if (lang === 'en') return;
+  loadLang(lang).then(applyLang, () => { lang = 'en'; applyLang(); }); }
+
+// «•••» in the header (src/more.js — the same on every page, tools/build.mjs puts it into each page's script): a button that opens a small
+// menu; a tap outside, Esc or a link closes it. The menu's words are the page's own (data-t), so they follow the language like the rest.
+(() => { const btn = document.getElementById('moreBtn'), menu = document.getElementById('moreMenu'); if (!btn || !menu) return;
+  const open = (on) => { menu.hidden = !on; btn.setAttribute('aria-expanded', String(on)); };
+  btn.addEventListener('click', () => { const on = menu.hidden; open(on); if (on) { const a = [...menu.querySelectorAll('a')].find((x) => x.offsetParent); if (a) a.focus({ preventScroll: true }); } });
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) open(false); });
+  menu.addEventListener('keydown', (e) => { if (e.key === 'Escape') { open(false); btn.focus(); } });
+  document.addEventListener('click', (e) => { if (!menu.hidden && !e.target.closest('.more')) open(false); }); })();
+
+// «Copy» the press address: the clipboard, or — if it is not allowed — the address selected; the button says «Copied» for 2 s (the body is English)
+$$('[data-copy]').forEach((b) => { const lab = $('span', b), st = $('#pkCopied'); let t = 0;
+  const done = () => { b.classList.add('ok'); lab.textContent = 'Copied ✓'; st.textContent = 'Copied'; clearTimeout(t);
+    t = setTimeout(() => { b.classList.remove('ok'); lab.textContent = 'Copy'; st.textContent = ''; }, 2000); };
+  const pick = () => { const r = document.createRange(); r.selectNodeContents($('#pkMail')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  b.addEventListener('click', () => { try { navigator.clipboard.writeText(b.dataset.copy).then(done, pick); } catch (e) { pick(); } }); });
+startLang();
+})();
+</script>
+<script>/* Lewydo — our anonymous visit counter (owner 12.11.2026; the same as on orbitdash.lewydo.com and cubepix.lewydo.com).
+   One small message to our own counter at stats.lewydo.com (Cloudflare Worker lewydo-site-stats → Workers Analytics Engine) when a page
+   opens: {s, p, e, c, src} and nothing else — no cookies, no storage, no ids; the IP address is not stored, Workers logs are off.
+   The contract and the server: Game-Orbit-Dash-PRIVATE/server/site-stats/README.md. Privacy: /privacy.html#visit-counter.
+     s   "st" — this site (lewydo.com)
+     p   the page: home · privacy · press (/press/) · other (brand, 404)
+     e   "view" — this site has no analytics and no consent bar, so it never sends allow / decline
+     c   "none" — no consent choice exists here
+     src a coarse source label, worked out here on the device: utm_source (lower case, not an id) → the kind of site in the referrer
+         (only its host) → the TikTok / Instagram / Facebook in-app browser (the TikTok bio links to the bare lewydo.com/, and that
+         browser often sends no referrer; the user agent itself is never sent) → "none".
+   press is set by tools/build.mjs for each page. */
+(function () {
+  "use strict";
+  var STATS = "https://stats.lewydo.com/h", PAGE = "press";
+  var REF = [
+    // youtube before google: com.google.android.youtube is the YouTube app, not the search
+    ["youtube", /(^|\.)youtube\.com$|(^|\.)youtu\.be$|^com\.google\.android\.youtube$/],
+    ["google", /(^|\.)google\.[a-z.]+$|^com\.google\.android\./],
+    ["bing", /(^|\.)bing\.com$/],
+    ["duckduckgo", /(^|\.)duckduckgo\.com$/],
+    ["tiktok", /(^|\.)tiktok\.com$|(^|\.)tiktokv\.com$|^com\.zhiliaoapp\.musically/],
+    ["instagram", /(^|\.)instagram\.com$|^com\.instagram\./],
+    ["facebook", /(^|\.)facebook\.com$|(^|\.)fb\.com$|(^|\.)messenger\.com$|^com\.facebook\./],
+    ["x", /(^|\.)x\.com$|(^|\.)twitter\.com$|^t\.co$/],
+    ["reddit", /(^|\.)reddit\.com$|(^|\.)redd\.it$/],
+    ["discord", /(^|\.)discord\.com$|(^|\.)discord\.gg$|(^|\.)discordapp\.com$/],
+    ["telegram", /^t\.me$|(^|\.)telegram\.org$|(^|\.)telegram\.me$|^org\.telegram\./],
+  ];
+  // the in-app browser (when there is no referrer): the user agent is read ONLY here, to pick one of three labels — it goes nowhere
+  var APP = [
+    ["tiktok", /musical_ly|TikTok|Bytedance|trill_/i],
+    ["instagram", /Instagram/],
+    ["facebook", /FBAN|FBAV|FB_IAB|FBIOS/],
+  ];
+  function inApp() {
+    var ua = String(navigator.userAgent || "");
+    for (var i = 0; i < APP.length; i++) if (APP[i][1].test(ua)) return APP[i][0];
+    return "none";
+  }
+  function refKind(h) {
+    if (h === location.hostname) return "self";                       // a step inside this site
+    if (h === "lewydo.com" || h === "www.lewydo.com") return "studio";
+    if (h === "orbitdash.lewydo.com") return "orbitdash";
+    if (h === "cubepix.lewydo.com") return "cubepix";
+    if (/(^|\.)lewydo\.com$/.test(h)) return "studio";
+    for (var i = 0; i < REF.length; i++) if (REF[i][1].test(h)) return REF[i][0];
+    return "other";
+  }
+  function source() {
+    try {
+      // a campaign tag, lower case; anything that looks like an identifier (long hex / digits) is not taken: a label never points at a person
+      var u = (new URLSearchParams(location.search).get("utm_source") || "").toLowerCase();
+      if (u && /^[a-z0-9_.-]{1,32}$/.test(u) && !/^[0-9a-f]{12,}$|\d{6,}/.test(u)) return u;
+      if (document.referrer) {
+        var h = new URL(document.referrer).hostname.toLowerCase();
+        if (h) return refKind(h);
+      }
+      return inApp();
+    } catch (e) { return "none"; }
+  }
+  var sent = false;
+  function view() {
+    if (sent) return;
+    sent = true;
+    try {
+      if (!navigator.sendBeacon) return;
+      navigator.sendBeacon(STATS, JSON.stringify({ s: "st", p: PAGE, e: "view", c: "none", src: source() }));
+    } catch (e) { /* the counter never matters more than the page */ }
+  }
+  try {
+    if (document.prerendering) document.addEventListener("prerenderingchange", view, { once: true });   // counted when really opened
+    else view();
+  } catch (e) { /* */ }
+})();
+</script>
+</body>
+</html>

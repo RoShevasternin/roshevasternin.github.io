@@ -3,7 +3,7 @@
    opens: {s, p, e, c, src} and nothing else — no cookies, no storage, no ids; the IP address is not stored, Workers logs are off.
    The contract and the server: Game-Orbit-Dash-PRIVATE/server/site-stats/README.md. Privacy: /privacy.html#visit-counter.
      s   "st" — this site (lewydo.com)
-     p   the page: home · privacy · other (brand, 404)
+     p   the page: home · privacy · press (/press/) · other (brand, 404)
      e   "view" — this site has no analytics and no consent bar, so it never sends allow / decline
      c   "none" — no consent choice exists here
      src a coarse source label, worked out here on the device: utm_source (lower case, not an id) → the kind of site in the referrer

@@ -131,6 +131,9 @@ const ICONS = {
   tg: 'M21.9 4.6c.3-1.2-.7-1.8-1.6-1.4L2.8 10.1c-1.1.4-1.1 1.1-.2 1.4l4.5 1.4 10.4-6.6c.5-.3.9-.1.6.2l-8.4 7.6-.3 4.6c.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3-14.1z',
   link: 'M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z',   // a link page (the first streamer's, in the story)
   heart: 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z',   // «♥ Support» (docs/process/donations.md)
+  more: 'M5 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',   // «•••» in the header (src/more.css)
+  press: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 12h8v2H8v-2zm0 4h8v2H8v-2z',   // «Press kit» (/press/)
+  dl: 'M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z',   // a download (/press/)
   copy: 'M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z',   // «Copy» of the crypto address
   mail: 'M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z',
   twitch: 'M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0 1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143-3.428 3.428h-3.43l-3 3v-3H6.857V1.714h13.714z',   // the Twitch glitch (Simple Icons, CC0) — the story's first-Twitch entry
@@ -220,8 +223,8 @@ const VINYL = (() => { const pal = { d: '#151833', g: '#2b3061', s: '#525a9c', l
 const fill = (html) => {
   html = html
     // our anonymous visit counter (owner 12.11.2026, src/stats.js): one beacon to stats.lewydo.com per page — {{stats:<page kind>}}
-    .replace(/\{\{stats:(home|privacy|other)\}\}/g, (m, p) => '<script>' + read('src/stats.js').replace(/\{\{page\}\}/g, p) + '</script>')
-    .replace('{{music}}', () => read('src/music.html')).replace(/\{\{vinyl\}\}/g, () => VINYL)
+    .replace(/\{\{stats:(home|privacy|press|other)\}\}/g, (m, p) => '<script>' + read('src/stats.js').replace(/\{\{page\}\}/g, p) + '</script>')
+    .replace('{{music}}', () => read('src/music.html')).replace('{{moreCss}}', () => read('src/more.css')).replace('{{moreJs}}', () => read('src/more.js')).replace(/\{\{vinyl\}\}/g, () => VINYL)
     .replace(/\{\{brandCss\}\}/g, () => brandCss).replace(/\{\{lockup\}\}/g, lockup).replace(/\{\{mark\}\}/g, mark).replace(/\{\{mark:(\w+)\}\}/g, (m, id) => logo(id))
     .replace(/\{\{lockup:(\w+)\}\}/g, (m, id) => W.lockup(id)).replace(/\{\{splash:(\w+)\}\}/g, (m, id) => W.lockup(id, 'lw-splash'))
     .replace(/\{\{png:lockup\}\}/g, () => P.lockup()).replace(/\{\{png:sig\}\}/g, () => P.sig()).replace(/\{\{sig:(\w+)\}\}/g, (m, id) => W.sig(id))
@@ -261,7 +264,7 @@ out('404.html', fill(read('src/404.html').replace('{{lockup404}}', lockup).repla
 // the brand page (/brand/, English): the standard with the kit itself — brand.json and the zip are made from brand/kit/ (tools/brand.mjs)
 const BJ = JSON.stringify(brandJson({ SITE, YEAR, G, S, IDS, MAIL }), null, 1) + '\n', ZIP = zip(kitFiles(BJ)), bcode = codeParts();
 out('brand/brand.json', BJ); out('brand/lewydo-brand-kit.zip', ZIP);
-const BKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', ...Object.keys(BS.en).map((k) => 'b.' + k)];
+const BKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'say.btn', 'say.spell', 'say.aria', 'music.fav', 'music.label', 'music.close', 'music.hint', 'music.thanks', 'nav.label', 'foot.press', ...Object.keys(BS.en).map((k) => 'b.' + k)];
 const bWords = (L) => Object.fromEntries(BKEYS.map((k) => [k, S[L][k]]));
 // About us in every language rides in the page (its own language picker shows any of them): the games' own words
 const BDATA = { langs: LANGS, base: '/brand/lang/', S: { en: bWords('en') }, stop: STOP,
@@ -273,11 +276,85 @@ out('brand/index.html', fill(read('src/brand.html').replace('{{langBoot}}', () =
   .replace('{{dlCards}}', () => dlCards({ W })).replace(/\{\{zipMb\}\}/g, () => (ZIP.length / 1048576).toFixed(1))
   .replace('{{DATA}}', () => JSON.stringify(BDATA).replace(/</g, '\\u003c'))
   .replace('{{hreflangBrand}}', () => [...IDS.map((L) => `<link rel="alternate" hreflang="${L}" href="${SITE}brand/?lang=${L}">`), `<link rel="alternate" hreflang="x-default" href="${SITE}brand/">`].join('\n'))));
+// ── the press page (/press/; owner 17.11.2026, the studio rule docs/process/press-kit.md, like orbitdash.lewydo.com/press/) ──
+// The body is English (the press's language): every fact comes from the site itself — About us (brand.json, the games' own words), the story
+// (src/i18n/en.json → story.*), the games (src/games.json, src/cubepix.json), the mark (brand/kit/png). The header, the languages and the footer
+// speak the visitor's language (/press/lang/<id>.json). The previews are press/thumb/<id>.webp (tools/webp.py <png> press/thumb/<id>.webp <width> 90);
+// the full files are the kit's own (/brand/kit/png/…), and the zip (fact-sheet.txt + logo/) is made here, deterministic like the brand kit's.
+const PRESS_ZIP = 'lewydo-press-kit.zip';
+const pressFail = (m) => { console.error('✗ press: ' + m); process.exit(1); };
+const ABOUT_EN = S.en['cp:about'], WHO = 'a two-person indie game studio from Ukraine';
+if (!ABOUT_EN.includes(WHO) || !/Vlad codes, Lilya designs/.test(ABOUT_EN)) pressFail(`About us no longer says «${WHO}» / «Vlad codes, Lilya designs» — update the fact sheet (tools/build.mjs)`);
+const plain = (s) => String(s).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1').replace(/\*\*(.+?)\*\*/g, '$1').replace(/ /g, ' ');
+const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`);
+const first = (s) => String(s).match(/^.*?[.!?](?=\s|$)/)?.[0] || s;   // the first sentence
+const storeUrl = { play: (u) => `https://play.google.com/store/apps/details?id=${new URL(u).searchParams.get('id')}`, as: (u) => { const x = new URL(u); return x.origin + x.pathname; } };
+// the games, in the order of the site: their own words, the platforms by where they are, the press kit next to the site
+const PGAMES = [
+  { id: 'orbitdash', name: 'Orbit Dash', g: G.orbitdash, link: odLink, ll: 'od', color: '#00E5FF', tag: S.en['od.tag'], line: first(S.en['od.lead']) },
+  { id: 'cubepix', name: 'CubePix', g: G.cubepix, link: cpLink, ll: 'cp', color: '#B07CFF', tag: CP.S.en.tagline, line: first(CP.S.en.lead) },
+].map((x) => ({ ...x, plat: [x.g.play && 'Android', x.g.appStore && 'iPhone & iPad', x.g.demo && 'web browser'].filter(Boolean) }));
+for (const x of PGAMES) for (const k of ['site', 'play', 'icon']) if (!x.g[k]) pressFail(`${x.name}: no «${k}» in src/games.json`);
+const LANG_ALL = CP.counts.langs === IDS.length;   // the games and the site speak the same languages (Orbit Dash's are src/langs.json)
+const FACTS = [
+  ['Studio', 'Lewydo'], ['Who we are', WHO[0].toUpperCase() + WHO.slice(1)], ['Founded', S.en['story.brand.when']], ['Based in', ld.foundingLocation],
+  ['Team', 'Vlad (code) and Lilya (design)'], ['Games', PGAMES.map((x) => x.name).join(', ')],
+  ['Platforms', [...new Set(PGAMES.flatMap((x) => x.plat))].join(', ').replace(/^./, (c) => c.toUpperCase())],
+  ...(LANG_ALL ? [['Languages', `${IDS.length}, in every game and on this site`]] : []), ['Slogan', 'Love What You Do'], ['Website', HOST], ['Press contact', MAIL]];
+const factHtml = FACTS.map(([k, v]) => `<dt>${k}</dt><dd>` + (k === 'Website' ? `<a href="/">${v}</a>`
+  : k === 'Games' ? PGAMES.map((x) => `<a href="#${x.id}">${x.name}</a>`).join(', ')
+  : k === 'Press contact' ? `<span class="pk-mail"><code id="pkMail" translate="no">${v}</code><button class="btn btn-line btn-sm pk-copy" type="button" data-copy="${v}">${ico('copy')}<span>Copy</span></button></span>` +
+    '<span class="sr" id="pkCopied" role="status" aria-live="polite"></span>'
+  : k === 'Slogan' ? `<span translate="no">${v}</span>` : esc(v)) + '</dd>').join('');
+// the story, as the site tells it (only what is already there): its milestones, English
+const MS = ['1', '2', '3', 'brand', 'imc', 'od', 'l10n', 'web', 'next', 'iosfirst', 'online'];
+for (const k of MS) for (const f of ['when', 't']) if (!S.en[`story.${k}.${f}`]) pressFail(`the story has no «story.${k}.${f}» (src/i18n/en.json) — update MS`);
+const msHtml = MS.map((k) => `<li><time>${esc(S.en[`story.${k}.when`])}</time><span>${esc(S.en[`story.${k}.t`])}</span></li>`).join('');
+const aboutHtml = `<p class="lead">${esc(ABOUT_EN)}</p><p>${rich(S.en['story.brand.d'])}</p><p>${rich(S.en['story.3.d'])}</p>`;
+const gpIn2 = `${gpMark}<span class="sb"><small>GET IT ON</small> <b>Google Play</b></span>`, asIn2 = `${asIcon}<span class="sb"><small class="as-top">Download on the</small> <b>App Store</b></span>`;
+const gamesHtml = PGAMES.map((x) => `<li class="pk-game panel" id="${x.id}" style="--c:${x.color}"><div class="pk-gt"><img src="${x.g.icon}" alt="" width="64" height="64" loading="lazy" decoding="async">` +
+  `<div><h3>${x.name}</h3><small>${esc(x.tag)}</small></div></div><p>${esc(x.line)}</p><p class="pk-plat">${esc(x.plat.join(' · ').replace(/^./, (c) => c.toUpperCase()))}</p>` +
+  `<div class="pk-links"><a class="btn btn-green btn-sm" href="${x.link(x.g.site + 'press/')}" data-lang-link="${x.ll}">${ico('press')}<span>Press kit</span></a>` +
+  `<a class="btn btn-line btn-sm" href="${x.link(x.g.site)}" data-lang-link="${x.ll}"><span>${new URL(x.g.site).host}</span></a>` +
+  `<span class="stores"><a class="btn btn-sm store" href="${esc(x.g.play)}" rel="noopener">${gpIn2}</a>` +
+  (x.g.appStore ? `<a class="btn btn-sm store as" href="${esc(x.g.appStore)}" rel="noopener">${asIn2}</a>` : '') + '</span></div></li>').join('');
+// the logo: the kit's own PNGs (the owner's exports from Figma), each a tile — preview, name, size, weight, download
+const PTILES = [['avatar', 'Studio avatar', 'cover'], ['lockup', 'Logo · full lockup'], ['lewydo', 'Wordmark'], ['brand_front', 'Heart mark'], ['slogan', 'Slogan'], ['pill', 'Signature pill']];
+const pngWH = (p) => { const b = readFileSync(new URL(p, ROOT)); return [b.readUInt32BE(16), b.readUInt32BE(20)]; };
+const human = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB');
+const zipName = (id) => `lewydo-${{ lewydo: 'wordmark', brand_front: 'heart' }[id] || id}.png`;
+for (const [id] of PTILES) for (const f of [`brand/kit/png/${id}.png`, `press/thumb/${id}.webp`]) if (!existsSync(new URL(f, ROOT))) pressFail(`${f} is missing`);
+const tilesHtml = PTILES.map(([id, title, cls]) => { const p = `brand/kit/png/${id}.png`, [w, h] = pngWH(p), n = readFileSync(new URL(p, ROOT)).length;
+  return `<li class="pk-tile${cls ? ' ' + cls : ''}"><a class="im" href="/${p}" target="_blank" rel="noopener" aria-label="${esc(title)}, full size"><img src="/press/thumb/${id}.webp" alt="${esc(title)}" loading="lazy" decoding="async"></a>` +
+    `<div class="pk-cap"><div><b>${esc(title)}</b><small dir="ltr">${w}×${h} · ${human(n)}</small></div><a class="pk-dl" href="/${p}" download="${zipName(id)}">${ico('dl')}<span>PNG</span></a></div></li>`; }).join('');
+// the fact sheet as text — the zip's first file: the same facts, the story, the games with their links, the files, the terms
+const factTxt = ['LEWYDO — PRESS KIT', SITE + 'press/', '', 'FACT SHEET', ...FACTS.map(([k, v]) => `${k}: ${v}`), `Brand kit: ${SITE}brand/`, '',
+  'ABOUT THE STUDIO', ABOUT_EN, plain(S.en['story.brand.d']), plain(S.en['story.3.d']), '',
+  'MILESTONES', ...MS.map((k) => `${plain(S.en[`story.${k}.when`])} — ${plain(S.en[`story.${k}.t`])}`), '',
+  'GAMES', ...PGAMES.flatMap((x) => [`${x.name} — ${x.tag}`, `  ${x.line}`, `  Platforms: ${x.plat.join(', ')}`, `  Press kit: ${x.g.site}press/`, `  Website: ${x.g.site}`,
+    `  Google Play: ${storeUrl.play(x.g.play)}`, ...(x.g.appStore ? [`  App Store: ${storeUrl.as(x.g.appStore)}`] : []), ...(x.g.demo ? [`  Play in the browser: ${x.g.demo}`] : []), '']),
+  'LOGO FILES (logo/)', ...PTILES.map(([id, title]) => `${zipName(id)} — ${title}, ${pngWH(`brand/kit/png/${id}.png`).join('×')} px, ${id === 'avatar' ? 'PNG' : 'transparent PNG'}`), '',
+  'USING THESE MATERIALS', 'You may use them in articles, reviews, videos, streams and social posts about Lewydo and our games, and resize the pictures to fit.',
+  "Please don't redraw, recolour or stretch the logo, and don't use it to suggest an official partnership.", '',
+  'FOLLOW LEWYDO', ...SOCIAL.map(([, n, u]) => `${n}: ${u}`), '', `Press contact: ${MAIL}`, ''].join('\n');
+const PZIP = zip([['fact-sheet.txt', Buffer.from(factTxt)], ...PTILES.map(([id]) => [`logo/${zipName(id)}`, readFileSync(new URL(`brand/kit/png/${id}.png`, ROOT))])]
+  .map(([n, b]) => ['lewydo-press-kit/' + n, b]));
+out('press/' + PRESS_ZIP, PZIP);
+const PKEYS = ['skip', 'lang.title', 'lang.search', 'lang.none', 'lang.stop', 'nav.label', 'nav.brand', 'foot.press', 'foot.made', 'foot.rights', 'foot.privacy', 'b.home', 'b.foot.home'];
+const pWords = (L) => Object.fromEntries(PKEYS.map((k) => [k, S[L][k]]));
+const PDATA = { langs: LANGS, base: '/press/lang/', S: { en: pWords('en') }, stop: STOP, cpLangs: Object.keys(CP.S) };
+PDATA.v = langFiles('press/lang/', (L) => ({ S: pWords(L), names: NAMES[L] }));
+out('press/index.html', fill(read('src/press.html').replace('{{langBoot}}', () => langBoot('/press/lang/', PDATA.v))
+  .replace(/\{\{pk\.desc\}\}/g, () => esc(`Lewydo press kit: the facts, the story, the logo and our games — ${PGAMES.map((x) => x.name).join(' and ')}. ${ABOUT_EN}`))
+  .replace('{{pk.facts}}', () => factHtml).replace('{{pk.aboutTitle}}', () => esc(S.en['studio.title'])).replace('{{pk.about}}', () => aboutHtml)
+  .replace('{{pk.milestones}}', () => msHtml).replace('{{pk.games}}', () => gamesHtml).replace('{{pk.tiles}}', () => tilesHtml)
+  .replace(/\{\{pk\.zip\}\}/g, PRESS_ZIP).replace(/\{\{pk\.zipSize\}\}/g, () => human(PZIP.length)).replace(/\{\{pk\.kitSize\}\}/g, () => human(ZIP.length))
+  .replace('{{DATA}}', () => JSON.stringify(PDATA).replace(/</g, '\\u003c'))));
 out('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
 // this host's pages only: a sitemap lists the URLs of its own host — the games' pages are in their own sites' sitemaps (orbitdash.lewydo.com,
-// cubepix.lewydo.com), since 06.11.2026 they are other hosts
-const pages = ['', 'brand/'];
+// cubepix.lewydo.com), since 06.11.2026 they are other hosts. /press/ — English only, no ?lang= (docs/process/press-kit.md)
+const pages = ['', 'brand/', 'press/'];
 out('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   pages.map((p) => `  <url><loc>${SITE}${p}</loc></url>`).join('\n') + '\n</urlset>\n');
 const kb = (p) => Math.round(read(p).length / 1024);
-console.log(`✓ index.html ${kb('index.html')} KB · lang/ · brand/ (index.html ${kb('brand/index.html')} KB, lang/, brand.json, lewydo-brand-kit.zip ${Math.round(ZIP.length / 1024)} KB) · 404.html · robots.txt · sitemap.xml — ${IDS.length} languages${problems.length ? `, ${problems.length} translation problems (see above)` : ''}`);
+console.log(`✓ index.html ${kb('index.html')} KB · lang/ · brand/ (index.html ${kb('brand/index.html')} KB, lang/, brand.json, lewydo-brand-kit.zip ${Math.round(ZIP.length / 1024)} KB) · press/ (index.html ${kb("press/index.html")} KB, lang/, ${PRESS_ZIP} ${Math.round(PZIP.length / 1024)} KB) · 404.html · robots.txt · sitemap.xml — ${IDS.length} languages${problems.length ? `, ${problems.length} translation problems (see above)` : ''}`);
