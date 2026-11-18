@@ -75,6 +75,20 @@
    "one": "**{n}** тіл",
    "other": "**{n}** тіл"
   },
+  "since.studio": "Lewydo жасы",
+  "since.play": "Google Play-де",
+  "since.y": {
+   "one": "{n} жыл",
+   "other": "{n} жыл"
+  },
+  "since.m": {
+   "one": "{n} ай",
+   "other": "{n} ай"
+  },
+  "since.d": {
+   "one": "{n} күн",
+   "other": "{n} күн"
+  },
   "cd.title": "Vlad код жазады. Lilya дизайн жасайды.",
   "cd.text": "Жүгірткіні сүйре: әр Lewydo ойыны осылай туады — Vlad-тың кодынан Lilya-ның дизайнына дейін.",
   "cd.aria": "Код пен дизайн арасында жылжыт",

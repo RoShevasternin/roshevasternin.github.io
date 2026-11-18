@@ -75,6 +75,20 @@
    "one": "**{n}** til",
    "other": "**{n}** til"
   },
+  "since.studio": "Lewydo yoshi",
+  "since.play": "Google Play’da",
+  "since.y": {
+   "one": "{n} yil",
+   "other": "{n} yil"
+  },
+  "since.m": {
+   "one": "{n} oy",
+   "other": "{n} oy"
+  },
+  "since.d": {
+   "one": "{n} kun",
+   "other": "{n} kun"
+  },
   "cd.title": "Vlad kod yozadi. Lilya dizayn qiladi.",
   "cd.text": "Slayderni sur: Lewydo’ning har bir oʻyini shunday tugʻiladi — Vladning kodidan Lilyaning dizayniga.",
   "cd.aria": "Kod va dizayn orasida sur",

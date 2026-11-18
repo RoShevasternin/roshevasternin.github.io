@@ -1591,3 +1591,94 @@ test('the header: every word and icon whole, on the screen and apart — /, /bra
   expect(w.errs).toEqual([]); expect([...w.ext]).toEqual([]);
   await ctx.close();
 });
+
+// «time since» (owner 18.11.2026): src/games.json → since — the one place of the start days; the page counts calendar years · months · days
+// from the start day (00:00 UTC) to the visitor's clock now, every second, the same in every time zone
+const sinceOf = (page) => page.evaluate(() => Object.fromEntries([...document.querySelectorAll('[data-since]')].map((e) => [e.dataset.since,
+  { u: [...e.querySelectorAll('.since-u')].map((s) => s.textContent.trim()), c: [...e.querySelectorAll('.since-c span')].map((s) => s.textContent.trim()) }])));
+test('«time since»: the studio, Orbit Dash and CubePix count calendar years · months · days and tick — any time zone, month ends, leap years, reduced motion', async ({ browser }) => {
+  test.setTimeout(240_000);
+  expect(JSON.parse(disk('src/games.json')).since).toEqual({ studio: '2025-01-01', orbitdash: '2026-08-30', cubepix: '2026-10-30' });
+  // the clock stands one second before each moment (in time order — a paused clock only goes forward), then the page's own tick brings it there
+  const CASES = [
+    ['2026-11-18T12:34:56Z', { studio: ['1 year', '10 months', '17 days'], orbitdash: ['2 months', '19 days'], cubepix: ['0 months', '19 days'] }, ['12 hr', '34 min', '56 sec']],
+    ['2027-03-01T00:00:05Z', { studio: ['2 years', '2 months', '0 days'], orbitdash: ['6 months', '1 day'], cubepix: ['4 months', '1 day'] }, ['00 hr', '00 min', '05 sec']],   // Oct 30 + 4 months = Feb 28 (no Feb 30)
+    ['2027-08-29T23:59:59Z', { studio: ['2 years', '7 months', '28 days'], orbitdash: ['11 months', '30 days'], cubepix: ['9 months', '30 days'] }, ['23 hr', '59 min', '59 sec']],
+    ['2027-08-30T00:00:02Z', { studio: ['2 years', '7 months', '29 days'], orbitdash: ['1 year', '0 months', '0 days'], cubepix: ['10 months', '0 days'] }, ['00 hr', '00 min', '02 sec']],
+    ['2028-02-29T23:59:59Z', { studio: ['3 years', '1 month', '28 days'], orbitdash: ['1 year', '6 months', '0 days'], cubepix: ['1 year', '4 months', '0 days'] }, ['23 hr', '59 min', '59 sec']],   // a leap day
+  ];
+  for (const timezoneId of ['Pacific/Kiritimati', 'America/Los_Angeles', 'Europe/Kyiv']) {
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 }, timezoneId }), page = await ctx.newPage(), w = watch(page);
+    await page.clock.install({ time: new Date(Date.parse(CASES[0][0]) - 60_000) });
+    await page.goto('./?lang=en&halloween=0');
+    for (const [iso, units, clock] of CASES) {
+      await page.clock.pauseAt(new Date(Date.parse(iso) - 1000)); await page.clock.runFor(1100);
+      const s = await sinceOf(page);
+      for (const id of ['studio', 'orbitdash', 'cubepix']) { expect(s[id].u, `${timezoneId} ${iso} ${id}`).toEqual(units[id]); expect(s[id].c, `${timezoneId} ${iso} ${id}`).toEqual(clock); }
+    }
+    // it keeps ticking: one second → the seconds move, the days stay
+    await page.clock.pauseAt(new Date('2028-03-01T12:34:56Z')); await page.clock.runFor(1100);
+    expect((await sinceOf(page)).orbitdash).toEqual({ u: ['1 year', '6 months', '1 day'], c: ['12 hr', '34 min', '57 sec'] });   // Aug 30 + 18 months = Feb 29, + 1 day
+    await page.clock.runFor(3000);
+    expect((await sinceOf(page)).cubepix).toEqual({ u: ['1 year', '4 months', '1 day'], c: ['12 hr', '35 min', '00 sec'] });
+    expect(w.errs, timezoneId).toEqual([]);
+    await ctx.close();
+  }
+  // the words follow the page's language and its plural forms (Ukrainian: рік / місяців / днів)
+  { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } }), page = await ctx.newPage();
+    await page.clock.install({ time: new Date('2026-11-18T12:30:00Z') }); await page.goto('./?lang=uk&halloween=0');
+    await expect(page.locator('html')).toHaveAttribute('data-words', 'uk'); await page.clock.pauseAt(new Date('2026-11-18T12:34:55Z')); await page.clock.runFor(1100);
+    const s = await sinceOf(page);
+    expect(s.studio.u).toEqual(['1 рік', '10 місяців', '17 днів']); expect(s.orbitdash.u).toEqual(['2 місяці', '19 днів']); expect(s.cubepix.u).toEqual(['0 місяців', '19 днів']);
+    expect(s.studio.c).toEqual(['12 год', '34 хв', '56 с']);
+    await expect(page.locator('[data-since="studio"] .since-h')).toHaveText('Lewydo існує вже');
+    await ctx.close(); }
+  // reduced motion: the dot stands still, the clock still ticks
+  { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' }), page = await ctx.newPage();
+    await page.clock.install({ time: new Date('2026-11-18T12:30:00Z') }); await page.goto('./?lang=en&halloween=0');
+    await page.clock.pauseAt(new Date('2026-11-18T12:34:55Z')); await page.clock.runFor(1100);
+    expect(await page.locator('[data-since="studio"] .since-c').evaluate((e) => getComputedStyle(e, '::before').animationName)).toBe('none');
+    expect((await sinceOf(page)).studio.c).toEqual(['12 hr', '34 min', '56 sec']);
+    await page.clock.runFor(1000); expect((await sinceOf(page)).studio.c).toEqual(['12 hr', '34 min', '57 sec']);
+    await ctx.close(); }
+  // where they stand: the studio's under its numbers, each game's in its own world; no JavaScript — no timers (nothing half-drawn)
+  { const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } }), page = await ctx.newPage(); await page.goto('./?lang=en');
+    expect(await page.evaluate(() => ['studio', 'orbitdash', 'cubepix'].map((id) => document.querySelector(`[data-since="${id}"]`).closest('section').id))).toEqual(['studio', 'orbitdash', 'cubepix']);
+    await ctx.close(); }
+  { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false }), page = await ctx.newPage(); await page.goto('./');
+    for (const id of ['studio', 'orbitdash', 'cubepix']) await expect(page.locator(`[data-since="${id}"]`)).toBeHidden();
+    await ctx.close(); }
+});
+
+test('«time since»: every language at 320 px — whole words, inside its card, nothing sideways; right to left mirrors the order', async ({ browser }) => {
+  test.setTimeout(600_000);
+  const ctx = await browser.newContext({ viewport: { width: 320, height: 700 } }), page = await ctx.newPage(), w = watch(page);
+  await page.clock.install({ time: new Date('2028-12-28T23:59:50Z') });   // the longest numbers: 3 years · 11 months · 27 days
+  for (const L of LANGS) {
+    await page.goto(`./?lang=${L}&halloween=0`);
+    await expect(page.locator('html')).toHaveAttribute('data-words', L);
+    await page.evaluate(() => document.fonts.ready);
+    const bad = await page.evaluate(() => { const out = [], vw = innerWidth;
+      for (const e of document.querySelectorAll('[data-since]')) { const id = e.dataset.since, box = e.getBoundingClientRect();
+        if (box.left < -.5 || box.right > vw + .5) out.push(id + ' off the screen');
+        const parts = [e.querySelector('.since-h'), ...e.querySelectorAll('.since-u, .since-c span')];
+        if (parts.length !== 7) out.push(id + ' has ' + parts.length + ' parts');
+        for (const p of parts) { const r = p.getBoundingClientRect(), t = p.textContent.trim();
+          if (!t || /[{}]/.test(t)) out.push(id + ' empty or raw: «' + t + '»');
+          if (p.scrollWidth > p.clientWidth + .5 && p.clientWidth) out.push(id + ' cut: «' + t + '»');
+          if (r.left < box.left - .5 || r.right > box.right + .5) out.push(id + ' out of its card: «' + t + '»'); } }
+      if (document.documentElement.scrollWidth > vw + .5) out.push('sideways');
+      return out; });
+    expect(bad, L).toEqual([]);
+  }
+  // right to left: the years stand to the right of the days, the card keeps to the right edge of its column
+  for (const L of ['ar', 'he', 'fa', 'ur', 'ps']) {
+    await page.setViewportSize({ width: 1280, height: 800 }); await page.goto(`./?lang=${L}&halloween=0`);
+    await expect(page.locator('html')).toHaveAttribute('dir', 'rtl'); await expect(page.locator('html')).toHaveAttribute('data-words', L);
+    const o = await page.evaluate(() => { const e = document.querySelector('[data-since="studio"]'), u = [...e.querySelectorAll('.since-u')].map((s) => s.getBoundingClientRect()),
+      col = e.parentElement.getBoundingClientRect(), b = e.getBoundingClientRect(); return { order: u[0].left > u[2].left, right: Math.abs(col.right - b.right) < 1 }; });
+    expect(o, L).toEqual({ order: true, right: true });
+  }
+  expect(w.errs).toEqual([]); expect([...w.ext]).toEqual([]);
+  await ctx.close();
+});

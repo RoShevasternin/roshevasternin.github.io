@@ -75,6 +75,20 @@
    "one": "**{n}** Sprache",
    "other": "**{n}** Sprachen"
   },
+  "since.studio": "Lewydo gibt es seit",
+  "since.play": "Bei Google Play seit",
+  "since.y": {
+   "one": "{n} Jahr",
+   "other": "{n} Jahren"
+  },
+  "since.m": {
+   "one": "{n} Monat",
+   "other": "{n} Monaten"
+  },
+  "since.d": {
+   "one": "{n} Tag",
+   "other": "{n} Tagen"
+  },
   "cd.title": "Er programmiert. Sie gestaltet.",
   "cd.text": "Zieh den Regler: So entsteht jedes Lewydo-Spiel – von Vlads Code bis zu Lilyas Design.",
   "cd.aria": "Zwischen Code und Design schieben",

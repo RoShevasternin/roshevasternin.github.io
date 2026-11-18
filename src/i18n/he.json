@@ -79,6 +79,23 @@
    "two": "**{n}** שפות",
    "other": "**{n}** שפות"
   },
+  "since.studio": "Lewydo קיימת כבר",
+  "since.play": "ב-Google Play כבר",
+  "since.y": {
+   "one": "{n} שנה",
+   "two": "{n} שנים",
+   "other": "{n} שנים"
+  },
+  "since.m": {
+   "one": "{n} חודש",
+   "two": "{n} חודשים",
+   "other": "{n} חודשים"
+  },
+  "since.d": {
+   "one": "{n} יום",
+   "two": "{n} ימים",
+   "other": "{n} ימים"
+  },
   "cd.title": "הוא מתכנת. היא מעצבת.",
   "cd.text": "גררו את המחוון: כך נולד כל משחק של Lewydo, מהקוד של Vlad לעיצוב של Lilya.",
   "cd.aria": "החליקו בין קוד לעיצוב",

@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}** bahasa"
   },
+  "since.studio": "Lewydo telah berdiri selama",
+  "since.play": "Di Google Play selama",
+  "since.y": {
+   "other": "{n} tahun"
+  },
+  "since.m": {
+   "other": "{n} bulan"
+  },
+  "since.d": {
+   "other": "{n} hari"
+  },
   "cd.title": "Vlad menulis kode. Lilya mendesain.",
   "cd.text": "Geser slider ini: beginilah setiap game Lewydo lahir, dari kode Vlad hingga desain Lilya.",
   "cd.aria": "Geser di antara kode dan desain",

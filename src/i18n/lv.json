@@ -79,6 +79,23 @@
    "one": "**{n}** valoda",
    "other": "**{n}** valodas"
   },
+  "since.studio": "Lewydo pastāv jau",
+  "since.play": "Google Play jau",
+  "since.y": {
+   "zero": "{n} gadu",
+   "one": "{n} gadu",
+   "other": "{n} gadus"
+  },
+  "since.m": {
+   "zero": "{n} mēnešu",
+   "one": "{n} mēnesi",
+   "other": "{n} mēnešus"
+  },
+  "since.d": {
+   "zero": "{n} dienu",
+   "one": "{n} dienu",
+   "other": "{n} dienas"
+  },
   "cd.title": "Viņš raksta kodu. Viņa veido dizainu.",
   "cd.text": "Pavelc slīdni: tā dzimst katra Lewydo spēle — no Vlada koda līdz Lilyas dizainam.",
   "cd.aria": "Slīdi starp kodu un dizainu",

@@ -75,6 +75,20 @@
    "one": "**{n}** taal",
    "other": "**{n}** tale"
   },
+  "since.studio": "Lewydo bestaan al vir",
+  "since.play": "Al op Google Play vir",
+  "since.y": {
+   "one": "{n} jaar",
+   "other": "{n} jaar"
+  },
+  "since.m": {
+   "one": "{n} maand",
+   "other": "{n} maande"
+  },
+  "since.d": {
+   "one": "{n} dag",
+   "other": "{n} dae"
+  },
   "cd.title": "Hy kodeer. Sy ontwerp.",
   "cd.text": "Sleep die skuifbalk: so word elke Lewydo-speletjie gebore, van Vlad se kode tot Lilya se ontwerp.",
   "cd.aria": "Skuif tussen kode en ontwerp",

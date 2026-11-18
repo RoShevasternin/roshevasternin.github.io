@@ -79,6 +79,23 @@
    "few": "**{n}** limbi",
    "other": "**{n}** de limbi"
   },
+  "since.studio": "Lewydo există de",
+  "since.play": "Pe Google Play de",
+  "since.y": {
+   "one": "{n} an",
+   "few": "{n} ani",
+   "other": "{n} de ani"
+  },
+  "since.m": {
+   "one": "{n} lună",
+   "few": "{n} luni",
+   "other": "{n} de luni"
+  },
+  "since.d": {
+   "one": "{n} zi",
+   "few": "{n} zile",
+   "other": "{n} de zile"
+  },
   "cd.title": "El scrie codul. Ea face designul.",
   "cd.text": "Trage cursorul: așa se naște fiecare joc Lewydo, de la codul lui Vlad la designul Lilyei.",
   "cd.aria": "Glisează între cod și design",

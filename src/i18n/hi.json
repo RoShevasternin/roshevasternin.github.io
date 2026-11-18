@@ -75,6 +75,20 @@
    "one": "**{n}** भाषा",
    "other": "**{n}** भाषाएँ"
   },
+  "since.studio": "Lewydo को बने",
+  "since.play": "Google Play पर",
+  "since.y": {
+   "one": "{n} साल",
+   "other": "{n} साल"
+  },
+  "since.m": {
+   "one": "{n} महीना",
+   "other": "{n} महीने"
+  },
+  "since.d": {
+   "one": "{n} दिन",
+   "other": "{n} दिन"
+  },
   "cd.title": "Vlad कोड लिखते हैं। Lilya डिज़ाइन करती हैं।",
   "cd.text": "स्लाइडर खींचो: ऐसे जन्म लेता है हर Lewydo गेम, Vlad के कोड से Lilya के डिज़ाइन तक।",
   "cd.aria": "कोड और डिज़ाइन के बीच स्लाइड करो",

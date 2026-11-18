@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}** ngôn ngữ"
   },
+  "since.studio": "Lewydo đã được",
+  "since.play": "Có mặt trên Google Play",
+  "since.y": {
+   "other": "{n} năm"
+  },
+  "since.m": {
+   "other": "{n} tháng"
+  },
+  "since.d": {
+   "other": "{n} ngày"
+  },
   "cd.title": "Anh ấy viết code. Cô ấy thiết kế.",
   "cd.text": "Kéo thanh trượt: mọi game của Lewydo đều ra đời như thế, từ code của Vlad đến thiết kế của Lilya.",
   "cd.aria": "Trượt giữa code và thiết kế",

@@ -75,6 +75,20 @@
    "one": "**{n}** wika",
    "other": "**{n}** wika"
   },
+  "since.studio": "Edad ng Lewydo",
+  "since.play": "Nasa Google Play na nang",
+  "since.y": {
+   "one": "{n} taon",
+   "other": "{n} taon"
+  },
+  "since.m": {
+   "one": "{n} buwan",
+   "other": "{n} buwan"
+  },
+  "since.d": {
+   "one": "{n} araw",
+   "other": "{n} araw"
+  },
   "cd.title": "Si Vlad ang nagko-code. Si Lilya ang nagdidisenyo.",
   "cd.text": "I-drag ang slider: ganito isinisilang ang bawat laro ng Lewydo, mula sa code ni Vlad hanggang sa disenyo ni Lilya.",
   "cd.aria": "I-slide sa pagitan ng code at disenyo",

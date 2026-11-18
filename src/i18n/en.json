@@ -76,6 +76,20 @@
    "one": "**{n}** language",
    "other": "**{n}** languages"
   },
+  "since.studio": "Lewydo has been around for",
+  "since.play": "On Google Play for",
+  "since.y": {
+   "one": "{n} year",
+   "other": "{n} years"
+  },
+  "since.m": {
+   "one": "{n} month",
+   "other": "{n} months"
+  },
+  "since.d": {
+   "one": "{n} day",
+   "other": "{n} days"
+  },
   "cd.title": "He codes. She designs.",
   "cd.text": "Drag the slider: this is how every Lewydo game is born, from Vlad's code to Lilya's design.",
   "cd.aria": "Slide between code and design",

@@ -75,6 +75,20 @@
    "one": "**{n}** dil",
    "other": "**{n}** dil"
   },
+  "since.studio": "Lewydo-nyň ýaşy",
+  "since.play": "Google Play-de",
+  "since.y": {
+   "one": "{n} ýyl",
+   "other": "{n} ýyl"
+  },
+  "since.m": {
+   "one": "{n} aý",
+   "other": "{n} aý"
+  },
+  "since.d": {
+   "one": "{n} gün",
+   "other": "{n} gün"
+  },
   "cd.title": "Vlad kod ýazýar. Lilya dizaýn edýär.",
   "cd.text": "Typgyjy süýre: Lewydo-nyň her oýny şeýle dünýä inýär — Vladyň kodundan Lilyanyň dizaýnyna çenli.",
   "cd.aria": "Kod bilen dizaýnyň arasynda süýşür",

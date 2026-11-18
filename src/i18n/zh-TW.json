@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}** 種語言"
   },
+  "since.studio": "Lewydo 已成立",
+  "since.play": "已上架 Google Play",
+  "since.y": {
+   "other": "{n} 年"
+  },
+  "since.m": {
+   "other": "{n} 個月"
+  },
+  "since.d": {
+   "other": "{n} 天"
+  },
   "cd.title": "他寫程式。她做設計。",
   "cd.text": "拖動滑桿看看：每一款 Lewydo 遊戲都是這樣誕生的，從 Vlad 的程式碼，到 Lilya 的設計。",
   "cd.aria": "在程式碼與設計之間滑動",

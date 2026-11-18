@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}** ภาษา"
   },
+  "since.studio": "Lewydo ก่อตั้งมาแล้ว",
+  "since.play": "อยู่บน Google Play มาแล้ว",
+  "since.y": {
+   "other": "{n} ปี"
+  },
+  "since.m": {
+   "other": "{n} เดือน"
+  },
+  "since.d": {
+   "other": "{n} วัน"
+  },
   "cd.title": "Vlad เขียนโค้ด Lilya ออกแบบ",
   "cd.text": "ลากแถบเลื่อนดู: นี่คือวิธีที่ทุกเกมของ Lewydo ถือกำเนิด จากโค้ดของ Vlad สู่งานออกแบบของ Lilya",
   "cd.aria": "เลื่อนระหว่างโค้ดกับงานออกแบบ",

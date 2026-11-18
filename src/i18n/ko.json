@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}**개 언어"
   },
+  "since.studio": "Lewydo 설립 후",
+  "since.play": "Google Play 출시 후",
+  "since.y": {
+   "other": "{n}년"
+  },
+  "since.m": {
+   "other": "{n}개월"
+  },
+  "since.d": {
+   "other": "{n}일"
+  },
   "cd.title": "코드는 그가, 디자인은 그녀가.",
   "cd.text": "슬라이더를 드래그해 보세요. Vlad의 코드에서 Lilya의 디자인으로. Lewydo의 모든 게임은 이렇게 태어나요.",
   "cd.aria": "코드와 디자인 사이를 오가는 슬라이더",

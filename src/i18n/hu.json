@@ -75,6 +75,20 @@
    "one": "**{n}** nyelv",
    "other": "**{n}** nyelv"
   },
+  "since.studio": "A Lewydo kora",
+  "since.play": "Ennyi ideje a Google Playen",
+  "since.y": {
+   "one": "{n} év",
+   "other": "{n} év"
+  },
+  "since.m": {
+   "one": "{n} hónap",
+   "other": "{n} hónap"
+  },
+  "since.d": {
+   "one": "{n} nap",
+   "other": "{n} nap"
+  },
   "cd.title": "Vlad kódol. Lilya tervez.",
   "cd.text": "Húzd a csúszkát: így születik minden Lewydo-játék, Vlad kódjától Lilya dizájnjáig.",
   "cd.aria": "Csúsztass a kód és a dizájn között",

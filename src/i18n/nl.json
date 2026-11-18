@@ -75,6 +75,20 @@
    "one": "**{n}** taal",
    "other": "**{n}** talen"
   },
+  "since.studio": "Lewydo bestaat al",
+  "since.play": "Al op Google Play sinds",
+  "since.y": {
+   "one": "{n} jaar",
+   "other": "{n} jaar"
+  },
+  "since.m": {
+   "one": "{n} maand",
+   "other": "{n} maanden"
+  },
+  "since.d": {
+   "one": "{n} dag",
+   "other": "{n} dagen"
+  },
   "cd.title": "Hij programmeert. Zij ontwerpt.",
   "cd.text": "Sleep de schuifregelaar: zo ontstaat elke Lewydo-game, van Vlads code tot Lilya’s ontwerp.",
   "cd.aria": "Schuif tussen code en ontwerp",

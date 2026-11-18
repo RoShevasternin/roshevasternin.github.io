@@ -83,6 +83,26 @@
    "many": "**{n}** języków",
    "other": "**{n}** języka"
   },
+  "since.studio": "Lewydo istnieje już",
+  "since.play": "W Google Play już",
+  "since.y": {
+   "one": "{n} rok",
+   "few": "{n} lata",
+   "many": "{n} lat",
+   "other": "{n} roku"
+  },
+  "since.m": {
+   "one": "{n} miesiąc",
+   "few": "{n} miesiące",
+   "many": "{n} miesięcy",
+   "other": "{n} miesiąca"
+  },
+  "since.d": {
+   "one": "{n} dzień",
+   "few": "{n} dni",
+   "many": "{n} dni",
+   "other": "{n} dnia"
+  },
   "cd.title": "On programuje. Ona projektuje.",
   "cd.text": "Przeciągnij suwak: tak rodzi się każda gra Lewydo. Vlad pisze kod, a Lilya nadaje mu kształt.",
   "cd.aria": "Suwak między kodem a designem",

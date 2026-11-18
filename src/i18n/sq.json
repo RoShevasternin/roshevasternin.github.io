@@ -75,6 +75,20 @@
    "one": "**{n}** gjuhë",
    "other": "**{n}** gjuhë"
   },
+  "since.studio": "Lewydo ekziston prej",
+  "since.play": "Në Google Play prej",
+  "since.y": {
+   "one": "{n} viti",
+   "other": "{n} vitesh"
+  },
+  "since.m": {
+   "one": "{n} muaji",
+   "other": "{n} muajsh"
+  },
+  "since.d": {
+   "one": "{n} dite",
+   "other": "{n} ditësh"
+  },
   "cd.title": "Ai shkruan kodin. Ajo bën dizajnin.",
   "cd.text": "Tërhiq rrëshqitësin: kështu lind çdo lojë e Lewydo, nga kodi i Vladit te dizajni i Lilyas.",
   "cd.aria": "Rrëshqit mes kodit dhe dizajnit",
