@@ -1594,7 +1594,8 @@ test('the header: every word and icon whole, on the screen and apart — /, /bra
 
 // «time since» (owner 18.11.2026): src/games.json → since — the one place of the start days; the page counts calendar years · months · days
 // from the start day (00:00 UTC) to the visitor's clock now, every second, the same in every time zone
-const sinceOf = (page) => page.evaluate(() => Object.fromEntries([...document.querySelectorAll('[data-since]')].map((e) => [e.dataset.since,
+// (the studio's twice: under its numbers — «studio» — and at the very bottom of the page, in the footer — «studio:foot»; owner 18.11.2026)
+const sinceOf = (page) => page.evaluate(() => Object.fromEntries([...document.querySelectorAll('[data-since]')].map((e) => [e.dataset.since + (e.closest('footer') ? ':foot' : ''),
   { u: [...e.querySelectorAll('.since-u')].map((s) => s.textContent.trim()), c: [...e.querySelectorAll('.since-c span')].map((s) => s.textContent.trim()) }])));
 test('«time since»: the studio, Orbit Dash and CubePix count calendar years · months · days and tick — any time zone, month ends, leap years, reduced motion', async ({ browser }) => {
   test.setTimeout(240_000);
@@ -1615,11 +1616,13 @@ test('«time since»: the studio, Orbit Dash and CubePix count calendar years ·
       await page.clock.pauseAt(new Date(Date.parse(iso) - 1000)); await page.clock.runFor(1100);
       const s = await sinceOf(page);
       for (const id of ['studio', 'orbitdash', 'cubepix']) { expect(s[id].u, `${timezoneId} ${iso} ${id}`).toEqual(units[id]); expect(s[id].c, `${timezoneId} ${iso} ${id}`).toEqual(clock); }
+      expect(s['studio:foot'], `${timezoneId} ${iso} the footer`).toEqual(s.studio);   // the footer's copy — the very same numbers, the same second
     }
     // it keeps ticking: one second → the seconds move, the days stay
     await page.clock.pauseAt(new Date('2028-03-01T12:34:56Z')); await page.clock.runFor(1100);
     expect((await sinceOf(page)).orbitdash).toEqual({ u: ['1 year', '6 months', '1 day'], c: ['12 hr', '34 min', '57 sec'] });   // Aug 30 + 18 months = Feb 29, + 1 day
     await page.clock.runFor(3000);
+    { const s = await sinceOf(page); expect(s['studio:foot']).toEqual(s.studio); }
     expect((await sinceOf(page)).cubepix).toEqual({ u: ['1 year', '4 months', '1 day'], c: ['12 hr', '35 min', '00 sec'] });
     expect(w.errs, timezoneId).toEqual([]);
     await ctx.close();
@@ -1630,23 +1633,26 @@ test('«time since»: the studio, Orbit Dash and CubePix count calendar years ·
     await expect(page.locator('html')).toHaveAttribute('data-words', 'uk'); await page.clock.pauseAt(new Date('2026-11-18T12:34:55Z')); await page.clock.runFor(1100);
     const s = await sinceOf(page);
     expect(s.studio.u).toEqual(['1 рік', '1 місяць', '30 днів']); expect(s.orbitdash.u).toEqual(['2 місяці', '19 днів']); expect(s.cubepix.u).toEqual(['0 місяців', '19 днів']);
-    expect(s.studio.c).toEqual(['12 год', '34 хв', '56 с']);
-    await expect(page.locator('[data-since="studio"] .since-h')).toHaveText('Lewydo існує вже');
+    expect(s.studio.c).toEqual(['12 год', '34 хв', '56 с']); expect(s['studio:foot']).toEqual(s.studio);
+    await expect(page.locator('[data-since="studio"] .since-h')).toHaveText(['Lewydo існує вже', 'Lewydo існує вже']);   // under the numbers and in the footer
     await ctx.close(); }
   // reduced motion: the dot stands still, the clock still ticks
   { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' }), page = await ctx.newPage();
     await page.clock.install({ time: new Date('2026-11-18T12:30:00Z') }); await page.goto('./?lang=en&halloween=0');
     await page.clock.pauseAt(new Date('2026-11-18T12:34:55Z')); await page.clock.runFor(1100);
-    expect(await page.locator('[data-since="studio"] .since-c').evaluate((e) => getComputedStyle(e, '::before').animationName)).toBe('none');
+    expect(await page.locator('[data-since="studio"] .since-c').evaluateAll((es) => es.map((e) => getComputedStyle(e, '::before').animationName))).toEqual(['none', 'none']);
     expect((await sinceOf(page)).studio.c).toEqual(['12 hr', '34 min', '56 sec']);
     await page.clock.runFor(1000); expect((await sinceOf(page)).studio.c).toEqual(['12 hr', '34 min', '57 sec']);
     await ctx.close(); }
   // where they stand: the studio's under its numbers, each game's in its own world; no JavaScript — no timers (nothing half-drawn)
   { const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } }), page = await ctx.newPage(); await page.goto('./?lang=en');
     expect(await page.evaluate(() => ['studio', 'orbitdash', 'cubepix'].map((id) => document.querySelector(`[data-since="${id}"]`).closest('section').id))).toEqual(['studio', 'orbitdash', 'cubepix']);
+    // …and the studio's once more at the very bottom: in the footer, above the © line, no card (the footer's own plain look)
+    expect(await page.evaluate(() => [...document.querySelectorAll('[data-since]')].map((e) => e.closest('section, footer').id || e.closest('section, footer').className))).toEqual(['cubepix', 'orbitdash', 'studio', 'foot']);
+    expect(await page.locator('footer .since-foot').evaluate((e) => [e.nextElementSibling.className, getComputedStyle(e).backgroundColor, getComputedStyle(e).boxShadow])).toEqual(['foot-c', 'rgba(0, 0, 0, 0)', 'none']);
     await ctx.close(); }
   { const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false }), page = await ctx.newPage(); await page.goto('./');
-    for (const id of ['studio', 'orbitdash', 'cubepix']) await expect(page.locator(`[data-since="${id}"]`)).toBeHidden();
+    await expect(page.locator('[data-since]')).toHaveCount(4); for (const e of await page.locator('[data-since]').all()) await expect(e).toBeHidden();
     await ctx.close(); }
 });
 
@@ -1659,7 +1665,7 @@ test('«time since»: every language at 320 px — whole words, inside its card,
     await expect(page.locator('html')).toHaveAttribute('data-words', L);
     await page.evaluate(() => document.fonts.ready);
     const bad = await page.evaluate(() => { const out = [], vw = innerWidth;
-      for (const e of document.querySelectorAll('[data-since]')) { const id = e.dataset.since, box = e.getBoundingClientRect();
+      for (const e of document.querySelectorAll('[data-since]')) { const id = e.dataset.since + (e.closest('footer') ? ' (footer)' : ''), box = e.getBoundingClientRect();
         if (box.left < -.5 || box.right > vw + .5) out.push(id + ' off the screen');
         const parts = [e.querySelector('.since-h'), ...e.querySelectorAll('.since-u, .since-c span')];
         if (parts.length !== 7) out.push(id + ' has ' + parts.length + ' parts');
@@ -1667,6 +1673,9 @@ test('«time since»: every language at 320 px — whole words, inside its card,
           if (!t || /[{}]/.test(t)) out.push(id + ' empty or raw: «' + t + '»');
           if (p.scrollWidth > p.clientWidth + .5 && p.clientWidth) out.push(id + ' cut: «' + t + '»');
           if (r.left < box.left - .5 || r.right > box.right + .5) out.push(id + ' out of its card: «' + t + '»'); } }
+      // the footer's copy says what the one under the numbers says — the same words and numbers in every language
+      const [a, b] = [...document.querySelectorAll('[data-since="studio"]')].map((e) => [...e.querySelectorAll('.since-h, .since-u')].map((p) => p.textContent.trim()).join(' | '));
+      if (a !== b) out.push('the footer says «' + b + '», the studio «' + a + '»');
       if (document.documentElement.scrollWidth > vw + .5) out.push('sideways');
       return out; });
     expect(bad, L).toEqual([]);
