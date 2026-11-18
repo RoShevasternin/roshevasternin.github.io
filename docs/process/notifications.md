@@ -102,9 +102,9 @@
 | де | що зробити |
 |---|---|
 | developer.apple.com → Certificates, IDs & Profiles → **Identifiers** → App ID гри | увімкнути **Push Notifications** |
-| там же → **Profiles** | перевипустити Development і App Store профілі ПІСЛЯ ввімкнення Push (у профілі з'являється `aps-environment`); завантажити, покласти в `release/ios/` |
+| там же → **Profiles** | перевипустити Development і App Store профілі ПІСЛЯ ввімкнення Push (у профілі з'являється `aps-environment`); завантажити, покласти в `release/ios/`. Wildcard `*` Push не несе — потрібен явний Development-профіль гри. Обидва кроки (Push і профілі) — App Store Connect API (`bundleIdCapabilities`, `profiles`; ключ з доступом App Manager), як CubePix `asc.mjs push` |
 | там же → **Keys** | ключ **APNs** `.p8` — один на команду (Team 3V79G27KZK — вже є: `AuthKey_F3LMM6A6PX.p8` у `release/ios/` Orbit Dash, підходить усім іграм команди); Apple видає файл лише раз |
-| Firebase → Project settings → **Cloud Messaging** → Apple app configuration | **APNs Authentication Key**: `.p8`, Key ID, Team ID — для свого Firebase-проєкту гри |
+| Firebase → Project settings → **Cloud Messaging** → Apple app configuration | **APNs Authentication Key**: `.p8`, Key ID, Team ID — для свого Firebase-проєкту гри. **Завантажує власник** (Claude приватних ключів у поля не вводить — дати власнику посилання, Key ID і Team ID) |
 | збірка | право `aps-environment`: App Store IPA — `production`, збірка з Мака — `development`; той самий тип у `setAPNSToken`; `FirebaseAppDelegateProxyEnabled = false` у Info.plist → токен APNs у FCM і облік відкриття — вручну |
 | App Store Connect → **App Privacy** | Device ID (токен FCM), «не для трекінгу» |
 
@@ -150,9 +150,13 @@ delta_ms}`, `push_permission {outcome: granted · denied · blocked, source: pro
 `.github/workflows/push.yml`; редактор повідомлень — `docs/push/editor`.
 
 ### CubePix
-Сповіщень ще немає (11.11.2026). План: після виходу першої iOS-версії — оновлення з пушами за цим правилом; сесія CubePix сама через Chrome
-вмикає Push в App ID `com.lewydo.cubepix`, перевипускає профілі (App Store профіль зараз без `aps-environment`), кладе той самий ключ APNs у
-Firebase `cubepix-1`, налаштовує Workload Identity для свого розкладу. Аудиторія спокійна — тим суворіше «не набридати».
+**18.11.2026 — почали** (після виходу iOS 2.0.0). Прототип ✅: двійник `notify.mjs` у `CubePix.jsx` (`notifPlan`, `PUSH_ASK`, `pushQuietStep`,
+`notifTopics` — ті самі імена тем, що Orbit Dash, тож розклад може бути спільним кодом), лист «НАГАДАТИ?» після картки скрині дня й на екрані
+результату картини, DEBUG → СПОВІЩЕННЯ; план спокійніший — ≤ 12 за 90 днів (0 серія ≥ 3 · 1 скриня · 2 · 4 · 7 · 10 · 14 · 21 · 30 · 45 · 60 · 90),
+ключ тапу `cp_open`. Apple ✅ **через App Store Connect API, без браузера** — `asc.mjs push`: `bundleIdCapabilities` PUSH_NOTIFICATIONS, старий
+профіль геть, нові App Store і Development (явний профіль гри: wildcard `*` Push не несе — пастка для ігор, що досі збирались з `*`).
+**Ключ APNs у консоль Firebase вводить власник** (Claude приватні ключі в поля не вводить): `cubepix-1` → Cloud Messaging → APNs Authentication Key.
+Далі — патчі гри, сервер, App Privacy, телефони.
 
 ## Готовий промпт для сесії гри
 
