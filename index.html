@@ -706,6 +706,15 @@ html:not(.js) .since{display:none;}
 @media (prefers-reduced-motion:reduce){.since-c::before{animation:none;}}   /* the clock still ticks — only the dot stands still */
 .cp .since{--sc:#FF3CAC;--sc2:rgba(255,60,172,.5);border-radius:0;background:rgba(21,18,58,.72);margin-top:24px;}   /* CubePix: pixel corners, its pink */
 .od .since{--sc:#00E5FF;--sc2:rgba(0,229,255,.42);border-radius:14px;margin-top:22px;}                                /* Orbit Dash: the game's cyan glass */
+/* the studio's once more at the very bottom (owner 18.11.2026: «для студії продублюй в самому низу») — the same element and code, footer-sized:
+   no card, centred, smaller; both copies tick from the one timer below */
+.since.since-foot{display:flex;align-items:center;gap:2px;margin:18px auto 0;padding:0;border-radius:0;background:none;box-shadow:none;}
+.since-foot .since-h{font-size:13px;}
+.since-foot .since-v{justify-content:center;column-gap:7px;font-size:14px;min-height:23px;}
+.since-foot .since-v b{font-size:17px;}
+.since-foot .since-u+.since-u::before{margin-inline-end:7px;}
+.since-foot .since-c{justify-content:center;font-size:12px;}
+.since-foot .since-c::before{width:6px;height:6px;}
 /* code ↔ design: the heart typed as Vlad's Kotlin, and drawn as Lilya's design; the slider shows how one becomes the other */
 .cd-wrap h3{font-weight:900;font-size:26px;text-align:center;}
 .cd-wrap p{color:var(--ink3);text-align:center;margin:6px auto 18px;max-width:440px;font-size:15.5px;}
@@ -1704,6 +1713,7 @@ body:not([data-world="lewydo"]) .hw-sky{opacity:0;}                             
       <a href="https://cubepix.lewydo.com/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="cp">CubePix</a><a href="https://orbitdash.lewydo.com/?utm_source=lewydo&amp;utm_medium=studio_site&amp;lang=en" data-lang-link="od">Orbit Dash</a><a href="https://play.google.com/store/apps/dev?id=5953840215091948966" rel="noopener">Google Play</a><a href="/brand/" data-t="nav.brand">Brand</a><a href="/press/" data-lang-link data-t="foot.press">Press kit</a>
       <a href="/privacy.html"><span data-t="foot.privacy">Privacy</span> · Lewydo</a><a href="https://cubepix.lewydo.com/privacy.html?lang=en" data-lang-link="cp"><span data-t="foot.privacy">Privacy</span> · CubePix</a><a href="https://orbitdash.lewydo.com/privacy.html?lang=en" data-lang-link="od"><span data-t="foot.privacy">Privacy</span> · Orbit Dash</a>
     </nav>
+    <div class="since since-foot" data-since="studio"><p class="since-h" data-t="since.studio">Lewydo has been around for</p><p class="since-v"></p><p class="since-c" aria-hidden="true"><span></span><span></span><span></span></p></div>
     <p class="foot-c">© 2026 Lewydo™ · Love What You Do · <span data-t="foot.rights">All rights reserved.</span></p>
     <p class="foot-music">♪ <a href="https://www.youtube.com/watch?v=cZgUiR31m-Y" target="_blank" rel="noopener" data-t="music.label">Vlad’s favourite song: sombr — 12 to 12</a></p>
   </div>
