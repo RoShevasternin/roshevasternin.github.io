@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}** 种语言"
   },
+  "since.studio": "Lewydo 已成立",
+  "since.play": "已上架 Google Play",
+  "since.y": {
+   "other": "{n} 年"
+  },
+  "since.m": {
+   "other": "{n} 个月"
+  },
+  "since.d": {
+   "other": "{n} 天"
+  },
   "cd.title": "他写程序。她做设计。",
   "cd.text": "拖动滑杆看看：每一款 Lewydo 游戏都是这样诞生的，从弗拉德的代码，到莉莉娅的设计。",
   "cd.aria": "在代码与设计之间滑动",

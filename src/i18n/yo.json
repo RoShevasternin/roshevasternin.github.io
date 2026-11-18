@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "èdè **{n}**"
   },
+  "since.studio": "Lewydo ti wà fún",
+  "since.play": "Lórí Google Play fún",
+  "since.y": {
+   "other": "ọdún {n}"
+  },
+  "since.m": {
+   "other": "oṣù {n}"
+  },
+  "since.d": {
+   "other": "ọjọ́ {n}"
+  },
   "cd.title": "Vlad ń kọ kóòdù. Lilya ń ṣe àwòrán.",
   "cd.text": "Fa ìfàsẹ́yìn náà: báyìí ni gbogbo eré Lewydo ṣe ń bí — láti kóòdù Vlad dé àwòrán Lilya.",
   "cd.aria": "Fà á láàrin kóòdù àti àwòrán",

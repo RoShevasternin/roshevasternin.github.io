@@ -75,6 +75,20 @@
    "one": "**{n}** luqad",
    "other": "**{n}** luqadood"
   },
+  "since.studio": "Lewydo waxay jirtay",
+  "since.play": "Google Play muddo",
+  "since.y": {
+   "one": "{n} sano",
+   "other": "{n} sano"
+  },
+  "since.m": {
+   "one": "{n} bil",
+   "other": "{n} bilood"
+  },
+  "since.d": {
+   "one": "{n} maalin",
+   "other": "{n} maalmood"
+  },
   "cd.title": "Vlad wuxuu qoraa koodhka. Lilya waxay sameysaa naqshadda.",
   "cd.text": "Jiid slider-ka: sidan ayay ku dhalataa ciyaar kasta oo Lewydo ah — laga bilaabo koodhka Vlad ilaa naqshadda Lilya.",
   "cd.aria": "U dhex dhaqaaji koodhka iyo naqshadda",

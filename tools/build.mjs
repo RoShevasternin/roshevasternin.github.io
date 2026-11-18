@@ -191,7 +191,12 @@ const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: C
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.') && !k.startsWith('press.')))]));   // the brand and press pages' words stay on their pages
 const enPics = Object.fromEntries(Object.keys(CP.pics).map((p) => [p, CP.pics[p].en]));
 const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cpLangs: Object.keys(CP.S), counts,
-  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels, odEvents: OD.events || {} };
+  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels, odEvents: OD.events || {}, since: G.since };
+// the live «time since» timers (src/index.html, «since»): the studio, Orbit Dash, CubePix — their start days live in src/games.json → since
+// (where each one comes from — _since); a real calendar day each, and every page element [data-since] names one of them
+for (const id of ['studio', 'orbitdash', 'cubepix']) { const v = (G.since || {})[id], m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''), d = m && new Date(Date.UTC(+m[1], m[2] - 1, +m[3]));
+  if (!d || d.getUTCDate() !== +m[3] || d.getUTCMonth() !== m[2] - 1) { console.error(`✗ src/games.json → since.${id}: «${v}» is not a yyyy-mm-dd day`); process.exit(1); } }
+for (const id of read('src/index.html').match(/data-since="\w+"/g) || []) if (!(id.slice(12, -1) in G.since)) { console.error(`✗ src/index.html: ${id} — no such date in src/games.json → since`); process.exit(1); }
 // a CubePix holiday (its site's own dates and words, src/cubepix.json → events): a card in the CubePix world, shown by the page only
 // while the holiday is on (the visitor's clock, like the game) → the holiday on the CubePix site; its picture — assets/games/cubepix-<event>.webp
 // an Orbit Dash holiday (the window its site builds in from the game's prototype, src/orbitdash.json → events; words — od.ev_<event>,

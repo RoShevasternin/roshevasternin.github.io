@@ -75,6 +75,20 @@
    "one": "lugha **{n}**",
    "other": "lugha **{n}**"
   },
+  "since.studio": "Lewydo imekuwepo kwa",
+  "since.play": "Kwenye Google Play kwa",
+  "since.y": {
+   "one": "mwaka {n}",
+   "other": "miaka {n}"
+  },
+  "since.m": {
+   "one": "mwezi {n}",
+   "other": "miezi {n}"
+  },
+  "since.d": {
+   "one": "siku {n}",
+   "other": "siku {n}"
+  },
   "cd.title": "Vlad anaandika msimbo. Lilya anabuni.",
   "cd.text": "Buruta kitelezi: hivi ndivyo kila mchezo wa Lewydo unavyozaliwa, kutoka msimbo wa Vlad hadi muundo wa Lilya.",
   "cd.aria": "Telezesha kati ya msimbo na muundo",

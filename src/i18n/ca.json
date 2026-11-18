@@ -79,6 +79,23 @@
    "other": "**{n}** idiomes",
    "many": "**{n}** idiomes"
   },
+  "since.studio": "Lewydo existeix des de fa",
+  "since.play": "A Google Play des de fa",
+  "since.y": {
+   "one": "{n} any",
+   "many": "{n} anys",
+   "other": "{n} anys"
+  },
+  "since.m": {
+   "one": "{n} mes",
+   "many": "{n} mesos",
+   "other": "{n} mesos"
+  },
+  "since.d": {
+   "one": "{n} dia",
+   "many": "{n} dies",
+   "other": "{n} dies"
+  },
   "cd.title": "Ell programa. Ella dissenya.",
   "cd.text": "Arrossega el control lliscant: així neix cada joc de Lewydo, del codi d’en Vlad al disseny de la Lilya.",
   "cd.aria": "Llisca entre codi i disseny",

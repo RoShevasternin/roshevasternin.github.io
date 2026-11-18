@@ -75,6 +75,20 @@
    "one": "**{n}** tungumál",
    "other": "**{n}** tungumál"
   },
+  "since.studio": "Lewydo hefur verið til í",
+  "since.play": "Á Google Play í",
+  "since.y": {
+   "one": "{n} ár",
+   "other": "{n} ár"
+  },
+  "since.m": {
+   "one": "{n} mánuð",
+   "other": "{n} mánuði"
+  },
+  "since.d": {
+   "one": "{n} dag",
+   "other": "{n} daga"
+  },
   "cd.title": "Hann forritar. Hún hannar.",
   "cd.text": "Dragðu sleðann: svona fæðist hver Lewydo-leikur, frá kóða Vlads að hönnun Lilyu.",
   "cd.aria": "Renndu á milli kóða og hönnunar",

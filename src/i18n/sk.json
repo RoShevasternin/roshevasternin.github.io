@@ -83,6 +83,26 @@
    "many": "**{n}** jazyka",
    "other": "**{n}** jazykov"
   },
+  "since.studio": "Lewydo existuje už",
+  "since.play": "Na Google Play už",
+  "since.y": {
+   "one": "{n} rok",
+   "few": "{n} roky",
+   "many": "{n} roka",
+   "other": "{n} rokov"
+  },
+  "since.m": {
+   "one": "{n} mesiac",
+   "few": "{n} mesiace",
+   "many": "{n} mesiaca",
+   "other": "{n} mesiacov"
+  },
+  "since.d": {
+   "one": "{n} deň",
+   "few": "{n} dni",
+   "many": "{n} dňa",
+   "other": "{n} dní"
+  },
   "cd.title": "On programuje. Ona navrhuje.",
   "cd.text": "Posuň jazdec: takto sa rodí každá hra Lewydo, od Vladovho kódu po Lilyin dizajn.",
   "cd.aria": "Posúvaj medzi kódom a dizajnom",

@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "asụsụ **{n}**"
   },
+  "since.studio": "Lewydo adịla",
+  "since.play": "Na Google Play",
+  "since.y": {
+   "other": "afọ {n}"
+  },
+  "since.m": {
+   "other": "ọnwa {n}"
+  },
+  "since.d": {
+   "other": "ụbọchị {n}"
+  },
   "cd.title": "Vlad na-ede koodu. Lilya na-emepụta.",
   "cd.text": "Dọrọ ihe ịkpụgharị ahụ: otu a ka a na-amụ egwuregwu Lewydo ọ bụla — site na koodu Vlad ruo na nhazi Lilya.",
   "cd.aria": "Kpụgharịa n'etiti koodu na nhazi",

@@ -75,6 +75,20 @@
    "one": "**{n}** kieli",
    "other": "**{n}** kieltä"
   },
+  "since.studio": "Lewydo on ollut olemassa",
+  "since.play": "Google Playssa jo",
+  "since.y": {
+   "one": "{n} vuoden",
+   "other": "{n} vuotta"
+  },
+  "since.m": {
+   "one": "{n} kuukauden",
+   "other": "{n} kuukautta"
+  },
+  "since.d": {
+   "one": "{n} päivän",
+   "other": "{n} päivää"
+  },
   "cd.title": "Vlad koodaa. Lilya suunnittelee.",
   "cd.text": "Vedä liukusäädintä: näin syntyy jokainen Lewydo-peli, Vladin koodista Lilyan designiin.",
   "cd.aria": "Liu'uta koodin ja designin välillä",

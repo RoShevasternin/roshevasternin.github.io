@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}** bahasa"
   },
+  "since.studio": "Lewydo telah wujud selama",
+  "since.play": "Di Google Play selama",
+  "since.y": {
+   "other": "{n} tahun"
+  },
+  "since.m": {
+   "other": "{n} bulan"
+  },
+  "since.d": {
+   "other": "{n} hari"
+  },
   "cd.title": "Vlad menulis kod. Lilya mereka bentuk.",
   "cd.text": "Seret peluncur: beginilah setiap permainan Lewydo lahir, daripada kod Vlad kepada reka bentuk Lilya.",
   "cd.aria": "Luncur antara kod dan reka bentuk",

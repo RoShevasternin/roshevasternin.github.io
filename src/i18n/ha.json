@@ -75,6 +75,20 @@
    "one": "harshe **{n}**",
    "other": "harsuna **{n}**"
   },
+  "since.studio": "Lewydo ta kasance",
+  "since.play": "A Google Play",
+  "since.y": {
+   "one": "shekara {n}",
+   "other": "shekaru {n}"
+  },
+  "since.m": {
+   "one": "wata {n}",
+   "other": "watanni {n}"
+  },
+  "since.d": {
+   "one": "kwana {n}",
+   "other": "kwanaki {n}"
+  },
   "cd.title": "Vlad yana rubuta code. Lilya tana zane.",
   "cd.text": "Ja maɓallin zamewa: haka ake haifar kowane wasan Lewydo — daga code ɗin Vlad zuwa zanen Lilya.",
   "cd.aria": "Zame tsakanin code da zane",

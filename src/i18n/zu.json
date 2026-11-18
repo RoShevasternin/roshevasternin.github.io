@@ -75,6 +75,20 @@
    "one": "ulimi olu-**{n}**",
    "other": "izilimi eziyi-**{n}**"
   },
+  "since.studio": "I-Lewydo ikhona",
+  "since.play": "Ku-Google Play",
+  "since.y": {
+   "one": "unyaka ongu-{n}",
+   "other": "iminyaka engu-{n}"
+  },
+  "since.m": {
+   "one": "inyanga engu-{n}",
+   "other": "izinyanga ezingu-{n}"
+  },
+  "since.d": {
+   "one": "usuku olu-{n}",
+   "other": "izinsuku ezingu-{n}"
+  },
   "cd.title": "U-Vlad ubhala ikhodi. U-Lilya uyaklama.",
   "cd.text": "Hudula isilayida: yile ndlela umdlalo ngamunye we-Lewydo uzalwa ngayo, kusukela kukhodi ka-Vlad kuya kumklamo ka-Lilya.",
   "cd.aria": "Slayida phakathi kwekhodi nomklamo",

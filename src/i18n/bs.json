@@ -79,6 +79,23 @@
    "few": "**{n}** jezika",
    "other": "**{n}** jezika"
   },
+  "since.studio": "Lewydo postoji već",
+  "since.play": "Na Google Playu već",
+  "since.y": {
+   "one": "{n} godinu",
+   "few": "{n} godine",
+   "other": "{n} godina"
+  },
+  "since.m": {
+   "one": "{n} mjesec",
+   "few": "{n} mjeseca",
+   "other": "{n} mjeseci"
+  },
+  "since.d": {
+   "one": "{n} dan",
+   "few": "{n} dana",
+   "other": "{n} dana"
+  },
   "cd.title": "On programira. Ona dizajnira.",
   "cd.text": "Povuci klizač: ovako nastaje svaka igra Lewydo, od Vladova koda do Lilyina dizajna.",
   "cd.aria": "Kliži između koda i dizajna",

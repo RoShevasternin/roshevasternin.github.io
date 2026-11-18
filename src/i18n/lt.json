@@ -83,6 +83,26 @@
    "many": "**{n}** kalbos",
    "other": "**{n}** kalbų"
   },
+  "since.studio": "Lewydo gyvuoja jau",
+  "since.play": "Google Play jau",
+  "since.y": {
+   "one": "{n} metus",
+   "few": "{n} metus",
+   "many": "{n} metų",
+   "other": "{n} metų"
+  },
+  "since.m": {
+   "one": "{n} mėnesį",
+   "few": "{n} mėnesius",
+   "many": "{n} mėnesio",
+   "other": "{n} mėnesių"
+  },
+  "since.d": {
+   "one": "{n} dieną",
+   "few": "{n} dienas",
+   "many": "{n} dienos",
+   "other": "{n} dienų"
+  },
   "cd.title": "Jis rašo kodą. Ji kuria dizainą.",
   "cd.text": "Patempk slankiklį: taip gimsta kiekvienas Lewydo žaidimas — nuo Vlado kodo iki Lilyos dizaino.",
   "cd.aria": "Slink tarp kodo ir dizaino",

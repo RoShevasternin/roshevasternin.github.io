@@ -75,6 +75,20 @@
    "one": "**{n}** språk",
    "other": "**{n}** språk"
   },
+  "since.studio": "Lewydo har funnits i",
+  "since.play": "På Google Play i",
+  "since.y": {
+   "one": "{n} år",
+   "other": "{n} år"
+  },
+  "since.m": {
+   "one": "{n} månad",
+   "other": "{n} månader"
+  },
+  "since.d": {
+   "one": "{n} dag",
+   "other": "{n} dagar"
+  },
   "cd.title": "Han kodar. Hon designar.",
   "cd.text": "Dra i reglaget: så föds varje Lewydo-spel, från Vlads kod till Lilyas design.",
   "cd.aria": "Glid mellan kod och design",

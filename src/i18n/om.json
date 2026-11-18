@@ -75,6 +75,20 @@
    "one": "afaan **{n}**",
    "other": "afaanota **{n}**"
   },
+  "since.studio": "Lewydo erga hundeeffamee",
+  "since.play": "Google Play irratti",
+  "since.y": {
+   "one": "waggaa {n}",
+   "other": "waggaa {n}"
+  },
+  "since.m": {
+   "one": "ji'a {n}",
+   "other": "ji'a {n}"
+  },
+  "since.d": {
+   "one": "guyyaa {n}",
+   "other": "guyyaa {n}"
+  },
   "cd.title": "Vlad koodii barreessa. Lilya dizaayinii hojjetti.",
   "cd.text": "Siqsaa harkisi: tapha Lewydo hundi akkanatti dhalata — koodii Vlad irraa hanga dizaayinii Lilyaatti.",
   "cd.aria": "Koodii fi dizaayinii gidduutti siqsi",

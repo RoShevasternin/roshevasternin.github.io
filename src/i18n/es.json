@@ -79,6 +79,23 @@
    "many": "**{n}** idiomas",
    "other": "**{n}** idiomas"
   },
+  "since.studio": "Lewydo existe desde hace",
+  "since.play": "En Google Play desde hace",
+  "since.y": {
+   "one": "{n} año",
+   "many": "{n} años",
+   "other": "{n} años"
+  },
+  "since.m": {
+   "one": "{n} mes",
+   "many": "{n} meses",
+   "other": "{n} meses"
+  },
+  "since.d": {
+   "one": "{n} día",
+   "many": "{n} días",
+   "other": "{n} días"
+  },
   "cd.title": "Él programa. Ella diseña.",
   "cd.text": "Arrastra el control deslizante: así nace cada juego de Lewydo, del código de Vlad al diseño de Lilya.",
   "cd.aria": "Desliza entre el código y el diseño",

@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "ភាសា **{n}**"
   },
+  "since.studio": "អាយុ Lewydo",
+  "since.play": "នៅលើ Google Play",
+  "since.y": {
+   "other": "{n} ឆ្នាំ"
+  },
+  "since.m": {
+   "other": "{n} ខែ"
+  },
+  "since.d": {
+   "other": "{n} ថ្ងៃ"
+  },
   "cd.title": "វ្លាដសរសេរកូដ។ លីលៀរចនា។",
   "cd.text": "អូសរបាររំកិល៖ ហ្គេម Lewydo នីមួយៗកើតឡើងបែបនេះ — ពីកូដរបស់វ្លាដ ដល់ការរចនារបស់លីលៀ។",
   "cd.aria": "រំកិលរវាងកូដ និងការរចនា",

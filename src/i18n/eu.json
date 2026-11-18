@@ -75,6 +75,20 @@
    "one": "**{n}** hizkuntza",
    "other": "**{n}** hizkuntza"
   },
+  "since.studio": "Lewydo sortu zenetik",
+  "since.play": "Google Playn dagoenetik",
+  "since.y": {
+   "one": "{n} urte",
+   "other": "{n} urte"
+  },
+  "since.m": {
+   "one": "{n} hilabete",
+   "other": "{n} hilabete"
+  },
+  "since.d": {
+   "one": "{n} egun",
+   "other": "{n} egun"
+  },
   "cd.title": "Vladek programatzen du. Lilyak diseinatzen du.",
   "cd.text": "Arrastatu graduatzailea: horrela jaiotzen da Lewydoren joko bakoitza, Vladen kodetik Lilyaren diseinura.",
   "cd.aria": "Irristatu kodearen eta diseinuaren artean",

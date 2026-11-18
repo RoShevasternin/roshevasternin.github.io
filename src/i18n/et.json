@@ -75,6 +75,20 @@
    "one": "**{n}** keel",
    "other": "**{n}** keelt"
   },
+  "since.studio": "Lewydo on olemas olnud",
+  "since.play": "Google Plays juba",
+  "since.y": {
+   "one": "{n} aasta",
+   "other": "{n} aastat"
+  },
+  "since.m": {
+   "one": "{n} kuu",
+   "other": "{n} kuud"
+  },
+  "since.d": {
+   "one": "{n} päev",
+   "other": "{n} päeva"
+  },
   "cd.title": "Vlad kodeerib. Lilya disainib.",
   "cd.text": "Lohista liugurit: nii sünnib iga Lewydo mäng, Vladi koodist Lilya disainini.",
   "cd.aria": "Libista koodi ja disaini vahel",

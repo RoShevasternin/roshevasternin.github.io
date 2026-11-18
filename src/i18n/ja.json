@@ -71,6 +71,17 @@
   "stat.langs": {
    "other": "**{n}**言語"
   },
+  "since.studio": "Lewydo 誕生から",
+  "since.play": "Google Play 配信から",
+  "since.y": {
+   "other": "{n}年"
+  },
+  "since.m": {
+   "other": "{n}か月"
+  },
+  "since.d": {
+   "other": "{n}日"
+  },
   "cd.title": "コードは彼。デザインは彼女。",
   "cd.text": "スライダーを動かしてみてください。Vlad のコードから Lilya のデザインへ。Lewydo のゲームはどれも、こうして生まれます。",
   "cd.aria": "コードとデザインを切り替えるスライダー",
