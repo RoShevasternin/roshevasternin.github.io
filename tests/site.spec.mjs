@@ -1598,14 +1598,14 @@ const sinceOf = (page) => page.evaluate(() => Object.fromEntries([...document.qu
   { u: [...e.querySelectorAll('.since-u')].map((s) => s.textContent.trim()), c: [...e.querySelectorAll('.since-c span')].map((s) => s.textContent.trim()) }])));
 test('«time since»: the studio, Orbit Dash and CubePix count calendar years · months · days and tick — any time zone, month ends, leap years, reduced motion', async ({ browser }) => {
   test.setTimeout(240_000);
-  expect(JSON.parse(disk('src/games.json')).since).toEqual({ studio: '2025-01-01', orbitdash: '2026-08-30', cubepix: '2026-10-30' });
+  expect(JSON.parse(disk('src/games.json')).since).toEqual({ studio: '2025-09-19', orbitdash: '2026-08-30', cubepix: '2026-10-30' });
   // the clock stands one second before each moment (in time order — a paused clock only goes forward), then the page's own tick brings it there
   const CASES = [
-    ['2026-11-18T12:34:56Z', { studio: ['1 year', '10 months', '17 days'], orbitdash: ['2 months', '19 days'], cubepix: ['0 months', '19 days'] }, ['12 hr', '34 min', '56 sec']],
-    ['2027-03-01T00:00:05Z', { studio: ['2 years', '2 months', '0 days'], orbitdash: ['6 months', '1 day'], cubepix: ['4 months', '1 day'] }, ['00 hr', '00 min', '05 sec']],   // Oct 30 + 4 months = Feb 28 (no Feb 30)
-    ['2027-08-29T23:59:59Z', { studio: ['2 years', '7 months', '28 days'], orbitdash: ['11 months', '30 days'], cubepix: ['9 months', '30 days'] }, ['23 hr', '59 min', '59 sec']],
-    ['2027-08-30T00:00:02Z', { studio: ['2 years', '7 months', '29 days'], orbitdash: ['1 year', '0 months', '0 days'], cubepix: ['10 months', '0 days'] }, ['00 hr', '00 min', '02 sec']],
-    ['2028-02-29T23:59:59Z', { studio: ['3 years', '1 month', '28 days'], orbitdash: ['1 year', '6 months', '0 days'], cubepix: ['1 year', '4 months', '0 days'] }, ['23 hr', '59 min', '59 sec']],   // a leap day
+    ['2026-11-18T12:34:56Z', { studio: ['1 year', '1 month', '30 days'], orbitdash: ['2 months', '19 days'], cubepix: ['0 months', '19 days'] }, ['12 hr', '34 min', '56 sec']],
+    ['2027-03-01T00:00:05Z', { studio: ['1 year', '5 months', '10 days'], orbitdash: ['6 months', '1 day'], cubepix: ['4 months', '1 day'] }, ['00 hr', '00 min', '05 sec']],   // Oct 30 + 4 months = Feb 28 (no Feb 30)
+    ['2027-08-29T23:59:59Z', { studio: ['1 year', '11 months', '10 days'], orbitdash: ['11 months', '30 days'], cubepix: ['9 months', '30 days'] }, ['23 hr', '59 min', '59 sec']],
+    ['2027-08-30T00:00:02Z', { studio: ['1 year', '11 months', '11 days'], orbitdash: ['1 year', '0 months', '0 days'], cubepix: ['10 months', '0 days'] }, ['00 hr', '00 min', '02 sec']],
+    ['2028-02-29T23:59:59Z', { studio: ['2 years', '5 months', '10 days'], orbitdash: ['1 year', '6 months', '0 days'], cubepix: ['1 year', '4 months', '0 days'] }, ['23 hr', '59 min', '59 sec']],   // a leap day
   ];
   for (const timezoneId of ['Pacific/Kiritimati', 'America/Los_Angeles', 'Europe/Kyiv']) {
     const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 }, timezoneId }), page = await ctx.newPage(), w = watch(page);
@@ -1629,7 +1629,7 @@ test('«time since»: the studio, Orbit Dash and CubePix count calendar years ·
     await page.clock.install({ time: new Date('2026-11-18T12:30:00Z') }); await page.goto('./?lang=uk&halloween=0');
     await expect(page.locator('html')).toHaveAttribute('data-words', 'uk'); await page.clock.pauseAt(new Date('2026-11-18T12:34:55Z')); await page.clock.runFor(1100);
     const s = await sinceOf(page);
-    expect(s.studio.u).toEqual(['1 рік', '10 місяців', '17 днів']); expect(s.orbitdash.u).toEqual(['2 місяці', '19 днів']); expect(s.cubepix.u).toEqual(['0 місяців', '19 днів']);
+    expect(s.studio.u).toEqual(['1 рік', '1 місяць', '30 днів']); expect(s.orbitdash.u).toEqual(['2 місяці', '19 днів']); expect(s.cubepix.u).toEqual(['0 місяців', '19 днів']);
     expect(s.studio.c).toEqual(['12 год', '34 хв', '56 с']);
     await expect(page.locator('[data-since="studio"] .since-h')).toHaveText('Lewydo існує вже');
     await ctx.close(); }
@@ -1653,7 +1653,7 @@ test('«time since»: the studio, Orbit Dash and CubePix count calendar years ·
 test('«time since»: every language at 320 px — whole words, inside its card, nothing sideways; right to left mirrors the order', async ({ browser }) => {
   test.setTimeout(600_000);
   const ctx = await browser.newContext({ viewport: { width: 320, height: 700 } }), page = await ctx.newPage(), w = watch(page);
-  await page.clock.install({ time: new Date('2028-12-28T23:59:50Z') });   // the longest numbers: 3 years · 11 months · 27 days
+  await page.clock.install({ time: new Date('2029-09-17T23:59:50Z') });   // the longest numbers: the studio 3 years · 11 months · 29 days
   for (const L of LANGS) {
     await page.goto(`./?lang=${L}&halloween=0`);
     await expect(page.locator('html')).toHaveAttribute('data-words', L);

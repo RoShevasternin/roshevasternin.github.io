@@ -3,12 +3,12 @@
  "devPage": "https://play.google.com/store/apps/dev?id=5953840215091948966",
  "_since": {
   "_about": "The live «time since» timers (src/index.html, «since»): each counts calendar years · months · days (+ a ticking hh:mm:ss) from its start day, 00:00 UTC, to the visitor's clock now. The one place for these dates — change a date only here. Format yyyy-mm-dd.",
-  "studio": "Lewydo — the studio's own history on this site: «2025 · Lewydo is born» (story.brand.when; the press page's «Founded» says the same); counted from January 1 of that year.",
+  "studio": "Lewydo — the studio's own history on this site: «2025 · Lewydo is born» (story.brand.when; the press page's «Founded» says the same); the exact day — 19.09.2025, from the owner (18.11.2026).",
   "orbitdash": "Orbit Dash — the first release on Google Play, 30.08.2026 (Play «Released on»; Game-Orbit-Dash-PRIVATE market/claude/tools/gd-fans-kit/texts/igdb.md, «Статус»; the history here: story.od.when «30 · 08 · 2026»).",
   "cubepix": "CubePix — the first release on Google Play (production), 30.10.2026 (the history here: story.next.when «30 · 10 · 2026»; Game-CubePix-PRIVATE docs/claude/memory/store-listing.md, «30.10.2026 — CubePix у продакшні Google Play»; its commit 23f930e3 «Site: CubePix is released»)."
  },
  "since": {
-  "studio": "2025-01-01",
+  "studio": "2025-09-19",
   "orbitdash": "2026-08-30",
   "cubepix": "2026-10-30"
  },
