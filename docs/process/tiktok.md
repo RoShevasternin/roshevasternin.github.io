@@ -53,6 +53,12 @@ TikTok — не продуктова аналітика, а сигнали дл�
 - **iOS:** те саме правило **і ATT «Allow»** — події для вимірювання реклами в чужій мережі — це «відстеження» за Apple (App Review 5.1.2);
   «Ask App Not to Track» / обмежено — SDK не стартує зовсім. ATT питає **гра** (після форми UMP, як для реклами), SDK TikTok 1.7+ вікна сам не
   показує. Кожна зміна згоди чи ATT (форма, PRIVACY OPTIONS, повернення з Параметрів iOS) — перевірити знову; забрали — `setTrackingEnabled:NO`.
+- **SKAN (iOS) — для ВСІХ гравців iPhone, незалежно від згоди й ATT** (власник 19.11.2026; Apple: SKAdNetwork не потребує ATT): значення
+  SKAdNetwork ставить **гра** — чисте правило «подія → fine / coarse» у спільному коді (`SkanRules`; схема = схема в TikTok Events Manager:
+  1 CompleteTutorial · 2 AchieveLevel · 3 UnlockAchievement · 4 SpendCredits, coarse low / medium / high, лише зростає), Apple-API на телефоні
+  (`IOSSkan`: реєстрація встановлення на першому запуску, поточне значення ще раз не частіше ніж раз на 6 год), у TikTok із телефона нічого не
+  йде. SDK TikTok — `disableSKAdNetworkSupport` (значення ставить одне місце); схему SKAN у GA4 не вмикати (Firebase перепише значення). Події
+  на сервер TikTok — як і раніше лише з ATT «Allow». Еталон — Orbit Dash патч 427, CubePix патч 85.
 - Нічого TikTok **до** згоди: SDK на старті сам шле `LaunchAPP` / `InstallApp`.
 
 ## 4. Debug — тестовий потік за прапорцем лабораторії
