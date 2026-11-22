@@ -399,6 +399,7 @@ h1,h2,h3,p,li,dd,dt,figcaption{overflow-wrap:break-word;}
 .hero{position:relative;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;
   padding:26px var(--gut) 84px;isolation:isolate;}
 #px{position:absolute;left:0;top:0;z-index:-1;pointer-events:none;}
+.hero{overflow-x:hidden;overflow-x:clip;}   /* the heart's pixel canvas keeps its old width for a moment after the window narrows: never a sideways scroll (in season src/halloween.css did this) */
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:var(--lamp,0);transition:opacity .6s ease;
   background:radial-gradient(520px circle at var(--mx,50%) var(--my,40%),rgba(109,245,147,.09),transparent 62%);}
 .hero-in{display:flex;flex-direction:column;align-items:center;max-width:780px;}
