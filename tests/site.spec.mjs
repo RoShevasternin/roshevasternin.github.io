@@ -269,6 +269,28 @@ test('the store buttons: official marks, «GET IT ON Google Play» / «Download 
   await ctx.close();
 });
 
+// a CubePix update (owner 22.11.2026: «на сайт студії орбіт даш додав івент а ти чому не додав на сайт студії в розділ про гру»): the card
+// in the CubePix world from the CubePix site's update section — its picture and Lottie, its words, its site and its YouTube Short; gone after `to`
+test('a CubePix update: its card in the CubePix world while it lasts — picture, words, the game site, YouTube', async ({ page }) => {
+  const e = (JSON.parse(disk('src/cubepix.json')).events || {}).update;
+  test.skip(!e, 'no CubePix update in src/cubepix.json');
+  const w = watch(page);
+  await page.clock.setFixedTime(new Date('2026-11-25T12:00:00'));
+  await page.goto('./?lang=uk');
+  const card = page.locator('.cp-up[data-cp-ev="update"]');
+  await expect(card).toBeVisible();
+  await expect(card.locator('b')).toContainText(`CubePix ${e.ver}`);
+  await expect(card.locator('b')).toContainText('Десять велетенських полотен');
+  await expect(card.locator('img')).toHaveAttribute('src', '/assets/games/cubepix-update.webp');
+  await expect(card.locator('a').first()).toHaveAttribute('href', `${CP}/?${MARK}&lang=uk#update`);
+  await expect(card.locator(`a[href="https://www.youtube.com/watch?v=${e.youtube}"]`)).toHaveCount(1);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  await page.clock.setFixedTime(new Date(`${e.to}T23:59:59`).getTime() + 2000);
+  await page.reload();
+  await expect(card).toBeHidden();
+  expect(w.errs).toEqual([]);
+});
+
 // a CubePix holiday the owner switched off (src/cubepix.json → events.<id>.on: false): no card even on its dates
 test('a CubePix holiday switched off: no card even on its dates', async ({ page }) => {
   test.skip(CP_HW_ON, 'CubePix Halloween is on');
