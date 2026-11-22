@@ -26,9 +26,14 @@ const KEYS = { tagline: 'g:menu.tagline', lead: 'hero.lead', play: 'cta.play', s
 // floor); the studio site shows a card for one while it is on, in the CubePix site's words: its name, its text, «N days left»
 const EVENTS = Object.fromEntries(Object.entries(D.events || {}).map(([ev, e]) => [ev, { from: e.from, to: e.to, on: e.on }]));
 if (Object.keys(EVENTS).length) KEYS.evLeft = 'g:event.left';
-for (const ev of Object.keys(EVENTS)) { KEYS['ev_' + ev] = 'g:ev.' + ev; KEYS['evText_' + ev] = 'event.' + ev + '.d'; }
+for (const ev of Object.keys(EVENTS)) if (EVENTS[ev].kind !== 'update') { KEYS['ev_' + ev] = 'g:ev.' + ev; KEYS['evText_' + ev] = 'event.' + ev + '.d'; }
 // how the whole game dresses up for the holiday (its site's event.<event>.dress, 29.10.2026 — every screen themed), when the site has it
-for (const ev of Object.keys(EVENTS)) if (D.S.en && D.S.en['event.' + ev + '.dress']) KEYS['evDress_' + ev] = 'event.' + ev + '.dress';
+// the update (owner 22.11.2026: «що б про оновлення знали на сайтах ігор і на сайті студії в сегментах про певну гру»): the CubePix
+// site's own update section (D.update — site.json → update: version, from / to, its YouTube Short) → an update card in the CubePix world,
+// like Orbit Dash's: the store event's picture and Lottie (assets/games/cubepix-update.*), its words — the CubePix site's upd.title / upd.d
+if (D.update && D.update.from) { EVENTS.update = { from: D.update.from, to: D.update.to, kind: 'update', ver: D.update.ver, youtube: D.update.youtube || null };
+  KEYS.ev_update = 'upd.title'; KEYS.evText_update = 'upd.d'; }
+for (const ev of Object.keys(EVENTS)) if (EVENTS[ev].kind !== 'update' && D.S.en && D.S.en['event.' + ev + '.dress']) KEYS['evDress_' + ev] = 'event.' + ev + '.dress';
 const S = Object.fromEntries(Object.keys(D.S).map((L) => [L, Object.fromEntries(Object.entries(KEYS).map(([k, g]) => [k, D.S[L][g]]))]));
 const hero = D.hero, puzzle = D.how;                                   // the showcase paintings; the small picture to play
 const out = {

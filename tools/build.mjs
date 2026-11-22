@@ -244,7 +244,19 @@ const odHol = !odHolLv.length ? '' : `<div class="od-hol"><p class="od-hol-h"><s
   `<ul class="od-hol-lv" lang="en">` + odHolLv.map((l) => `<li><button type="button" data-od-level="${l.id}" style="--a:#${l.palette.player}">` +
     `<img src="${G.orbitdash.site}assets/media/cover-${l.id}.webp" alt="" width="720" height="720" loading="lazy" decoding="async"><span>${l.name.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</span></button></li>`).join('') +
   `</ul><p class="od-hol-where" data-t="od.holWhere"></p></div>`;
-const cpEvents = Object.keys(CP.events || {}).map((ev) => { const pic = `assets/games/cubepix-${ev}.webp`;
+// a CubePix update (src/cubepix.json → events.<id>, kind "update", from the CubePix site's update section): the card of an Orbit Dash update
+// (od-up) in CubePix's colours — the store event's picture assets/games/cubepix-<id>.webp (+ -1280) and its Lottie (.json), the CubePix site's
+// words (cp:ev_<id>, cp:evText_<id>), → its update section, and the YouTube Short when there is one; shown by the page from / to, no «days left»
+const cpUpdate = (ev, e) => { const pic = `assets/games/cubepix-${ev}`, has = (f) => existsSync(new URL(f, ROOT));
+  if (e.youtube != null && !/^[\w-]{11}$/.test(e.youtube)) problems.push(`src/cubepix.json → events.${ev}.youtube: «${e.youtube}» is not a YouTube video id`);
+  return `<div class="od-ev od-up cp-up" data-cp-ev="${ev}" hidden><figure class="od-up-fig">` +
+    (has(pic + '.webp') ? `<img src="/${pic}.webp"${has(pic + '-1280.webp') ? ` srcset="/${pic}.webp 480w, /${pic}-1280.webp 1280w" sizes="(max-width:600px) 100vw, 560px"` : ''} alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
+    (has(pic + '.json') ? `<span class="od-up-lot" data-lottie="/${pic}.json" aria-hidden="true"></span>` : '') +
+    `</figure><span class="od-ev-tx"><b><span lang="en">CubePix ${e.ver || ''}</span> · <span data-t="cp:ev_${ev}"></span></b><span data-t="cp:evText_${ev}"></span><span class="od-up-go">` +
+    `<a href="${cpLink(G.cubepix.site)}#update" data-lang-link="cp"><span data-t="game.site"></span> →</a>` +
+    (e.youtube ? `<a href="https://www.youtube.com/watch?v=${e.youtube}" rel="noopener"><span aria-hidden="true">▶</span> <span data-t="od.yt"></span></a>` : '') +
+    `</span></span></div>`; };
+const cpEvents = Object.keys(CP.events || {}).map((ev) => { if (CP.events[ev].kind === 'update') return cpUpdate(ev, CP.events[ev]); const pic = `assets/games/cubepix-${ev}.webp`;
   return `<a class="cp-ev" href="${cpLink(G.cubepix.site)}#event" data-lang-link="cp" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
     `<span class="cp-ev-tx"><b data-t="cp:ev_${ev}"></b><span data-t="cp:evText_${ev}"></span>` +

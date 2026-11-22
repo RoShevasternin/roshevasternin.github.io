@@ -253,6 +253,11 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-up-lot[data-ready]{opacity:1;}
 .od-up-lot svg{display:block;width:100%!important;height:100%!important;}
 .od-up .od-ev-tx{padding:0 4px 2px;}
+.cp-up{box-shadow:inset 0 0 0 1px rgba(255,60,172,.45),0 0 30px rgba(255,60,172,.14);}
+@media (hover:hover){.cp-up:hover{box-shadow:inset 0 0 0 1px rgba(255,60,172,.6),0 0 30px rgba(255,60,172,.22);}}
+.cp-up .od-up-fig{background:#140b30;}
+.cp-up .od-up-go a{color:#ff7ac6;}
+.cp-up .od-up-go a:focus-visible{outline-color:#ff7ac6;}
 .od-up-go{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:4px;}
 .od-up-go a{font-weight:900;font-size:14px;color:#ffb15c;text-decoration:none;}
 .od-up-go a span{color:inherit;font-size:inherit;}
@@ -1768,6 +1773,11 @@ function odLottie(card) {
   const near = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { near.disconnect(); start(); } }, { rootMargin: '400px 0px' });
   near.observe(box);
 }
+// a CubePix update card (kind "update"): the same window, no «days left»; its Lottie like Orbit Dash's
+(() => { const now = Date.now();
+  for (const a of document.querySelectorAll('.cp-up')) { const e = D.cp.events[a.dataset.cpEv]; if (!e || e.on === false) continue;
+    if (now < new Date(e.from + 'T00:00:00').getTime() || now > new Date(e.to + 'T23:59:59').getTime()) continue;
+    a.hidden = false; odLottie(a); } })();
 // a CubePix holiday (its site's dates, src/cubepix.json → events): the card shows only from its first day 00:00 to its last 23:59,
 // the visitor's own clock — as in the game; it says how many days are left, in the CubePix site's words
 (() => { const now = Date.now();
