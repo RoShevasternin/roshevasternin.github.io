@@ -29,8 +29,15 @@
 - iPhone до вікна ATT — реклама йде без IDFA (Google дозволяє), а не «ніякої»: інакше всі нові гравці iOS без реклами до моменту B
   (Remote Config `att_ads_before`, типово true; false — чекати ATT, як раніше).
 
-**Вимикач без оновлення:** Remote Config `consent_moment` = `first_win` (типово) | `start` (старий потік на лоадері).
-`requestConsentInfoUpdate` — щозапуску, як і раніше (Google); рядок PRIVACY OPTIONS у налаштуваннях — без змін.
+**Вимикач без оновлення — Remote Config, однаково в усіх іграх** (параметр `shared` за правилом `docs/process/remote-config.md`):
+
+    "shared": { "consent": { "moment": "first_win", "att_ads_before": true } }
+
+- `moment` — `first_win` (B + C, типово) | `start` (старий потік на лоадері, аварійний відкат); невідоме значення → `first_win`;
+- `att_ads_before` — `true` (iPhone до ATT — реклама без IDFA, типово) | `false` (чекати ATT);
+- `endless_runs` — лише там, де є режим без «одиниці гри» (Orbit Dash: ENDLESS, типово 3);
+- типові значення — у коді гри, Remote Config лише перекриває; гравці вимикача не бачать.
+`requestConsentInfoUpdate` — щозапуску, як і раніше (Google); рядок PRIVACY OPTIONS у налаштуваннях — без змін (там гравець змінює відповідь).
 
 **Чесно (Google, Apple 5.1.1(iv) і 5.1.2(i)):**
 - кнопки форми рівноцінні, нічого не ввімкнено заздалегідь, «Не погоджуватися» не ховаємо;
@@ -41,9 +48,11 @@
 **Аналітика (однаково в усіх іграх):**
 - GA4 події: `consent_prompt {step: shown|accept|decline|manage, where: first_win|rewarded|start}`,
   `consent_result {outcome: personalized|non_personalized|limited}`, `att_prompt {step: shown|allow|deny, where}`,
-  `att_result {outcome: authorized|denied|restricted|not_determined}`; user properties `consent`, `att` — дохід за сегментами.
-- GA4 не бачить тих, хто відмовив (UMP вимикає їм аналітику), тому **чесний % згоди — з анонімного лічильника** без id
-  (`stats.lewydo.com`: крок, where, outcome, gdpr 0 / 1, платформа) → картка «🛡 Згода» в ранковому звіті: % згоди GDPR і % ATT «Allow»
+  `att_result {outcome: authorized|denied|restricted|not_determined}`; user properties `consent` (personalized | non_personalized | limited | not_required) і `att` — дохід за сегментами.
+- GA4 не бачить тих, хто відмовив (UMP вимикає їм аналітику), тому **чесний % згоди — з анонімного лічильника** без id / IP / UA:
+  `POST https://stats.lewydo.com/g`, text/plain JSON ≤ 256 байт, усі поля рядками — `g` (od | cp | …), `os` (a | i), `k` (consent | att),
+  `e` (shown | accept | decline | manage · shown | allow | deny), `w` (first_win | rewarded | start), `o` (personalized | non_personalized | limited |
+  authorized | denied | restricted | none), `gdpr` (0 | 1 | x); один запит на крок, у фоні, без повторів, лише release-збірки → картка «🛡 Згода» в ранковому звіті: % згоди GDPR і % ATT «Allow»
   за моментом (first_win / rewarded / start), скільки нових гравців дійшли до моменту B.
 - Порівняння з минулим: до зміни — `start`; Remote Config дозволяє повернути й порівняти без оновлення.
 ```
