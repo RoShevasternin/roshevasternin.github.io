@@ -31,6 +31,8 @@ const ROOT = new URL('../', import.meta.url), disk = (p) => readFileSync(new URL
 // Orbit Dash's cards (src/orbitdash.json → events): the Halloween window (on: false since 22.11.2026 — the owner: «хеловін можеш і на сайті
 // прибрати») and the 4.0.0 update card (update4)
 const ODEVENTS = JSON.parse(disk('src/orbitdash.json')).events || {}, HW_ON = !!ODEVENTS.halloween && ODEVENTS.halloween.on !== false;
+// CubePix's holiday window (src/cubepix.json → events; on: false — the owner switched it off, 22.11.2026: «хеловін … прибрати»)
+const CPEVENTS = JSON.parse(disk('src/cubepix.json')).events || {}, CP_HW_ON = !!CPEVENTS.halloween && CPEVENTS.halloween.on !== false;
 
 test('speaks the visitor’s language, switches to any of ours, remembers it, and asks no third party for anything', async ({ browser }) => {
   const ctx = await browser.newContext({ locale: 'pt-BR' });
@@ -267,9 +269,18 @@ test('the store buttons: official marks, «GET IT ON Google Play» / «Download 
   await ctx.close();
 });
 
+// a CubePix holiday the owner switched off (src/cubepix.json → events.<id>.on: false): no card even on its dates
+test('a CubePix holiday switched off: no card even on its dates', async ({ page }) => {
+  test.skip(CP_HW_ON, 'CubePix Halloween is on');
+  await page.clock.setFixedTime(new Date('2026-11-25T12:00:00'));
+  await page.goto('./?lang=uk');
+  await expect(page.locator('.cp-ev[data-ev="halloween"]')).toBeHidden();
+});
+
 // owner 29.10.2026: CubePix's Halloween on the studio site too — a card in its world while the holiday is on (the CubePix site's dates
 // and words), leading to the holiday on the CubePix site; the day after it ends, the card is gone by itself
 test('a CubePix holiday: its card shows only while it is on, in the visitor’s language, and leads to it on the CubePix site', async ({ page }) => {
+  test.skip(!CP_HW_ON, 'CubePix Halloween is switched off (src/cubepix.json → events.halloween.on: false)');
   const w = watch(page);
   await page.clock.setFixedTime(new Date('2026-10-29T12:00:00'));
   await page.goto('./?lang=uk');
