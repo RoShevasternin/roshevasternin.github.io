@@ -393,7 +393,11 @@ test('the Orbit Dash 4.0 update card: its window, the visitor’s words, a lazy 
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   const box = await card.boundingBox(); expect(box.x).toBeGreaterThanOrEqual(0); expect(box.x + box.width).toBeLessThanOrEqual(390);
   await expect(page.locator('#orbitdash .od-ver')).toHaveText('4.0');
-  await expect(page.locator('#orbitdash .od-new')).toContainText('THE FABULOUS');
+  // owner 22.11.2026: no od.new paragraph repeating the card — the update card comes first, above the trail chips and HALLOWEEN
+  await expect(page.locator('#orbitdash [data-t="od.new"]')).toHaveCount(0);
+  await expect(page.locator('#orbitdash .od-trails li')).toHaveCount(20);
+  const order = await page.evaluate(() => ['.od-ev[data-ev="update4"]', '.od-tr', '.od-hol'].map((q) => document.querySelector('#orbitdash ' + q)?.getBoundingClientRect().top ?? -1));
+  expect(order[0] >= 0 && order[0] < order[1] && order[1] < order[2], order.join(' ')).toBe(true);
   for (const L of ['ar', 'he']) {                                                                    // right to left
     await page.goto(`./?lang=${L}`); await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
     await card.scrollIntoViewIfNeeded(); await expect(card).toBeVisible();
