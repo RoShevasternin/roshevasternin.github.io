@@ -28,6 +28,9 @@ const REAL_OD = !!process.env.OD_SITE;
 const SITE_PORT = +(process.env.SITE_PORT || 5190), OD = `http://localhost:${+(process.env.OD_PORT || SITE_PORT + 1)}`;
 const OD_REAL = 'https://orbitdash.lewydo.com', CP = 'https://cubepix.lewydo.com', MARK = 'utm_source=lewydo&utm_medium=studio_site';
 const ROOT = new URL('../', import.meta.url), disk = (p) => readFileSync(new URL(p, ROOT), 'utf8');
+// Orbit Dash's cards (src/orbitdash.json → events): the Halloween window (on: false since 22.11.2026 — the owner: «хеловін можеш і на сайті
+// прибрати») and the 4.0.0 update card (update4)
+const ODEVENTS = JSON.parse(disk('src/orbitdash.json')).events || {}, HW_ON = !!ODEVENTS.halloween && ODEVENTS.halloween.on !== false;
 
 test('speaks the visitor’s language, switches to any of ours, remembers it, and asks no third party for anything', async ({ browser }) => {
   const ctx = await browser.newContext({ locale: 'pt-BR' });
@@ -287,6 +290,7 @@ test('a CubePix holiday: its card shows only while it is on, in the visitor’s 
 // owner 29.10.2026: Orbit Dash's Halloween too (29.10–30.11, the window its site builds in from the game) — a card in its world while the
 // season is on, in the visitor's language, leading to the whole game in the browser where Halloween already is; gone by itself on 1.12
 test('an Orbit Dash holiday: its card shows only while it is on, in the visitor’s language, and leads to the game in the browser', async ({ page }) => {
+  test.skip(!HW_ON, 'Halloween is switched off (src/orbitdash.json → events.halloween.on: false)');
   const w = watch(page);
   await page.clock.setFixedTime(new Date('2026-10-29T12:00:00'));
   await page.goto('./?lang=uk');
@@ -312,11 +316,85 @@ test('an Orbit Dash holiday: its card shows only while it is on, in the visitor�
   expect([...w.ext]).toEqual([]);
 });
 
+// owner 22.11.2026: Halloween is over on lewydo.com — the window is switched off (on: false), so on any day, even one inside the old window,
+// there is no festive page (no html.halloween, no pill, no decor) and no Halloween card in the Orbit Dash world; ?halloween=1 still shows it
+test('Halloween switched off: no festive page and no Halloween card, even inside the old window', async ({ page }) => {
+  test.skip(HW_ON, 'Halloween is on');
+  const w = watch(page), html = page.locator('html');
+  await page.clock.setFixedTime(new Date('2026-11-25T12:00:00'));
+  await page.goto('./?lang=uk');
+  await expect(page.locator('#orbitdash .od-title')).toBeVisible();
+  await expect(html).not.toHaveClass(/\bhalloween\b/);
+  await expect(page.locator('.hero .hw-pill')).toBeHidden();
+  expect(await page.locator('.hw').count()).toBe(0);
+  expect(await page.locator('.od-ev[data-ev="halloween"]').count()).toBe(0);
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+});
+
+// owner 22.11.2026 («зробить про нове оновлення і теж лотті на сайт»): the Orbit Dash 4.0.0 card in its world while its window is on
+// (src/orbitdash.json → events.update4, kind "update"): the game's art with its Lottie over it (lottie-web from this site, fetched only when
+// the card comes near, playing only on screen), the visitor's words, → the game's site with our mark; less motion — the picture, no player;
+// a phone and right to left — nothing scrolls sideways; the day after the window — gone by itself; YouTube only if the data names a video
+test('the Orbit Dash 4.0 update card: its window, the visitor’s words, a lazy self-hosted Lottie, the picture with less motion, phone and RTL', async ({ browser }) => {
+  const U = ODEVENTS.update4;
+  test.skip(!U, 'no update4 window');
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await ctx.newPage(), w = watch(page), lottie = [];
+  page.on('request', (r) => { if (/lottie|orbitdash-update4\.json/.test(r.url())) lottie.push(r.url()); });
+  await page.clock.setFixedTime(new Date(U.from + 'T12:00:00'));
+  await page.goto('./?lang=uk');
+  const card = page.locator('.od-ev[data-ev="update4"]');
+  await expect(card).toBeAttached(); await expect(card).not.toHaveAttribute('hidden', /.*/);
+  expect(lottie, 'nothing is fetched before the card comes near').toEqual([]);
+  await card.scrollIntoViewIfNeeded();
+  await expect(card).toBeVisible();
+  await expect(card.locator('b')).toHaveText('Orbit Dash 4.0: The Fabulous');
+  await expect(card).toContainText('Данте');
+  await expect(card.locator('.od-up-go a').first()).toHaveAttribute('href', `${OD}/?${MARK}&lang=uk`);
+  await expect(card.locator('.od-up-go a').first()).toContainText('Сайт гри');
+  await expect(card.locator('.od-up-go a')).toHaveCount(U.youtube ? 2 : 1);
+  await expect(card.locator('.od-up-lot svg')).toHaveCount(1, { timeout: 10000 });                    // the animation is on
+  await expect(card.locator('.od-up-lot')).toHaveAttribute('data-ready', '1');
+  expect(lottie.every((u) => new URL(u).hostname === 'localhost'), lottie.join(' ')).toBe(true);       // this site's own copies
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+  const box = await card.boundingBox(); expect(box.x).toBeGreaterThanOrEqual(0); expect(box.x + box.width).toBeLessThanOrEqual(390);
+  await expect(page.locator('#orbitdash .od-ver')).toHaveText('4.0');
+  await expect(page.locator('#orbitdash .od-new')).toContainText('THE FABULOUS');
+  for (const L of ['ar', 'he']) {                                                                    // right to left
+    await page.goto(`./?lang=${L}`); await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+    await card.scrollIntoViewIfNeeded(); await expect(card).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), L).toBeLessThanOrEqual(390);
+  }
+  await page.clock.setFixedTime(new Date(U.to + 'T23:00:00'));                                       // the last evening — still on
+  await page.goto('./?lang=en'); await expect(card).not.toHaveAttribute('hidden', /.*/);
+  const after = new Date(U.to + 'T12:00:00'); after.setDate(after.getDate() + 1);
+  await page.clock.setFixedTime(after);                                                               // the day after — gone by itself
+  await page.reload(); await expect(card).toBeHidden();
+  expect(w.errs).toEqual([]);
+  expect([...w.ext]).toEqual([]);
+  await ctx.close();
+  // less motion: the picture, and the player is never fetched
+  const rm = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+  const p2 = await rm.newPage(), w2 = watch(p2), got = [];
+  p2.on('request', (r) => { if (/lottie|orbitdash-update4\.json/.test(r.url())) got.push(r.url()); });
+  await p2.clock.setFixedTime(new Date(U.from + 'T12:00:00'));
+  await p2.goto('./?lang=en');
+  const c2 = p2.locator('.od-ev[data-ev="update4"]'); await c2.scrollIntoViewIfNeeded();
+  await expect(c2.locator('.od-up-fig img')).toBeVisible();
+  await expect.poll(() => c2.locator('.od-up-fig img').evaluate((i) => i.complete && i.naturalWidth)).toBeGreaterThan(0);
+  await p2.waitForTimeout(800);
+  expect(got).toEqual([]); expect(await c2.locator('.od-up-lot svg').count()).toBe(0);
+  expect(w2.errs).toEqual([]);
+  await rm.close();
+});
+
 // [HALLOWEEN] owner 31.10.2026 («треба ж і сайт студії зробити в хеловінській тематиці»): the studio page dresses up while Orbit Dash's Halloween
 // is on (its window, src/orbitdash.json → events.halloween, the visitor's own date; src/halloween.css, src/halloween.js): a night sky, cobwebs,
 // pumpkins and candles, one festive line → the worlds. The Lewydo sign is never touched; the decor takes no tap and is hidden from readers;
 // ?halloween=0 / 1 and ?today= switch it; on December 1 it is gone by itself. Remove with the rest of [HALLOWEEN] in December.
 test('Halloween on the studio page: only in season, one festive line in the visitor’s language, decor that takes no tap, the sign untouched', async ({ browser }) => {
+  test.skip(!HW_ON, 'Halloween is switched off (src/orbitdash.json → events.halloween.on: false)');
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
   const page = await ctx.newPage(), w = watch(page), html = page.locator('html'), pill = page.locator('.hero .hw-pill');
   const decor = () => page.locator('.hw').count();
@@ -386,6 +464,7 @@ test('Halloween on the studio page: only in season, one festive line in the visi
 // [HALLOWEEN] the festive line stays a pill on the narrowest phones (two lines at most, in every language — three made it a slab that pushed
 // the word Lewydo under the music bubble on a 320×568 phone), and on a short screen the sign stands exactly where it does out of season
 test('Halloween’s festive line: two lines at most in all our languages at 320 and 390 px, and the word Lewydo stays put on a short phone', async ({ browser }) => {
+  test.skip(!HW_ON, 'Halloween is switched off (src/orbitdash.json → events.halloween.on: false)');
   const ctx = await browser.newContext({ viewport: { width: 320, height: 568 } });
   const page = await ctx.newPage(), w = watch(page), html = page.locator('html');
   await page.clock.setFixedTime(new Date('2026-10-31T12:00:00'));
@@ -727,7 +806,7 @@ test('the paper plane: above the record, «Write to us» in the page’s languag
   }
   // reduced motion: at once
   { const ctx = await browser.newContext({ viewport: { width: 390, height: 800 }, reducedMotion: 'reduce' }), page = await ctx.newPage();
-    await page.goto('./?lang=en'); await page.locator('#ctPlane').click();
+    await page.goto('./?lang=en'); await planeOut(page); await page.locator('#ctPlane').click();   // out of season the hero's buttons sit under it at the top — it steps aside there
     expect(await page.evaluate(() => Math.round(document.getElementById('contact').getBoundingClientRect().top))).toBeLessThanOrEqual(74);
     await ctx.close(); }
   // the other pages: a link to the main page's contacts, in the page's language; the plane never sits on the footer's links

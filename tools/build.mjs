@@ -190,8 +190,10 @@ const ogGames = [G.cubepix.icon, G.orbitdash.icon, ...G.more.map((g) => g.icon)]
 const counts = { people: 2, games: 2 + G.more.length, langs: IDS.length, pics: CP.counts.pics, floors: CP.counts.floors, cpLangs: CP.counts.langs };
 const SMAIN = Object.fromEntries(IDS.map((L) => [L, Object.fromEntries(Object.entries(S[L]).filter(([k]) => !k.startsWith('b.') && !k.startsWith('press.')))]));   // the brand and press pages' words stay on their pages
 const enPics = Object.fromEntries(Object.keys(CP.pics).map((p) => [p, CP.pics[p].en]));
+// Orbit Dash's cards (src/orbitdash.json → events) that can show at all: a window switched off (on: false) builds nothing
+const ODEV = Object.fromEntries(Object.entries(OD.events || {}).filter(([, e]) => e && e.on !== false));
 const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cpLangs: Object.keys(CP.S), counts,
-  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels, odEvents: OD.events || {}, since: G.since };
+  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels, odEvents: ODEV, since: G.since };
 // the live «time since» timers (src/index.html, «since»): the studio, Orbit Dash, CubePix — their start days live in src/games.json → since
 // (where each one comes from — _since); a real calendar day each, and every page element [data-since] names one of them
 for (const id of ['studio', 'orbitdash', 'cubepix']) { const v = (G.since || {})[id], m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''), d = m && new Date(Date.UTC(+m[1], m[2] - 1, +m[3]));
@@ -202,15 +204,31 @@ for (const id of read('src/index.html').match(/data-since="\w+"/g) || []) if (!(
 // an Orbit Dash holiday (the window its site builds in from the game's prototype, src/orbitdash.json → events; words — od.ev_<event>,
 // od.evText_<event>, od.evLeft): a card in the Orbit Dash world, shown only while the holiday is on (the visitor's clock, like the game)
 // → the whole game in the browser, where the holiday already is; its picture — assets/games/orbitdash-<event>.webp (the game's Play event art)
-for (const ev of Object.keys(OD.events || {})) for (const k of ['od.ev_' + ev, 'od.evText_' + ev, 'od.evLeft'])
-  if (!(k in SS.en)) problems.push(`en: the Orbit Dash holiday «${ev}» needs the words «${k}» (src/i18n/*.json → site)`);
+// An update card (kind: "update", owner 22.11.2026 — Orbit Dash 4.0.0; update4 …): the same window {from, to}, no «days left»; the game's
+// update art — assets/games/orbitdash-<event>.webp (480 × 270; -1280.webp for sharp screens) and, if there, its Lottie animation
+// assets/games/orbitdash-<event>.json (played by lottie-web from this site, assets/vendor/, only on screen; less motion — the picture);
+// → the game's site (game.site), and «youtube»: "<11-character video id>" adds a «Watch on YouTube» link (od.yt) — one line of data.
+// A window switched off (on: false — the game's site ended its holiday) builds no card at all.
+for (const [ev, e] of Object.entries(ODEV)) {
+  if (e.youtube != null && !/^[\w-]{11}$/.test(e.youtube)) problems.push(`src/orbitdash.json → events.${ev}.youtube: «${e.youtube}» is not a YouTube video id`);
+  for (const k of ['od.ev_' + ev, 'od.evText_' + ev, ...(e.kind === 'update' ? ['game.site', 'od.yt'] : ['od.evLeft'])])
+    if (!(k in SS.en)) problems.push(`en: the Orbit Dash ${e.kind === 'update' ? 'update' : 'holiday'} «${ev}» needs the words «${k}» (src/i18n/*.json → site)`);
+}
 // every link to a game carries its mark (docs/process/install-source.md) and the page's language: each game is its own origin
 // (orbitdash.lewydo.com, cubepix.lewydo.com), so the visitor's choice here (localStorage lewydo:lang) is not theirs to read — the link says it.
 // Written here as English (the page before its script runs); src/lang.js sets the visitor's language on every [data-lang-link="od|cp"].
 // Only hrefs: `site` also builds picture addresses. The privacy pages: the language, no mark
 const gameLink = (path, mark) => path + '?' + [mark, 'lang=en'].filter(Boolean).join('&').replace(/&/g, '&amp;');
 const odLink = (path) => gameLink(path, G.orbitdash.mark), cpLink = (path) => gameLink(path, G.cubepix.mark);
-const odEvents = Object.keys(OD.events || {}).map((ev) => { const pic = `assets/games/orbitdash-${ev}.webp`;
+const odUpdate = (ev, e) => { const pic = `assets/games/orbitdash-${ev}`, has = (f) => existsSync(new URL(f, ROOT));
+  return `<div class="od-ev od-up" data-ev="${ev}" hidden><figure class="od-up-fig">` +
+    (has(pic + '.webp') ? `<img src="/${pic}.webp"${has(pic + '-1280.webp') ? ` srcset="/${pic}.webp 480w, /${pic}-1280.webp 1280w" sizes="(max-width:600px) 100vw, 560px"` : ''} alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
+    (has(pic + '.json') ? `<span class="od-up-lot" data-lottie="/${pic}.json" aria-hidden="true"></span>` : '') +
+    `</figure><span class="od-ev-tx"><b data-t="od.ev_${ev}"></b><span data-t="od.evText_${ev}"></span><span class="od-up-go">` +
+    `<a href="${odLink(G.orbitdash.site)}" data-lang-link="od"><span data-t="game.site"></span> →</a>` +
+    (e.youtube ? `<a href="https://www.youtube.com/watch?v=${e.youtube}" rel="noopener"><span aria-hidden="true">▶</span> <span data-t="od.yt"></span></a>` : '') +
+    `</span></span></div>`; };
+const odEvents = Object.entries(ODEV).map(([ev, e]) => { if (e.kind === 'update') return odUpdate(ev, e); const pic = `assets/games/orbitdash-${ev}.webp`;
   return `<a class="od-ev" href="${odLink(G.orbitdash.demo)}" data-lang-link="od" data-ev="${ev}" hidden>` +
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
     `<span class="od-ev-tx"><b data-t="od.ev_${ev}"></b><span data-t="od.evText_${ev}"></span>` +
