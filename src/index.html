@@ -333,6 +333,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-sec::before{content:"";width:3px;height:14px;border-radius:2px;background:var(--od-acc);box-shadow:0 0 8px var(--od-acc);}
 .od-new>p:not(.od-sec){margin-top:10px;color:var(--ink2);font-size:16px;line-height:1.55;}
 .od-new>p b{color:#fff;}
+.cp-new{--od-acc:#ff3cac;}
 .od-trails{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none;direction:ltr;}
 .od-trails li{--t:#7d88b8;padding:5px 8px 4px;border-radius:8px;font:800 10.5px/1 "Inter Display",var(--f);letter-spacing:.12em;color:#fff;
   background:rgba(8,9,21,.55);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--t) 70%,transparent),0 0 12px -4px var(--t);}
@@ -949,6 +950,8 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <ul class="px-chips">
           <li data-t="cp:pics" data-n="pics"></li><li data-t="cp:floors" data-n="floors"></li><li data-t="cp:langs" data-n="cpLangs"></li><li data-t="cp:free"></li>
         </ul>
+        <!-- what's new in CubePix (owner 22.11.2026: «so the studio site's game segments tell about the update»), as the Orbit Dash world's -->
+        <div class="od-new cp-new"><p class="od-sec" lang="en">CUBEPIX {{cp.version}}</p><p data-t="cp.new"></p></div>
         <div class="since" data-since="cubepix"><p class="since-h" data-t="since.play"></p><p class="since-v"></p><p class="since-c" aria-hidden="true"><span></span><span></span><span></span></p></div>
         <div class="ctas">
           <a class="btn px-btn px-pink" href="{{cp.demo}}" data-lang-link="cp">▶ <span data-t="cp:play"></span></a>
