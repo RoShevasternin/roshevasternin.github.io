@@ -37,14 +37,16 @@
   "cp.picPrev": "Előző festmény",
   "cp.picNext": "Következő festmény",
   "od.tag": "Két pálya. Egy koppintás. Minden ugrás ütemre.",
-  "od.lead": "Ritmusjáték a mélyűrben: egy koppintás pályát vált, és minden ugrás a saját zenénk ütemére érkezik. 14 szint, végtelen mód, 17 labdanyom és RANGSOR — hazád és a világ táblázata.",
-  "od.new": "**2 új szint** — SOUL ACOUSTIC, nyugodt gitár a tábortűz mellett, és LUDOVIVO, egy DÉMON zongorakoncert. Mindegyik ad egy csóvát. ÜTEMRE: a csupa PONTOS most 100%. Az eredmény megmutatja, mi vitte el a 100%-ot, és hol. VERSUS: versenyezz a SOUL ACOUSTIC-ban is. Kisebb letöltés: a szintek maguktól érkeznek, és folytatódnak, amint újra online vagy. Akár 120 FPS 90–120 Hz-es kijelzőkön.",
+  "od.lead": "Ritmusjáték a mélyűrben: egy koppintás pályát vált, és minden ugrás a saját zenénk ütemére érkezik. 17 szint, végtelen mód, 20 labdanyom és RANGSOR — hazád és a világ táblázata.",
   "od.free": "Ingyenes",
   "od.offline": "Offline is megy",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "Böngészőben, Androidon és iPhone-on",
   "od.ev_halloween": "Halloween a pályán!",
   "od.evText_halloween": "November 30-ig az Orbit Dash halloweeni jelmezt ölt: a menü holdfényes éjszakává válik boszorkányokkal, denevérekkel, pókhálókkal és gyertyafényes tökökkel, a labdád tökké változik kísérteties WISP nyommal — mindkettő ingyen Halloweenre —, a zenéhez pedig három hátborzongató szám csatlakozik. December 1-jén minden magától eltűnik.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Eddigi legnagyobb frissítésünk. A The Fabulous az új Démon pálya, amit kértetek: öt perc nyolc pokolkören át Dante Isteni színjátéka nyomán, Kharón, Kerberosz, a Minotaurosz és Gérüón mellett el egy démonúrig, aki a pálya nevét üvölti, és egy finálé négy pályán egyszerre. Emellett Sunshine, Chroma és online Versus nyitott szobákkal bárkinek.",
+  "od.yt": "Nézd meg a YouTube-on",
   "od.evLeft": {
    "one": "még {n} nap",
    "other": "még {n} nap"

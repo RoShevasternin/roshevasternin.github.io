@@ -1,5 +1,5 @@
 {
- "_about": "Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs). Руками не правити.",
+ "_about": "Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs), руками не правити. events: halloween — з сайту гри (знімок); update4 та інші картки оновлень — наші, руками (знімок їх зберігає): from/to включно, kind \"update\", youtube — id ролика (null — без кнопки).",
  "levels": [
   {
    "id": "first-light",
@@ -222,6 +222,66 @@
    "col": "main"
   },
   {
+   "id": "sunshine",
+   "name": "SUNSHINE",
+   "genre": "SAX HOUSE",
+   "dots": 2,
+   "bpm": 120,
+   "palette": {
+    "bg": "0B3170",
+    "ring": "0E3778",
+    "player": "FFD84A",
+    "gem": "8CF5FF",
+    "spike": "FF3B5C"
+   },
+   "sky": {
+    "speed": 0.15,
+    "fill": 0.12,
+    "twinkle": 0.3
+   },
+   "col": "main"
+  },
+  {
+   "id": "nu-drop",
+   "name": "CHROMA",
+   "genre": "PHONK",
+   "dots": 4,
+   "bpm": 130,
+   "palette": {
+    "bg": "080206",
+    "ring": "34101E",
+    "player": "FFE6EE",
+    "gem": "FFD36E",
+    "spike": "FF2E63"
+   },
+   "sky": {
+    "speed": 0.5,
+    "fill": 0.35,
+    "twinkle": 0.3
+   },
+   "col": "main"
+  },
+  {
+   "id": "the-fabulous",
+   "name": "THE FABULOUS",
+   "genre": "HELL PHONK",
+   "dots": 5,
+   "bpm": 130,
+   "palette": {
+    "bg": "0A0204",
+    "ring": "3A1612",
+    "player": "FFE9C2",
+    "gem": "58E6FF",
+    "spike": "FF3B5C"
+   },
+   "sky": {
+    "speed": 0.15,
+    "fill": 0.06,
+    "twinkle": 0.2
+   },
+   "col": "main"
+  },
+  {
    "id": "blood-moon",
    "name": "BLOOD MOON",
    "genre": "HORROR SYNTHWAVE",
@@ -286,7 +346,13 @@
   "halloween": {
    "from": "2026-10-29",
    "to": "2026-11-30",
-   "on": true
+   "on": false
+  },
+  "update4": {
+   "from": "2026-11-22",
+   "to": "2026-12-15",
+   "kind": "update",
+   "youtube": "pZHvAZ3sOb8"
   }
  }
 }

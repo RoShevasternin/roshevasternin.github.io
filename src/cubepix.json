@@ -1,8 +1,8 @@
 {
  "_about": "Made by tools/cubepix-snapshot.mjs from the CubePix site (github.com/RoShevasternin/Game-CubePix). Do not edit by hand.",
  "counts": {
-  "pics": 74,
-  "floors": 8,
+  "pics": 91,
+  "floors": 9,
   "langs": 82
  },
  "hero": [
@@ -2274,7 +2274,14 @@
   "halloween": {
    "from": "2026-09-28",
    "to": "2026-11-30",
-   "on": true
+   "on": false
+  },
+  "update": {
+   "from": "2026-11-22",
+   "to": "2026-12-21",
+   "kind": "update",
+   "ver": "3.0.0",
+   "youtube": "nZWJiWG6Yfw"
   }
  },
  "S": {
@@ -2315,6 +2322,8 @@
    },
    "ev_halloween": "Halloween muuziyeemii keessatti!",
    "evText_halloween": "Hanga Sadaasa 30tti darbiin Halloween banaadha: fakkiiwwan sodaachisoo 8, adurree gurraattii fi koofiyaa falfaltuu irraa kaasee hanga mana hafuuraa fi lafee guddaa Kuniyoshiitti. Muuziyeemiin guutuun ayyaanaaf miidhagfata, Waalsiin Halloween waraqaa sagalee gara walitti makama, darbii xumuruunis Pix akka Ibsaa Buqqeetti uffachiisa.",
+   "ev_update": "Kanvaasii guguddoo kudhan",
+   "evText_update": "Suuraawwan beekamoo kuubii kumaatamaan hojjetaman amma sadarkaa muuziyeemii hunda irratti warraaqamaniiru: Irises kan Van Gogh, bubbee Hokusai gaara Fuji jala, hamsa Dürer dargaggeessaa fi kanneen biroo, tokkoon tokkoon isaanii kuubii 5,000 hanga 20,000 ta'u. Tartiiba barbaaddanitti kutaa kutaadhaan halluu itti dhoksaa, suuraan guutuun yeroo-dabarsuu (time-lapse) keessatti deebi'ee wal-ta'uu ilaalaa.",
    "evDress_halloween": "Taphni guutuun Halloween'f of miidhagsa: ibsi hunduu buqqee, simbirroo halkanii fi hidhaa hanqaaquu of isaa qaba; falfaltoonni cinaa menu irratti dhugaatii bilcheessanii ifa aduu fuldura balali'u; baala gannaa immoo suuta suutaan kufa."
   },
   "af": {
@@ -2354,6 +2363,8 @@
    },
    "ev_halloween": "Halloween in die museum!",
    "evText_halloween": "Tot 30 November vier die hele museum fees: hekse brou toordranke in borrelende ketels, vlermuise en spoke vlieg by die maan verby, en herfsblare dwarrel oor elke skerm. Die Halloween-vlak bevat 8 grillerige prente, van 'n swart kat en 'n heksehoed tot 'n spookhuis en Kuniyoshi se reuse-skelet. Vyf Halloween-plate speel op die musiekrak, en as jy die vlak voltooi, trek Pix aan soos 'n pampoenlantern.",
+   "ev_update": "Tien reuse doeke",
+   "evText_update": "Bekende skilderye van duisende kubusse hang nou op elke vloer van die museum: Van Gogh se Irisse, Hokusai se storm onder Fuji-berg, Dürer se jong haas en meer, elk van ongeveer 5 000 tot 20 000 kubusse. Verf hulle deel vir deel, in enige volgorde, en kyk hoe die hele skildery weer in 'n tydsverloop saamkom.",
    "evDress_halloween": "Die hele speletjie trek aan vir Halloween: elke skerm kry sy eie pampoene, vlermuise en spinnerakke, hekse brou towerdrankies by die kieslys en vlieg oor die maan, en herfsblare dwarrel af."
   },
   "az": {
@@ -2393,6 +2404,8 @@
    },
    "ev_halloween": "Muzeydə Hellouin!",
    "evText_halloween": "30 noyabradək bütün muzey bayram edir: cadugərlər qaynayan qazanlarda iksir hazırlayır, yarasalar və kabuslar ayın yanından uçub keçir, payız yarpaqları isə hər ekranda fırlanır. Hellouin mərtəbəsində 8 qorxulu şəkil var: qara pişik və cadugər papağından tutmuş kabuslu evə və Kuniyoşinin nəhəng skeletinə qədər. Musiqi rəfində beş Hellouin plastinkası səslənir, mərtəbəni bitirdikdə isə Pix balqabaq fənərinə çevrilir.",
+   "ev_update": "On nəhəng kətan",
+   "evText_update": "Minlərlə kubdan ibarət məşhur rəsmlər indi muzeyin hər mərtəbəsindədir: Van Qoqun Süsənləri, Hokusainin Füci dağı altındakı fırtına, Dürerin gənc dovşanı və daha çoxu, hər biri təxminən 5000–20 000 kub. Onları istənilən ardıcıllıqla hissə-hissə boya və bütün rəsmin taymlapsda yenidən necə birləşdiyinə bax.",
    "evDress_halloween": "Bütün oyun Hellouin üçün bəzənir: hər ekranın öz balqabaqları, yarasaları və hörümçək toru var, cadugərlər menyunun yanında iksir bişirib ayın qarşısından uçur, payız yarpaqları isə yavaş-yavaş tökülür."
   },
   "id": {
@@ -2428,6 +2441,8 @@
    },
    "ev_halloween": "Halloween di museum!",
    "evText_halloween": "Hingga 30 November, seluruh museum ikut merayakan: para penyihir meracik ramuan di kuali yang mendidih, kelelawar dan hantu terbang melewati bulan, dan daun musim gugur berguguran di setiap layar. Lantai Halloween menyimpan 8 gambar seram, dari kucing hitam dan topi penyihir hingga rumah berhantu dan kerangka raksasa karya Kuniyoshi. Lima piringan hitam Halloween berputar di rak musik, dan setelah lantai diselesaikan, Pix berdandan sebagai lentera labu.",
+   "ev_update": "Sepuluh kanvas raksasa",
+   "evText_update": "Lukisan terkenal yang tersusun dari ribuan kubus kini menghiasi setiap lantai museum: Irises karya Van Gogh, badai di bawah Gunung Fuji karya Hokusai, kelinci muda karya Dürer, dan masih banyak lagi, masing-masing sekitar 5.000 hingga 20.000 kubus. Warnai bagian demi bagian, dalam urutan apa pun, dan saksikan seluruh lukisan menyatu lagi dalam time-lapse.",
    "evDress_halloween": "Seluruh game berdandan untuk Halloween: setiap layar punya labu, kelelawar, dan sarang laba-labanya sendiri, para penyihir meramu ramuan di dekat menu lalu terbang melintasi bulan, dan dedaunan musim gugur berguguran perlahan."
   },
   "ms": {
@@ -2463,6 +2478,8 @@
    },
    "ev_halloween": "Halloween di muzium!",
    "evText_halloween": "Sehingga 30 November, seluruh muzium meraikannya: ahli sihir menyediakan ramuan dalam kuali yang menggelegak, kelawar dan hantu terbang melintasi bulan, dan daun musim luruh berguguran di setiap skrin. Tingkat Halloween menyimpan 8 gambar seram, daripada kucing hitam dan topi ahli sihir hingga rumah berhantu dan rangka gergasi Kuniyoshi. Lima rekod Halloween dimainkan di rak muzik, dan apabila tingkat itu siap, Pix berpakaian sebagai tanglung labu.",
+   "ev_update": "Sepuluh kanvas gergasi",
+   "evText_update": "Lukisan terkenal yang dibuat daripada ribuan kiub kini tergantung di setiap tingkat muzium: Irises Van Gogh, ribut di bawah Gunung Fuji karya Hokusai, arnab muda Dürer dan banyak lagi, setiap satu sekitar 5,000 hingga 20,000 kiub. Warnakan bahagian demi bahagian, dalam apa-apa susunan, dan tonton seluruh lukisan bercantum semula dalam time-lapse.",
    "evDress_halloween": "Seluruh permainan berhias untuk Halloween: setiap skrin ada labu, kelawar dan sarang labah-labahnya sendiri, ahli sihir mengacau ramuan di tepi menu dan terbang melintasi bulan, dan daun musim luruh gugur perlahan-lahan."
   },
   "bs": {
@@ -2506,6 +2523,8 @@
    },
    "ev_halloween": "Noć vještica u muzeju!",
    "evText_halloween": "Do 30. novembra otvoren je sprat Noć vještica: 8 jezivih slika, od crne mačke i vještičjeg šešira do uklete kuće i golemog kostura Kuniyoshija. Cijeli muzej se oblači za praznik, Valcer bundeva pridružuje se pločama, a kad dovršiš sprat, Pix se preodijeva u svjetiljku od bundeve.",
+   "ev_update": "Deset ogromnih platna",
+   "evText_update": "Poznate slike od hiljada kocki sada vise na svakom spratu muzeja: Van Goghovi Irisi, Hokusaijeva oluja ispod planine Fuji, Dürerov mladi zec i još mnogo toga, svaka od otprilike 5.000 do 20.000 kocki. Boji ih dio po dio, bilo kojim redom, i gledaj kako se cijela slika opet sastavlja u time-lapseu.",
    "evDress_halloween": "Cijela igra se oblači za Noć vještica: na svakom ekranu su vlastite bundeve, šišmiši i paučina, pored menija vještice kuhaju napitke i lete ispred mjeseca, a odozgo se spušta jesenje lišće."
   },
   "ca": {
@@ -2549,6 +2568,8 @@
    },
    "ev_halloween": "Halloween al museu!",
    "evText_halloween": "Fins al 30 de novembre tot el museu fa festa: les bruixes preparen pocions en calderes que bullen, els ratpenats i els fantasmes volen davant de la lluna i les fulles de tardor giravolten per cada pantalla. La planta d'Halloween guarda 8 quadres esfereïdors, del gat negre i el barret de bruixa a la casa encantada i l'esquelet gegant de Kuniyoshi. Cinc discos d'Halloween sonen al prestatge de música i, en acabar la planta, Pix es disfressa de carabassa d'Halloween.",
+   "ev_update": "Deu llenços gegants",
+   "evText_update": "Quadres famosos fets de milers de cubs pengen ara a cada planta del museu: els Lliris de Van Gogh, la tempesta sota el mont Fuji d'Hokusai, la llebre jove de Dürer i més, d'entre uns 5.000 i 20.000 cubs cadascun. Pinta'ls part per part, en l'ordre que vulguis, i mira com tot el quadre es torna a formar en un timelapse.",
    "evDress_halloween": "Tot el joc es vesteix per a Halloween: cada pantalla té les seves pròpies carabasses, ratpenats i teranyines, les bruixes preparen pocions al costat del menú i volen davant la lluna, i les fulles de tardor cauen suaument."
   },
   "cs": {
@@ -2596,6 +2617,8 @@
    },
    "ev_halloween": "Halloween v muzeu!",
    "evText_halloween": "Do 30. listopadu slaví celé muzeum: čarodějnice vaří lektvary v bublajících kotlících, netopýři a duchové přelétají kolem měsíce a podzimní listí poletuje po každé obrazovce. Halloweenské patro ukrývá 8 strašidelných obrázků, od černé kočky a čarodějnického klobouku po strašidelný dům a obří kostru od Kunijošiho. Na hudební poličce hraje pět halloweenských desek a po dokončení patra se Pix převlékne za dýňovou lucernu.",
+   "ev_update": "Deset obřích pláten",
+   "evText_update": "Slavné obrazy z tisíců kostek teď visí v každém patře muzea: Van Goghovy Kosatce, Hokusaiova bouře pod Fudži, Dürerův mladý zajíc a další, každý z asi 5 000 až 20 000 kostek. Vybarvuj je část po části, v libovolném pořadí, a sleduj, jak se celý obraz znovu skládá v časosběru.",
    "evDress_halloween": "Celá hra se převléká na Halloween: každá obrazovka má vlastní dýně, netopýry a pavučiny, u menu čarodějnice vaří lektvary a létají přes měsíc a shora poletuje podzimní listí."
   },
   "da": {
@@ -2635,6 +2658,8 @@
    },
    "ev_halloween": "Halloween på museet!",
    "evText_halloween": "Til og med den 30. november fejrer hele museet det: hekse brygger eliksirer i boblende kedler, flagermus og spøgelser flyver forbi månen, og efterårsblade hvirvler over alle skærme. Halloween-etagen rummer 8 uhyggelige billeder, fra en sort kat og en heksehat til et spøgelseshus og Kuniyoshis kæmpestore skelet. Fem Halloween-plader spilles på musikhylden, og når du fuldfører etagen, klæder Pix sig ud som en græskarlygte.",
+   "ev_update": "Ti kæmpelærreder",
+   "evText_update": "Kendte malerier af tusindvis af kuber hænger nu på alle museets etager: Van Goghs Iris, Hokusais storm under Fuji, Dürers unge hare og flere, hver på cirka 5.000 til 20.000 kuber. Mal dem del for del, i vilkårlig rækkefølge, og se hele maleriet samle sig igen i en timelapse.",
    "evDress_halloween": "Hele spillet klæder sig ud til Halloween: hver skærm får sine egne græskar, flagermus og spindelvæv, hekse brygger eliksirer ved menuen og flyver hen over månen, og efterårsblade daler ned."
   },
   "de": {
@@ -2674,6 +2699,8 @@
    },
    "ev_halloween": "Halloween im Museum!",
    "evText_halloween": "Bis zum 30. November feiert das ganze Museum: Hexen brauen Tränke in blubbernden Kesseln, Fledermäuse und Gespenster fliegen am Mond vorbei, und Herbstlaub weht über jeden Bildschirm. Die Halloween-Etage versammelt 8 schaurige Bilder, von der Schwarzen Katze und dem Hexenhut bis zum Spukhaus und Kuniyoshis riesigem Skelett. Fünf Halloween-Schallplatten spielen im Musikregal, und wer die Etage abschließt, verkleidet Pix als Kürbislaterne.",
+   "ev_update": "Zehn Riesenleinwände",
+   "evText_update": "Berühmte Gemälde aus Tausenden Würfeln hängen jetzt auf jeder Etage des Museums: Van Goghs Iris, Hokusais Gewitter unter dem Fuji, Dürers junger Feldhase und mehr, jeweils etwa 5.000 bis 20.000 Würfel. Male sie Teil für Teil, in beliebiger Reihenfolge, und sieh zu, wie sich das ganze Gemälde im Zeitraffer wieder zusammensetzt.",
    "evDress_halloween": "Das ganze Spiel verkleidet sich für Halloween: Auf jedem Bildschirm gibt es eigene Kürbisse, Fledermäuse und Spinnweben, Hexen brauen neben dem Menü Zaubertränke und fliegen über den Mond, und Herbstlaub rieselt herab."
   },
   "et": {
@@ -2713,6 +2740,8 @@
    },
    "ev_halloween": "Halloween muuseumis!",
    "evText_halloween": "Kuni 30. novembrini pidutseb kogu muuseum: nõiad keedavad jooke podisevais katlais, nahkhiired ja kummitused lendavad kuust mööda ning sügislehed keerlevad igal ekraanil. Halloweeni korrusel ootab 8 õudset pilti, mustast kassist ja nõiamütsist kummitusmajani ja Kuniyoshi hiigelsuure luukereni. Muusikariiulil mängib viis Halloweeni plaati ning korruse lõpetades riietub Pix kõrvitsalaternaks.",
+   "ev_update": "Kümme hiiglaslikku lõuendit",
+   "evText_update": "Tuhandetest kuubikutest tehtud kuulsad maalid ripuvad nüüd muuseumi igal korrusel: van Goghi Iirised, Hokusai torm Fuji all, Düreri noor jänes ja veel, igaüks umbes 5000–20 000 kuubikut. Värvi neid osade kaupa, mis tahes järjekorras, ja vaata, kuidas kogu maal taas ajalaotuses kokku saab.",
    "evDress_halloween": "Kogu mäng riietub Halloweeniks: igal ekraanil on omad kõrvitsad, nahkhiired ja ämblikuvõrgud, menüü juures keedavad nõiad jooke ja lendavad üle kuu ning ülalt sajab sügislehti."
   },
   "en": {
@@ -2752,6 +2781,8 @@
    },
    "ev_halloween": "Halloween at the museum!",
    "evText_halloween": "Until November 30, the whole museum celebrates: witches brew potions in bubbling cauldrons, bats and ghosts fly past the moon, and autumn leaves drift across every screen. The Halloween floor holds 8 spooky pictures, from a black cat and a witch’s hat to a haunted house and Kuniyoshi’s giant skeleton. Five Halloween records play on the music shelf, and finishing the floor dresses Pix as a jack-o’-lantern.",
+   "ev_update": "Ten giant canvases",
+   "evText_update": "Famous paintings made of thousands of cubes now hang on every floor of the museum: Van Gogh's Irises, Hokusai's storm under Mount Fuji, Dürer's young hare and more, from about 5,000 to 20,000 cubes each. Paint them part by part, in any order, and watch the whole painting come together again in a time-lapse.",
    "evDress_halloween": "The whole game dresses up for Halloween: every screen gets its own pumpkins, bats and cobwebs, witches brew potions by the menu and fly across the moon, and autumn leaves drift down."
   },
   "es": {
@@ -2792,6 +2823,8 @@
    },
    "ev_halloween": "Halloween en el museo!",
    "evText_halloween": "Hasta el 30 de noviembre, todo el museo está de fiesta: las brujas preparan pociones en calderos burbujeantes, murciélagos y fantasmas cruzan volando ante la luna y las hojas de otoño se arremolinan en cada pantalla. La planta de Halloween reúne 8 cuadros de miedo, desde un gato negro y un sombrero de bruja hasta una casa encantada y el esqueleto gigante de Kuniyoshi. Cinco discos de Halloween suenan en la estantería de música y, al terminar la planta, Pix se disfraza de calabaza de Halloween.",
+   "ev_update": "Diez lienzos gigantes",
+   "evText_update": "Famosos cuadros hechos de miles de cubos cuelgan ahora en cada planta del museo: los Lirios de Van Gogh, la tormenta bajo el monte Fuji de Hokusai, la liebre joven de Durero y más, de unos 5000 a 20 000 cubos cada uno. Píntalos parte por parte, en el orden que quieras, y mira cómo todo el cuadro se vuelve a formar en un timelapse.",
    "evDress_halloween": "Todo el juego se disfraza para Halloween: cada pantalla tiene sus propias calabazas, murciélagos y telarañas, las brujas preparan pociones junto al menú y vuelan frente a la luna, y las hojas de otoño caen flotando."
   },
   "eu": {
@@ -2831,6 +2864,8 @@
    },
    "ev_halloween": "Halloween museoan!",
    "evText_halloween": "Azaroaren 30era arte museo osoa jaian dago: sorginek edabeak prestatzen dituzte galdara irakiten, saguzarrek eta mamuek ilargitik hurbil hegan egiten dute, eta udazkeneko hostoak pantaila guztietan dantzan dabiltza. Halloween solairuak 8 irudi beldurgarri ditu, katu beltzetik eta sorgin-kapelatik etxe sorgindura eta Kuniyoshiren eskeleto erraldoira arte. Musika-apalean bost Halloween disko jotzen dute, eta solairua amaitzean Pix kalabaza-linterna bihurtzen da.",
+   "ev_update": "Hamar errretaula erraldoi",
+   "evText_update": "Mila kuboz osatutako margolan ospetsuak museoko solairu guztietan zintzilik daude orain: Van Gogh-en Iris-ak, Hokusairen ekaitza Fuji mendiaren azpian, Dürerren erbi gaztea eta gehiago, bakoitza 5.000-20.000 kuboren ingurukoa. Margotu zatiz zati, nahi duzun ordenan, eta ikusi nola osatzen den margolan osoa berriro denbora-saltoan.",
    "evDress_halloween": "Jolas osoa Halloweenerako janzten da: pantaila bakoitzak bere kalabazak, saguzarrak eta armiarma-sareak ditu, sorginek edabeak prestatzen dituzte menuaren ondoan eta ilargiaren aurretik hegan egiten dute, eta udazkeneko hostoak poliki erortzen dira."
   },
   "fil": {
@@ -2870,6 +2905,8 @@
    },
    "ev_halloween": "Halloween sa museo!",
    "evText_halloween": "Hanggang Nobyembre 30, nagdiriwang ang buong museo: nagtitimpla ng gayuma ang mga bruha sa bumubulang kaldero, lumilipad sa tabi ng buwan ang mga paniki at multo, at nagliliparan ang mga dahon ng taglagas sa bawat screen. May 8 nakakatakot na larawan ang palapag ng Halloween, mula sa itim na pusa at sumbrero ng bruha hanggang sa bahay na pinagmumultuhan at higanteng kalansay ni Kuniyoshi. Limang Halloween record ang tumutugtog sa music shelf, at kapag natapos ang palapag, magbibihis si Pix bilang jack-o’-lantern.",
+   "ev_update": "Sampung higanteng canvas",
+   "evText_update": "Ang mga sikat na painting na gawa sa libu-libong cube ay nakasabit na ngayon sa bawat palapag ng museo: ang Irises ni Van Gogh, ang bagyo sa ilalim ng Bundok Fuji ni Hokusai, ang batang liyebre ni Dürer at marami pa, mga 5,000 hanggang 20,000 cube bawat isa. Kulayan ang mga ito isa-isang bahagi, sa kahit anong pagkakasunod-sunod, at panoorin ang buong painting na muling mabuo sa time-lapse.",
    "evDress_halloween": "Ang buong laro ay nagbibihis para sa Halloween: bawat screen ay may sariling kalabasa, paniki at sapot ng gagamba; ang mga bruha ay nagluluto ng gayuma sa tabi ng menu at lumilipad sa harap ng buwan, at dahan-dahang nalalaglag ang mga dahon ng taglagas."
   },
   "fr": {
@@ -2910,6 +2947,8 @@
    },
    "ev_halloween": "Halloween au musée !",
    "evText_halloween": "Jusqu’au 30 novembre, tout le musée est en fête : des sorcières préparent des potions dans des chaudrons qui bouillonnent, chauves-souris et fantômes passent devant la lune, et des feuilles d’automne tourbillonnent sur chaque écran. L’étage Halloween réunit 8 tableaux à faire frissonner, du chat noir et du chapeau de sorcière à la maison hantée et au squelette géant de Kuniyoshi. Cinq disques d’Halloween tournent sur l’étagère musicale, et terminer l’étage déguise Pix en citrouille d’Halloween.",
+   "ev_update": "Dix toiles géantes",
+   "evText_update": "De célèbres tableaux faits de milliers de cubes sont désormais accrochés à chaque étage du musée : les Iris de Van Gogh, l'orage sous le mont Fuji d'Hokusai, le jeune lièvre de Dürer et bien d'autres, de 5 000 à 20 000 cubes environ chacun. Peins-les partie par partie, dans l'ordre que tu veux, et regarde le tableau entier se recomposer en accéléré.",
    "evDress_halloween": "Tout le jeu se déguise pour Halloween : chaque écran a ses propres citrouilles, chauves-souris et toiles d’araignée, des sorcières préparent des potions près du menu et traversent la lune en volant, et des feuilles d’automne tombent en tourbillonnant."
   },
   "gl": {
@@ -2949,6 +2988,8 @@
    },
    "ev_halloween": "Halloween no museo!",
    "evText_halloween": "Ata o 30 de novembro todo o museo está de festa: as bruxas preparan poucións en caldeiros que borbullan, os morcegos e os pantasmas voan diante da lúa e as follas de outono remuíñan en cada pantalla. A planta de Halloween garda 8 cadros arrepiantes, desde o gato negro e o chapeu de bruxa ata a casa encantada e o esqueleto xigante de Kuniyoshi. Cinco discos de Halloween soan no andel da música e, ao rematar a planta, Pix disfrázase de cabaza de Halloween.",
+   "ev_update": "Dez lenzos xigantes",
+   "evText_update": "Cadros famosos feitos de miles de cubos penduran agora en cada planta do museo: os Lirios de Van Gogh, a tormenta baixo o monte Fuji de Hokusai, a lebre nova de Dürer e máis, de entre uns 5.000 e 20.000 cubos cada un. Píntaos parte por parte, na orde que queiras, e mira como todo o cadro se volve formar nun timelapse.",
    "evDress_halloween": "Todo o xogo se viste para Halloween: cada pantalla ten as súas propias cabazas, morcegos e teas de araña, as meigas preparan pocións xunto ao menú e voan diante da lúa, e as follas de outono caen flotando."
   },
   "ha": {
@@ -2988,6 +3029,8 @@
    },
    "ev_halloween": "Halloween a gidan tarihi!",
    "evText_halloween": "Har zuwa 30 ga Nuwamba, benen Halloween a buɗe yake: hotuna 8 masu ban tsoro, daga baƙar kyanwa da hular mayya zuwa gida mai fatalwa da babban kwarangwal na Kuniyoshi. Gidan tarihi gaba ɗaya yana ado don bikin, Rawar Kabewa ta shiga cikin rikodin, kuma kammala benen yana sa Pix ya yi ado a matsayin fitilar kabewa.",
+   "ev_update": "Manyan zane-zane guda goma",
+   "evText_update": "Shahararrun zane-zane da aka yi da dubban kubi yanzu suna rataye a kowane bene na gidan tarihi: Irises na Van Gogh, guguwar Hokusai a ƙarƙashin Dutsen Fuji, ƙaramin zomon Dürer da ƙari, kowanne yana da kusan kubi 5,000 zuwa 20,000. Ka yi musu launi sashe-sashe, a kowane tsari, ka kuma kalli dukan zanen yana sake haɗuwa a bidiyon time-lapse.",
    "evDress_halloween": "Dukan wasan yana ado don Halloween: kowane allo yana da kabewa, jemagu da yanar gizo-gizo nasa, mayu suna dafa magani kusa da menu suna tashi a gaban wata, ganyen kaka kuma suna sauka a hankali."
   },
   "hr": {
@@ -3031,6 +3074,8 @@
    },
    "ev_halloween": "Noć vještica u muzeju!",
    "evText_halloween": "Do 30. studenoga slavi cijeli muzej: vještice kuhaju napitke u kotlovima koji vrcaju mjehurićima, šišmiši i duhovi lete pokraj mjeseca, a jesenje lišće vijori se na svakom zaslonu. Kat Noć vještica krije 8 jezivih slika, od crne mačke i vještičjeg šešira do uklete kuće i golemog kostura Kuniyoshija. Na glazbenoj polici svira pet ploča za Noć vještica, a kad dovršiš kat, Pix se preodijeva u svjetiljku od bundeve.",
+   "ev_update": "Deset golemih platna",
+   "evText_update": "Poznate slike od tisuća kocki sada vise na svakom katu muzeja: Van Goghovi Irisi, Hokusaijeva oluja ispod Fujija, Dürerov mladi zec i još mnogo toga, svaka od otprilike 5.000 do 20.000 kocki. Oboji ih dio po dio, kojim god redom, i gledaj kako se cijela slika ponovno slaže u time-lapseu.",
    "evDress_halloween": "Cijela se igra odijeva za Noć vještica: na svakom zaslonu su vlastite bundeve, šišmiši i paučina, uz izbornik vještice kuhaju napitke i lete preko mjeseca, a odozgo se spušta jesensko lišće."
   },
   "ig": {
@@ -3066,6 +3111,8 @@
    },
    "ev_halloween": "Halloween n'ụlọ ngosi!",
    "evText_halloween": "Ruo Nọvemba 30, okpukpu Halloween meghere: ihe osise 8 na-atụ egwu, site na nwamba ojii na okpu amoosu ruo n'ụlọ mmụọ na ọkpụkpụ ukwu Kuniyoshi. Ụlọ ngosi dum na-eyi uwe maka ememe, Waltz Ugu na-abanye n'ime ndekọ, imecha okpukpu na-eme ka Pix yie dị ka Jack-o'-Lantern.",
+   "ev_update": "Nnukwu canvas iri",
+   "evText_update": "Foto ndị a ma ama e ji ọtụtụ puku cube mee na-ekiri ugbu a n'ogo ọ bụla nke ụlọ ngosi nka: Irises Van Gogh, oké ifufe Hokusai n'okpuru Ugwu Fuji, obere ewi Dürer na ndị ọzọ, nke ọ bụla nwere ihe dị ka cube 5,000 ruo 20,000. Were agba ha akụkụ n'akụkụ, n'usoro ọ bụla, ma lee ka foto niile na-ejikọta ọzọ na time-lapse.",
    "evDress_halloween": "Egwuregwu a niile na-eyi ihe maka Halloween: ihuenyo ọ bụla nwere ugu, ụsụ na ntanetị ududo nke ya; ndị amoosu na-esi ọgwụ n'akụkụ menu ma na-efe n'ihu ọnwa; akwụkwọ osisi nke mgbụsị akwụkwọ na-ada nwayọọ nwayọọ."
   },
   "zu": {
@@ -3105,6 +3152,8 @@
    },
    "ev_halloween": "I-Halloween emnyuziyamu!",
    "evText_halloween": "Kuze kube yizi-30 kuNovemba yonke imnyuziyamu iyabungaza: abathakathi bapheka imithi emabhodweni abilayo, amalulwane nezipoki ziphapha eduze nenyanga, namaqabunga ekwindla ayahlakazeka kuyo yonke isikrini. Isitezi se-Halloween sinemidwebo eyisi-8 esabekayo, kusukela ekatini elimnyama nasesigqokweni somthakathi kuya endlini enezipoki nasethanjeni elikhulu likaKuniyoshi. Amarekhodi amahlanu e-Halloween adlala eshalofini lomculo, futhi uma uqeda isitezi, uPix uguquka abe yisibani sethanga.",
+   "ev_update": "Amakhanvasi amakhulu ayishumi",
+   "evText_update": "Imidwebo edumile eyenziwe ngamakhyubhu ayizinkulungwane manje ilengiswe esitezi ngasinye somnyuziyamu: Ama-Irises kaVan Gogh, isiphepho sikaHokusai ngaphansi kweNtaba iFuji, unogwaja osemncane kaDürer nokunye, ngayinye inamakhyubhu angaba ngu-5,000 kuya ku-20,000. Yidwebe ingxenye ngengxenye, nganoma yiluphi uhlelo, ubuke umdwebo wonke uphinde uhlangane ku-time-lapse.",
    "evDress_halloween": "Umdlalo wonke uyagqoka i-Halloween: isikrini ngasinye sinamathanga aso, amalulwane nezintambo zesicabucabu, abathakathi bapheka iziphuzo eduze kwemenyu bese bendiza phambi kwenyanga, namaqabunga okwindla awa kancane."
   },
   "is": {
@@ -3144,6 +3193,8 @@
    },
    "ev_halloween": "Hrekkjavaka í safninu!",
    "evText_halloween": "Til 30. nóvember fagnar allt safnið: nornir brugga seyði í bullandi pottum, leðurblökur og draugar fljúga framhjá tunglinu og haustlauf svífa yfir hvern skjá. Hrekkjavökuhæðin geymir 8 hryllilegar myndir, frá svörtum ketti og nornahatti að draugahúsi og risavaxinni beinagrind Kuniyoshis. Fimm hrekkjavökuplötur hljóma á tónlistarhillunni og þegar þú klárar hæðina klæðist Pix graskerslukt.",
+   "ev_update": "Tíu risastórir strigar",
+   "evText_update": "Fræg málverk úr þúsundum kubba hanga nú á hverri hæð safnsins: Íris Van Goghs, stormur Hokusais undir Fuji, ungi héri Dürers og fleira, hvert úr um það bil 5.000 til 20.000 kubbum. Litaðu þau hluta fyrir hluta, í hvaða röð sem er, og sjáðu allt málverkið raðast aftur saman í hraðmynd.",
    "evDress_halloween": "Allur leikurinn klæðir sig upp fyrir Hrekkjavöku: hver skjár fær sín eigin grasker, leðurblökur og köngulóarvefi, nornir brugga seiði við valmyndina og fljúga yfir tunglið, og haustlauf svífa niður."
   },
   "it": {
@@ -3184,6 +3235,8 @@
    },
    "ev_halloween": "Halloween al museo!",
    "evText_halloween": "Fino al 30 novembre tutto il museo è in festa: le streghe preparano pozioni in calderoni che gorgogliano, pipistrelli e fantasmi volano davanti alla luna e le foglie d’autunno danzano su ogni schermata. Il piano di Halloween raccoglie 8 dipinti da brivido, dal gatto nero e dal cappello da strega alla casa stregata e al gigantesco scheletro di Kuniyoshi. Cinque dischi di Halloween suonano sullo scaffale della musica e, completando il piano, Pix si trasforma in una zucca di Halloween.",
+   "ev_update": "Dieci tele giganti",
+   "evText_update": "Celebri dipinti fatti di migliaia di cubi ora sono appesi a ogni piano del museo: gli Iris di Van Gogh, la tempesta sotto il monte Fuji di Hokusai, la giovane lepre di Dürer e altri, da circa 5.000 a 20.000 cubi ciascuno. Dipingili parte dopo parte, in qualsiasi ordine, e guarda l'intero dipinto ricomporsi in un time-lapse.",
    "evDress_halloween": "L’intero gioco si veste a festa per Halloween: ogni schermata ha le sue zucche, i suoi pipistrelli e le sue ragnatele, le streghe preparano pozioni accanto al menu e volano davanti alla luna, e le foglie d’autunno cadono leggere."
   },
   "sw": {
@@ -3223,6 +3276,8 @@
    },
    "ev_halloween": "Halloween kwenye makumbusho!",
    "evText_halloween": "Hadi Novemba 30, makumbusho yote yanasherehekea: wachawi huchemsha dawa kwenye vyungu vinavyobubujika, popo na mizimu huruka karibu na mwezi, na majani ya vuli huzunguka kwenye kila skrini. Ghorofa ya Halloween ina picha 8 za kutisha, kuanzia paka mweusi na kofia ya mchawi hadi nyumba ya mizimu na kiunzi kikubwa cha Kuniyoshi. Rekodi tano za Halloween zinapigwa kwenye rafu ya muziki, na ukikamilisha ghorofa, Pix anavaa kama taa ya boga.",
+   "ev_update": "Turubai kubwa kumi",
+   "evText_update": "Michoro maarufu iliyotengenezwa kwa maelfu ya mchemraba sasa inaning'inia kwenye kila ghorofa ya jumba la makumbusho: Irises za Van Gogh, dhoruba ya Hokusai chini ya Mlima Fuji, sungura mchanga wa Dürer na zaidi, kila moja ikiwa na takriban mchemraba 5,000 hadi 20,000. Zipake sehemu kwa sehemu, kwa mpangilio wowote, na uone mchoro mzima ukijiunganisha tena kwa time-lapse.",
    "evDress_halloween": "Mchezo mzima unavaa mavazi ya Halloween: kila skrini ina maboga, popo na utando wa buibui wake, wachawi hutengeneza dawa karibu na menyu na kuruka mbele ya mwezi, na majani ya vuli hudondoka taratibu."
   },
   "lv": {
@@ -3266,6 +3321,8 @@
    },
    "ev_halloween": "Helovīns muzejā!",
    "evText_halloween": "Līdz 30. novembrim svin viss muzejs: raganas vāra dziru burbuļojošos katlos, sikspārņi un spoki lido garām mēnesim, bet rudens lapas virpuļo katrā ekrānā. Helovīna stāvā mājo 8 baisi attēli – no melnā kaķa un raganas cepures līdz spoku mājai un Kunijoši milzu skeletam. Mūzikas plauktā skan pieci Helovīna ieraksti, bet, pabeidzot stāvu, Pix pārģērbjas par ķirbja laternu.",
+   "ev_update": "Desmit milzu audekli",
+   "evText_update": "Slavenas gleznas no tūkstošiem kubiņu tagad karājas katrā muzeja stāvā: van Goga Īrisi, Hokusai vētra zem Fudzi, Dīrera jaunais zaķis un citas, katra no apmēram 5000 līdz 20 000 kubiņiem. Krāso tās pa daļām, jebkurā secībā, un skaties, kā visa glezna atkal saliekas paātrinātā video.",
    "evDress_halloween": "Visa spēle tērpjas Helovīnam: katrā ekrānā ir savi ķirbji, sikspārņi un zirnekļtīkli, pie izvēlnes raganas vāra dzērienus un lido gar mēnesi, un no augšas virpuļo rudens lapas."
   },
   "lt": {
@@ -3313,6 +3370,8 @@
    },
    "ev_halloween": "Helovinas muziejuje!",
    "evText_halloween": "Iki lapkričio 30 d. švenčia visas muziejus: raganos verda gėrimus burbuliuojančiuose katiluose, šikšnosparniai ir vaiduokliai skraido pro mėnulį, o rudens lapai sukasi kiekviename ekrane. Helovino aukšte laukia 8 baisingi paveikslai – nuo juodojo katino ir raganos skrybėlės iki namo su vaiduokliais ir milžiniško Kunijoši skeleto. Muzikos lentynoje groja penkios Helovino plokštelės, o užbaigus aukštą Pix persirengia moliūgo žibintu.",
+   "ev_update": "Dešimt milžiniškų paveikslų",
+   "evText_update": "Garsūs paveikslai iš tūkstančių kubelių dabar kabo kiekviename muziejaus aukšte: van Gogo „Vilkdalgiai“, Hokusai audra po Fudži kalnu, Diurerio jaunas kiškis ir kiti, kiekvienas iš maždaug 5 000–20 000 kubelių. Spalvink juos dalis po dalies, bet kokia tvarka, ir žiūrėk, kaip visas paveikslas vėl susideda greitintame vaizdo įraše.",
    "evDress_halloween": "Visas žaidimas pasipuošia Helovinui: kiekviename ekrane – savi moliūgai, šikšnosparniai ir voratinkliai, prie meniu raganos verda nuovirus ir skraido pro mėnulį, o iš viršaus sklando rudens lapai."
   },
   "hu": {
@@ -3352,6 +3411,8 @@
    },
    "ev_halloween": "Halloween a múzeumban!",
    "evText_halloween": "November 30-ig az egész múzeum ünnepel: boszorkányok főzik bájitalaikat bugyborékoló üstökben, denevérek és szellemek repülnek el a hold előtt, az őszi falevelek pedig minden képernyőn kavarognak. A Halloween-emeleten 8 hátborzongató kép vár, a fekete macskától és a boszorkánykalaptól a kísértetházig és Kunijosi hatalmas csontvázáig. A zenepolcon öt halloweeni lemez szól, az emelet befejezésével pedig Pix töklámpásnak öltözik.",
+   "ev_update": "Tíz óriásvászon",
+   "evText_update": "Több ezer kockából álló híres festmények lógnak mostantól a múzeum minden emeletén: Van Gogh Íriszei, Hokuszai vihara a Fuji alatt, Dürer fiatal nyula és még sok más, egyenként nagyjából 5000–20 000 kockából. Színezd ki őket részenként, tetszőleges sorrendben, és nézd, ahogy az egész festmény gyorsított felvételen újra összeáll.",
    "evDress_halloween": "A teljes játék Halloweenre öltözik: minden képernyőn saját tökök, denevérek és pókhálók vannak, a boszorkányok a menü mellett főzik a bájitalaikat, és átrepülnek a holdon, az őszi levelek pedig lassan hullanak."
   },
   "nl": {
@@ -3391,6 +3452,8 @@
    },
    "ev_halloween": "Halloween in het museum!",
    "evText_halloween": "Tot 30 november viert het hele museum feest: heksen brouwen toverdrankjes in borrelende ketels, vleermuizen en spoken vliegen langs de maan en herfstbladeren dwarrelen over elk scherm. De Halloween-verdieping telt 8 griezelige plaatjes, van een zwarte kat en een heksenhoed tot een spookhuis en het gigantische skelet van Kuniyoshi. Vijf Halloween-platen draaien op de muziekplank, en als je de verdieping afrondt, verkleedt Pix zich als pompoenlantaarn.",
+   "ev_update": "Tien reuzendoeken",
+   "evText_update": "Beroemde schilderijen van duizenden kubussen hangen nu op elke verdieping van het museum: de Irissen van Van Gogh, Hokusai's storm onder de Fuji, Dürers jonge haas en meer, elk van ongeveer 5.000 tot 20.000 kubussen. Schilder ze deel voor deel, in elke volgorde, en zie het hele schilderij weer samenkomen in een time-lapse.",
    "evDress_halloween": "Het hele spel verkleedt zich voor Halloween: elk scherm krijgt zijn eigen pompoenen, vleermuizen en spinnenwebben, heksen brouwen drankjes naast het menu en vliegen langs de maan, en herfstbladeren dwarrelen naar beneden."
   },
   "nb": {
@@ -3430,6 +3493,8 @@
    },
    "ev_halloween": "Halloween på museet!",
    "evText_halloween": "Til og med 30. november feirer hele museet: hekser brygger eliksirer i boblende kjeler, flaggermus og spøkelser flyr forbi månen, og høstblader virvler over alle skjermer. Halloween-etasjen rommer 8 uhyggelige bilder, fra en svart katt og en heksehatt til et hjemsøkt hus og Kuniyoshis kjempestore skjelett. Fem Halloween-plater spilles på musikkhyllen, og når du fullfører etasjen, kler Pix seg ut som en gresskarlykt.",
+   "ev_update": "Ti kjempelerreter",
+   "evText_update": "Kjente malerier av tusenvis av kuber henger nå i hver etasje i museet: Van Goghs Iris, Hokusais storm under Fuji, Dürers unge hare og flere, hver på omtrent 5 000 til 20 000 kuber. Mal dem del for del, i hvilken som helst rekkefølge, og se hele maleriet settes sammen igjen i en timelapse.",
    "evDress_halloween": "Hele spillet kler seg ut til Halloween: hver skjerm får sine egne gresskar, flaggermus og spindelvev, hekser brygger trylledrikker ved menyen og flyr over månen, og høstløv svever ned."
   },
   "uz": {
@@ -3469,6 +3534,8 @@
    },
    "ev_halloween": "Muzeyda Xellouin!",
    "evText_halloween": "30-noyabrgacha Xellouin qavati ochiq: qora mushuk va jodugar shlyapasidan tortib arvohlar uyi va Kuniyosining ulkan skeletigacha 8 ta qoʻrqinchli rasm. Butun muzey bayramga bezanadi, Xellouin valsi yozuvlarga qoʻshiladi, qavatni tugatish esa Pixni qovoq-chiroqqa aylantiradi.",
+   "ev_update": "Oʻnta ulkan kanvas",
+   "evText_update": "Minglab kubdan yasalgan mashhur rasmlar endi muzeyning har bir qavatida osilib turibdi: Van Gogning «Irislar»i, Xokusayning Fudzi togʻi ostidagi boʻroni, Dyurerning yosh quyoni va boshqalar, har biri taxminan 5 000–20 000 kubdan iborat. Ularni istalgan tartibda qism-qism boʻya va butun rasm taymlapsda qayta qanday yigʻilishini tomosha qil.",
    "evDress_halloween": "Butun oʻyin Xellouinga bezanadi: har bir ekranda oʻz qovoqlari, koʻrshapalaklari va oʻrgimchak toʻrlari bor, jodugarlar menyu yonida iksir qaynatib, oy oldidan uchib oʻtadi, kuz barglari esa sekin toʻkiladi."
   },
   "pl": {
@@ -3516,6 +3583,8 @@
    },
    "ev_halloween": "Halloween w muzeum!",
    "evText_halloween": "Do 30 listopada całe muzeum świętuje: czarownice warzą eliksiry w bulgoczących kotłach, nietoperze i duchy przelatują obok księżyca, a jesienne liście wirują na każdym ekranie. Na piętrze Halloween czeka 8 upiornych obrazów, od czarnego kota i kapelusza czarownicy po nawiedzony dom i ogromny szkielet Kuniyoshiego. Pięć halloweenowych płyt gra na muzycznej półce, a po ukończeniu piętra Pix przebiera się za dyniową latarnię.",
+   "ev_update": "Dziesięć wielkich płócien",
+   "evText_update": "Słynne obrazy z tysięcy kostek wiszą teraz na każdym piętrze muzeum: Irysy van Gogha, burza pod górą Fuji Hokusaia, młody zając Dürera i inne, po około 5000–20 000 kostek każdy. Maluj je część po części, w dowolnej kolejności, i patrz, jak cały obraz składa się na nowo w przyspieszonym filmie.",
    "evDress_halloween": "Cała gra przebiera się na Halloween: na każdym ekranie są własne dynie, nietoperze i pajęczyny, czarownice warzą eliksiry przy menu i latają na tle księżyca, a jesienne liście wirują w powietrzu."
   },
   "pt": {
@@ -3556,6 +3625,8 @@
    },
    "ev_halloween": "Halloween no museu!",
    "evText_halloween": "Até 30 de novembro, o museu inteiro está em festa: bruxas preparam poções em caldeirões borbulhantes, morcegos e fantasmas voam diante da lua e folhas de outono rodopiam em todas as telas. O andar de Halloween reúne 8 quadros assustadores, do gato preto e do chapéu de bruxa à casa assombrada e ao esqueleto gigante de Kuniyoshi. Cinco discos de Halloween tocam na estante de música e, ao terminar o andar, Pix vira uma abóbora de Halloween.",
+   "ev_update": "Dez telas gigantes",
+   "evText_update": "Quadros famosos feitos de milhares de cubos agora ficam em cada andar do museu: os Lírios de Van Gogh, a tempestade sob o monte Fuji de Hokusai, a lebre jovem de Dürer e mais, com cerca de 5.000 a 20.000 cubos cada. Pinte-os parte por parte, em qualquer ordem, e veja o quadro inteiro se formar de novo em um time-lapse.",
    "evDress_halloween": "O jogo inteiro se veste para o Halloween: cada tela ganha suas próprias abóboras, morcegos e teias de aranha, as bruxas preparam poções ao lado do menu e voam diante da lua, e folhas de outono caem flutuando."
   },
   "ro": {
@@ -3599,6 +3670,8 @@
    },
    "ev_halloween": "Halloween la muzeu!",
    "evText_halloween": "Până pe 30 noiembrie, tot muzeul sărbătorește: vrăjitoarele pregătesc poțiuni în căldări clocotite, liliecii și fantomele zboară pe lângă lună, iar frunzele de toamnă se rotesc pe fiecare ecran. Etajul Halloween adună 8 imagini înfricoșătoare, de la pisica neagră și pălăria de vrăjitoare până la casa bântuită și scheletul uriaș al lui Kuniyoshi. Cinci discuri de Halloween cântă pe raftul de muzică, iar când termini etajul, Pix se costumează în felinar de dovleac.",
+   "ev_update": "Zece pânze uriașe",
+   "evText_update": "Tablouri celebre făcute din mii de cuburi atârnă acum la fiecare etaj al muzeului: Irișii lui Van Gogh, furtuna de sub Fuji a lui Hokusai, iepurele tânăr al lui Dürer și altele, fiecare din aproximativ 5.000–20.000 de cuburi. Colorează-le parte cu parte, în orice ordine, și privește cum întregul tablou se reface într-un time-lapse.",
    "evDress_halloween": "Tot jocul se îmbracă de Halloween: fiecare ecran are dovlecii, liliecii și pânzele de păianjen ale lui, vrăjitoarele fierb poțiuni lângă meniu și zboară peste lună, iar frunzele de toamnă cad în vârtejuri."
   },
   "sq": {
@@ -3638,6 +3711,8 @@
    },
    "ev_halloween": "Halloween në muze!",
    "evText_halloween": "Deri më 30 nëntor feston i gjithë muzeu: shtrigat përgatisin pijet magjike në kazanë që valojnë, lakuriqët e natës dhe fantazmat fluturojnë pranë hënës, ndërsa gjethet e vjeshtës vallëzojnë në çdo ekran. Kati i Halloween-it ruan 8 piktura të frikshme, nga macja e zezë dhe kapela e shtrigës te shtëpia me fantazma dhe skeleti gjigant i Kuniyoshit. Në raftin e muzikës luajnë pesë pllaka Halloween dhe kur e përfundon katin, Pix vishet si kungull fenerik.",
+   "ev_update": "Dhjetë telajo gjigante",
+   "evText_update": "Pikturat e famshme të bëra nga mijëra kube tani varen në çdo kat të muzeut: Irizet e Van Gogh-ut, stuhia e Hokusait nën malin Fuji, lepuri i ri i Dürerit dhe të tjera, secila me rreth 5.000 deri në 20.000 kube. Ngjyrosi pjesë-pjesë, sipas çdo radhe, dhe shiko si e gjithë piktura ribashkohet në një time-lapse.",
    "evDress_halloween": "I gjithë loja vishet për Halloween-in: çdo ekran ka kungujt, lakuriqët e natës dhe rrjetat e merimangës të veta, shtrigat gatuajnë pije magjike pranë menysë dhe fluturojnë para hënës, ndërsa gjethet e vjeshtës bien pa zhurmë."
   },
   "sk": {
@@ -3685,6 +3760,8 @@
    },
    "ev_halloween": "Halloween v múzeu!",
    "evText_halloween": "Do 30. novembra oslavuje celé múzeum: čarodejnice varia elixíry v bublajúcich kotlíkoch, netopiere a duchovia preletujú okolo mesiaca a jesenné lístie poletuje po každej obrazovke. Halloweensko poschodie ukrýva 8 strašidelných obrazov, od čiernej mačky a klobúka čarodejnice po strašidelný dom a obrovskú kostru od Kunijošiho. Na hudobnej poličke hrá päť halloweenskych platní a po dokončení poschodia sa Pix prezlečie za tekvicový lampión.",
+   "ev_update": "Desať obrích plátien",
+   "evText_update": "Slávne obrazy z tisícov kociek teraz visia na každom poschodí múzea: Van Goghove Kosatce, Hokusaiova búrka pod Fudži, Dürerov mladý zajac a ďalšie, každý z približne 5 000 až 20 000 kociek. Vyfarbuj ich časť po časti, v ľubovoľnom poradí, a sleduj, ako sa celý obraz znova skladá v časozbere.",
    "evDress_halloween": "Celá hra sa preoblieka na Halloween: každá obrazovka má vlastné tekvice, netopiere a pavučiny, pri menu čarodejnice varia elixíry a lietajú popred mesiac a zhora padá jesenné lístie."
   },
   "sl": {
@@ -3732,6 +3809,8 @@
    },
    "ev_halloween": "Noč čarovnic v muzeju!",
    "evText_halloween": "Do 30. novembra praznuje ves muzej: čarovnice kuhajo napoje v brbotajočih kotlih, netopirji in duhovi letijo mimo lune, jesensko listje pa se vrtinči čez vsak zaslon. Nadstropje noči čarovnic skriva 8 srhljivih slik, od črne mačke in čarovniškega klobuka do hiše strahov in orjaškega okostnjaka izpod Kuniyoshijeve roke. Na glasbeni polici igra pet plošč za noč čarovnic, ko dokončaš nadstropje, pa se Pix našemi v bučno svetilko.",
+   "ev_update": "Deset velikanskih platen",
+   "evText_update": "Slavne slike iz tisočih kock zdaj visijo v vsakem nadstropju muzeja: Van Goghove Irisi, Hokusaijeva nevihta pod Fudžijem, Dürerjev mladi zajec in več, vsaka iz približno 5.000 do 20.000 kock. Pobarvaj jih del za delom, v poljubnem vrstnem redu, in glej, kako se vsa slika znova sestavi v časovnem zamiku.",
    "evDress_halloween": "Cela igra se našemi za noč čarovnic: na vsakem zaslonu so lastne buče, netopirji in pajčevina, ob meniju čarovnice kuhajo napoje in letijo čez luno, od zgoraj pa se spuščajo jesenski listi."
   },
   "so": {
@@ -3771,6 +3850,8 @@
    },
    "ev_halloween": "Halloween wuxuu yimid matxafka!",
    "evText_halloween": "Ilaa 30-ka Noofambar, dabaqa Halloween waa furan yahay: 8 sawir oo cabsi leh, laga bilaabo bisad madow iyo koofiyadda saaxiradda ilaa guri jinni lagu sheego iyo lafagurka weyn ee Kuniyoshi. Matxafka oo dhan wuu is-qurxiyaa dabaaldegga, Walsiga bocorka ayaa lagu darayaa rekodhada, dhammaystirka dabaqaana wuxuu Pix ka dhigaa bocor-nal.",
+   "ev_update": "Toban cambaas oo waaweyn",
+   "evText_update": "Sawirro caan ah oo laga sameeyay kumanaan kuub ayaa hadda ka laadlaadsan dabaq kasta oo madxafka ah: Irises ee Van Gogh, duufaantii Hokusai ee hoosta buuraha Fuji, bakaylihii yaraa ee Dürer iyo kuwo kale, mid kastaana wuxuu leeyahay ilaa 5,000 ilaa 20,000 kuub. U midabee qayb-qayb, hab kasta, kuna daawo sawirka oo dhan oo mar kale isku imanaya muuqaal time-lapse ah.",
    "evDress_halloween": "Ciyaarta oo dhan waxay u labbistaa Halloween: shaashad kastaa waxay leedahay bocorradeeda, fiidmeerradeeda iyo shabagga caarada, saaxiraduna waxay cabitaan ku kariyaan agagaarka menu-ga oo ay hortiisa dayaxa ka duulaan, caleemaha dayrtuna si tartiib ah ayay u dhacaan."
   },
   "fi": {
@@ -3810,6 +3891,8 @@
    },
    "ev_halloween": "Halloween museossa!",
    "evText_halloween": "Marraskuun 30. päivään asti koko museo juhlii: noidat keittävät juomia kuplivissa padoissa, lepakot ja aaveet lentävät kuun ohi, ja syksyn lehdet leijailevat jokaisella näytöllä. Halloween-kerroksessa on 8 karmivaa kuvaa mustasta kissasta ja noidan hatusta kummitustaloon ja Kuniyoshin jättimäiseen luurankoon. Musiikkihyllyllä soi viisi Halloween-levyä, ja kun saat kerroksen valmiiksi, Pix pukeutuu kurpitsalyhdyksi.",
+   "ev_update": "Kymmenen jättikangasta",
+   "evText_update": "Tuhansista kuutioista tehdyt kuuluisat maalaukset roikkuvat nyt museon jokaisessa kerroksessa: van Goghin Iirikset, Hokusain myrsky Fuji-vuoren alla, Dürerin nuori jänis ja muita, kukin noin 5 000–20 000 kuutiota. Maalaa ne osa kerrallaan, missä järjestyksessä haluat, ja katso, kuinka koko maalaus kootaan uudelleen aikaviiveenä.",
    "evDress_halloween": "Koko peli pukeutuu halloweeniksi: jokaisella ruudulla on omat kurpitsansa, lepakkonsa ja hämähäkinverkkonsa, noidat keittävät taikajuomia valikon vieressä ja lentävät kuun poikki, ja syksyn lehdet leijailevat alas."
   },
   "sv": {
@@ -3849,6 +3932,8 @@
    },
    "ev_halloween": "Halloween på museet!",
    "evText_halloween": "Till och med den 30 november firar hela museet: häxor brygger trolldrycker i sjudande kittlar, fladdermöss och spöken flyger förbi månen, och höstlöv virvlar över varje skärm. Halloween-våningen rymmer 8 kusliga bilder, från en svart katt och en häxhatt till ett spökhus och Kuniyoshis jättelika skelett. Fem Halloween-skivor spelas på musikhyllan, och när du klarar våningen klär sig Pix som en pumpalykta.",
+   "ev_update": "Tio jättedukar",
+   "evText_update": "Berömda målningar av tusentals kuber hänger nu på varje våning i museet: Van Goghs Irisar, Hokusais storm under Fuji, Dürers unga hare och fler, var och en på ungefär 5 000 till 20 000 kuber. Måla dem del för del, i valfri ordning, och se hela målningen sättas ihop igen i en timelapse.",
    "evDress_halloween": "Hela spelet klär ut sig till Halloween: varje skärm får sina egna pumpor, fladdermöss och spindelväv, häxor brygger trolldrycker vid menyn och flyger över månen, och höstlöv singlar ner."
   },
   "vi": {
@@ -3884,6 +3969,8 @@
    },
    "ev_halloween": "Halloween ở bảo tàng!",
    "evText_halloween": "Đến hết ngày 30 tháng 11, cả bảo tàng cùng đón lễ: phù thủy nấu thuốc trong những chiếc vạc sôi sùng sục, dơi và bóng ma bay ngang qua mặt trăng, lá thu rơi khắp mọi màn hình. Tầng Halloween có 8 bức tranh rùng rợn, từ chú mèo đen và chiếc mũ phù thủy đến ngôi nhà ma ám và bộ xương khổng lồ của Kuniyoshi. Năm đĩa nhạc Halloween vang lên trên kệ nhạc, và khi hoàn thành tầng này, Pix sẽ hóa trang thành đèn lồng bí ngô.",
+   "ev_update": "Mười tấm tranh khổng lồ",
+   "evText_update": "Những bức tranh nổi tiếng ghép từ hàng nghìn khối lập phương nay treo ở mọi tầng của bảo tàng: Hoa diên vĩ của Van Gogh, cơn bão dưới núi Phú Sĩ của Hokusai, chú thỏ non của Dürer và nhiều hơn nữa, mỗi tranh khoảng 5.000 đến 20.000 khối. Tô từng phần, theo thứ tự bất kỳ, rồi xem cả bức tranh ghép lại trong video tua nhanh.",
    "evDress_halloween": "Cả trò chơi hóa trang đón Halloween: mỗi màn hình có bí ngô, dơi và mạng nhện riêng, các phù thủy nấu thuốc bên cạnh menu rồi bay ngang vầng trăng, còn lá thu thì nhẹ nhàng rơi xuống."
   },
   "tr": {
@@ -3923,6 +4010,8 @@
    },
    "ev_halloween": "Müzede Cadılar Bayramı!",
    "evText_halloween": "30 Kasım’a kadar bütün müze kutlama yapıyor: cadılar kaynayan kazanlarda iksir karıştırıyor, yarasalar ve hayaletler ayın önünden uçuyor, sonbahar yaprakları her ekranda savruluyor. Cadılar Bayramı katında 8 ürkütücü resim var: kara kediden ve cadı şapkasından perili eve ve Kuniyoshi’nin dev iskeletine kadar. Müzik rafında beş Cadılar Bayramı plağı çalıyor ve katı bitirince Pix balkabağı fenerine dönüşüyor.",
+   "ev_update": "On dev tuval",
+   "evText_update": "Binlerce küpten oluşan ünlü tablolar artık müzenin her katında asılı: Van Gogh'un Süsenleri, Hokusai'nin Fuji Dağı altındaki fırtınası, Dürer'in genç tavşanı ve daha fazlası; her biri yaklaşık 5.000 ile 20.000 küp arasında. Onları parça parça, istediğin sırayla boya ve bütün tablonun hızlandırılmış videoda yeniden bir araya geldiğini izle.",
    "evDress_halloween": "Oyunun tamamı Cadılar Bayramı için süsleniyor: her ekranın kendi balkabakları, yarasaları ve örümcek ağları var, cadılar menünün yanında iksir kaynatıp ayın önünden uçuyor, sonbahar yaprakları da usulca dökülüyor."
   },
   "tk": {
@@ -3962,6 +4051,8 @@
    },
    "ev_halloween": "Muzeýde Hellowin!",
    "evText_halloween": "30-njy noýabra çenli Hellowin gaty açyk: gara pişikden we jadygöý şlýapasyndan arwahly öýe we Kuniýoşiniň ägirt uly skeletine çenli 8 gorkunç surat. Muzeýiň hemmesi baýram üçin bezelýär, Hellowin walsy ýazgylara goşulýar, gaty tamamlamak bolsa Pix-i kädi çyrasyna öwürýär.",
+   "ev_update": "On ägirt uly kanwa",
+   "evText_update": "Müňlerçe kubdan ýasalan meşhur suratlar indi muzeýiň her gatynda asylgy dur: Wan Gogyň «Irisleri», Hokusaýyň Fuji dagynyň aşagyndaky tupany, Dýureriň ýaş towşany we başgalar, hersi takmynan 5 000–20 000 kub. Olary islendik tertipde bölek-bölek reňklediň we tutuş suratyň täzeden time-lapse görnüşinde ýygnanyşyny synlaň.",
    "evDress_halloween": "Bütin oýun Hellowin üçin bezelýär: her ekranyň öz kädileri, ýarganatlary we möjek tory bar, jadygöýler menýunyň ýanynda dermanlar gaýnadyp, aýyň öňünden uçup geçýär, güýz ýapraklary bolsa ýuwaşja dökülýär."
   },
   "yo": {
@@ -3997,6 +4088,8 @@
    },
    "ev_halloween": "Halloween ní ilé ọnà!",
    "evText_halloween": "Títí di Oṣù Kọkànlá 30, àjà Halloween wà ní ṣíṣí: àwọn àwòrán ẹ̀rù 8, láti Ológbò Dúdú àti fìlà àjẹ́ dé ilé tí ẹ̀mí ń gbé àti egungun ńlá Kuniyoshi. Gbogbo ilé ọnà ń wọṣọ fún àjọ̀dún, Wáltì Elégédé darapọ̀ mọ́ àwọn àkọsílẹ̀, píparí àjà sì ń mú Pix wọṣọ bí Àtùpà Elégédé.",
+   "ev_update": "Àwọn kànfásì ńlá mẹ́wàá",
+   "evText_update": "Àwọn àwòrán olókìkí tí a fi ẹgbẹẹgbẹ̀rún kúbù ṣe ti wà lórí ògiri gbogbo àjà ilé ìṣọ́ ohun ìṣẹ̀m̀báyé báyìí: Irises Van Gogh, ìjì Hokusai lábẹ́ Òkè Fuji, ehoro ọ̀dọ́ Dürer àti àwọn mìíràn, ọ̀kọ̀ọ̀kan sì ní nǹkan bí kúbù 5,000 sí 20,000. Fi àwọ̀ kùn wọ́n apá lẹ́yìn apá, ní ìlànà èyíkéyìí, kí o sì wo gbogbo àwòrán náà tí ó tún ń parapọ̀ ní time-lapse.",
    "evDress_halloween": "Gbogbo eré náà ń múra fún Halloween: ojú-ìwé kọ̀ọ̀kan ní elégédé, àdán àti òwú aláǹtakùn tirẹ̀, àwọn àjẹ́ ń se oògùn lẹ́gbẹ̀ẹ́ àtòjọ àṣàyàn wọ́n sì ń fò kọjá òṣùpá, ewé àkókò ìwọ́wé sì ń já bọ̀ díẹ̀díẹ̀."
   },
   "el": {
@@ -4036,6 +4129,8 @@
    },
    "ev_halloween": "Halloween στο μουσείο!",
    "evText_halloween": "Μέχρι τις 30 Νοεμβρίου γιορτάζει ολόκληρο το μουσείο: οι μάγισσες φτιάχνουν φίλτρα σε καζάνια που κοχλάζουν, νυχτερίδες και φαντάσματα πετούν μπροστά από το φεγγάρι, και τα φθινοπωρινά φύλλα στροβιλίζονται σε κάθε οθόνη. Ο όροφος Halloween κρύβει 8 τρομακτικές εικόνες, από μια μαύρη γάτα και ένα καπέλο μάγισσας μέχρι ένα στοιχειωμένο σπίτι και τον γιγάντιο σκελετό του Κουνιγιόσι. Πέντε δίσκοι Halloween παίζουν στο ράφι της μουσικής, και όταν ολοκληρώσεις τον όροφο, ο Pix ντύνεται κολοκύθα-φανάρι.",
+   "ev_update": "Δέκα γιγάντιοι καμβάδες",
+   "evText_update": "Διάσημοι πίνακες από χιλιάδες κύβους κρέμονται πλέον σε κάθε όροφο του μουσείου: οι Ίριδες του Βαν Γκογκ, η καταιγίδα κάτω από το Φούτζι του Χοκουσάι, ο νεαρός λαγός του Ντύρερ και άλλα, από περίπου 5.000 έως 20.000 κύβους το καθένα. Χρωμάτισέ τα κομμάτι κομμάτι, με όποια σειρά θέλεις, και δες ολόκληρο τον πίνακα να ξαναφτιάχνεται σε time-lapse.",
    "evDress_halloween": "Ολόκληρο το παιχνίδι ντύνεται για το Halloween: κάθε οθόνη έχει τις δικές της κολοκύθες, νυχτερίδες και ιστούς αράχνης, οι μάγισσες φτιάχνουν φίλτρα δίπλα στο μενού και πετούν μπροστά από το φεγγάρι, και τα φθινοπωρινά φύλλα πέφτουν απαλά."
   },
   "be": {
@@ -4083,6 +4178,8 @@
    },
    "ev_halloween": "Хэлоўін у музеі!",
    "evText_halloween": "Да 30 лістапада святкуе ўвесь музей: ведзьмы вараць зелле ў бурлівых катлах, лятучыя мышы і прывіды ляцяць міма месяца, а восеньскае лісце кружыцца на кожным экране. На паверсе Хэлоўін чакаюць 8 жахлівых карцін, ад чорнага ката і капелюша ведзьмы да дома з прывідамі і велізарнага шкілета Куніёсі. На музычнай паліцы гучаць пяць хэлоўінскіх кружэлак, а калі завершыш паверх, Pix ператвараецца ў гарбузовы ліхтар.",
+   "ev_update": "Дзесяць велізарных палотнаў",
+   "evText_update": "Знакамітыя карціны з тысяч кубікаў цяпер вісяць на кожным паверсе музея: «Ірысы» Ван Гога, навальніца пад Фудзі Хокусая, малады заяц Дзюрэра і іншыя, прыкладна ад 5 000 да 20 000 кубікаў у кожнай. Размалёўвай іх часткамі, у любым парадку, і глядзі, як уся карціна зноў складаецца ў таймлапсе.",
    "evDress_halloween": "Уся гульня апранаецца на Хэлоўін: на кожным экране — свае гарбузы, кажаны і павуціна, каля меню ведзьмы вараць зелле і лётаюць на фоне месяца, а зверху кружляе восеньскае лісце."
   },
   "bg": {
@@ -4122,6 +4219,8 @@
    },
    "ev_halloween": "Хелоуин в музея!",
    "evText_halloween": "До 30 ноември целият музей празнува: вещици варят отвари в кипящи котли, прилепи и призраци прелитат край луната, а есенни листа се носят по всеки екран. Етажът Хелоуин крие 8 зловещи картини – от черната котка и шапката на вещица до къщата с духове и гигантския скелет на Кунийоши. На музикалния рафт звучат пет хелоуински плочи, а когато завършиш етажа, Pix се превръща в тиква-фенер.",
+   "ev_update": "Десет гигантски платна",
+   "evText_update": "Известни картини от хиляди кубчета вече красят всеки етаж на музея: «Ириси» на Ван Гог, бурята под Фуджи на Хокусай, младият заек на Дюрер и още, всяка от около 5000 до 20 000 кубчета. Оцветявай ги част по част, в какъвто ред искаш, и гледай как цялата картина се сглобява отново в таймлапс.",
    "evDress_halloween": "Цялата игра се облича за Хелоуин: на всеки екран има свои тикви, прилепи и паяжини, край менюто вещици варят отвари и летят на фона на луната, а отгоре се носят есенни листа."
   },
   "ky": {
@@ -4161,6 +4260,8 @@
    },
    "ev_halloween": "Музейде Хэллоуин!",
    "evText_halloween": "30-ноябрга чейин бүт музей майрамдайт: сыйкырчылар кайнап жаткан казандарда дары даярдайт, жарганаттар менен арбактар айдын жанынан учуп өтөт, күзгү жалбырактар ар бир экранда жаайт. Хэллоуин кабатында 8 коркунучтуу сүрөт бар: кара мышык менен жез кемпирдин калпагынан баштап арбактуу үйгө жана Куниёсинин алп скелетине чейин. Музыка текчесинде беш Хэллоуин пластинкасы ойнойт, ал эми кабатты бүтүрсөңүз, Pix ашкабак чырагына айланат.",
+   "ev_update": "Он чоң канва",
+   "evText_update": "Миңдеген кубиктен жасалган белгилүү сүрөттөр эми музейдин ар бир кабатында илинип турат: Ван Гогдун «Ирисалары», Хокусайдын Фудзинин астындагы бороону, Дюрердин жаш коёну жана башкалар, ар бири болжол менен 5 000–20 000 куб. Аларды каалаган тартипте бөлүм-бөлүм боёңуз жана бүтүндөй сүрөт таймлапста кайра кантип чогулганын көрүңүз.",
    "evDress_halloween": "Бүт оюн Хэллоуинге кийинет: ар бир экранда өз ашкабактары, жарганаттары жана жөргөмүш торлору бар, меню жанында сыйкырчылар дары кайнатып, айдын алдынан учуп өтөт, күзгү жалбырактар болсо акырын төгүлөт."
   },
   "kk": {
@@ -4200,6 +4301,8 @@
    },
    "ev_halloween": "Музейде Хэллоуин!",
    "evText_halloween": "30 қарашаға дейін бүкіл мұражай мереке жасайды: мыстандар қайнап жатқан қазандарда у-шу қайнатады, жарқанаттар мен елестер айдың жанынан ұшып өтеді, ал күзгі жапырақтар әр экранда төгіледі. Хэллоуин қабатында 8 қорқынышты сурет бар: қара мысық пен мыстанның қалпағынан бастап елесті үй мен Куниёсидің алып қаңқасына дейін. Музыка сөресінде бес Хэллоуин пластинкасы ойнайды, ал қабатты аяқтағанда Pix асқабақ шамына айналады.",
+   "ev_update": "Он алып кенеп",
+   "evText_update": "Мыңдаған текшеден жасалған атақты суреттер енді мұражайдың әр қабатында ілулі тұр: Ван Гогтың «Ирислері», Хокусайдың Фудзи астындағы дауылы, Дюрердің жас қояны және тағы басқалар, әрқайсысы шамамен 5 000–20 000 текше. Оларды кез келген ретпен бөлім-бөлім бояңыз да, бүкіл сурет таймлапсте қайта қалай жиналатынын көріңіз.",
    "evDress_halloween": "Бүкіл ойын Хэллоуинге киінеді: әр экранда өз асқабақтары, жарқанаттары мен өрмекші торлары бар, мәзір жанында сиқыршылар сусын қайнатып, ай алдынан ұшып өтеді, ал күзгі жапырақтар баяу төгіледі."
   },
   "mk": {
@@ -4239,6 +4342,8 @@
    },
    "ev_halloween": "Ноќ на вештерките во музејот!",
    "evText_halloween": "До 30 ноември слави целиот музеј: вештерките варат напивки во вриени казани, лилјаците и духовите летаат покрај месечината, а есенското лисје се вее на секој екран. Катот Ноќ на вештерките крие 8 страшни слики, од црната мачка и шапката на вештерка до куќата на духови и огромниот скелет на Кунијоши. На музичката полица свират пет плочи за Ноќта на вештерките, а кога ќе го завршиш катот, Pix се претвора во тиква-фенер.",
+   "ev_update": "Десет џиновски платна",
+   "evText_update": "Познати слики од илјадници коцки сега висат на секој кат од музејот: Ирисите на Ван Гог, бурата под Фуџи на Хокусаи, младиот зајак на Дирер и уште многу, секоја од околу 5.000 до 20.000 коцки. Бојадисувај ги дел по дел, по кој било редослед, и гледај како цела слика повторно се склопува во тајмлапс.",
    "evDress_halloween": "Целата игра се облекува за Ноќта на вештерките: на секој екран има свои тикви, лилјаци и пајажини, покрај менито вештерки варат напитоци и летаат пред месечината, а одозгора паѓа есенско лисје."
   },
   "mn": {
@@ -4278,6 +4383,8 @@
    },
    "ev_halloween": "Музейд Хэллоуин боллоо!",
    "evText_halloween": "11-р сарын 30 хүртэл музей бүхэлдээ баярлаж байна: шулмууд хөөсөрч буй тогоонд ид шидийн ундаа исгэж, сарьсан багваахай, сүнснүүд сарны хажуугаар нисэж, намрын навчис дэлгэц бүрээр бүжиглэнэ. Хэллоуины давхарт хар муур, шуламын малгайгаас эхлээд сүнстэй байшин, Кунийошийн аварга араг яс хүртэл 8 аймшигт зураг хүлээж байна. Хөгжмийн тавиур дээр Хэллоуины таван пянз эгшиглэж, давхрыг дуусгахад Pix хулуун дэнлүү болон хувирна.",
+   "ev_update": "Арван аварга зотон",
+   "evText_update": "Мянга мянган кубээр хийсэн алдартай зургууд одоо музейн давхар бүрт өлгөөтэй байна: Ван Гогийн «Ирис», Хокусайн Фүжи ууландах шуурга, Дюрерийн залуу туулай болон бусад, тус бүр нь ойролцоогоор 5 000–20 000 кубтэй. Тэдгээрийг дурын дарааллаар хэсэг хэсгээр будаж, бүх зураг time-lapse бичлэгээр дахин угсрагдахыг хараарай.",
    "evDress_halloween": "Бүх тоглоом Хэллоуинд зориулан хувцаслана: дэлгэц бүрт өөрийн гэсэн хулуу, сарьсан багваахай, аалзны тор бий, цэсний дэргэд шулмууд эм чанаж саран дээгүүр нисэж, намрын навчис аяархан унана."
   },
   "sr": {
@@ -4321,6 +4428,8 @@
    },
    "ev_halloween": "Ноћ вештица у музеју!",
    "evText_halloween": "До 30. новембра слави цео музеј: вештице кувају напитке у кључалим казанима, слепи мишеви и духови лете поред месеца, а јесење лишће се вихори на сваком екрану. На спрату Ноћ вештица чека 8 језивих слика, од црне мачке и вештичјег шешира до уклете куће и огромног костура Кунијошија. На музичкој полици свира пет плоча за Ноћ вештица, а када завршиш спрат, Pix се претвара у бундеву-фењер.",
+   "ev_update": "Десет огромних платана",
+   "evText_update": "Познате слике од хиљада коцки сада висе на сваком спрату музеја: Ван Гогови Ириси, Хокусајева олуја испод Фујија, Диреров млади зец и још много тога, свака од отприлике 5.000 до 20.000 коцки. Бој их део по део, било којим редом, и гледај како се цела слика поново склапа у тајм-лапсу.",
    "evDress_halloween": "Цела игра се облачи за Ноћ вештица: на сваком екрану су своје бундеве, слепи мишеви и паучина, поред менија вештице кувају напитке и лете испред месеца, а одозго се спушта јесење лишће."
   },
   "tg": {
@@ -4360,6 +4469,8 @@
    },
    "ev_halloween": "Ҳеллоуин дар музей!",
    "evText_halloween": "То 30 ноябр ошёнаи Ҳеллоуин кушода аст: 8 расми даҳшатнок, аз гурбаи сиёҳ ва кулоҳи ҷодугар то хонаи арвоҳ ва скелети азими Кунийоши. Тамоми музей барои ид оро меёбад, Валси каду ба сабтҳо ҳамроҳ мешавад ва тамом кардани ошёна Pix-ро ба чароғи каду табдил медиҳад.",
+   "ev_update": "Даҳ матои азими наққошӣ",
+   "evText_update": "Расмҳои машҳур, ки аз ҳазорон кубик сохта шудаанд, акнун дар ҳар ошёнаи осорхона овезонанд: «Савсанҳо»-и Ван Гог, тӯфони Хокусай дар зери кӯҳи Фуҷӣ, харгӯши ҷавони Дюрер ва дигарон, ҳар кадом тақрибан аз 5 000 то 20 000 кубик. Онҳоро ба тартиби дилхоҳ бахшбахш ранг кунед ва бинед, ки тамоми расм дар таймлапс бори дигар ҷамъ мешавад.",
    "evDress_halloween": "Тамоми бозӣ ба Ҳеллоуин ороиш меёбад: ҳар экран кадуи худ, кӯршапаракҳо ва тори анкабут дорад, ҷодугарон дар назди меню шарбат мепазанд ва аз пеши моҳ парвоз мекунанд, баргҳои тирамоҳӣ бошанд оҳиста мерезанд."
   },
   "uk": {
@@ -4407,6 +4518,8 @@
    },
    "ev_halloween": "Хелловін у музеї!",
    "evText_halloween": "До 30 листопада весь музей святкує: відьми варять зілля в киплячих казанах, кажани й привиди летять повз місяць, а осіннє листя кружляє на кожному екрані. На поверсі Хелловін зібрано 8 моторошних картин: від чорного кота й капелюха відьми до будинку із привидами та велетенського скелета Кунійосі. На музичній полиці грають п’ять хелловінських платівок, а завершений поверх перевдягає Pix у гарбуз-ліхтар.",
+   "ev_update": "Десять велетенських полотен",
+   "evText_update": "На кожному поверсі музею тепер висять відомі картини з тисяч кубиків: «Іриси» Ван Гога, гроза під Фудзі Хокусая, заєць Дюрера та інші — від приблизно 5 000 до 20 000 кубиків кожна. Малюй їх розділами, у будь-якому порядку, а наприкінці вся картина складеться ще раз у таймлапсі.",
    "evDress_halloween": "Уся гра вбирається на Хелловін: на кожному екрані — свої гарбузи, кажани й павутина, біля меню відьми варять зілля й літають на тлі місяця, а згори кружляє осіннє листя."
   },
   "ka": {
@@ -4446,6 +4559,8 @@
    },
    "ev_halloween": "ჰელოუინი მუზეუმში!",
    "evText_halloween": "30 ნოემბრამდე მთელი მუზეუმი ზეიმობს: ჯადოქრები დუღილით სავსე ქვაბებში წამალს ხარშავენ, ღამურები და მოჩვენებები მთვარის გვერდით დაფრინავენ, შემოდგომის ფოთლები კი ყველა ეკრანზე ტრიალებს. ჰელოუინის სართულზე 8 საშიში სურათია, შავი კატიდან და ჯადოქრის ქუდიდან მოჩვენებებიან სახლამდე და კუნიიოშის უზარმაზარ ჩონჩხამდე. მუსიკის თაროზე ჰელოუინის ხუთი ფირფიტა უკრავს, სართულის დასრულებისას კი Pix გოგრის ფარნად გადაიქცევა.",
+   "ev_update": "ათი უზარმაზარი ტილო",
+   "evText_update": "ათასობით კუბისგან შექმნილი ცნობილი ნახატები ახლა მუზეუმის ყველა სართულზე კიდია: ვან გოგის „ზამბახები“, ჰოკუსაის ქარიშხალი ფუჯის ქვეშ, დიურერის ახალგაზრდა კურდღელი და სხვა, თითოეული დაახლოებით 5 000–20 000 კუბისგან. შეღებე ისინი ნაწილ-ნაწილ, ნებისმიერი თანმიმდევრობით, და უყურე, როგორ იკრიბება მთელი ნახატი ისევ ტაიმლაფსში.",
    "evDress_halloween": "მთელი თამაში ჰელოუინისთვის რთვება: ყველა ეკრანს თავისი გოგრები, ღამურები და ობობას ქსელები აქვს, მენიუს გვერდით ჯადოქრები წამლებს ხარშავენ და მთვარის წინ დაფრინავენ, შემოდგომის ფოთლები კი ნელა ცვივა."
   },
   "hy": {
@@ -4485,6 +4600,8 @@
    },
    "ev_halloween": "Հելոուին թանգարանում!",
    "evText_halloween": "Մինչև նոյեմբերի 30-ը ամբողջ թանգարանը տոնում է՝ կախարդները եռացող կաթսաներում դեղ են եփում, չղջիկներն ու ուրվականները թռչում են լուսնի կողքով, իսկ աշնանային տերևները պտտվում են յուրաքանչյուր էկրանին։ Հելոուինի հարկում 8 սարսափազդու նկար կա՝ սև կատվից ու կախարդի գլխարկից մինչև ուրվականների տունն ու Կունիյոշիի հսկա կմախքը։ Երաժշտական դարակում հնչում է Հելոուինի հինգ ձայնապնակ, իսկ հարկն ավարտելիս Pix-ը վերածվում է դդմի լապտերի։",
+   "ev_update": "Տասը հսկա կտավ",
+   "evText_update": "Հազարավոր խորանարդներից կազմված հայտնի նկարները հիմա կախված են թանգարանի յուրաքանչյուր հարկում՝ Վան Գոգի «Իրիսները», Հոկուսայի փոթորիկը Ֆուջիի տակ, Դյուրերի երիտասարդ նապաստակը և ավելին, յուրաքանչյուրը մոտ 5 000–20 000 խորանարդից։ Գունավորիր դրանք մաս առ մաս՝ ցանկացած հերթականությամբ, և դիտիր, թե ինչպես է ամբողջ նկարը նորից հավաքվում թայմլափսով։",
    "evDress_halloween": "Ամբողջ խաղը հագնվում է Հելոուինի համար. յուրաքանչյուր էկրանին իր դդումներն են, չղջիկները և սարդոստայնները, մենյուի մոտ վհուկները դեղ են եփում և թռչում լուսնի առջևով, իսկ աշնանային տերևները կամաց-կամաց թափվում են."
   },
   "he": {
@@ -4528,6 +4645,8 @@
    },
    "ev_halloween": "הלואין במוזיאון!",
    "evText_halloween": "עד 30 בנובמבר כל המוזיאון חוגג: מכשפות מבשלות שיקויים בקדרות רותחות, עטלפים ורוחות רפאים עפים על פני הירח, ועלי סתיו מתערבלים בכל מסך. בקומת הלואין מחכים 8 תמונות מצמררות, מחתול שחור וכובע מכשפה ועד בית רדוף רוחות והשלד הענק של קוניושי. על מדף המוזיקה מתנגנים חמישה תקליטי הלואין, ובסיום הקומה Pix מתחפש לפנס דלעת.",
+   "ev_update": "עשרה בדים ענקיים",
+   "evText_update": "ציורים מפורסמים שעשויים אלפי קוביות תלויים עכשיו בכל קומה במוזיאון: האירוסים של ואן גוך, הסערה מתחת להר פוג'י של הוקוסאי, הארנבון הצעיר של דירר ועוד, כל אחד מכ-5,000 עד 20,000 קוביות. צבעו אותם חלק אחר חלק, בכל סדר שתרצו, וצפו בציור כולו מתחבר מחדש בסרטון תזמון מואץ.",
    "evDress_halloween": "כל המשחק מתחפש להלואין: בכל מסך יש דלעות, עטלפים וקורי עכביש משלו, מכשפות מבשלות שיקויים ליד התפריט וטסות מול הירח, ועלי סתיו יורדים בעדינות."
   },
   "ur": {
@@ -4567,6 +4686,8 @@
    },
    "ev_halloween": "میوزیم میں ہیلووین!",
    "evText_halloween": "30 نومبر تک پورا میوزیم جشن منا رہا ہے: چڑیلیں کھولتے کڑھاؤ میں جادوئی شربت بنا رہی ہیں، چمگادڑیں اور بھوت چاند کے پاس سے اڑ رہے ہیں، اور خزاں کے پتے ہر اسکرین پر بکھر رہے ہیں۔ ہیلووین منزل میں 8 ڈراؤنی تصویریں ہیں: کالی بلی اور چڑیل کی ٹوپی سے لے کر آسیب زدہ گھر اور کونییوشی کے دیوقامت ڈھانچے تک۔ میوزک شیلف پر ہیلووین کے پانچ ریکارڈ بجتے ہیں، اور منزل مکمل کرنے پر Pix جیک او لینٹرن بن جاتا ہے۔",
+   "ev_update": "دس دیو ہیکل کینوس",
+   "evText_update": "ہزاروں کیوب سے بنی مشہور پینٹنگز اب میوزیم کی ہر منزل پر لگی ہیں: وین گوف کے آئرس، ہوکوسائی کا کوہِ فوجی کے نیچے طوفان، ڈیورر کا نوجوان خرگوش اور بہت کچھ، ہر ایک میں تقریباً 5,000 سے 20,000 کیوب۔ انہیں کسی بھی ترتیب سے حصہ حصہ رنگیں اور پوری پینٹنگ کو ٹائم لیپس میں دوبارہ جڑتے دیکھیں۔",
    "evDress_halloween": "پورا کھیل ہیلووین کے لیے سج جاتا ہے: ہر اسکرین کے اپنے کدو، چمگادڑیں اور مکڑی کے جالے ہیں، جادوگرنیاں مینو کے پاس جوشاندے پکاتی اور چاند کے سامنے سے اڑتی ہیں، اور خزاں کے پتے آہستہ آہستہ گرتے ہیں۔"
   },
   "ar": {
@@ -4622,6 +4743,8 @@
    },
    "ev_halloween": "هالوين في المتحف!",
    "evText_halloween": "حتى 30 نوفمبر يحتفل المتحف بأكمله: ساحرات يحضّرن الجرعات في أوعية تغلي وتفور، وخفافيش وأشباح تحلّق قرب القمر، وأوراق الخريف تتطاير على كل شاشة. يضم طابق هالوين 8 لوحات مخيفة، من القطة السوداء وقبعة الساحرة إلى البيت المسكون وهيكل كونييوشي العظمي العملاق. وتُعزف على رفّ الموسيقى خمس أسطوانات هالوين، وعند إكمال الطابق يتنكّر Pix في هيئة فانوس يقطين.",
+   "ev_update": "عشر لوحات عملاقة",
+   "evText_update": "تزيّن اليوم لوحات شهيرة مصنوعة من آلاف المكعّبات كل طابق في المتحف: زنابق فان غوخ، وعاصفة هوكوساي تحت جبل فوجي، وأرنب دورر الصغير وغيرها، ويضم كل منها نحو 5000 إلى 20000 مكعّب. لوّنها جزءًا بعد جزء وبأي ترتيب تريد، وشاهد اللوحة كاملة تتجمّع من جديد في فيديو متسارع.",
    "evDress_halloween": "تتزيّن اللعبة كلها بأجواء هالوين: لكل شاشة يقطينها وخفافيشها وخيوط عناكبها، وتخلط الساحرات الجرعات قرب القائمة وتحلّق أمام القمر، وتتساقط أوراق الخريف برفق."
   },
   "ps": {
@@ -4661,6 +4784,8 @@
    },
    "ev_halloween": "په موزیم کې هالووین!",
    "evText_halloween": "تر نومبر 30 پورې د هالووین پوړ پرانیستی دی: 8 ویرونکي انځورونه، له توري پیشو او د کوډګرې خولۍ څخه د ځورېدلي کور او د کونیوشي تر لوی هډوکي‌ډنګر پورې. ټول موزیم د جشن لپاره ځان سينګاروي، د هالووین والس په ریکارډونو کې ورګډېږي، او د پوړ بشپړول Pix د کدو لالټین ته اړوي.",
+   "ev_update": "لس لوی کینوسونه",
+   "evText_update": "مشهورې انځورونه چې له زرګونو مکعبونو جوړ شوي، اوس د موزیم په هر پوړ کې ځړول شوي دي: د وان ګوګ ایرېسونه، د هوکوسای طوفان د فوجي غره لاندې، د دورر ځوان خرګوش او نور، هر یو شاوخوا ۵٬۰۰۰ تر ۲۰٬۰۰۰ مکعبونه. دا په هر ترتیب برخه برخه رنګ کړئ او وګورئ چې ټوله انځور په ټایم‌لپس کې بیا یو ځای کیږي.",
    "evDress_halloween": "ټوله لوبه د هالووین لپاره سینګارېږي: هر سکرین خپل کدو، خفاشان او د عنکبوت تارونه لري، جادوګرې د مینو ترڅنګ شربتونه پخوي او د سپوږمۍ مخې ته الوځي، او د مني پاڼې ورو ورو ورېږي."
   },
   "fa": {
@@ -4700,6 +4825,8 @@
    },
    "ev_halloween": "هالووین در موزه!",
    "evText_halloween": "تا ۳۰ نوامبر تمام موزه جشن گرفته است: جادوگران در دیگ‌های جوشان معجون می‌پزند، خفاش‌ها و ارواح از کنار ماه می‌گذرند و برگ‌های پاییزی روی هر صفحه می‌چرخند. در طبقهٔ هالووین ۸ تصویر ترسناک هست، از گربه سیاه و کلاه جادوگر تا خانه جن‌زده و اسکلت غول‌پیکر کونیوشی. روی قفسهٔ موسیقی پنج صفحهٔ هالووین پخش می‌شود و با تمام کردن طبقه، Pix به فانوس کدو تبدیل می‌شود.",
+   "ev_update": "ده بوم غول‌پیکر",
+   "evText_update": "نقاشی‌های مشهوری که از هزاران مکعب ساخته شده‌اند، حالا در همهٔ طبقه‌های موزه آویخته‌اند: زنبق‌های ون گوگ، طوفان هوکوسای زیر کوه فوجی، خرگوش جوان دورر و بیشتر، هر کدام با حدود ۵٬۰۰۰ تا ۲۰٬۰۰۰ مکعب. آن‌ها را بخش‌به‌بخش و به هر ترتیبی رنگ کن و ببین کل نقاشی در یک تایم‌لپس دوباره کنار هم قرار می‌گیرد.",
    "evDress_halloween": "کل بازی برای هالووین لباس می‌پوشد: هر صفحه کدوها، خفاش‌ها و تارهای عنکبوت خودش را دارد، جادوگرها کنار منو معجون می‌پزند و جلوی ماه پرواز می‌کنند، و برگ‌های پاییزی آرام فرود می‌آیند."
   },
   "am": {
@@ -4739,6 +4866,8 @@
    },
    "ev_halloween": "ሃሎዊን በሙዚየሙ!",
    "evText_halloween": "እስከ ኖቬምበር 30 ድረስ መላው ሙዚየም ያከብራል፦ ጠንቋዮች በሚንተከተክ ድስት ውስጥ መድኃኒት ይጠምቃሉ፣ የሌሊት ወፎችና መናፍስት ከጨረቃ አጠገብ ይበራሉ፣ የመከር ወራት ቅጠሎችም በእያንዳንዱ ማያ ገጽ ላይ ይሽከረከራሉ። የሃሎዊን ፎቅ ከጥቁር ድመትና ከጠንቋይ ኮፍያ እስከ መናፍስት ያሉበት ቤትና የኩኒዮሺ ግዙፍ አጽም ድረስ 8 አስፈሪ ሥዕሎችን ይዟል። በሙዚቃ መደርደሪያው ላይ አምስት የሃሎዊን ዲስኮች ይጫወታሉ፣ ፎቁን ሲጨርሱ ደግሞ Pix የዱባ መብራት ይሆናል።",
+   "ev_update": "አሥር ግዙፍ ሸራዎች",
+   "evText_update": "ከሺዎች ኪዩቦች የተሠሩ ዝነኛ ሥዕሎች አሁን በሙዚየሙ በእያንዳንዱ ፎቅ ላይ ተሰቅለዋል፦ የቫን ጎግ አይሪሶች፣ የሆኩሳይ በፉጂ ተራራ ሥር ያለው ማዕበል፣ የዱሬር ወጣት ጥንቸል እና ሌሎችም፤ እያንዳንዳቸው ወደ 5,000 እስከ 20,000 ኪዩቦች። በፈለጉት ቅደም ተከተል ክፍል በክፍል ቀቡ፣ ሙሉው ሥዕል በጊዜ መዘግየት ቪዲዮ እንደገና ሲሰበሰብ ይመልከቱ።",
    "evDress_halloween": "መላው ጨዋታ ለሃሎዊን ይለብሳል፦ እያንዳንዱ ማያ ገጽ የራሱ ዱባዎች፣ የሌሊት ወፎችና የሸረሪት ድሮች አሉት፤ ጠንቋዮች ከምናሌው አጠገብ መድኃኒት ይጠምቃሉ፤ በጨረቃ ፊት ይበራሉ፤ የመከር ቅጠሎችም ቀስ ብለው ይወርዳሉ።"
   },
   "ne": {
@@ -4778,6 +4907,8 @@
    },
    "ev_halloween": "संग्रहालयमा ह्यालोविन!",
    "evText_halloween": "नोभेम्बर ३० सम्म सिङ्गो संग्रहालयमा उत्सव छ: बोक्सीहरूले उम्लिरहेको कराहीमा जादुई झोल बनाउँछन्, चमेरा र भूतहरू चन्द्रमाको छेउबाट उड्छन्, र शरद ऋतुका पातहरू हरेक स्क्रिनमा घुमिरहन्छन्। ह्यालोविन तलामा कालो बिरालो र बोक्सीको टोपीदेखि भुतहा घर र कुनियोशीको विशाल कंकालसम्म ८ वटा डरलाग्दा चित्र छन्। म्युजिक सेल्फमा पाँचवटा ह्यालोविन रेकर्ड बज्छन्, र तला पूरा गर्दा Pix ज्याक-ओ-ल्यान्टर्न बन्छ।",
+   "ev_update": "दस विशाल क्यानभास",
+   "evText_update": "हजारौं क्युबले बनेका चर्चित चित्रहरू अब संग्रहालयको हरेक तलामा झुण्डिएका छन्: भ्यान गगको आइरिस, होकुसाईको फुजी पर्वतमुनिको आँधी, डुररको जवान खरायो र अरू धेरै, हरेकमा करिब ५,००० देखि २०,००० क्युब। कुनै पनि क्रममा भाग-भाग गरेर रङ भर्नुहोस् र पूरै चित्र टाइम-ल्याप्समा फेरि जोडिएको हेर्नुहोस्।",
    "evDress_halloween": "पूरै खेल ह्यालोविनका लागि सजिन्छ: हरेक स्क्रिनमा आफ्नै फर्सी, चमेरा र माकुराको जाला छन्, मेनुको छेउमा बोक्सीहरूले काढा बनाउँछन् र चन्द्रमाअगाडि उड्छन्, अनि शरद् ऋतुका पातहरू बिस्तारै झर्छन्।"
   },
   "mr": {
@@ -4817,6 +4948,8 @@
    },
    "ev_halloween": "संग्रहालयात हॅलोवीन!",
    "evText_halloween": "३० नोव्हेंबरपर्यंत संपूर्ण संग्रहालय सण साजरा करत आहे: चेटकिणी उकळत्या कढईत जादूची औषधे बनवतात, वटवाघळे आणि भुते चंद्राजवळून उडतात, आणि शरद ऋतूतील पाने प्रत्येक स्क्रीनवर फिरत राहतात. हॅलोवीन मजल्यावर काळी मांजर आणि चेटकिणीची टोपी ते झपाटलेले घर आणि कुनियोशीचा अवाढव्य सांगाडा अशी ८ भीतीदायक चित्रे आहेत. म्युझिक शेल्फवर पाच हॅलोवीन रेकॉर्ड्स वाजतात आणि मजला पूर्ण केल्यावर Pix जॅक-ओ-लँटर्न बनतो.",
+   "ev_update": "दहा महाकाय कॅनव्हास",
+   "evText_update": "हजारो क्यूबपासून बनलेली प्रसिद्ध चित्रे आता संग्रहालयाच्या प्रत्येक मजल्यावर लावलेली आहेत: व्हॅन गॉगची आयरिस, होकुसाईचे फुजी पर्वताखालील वादळ, ड्युररचा तरुण ससा आणि बरेच काही, प्रत्येकी सुमारे 5,000 ते 20,000 क्यूब. त्यांना कोणत्याही क्रमाने भाग भाग करून रंगवा आणि संपूर्ण चित्र टाइम-लॅप्समध्ये पुन्हा जुळताना पहा.",
    "evDress_halloween": "संपूर्ण खेळ हॅलोवीनसाठी सजतो: प्रत्येक स्क्रीनवर स्वतःचे भोपळे, वटवाघळे आणि कोळीष्टके आहेत, मेनूजवळ चेटकिणी काढा बनवतात आणि चंद्रासमोरून उडतात, आणि शरद ऋतूची पाने हळूच खाली येतात."
   },
   "hi": {
@@ -4856,6 +4989,8 @@
    },
    "ev_halloween": "म्यूज़ियम में हैलोवीन!",
    "evText_halloween": "30 नवंबर तक पूरा म्यूज़ियम जश्न मना रहा है: चुड़ैलें खौलते कड़ाहों में जादुई घोल बना रही हैं, चमगादड़ और भूत चाँद के पास से उड़ रहे हैं, और पतझड़ के पत्ते हर स्क्रीन पर बिखर रहे हैं। हैलोवीन मंज़िल में 8 डरावनी तस्वीरें हैं: काली बिल्ली और चुड़ैल की टोपी से लेकर भुतहा घर और कुनियोशी के विशाल कंकाल तक। म्यूज़िक शेल्फ़ पर पाँच हैलोवीन रिकॉर्ड बजते हैं, और मंज़िल पूरी करने पर Pix जैक-ओ-लैंटर्न बन जाता है।",
+   "ev_update": "दस विशाल कैनवास",
+   "evText_update": "हज़ारों क्यूब से बनी मशहूर पेंटिंग्स अब म्यूज़ियम की हर मंज़िल पर लगी हैं: वान गॉग के आइरिस, होकुसाई का फ़ूजी पर्वत के नीचे तूफ़ान, ड्यूरर का नन्हा खरगोश और भी बहुत कुछ, हर एक में लगभग 5,000 से 20,000 क्यूब। उन्हें किसी भी क्रम में हिस्सा-हिस्सा रंगें और पूरी पेंटिंग को टाइम-लैप्स में फिर से बनते देखें।",
    "evDress_halloween": "पूरा खेल हैलोवीन के लिए सज जाता है: हर स्क्रीन पर अपने कद्दू, चमगादड़ और मकड़ी के जाले हैं, मेन्यू के पास चुड़ैलें काढ़ा बनाती हैं और चाँद के सामने से उड़ती हैं, और पतझड़ के पत्ते धीरे-धीरे गिरते हैं।"
   },
   "as": {
@@ -4895,6 +5030,8 @@
    },
    "ev_halloween": "সংগ্ৰহালয়ত হেল'ৱিন!",
    "evText_halloween": "30 নৱেম্বৰলৈকে হেল'ৱিন মহলা খোলা: ক'লা মেকুৰী আৰু ডাইনীৰ টুপীৰ পৰা ভূতৰ ঘৰ আৰু কুনিয়োছিৰ বিশাল কংকাললৈকে 8খন ভয়ংকৰ ছবি। গোটেই সংগ্ৰহালয় উৎসৱৰ বাবে সাজে, ৰেকৰ্ডবোৰত এটা হেল'ৱিন ৱাল্টজ যোগ হয়, আৰু মহলা শেষ কৰিলে Pix জেক-অ'-লেণ্টাৰ্ন হৈ সাজে।",
+   "ev_update": "দহখন বিশাল কেনভাছ",
+   "evText_update": "হাজাৰ হাজাৰ কিউবেৰে সজোৱা বিখ্যাত চিত্ৰসমূহ এতিয়া সংগ্ৰহালয়ৰ প্ৰতিটো মহলাত আছে: ভান গঘৰ আইৰিছ, হোকুছাইৰ ফুজি পৰ্বতৰ তলৰ ধুমুহা, ডুৰাৰৰ সৰু শহা আৰু আৰু বহুতো, প্ৰতিখন প্ৰায় ৫,০০০ৰ পৰা ২০,০০০ কিউব। যিকোনো ক্ৰমত অংশ অংশ কৰি ৰং কৰক, আৰু সমগ্ৰ চিত্ৰখন টাইম-লেপছত পুনৰ গঢ়ি উঠা চাওক।",
    "evDress_halloween": "গোটেই খেলটো হেল'ৱিনৰ বাবে সাজি-কাজি উঠে: প্ৰতিখন পৰ্দাৰ নিজা ৰঙালাও, বাদুলী আৰু মাকৰিজাল আছে, মেনুৰ কাষত ডাইনীবোৰে পানীয় তৈয়াৰ কৰে আৰু জোনৰ সন্মুখেৰে উৰি যায়, আৰু শৰতৰ পাতবোৰ লাহে লাহে সৰি পৰে।"
   },
   "bn": {
@@ -4934,6 +5071,8 @@
    },
    "ev_halloween": "জাদুঘরে হ্যালোইন!",
    "evText_halloween": "৩০ নভেম্বর পর্যন্ত পুরো জাদুঘর উৎসবে মেতেছে: ডাইনিরা টগবগ করে ফুটতে থাকা কড়াইয়ে জাদুর পানীয় বানাচ্ছে, বাদুড় আর ভূত চাঁদের পাশ দিয়ে উড়ে যাচ্ছে, আর শরতের পাতা প্রতিটি স্ক্রিনে ভেসে বেড়াচ্ছে। হ্যালোইন তলায় আছে কালো বিড়াল আর ডাইনির টুপি থেকে ভূতুড়ে বাড়ি এবং কুনিয়োশির বিশাল কঙ্কাল পর্যন্ত ৮টি গা-ছমছমে ছবি। মিউজিক শেল্ফে বাজছে পাঁচটি হ্যালোইন রেকর্ড, আর তলাটি শেষ করলে Pix সেজে ওঠে জ্যাক-ও-ল্যান্টার্ন।",
+   "ev_update": "দশটি বিশাল ক্যানভাস",
+   "evText_update": "হাজার হাজার কিউবে গড়া বিখ্যাত ছবি এখন জাদুঘরের প্রতিটি তলায় ঝুলছে: ভ্যান গগের আইরিস, হোকুসাইয়ের ফুজি পর্বতের নিচের ঝড়, ডুরারের কচি খরগোশ এবং আরও অনেক, প্রতিটিতে প্রায় ৫,০০০ থেকে ২০,০০০ কিউব। যেকোনো ক্রমে অংশে অংশে রং করুন, আর পুরো ছবিটি টাইম-ল্যাপসে আবার জোড়া লাগতে দেখুন।",
    "evDress_halloween": "পুরো খেলাটি হ্যালোইনের সাজে সেজে ওঠে: প্রতিটি পর্দায় নিজস্ব কুমড়ো, বাদুড় আর মাকড়সার জাল, মেনুর পাশে ডাইনিরা জাদু-পানীয় বানায় আর চাঁদের সামনে দিয়ে উড়ে যায়, আর শরতের পাতা ঝরে পড়ে।"
   },
   "pa": {
@@ -4973,6 +5112,8 @@
    },
    "ev_halloween": "ਅਜਾਇਬਘਰ ਵਿੱਚ ਹੈਲੋਵੀਨ!",
    "evText_halloween": "30 ਨਵੰਬਰ ਤੱਕ ਸਾਰਾ ਮਿਊਜ਼ੀਅਮ ਜਸ਼ਨ ਮਨਾ ਰਿਹਾ ਹੈ: ਡੈਣਾਂ ਉਬਲਦੇ ਕੜਾਹਿਆਂ ਵਿੱਚ ਜਾਦੂਈ ਕਾੜ੍ਹਾ ਬਣਾਉਂਦੀਆਂ ਹਨ, ਚਮਗਿੱਦੜ ਅਤੇ ਭੂਤ ਚੰਨ ਕੋਲੋਂ ਉੱਡਦੇ ਹਨ, ਅਤੇ ਪੱਤਝੜ ਦੇ ਪੱਤੇ ਹਰ ਸਕ੍ਰੀਨ ’ਤੇ ਘੁੰਮਦੇ ਹਨ। ਹੈਲੋਵੀਨ ਮੰਜ਼ਿਲ ਵਿੱਚ ਕਾਲੀ ਬਿੱਲੀ ਅਤੇ ਡੈਣ ਦੀ ਟੋਪੀ ਤੋਂ ਲੈ ਕੇ ਭੂਤੀਆ ਘਰ ਅਤੇ ਕੁਨੀਯੋਸ਼ੀ ਦੇ ਵਿਸ਼ਾਲ ਪਿੰਜਰ ਤੱਕ 8 ਡਰਾਉਣੀਆਂ ਤਸਵੀਰਾਂ ਹਨ। ਮਿਊਜ਼ਿਕ ਸ਼ੈਲਫ਼ ’ਤੇ ਹੈਲੋਵੀਨ ਦੇ ਪੰਜ ਰਿਕਾਰਡ ਵੱਜਦੇ ਹਨ, ਅਤੇ ਮੰਜ਼ਿਲ ਪੂਰੀ ਕਰਨ ’ਤੇ Pix ਜੈਕ-ਓ-ਲੈਂਟਰਨ ਬਣ ਜਾਂਦਾ ਹੈ।",
+   "ev_update": "ਦਸ ਵਿਸ਼ਾਲ ਕੈਨਵਸ",
+   "evText_update": "ਹਜ਼ਾਰਾਂ ਕਿਊਬਾਂ ਤੋਂ ਬਣੀਆਂ ਮਸ਼ਹੂਰ ਪੇਂਟਿੰਗਾਂ ਹੁਣ ਅਜਾਇਬ ਘਰ ਦੀ ਹਰ ਮੰਜ਼ਿਲ 'ਤੇ ਲੱਗੀਆਂ ਹਨ: ਵਾਨ ਗੌਗ ਦੇ ਆਇਰਿਸ, ਹੋਕੁਸਾਈ ਦਾ ਫ਼ੂਜੀ ਪਹਾੜ ਹੇਠਲਾ ਤੂਫ਼ਾਨ, ਡਿਊਰਰ ਦਾ ਜਵਾਨ ਖ਼ਰਗੋਸ਼ ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ, ਹਰ ਇੱਕ ਵਿੱਚ ਲਗਭਗ 5,000 ਤੋਂ 20,000 ਕਿਊਬ। ਕਿਸੇ ਵੀ ਕ੍ਰਮ ਵਿੱਚ ਹਿੱਸਾ-ਹਿੱਸਾ ਰੰਗ ਭਰੋ ਅਤੇ ਪੂਰੀ ਪੇਂਟਿੰਗ ਨੂੰ ਟਾਈਮ-ਲੈਪਸ ਵਿੱਚ ਦੁਬਾਰਾ ਜੁੜਦੇ ਵੇਖੋ।",
    "evDress_halloween": "ਸਾਰੀ ਖੇਡ ਹੈਲੋਵੀਨ ਲਈ ਸੱਜ ਜਾਂਦੀ ਹੈ: ਹਰ ਸਕ੍ਰੀਨ ਦੇ ਆਪਣੇ ਕੱਦੂ, ਚਮਗਿੱਦੜ ਅਤੇ ਮੱਕੜੀ ਦੇ ਜਾਲੇ ਹਨ, ਮੀਨੂ ਕੋਲ ਡੈਣਾਂ ਕਾੜ੍ਹਾ ਬਣਾਉਂਦੀਆਂ ਹਨ ਅਤੇ ਚੰਨ ਦੇ ਸਾਹਮਣਿਓਂ ਉੱਡਦੀਆਂ ਹਨ, ਅਤੇ ਪਤਝੜ ਦੇ ਪੱਤੇ ਹੌਲੀ-ਹੌਲੀ ਡਿੱਗਦੇ ਹਨ।"
   },
   "gu": {
@@ -5012,6 +5153,8 @@
    },
    "ev_halloween": "મ્યુઝિયમમાં હેલોવીન!",
    "evText_halloween": "30 નવેમ્બર સુધી આખું મ્યુઝિયમ ઉજવણી કરે છે: ડાકણો ઉકળતી કઢાઈમાં જાદુઈ ઔષધ બનાવે છે, ચામાચીડિયાં અને ભૂત ચંદ્રની બાજુમાંથી ઊડે છે, અને પાનખરનાં પાન દરેક સ્ક્રીન પર ફરકે છે. હેલોવીન માળ પર કાળી બિલાડી અને ડાકણની ટોપીથી લઈને ભૂતિયું ઘર અને કુનિયોશીના વિશાળ હાડપિંજર સુધી 8 બિહામણાં ચિત્રો છે. મ્યુઝિક શેલ્ફ પર હેલોવીનના પાંચ રેકોર્ડ્સ વાગે છે, અને માળ પૂરો કરતાં Pix જેક-ઓ-લેન્ટર્ન બની જાય છે.",
+   "ev_update": "દસ વિશાળ કેનવાસ",
+   "evText_update": "હજારો ક્યુબથી બનેલાં પ્રખ્યાત ચિત્રો હવે મ્યુઝિયમના દરેક માળે લટકે છે: વાન ગોગના આઇરિસ, હોકુસાઈનું ફૂજી પર્વત નીચેનું તોફાન, ડ્યુરરનું નાનું સસલું અને બીજું ઘણું, દરેકમાં આશરે 5,000 થી 20,000 ક્યુબ. કોઈ પણ ક્રમમાં ભાગે ભાગે રંગ ભરો અને આખું ચિત્ર ટાઇમ-લેપ્સમાં ફરી ગોઠવાતું જુઓ.",
    "evDress_halloween": "આખી રમત હેલોવીન માટે સજી જાય છે: દરેક સ્ક્રીનનાં પોતાનાં કોળાં, ચામાચીડિયાં અને કરોળિયાનાં જાળાં છે, મેનુ પાસે ડાકણો કાઢો બનાવે છે અને ચંદ્રની સામેથી ઊડે છે, અને પાનખરનાં પાન ધીમેથી ખરે છે."
   },
   "or": {
@@ -5051,6 +5194,8 @@
    },
    "ev_halloween": "ସଂଗ୍ରହାଳୟରେ ହାଲୋଇନ୍!",
    "evText_halloween": "ନଭେମ୍ବର 30 ପର୍ଯ୍ୟନ୍ତ ହାଲୋଇନ୍ ମହଲା ଖୋଲା: କଳା ବିଲେଇ ଓ ଡାହାଣୀ ଟୋପିରୁ ଭୂତୁଡ଼ିଆ ଘର ଓ କୁନିୟୋଶିଙ୍କ ବିଶାଳ କଙ୍କାଳ ପର୍ଯ୍ୟନ୍ତ 8ଟି ଭୟାନକ ଛବି। ସମଗ୍ର ସଂଗ୍ରହାଳୟ ଉତ୍ସବ ପାଇଁ ସାଜେ, ରେକର୍ଡରେ ଏକ ହାଲୋଇନ୍ ୱାଲ୍ଟଜ୍ ଯୋଗ ହୁଏ, ଆଉ ମହଲା ସାରିଲେ Pix ଜ୍ୟାକ୍-ଓ'-ଲଣ୍ଟର୍ନ୍ ହୋଇ ସଜେ।",
+   "ev_update": "ଦଶଟି ବିଶାଳ କ୍ୟାନଭାସ",
+   "evText_update": "ହଜାର ହଜାର କ୍ୟୁବ୍‌ରେ ତିଆରି ପ୍ରସିଦ୍ଧ ଚିତ୍ରଗୁଡ଼ିକ ବର୍ତ୍ତମାନ ସଂଗ୍ରହାଳୟର ପ୍ରତ୍ୟେକ ମହଲାରେ ଟଙ୍ଗା ହୋଇଛି: ଭାନ୍ ଗଗ୍‌ଙ୍କ ଆଇରିସ୍, ହୋକୁସାଇଙ୍କ ଫୁଜି ପର୍ବତ ତଳର ଝଡ଼, ଡ୍ୟୁରରଙ୍କ ଛୋଟ ଶଶା ଏବଂ ଆହୁରି ଅନେକ, ପ୍ରତ୍ୟେକରେ ପ୍ରାୟ ୫,୦୦୦ ରୁ ୨୦,୦୦୦ କ୍ୟୁବ୍। ଯେକୌଣସି କ୍ରମରେ ଅଂଶ ଅଂଶ କରି ରଙ୍ଗ ଦିଅନ୍ତୁ ଏବଂ ସମ୍ପୂର୍ଣ୍ଣ ଚିତ୍ର ଟାଇମ୍-ଲ୍ୟାପ୍ସରେ ପୁଣି ଯୋଡ଼ି ହେବା ଦେଖନ୍ତୁ।",
    "evDress_halloween": "ପୂରା ଖେଳ ହାଲୋଇନ୍ ପାଇଁ ସଜେଇ ହୁଏ: ପ୍ରତ୍ୟେକ ସ୍କ୍ରିନର ନିଜର କଖାରୁ, ଚାମଚିକା ଓ ମକଡ଼ାଜାଲ ଅଛି, ମେନୁ ପାଖରେ ଡାଆଣୀମାନେ କାଢ଼ା ତିଆରି କରି ଜହ୍ନ ସାମନାରେ ଉଡ଼ନ୍ତି, ଆଉ ଶରତର ପତ୍ର ଧୀରେ ଧୀରେ ଝଡ଼ିପଡ଼େ।"
   },
   "ta": {
@@ -5090,6 +5235,8 @@
    },
    "ev_halloween": "அருங்காட்சியகத்தில் ஹாலோவீன்!",
    "evText_halloween": "நவம்பர் 30 வரை அருங்காட்சியகம் முழுவதும் கொண்டாட்டம்: சூனியக்காரிகள் கொதிக்கும் கொப்பரைகளில் மந்திர மருந்து காய்ச்சுகிறார்கள், வௌவால்களும் பேய்களும் நிலவைக் கடந்து பறக்கின்றன, இலையுதிர் காலத்து இலைகள் ஒவ்வொரு திரையிலும் சுழன்று விழுகின்றன. ஹாலோவீன் தளத்தில் கருப்புப் பூனை, சூனியக்காரியின் தொப்பி முதல் பேய் வீடு, குனியோஷியின் பிரம்மாண்ட எலும்புக்கூடு வரை 8 திகில் படங்கள் உள்ளன. இசை அலமாரியில் ஐந்து ஹாலோவீன் இசைத்தட்டுகள் ஒலிக்கின்றன, தளத்தை முடித்தால் Pix பூசணி விளக்காக மாறிவிடும்.",
+   "ev_update": "பத்து மாபெரும் கேன்வாஸ்கள்",
+   "evText_update": "ஆயிரக்கணக்கான க்யூப்களால் ஆன புகழ்பெற்ற ஓவியங்கள் இப்போது அருங்காட்சியகத்தின் ஒவ்வொரு தளத்திலும் தொங்குகின்றன: வான் கோவின் ஐரிஸ், ஹோகுசாயின் ஃபுஜி மலையடியில் புயல், டியூரரின் இளம் முயல் மற்றும் பல, ஒவ்வொன்றிலும் சுமார் 5,000 முதல் 20,000 க்யூப்கள். எந்த வரிசையிலும் பகுதி பகுதியாக வண்ணம் தீட்டுங்கள், முழு ஓவியமும் டைம்-லாப்ஸில் மீண்டும் இணைவதைப் பாருங்கள்.",
    "evDress_halloween": "முழு விளையாட்டும் ஹாலோவீனுக்காக அலங்கரித்துக்கொள்கிறது: ஒவ்வொரு திரையிலும் அதற்கே உரிய பூசணிகள், வௌவால்கள், சிலந்தி வலைகள் உள்ளன; மெனுவுக்கு அருகில் சூனியக்காரிகள் கஷாயம் காய்ச்சி நிலவின் முன்னே பறக்கிறார்கள்; இலையுதிர் காலத்து இலைகள் மெதுவாக உதிர்கின்றன."
   },
   "te": {
@@ -5129,6 +5276,8 @@
    },
    "ev_halloween": "మ్యూజియంలో హాలోవీన్!",
    "evText_halloween": "నవంబర్ 30 వరకు మ్యూజియం మొత్తం సంబరాల్లో ఉంది: మంత్రగత్తెలు మరుగుతున్న కుండల్లో మాయా మందులు తయారు చేస్తున్నారు, గబ్బిలాలు, దెయ్యాలు చందమామ పక్కగా ఎగురుతున్నాయి, శరదృతువు ఆకులు ప్రతి స్క్రీన్‌పై తిరుగుతున్నాయి. హాలోవీన్ అంతస్తులో నల్ల పిల్లి, మంత్రగత్తె టోపీ నుంచి దెయ్యాల ఇల్లు, కునియోషి గీసిన భారీ అస్థిపంజరం వరకు 8 భయపెట్టే చిత్రాలు ఉన్నాయి. మ్యూజిక్ షెల్ఫ్‌లో ఐదు హాలోవీన్ రికార్డులు వినిపిస్తాయి, అంతస్తును పూర్తి చేస్తే Pix గుమ్మడికాయ దీపంగా మారిపోతుంది.",
+   "ev_update": "పది భారీ కాన్వాస్‌లు",
+   "evText_update": "వేలాది క్యూబ్‌లతో చేసిన ప్రసిద్ధ చిత్రాలు ఇప్పుడు మ్యూజియం ప్రతి అంతస్తులో వేలాడుతున్నాయి: వాన్ గోగ్ ఐరిసెస్, హోకుసాయ్ ఫుజి పర్వతం కింద తుఫాను, డ్యూరర్ చిన్న కుందేలు ఇంకా మరెన్నో, ఒక్కొక్కటిలో సుమారు 5,000 నుంచి 20,000 క్యూబ్‌లు. ఏ క్రమంలోనైనా భాగం భాగంగా రంగులు వేయండి, మొత్తం చిత్రం టైమ్-లాప్స్‌లో మళ్లీ కలవడం చూడండి.",
    "evDress_halloween": "ఆట మొత్తం హాలోవీన్ కోసం అలంకరించుకుంటుంది: ప్రతి స్క్రీన్‌కు తనదైన గుమ్మడికాయలు, గబ్బిలాలు, సాలెగూళ్లు ఉంటాయి; మెనూ దగ్గర మంత్రగత్తెలు కషాయం కాచి చంద్రుడి ముందు నుంచి ఎగురుతారు; శరదృతువు ఆకులు మెల్లగా రాలుతాయి."
   },
   "kn": {
@@ -5168,6 +5317,8 @@
    },
    "ev_halloween": "ಮ್ಯೂಸಿಯಂನಲ್ಲಿ ಹ್ಯಾಲೋವೀನ್!",
    "evText_halloween": "ನವೆಂಬರ್ 30ರವರೆಗೆ ಇಡೀ ಮ್ಯೂಸಿಯಂ ಸಂಭ್ರಮಿಸುತ್ತಿದೆ: ಮಾಟಗಾತಿಯರು ಕುದಿಯುವ ಕಡಾಯಿಗಳಲ್ಲಿ ಮಾಂತ್ರಿಕ ಕಷಾಯ ಕುದಿಸುತ್ತಾರೆ, ಬಾವಲಿಗಳು ಮತ್ತು ಭೂತಗಳು ಚಂದ್ರನ ಪಕ್ಕದಲ್ಲಿ ಹಾರುತ್ತವೆ, ಶರತ್ಕಾಲದ ಎಲೆಗಳು ಪ್ರತಿ ಪರದೆಯಲ್ಲೂ ಸುಳಿದಾಡುತ್ತವೆ. ಹ್ಯಾಲೋವೀನ್ ಮಹಡಿಯಲ್ಲಿ ಕಪ್ಪು ಬೆಕ್ಕು, ಮಾಟಗಾತಿಯ ಟೋಪಿಯಿಂದ ಭೂತದ ಮನೆ ಮತ್ತು ಕುನಿಯೋಶಿಯ ದೈತ್ಯ ಅಸ್ಥಿಪಂಜರದವರೆಗೆ 8 ಭಯಾನಕ ಚಿತ್ರಗಳಿವೆ. ಮ್ಯೂಸಿಕ್ ಶೆಲ್ಫ್‌ನಲ್ಲಿ ಐದು ಹ್ಯಾಲೋವೀನ್ ರೆಕಾರ್ಡ್‌ಗಳು ಮೊಳಗುತ್ತವೆ, ಮಹಡಿ ಮುಗಿಸಿದರೆ Pix ಕುಂಬಳಕಾಯಿ ದೀಪದ ವೇಷ ತೊಡುತ್ತದೆ.",
+   "ev_update": "ಹತ್ತು ದೈತ್ಯ ಕ್ಯಾನ್ವಾಸ್‌ಗಳು",
+   "evText_update": "ಸಾವಿರಾರು ಕ್ಯೂಬ್‌ಗಳಿಂದ ಮಾಡಿದ ಪ್ರಸಿದ್ಧ ವರ್ಣಚಿತ್ರಗಳು ಈಗ ಮ್ಯೂಸಿಯಂನ ಪ್ರತಿ ಮಹಡಿಯಲ್ಲೂ ಇವೆ: ವ್ಯಾನ್ ಗಾಗ್‌ನ ಐರಿಸ್, ಹೊಕುಸಾಯ್‌ನ ಫ್ಯೂಜಿ ಪರ್ವತದ ಕೆಳಗಿನ ಬಿರುಗಾಳಿ, ಡ್ಯೂರರ್‌ನ ಮರಿ ಮೊಲ ಮತ್ತು ಇನ್ನಷ್ಟು, ಪ್ರತಿಯೊಂದರಲ್ಲಿ ಸುಮಾರು 5,000 ರಿಂದ 20,000 ಕ್ಯೂಬ್‌ಗಳು. ಯಾವ ಕ್ರಮದಲ್ಲಿ ಬೇಕಾದರೂ ಭಾಗ ಭಾಗವಾಗಿ ಬಣ್ಣ ಹಚ್ಚಿ, ಇಡೀ ಚಿತ್ರ ಟೈಮ್-ಲ್ಯಾಪ್ಸ್‌ನಲ್ಲಿ ಮತ್ತೆ ಜೋಡಣೆಯಾಗುವುದನ್ನು ನೋಡಿ.",
    "evDress_halloween": "ಇಡೀ ಆಟ ಹ್ಯಾಲೋವೀನ್‌ಗಾಗಿ ಅಲಂಕರಿಸಿಕೊಳ್ಳುತ್ತದೆ: ಪ್ರತಿ ಪರದೆಗೂ ತನ್ನದೇ ಕುಂಬಳಕಾಯಿಗಳು, ಬಾವಲಿಗಳು ಮತ್ತು ಜೇಡರ ಬಲೆಗಳಿವೆ; ಮೆನುವಿನ ಬಳಿ ಮಾಟಗಾತಿಯರು ಕಷಾಯ ಕುದಿಸಿ ಚಂದ್ರನ ಮುಂದೆ ಹಾರುತ್ತಾರೆ; ಶರತ್ಕಾಲದ ಎಲೆಗಳು ನಿಧಾನವಾಗಿ ಉದುರುತ್ತವೆ."
   },
   "ml": {
@@ -5207,6 +5358,8 @@
    },
    "ev_halloween": "മ്യൂസിയത്തിൽ ഹാലോവീൻ!",
    "evText_halloween": "നവംബർ 30 വരെ മ്യൂസിയം മുഴുവൻ ആഘോഷത്തിലാണ്: മന്ത്രവാദിനികൾ തിളയ്ക്കുന്ന കുട്ടകങ്ങളിൽ മാന്ത്രിക മരുന്ന് തയ്യാറാക്കുന്നു, വവ്വാലുകളും പ്രേതങ്ങളും ചന്ദ്രന്റെ അരികിലൂടെ പറക്കുന്നു, ശരത്കാല ഇലകൾ എല്ലാ സ്ക്രീനിലും ചുറ്റിക്കറങ്ങുന്നു. ഹാലോവീൻ നിലയിൽ കറുത്ത പൂച്ചയും മന്ത്രവാദിനിയുടെ തൊപ്പിയും മുതൽ പ്രേതഭവനവും കുനിയോഷിയുടെ ഭീമൻ അസ്ഥികൂടവും വരെ 8 പേടിപ്പെടുത്തുന്ന ചിത്രങ്ങളുണ്ട്. മ്യൂസിക് ഷെൽഫിൽ അഞ്ച് ഹാലോവീൻ റെക്കോർഡുകൾ കേൾക്കാം, നില പൂർത്തിയാക്കുമ്പോൾ Pix മത്തങ്ങാ വിളക്കായി വേഷം മാറുന്നു.",
+   "ev_update": "പത്ത് ഭീമൻ ക്യാൻവാസുകൾ",
+   "evText_update": "ആയിരക്കണക്കിന് ക്യൂബുകളാൽ നിർമ്മിച്ച പ്രശസ്ത ചിത്രങ്ങൾ ഇപ്പോൾ മ്യൂസിയത്തിലെ ഓരോ നിലയിലും തൂങ്ങിക്കിടക്കുന്നു: വാൻ ഗോഗിന്റെ ഐറിസുകൾ, ഹോകുസായിയുടെ ഫ്യൂജി പർവതത്തിനു താഴെയുള്ള കൊടുങ്കാറ്റ്, ഡ്യൂററുടെ ഇളം മുയൽ എന്നിവയും മറ്റും, ഓരോന്നിലും ഏകദേശം 5,000 മുതൽ 20,000 വരെ ക്യൂബുകൾ. ഏത് ക്രമത്തിലും ഭാഗം ഭാഗമായി നിറം നൽകൂ, മുഴുവൻ ചിത്രവും ടൈം-ലാപ്സിൽ വീണ്ടും ഒരുമിക്കുന്നത് കാണൂ.",
    "evDress_halloween": "കളി മുഴുവൻ ഹാലോവീനിനായി അണിഞ്ഞൊരുങ്ങുന്നു: ഓരോ സ്ക്രീനിനും സ്വന്തം മത്തങ്ങകളും വവ്വാലുകളും മാറാലകളുമുണ്ട്; മെനുവിനരികെ മന്ത്രവാദിനികൾ കഷായം തയ്യാറാക്കി ചന്ദ്രന്റെ മുന്നിലൂടെ പറക്കുന്നു; ശരത്കാല ഇലകൾ പതുക്കെ കൊഴിയുന്നു."
   },
   "si": {
@@ -5246,6 +5399,8 @@
    },
    "ev_halloween": "කෞතුකාගාරයේ හැලොවීන්!",
    "evText_halloween": "නොවැම්බර් 30 දක්වා මුළු කෞතුකාගාරයම උත්සවයේ: මායාකාරියන් නටන කාජ්ජුවල මන්තර බෙහෙත් සාදයි, වවුලන් සහ භූතයන් සඳ අසලින් පියාසර කරයි, සරත් කාලයේ කොළ සෑම තිරයකම කැරකෙයි. හැලොවීන් මහලේ කළු පූසා සහ මායාකාරියගේ තොප්පියේ සිට හොල්මන් ගෙදර සහ කුනියොෂිගේ දැවැන්ත ඇටසැකිල්ල දක්වා බිය උපදවන සිතුවම් 8ක් ඇත. සංගීත රාක්කයේ හැලොවීන් තැටි පහක් වදියි, මහල අවසන් කළ විට Pix වට්ටක්කා පහනක් බවට පත් වෙයි.",
+   "ev_update": "යෝධ කැන්වස් දහයක්",
+   "evText_update": "කියුබ් දහස් ගණනකින් සාදන ලද ප්‍රසිද්ධ සිතුවම් දැන් කෞතුකාගාරයේ සෑම මහලකම එල්ලා ඇත: වැන් ගෝගේ අයිරිස්, හොකුසායිගේ ෆුජි කන්ද යට කුණාටුව, ඩියුරර්ගේ තරුණ හාවා සහ තවත් බොහෝ, එක් එක් එකක් කියුබ් 5,000 සිට 20,000 පමණ. ඕනෑම අනුපිළිවෙලකට කොටස් කොටස් වශයෙන් වර්ණ ගන්වා, මුළු සිතුවමම ටයිම්-ලැප්ස් වීඩියෝවෙන් නැවත එකතු වන හැටි බලන්න.",
    "evDress_halloween": "මුළු ක්‍රීඩාවම හැලොවීන් සඳහා සැරසෙයි: සෑම තිරයකටම තමන්ගේම වට්ටක්කා, වවුලන් සහ මකුළු දැල් ඇත, මෙනුව ළඟ මායාකාරියන් ඖෂධ පදම් කර සඳ ඉදිරියෙන් පියාසර කරයි, සරත් කාලයේ කොළ සෙමෙන් වැටේ."
   },
   "th": {
@@ -5281,6 +5436,8 @@
    },
    "ev_halloween": "ฮาโลวีนที่พิพิธภัณฑ์!",
    "evText_halloween": "ถึงวันที่ 30 พฤศจิกายน พิพิธภัณฑ์ทั้งหลังร่วมเฉลิมฉลอง: แม่มดต้มน้ำยาวิเศษในหม้อที่เดือดปุด ๆ ค้างคาวและผีบินผ่านดวงจันทร์ และใบไม้ฤดูใบไม้ร่วงปลิวไปทั่วทุกหน้าจอ ชั้นฮาโลวีนมีภาพสยองขวัญ 8 ภาพ ตั้งแต่แมวดำและหมวกแม่มดไปจนถึงบ้านผีสิงและโครงกระดูกยักษ์ของคูนิโยชิ ชั้นวางเพลงมีแผ่นเสียงฮาโลวีนให้ฟังห้าแผ่น และเมื่อจบชั้นนี้ Pix จะแปลงร่างเป็นโคมฟักทอง",
+   "ev_update": "ผืนผ้าใบยักษ์ 10 ผืน",
+   "evText_update": "ภาพวาดชื่อดังที่ประกอบจากคิวบ์นับพันชิ้น ตอนนี้แขวนอยู่ทุกชั้นของพิพิธภัณฑ์ ทั้งดอกไอริสของแวนโก๊ะ พายุใต้ภูเขาไฟจิของโฮคุไซ กระต่ายป่าตัวน้อยของดูเรอร์ และอีกมากมาย ภาพละประมาณ 5,000 ถึง 20,000 คิวบ์ ระบายสีทีละส่วนตามลำดับที่ชอบ แล้วดูภาพทั้งภาพประกอบกลับมาอีกครั้งในไทม์แลปส์",
    "evDress_halloween": "ทั้งเกมแต่งตัวรับฮาโลวีน: ทุกหน้าจอมีฟักทอง ค้างคาว และใยแมงมุมเป็นของตัวเอง แม่มดต้มน้ำยาอยู่ข้างเมนูแล้วบินผ่านดวงจันทร์ และใบไม้ร่วงโปรยปรายลงมา"
   },
   "lo": {
@@ -5316,6 +5473,8 @@
    },
    "ev_halloween": "ຮາໂລວີນທີ່ຫໍພິພິທະພັນ!",
    "evText_halloween": "ເຖິງວັນທີ 30 ພະຈິກ ພິພິທະພັນທັງຫຼັງສະຫຼອງບຸນ: ແມ່ມົດຕົ້ມຢາວິເສດໃນໝໍ້ທີ່ເດືອດປຸດໆ, ຄ້າງຄາວ ແລະ ຜີບິນຜ່ານດວງຈັນ, ແລະ ໃບໄມ້ລະດູໃບໄມ້ຫຼົ່ນປິວໄປທົ່ວທຸກໜ້າຈໍ. ຊັ້ນຮາໂລວີນມີຮູບໜ້າຢ້ານ 8 ຮູບ ຕັ້ງແຕ່ແມວດຳ ແລະ ໝວກແມ່ມົດ ຈົນເຖິງເຮືອນຜີສິງ ແລະ ໂຄງກະດູກຍັກຂອງຄຸນິໂຢຊິ. ຊັ້ນວາງເພງມີແຜ່ນສຽງຮາໂລວີນຫ້າແຜ່ນໃຫ້ຟັງ, ແລະ ເມື່ອຈົບຊັ້ນນີ້ Pix ຈະກາຍເປັນໂຄມໝາກອຶ.",
+   "ev_update": "ຜ້າໃບຍັກສິບຜືນ",
+   "evText_update": "ຮູບແຕ້ມຊື່ດັງທີ່ເຮັດຈາກລູກບາດເປັນພັນໆ ຕອນນີ້ແຂວນຢູ່ທຸກຊັ້ນຂອງພິພິທະພັນ: ດອກໄອຣິສຂອງ Van Gogh, ພາຍຸໃຕ້ພູຟູຈິຂອງ Hokusai, ກະຕ່າຍນ້ອຍຂອງ Dürer ແລະອື່ນໆ ແຕ່ລະຜືນມີລູກບາດປະມານ 5,000 ເຖິງ 20,000 ອັນ. ລະບາຍສີເທື່ອລະສ່ວນ ຕາມລຳດັບໃດກໍໄດ້ ແລ້ວເບິ່ງຮູບທັງໝົດປະກອບຄືນໃນວິດີໂອເລັ່ງເວລາ.",
    "evDress_halloween": "ເກມທັງໝົດແຕ່ງຕົວຮັບຮາໂລວີນ: ແຕ່ລະໜ້າຈໍມີໝາກອຶ, ຄ້າງຄາວ ແລະ ໃຍແມງມຸມເປັນຂອງຕົນເອງ, ແມ່ມົດຕົ້ມຢາຢູ່ຂ້າງເມນູແລ້ວບິນຜ່ານດວງຈັນ, ແລະ ໃບໄມ້ລະດູໃບໄມ້ຫຼົ່ນຄ່ອຍໆຫຼົ່ນລົງມາ."
   },
   "my": {
@@ -5351,6 +5510,8 @@
    },
    "ev_halloween": "ပြတိုက်မှာ ဟယ်လိုဝင်း!",
    "evText_halloween": "နိုဝင်ဘာ ၃၀ ရက်အထိ ပြတိုက်တစ်ခုလုံး ပွဲတော်ကျင်းပနေသည်- စုန်းမများက ဆူပွက်နေသော အိုးကြီးထဲတွင် မှော်ဆေးဖျော်နေကြပြီး လင်းနို့များနှင့် သရဲများက လကို ဖြတ်ပျံသန်းကာ ဆောင်းဦးရွက်များက ဖန်သားပြင်တိုင်းတွင် လွင့်ပျံနေသည်။ ဟယ်လိုဝင်းထပ်တွင် ကြောင်မည်းနှင့် စုန်းမ ဦးထုပ်မှ သရဲခြောက်တဲ့ အိမ်နှင့် ကူနိယိုရှိ၏ ကြီးမားသော အရိုးစုအထိ ကြောက်စရာပန်းချီကား ၈ ကား ရှိသည်။ ဂီတစင်ပေါ်တွင် ဟယ်လိုဝင်းဓာတ်ပြား ငါးခု ပါရှိပြီး ထပ်ကို ပြီးအောင်လုပ်လျှင် Pix သည် ဖရုံသီးမီးအိမ်အဖြစ် ဝတ်စားမည်။",
+   "ev_update": "ဧရာမကင်းဗတ်စ် ဆယ်ချပ်",
+   "evText_update": "ကုဗထောင်ပေါင်းများစွာဖြင့် ပြုလုပ်ထားသော နာမည်ကြီးပန်းချီကားများ ယခု ပြတိုက်၏ အထပ်တိုင်းတွင် ချိတ်ထားသည်- ဗန်ဂိုး၏ အိုင်ရစ်ပန်းများ၊ ဟိုကူဆိုင်၏ ဖူဂျီတောင်အောက်က မုန်တိုင်း၊ ဒူးရာ၏ ယုန်ကလေး စသည်တို့ ဖြစ်ပြီး တစ်ချပ်လျှင် ကုဗ ၅,၀၀၀ မှ ၂၀,၀၀၀ ခန့်ရှိသည်။ ကြိုက်သည့် အစီအစဉ်ဖြင့် အပိုင်းလိုက် ရောင်ခြယ်ပြီး ပန်းချီကားတစ်ခုလုံး အချိန်ကျော်ဗီဒီယိုဖြင့် ပြန်ဆက်သွားသည်ကို ကြည့်ပါ။",
    "evDress_halloween": "ဂိမ်းတစ်ခုလုံး ဟယ်လိုဝင်းအတွက် ဝတ်ဆင်ထားသည်- စခရင်တိုင်းတွင် ကိုယ်ပိုင် ဖရုံသီးများ၊ လင်းနို့များနှင့် ပင့်ကူအိမ်များရှိပြီး မီနူးနားတွင် စုန်းမများ ဆေးရည်ချက်ကာ လကို ဖြတ်ပျံသန်းကြပြီး ဆောင်းဦးရွက်များ ဖြည်းညင်းစွာ ကြွေကျသည်။"
   },
   "km": {
@@ -5386,6 +5547,8 @@
    },
    "ev_halloween": "ហាឡូវីននៅសារមន្ទីរ!",
    "evText_halloween": "រហូតដល់ថ្ងៃទី ៣០ ខែវិច្ឆិកា សារមន្ទីរទាំងមូលកំពុងអបអរ៖ មេធ្មប់ដាំថ្នាំវេទមន្តក្នុងឆ្នាំងដែលពុះសន្សើម ប្រចៀវ និងខ្មោចហោះកាត់ព្រះច័ន្ទ ហើយស្លឹកឈើរដូវស្លឹកឈើជ្រុះរសាត់លើគ្រប់អេក្រង់។ ជាន់ហាឡូវីនមានរូបភាពរន្ធត់ ៨ ចាប់ពីឆ្មាខ្មៅ និងមួកមេធ្មប់ ដល់ផ្ទះខ្មោចលង និងគ្រោងឆ្អឹងយក្សរបស់គុនីយ៉ូស៊ី។ ថាសចម្រៀងហាឡូវីនប្រាំបន្លឺនៅលើធ្នើតន្ត្រី ហើយពេលបញ្ចប់ជាន់នេះ Pix នឹងប្ដូរទៅជាចង្កៀងល្ពៅ។",
+   "ev_update": "ផ្ទាំងបាវយក្សចំនួន ១០",
+   "evText_update": "គំនូរល្បីៗដែលធ្វើពីគូបរាប់ពាន់ ឥឡូវព្យួរនៅគ្រប់ជាន់ទាំងអស់នៃសារមន្ទីរ៖ ផ្កាអ៊ីរីសរបស់វ៉ាន់ហ្គោក ព្យុះក្រោមភ្នំហ្វូជីរបស់ហូកូសៃ ទន្សាយវ័យក្មេងរបស់ឌឺរើរ និងច្រើនទៀត ម្នាក់ៗមានគូបប្រហែល ៥០០០ ដល់ ២០០០០។ ដាក់ពណ៌ម្តងមួយផ្នែក តាមលំដាប់ណាក៏បាន ហើយមើលគំនូរទាំងមូលត្រូវបានផ្គុំឡើងវិញក្នុងវីដេអូលឿន។",
    "evDress_halloween": "ហ្គេមទាំងមូលតុបតែងសម្រាប់ហាឡូវីន៖ អេក្រង់នីមួយៗមានល្ពៅ ប្រចៀវ និងសំណាញ់ពីងពាងផ្ទាល់ខ្លួន មេធ្មប់ចម្អិនថ្នាំក្បែរម៉ឺនុយ ហើយហោះកាត់មុខព្រះច័ន្ទ ចំណែកស្លឹកឈើស្ងួតរបស់រដូវស្លឹកឈើជ្រុះរសាត់ធ្លាក់ចុះយឺតៗ។"
   },
   "ko": {
@@ -5421,6 +5584,8 @@
    },
    "ev_halloween": "박물관의 핼러윈!",
    "evText_halloween": "11월 30일까지 미술관 전체가 축제를 즐겨요. 마녀들은 보글보글 끓는 가마솥에서 물약을 끓이고, 박쥐와 유령은 달 옆을 날아가고, 가을 낙엽은 모든 화면에 흩날려요. 핼러윈 층에는 검은 고양이와 마녀 모자부터 유령의 집, 구니요시의 거대한 해골까지 오싹한 그림 8점이 기다립니다. 음악 선반에서는 핼러윈 레코드 다섯 장이 흘러나오고, 층을 완성하면 Pix가 잭오랜턴으로 변신해요.",
+   "ev_update": "거대 캔버스 10점",
+   "evText_update": "수천 개의 큐브로 만든 명화들이 이제 박물관 모든 층에 걸려 있어요. 반 고흐의 붓꽃, 호쿠사이의 후지산 아래 폭풍우, 뒤러의 어린 산토끼 등 작품마다 약 5,000~20,000개의 큐브로 이루어져 있죠. 원하는 순서대로 부분 부분 칠하고, 완성된 그림이 타임랩스로 다시 맞춰지는 모습을 지켜보세요.",
    "evDress_halloween": "게임 전체가 핼러윈 옷으로 갈아입어요. 화면마다 저마다의 호박과 박쥐, 거미줄이 가득하고, 메뉴 옆에서는 마녀들이 물약을 끓이다 달을 가로질러 날아가며, 가을 낙엽이 살랑살랑 떨어져요."
   },
   "ja": {
@@ -5456,6 +5621,8 @@
    },
    "ev_halloween": "美術館のハロウィン！",
    "evText_halloween": "11月30日まで、美術館ぜんたいがお祝いムード。魔女が泡立つ大釜で魔法の薬を煮込み、コウモリやおばけが月の前を飛びかい、秋の落ち葉がどの画面にも舞います。ハロウィンのフロアには、黒猫や魔女の帽子から、おばけ屋敷、国芳の巨大な骸骨まで、ぞくぞくする絵が8枚。ミュージックシェルフではハロウィンのレコード5枚が流れ、フロアを完成させるとPixがジャック・オー・ランタンに変身します。",
+   "ev_update": "10枚の巨大キャンバス",
+   "evText_update": "何千ものキューブでできた名画が、美術館のすべてのフロアに並びました。ゴッホの「アイリス」、北斎の富士山の下の嵐、デューラーの若い野ウサギなど、1枚あたり約5,000〜20,000個のキューブです。好きな順番にパートごとに塗って、絵全体がタイムラプスでもう一度組み上がるのを見てみよう。",
    "evDress_halloween": "ゲーム全体がハロウィンの装いに。画面ごとにかぼちゃやコウモリ、クモの巣が飾られ、メニューのそばでは魔女が魔法の薬を煮込み、月を横切って飛んでいき、秋の落ち葉がひらひらと舞い落ちます。"
   },
   "zh-CN": {
@@ -5491,6 +5658,8 @@
    },
    "ev_halloween": "博物馆里的万圣节！",
    "evText_halloween": "11 月 30 日前，整座博物馆都在庆祝：女巫在咕嘟冒泡的大锅里熬制魔药，蝙蝠和幽灵从月亮前飞过，秋叶飘落在每个画面上。万圣节楼层收藏了 8 幅诡异画作，从黑猫、女巫帽到鬼屋，再到歌川国芳笔下的巨大骷髅。音乐架上播放着五张万圣节唱片，完成这一层后，Pix 还会变身南瓜灯。",
+   "ev_update": "十幅巨幅画布",
+   "evText_update": "由数千个方块组成的名画，现在挂在博物馆的每一层：梵高的《鸢尾花》、北斋的富士山下暴风雨、丢勒的幼兔等，每幅约 5,000 到 20,000 个方块。按任意顺序一部分一部分地上色，再看整幅画以延时方式重新拼起来。",
    "evDress_halloween": "整个游戏都换上万圣节装扮：每个画面都有专属的南瓜、蝙蝠和蜘蛛网，女巫在菜单旁熬煮魔药、飞过月亮，秋天的落叶也轻轻飘落。"
   },
   "zh-TW": {
@@ -5526,6 +5695,8 @@
    },
    "ev_halloween": "博物館過萬聖節！",
    "evText_halloween": "11 月 30 日前，整座博物館都在慶祝：女巫在咕嘟冒泡的大鍋裡熬煮魔藥，蝙蝠和幽靈從月亮前飛過，秋葉飄落在每個畫面上。萬聖節樓層收藏了 8 幅詭異畫作，從黑貓、女巫帽到鬼屋，再到歌川國芳筆下的巨大骷髏。音樂架上播放著五張萬聖節唱片，完成這一層後，Pix 還會變身南瓜燈。",
+   "ev_update": "十幅巨幅畫布",
+   "evText_update": "由數千個方塊組成的名畫，現在掛在博物館的每一層：梵谷的《鳶尾花》、北齋的富士山下暴風雨、杜勒的幼兔等，每幅約 5,000 到 20,000 個方塊。依任何順序一部分一部分地上色，再看整幅畫以縮時方式重新拼起來。",
    "evDress_halloween": "整個遊戲都換上萬聖節裝扮：每個畫面都有專屬的南瓜、蝙蝠和蜘蛛網，女巫在選單旁熬煮魔藥、飛過月亮，秋天的落葉也輕輕飄落。"
   }
  },

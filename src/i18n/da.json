@@ -37,14 +37,16 @@
   "cp.picPrev": "Forrige maleri",
   "cp.picNext": "Næste maleri",
   "od.tag": "To baner. Ét tryk. Hvert hop i takt.",
-  "od.lead": "Et rytme-arkadespil i det dybe rum: ét tryk skifter bane, og hvert hop lander i takt med vores egen musik. 14 levels, en uendelig tilstand, 17 boldspor og TOPLISTE — dit lands liste og verdens.",
-  "od.new": "**2 nye levels** — SOUL ACOUSTIC, rolig guitar ved lejrbålet, og LUDOVIVO, en DÆMON-klaverkoncert. Hvert giver et spor. I TAKT: alt PERFEKT er nu 100 %. Resultaterne viser, hvad der kostede dig 100 % – og hvor. VERSUS: løb også i SOUL ACOUSTIC. Mindre download: levels kommer af sig selv og fortsætter, så snart du er online igen. Op til 120 FPS på skærme med 90–120 Hz.",
+  "od.lead": "Et rytme-arkadespil i det dybe rum: ét tryk skifter bane, og hvert hop lander i takt med vores egen musik. 17 levels, en uendelig tilstand, 20 boldspor og TOPLISTE — dit lands liste og verdens.",
   "od.free": "Gratis",
   "od.offline": "Kan spilles offline",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "I browseren, på Android og iPhone",
   "od.ev_halloween": "Halloween i kredsløb!",
   "od.evText_halloween": "Frem til 30. november klæder Orbit Dash sig ud til halloween: menuen bliver en måneskinsnat med hekse, flagermus, spindelvæv og græskar i levende lys, din bold bliver til et græskar med et spøgelsesagtigt WISP-spor — begge gratis til halloween — og tre uhyggelige numre kommer med i musikken. Den 1. december forsvinder det hele af sig selv.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Vores største opdatering. The Fabulous er den nye Dæmon-bane, I har bedt om: fem minutter gennem helvedes otte kredse inspireret af Dantes Den guddommelige komedie, forbi Charon, Kerberos, Minotauros og Geryon, til en dæmonherre, der brøler banens navn, og en finale på fire baner på én gang. Plus Sunshine, Chroma og Versus online med åbne rum for alle.",
+  "od.yt": "Se på YouTube",
   "od.evLeft": {
    "one": "{n} dag tilbage",
    "other": "{n} dage tilbage"

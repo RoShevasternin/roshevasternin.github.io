@@ -37,14 +37,16 @@
   "cp.picPrev": "Zanen baya",
   "cp.picNext": "Zane na gaba",
   "od.tag": "Da'ira biyu. Taɓawa ɗaya. Kowane tsalle a kan bugu.",
-  "od.lead": "Wasan bugu a cikin sararin samaniya: taɓawa ɗaya tana canza da'ira, kuma kowane tsalle yana faɗowa a kan bugun kiɗanmu na kanmu. Matakai 14, yanayin Ba Ƙarshe, hanyoyin ƙwallo 17 da MATSAYI — jerin ƙasarka da na duniya.",
-  "od.new": "**Sabbin matakai biyu** — SOUL ACOUSTIC, gitar mai natsuwa a gefen wuta, da LUDOVIVO, wasan kiɗan piano na ALJANI — kowanne yana ba da sabuwar WUTSIYA ta ƙwallo. A KAN BUGU yanzu da gaske ne: duk taɓawa cikakke tana ba da 100%, sakamako kuma yana nuna abin da ya hana ka 100% da inda. Tseren VERSUS yana aiki a SOUL ACOUSTIC ma, saukewar ta ragu saboda matakai suna zuwa da kansu, wasan kuma yana aiki har zuwa 120 FPS a kan allon 90–120 Hz.",
+  "od.lead": "Wasan bugu a cikin sararin samaniya: taɓawa ɗaya tana canza da'ira, kuma kowane tsalle yana faɗowa a kan bugun kiɗanmu na kanmu. Matakai 17, yanayin Ba Ƙarshe, hanyoyin ƙwallo 20 da MATSAYI — jerin ƙasarka da na duniya.",
   "od.free": "Kyauta",
   "od.offline": "Ana yi ba tare da intanet ba",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "A mai lilo, Android da iPhone",
   "od.ev_halloween": "Halloween a da'ira!",
   "od.evText_halloween": "Har zuwa 30 ga Nuwamba, Orbit Dash yana ado don Halloween: menu ya zama daren wata mai mayu, jemagu, yanar gizo-gizo da kabewa masu hasken kyandir, ƙwallonka ya zama kabewa mai hanyar WISP kamar fatalwa — duka biyun kyauta a lokacin Halloween — kuma waƙoƙi uku masu ban tsoro sun shiga cikin kiɗan. A ranar 1 ga Disamba komai zai ɓace da kansa.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Babban sabuntawarmu. The Fabulous sabon matakin Aljani ne da kuka nema: minti biyar ta cikin da'irori takwas na jahannama da littafin Divine Comedy na Dante ya zaburar, wuce Charon, Cerberus, Minotaur da Geryon, har zuwa sarkin aljanu da ke ruri da sunan matakin, da kuma ƙarshe a kan zobba huɗu a lokaci guda. Haka kuma Sunshine, Chroma da Versus ta intanet da ɗakuna buɗaɗɗu ga kowa.",
+  "od.yt": "Kalla a YouTube",
   "od.evLeft": {
    "one": "Saura kwana {n}",
    "other": "Saura kwanaki {n}"

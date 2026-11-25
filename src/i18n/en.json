@@ -38,14 +38,16 @@
   "cp.picPrev": "Previous painting",
   "cp.picNext": "Next painting",
   "od.tag": "Two orbits. One tap. Every jump on the beat.",
-  "od.lead": "A rhythm arcade in deep space: one tap switches orbits, and every jump lands on the beat of our own music. 14 levels, an endless mode, 17 ball trails and RANKS — your country’s board and the world’s.",
-  "od.new": "**Two new levels** — SOUL ACOUSTIC, calm guitar by the campfire, and LUDOVIVO, a DEMON piano concert — each gives a new ball trail. ON BEAT now means it: all PERFECT taps give 100%, and results show what cost you 100% and where. VERSUS races run in SOUL ACOUSTIC too, the download is smaller with levels arriving by themselves, and the game runs up to 120 FPS on 90–120 Hz screens.",
+  "od.lead": "A rhythm arcade in deep space: one tap switches orbits, and every jump lands on the beat of our own music. 17 levels, an endless mode, 20 ball trails and RANKS — your country’s board and the world’s.",
   "od.free": "Free",
   "od.offline": "Plays offline",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "In the browser, on Android and iPhone",
   "od.ev_halloween": "Halloween in orbit!",
   "od.evText_halloween": "Until November 30, Orbit Dash dresses up for Halloween: the menu becomes a moonlit night with witches, bats, cobwebs and candlelit pumpkins, your ball turns into a pumpkin with a ghostly WISP trail — both free for Halloween — and three spooky tracks join the music. On December 1 it all goes away on its own.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Our biggest update. The Fabulous is the new Demon level you asked for: five minutes down eight circles of hell inspired by Dante's Divine Comedy, past Charon, Cerberus, the Minotaur and Geryon, to a demon lord who roars the level's name, and a finale on four rings at once. Plus Sunshine, Chroma and Versus online: open rooms anyone can join, and a ping when someone joins yours.",
+  "od.yt": "Watch on YouTube",
   "od.evLeft": {
    "one": "{n} day left",
    "other": "{n} days left"

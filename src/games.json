@@ -20,7 +20,7 @@
   "play": "https://play.google.com/store/apps/details?id=com.lewydo.cubepix&referrer=utm_source%3Dlewydo%26utm_medium%3Dstudio_site",
     "appStore": "https://apps.apple.com/app/apple-store/id6831133655?pt=129589688&ct=studio_site&mt=8",
   "mark": "utm_source=lewydo&utm_medium=studio_site",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "icon": "/assets/games/cubepix-icon.webp"
  },
  "orbitdash": {
@@ -31,8 +31,8 @@
   "poster": "https://orbitdash.lewydo.com/assets/media/poster.webp",
   "privacy": "https://orbitdash.lewydo.com/privacy.html",
   "released": true,
-  "version": "3.3",
-  "_trails": "The seventeen ball trails of Orbit Dash 3.3, the game's order without the seasonal WISP (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level, x — won on RANKS only (FLARE, 2.2).",
+  "version": "4.0",
+  "_trails": "The twenty ball trails of Orbit Dash 4.0, the game's order without the seasonal WISP (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level, x — won on RANKS only (FLARE, 2.2). 4.0 added INFERNO (THE FABULOUS), PETAL (SUNSHINE), PRISM (CHROMA).",
   "trails": [
    [
     "COMET",
@@ -100,6 +100,18 @@
    ],
    [
     "KEYS",
+    "m"
+   ],
+   [
+    "INFERNO",
+    "m"
+   ],
+   [
+    "PETAL",
+    "m"
+   ],
+   [
+    "PRISM",
     "m"
    ]
   ],

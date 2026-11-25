@@ -37,14 +37,16 @@
   "cp.picPrev": "Vorheriges Gemälde",
   "cp.picNext": "Nächstes Gemälde",
   "od.tag": "Zwei Orbits. Ein Tipp. Jeder Sprung im Takt.",
-  "od.lead": "Eine Rhythmus-Arcade im tiefen All: Ein Tipp wechselt den Orbit, und jeder Sprung landet im Takt unserer eigenen Musik. 14 Level, ein Endlosmodus, 17 Ball-Spuren und RANGLISTE — die Bestenliste deines Landes und die der Welt.",
-  "od.new": "**2 neue Levels** — SOUL ACOUSTIC, ruhige Gitarre am Lagerfeuer, und LUDOVIVO, ein DÄMON-Klavierkonzert. Jedes gibt einen Schweif. IM TAKT: Alles PERFEKT heißt jetzt 100 %. Das Ergebnis zeigt, was dich die 100 % gekostet hat – und wo. VERSUS: Renne jetzt auch in SOUL ACOUSTIC. Kleinerer Download: Levels laden sich selbst und machen weiter, sobald du wieder online bist. Bis zu 120 FPS auf 90–120-Hz-Bildschirmen.",
+  "od.lead": "Eine Rhythmus-Arcade im tiefen All: Ein Tipp wechselt den Orbit, und jeder Sprung landet im Takt unserer eigenen Musik. 17 Level, ein Endlosmodus, 20 Ball-Spuren und RANGLISTE — die Bestenliste deines Landes und die der Welt.",
   "od.free": "Kostenlos",
   "od.offline": "Offline spielbar",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "Im Browser, auf Android und iPhone",
   "od.ev_halloween": "Halloween im Orbit!",
   "od.evText_halloween": "Bis zum 30. November verkleidet sich Orbit Dash für Halloween: Das Menü wird zu einer Mondnacht mit Hexen, Fledermäusen, Spinnweben und Kürbissen im Kerzenschein, dein Ball verwandelt sich in einen Kürbis mit einer geisterhaften WISP-Spur — beides gratis zu Halloween — und drei schaurige Tracks kommen zur Musik dazu. Am 1. Dezember verschwindet alles von selbst.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Unser größtes Update. The Fabulous ist das neue Dämon-Level, das ihr euch gewünscht habt: fünf Minuten durch acht Höllenkreise nach Dantes Göttlicher Komödie, an Charon, Zerberus, Minotaurus und Geryon vorbei zu einem Dämonenfürsten, der den Namen des Levels brüllt, und ein Finale auf vier Ringen zugleich. Dazu Sunshine, Chroma und Versus online mit offenen Räumen für alle.",
+  "od.yt": "Auf YouTube ansehen",
   "od.evLeft": {
    "one": "noch {n} Tag",
    "other": "noch {n} Tage"

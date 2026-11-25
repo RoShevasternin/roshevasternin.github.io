@@ -37,14 +37,16 @@
   "cp.picPrev": "Ihe osise gara aga",
   "cp.picNext": "Ihe osise na-esote",
   "od.tag": "Okirikiri abụọ. Otu mpịa. Mwụli ọ bụla n'oge egwu.",
-  "od.lead": "Egwuregwu ụda egwu na mbara igwe dị omimi: otu mpịa na-agbanwe okirikiri, mwụli ọ bụla na-adakwasị n'ụda egwu nke anyị onwe anyị. Ọkwa 14, ọnọdụ Ebighebi, ụzọ bọọlụ 17 na ỌNỌDỤ — ndepụta mba gị na nke ụwa.",
-  "od.new": "**Ọkwa ọhụrụ abụọ** — SOUL ACOUSTIC, gita dị jụụ n'akụkụ ọkụ, na LUDOVIVO, egwu piano EKWENSU — nke ọ bụla na-enye ọdụ bọọlụ ọhụrụ. N'OGE EGWU ugbu a pụtara n'ezie: mkpịsị niile zuru oke na-enye 100%, nsonaazụ na-egosikwa ihe ji gị 100% na ebe. Ọsọ VERSUS na-agbakwa na SOUL ACOUSTIC, nchịkọta dị nta n'ihi na ọkwa na-abịa n'onwe ha, egwuregwu na-agbakwa ruo 120 FPS na ihuenyo 90–120 Hz.",
+  "od.lead": "Egwuregwu ụda egwu na mbara igwe dị omimi: otu mpịa na-agbanwe okirikiri, mwụli ọ bụla na-adakwasị n'ụda egwu nke anyị onwe anyị. Ọkwa 17, ọnọdụ Ebighebi, ụzọ bọọlụ 20 na ỌNỌDỤ — ndepụta mba gị na nke ụwa.",
   "od.free": "N'efu",
   "od.offline": "A na-egwu ya na-enweghị ịntanetị",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "N'ihe nchọgharị, na Android na iPhone",
   "od.ev_halloween": "Halloween n'okirikiri!",
   "od.evText_halloween": "Ruo 30 Nọvemba, Orbit Dash na-eyi ihe maka Halloween: menu na-aghọ abalị ọnwa nwere ndị amoosu, ụsụ, ntanetị ududo na ugu ndị kandụl na-enye ìhè, bọọlụ gị na-aghọ ugu nwere ụzọ WISP dị ka mmụọ — ha abụọ bụ n'efu maka Halloween — na egwu atọ na-atụ egwu na-abanye n'egwu ahụ. Na 1 Disemba, ihe niile ga-apụ n'onwe ha.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Mmelite anyị kasị ukwuu. The Fabulous bụ ọkwa Ekwensu ọhụrụ ị rịọrọ: nkeji ise site n'okirikiri asatọ nke ọkụ mmụọ, nke Divine Comedy nke Dante kpaliri, gafee Charon, Cerberus, Minotaur na Geryon, ruo onyenwe ndị mmụọ ọjọọ na-eti mkpu aha ọkwa ahụ, na ngwụcha n'elu orbit anọ n'otu oge. Gbakwunyere Sunshine, Chroma na Versus n'ịntanetị nwere ụlọ mepere emepe maka onye ọ bụla.",
+  "od.yt": "Lelee na YouTube",
   "od.evLeft": {
    "other": "Ụbọchị {n} fọdụrụ"
   },

@@ -37,14 +37,16 @@
   "cp.picPrev": "Öňki surat",
   "cp.picNext": "Indiki surat",
   "od.tag": "Iki orbita. Bir basyş. Her bökmek — ritmde.",
-  "od.lead": "Giň giňişlikdäki ritm oýny: bir basyş orbitany çalyşýar, her bökmek bolsa öz sazymyzyň ritmine düşýär. 14 dereje, tükeniksiz tertip, 17 top yzy we REÝTING — ýurduňyň we dünýäniň tablisasy.",
-  "od.new": "**Iki täze dereje** — SOUL ACOUSTIC, ot ýanynda ýuwaş gitara, we LUDOVIVO, DEW derejeli pianino konserti — her biri täze top yzyny berýär. RITMDE indi hakykatdanam şeýle: ähli kämil basyşlar 100% berýär, netijeler bolsa nämäniň 100%-i alandygyny we nirededigini görkezýär. VERSUS ýaryşlary SOUL ACOUSTIC-de hem geçýär, ýüklemek kiçi, sebäbi derejeler özleri gelýär, oýun hem 90–120 Hz ekranlarda 120 FPS çenli işleýär.",
+  "od.lead": "Giň giňişlikdäki ritm oýny: bir basyş orbitany çalyşýar, her bökmek bolsa öz sazymyzyň ritmine düşýär. 17 dereje, tükeniksiz tertip, 20 top yzy we REÝTING — ýurduňyň we dünýäniň tablisasy.",
   "od.free": "Mugt",
   "od.offline": "Internetsiz oýnalýar",
   "od.hol": "HELLOUIN",
   "od.holWhere": "Brauzerde, Android-de we iPhone-da",
   "od.ev_halloween": "Orbitada Hellowin!",
   "od.evText_halloween": "30-njy noýabra çenli Orbit Dash Hellowin üçin bezelýär: menýu jadygöýler, ýarganatlar, möjek torlary we şem yşygyndaky kädiler bilen aýly gijä öwrülýär, topuň arwah ýaly WISP yzy bilen kädä öwrülýär — ikisi hem Hellowin üçin mugt — saza bolsa üç gorkunç aýdym goşulýar. 1-nji dekabrda hemme zat öz-özünden ýitýär.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Iň uly täzelenişimiz. The Fabulous siziň soran täze Dew derejesi: Dantäniň Ylahy komediýasyndan ylham alan dowzagyň sekiz tegelegi arkaly bäş minut, Haron, Kerber, Minotawr we Geriýonyň ýanyndan derejäniň adyny gygyrýan dewleriň hojaýynyna çenli we bir wagtyň özünde dört orbitada final. Şeýle hem Sunshine, Chroma we hemmeler üçin açyk otagly onlaýn Versus.",
+  "od.yt": "YouTube-da görmek",
   "od.evLeft": {
    "one": "{n} gün galdy",
    "other": "{n} gün galdy"

@@ -37,14 +37,16 @@
   "cp.picPrev": "Lukisan sebelumnya",
   "cp.picNext": "Lukisan seterusnya",
   "od.tag": "Dua orbit. Satu ketikan. Setiap lompatan ikut rentak.",
-  "od.lead": "Arked rentak di angkasa lepas: satu ketikan menukar orbit, dan setiap lompatan mendarat tepat pada rentak muzik kami sendiri. 14 tahap, mod tanpa henti, 17 jejak bola dan KEDUDUKAN — papan negara anda dan papan dunia.",
-  "od.new": "**2 tahap baharu** — SOUL ACOUSTIC, gitar tenang di tepi unggun api, dan LUDOVIVO, konsert piano IBLIS. Setiap satu beri jejak. IKUT RENTAK: semua SEMPURNA kini bermakna 100%. Keputusan tunjukkan apa yang menghalang 100% dan di mana. VERSUS: berlumba dalam SOUL ACOUSTIC juga. Muat turun lebih kecil: tahap dimuat turun sendiri dan bersambung sebaik sahaja kembali dalam talian. Sehingga 120 FPS pada skrin 90–120 Hz.",
+  "od.lead": "Arked rentak di angkasa lepas: satu ketikan menukar orbit, dan setiap lompatan mendarat tepat pada rentak muzik kami sendiri. 17 tahap, mod tanpa henti, 20 jejak bola dan KEDUDUKAN — papan negara anda dan papan dunia.",
   "od.free": "Percuma",
   "od.offline": "Boleh main luar talian",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "Dalam pelayar, pada Android dan iPhone",
   "od.ev_halloween": "Halloween di orbit!",
   "od.evText_halloween": "Sehingga 30 November, Orbit Dash berhias untuk Halloween: menu bertukar menjadi malam bulan terang dengan ahli sihir, kelawar, sarang labah-labah dan labu bercahaya lilin, bola anda bertukar menjadi labu dengan jejak WISP yang seram — kedua-duanya percuma sempena Halloween — dan tiga lagu menyeramkan menyertai muziknya. Pada 1 Disember semuanya hilang dengan sendiri.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Kemas kini terbesar kami. The Fabulous ialah level Iblis baharu yang anda minta: lima minit menembusi lapan bulatan neraka yang diilhamkan oleh Divina Commedia karya Dante, melepasi Charon, Cerberus, Minotaur dan Geryon, hingga ke penguasa iblis yang menjerit nama level, dengan final di empat orbit serentak. Ditambah Sunshine, Chroma dan Versus dalam talian dengan bilik terbuka untuk semua.",
+  "od.yt": "Tonton di YouTube",
   "od.evLeft": {
    "other": "tinggal {n} hari"
   },

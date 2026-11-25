@@ -131,6 +131,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .hero{position:relative;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);display:flex;align-items:center;justify-content:center;text-align:center;
   padding:26px var(--gut) 84px;isolation:isolate;}
 #px{position:absolute;left:0;top:0;z-index:-1;pointer-events:none;}
+.hero{overflow-x:hidden;overflow-x:clip;}   /* the heart's pixel canvas keeps its old width for a moment after the window narrows: never a sideways scroll (in season src/halloween.css did this) */
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:var(--lamp,0);transition:opacity .6s ease;
   background:radial-gradient(520px circle at var(--mx,50%) var(--my,40%),rgba(109,245,147,.09),transparent 62%);}
 .hero-in{display:flex;flex-direction:column;align-items:center;max-width:780px;}
@@ -241,6 +242,27 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-ev-tx em{font-style:normal;font-weight:900;font-size:14px;color:#ffb347;}
 .od-ev-tx em span{color:inherit;font-size:inherit;}
 @media (max-width:520px){.od-ev{flex-direction:column;align-items:stretch;padding:12px;} .od-ev img{width:100%;}}
+/* an Orbit Dash update while its window is on (src/orbitdash.json → events.<id>, kind "update"; 4.0.0 — THE FABULOUS): the game's art on top —
+   its Lottie over the picture (lottie-web from this site, played only on screen; less motion — the picture), the words, → the game's site */
+.od-up{flex-direction:column;align-items:stretch;gap:12px;padding:12px;
+  background:linear-gradient(170deg,rgba(70,14,24,.62),rgba(30,14,40,.55) 55%,rgba(22,16,52,.5));box-shadow:inset 0 0 0 1px rgba(255,96,56,.5),0 0 30px rgba(255,72,40,.16);}
+@media (hover:hover){.od-up:hover{transform:none;box-shadow:inset 0 0 0 1px rgba(255,96,56,.5),0 0 30px rgba(255,72,40,.16);}}
+.od-up-fig{position:relative;margin:0;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#140608;}
+.od-up .od-up-fig img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border-radius:0;}
+.od-up-lot{position:absolute;inset:0;opacity:0;transition:opacity .4s;}
+.od-up-lot[data-ready]{opacity:1;}
+.od-up-lot svg{display:block;width:100%!important;height:100%!important;}
+.od-up .od-ev-tx{padding:0 4px 2px;}
+.cp-up{box-shadow:inset 0 0 0 1px rgba(255,60,172,.45),0 0 30px rgba(255,60,172,.14);}
+@media (hover:hover){.cp-up:hover{box-shadow:inset 0 0 0 1px rgba(255,60,172,.6),0 0 30px rgba(255,60,172,.22);}}
+.cp-up .od-up-fig{background:#140b30;}
+.cp-up .od-up-go a{color:#ff7ac6;}
+.cp-up .od-up-go a:focus-visible{outline-color:#ff7ac6;}
+.od-up-go{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:4px;}
+.od-up-go a{font-weight:900;font-size:14px;color:#ffb15c;text-decoration:none;}
+.od-up-go a span{color:inherit;font-size:inherit;}
+.od-up-go a:hover{text-decoration:underline;}
+.od-up-go a:focus-visible{outline:2px solid #ffb15c;outline-offset:3px;border-radius:4px;}
 /* a CubePix holiday while it is on (its site's dates and words): a card above Pix → the holiday on the CubePix site; Halloween's orange */
 .cp-ev{display:flex;gap:16px;align-items:center;max-width:560px;margin-top:22px;padding:12px 16px 12px 12px;text-decoration:none;color:inherit;
   background:linear-gradient(160deg,#2e1250,#1a0f3a 60%,#24102c);box-shadow:0 -3px 0 0 #ff8a1c,0 3px 0 0 #ff8a1c,-3px 0 0 0 #ff8a1c,3px 0 0 0 #ff8a1c,0 8px 0 0 rgba(3,2,12,.55),0 0 26px rgba(255,138,28,.25);transition:transform .15s,box-shadow .15s;}
@@ -318,6 +340,8 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-new>p:not(.od-sec){margin-top:10px;color:var(--ink2);font-size:16px;line-height:1.55;}
 .od-new>p b{color:#fff;}
 .od-trails{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none;direction:ltr;}
+/* owner 22.11.2026: the update card (od.events) says what's new — first under the lead; the trails stay as a quiet box of chips, no paragraph */
+.od-tr{margin-top:14px;padding:14px 16px;} .od-tr .od-trails{margin-top:0;}
 .od-trails li{--t:#7d88b8;padding:5px 8px 4px;border-radius:8px;font:800 10.5px/1 "Inter Display",var(--f);letter-spacing:.12em;color:#fff;
   background:rgba(8,9,21,.55);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--t) 70%,transparent),0 0 12px -4px var(--t);}
 .od-trails .r{--t:#3d9bff;} .od-trails .e{--t:#b45cff;} .od-trails .l{--t:#ff3ec8;} .od-trails .m{--t:#ff4fd8;}
@@ -933,13 +957,14 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <ul class="px-chips">
           <li data-t="cp:pics" data-n="pics"></li><li data-t="cp:floors" data-n="floors"></li><li data-t="cp:langs" data-n="cpLangs"></li><li data-t="cp:free"></li>
         </ul>
+        <!-- the update / holiday cards — right under the chips, in sight (owner 22.11.2026: «лотті постав вище… оновлення має бути на виду») -->
+        {{cp.events}}
         <div class="since" data-since="cubepix"><p class="since-h" data-t="since.play"></p><p class="since-v"></p><p class="since-c" aria-hidden="true"><span></span><span></span><span></span></p></div>
         <div class="ctas">
           <a class="btn px-btn px-pink" href="{{cp.demo}}" data-lang-link="cp">▶ <span data-t="cp:play"></span></a>
           <div class="stores"><a class="btn store cp-store cp-gp" href="{{cp.play}}" rel="noopener">{{gpIn}}</a><!--cp-as--><a class="btn store cp-store cp-as" href="{{cp.appstore}}" rel="noopener">{{asIn}}</a><!--/cp-as--></div>
           <a class="btn px-btn px-dark" href="{{cp.site}}" data-lang-link="cp" data-t="game.site"></a>
         </div>
-        {{cp.events}}
         <a class="pix-meet" href="{{cp.site}}#pix" data-lang-link="cp">
           <span class="pix-pic"><span class="pix-hi" data-t="cp:pixHi"></span><img src="/assets/games/cubepix-pix.webp" alt="" width="88" height="88"></span>
           <span class="pix-tx"><b data-t="cp:pixTitle"></b><span data-t="cp:pixName"></span><em><span data-t="cp.pix.more"></span> →</em></span>
@@ -994,10 +1019,9 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <h2 class="od-title" id="odTitle" lang="en"><span class="o">ORBIT</span><span class="d">DASH</span></h2>
         <p class="od-tagline" data-t="od.tag"></p>
         <p class="chap-lead" data-t="od.lead"></p>
-        <div class="od-new"><p class="od-sec" lang="en">ORBIT DASH {{od.version}}</p><p data-t="od.new"></p>
-          <ul class="od-trails" lang="en" aria-label="COMET, BEADS, DASH, HELIX, EMBERS, PIXEL, ECHO, DRIFT, ZAP, NOVA, FLARE, CAPE, FERN, SCRIBBLE, MACH, STRUM, KEYS">{{od.trails}}</ul></div>
-        {{od.hol}}
         {{od.events}}
+        <div class="od-new od-tr"><ul class="od-trails" lang="en" aria-label="COMET, BEADS, DASH, HELIX, EMBERS, PIXEL, ECHO, DRIFT, ZAP, NOVA, FLARE, CAPE, FERN, SCRIBBLE, MACH, STRUM, KEYS, INFERNO, PETAL, PRISM">{{od.trails}}</ul></div>
+        {{od.hol}}
         <ul class="od-chips"><li data-t="od.music"></li><li data-t="od.free"></li><li data-t="od.offline"></li></ul>
         <div class="since" data-since="orbitdash"><p class="since-h" data-t="since.play"></p><p class="since-v"></p><p class="since-c" aria-hidden="true"><span></span><span></span><span></span></p></div>
         <div class="ctas">
@@ -1728,11 +1752,31 @@ if (!RM && matchMedia('(hover: hover)').matches) { const h = $('#top');
 
 // an Orbit Dash holiday (the window from its site, src/orbitdash.json → events): the same — first day 00:00 to last day 23:59 on the
 // visitor's own clock, as in the game (on December 1 the Halloween card is gone by itself)
-(() => { const now = Date.now();
-  for (const a of $$('.od-ev')) { const e = D.odEvents[a.dataset.ev]; if (!e || e.on === false) continue;
+(() => { const now = Date.now(); let hol = 0;
+  for (const a of $$('.od-ev')) { const e = D.odEvents[a.dataset.ev], up = e && e.kind === 'update'; if (!e || e.on === false || (!up && hol)) continue;
     const end = new Date(e.to + 'T23:59:59').getTime(); if (now < new Date(e.from + 'T00:00:00').getTime() || now > end) continue;
-    a.hidden = false; const n = Math.max(1, Math.ceil((end - now) / 864e5)), left = $('.od-ev-left', a);
-    onLang.push(() => { left.textContent = T('od.evLeft', n); }); break; } })();
+    a.hidden = false; if (up) { odLottie(a); continue; } hol = 1;
+    const n = Math.max(1, Math.ceil((end - now) / 864e5)), left = $('.od-ev-left', a);
+    onLang.push(() => { left.textContent = T('od.evLeft', n); }); } })();
+// an update card's Lottie (src/orbitdash.json → events.<id>, kind "update"): the player (assets/vendor/lottie_light, this site's own copy)
+// and the animation are fetched only when the card comes near; it plays only while on screen; with less motion it never loads — the picture stays
+function odLottie(card) {
+  const box = $('.od-up-lot', card); if (!box || RM || OG || !('IntersectionObserver' in window)) return;
+  const go = () => fetch(box.dataset.lottie).then((r) => r.json()).then((data) => {
+    const a = window.lottie.loadAnimation({ container: box, renderer: 'svg', loop: true, autoplay: false, animationData: data, rendererSettings: { preserveAspectRatio: 'xMidYMid slice' } });
+    a.addEventListener('DOMLoaded', () => { box.dataset.ready = '1';
+      new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? a.play() : a.pause()))).observe(box); });
+  }).catch(() => {});
+  const start = () => { if (window.lottie) return go();
+    const sc = document.createElement('script'); sc.src = '/assets/vendor/lottie_light-5.12.2.min.js'; sc.onload = go; document.head.append(sc); };
+  const near = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { near.disconnect(); start(); } }, { rootMargin: '400px 0px' });
+  near.observe(box);
+}
+// a CubePix update card (kind "update"): the same window, no «days left»; its Lottie like Orbit Dash's
+(() => { const now = Date.now();
+  for (const a of document.querySelectorAll('.cp-up')) { const e = D.cp.events[a.dataset.cpEv]; if (!e || e.on === false) continue;
+    if (now < new Date(e.from + 'T00:00:00').getTime() || now > new Date(e.to + 'T23:59:59').getTime()) continue;
+    a.hidden = false; odLottie(a); } })();
 // a CubePix holiday (its site's dates, src/cubepix.json → events): the card shows only from its first day 00:00 to its last 23:59,
 // the visitor's own clock — as in the game; it says how many days are left, in the CubePix site's words
 (() => { const now = Date.now();

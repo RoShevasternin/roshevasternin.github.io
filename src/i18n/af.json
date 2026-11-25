@@ -37,14 +37,16 @@
   "cp.picPrev": "Vorige skildery",
   "cp.picNext": "Volgende skildery",
   "od.tag": "Twee bane. Een tik. Elke sprong op die maat.",
-  "od.lead": "’n Ritmespeletjie in die diep ruimte: een tik ruil die baan, en elke sprong land op die maat van ons eie musiek. 14 vlakke, eindelose modus, 17 balspore en RANGLYS — jou land se ranglys en dié van die wêreld.",
-  "od.new": "**2 nuwe vlakke** — SOUL ACOUSTIC, kalm kitaar by die kampvuur, en LUDOVIVO, 'n DUIWEL-klavierkonsert. Elkeen gee jou 'n spoor. OP DIE MAAT: alles PERFEK is nou 100%. Die uitslae wys wat jou 100% gekos het, en waar. VERSUS: jaag ook in SOUL ACOUSTIC. Kleiner aflaai: vlakke kom vanself en gaan voort sodra jy weer aanlyn is. Tot 120 FPS op 90–120 Hz-skerms.",
+  "od.lead": "’n Ritmespeletjie in die diep ruimte: een tik ruil die baan, en elke sprong land op die maat van ons eie musiek. 17 vlakke, eindelose modus, 20 balspore en RANGLYS — jou land se ranglys en dié van die wêreld.",
   "od.free": "Gratis",
   "od.offline": "Speel vanlyn",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "In die blaaier, op Android en iPhone",
   "od.ev_halloween": "Halloween in die wentelbaan!",
   "od.evText_halloween": "Tot 30 November trek Orbit Dash vir Halloween aan: die spyskaart word ’n maanlignag met hekse, vlermuise, spinnerakke en pampoene by kerslig, jou bal verander in ’n pampoen met ’n spookagtige WISP-spoor — albei gratis vir Halloween — en drie grillerige snitte sluit by die musiek aan. Op 1 Desember verdwyn alles vanself.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Ons grootste opdatering. The Fabulous is die nuwe Duiwel-vlak waarvoor julle gevra het: vyf minute deur agt kringe van die hel geïnspireer deur Dante se Goddelike Komedie, verby Charon, Cerberus, die Minotaurus en Geryon, na 'n duiwelheer wat die vlak se naam brul, en 'n eindstryd op vier ringe tegelyk. Plus Sunshine, Chroma en Versus aanlyn met oop kamers vir almal.",
+  "od.yt": "Kyk op YouTube",
   "od.evLeft": {
    "one": "Nog {n} dag",
    "other": "Nog {n} dae"

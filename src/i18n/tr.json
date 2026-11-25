@@ -37,14 +37,16 @@
   "cp.picPrev": "Önceki tablo",
   "cp.picNext": "Sonraki tablo",
   "od.tag": "İki yörünge. Tek dokunuş. Her sıçrayış ritimde.",
-  "od.lead": "Derin uzayda bir ritim oyunu: tek dokunuş yörünge değiştirir, her sıçrayış kendi müziğimizin ritmine oturur. 14 bölüm, sonsuz mod, 17 top izi ve SIRALAMA — ülkenin ve dünyanın tablosu.",
-  "od.new": "**2 yeni bölüm** — kamp ateşi başında sakin gitar SOUL ACOUSTIC ve İBLİS piyano konseri LUDOVIVO. Her biri bir iz verir. RİTİMDE: hepsi KUSURSUZ ise artık %100. Sonuçlar %100'ü neden ve nerede kaçırdığını gösterir. VERSUS: artık SOUL ACOUSTIC'te de yarış. Daha küçük indirme: bölümler kendiliğinden iner, internet gelir gelmez devam eder. 90–120 Hz ekranlarda 120 FPS'ye kadar.",
+  "od.lead": "Derin uzayda bir ritim oyunu: tek dokunuş yörünge değiştirir, her sıçrayış kendi müziğimizin ritmine oturur. 17 bölüm, sonsuz mod, 20 top izi ve SIRALAMA — ülkenin ve dünyanın tablosu.",
   "od.free": "Ücretsiz",
   "od.offline": "Çevrimdışı oynanır",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "Tarayıcıda, Android'de ve iPhone'da",
   "od.ev_halloween": "Yörüngede Cadılar Bayramı!",
   "od.evText_halloween": "30 Kasım’a kadar Orbit Dash, Cadılar Bayramı için kılık değiştiriyor: menü cadılar, yarasalar, örümcek ağları ve mum ışığında balkabaklarıyla mehtaplı bir geceye dönüşüyor, topun hayaletimsi bir WISP iziyle balkabağına dönüşüyor — ikisi de Cadılar Bayramı’na özel ücretsiz — ve müziğe üç ürkütücü parça katılıyor. 1 Aralık’ta her şey kendiliğinden kayboluyor.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "En büyük güncellememiz. The Fabulous, istediğiniz yeni İblis bölümü: Dante'nin İlahi Komedya'sından esinlenen sekiz cehennem çemberinde beş dakika, Kharon, Kerberos, Minotor ve Geryon'un yanından geçip bölümün adını kükreyen bir iblis lordına kadar, ve aynı anda dört yörüngede bir final. Ayrıca Sunshine, Chroma ve herkese açık odalarla çevrimiçi Versus.",
+  "od.yt": "YouTube'da izle",
   "od.evLeft": {
    "one": "{n} gün kaldı",
    "other": "{n} gün kaldı"

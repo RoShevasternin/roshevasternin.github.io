@@ -37,14 +37,16 @@
   "cp.picPrev": "Vorig schilderij",
   "cp.picNext": "Volgend schilderij",
   "od.tag": "Twee banen. Eén tik. Elke sprong op de maat.",
-  "od.lead": "Een ritme-arcade diep in de ruimte: één tik wisselt van baan en elke sprong valt op de maat van onze eigen muziek. 14 levels, een eindeloze modus, 17 baltrails en RANGLIJST — de lijst van jouw land en van de wereld.",
-  "od.new": "**2 nieuwe levels** — SOUL ACOUSTIC, rustige gitaar bij het kampvuur, en LUDOVIVO, een DEMON-pianoconcert. Elk geeft een spoor. OP DE BEAT: alles PERFECT is nu 100%. De resultaten tonen wat je die 100% kostte, en waar. VERSUS: race nu ook in SOUL ACOUSTIC. Kleinere download: levels komen vanzelf binnen en gaan verder zodra je weer online bent. Tot 120 FPS op schermen van 90–120 Hz.",
+  "od.lead": "Een ritme-arcade diep in de ruimte: één tik wisselt van baan en elke sprong valt op de maat van onze eigen muziek. 17 levels, een eindeloze modus, 20 baltrails en RANGLIJST — de lijst van jouw land en van de wereld.",
   "od.free": "Gratis",
   "od.offline": "Offline speelbaar",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "In de browser, op Android en iPhone",
   "od.ev_halloween": "Halloween in de baan!",
   "od.evText_halloween": "Tot en met 30 november verkleedt Orbit Dash zich voor Halloween: het menu wordt een maanverlichte nacht met heksen, vleermuizen, spinnenwebben en pompoenen bij kaarslicht, je bal verandert in een pompoen met een spookachtige WISP-trail — allebei gratis voor Halloween — en drie griezelige nummers komen bij de muziek. Op 1 december verdwijnt alles vanzelf.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Onze grootste update. The Fabulous is het nieuwe Demon-level waar jullie om vroegen: vijf minuten door acht cirkels van de hel naar Dantes Goddelijke Komedie, langs Charon, Cerberus, de Minotaurus en Geryon, naar een demonenheer die de naam van het level brult, en een finale op vier banen tegelijk. Plus Sunshine, Chroma en Versus online met open kamers voor iedereen.",
+  "od.yt": "Bekijk op YouTube",
   "od.evLeft": {
    "one": "nog {n} dag",
    "other": "nog {n} dagen"

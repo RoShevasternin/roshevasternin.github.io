@@ -37,14 +37,16 @@
   "cp.picPrev": "Edellinen maalaus",
   "cp.picNext": "Seuraava maalaus",
   "od.tag": "Kaksi rataa. Yksi napautus. Jokainen hyppy tahdissa.",
-  "od.lead": "Rytmipeli syvässä avaruudessa: yksi napautus vaihtaa rataa, ja jokainen hyppy osuu oman musiikkimme tahtiin. 14 tasoa, loputon tila, 17 pallon jälkeä ja TULOKSET — oman maasi ja maailman taulukko.",
-  "od.new": "**2 uutta tasoa** — SOUL ACOUSTIC, rauhallista kitaraa nuotiolla, ja LUDOVIVO, DEMONI-pianokonsertto. Jokainen antaa vanan. TAHDISSA: pelkkä TARKKA on nyt 100 %. Tulokset näyttävät, mikä vei sinulta 100 % – ja missä. VERSUS: kisaa myös SOUL ACOUSTICissa. Pienempi lataus: tasot latautuvat itsestään ja jatkuvat heti, kun olet taas verkossa. Jopa 120 FPS 90–120 Hz:n näytöillä.",
+  "od.lead": "Rytmipeli syvässä avaruudessa: yksi napautus vaihtaa rataa, ja jokainen hyppy osuu oman musiikkimme tahtiin. 17 tasoa, loputon tila, 20 pallon jälkeä ja TULOKSET — oman maasi ja maailman taulukko.",
   "od.free": "Ilmainen",
   "od.offline": "Toimii offline",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "Selaimessa, Androidilla ja iPhonella",
   "od.ev_halloween": "Halloween kiertoradalla!",
   "od.evText_halloween": "30. marraskuuta asti Orbit Dash pukeutuu halloweeniin: valikosta tulee kuutamoyö noitineen, lepakkoineen, hämähäkinseittineen ja kynttiläkurpitsoineen, pallosi muuttuu kurpitsaksi, jolla on aavemainen WISP-jälki — molemmat ilmaisia halloweenina — ja musiikkiin liittyy kolme karmivaa kappaletta. 1. joulukuuta kaikki katoaa itsestään.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Suurin päivityksemme. The Fabulous on uusi Demoni-taso, jota toivoitte: viisi minuuttia alas helvetin kahdeksan piirin läpi Danten Jumalaisen näytelmän innoittamana, Kharonin, Kerberoksen, Minotauroksen ja Geryonin ohi demoniherraan, joka karjuu tason nimen, ja finaali neljällä radalla yhtä aikaa. Lisäksi Sunshine, Chroma ja Versus verkossa avoimine huoneineen kaikille.",
+  "od.yt": "Katso YouTubessa",
   "od.evLeft": {
    "one": "vielä {n} päivä",
    "other": "vielä {n} päivää"

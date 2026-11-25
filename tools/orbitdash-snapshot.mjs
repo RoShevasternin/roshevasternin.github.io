@@ -22,7 +22,10 @@ for (const L of levels) {
 // Свята гри (власник 29.10.2026: HALLOWEEN 29.10–30.11, 1 грудня тема гасне сама): вікно — те саме, що сайт гри вшиває зі
 // prototype/haunt.mjs (`"haunt":{"season":{on, from, to}}`; `on: false` — сайт гри тему вимкнув, тоді й картки не буде).
 // Сайт студії показує картку свята лише в ці дні за годинником відвідувача; слова картки — od.ev_<свято>, od.evText_<свято>.
-const events = {};
+// Картки оновлень (update4 тощо, kind: "update") — наші, руками в src/orbitdash.json: знімок їх зберігає, береться з сайту гри лише свято.
+let kept = {};
+try { kept = JSON.parse(readFileSync('src/orbitdash.json', 'utf8')).events || {}; } catch {}
+const events = Object.fromEntries(Object.entries(kept).filter(([k, e]) => k !== 'halloween' && e && e.kind === 'update'));
 const hs = html.match(/"haunt":\{"season":(\{[^}]*\})/);
 if (hs) {
   const e = JSON.parse(hs[1]), D = /^\d{4}-\d{2}-\d{2}$/;
@@ -38,7 +41,7 @@ const out = levels.map((L) => ({
 }));
 
 writeFileSync('src/orbitdash.json', JSON.stringify({
-  _about: 'Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs). Руками не правити.',
+  _about: 'Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs), руками не правити. events: halloween — з сайту гри (знімок); update4 та інші картки оновлень — наші, руками (знімок їх зберігає): from/to включно, kind "update", youtube — id ролика (null — без кнопки).',
   levels: out,
   events,
 }, null, 1) + '\n');

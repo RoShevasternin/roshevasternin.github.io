@@ -37,14 +37,16 @@
   "cp.picPrev": "Fyrra málverk",
   "cp.picNext": "Næsta málverk",
   "od.tag": "Tvær brautir. Ein snerting. Hvert stökk í takt.",
-  "od.lead": "Taktleikur úti í geimnum: ein snerting skiptir um braut og hvert stökk lendir í takti við okkar eigin tónlist. 14 borð, endalaus hamur, 17 boltaslóðir og STAÐA — listi lands þíns og heimslistinn.",
-  "od.new": "**2 ný borð** — SOUL ACOUSTIC, rólegur gítar við varðeldinn, og LUDOVIVO, DJÖFULL-píanókonsert. Hvert gefur slóð. Í TAKT: allt HÁRRÉTT þýðir nú 100%. Niðurstöðurnar sýna hvað kostaði þig 100% og hvar. VERSUS: kepptu líka í SOUL ACOUSTIC. Minna niðurhal: borðin koma sjálf og halda áfram um leið og netið kemur aftur. Allt að 120 FPS á 90–120 Hz skjám.",
+  "od.lead": "Taktleikur úti í geimnum: ein snerting skiptir um braut og hvert stökk lendir í takti við okkar eigin tónlist. 17 borð, endalaus hamur, 20 boltaslóðir og STAÐA — listi lands þíns og heimslistinn.",
   "od.free": "Ókeypis",
   "od.offline": "Spilast án nettengingar",
   "od.hol": "HREKKJAVAKA",
   "od.holWhere": "Í vafra, á Android og iPhone",
   "od.ev_halloween": "Hrekkjavaka á sporbraut!",
   "od.evText_halloween": "Til 30. nóvember klæðir Orbit Dash sig upp fyrir hrekkjavöku: valmyndin verður tunglskinsnótt með nornum, leðurblökum, köngulóarvefjum og graskerjum við kertaljós, boltinn þinn breytist í grasker með draugalegri WISP-slóð — hvort tveggja ókeypis á hrekkjavöku — og þrjú hrollvekjandi lög bætast við tónlistina. 1. desember hverfur allt af sjálfu sér.",
+  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
+  "od.evText_update4": "Stærsta uppfærslan okkar. The Fabulous er nýja Djöfla borðið sem þið báðuð um: fimm mínútur niður átta hringi helvítis innblásna af Hinum guðdómlega gleðileik Dantes, framhjá Karon, Kerberosi, Mínótárnum og Gerýon, að djöflaherra sem öskrar nafn borðsins, og lokakafli á fjórum hringjum í einu. Auk þess Sunshine, Chroma og Versus á netinu með opnum herbergjum fyrir alla.",
+  "od.yt": "Horfa á YouTube",
   "od.evLeft": {
    "one": "{n} dagur eftir",
    "other": "{n} dagar eftir"
