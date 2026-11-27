@@ -32,6 +32,9 @@ const USDT = 'TSD5GNPX2tdAZcQYrm3yEmvQCweE6cC9jY', USDT_QR = 'assets/support/usd
   if (!existsSync(new URL(USDT_QR, ROOT))) { console.error(`✗ ${USDT_QR}: the QR of the crypto address is missing`); process.exit(1); } }
 const G = json('src/games.json'), CP = json('src/cubepix.json'), LANGS = json('src/langs.json'), NAMES = json('src/langnames.json');
 const OD = json('src/orbitdash.json');   // рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs)
+// 27.11.2026 (owner: «прибрати про хеловін»): the live phone walks only the game's MAIN and SPECIAL levels — the snapshot keeps every collection
+// (col), but holiday ones (halloween and any future holiday) never reach this page; no holiday card either
+const ODLV = (OD.levels || []).filter((l) => l.col === 'main' || l.col === 'special');
 const IDS = LANGS.map((L) => L.id), RTL = LANGS.filter((L) => L.dir === 'rtl').map((L) => L.id);
 // no Russian, anywhere (owner 13–14.10.2026): not a language of ours — the lists end with the row «Россия, останови войну в Украине» instead
 if (IDS.includes('ru') || readdirSync(new URL('src/i18n/', ROOT)).includes('ru.json')) { console.error('✗ Russian is never a language of Lewydo (CLAUDE.md, «Мови»)'); process.exit(1); }
@@ -193,7 +196,7 @@ const enPics = Object.fromEntries(Object.keys(CP.pics).map((p) => [p, CP.pics[p]
 // Orbit Dash's cards (src/orbitdash.json → events) that can show at all: a window switched off (on: false) builds nothing
 const ODEV = Object.fromEntries(Object.entries(OD.events || {}).filter(([, e]) => e && e.on !== false));
 const DATA = { langs: LANGS, base: '/lang/', S: { en: SMAIN.en }, stop: STOP, cpLangs: Object.keys(CP.S), counts,
-  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: OD.levels, odEvents: ODEV, since: G.since };
+  cp: { hero: CP.hero, puzzle: CP.puzzle, art: CP.art, pics: enPics, events: CP.events || {} }, od: ODLV, odEvents: ODEV, since: G.since };
 // the live «time since» timers (src/index.html, «since»): the studio, Orbit Dash, CubePix — their start days live in src/games.json → since
 // (where each one comes from — _since); a real calendar day each, and every page element [data-since] names one of them
 for (const id of ['studio', 'orbitdash', 'cubepix']) { const v = (G.since || {})[id], m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''), d = m && new Date(Date.UTC(+m[1], m[2] - 1, +m[3]));
@@ -233,17 +236,6 @@ const odEvents = Object.entries(ODEV).map(([ev, e]) => { if (e.kind === 'update'
     (existsSync(new URL(pic, ROOT)) ? `<img src="/${pic}" alt="" width="480" height="270" loading="lazy" decoding="async">` : '') +
     `<span class="od-ev-tx"><b data-t="od.ev_${ev}"></b><span data-t="od.evText_${ev}"></span>` +
     `<em><span class="od-ev-left"></span> · <span data-t="od.browser"></span> →</em></span></a>`; }).join('\n');
-// [HALLOWEEN-LEVEL] Orbit Dash's holiday levels (02.11.2026: BLOOD MOON, MIDNIGHT PARADE, WITCH'S BREW — the game's 🎃 HOLIDAYS tab; they stay
-// after the holiday, so this card is not seasonal): the collection name — the game's own word (od.hol), the three levels — buttons that play
-// that level in the phone above (the same `level` message as the pills), their covers — from the game's site (orbitdash.lewydo.com), and honestly
-// where they are: in the browser and on Android (od.holWhere; since 3.0.0). Words — src/i18n/*.json → site
-const odHolLv = (OD.levels || []).filter((l) => l.col === 'halloween');
-if (odHolLv.length) for (const k of ['od.hol', 'od.holWhere'])
-  if (!(k in SS.en)) problems.push(`en: Orbit Dash's holiday levels need the words «${k}» (src/i18n/*.json → site)`);
-const odHol = !odHolLv.length ? '' : `<div class="od-hol"><p class="od-hol-h"><span aria-hidden="true">🎃</span> <b data-t="od.hol"></b></p>` +
-  `<ul class="od-hol-lv" lang="en">` + odHolLv.map((l) => `<li><button type="button" data-od-level="${l.id}" style="--a:#${l.palette.player}">` +
-    `<img src="${G.orbitdash.site}assets/media/cover-${l.id}.webp" alt="" width="720" height="720" loading="lazy" decoding="async"><span>${l.name.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</span></button></li>`).join('') +
-  `</ul><p class="od-hol-where" data-t="od.holWhere"></p></div>`;
 // a CubePix update (src/cubepix.json → events.<id>, kind "update", from the CubePix site's update section): the card of an Orbit Dash update
 // (od-up) in CubePix's colours — the store event's picture assets/games/cubepix-<id>.webp (+ -1280) and its Lottie (.json), the CubePix site's
 // words (cp:ev_<id>, cp:evText_<id>), → its update section, and the YouTube Short when there is one; shown by the page from / to, no «days left»
@@ -292,7 +284,7 @@ const fill = (html) => {
     .replace(/<!--cp-as-->([\s\S]*?)<!--\/cp-as-->/g, (m, b) => (G.cubepix.appStore ? b : ''))   // CubePix's App Store badge only once it is there
     .replace(/\{\{sig\}\}/g, sig).replace(/\{\{go\}\}/g, go).replace(/\{\{gpIcon\}\}/g, gpIcon).replace(/\{\{asIcon\}\}/g, asIcon).replace(/\{\{gpIn\}\}/g, gpIn).replace(/\{\{asIn\}\}/g, asIn).replace(/\{\{ico:(\w+)\}\}/g, (m, n) => ico(n))
     .replace(/\{\{jar\}\}/g, JAR).replace(/\{\{patreon\}\}/g, PATREON).replace(/\{\{usdt\}\}/g, USDT).replace(/\{\{usdtQr\}\}/g, '/' + USDT_QR)
-    .replace(/\{\{social:(\w+)(:ct)?\}\}/g, (m, cls, ct) => social(cls, !!ct)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents).replace('{{od.hol}}', () => odHol)
+    .replace(/\{\{social:(\w+)(:ct)?\}\}/g, (m, cls, ct) => social(cls, !!ct)).replace('{{code}}', () => code).replace('{{games}}', () => G.more.map(card).join('\n')).replace('{{ogGames}}', () => ogGames).replace('{{cp.logo}}', () => CP.logo).replace('{{cp.events}}', () => cpEvents).replace('{{od.events}}', () => odEvents)
     .replace('{{od.trails}}', () => G.orbitdash.trails.map(([n, r]) => `<li class="${r}">${n}</li>`).join(''))
     .replace(/\{\{(url|host|mail|year|devPage|cp\.site|cp\.demo|cp\.privacy|cp\.icon|cp\.play|cp\.appstore|cp\.version|od\.site|od\.web|od\.embed|od\.poster|od\.play|od\.appstore|od\.privacy|od\.icon|od\.version)\}\}/g, (m, k) => ({
       url: SITE, host: HOST, mail: MAIL, year: YEAR, devPage: G.devPage, 'cp.site': cpLink(G.cubepix.site), 'cp.demo': cpLink(G.cubepix.demo), 'cp.privacy': gameLink(G.cubepix.privacy), 'cp.icon': G.cubepix.icon, 'cp.play': G.cubepix.play, 'cp.appstore': G.cubepix.appStore || '', 'cp.version': G.cubepix.version,

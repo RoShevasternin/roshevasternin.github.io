@@ -220,17 +220,6 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .pix-tx em{font-style:normal;font-weight:900;font-size:14px;color:#ff8fc7;}
 /* an Orbit Dash holiday while it is on: a card in the game's own clean-neon style (like «what's new»), Halloween's pumpkin orange → the game in the browser */
 /* [HALLOWEEN-LEVEL] Orbit Dash's holiday levels — not seasonal (the levels stay in the game): name, three covers that play the level above, where */
-.od-hol{max-width:560px;margin-top:14px;padding:14px 16px 16px;border-radius:18px;background:rgba(255,138,28,.06);box-shadow:inset 0 0 0 1px rgba(255,179,71,.35);}
-.od-hol-h{display:flex;align-items:center;gap:8px;font-size:16px;}
-.od-hol-h b{font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#ffd9a8;}
-.od-hol-lv{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 0;padding:0;}
-.od-hol-lv button{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:6px;width:100%;cursor:pointer;border-radius:12px;}
-.od-hol-lv img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);transition:transform .2s,box-shadow .2s;}
-.od-hol-lv span{font-weight:900;font-size:11px;line-height:1.25;letter-spacing:.08em;color:#fff;text-align:center;}
-.od-hol-lv button:focus-visible{outline:2px solid var(--a);outline-offset:3px;}
-.od-hol-lv button[aria-pressed=true] img{box-shadow:0 0 0 2px var(--a),0 0 22px -4px var(--a);}
-@media (hover:hover){.od-hol-lv button:hover img{transform:translateY(-2px);box-shadow:0 0 0 1.5px var(--a);}}
-.od-hol-where{margin-top:12px;color:var(--ink2);font-size:14px;line-height:1.45;}
 .od-ev{display:flex;gap:16px;align-items:center;max-width:560px;margin-top:14px;padding:12px 16px 12px 12px;border-radius:18px;text-decoration:none;color:inherit;
   background:linear-gradient(160deg,rgba(74,30,110,.62),rgba(30,18,62,.5) 60%,rgba(60,22,40,.5));box-shadow:inset 0 0 0 1px rgba(255,138,28,.5),0 0 26px rgba(255,138,28,.16);transition:transform .15s,box-shadow .15s;}
 .od-ev[hidden]{display:none;}
@@ -405,19 +394,6 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-nav:hover{background:rgba(0,229,255,.2);}
 .od-nav:active{transform:scale(.92);}
 .od-nav svg{width:40%;height:40%;}
-/* Смужка рівнів: пігулки переносяться й лишаються по центру — нічого не зрізається
-   ні на телефоні, ні на ПК (на вузькому екрані стає два рядки замість одного). */
-.od-rail{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;justify-content:center;}
-.od-pill{--a:#fff;flex:none;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
-  border:0;cursor:pointer;padding:9px 14px;border-radius:999px;color:var(--ink2);background:rgba(255,255,255,.05);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);transition:background .2s,box-shadow .2s,transform .15s,color .2s;}
-.od-pill i{width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a);}
-.od-pill b{font-weight:900;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;}
-@media (hover:hover){.od-pill:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}}
-.od-pill:active{transform:scale(.96);}
-.od-pill.now:not([aria-pressed=true]){color:#fff;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--a) 45%,transparent);}
-.od-pill[aria-pressed=true]{color:#fff;background:color-mix(in srgb,var(--a) 16%,transparent);
-  box-shadow:inset 0 0 0 1px var(--a),0 0 26px -10px var(--a);}
 .od-note{margin:14px auto 0;max-width:34ch;text-align:center;font-weight:700;font-size:14px;line-height:1.45;color:var(--ink3);}
 
 /* more games: cards that lean towards the pointer */
@@ -840,9 +816,9 @@ html:not(.js) .since{display:none;}
 .foot-c{margin-top:18px;color:var(--ink3);font-size:14px;}
 
 /* right to left (ar, he, fa, ur, ps): the reading line grows from the right; the games' own pictures and controls keep their sides —
-   the CubePix logo and paintings, the Orbit Dash phone with its arrows and level pills, the code ↔ design slider */
+   the CubePix logo and paintings, the Orbit Dash phone with its arrows, the code ↔ design slider */
 [dir="rtl"] .top::after{transform-origin:100% 50%;}
-[dir="rtl"] :is(.plogo,.stage .gframe,.thumbs,.od-stage,.od-rail,.cd,.home){direction:ltr;}
+[dir="rtl"] :is(.plogo,.stage .gframe,.thumbs,.od-stage,.cd,.home){direction:ltr;}
 
 /* reveal as it comes into view */
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);}
@@ -1018,7 +994,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
-        <div class="od-rail" id="odPills" role="group" data-ta="aria-label:od.levelsAria"></div>
+        <p class="sr-only" id="odNow" aria-live="polite" lang="en"></p>
         <p class="od-note" data-t="od.levels"></p>
       </div>
       <div class="chap-txt rv">
@@ -1028,7 +1004,6 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="chap-lead" data-t="od.lead"></p>
         {{od.events}}
         <div class="od-new od-tr"><ul class="od-trails" lang="en" aria-label="COMET, BEADS, DASH, HELIX, EMBERS, PIXEL, ECHO, DRIFT, ZAP, NOVA, FLARE, CAPE, FERN, SCRIBBLE, MACH, STRUM, KEYS, INFERNO, PETAL, PRISM, MESMER, MIRAGE">{{od.trails}}</ul></div>
-        {{od.hol}}
         <ul class="od-chips"><li data-t="od.music"></li><li data-t="od.free"></li><li data-t="od.offline"></li></ul>
         <div class="since" data-since="orbitdash"><p class="since-h" data-t="since.play"></p><p class="since-v"></p><p class="since-c" aria-hidden="true"><span></span><span></span><span></span></p></div>
         <div class="ctas">
@@ -1518,14 +1493,13 @@ const cubepix = (() => {
 // Гра зі свого боку слухає лише батька з https://lewydo.com, свого походження чи localhost (тести), а шле ready / state / tick з "*" —
 // нічого приватного. Мова гри в кадрі — мова сторінки, через ?lang= в адресі кадру (сховище мови в кожного сайту тепер своє).
 const orbit = (() => {
-  const box = $('#odScreen'), pills = $('#odPills'), L = (D.od || []), SRC = '{{od.embed}}', GAME = new URL(SRC, location.href).origin;
+  const box = $('#odScreen'), L = (D.od || []), SRC = '{{od.embed}}', GAME = new URL(SRC, location.href).origin;
   let fr = null, ready = false, want = null, cur = null, vis = false;
   const send = (m) => { if (fr && ready && fr.contentWindow) fr.contentWindow.postMessage(m, GAME); };
   const labels = () => send({ od: 'labels', tap: T('od.tap'), sound: T('od.sound'), watch: T('od.watch'), loading: T('od.loading') });
   const visible = () => send({ od: 'visible', on: vis && !document.hidden });
-  const mark = () => { [...pills.children].forEach((b) => { const id = b.dataset.id || null;
-    b.setAttribute('aria-pressed', String(id === want)); b.classList.toggle('now', !!id && id === cur); });
-    $$('[data-od-level]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.odLevel === want))); };
+  // 27.11.2026 (owner): no level pills under the phone — the arrows ‹ › walk the levels; a screen reader hears the level they picked
+  const say = (id) => { const l = L.find((x) => x.id === id), o = $('#odNow'); if (o) o.textContent = l ? l.name : ''; };
   const tint = (id) => { const l = L.find((x) => x.id === id); if (l) $('.od-box').style.setProperty('--odc', '#' + l.palette.player); };
   function load() {
     if (fr || !box) return;
@@ -1535,34 +1509,22 @@ const orbit = (() => {
     fr.title = T('od.aria'); fr.setAttribute('allow', 'autoplay; web-share; clipboard-write');   // the game's SHARE button: the browser's sheet and the clipboard inside the frame
     box.appendChild(fr);
   }
-  function pick(id) { want = id || null; mark(); if (!fr) load(); else send({ od: 'level', id: want }); }
+  function pick(id) { want = id || null; say(want); if (!fr) load(); else send({ od: 'level', id: want }); }
   function step(d) { const ids = L.map((l) => l.id); if (!ids.length) return;
     const at = ids.indexOf(want || cur); pick(ids[((at < 0 ? (d > 0 ? -1 : 0) : at) + d + ids.length) % ids.length]); }
   return { start() {
     if (!box || !L.length) return;
-    const pill = (id, name, color) => { const b = document.createElement('button');
-      b.type = 'button'; b.className = 'od-pill'; b.dataset.id = id || ''; b.setAttribute('aria-pressed', 'false');
-      if (color) b.style.setProperty('--a', color);
-      b.innerHTML = '<i></i><b></b>'; b.lastChild.textContent = name;
-      b.addEventListener('click', () => pick(id)); pills.appendChild(b); return b; };
-    const all = pill(null, T('od.all'));
-    // [HALLOWEEN-LEVEL] holiday levels — 🎃; the SPECIAL tab (5.0.0: HYPNOTIC, ABRACADABRA — new mechanics) — ordinary levels with a ✦
-    L.forEach((l) => pill(l.id, ({ halloween: '🎃 ', special: '✦ ' }[l.col] || '') + l.name, '#' + l.palette.player));
-    // the holiday levels' covers (.od-hol) — the same as their pills: that level in the phone, and the phone into view
-    $$('[data-od-level]').forEach((b) => b.addEventListener('click', () => { pick(b.dataset.odLevel);
-      box.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' }); }));
     $('#odPrev').addEventListener('click', () => step(-1));
     $('#odNext').addEventListener('click', () => step(1));
     addEventListener('message', (e) => {
       if (!fr || e.source !== fr.contentWindow || e.origin !== GAME) return;                     // our frame, from the game's own origin only
       const m = e.data; if (!m || typeof m !== 'object' || typeof m.od !== 'string') return;
       if (m.od === 'ready') { ready = true; box.classList.add('ready'); labels(); visible(); if (want) send({ od: 'level', id: want }); }
-      else if ((m.od === 'state' || m.od === 'tick') && m.level && m.level !== cur) { cur = m.level; mark(); tint(cur); }
+      else if ((m.od === 'state' || m.od === 'tick') && m.level && m.level !== cur) { cur = m.level; tint(cur); }
     });
     new IntersectionObserver((es) => { vis = es[0].isIntersecting; visible(); }, { threshold: .1 }).observe(box);
     document.addEventListener('visibilitychange', visible);
-    onLang.push(() => { all.lastChild.textContent = T('od.all'); labels(); if (fr) fr.title = T('od.aria'); });
-    mark();
+    onLang.push(() => { labels(); if (fr) fr.title = T('od.aria'); });
     // гра — коли до неї догорнули; «менше руху» чи заощадження трафіку — лише кнопкою
     if (RM || (navigator.connection && navigator.connection.saveData)) { box.classList.add('idle'); $('#odStill').addEventListener('click', load); }
     else { const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: '250px 0px' }); io.observe(box); }

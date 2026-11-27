@@ -169,9 +169,14 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   await page.locator('#cpBack').click();
   await expect(page.locator('#cpTry')).toBeVisible();
   const L = JSON.parse(readFileSync(new URL('../src/orbitdash.json', import.meta.url), 'utf8')).levels;
+  // 27.11.2026 (owner: «прибрати кучу кнопок під екраном і прибрати про хеловін»): no level pills, no holiday card — the arrows walk
+  // the game's MAIN and SPECIAL levels only (the snapshot still carries the holiday ones, the page never shows them)
+  const LV = L.filter((l) => l.col === 'main' || l.col === 'special'), ids = LV.map((l) => l.id);
+  expect(L.filter((l) => l.col === 'special').map((l) => l.id)).toEqual(['hypnotic', 'abracadabra']);
+  expect(L.some((l) => l.col === 'halloween')).toBe(true);
   await page.locator('#orbitdash').scrollIntoViewIfNeeded();                                        // the game loads when you get to it
-  const pills = page.locator('.od-pill');
-  await expect(pills).toHaveCount(L.length + 1);                                                   // «All levels» + every level
+  await expect(page.locator('#orbitdash .od-pill, #odPills, #orbitdash .od-hol, #orbitdash [data-od-level]')).toHaveCount(0);
+  await expect(page.locator('#orbitdash [data-t="od.levels"]')).not.toBeEmpty();                   // «this is the real game…» stays
   await expect(page.locator('#odScreen iframe')).toHaveAttribute('src', `${OD}/play/embed.html?lang=en`);   // the game's own origin; the page's language
   await expect(page.locator('#odScreen iframe')).toHaveAttribute('allow', 'autoplay; web-share; clipboard-write');   // the game's SHARE button inside the frame
   await expect(page.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });
@@ -181,30 +186,22 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   const tap = () => game().evaluate((real) => real ? (document.querySelector('#odx .tap span') || {}).textContent
     : (got.filter((m) => m.od === 'labels').pop() || {}).tap, REAL_OD).catch(() => null);
   await expect.poll(tap, { timeout: 15_000 }).toBe('TAP TO PLAY');                                  // the words in the frame — the page's language
-  await pills.nth(3).click();                                                                      // a pill → that level in the game
-  await expect(pills.nth(3)).toHaveAttribute('aria-pressed', 'true');
-  await expect.poll(level, { timeout: 15_000 }).toBe(L[2].id);
-  await page.locator('#odNext').click();                                                           // the arrows walk through the levels too
-  await expect(pills.nth(4)).toHaveAttribute('aria-pressed', 'true');
-  await expect.poll(level, { timeout: 15_000 }).toBe(L[3].id);
-  // [HALLOWEEN-LEVEL] the holiday levels (02.11.2026): pills with 🎃, and a card — the game's word, three covers that play that level, where
-  const hol = L.filter((l) => l.col === 'halloween');
-  expect(hol.map((l) => l.id)).toEqual(['blood-moon', 'midnight-parade', 'witchs-brew']);
-  await expect(pills.filter({ hasText: '🎃' })).toHaveCount(hol.length);
-  // the SPECIAL tab (5.0.0, 27.11.2026: HYPNOTIC, ABRACADABRA — new mechanics): ordinary levels with a ✦, never holiday ones (no 🎃, not in the card)
-  const spec = L.filter((l) => l.col === 'special');
-  expect(spec.map((l) => l.id)).toEqual(['hypnotic', 'abracadabra']);
-  await expect(pills.filter({ hasText: '✦' })).toHaveCount(spec.length);
-  for (const l of spec) await expect(page.locator(`.od-pill[data-id="${l.id}"]`)).toHaveText('✦ ' + l.name);
-  const holBtn = page.locator('.od-hol [data-od-level]');
-  await expect(holBtn).toHaveCount(hol.length);
-  await expect(page.locator('.od-hol [data-t="od.hol"]')).toHaveText('HALLOWEEN');
-  await expect(page.locator('.od-hol [data-t="od.holWhere"]')).toHaveText('In the browser, on Android and iPhone');
-  await holBtn.nth(2).click();                                                                     // a cover → that level in the phone
-  await expect(holBtn.nth(2)).toHaveAttribute('aria-pressed', 'true');
-  await expect.poll(level, { timeout: 15_000 }).toBe(hol[2].id);
-  await pills.nth(0).click();                                                                      // «All levels» — the trailer again
-  await expect(pills.nth(0)).toHaveAttribute('aria-pressed', 'true');
+  const now = page.locator('#odNow');                                                              // a screen reader hears the level the arrows picked
+  await page.locator('#odNext').click();                                                           // the arrows walk through the levels
+  await expect(now).not.toBeEmpty();
+  const t1 = await now.textContent(), first = LV.find((l) => l.name === t1);
+  expect(first, 'the arrows picked a MAIN / SPECIAL level').toBeTruthy();
+  await expect.poll(level, { timeout: 15_000 }).toBe(first.id);
+  const k = ids.indexOf(first.id);
+  await page.locator('#odNext').click();
+  await expect(now).toHaveText(LV[(k + 1) % LV.length].name);
+  await expect.poll(level, { timeout: 15_000 }).toBe(LV[(k + 1) % LV.length].id);
+  await page.locator('#odPrev').click();
+  await expect(now).toHaveText(first.name);
+  await expect.poll(level, { timeout: 15_000 }).toBe(first.id);
+  const seen = new Set();                                                                          // a full lap: every level, never a holiday one
+  for (let i = 0; i < LV.length; i++) { await page.locator('#odNext').click(); seen.add(await now.textContent()); }
+  expect([...seen].sort()).toEqual(LV.map((l) => l.name).sort());
   await expect(page.locator('.od a.btn-cyan')).toHaveAttribute('href', `${OD}/play/?${MARK}&lang=en`);   // the whole game in the browser comes first, as with CubePix
   await expect(page.locator('.od .ctas a[href*="com.lewydo.orbitdash"]')).toHaveCount(1);          // Google Play right after it
   const as = page.locator('.od .ctas a.od-as');                                                    // …and the App Store next to it (since 10.11.2026)
@@ -399,11 +396,11 @@ test('the Orbit Dash 5.0 update card: its window, the visitor’s words, a lazy 
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   const box = await card.boundingBox(); expect(box.x).toBeGreaterThanOrEqual(0); expect(box.x + box.width).toBeLessThanOrEqual(390);
   await expect(page.locator('#orbitdash .od-ver')).toHaveText('5.0');
-  // owner 22.11.2026: no od.new paragraph repeating the card — the update card comes first, above the trail chips and HALLOWEEN
+  // owner 22.11.2026: no od.new paragraph repeating the card — the update card comes first, above the trail chips (the HALLOWEEN card is gone, 27.11.2026)
   await expect(page.locator('#orbitdash [data-t="od.new"]')).toHaveCount(0);
   await expect(page.locator('#orbitdash .od-trails li')).toHaveCount(22);
-  const order = await page.evaluate(() => ['.od-ev[data-ev="update5"]', '.od-tr', '.od-hol'].map((q) => document.querySelector('#orbitdash ' + q)?.getBoundingClientRect().top ?? -1));
-  expect(order[0] >= 0 && order[0] < order[1] && order[1] < order[2], order.join(' ')).toBe(true);
+  const order = await page.evaluate(() => ['.od-ev[data-ev="update5"]', '.od-tr'].map((q) => document.querySelector('#orbitdash ' + q)?.getBoundingClientRect().top ?? -1));
+  expect(order[0] >= 0 && order[0] < order[1], order.join(' ')).toBe(true);
   for (const L of ['ar', 'he']) {                                                                    // right to left
     await page.goto(`./?lang=${L}`); await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
     await card.scrollIntoViewIfNeeded(); await expect(card).toBeVisible();
@@ -1373,8 +1370,9 @@ test('the live game is its own origin: the page talks only to it, hears only it,
   await expect.poll(tap, { timeout: 15_000 }).toBe(uk['od.tap']);                                  // the page's words reached the game
   const level = () => (REAL_OD ? game().evaluate(() => { const i = window.__orbitDev.current.beatInfo(); return i && i.id; })
     : game().evaluate(() => (got.filter((m) => m.od === 'level').pop() || {}).id)).catch(() => null);
-  await page.locator(`.od-pill[data-id="${L[1].id}"]`).click();                                        // a pill → that level in the game: the channel works
-  await expect.poll(level, { timeout: 15_000 }).toBe(L[1].id);
+  await page.locator('#odNext').click();                                                             // an arrow → a level in the game: the channel works
+  const t1 = await page.locator('#odNow').textContent(), picked = L.find((l) => l.name === t1);
+  await expect.poll(level, { timeout: 15_000 }).toBe(picked.id);
   if (!REAL_OD) expect(await game().evaluate(() => refused)).toEqual([]);                            // …and the game heard the page (localhost)
   // the frame is taken to another origin (a link inside it, a redirect): what it says from there is not heard, and the page's messages,
   // addressed to the game's origin only, never reach it (the browser drops them)
@@ -1386,9 +1384,10 @@ test('the live game is its own origin: the page talks only to it, hears only it,
   await game().goto(`${ELSE}/frame.html`);
   const other = page.frame({ url: /elsewhere\.example/ });
   await page.waitForTimeout(500);
-  await expect(page.locator(`.od-pill[data-id="${odd.id}"]`)).not.toHaveClass(/\bnow\b/);            // its «state» and «tick» changed nothing
-  await page.locator(`.od-pill[data-id="${L[2].id}"]`).click();                                        // a pill → a «level» message for the game
-  await expect(page.locator(`.od-pill[data-id="${L[2].id}"]`)).toHaveAttribute('aria-pressed', 'true');
+  expect(await page.locator('.od-box').evaluate((b) => b.style.getPropertyValue('--odc'))).not.toBe('#' + odd.palette.player);   // its «state» and «tick» changed nothing
+  const before = await page.locator('#odNow').textContent();
+  await page.locator('#odNext').click();                                                             // an arrow → a «level» message for the game
+  await expect(page.locator('#odNow')).not.toHaveText(before);
   await page.waitForTimeout(500);
   expect(await other.evaluate(() => got)).toEqual([]);                                               // …which the other origin never got
   expect(w.errs.filter((e) => !/target origin provided .* does not match the recipient window's origin/.test(e))).toEqual([]);
@@ -1400,7 +1399,7 @@ test('the live game is its own origin: the page talks only to it, hears only it,
   await p2.goto(`${STRANGER}/?lang=uk`);
   await p2.locator('#orbitdash').scrollIntoViewIfNeeded();
   await expect(p2.locator('#odScreen')).toHaveClass(/\bready\b/, { timeout: 30_000 });
-  await p2.locator(`.od-pill[data-id="${odd.id}"]`).click();
+  await p2.locator('#odNext').click();
   await p2.waitForTimeout(1500);
   const g2 = p2.frame({ url: /embed\.html/ });
   if (REAL_OD) {
