@@ -37,15 +37,15 @@
   "cp.picPrev": "Lukisan sebelumnya",
   "cp.picNext": "Lukisan berikutnya",
   "od.tag": "Dua orbit. Satu ketukan. Setiap lompatan tepat di ketukan.",
-  "od.lead": "Arkade ritme di luar angkasa: satu ketukan memindahkan orbit, dan setiap lompatan jatuh tepat di ketukan musik kami sendiri. 17 level, mode tanpa akhir, 20 jejak bola, dan PERINGKAT — papan negaramu dan papan dunia.",
+  "od.lead": "Arkade ritme di luar angkasa: satu ketukan memindahkan orbit, dan setiap lompatan jatuh tepat di ketukan musik kami sendiri. 19 level, mode tanpa akhir, 22 jejak bola, dan PERINGKAT — papan negaramu dan papan dunia.",
   "od.free": "Gratis",
   "od.offline": "Bisa main offline",
   "od.hol": "HALLOWEEN",
   "od.holWhere": "Di browser, Android, dan iPhone",
   "od.ev_halloween": "Halloween di orbit!",
   "od.evText_halloween": "Sampai 30 November, Orbit Dash berdandan untuk Halloween: menu berubah menjadi malam bulan purnama dengan penyihir, kelelawar, sarang laba-laba, dan labu bercahaya lilin, bolamu berubah menjadi labu dengan jejak WISP yang seram — keduanya gratis selama Halloween — dan tiga lagu menyeramkan bergabung dengan musiknya. Pada 1 Desember semuanya hilang dengan sendirinya.",
-  "od.ev_update4": "Orbit Dash 4.0: The Fabulous",
-  "od.evText_update4": "Pembaruan terbesar kami. The Fabulous adalah level Iblis baru yang kalian minta: lima menit menembus delapan lingkaran neraka yang terinspirasi Divina Commedia karya Dante, melewati Karon, Cerberus, Minotaur, dan Geryon, hingga penguasa iblis yang menggemuruhkan nama level, dengan final di empat orbit sekaligus. Plus Sunshine, Chroma, dan Versus online dengan ruang terbuka untuk siapa saja.",
+  "od.ev_update5": "Orbit Dash 5.0: HYPNOTIC dan ABRACADABRA",
+  "od.evText_update5": "Dua level khusus, masing-masing dengan mekanik tersendiri. Di HYPNOTIC, level Iblis, bola melompat melewati portal mengikuti beat ke cincin lain, dan sebagian portal itu palsu; mainkan versi penuh atau mode Aman, tanpa kilatan. Di ABRACADABRA, level Gila dengan phonk brass, orbit berubah bentuk mengikuti beat: elips, segitiga, persegi, bintang. Selesaikan untuk mendapat jejak MESMER dan MIRAGE serta piringan SPIRAL. Dan di 3 atau 4 cincin, cincin tempat kamu akan mendarat kini menyala.",
   "od.yt": "Tonton di YouTube",
   "od.evLeft": {
    "other": "{n} hari lagi"

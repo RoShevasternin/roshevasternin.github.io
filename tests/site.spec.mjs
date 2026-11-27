@@ -29,7 +29,7 @@ const SITE_PORT = +(process.env.SITE_PORT || 5190), OD = `http://localhost:${+(p
 const OD_REAL = 'https://orbitdash.lewydo.com', CP = 'https://cubepix.lewydo.com', MARK = 'utm_source=lewydo&utm_medium=studio_site';
 const ROOT = new URL('../', import.meta.url), disk = (p) => readFileSync(new URL(p, ROOT), 'utf8');
 // Orbit Dash's cards (src/orbitdash.json → events): the Halloween window (on: false since 22.11.2026 — the owner: «хеловін можеш і на сайті
-// прибрати») and the 4.0.0 update card (update4)
+// прибрати») and the update card (update5 — 5.0.0, 27.11.2026; update4 — 4.0.0 before it)
 const ODEVENTS = JSON.parse(disk('src/orbitdash.json')).events || {}, HW_ON = !!ODEVENTS.halloween && ODEVENTS.halloween.on !== false;
 // CubePix's holiday window (src/cubepix.json → events; on: false — the owner switched it off, 22.11.2026: «хеловін … прибрати»)
 const CPEVENTS = JSON.parse(disk('src/cubepix.json')).events || {}, CP_HW_ON = !!CPEVENTS.halloween && CPEVENTS.halloween.on !== false;
@@ -191,6 +191,11 @@ test('both games show themselves right on the page: CubePix plays, Orbit Dash is
   const hol = L.filter((l) => l.col === 'halloween');
   expect(hol.map((l) => l.id)).toEqual(['blood-moon', 'midnight-parade', 'witchs-brew']);
   await expect(pills.filter({ hasText: '🎃' })).toHaveCount(hol.length);
+  // the SPECIAL tab (5.0.0, 27.11.2026: HYPNOTIC, ABRACADABRA — new mechanics): ordinary levels with a ✦, never holiday ones (no 🎃, not in the card)
+  const spec = L.filter((l) => l.col === 'special');
+  expect(spec.map((l) => l.id)).toEqual(['hypnotic', 'abracadabra']);
+  await expect(pills.filter({ hasText: '✦' })).toHaveCount(spec.length);
+  for (const l of spec) await expect(page.locator(`.od-pill[data-id="${l.id}"]`)).toHaveText('✦ ' + l.name);
   const holBtn = page.locator('.od-hol [data-od-level]');
   await expect(holBtn).toHaveCount(hol.length);
   await expect(page.locator('.od-hol [data-t="od.hol"]')).toHaveText('HALLOWEEN');
@@ -365,38 +370,39 @@ test('Halloween switched off: no festive page and no Halloween card, even inside
   expect([...w.ext]).toEqual([]);
 });
 
-// owner 22.11.2026 («зробить про нове оновлення і теж лотті на сайт»): the Orbit Dash 4.0.0 card in its world while its window is on
-// (src/orbitdash.json → events.update4, kind "update"): the game's art with its Lottie over it (lottie-web from this site, fetched only when
+// owner 22.11.2026 («зробить про нове оновлення і теж лотті на сайт»; 27.11.2026 — 5.0.0, «тепер так будемо про оновлення розказувати»): the Orbit
+// Dash update card (now 5.0.0) in its world while its window is on (src/orbitdash.json → events.update5, kind "update"): the game's art with its Lottie over it (lottie-web from this site, fetched only when
 // the card comes near, playing only on screen), the visitor's words, → the game's site with our mark; less motion — the picture, no player;
 // a phone and right to left — nothing scrolls sideways; the day after the window — gone by itself; YouTube only if the data names a video
-test('the Orbit Dash 4.0 update card: its window, the visitor’s words, a lazy self-hosted Lottie, the picture with less motion, phone and RTL', async ({ browser }) => {
-  const U = ODEVENTS.update4;
-  test.skip(!U, 'no update4 window');
+test('the Orbit Dash 5.0 update card: its window, the visitor’s words, a lazy self-hosted Lottie, the picture with less motion, phone and RTL', async ({ browser }) => {
+  const U = ODEVENTS.update5;
+  test.skip(!U, 'no update5 window');
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
   const page = await ctx.newPage(), w = watch(page), lottie = [];
-  page.on('request', (r) => { if (/lottie|orbitdash-update4\.json/.test(r.url())) lottie.push(r.url()); });
+  page.on('request', (r) => { if (/lottie|orbitdash-update5\.json/.test(r.url())) lottie.push(r.url()); });
   await page.clock.setFixedTime(new Date(U.from + 'T12:00:00'));
   await page.goto('./?lang=uk');
-  const card = page.locator('.od-ev[data-ev="update4"]');
+  const card = page.locator('.od-ev[data-ev="update5"]');
   await expect(card).toBeAttached(); await expect(card).not.toHaveAttribute('hidden', /.*/);
   expect(lottie, 'nothing is fetched before the card comes near').toEqual([]);
   await card.scrollIntoViewIfNeeded();
   await expect(card).toBeVisible();
-  await expect(card.locator('b')).toHaveText('Orbit Dash 4.0: The Fabulous');
-  await expect(card).toContainText('Данте');
+  await expect(card.locator('b')).toHaveText('Orbit Dash 5.0: HYPNOTIC і ABRACADABRA');
+  await expect(card).toContainText('портали');
   await expect(card.locator('.od-up-go a').first()).toHaveAttribute('href', `${OD}/?${MARK}&lang=uk`);
   await expect(card.locator('.od-up-go a').first()).toContainText('Сайт гри');
   await expect(card.locator('.od-up-go a')).toHaveCount(U.youtube ? 2 : 1);
+  if (U.youtube) await expect(card.locator('.od-up-go a').nth(1)).toHaveAttribute('href', `https://www.youtube.com/watch?v=${U.youtube}`);
   await expect(card.locator('.od-up-lot svg')).toHaveCount(1, { timeout: 10000 });                    // the animation is on
   await expect(card.locator('.od-up-lot')).toHaveAttribute('data-ready', '1');
   expect(lottie.every((u) => new URL(u).hostname === 'localhost'), lottie.join(' ')).toBe(true);       // this site's own copies
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   const box = await card.boundingBox(); expect(box.x).toBeGreaterThanOrEqual(0); expect(box.x + box.width).toBeLessThanOrEqual(390);
-  await expect(page.locator('#orbitdash .od-ver')).toHaveText('4.0');
+  await expect(page.locator('#orbitdash .od-ver')).toHaveText('5.0');
   // owner 22.11.2026: no od.new paragraph repeating the card — the update card comes first, above the trail chips and HALLOWEEN
   await expect(page.locator('#orbitdash [data-t="od.new"]')).toHaveCount(0);
-  await expect(page.locator('#orbitdash .od-trails li')).toHaveCount(20);
-  const order = await page.evaluate(() => ['.od-ev[data-ev="update4"]', '.od-tr', '.od-hol'].map((q) => document.querySelector('#orbitdash ' + q)?.getBoundingClientRect().top ?? -1));
+  await expect(page.locator('#orbitdash .od-trails li')).toHaveCount(22);
+  const order = await page.evaluate(() => ['.od-ev[data-ev="update5"]', '.od-tr', '.od-hol'].map((q) => document.querySelector('#orbitdash ' + q)?.getBoundingClientRect().top ?? -1));
   expect(order[0] >= 0 && order[0] < order[1] && order[1] < order[2], order.join(' ')).toBe(true);
   for (const L of ['ar', 'he']) {                                                                    // right to left
     await page.goto(`./?lang=${L}`); await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
@@ -414,10 +420,10 @@ test('the Orbit Dash 4.0 update card: its window, the visitor’s words, a lazy 
   // less motion: the picture, and the player is never fetched
   const rm = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
   const p2 = await rm.newPage(), w2 = watch(p2), got = [];
-  p2.on('request', (r) => { if (/lottie|orbitdash-update4\.json/.test(r.url())) got.push(r.url()); });
+  p2.on('request', (r) => { if (/lottie|orbitdash-update5\.json/.test(r.url())) got.push(r.url()); });
   await p2.clock.setFixedTime(new Date(U.from + 'T12:00:00'));
   await p2.goto('./?lang=en');
-  const c2 = p2.locator('.od-ev[data-ev="update4"]'); await c2.scrollIntoViewIfNeeded();
+  const c2 = p2.locator('.od-ev[data-ev="update5"]'); await c2.scrollIntoViewIfNeeded();
   await expect(c2.locator('.od-up-fig img')).toBeVisible();
   await expect.poll(() => c2.locator('.od-up-fig img').evaluate((i) => i.complete && i.naturalWidth)).toBeGreaterThan(0);
   await p2.waitForTimeout(800);
