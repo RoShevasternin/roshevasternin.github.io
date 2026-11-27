@@ -31,8 +31,8 @@
   "poster": "https://orbitdash.lewydo.com/assets/media/poster.webp",
   "privacy": "https://orbitdash.lewydo.com/privacy.html",
   "released": true,
-  "version": "4.0",
-  "_trails": "The twenty ball trails of Orbit Dash 4.0, the game's order without the seasonal WISP (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level, x — won on RANKS only (FLARE, 2.2). 4.0 added INFERNO (THE FABULOUS), PETAL (SUNSHINE), PRISM (CHROMA).",
+  "version": "5.0",
+  "_trails": "The twenty-two ball trails of Orbit Dash 5.0, the game's order without the seasonal WISP (names are never translated): bought with gems — rarity by price (c common, r rare ≤ 900, e epic ≤ 1 500, l legendary), m — earned by clearing a music level (the Demon levels' own legendary trails too: CAPE, KEYS, INFERNO, MESMER), x — won on RANKS only (FLARE, 2.2). 4.0 added INFERNO (THE FABULOUS), PETAL (SUNSHINE), PRISM (CHROMA); 5.0 — MESMER (HYPNOTIC, legendary) and MIRAGE (ABRACADABRA), the SPECIAL levels.",
   "trails": [
    [
     "COMET",
@@ -112,6 +112,14 @@
    ],
    [
     "PRISM",
+    "m"
+   ],
+   [
+    "MESMER",
+    "m"
+   ],
+   [
+    "MIRAGE",
     "m"
    ]
   ],

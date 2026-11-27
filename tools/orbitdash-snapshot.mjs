@@ -22,7 +22,7 @@ for (const L of levels) {
 // Свята гри (власник 29.10.2026: HALLOWEEN 29.10–30.11, 1 грудня тема гасне сама): вікно — те саме, що сайт гри вшиває зі
 // prototype/haunt.mjs (`"haunt":{"season":{on, from, to}}`; `on: false` — сайт гри тему вимкнув, тоді й картки не буде).
 // Сайт студії показує картку свята лише в ці дні за годинником відвідувача; слова картки — od.ev_<свято>, od.evText_<свято>.
-// Картки оновлень (update4 тощо, kind: "update") — наші, руками в src/orbitdash.json: знімок їх зберігає, береться з сайту гри лише свято.
+// Картки оновлень (update5 тощо, kind: "update") — наші, руками в src/orbitdash.json: знімок їх зберігає, береться з сайту гри лише свято.
 let kept = {};
 try { kept = JSON.parse(readFileSync('src/orbitdash.json', 'utf8')).events || {}; } catch {}
 const events = Object.fromEntries(Object.entries(kept).filter(([k, e]) => k !== 'halloween' && e && e.kind === 'update'));
@@ -30,18 +30,21 @@ const hs = html.match(/"haunt":\{"season":(\{[^}]*\})/);
 if (hs) {
   const e = JSON.parse(hs[1]), D = /^\d{4}-\d{2}-\d{2}$/;
   if (!D.test(e.from || '') || !D.test(e.to || '')) throw new Error('вікно HALLOWEEN без дат yyyy-mm-dd: ' + hs[1]);
-  events.halloween = { from: e.from, to: e.to, on: e.on !== false };
+  // вимкнено на сайті студії (власник 22.11.2026: «хеловін можеш і на сайті прибрати») — те саме вікно лишається вимкненим і після знімка
+  const off = kept.halloween && kept.halloween.on === false && kept.halloween.from === e.from;
+  events.halloween = { from: e.from, to: e.to, on: e.on !== false && !off };
 }
 
 // Беремо лише те, що потрібно вітрині на сайті студії: без адрес на звук — його тут не граємо.
-// col — колекція рівня в грі (з 02.11.2026): main — головні, halloween — святкові з вкладки 🎃 HOLIDAYS (лишаються й після свята)
+// col — колекція рівня в грі (з 02.11.2026): main — головні, halloween — святкові з вкладки 🎃 HOLIDAYS (лишаються й після свята),
+// special — вкладка SPECIAL (з 5.0.0, 27.11.2026: HYPNOTIC і ABRACADABRA — нові механіки; звичайні рівні, не святкові — пігулка з ✦)
 const out = levels.map((L) => ({
   id: L.id, name: L.name, genre: L.genre, dots: L.dots, bpm: L.bpm,
   palette: L.palette, sky: L.sky || {}, col: L.col || 'main',
 }));
 
 writeFileSync('src/orbitdash.json', JSON.stringify({
-  _about: 'Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs), руками не правити. events: halloween — з сайту гри (знімок); update4 та інші картки оновлень — наші, руками (знімок їх зберігає): from/to включно, kind "update", youtube — id ролика (null — без кнопки).',
+  _about: 'Рівні Orbit Dash — знімок із сайту гри (tools/orbitdash-snapshot.mjs), руками не правити. events: halloween — з сайту гри (знімок); update5 та інші картки оновлень — наші, руками (знімок їх зберігає): from/to включно, kind "update", youtube — id ролика (null — без кнопки).',
   levels: out,
   events,
 }, null, 1) + '\n');

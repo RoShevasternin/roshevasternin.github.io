@@ -242,7 +242,7 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-ev-tx em{font-style:normal;font-weight:900;font-size:14px;color:#ffb347;}
 .od-ev-tx em span{color:inherit;font-size:inherit;}
 @media (max-width:520px){.od-ev{flex-direction:column;align-items:stretch;padding:12px;} .od-ev img{width:100%;}}
-/* an Orbit Dash update while its window is on (src/orbitdash.json → events.<id>, kind "update"; 4.0.0 — THE FABULOUS): the game's art on top —
+/* an Orbit Dash update while its window is on (src/orbitdash.json → events.<id>, kind "update"; 4.0.0 — THE FABULOUS, 5.0.0 — update5): the game's art on top —
    its Lottie over the picture (lottie-web from this site, played only on screen; less motion — the picture), the words, → the game's site */
 .od-up{flex-direction:column;align-items:stretch;gap:12px;padding:12px;
   background:linear-gradient(170deg,rgba(70,14,24,.62),rgba(30,14,40,.55) 55%,rgba(22,16,52,.5));box-shadow:inset 0 0 0 1px rgba(255,96,56,.5),0 0 30px rgba(255,72,40,.16);}
@@ -253,6 +253,13 @@ body[data-world="lewydo"] .w-lewydo,body[data-world="cubepix"] .w-cubepix,body[d
 .od-up-lot[data-ready]{opacity:1;}
 .od-up-lot svg{display:block;width:100%!important;height:100%!important;}
 .od-up .od-ev-tx{padding:0 4px 2px;}
+/* 5.0.0 (update5) — HYPNOTIC's hypno-red #ff3b5c and SPECIAL's lilac #e98cff, not THE FABULOUS's embers */
+.od-up[data-ev="update5"]{background:linear-gradient(170deg,rgba(78,10,36,.62),rgba(44,14,56,.56) 55%,rgba(26,14,54,.5));
+  box-shadow:inset 0 0 0 1px rgba(255,59,92,.5),0 0 30px rgba(233,140,255,.18);}
+@media (hover:hover){.od-up[data-ev="update5"]:hover{box-shadow:inset 0 0 0 1px rgba(255,59,92,.5),0 0 30px rgba(233,140,255,.18);}}
+.od-up[data-ev="update5"] .od-up-fig{background:#3a0a1e;}
+.od-up[data-ev="update5"] .od-up-go a{color:#f0a6ff;}
+.od-up[data-ev="update5"] .od-up-go a:focus-visible{outline-color:#f0a6ff;}
 .cp-up{box-shadow:inset 0 0 0 1px rgba(255,60,172,.45),0 0 30px rgba(255,60,172,.14);}
 @media (hover:hover){.cp-up:hover{box-shadow:inset 0 0 0 1px rgba(255,60,172,.6),0 0 30px rgba(255,60,172,.22);}}
 .cp-up .od-up-fig{background:#140b30;}
@@ -1020,7 +1027,7 @@ html.kit #kit{display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px;}
         <p class="od-tagline" data-t="od.tag"></p>
         <p class="chap-lead" data-t="od.lead"></p>
         {{od.events}}
-        <div class="od-new od-tr"><ul class="od-trails" lang="en" aria-label="COMET, BEADS, DASH, HELIX, EMBERS, PIXEL, ECHO, DRIFT, ZAP, NOVA, FLARE, CAPE, FERN, SCRIBBLE, MACH, STRUM, KEYS, INFERNO, PETAL, PRISM">{{od.trails}}</ul></div>
+        <div class="od-new od-tr"><ul class="od-trails" lang="en" aria-label="COMET, BEADS, DASH, HELIX, EMBERS, PIXEL, ECHO, DRIFT, ZAP, NOVA, FLARE, CAPE, FERN, SCRIBBLE, MACH, STRUM, KEYS, INFERNO, PETAL, PRISM, MESMER, MIRAGE">{{od.trails}}</ul></div>
         {{od.hol}}
         <ul class="od-chips"><li data-t="od.music"></li><li data-t="od.free"></li><li data-t="od.offline"></li></ul>
         <div class="since" data-since="orbitdash"><p class="since-h" data-t="since.play"></p><p class="since-v"></p><p class="since-c" aria-hidden="true"><span></span><span></span><span></span></p></div>
@@ -1539,7 +1546,8 @@ const orbit = (() => {
       b.innerHTML = '<i></i><b></b>'; b.lastChild.textContent = name;
       b.addEventListener('click', () => pick(id)); pills.appendChild(b); return b; };
     const all = pill(null, T('od.all'));
-    L.forEach((l) => pill(l.id, (l.col === 'halloween' ? '🎃 ' : '') + l.name, '#' + l.palette.player));   // [HALLOWEEN-LEVEL] holiday levels — 🎃
+    // [HALLOWEEN-LEVEL] holiday levels — 🎃; the SPECIAL tab (5.0.0: HYPNOTIC, ABRACADABRA — new mechanics) — ordinary levels with a ✦
+    L.forEach((l) => pill(l.id, ({ halloween: '🎃 ', special: '✦ ' }[l.col] || '') + l.name, '#' + l.palette.player));
     // the holiday levels' covers (.od-hol) — the same as their pills: that level in the phone, and the phone into view
     $$('[data-od-level]').forEach((b) => b.addEventListener('click', () => { pick(b.dataset.odLevel);
       box.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' }); }));

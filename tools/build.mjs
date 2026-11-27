@@ -204,7 +204,7 @@ for (const id of read('src/index.html').match(/data-since="\w+"/g) || []) if (!(
 // an Orbit Dash holiday (the window its site builds in from the game's prototype, src/orbitdash.json → events; words — od.ev_<event>,
 // od.evText_<event>, od.evLeft): a card in the Orbit Dash world, shown only while the holiday is on (the visitor's clock, like the game)
 // → the whole game in the browser, where the holiday already is; its picture — assets/games/orbitdash-<event>.webp (the game's Play event art)
-// An update card (kind: "update", owner 22.11.2026 — Orbit Dash 4.0.0; update4 …): the same window {from, to}, no «days left»; the game's
+// An update card (kind: "update", owner 22.11.2026 — Orbit Dash 4.0.0, update4; 27.11.2026 — 5.0.0, update5 …): the same window {from, to}, no «days left»; the game's
 // update art — assets/games/orbitdash-<event>.webp (480 × 270; -1280.webp for sharp screens) and, if there, its Lottie animation
 // assets/games/orbitdash-<event>.json (played by lottie-web from this site, assets/vendor/, only on screen; less motion — the picture);
 // → the game's site (game.site), and «youtube»: "<11-character video id>" adds a «Watch on YouTube» link (od.yt) — one line of data.
